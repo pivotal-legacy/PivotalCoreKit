@@ -47,4 +47,14 @@ static const unsigned char BASE64_DICTIONARY[] = {
     return [self initWithBytes:result length:resultLength encoding:NSASCIIStringEncoding];
 }
 
+- (NSString *)stringByAddingPercentEscapesUsingEncoding:(NSStringEncoding)encoding {
+    CFStringEncoding newEncoding = CFStringConvertNSStringEncodingToEncoding(encoding);
+    NSString *escapedUrlString = (NSString *)CFURLCreateStringByAddingPercentEscapes(NULL,
+                                                                                     (CFStringRef)self,
+                                                                                     NULL,
+                                                                                     (CFStringRef)@"!*'();:@&=+$,/?%#[]~",
+                                                                                     newEncoding);
+    return [escapedUrlString autorelease];
+}
+
 @end
