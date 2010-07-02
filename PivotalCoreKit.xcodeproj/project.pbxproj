@@ -13,6 +13,10 @@
 		AE71490511CBFE1800672114 /* NSDataSpec+PivotalCore.m in Sources */ = {isa = PBXBuildFile; fileRef = AE71490411CBFE1800672114 /* NSDataSpec+PivotalCore.m */; };
 		AE71490611CBFE2200672114 /* NSData+PivotalCore.m in Sources */ = {isa = PBXBuildFile; fileRef = AE71490211CBFDD900672114 /* NSData+PivotalCore.m */; };
 		AE71493011CC108700672114 /* NSData+PivotalCore.h in Headers */ = {isa = PBXBuildFile; fileRef = AE71490111CBFDD900672114 /* NSData+PivotalCore.h */; };
+		AE88AF7C11DE6BE000B65DD3 /* PCKXMLParser.h in Headers */ = {isa = PBXBuildFile; fileRef = AE88AF7A11DE6BE000B65DD3 /* PCKXMLParser.h */; };
+		AE88AF7D11DE6BE000B65DD3 /* PCKXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = AE88AF7B11DE6BE000B65DD3 /* PCKXMLParser.m */; };
+		AE88B00D11DE6D3600B65DD3 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AE88B00711DE6D1200B65DD3 /* libxml2.dylib */; };
+		AE91CACC11DE69EE002BA6B9 /* PCKXMLParserSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE91CACB11DE69EE002BA6B9 /* PCKXMLParserSpec.m */; };
 		AECC4BC611C6E2660027AB1B /* Cedar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AECC4BB111C6E1F90027AB1B /* Cedar.framework */; };
 		AECC4BD611C6E27F0027AB1B /* PCKHTTPInterfaceSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AECC4BAA11C6E0C00027AB1B /* PCKHTTPInterfaceSpec.m */; };
 		AECC4BDE11C6E2B30027AB1B /* Cedar.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = AECC4BB111C6E1F90027AB1B /* Cedar.framework */; };
@@ -77,6 +81,10 @@
 		AE71490111CBFDD900672114 /* NSData+PivotalCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+PivotalCore.h"; sourceTree = "<group>"; };
 		AE71490211CBFDD900672114 /* NSData+PivotalCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+PivotalCore.m"; sourceTree = "<group>"; };
 		AE71490411CBFE1800672114 /* NSDataSpec+PivotalCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDataSpec+PivotalCore.m"; sourceTree = "<group>"; };
+		AE88AF7A11DE6BE000B65DD3 /* PCKXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCKXMLParser.h; sourceTree = "<group>"; };
+		AE88AF7B11DE6BE000B65DD3 /* PCKXMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCKXMLParser.m; sourceTree = "<group>"; };
+		AE88B00711DE6D1200B65DD3 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		AE91CACB11DE69EE002BA6B9 /* PCKXMLParserSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCKXMLParserSpec.m; sourceTree = "<group>"; };
 		AECC4BAA11C6E0C00027AB1B /* PCKHTTPInterfaceSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCKHTTPInterfaceSpec.m; sourceTree = "<group>"; };
 		AECC4BAD11C6E1640027AB1B /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AECC4BB111C6E1F90027AB1B /* Cedar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cedar.framework; path = /Users/pivotal/workspace/cedar/build/Release/Cedar.framework; sourceTree = "<absolute>"; };
@@ -116,6 +124,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE88B00D11DE6D3600B65DD3 /* libxml2.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				0867D69BFE84028FC02AAC07 /* Foundation.framework */,
+				AE88B00711DE6D1200B65DD3 /* libxml2.dylib */,
 				AECC4BB111C6E1F90027AB1B /* Cedar.framework */,
 				AEF15B1F11C9810E005B4F92 /* OCMock.framework */,
 				AEF15B2211C98128005B4F92 /* OCHamcrest.framework */,
@@ -190,6 +200,8 @@
 			children = (
 				AE7147F711CAAB7600672114 /* Extensions */,
 				AECC4BF311C6E3660027AB1B /* Interfaces */,
+				AE88AF7A11DE6BE000B65DD3 /* PCKXMLParser.h */,
+				AE88AF7B11DE6BE000B65DD3 /* PCKXMLParser.m */,
 			);
 			path = CoreLib;
 			sourceTree = "<group>";
@@ -201,6 +213,7 @@
 				AEF15C0811C99A58005B4F92 /* Fixtures */,
 				AECC4BA811C6E0480027AB1B /* Interfaces */,
 				AECC4BAD11C6E1640027AB1B /* main.m */,
+				AE91CACB11DE69EE002BA6B9 /* PCKXMLParserSpec.m */,
 			);
 			path = Spec;
 			sourceTree = "<group>";
@@ -288,6 +301,7 @@
 				AEF15AFF11C97FF9005B4F92 /* NSURLConnectionDelegate.h in Headers */,
 				AE71481A11CAAD4F00672114 /* NSString+PivotalCore.h in Headers */,
 				AE71493011CC108700672114 /* NSData+PivotalCore.h in Headers */,
+				AE88AF7C11DE6BE000B65DD3 /* PCKXMLParser.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,6 +419,7 @@
 				AECC4BEA11C6E3280027AB1B /* main.m in Sources */,
 				AE71483211CAB2B500672114 /* NSStringSpec+PivotalCore.m in Sources */,
 				AE71490511CBFE1800672114 /* NSDataSpec+PivotalCore.m in Sources */,
+				AE91CACC11DE69EE002BA6B9 /* PCKXMLParserSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,6 +430,7 @@
 				AEF15ACB11C97EA4005B4F92 /* PCKHTTPInterface.m in Sources */,
 				AE71481B11CAAD4F00672114 /* NSString+PivotalCore.m in Sources */,
 				AE71490611CBFE2200672114 /* NSData+PivotalCore.m in Sources */,
+				AE88AF7D11DE6BE000B65DD3 /* PCKXMLParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -538,6 +554,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "PivotalCoreKit-Info.plist";
 				INSTALL_PATH = "$(HOME)/Library/Frameworks";
 				OTHER_LDFLAGS = (
@@ -564,6 +581,7 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "PivotalCoreKit-Info.plist";
 				INSTALL_PATH = "$(HOME)/Library/Frameworks";
 				OTHER_LDFLAGS = (
