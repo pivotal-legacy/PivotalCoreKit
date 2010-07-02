@@ -1,34 +1,33 @@
 # Building a universal static framework for iOS simulator and device:
 - Create a static library target for your project named "<PROJECT-NAME>-StaticLib".
-- Set the "Product Name" build setting to <PROJECT-NAME>-StaticLib${EFFECTIVE_PLATFORM_NAME} for all configurations of this new target.
 - Verify that the static library target builds with no issues for both the simulator SDK and the device SDK for both Debug and Release configurations.
 - Create new target using the Other->Aggregate target template named <PROJECT-NAME>-iPhone.
 - Create a new Run Script build phase named "Build architecture-specific static libs" to build the two versions (simulator and device) of the static library target.  The contents of this script should be:
         xcodebuild -project ${PROJECT_NAME}.xcodeproj -sdk iphonesimulator3.2 -target ${PROJECT_NAME}-StaticLib -configuration ${CONFIGURATION} clean build
         xcodebuild -project ${PROJECT_NAME}.xcodeproj -sdk iphoneos3.2 -target ${PROJECT_NAME}-StaticLib -configuration ${CONFIGURATION} clean build
 - Create a new Run Script build phase named "Build universal static lib" to build the framework which will contain the combined static library created from the two static libraries.  The contents of this script should be:
-        SIMULATOR_LIBRARY_PATH="${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/lib${PROJECT_NAME}-StaticLib-iphonesimulator.a" &&
-        	DEVICE_LIBRARY_PATH="${BUILD_DIR}/${CONFIGURATION}-iphoneos/lib${PROJECT_NAME}-StaticLib-iphoneos.a" &&
+        SIMULATOR_LIBRARY_PATH="${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/lib${PROJECT_NAME}-StaticLib.a" &&
+        	DEVICE_LIBRARY_PATH="${BUILD_DIR}/${CONFIGURATION}-iphoneos/lib${PROJECT_NAME}-StaticLib.a" &&
         	UNIVERSAL_LIBRARY_DIR="${BUILD_DIR}/${CONFIGURATION}-iphoneuniversal" &&
         	UNIVERSAL_LIBRARY_PATH="${UNIVERSAL_LIBRARY_DIR}/${PRODUCT_NAME}" &&
         	FRAMEWORK="${UNIVERSAL_LIBRARY_DIR}/${PRODUCT_NAME}.framework" &&
-        
+
         # Create framework directory structure.
         	rm -rf "${FRAMEWORK}" &&
         	mkdir -p "${UNIVERSAL_LIBRARY_DIR}" &&
         	mkdir -p "${FRAMEWORK}/Versions/A/Headers" &&
         	mkdir -p "${FRAMEWORK}/Versions/A/Resources" &&
-        
+
         # Generate universal binary from desktop, device, and simulator builds.
         	lipo "${SIMULATOR_LIBRARY_PATH}" "${DEVICE_LIBRARY_PATH}" -create -output "${UNIVERSAL_LIBRARY_PATH}" &&
-        
+
         # Move files to appropriate locations in framework paths.
         	cp "${UNIVERSAL_LIBRARY_PATH}" "${FRAMEWORK}/Versions/A" &&
         	ln -s "${FRAMEWORK}/Versions/A" "${FRAMEWORK}/Versions/Current" &&
         	ln -s "${FRAMEWORK}/Versions/Current/Headers" "${FRAMEWORK}/Headers" &&
         	ln -s "${FRAMEWORK}/Versions/Current/Resources" "${FRAMEWORK}/Resources" &&
         	ln -s "${FRAMEWORK}/Versions/Current/${PRODUCT_NAME}" "${FRAMEWORK}/${PRODUCT_NAME}"
-- Create a Copy Files build phase named "Copy headers to framework" that will put the necessary file headers into the framework directory structure.  Set the Destination to Absolute Path, and set the Full Path to: 
+- Create a Copy Files build phase named "Copy headers to framework" that will put the necessary file headers into the framework directory structure.  Set the Destination to Absolute Path, and set the Full Path to:
         ${BUILD_DIR}/${CONFIGURATION}-iphoneuniversal/${PRODUCT_NAME}.framework/Headers
 - Add all public headers to the "Copy headers to framework" build phase.
 - Optionally, create a Copy Files build phase named "Copy resources to framework" to copy custom resource artifacts (such as Info.plist or README or license.txt) to the framework Resources directory.  Set the Destination to Absolute Path, and set the Full Path to: :
