@@ -1,3 +1,4 @@
+#import <Foundation/Foundation.h>
 #import "NSString+PivotalCore.h"
 
 static const unsigned char BASE64_DICTIONARY[] = {
