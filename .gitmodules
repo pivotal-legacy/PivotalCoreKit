@@ -1,0 +1,9 @@
+[submodule "Externals/OCHamcrest"]
+	path = Externals/OCHamcrest
+	url = git://github.com/pivotal/OCHamcrest.git
+[submodule "Externals/Cedar"]
+	path = Externals/Cedar
+	url = git://github.com/pivotal/cedar.git
+[submodule "Externals/OCMock"]
+	path = Externals/OCMock
+	url = git://github.com/pivotal/OCMock.git

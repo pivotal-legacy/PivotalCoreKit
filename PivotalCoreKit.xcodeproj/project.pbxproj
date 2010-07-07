@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE138A5E11E3FF26004E825D /* OCHamcrest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE138A4411E3FEB6004E825D /* OCHamcrest.framework */; };
+		AE138A6711E3FF73004E825D /* OCHamcrest.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = AE138A4411E3FEB6004E825D /* OCHamcrest.framework */; };
+		AE138A9F11E3FFF3004E825D /* OCMock.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = AE138A7911E3FFC7004E825D /* OCMock.framework */; };
+		AE138AA411E40004004E825D /* Cedar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE138A9011E3FFD6004E825D /* Cedar.framework */; };
+		AE138ACF11E400D2004E825D /* OCMock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE138A7911E3FFC7004E825D /* OCMock.framework */; };
+		AE138ADC11E400E8004E825D /* Cedar.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = AE138A9011E3FFD6004E825D /* Cedar.framework */; };
 		AE71481A11CAAD4F00672114 /* NSString+PivotalCore.h in Headers */ = {isa = PBXBuildFile; fileRef = AE71481811CAAD4F00672114 /* NSString+PivotalCore.h */; };
 		AE71481B11CAAD4F00672114 /* NSString+PivotalCore.m in Sources */ = {isa = PBXBuildFile; fileRef = AE71481911CAAD4F00672114 /* NSString+PivotalCore.m */; };
 		AE71483211CAB2B500672114 /* NSStringSpec+PivotalCore.m in Sources */ = {isa = PBXBuildFile; fileRef = AE71481D11CAAE1600672114 /* NSStringSpec+PivotalCore.m */; };
@@ -17,9 +23,7 @@
 		AE88AF7D11DE6BE000B65DD3 /* PCKXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = AE88AF7B11DE6BE000B65DD3 /* PCKXMLParser.m */; };
 		AE88B00D11DE6D3600B65DD3 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AE88B00711DE6D1200B65DD3 /* libxml2.dylib */; };
 		AE91CACC11DE69EE002BA6B9 /* PCKXMLParserSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE91CACB11DE69EE002BA6B9 /* PCKXMLParserSpec.m */; };
-		AECC4BC611C6E2660027AB1B /* Cedar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AECC4BB111C6E1F90027AB1B /* Cedar.framework */; };
 		AECC4BD611C6E27F0027AB1B /* PCKHTTPInterfaceSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AECC4BAA11C6E0C00027AB1B /* PCKHTTPInterfaceSpec.m */; };
-		AECC4BDE11C6E2B30027AB1B /* Cedar.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = AECC4BB111C6E1F90027AB1B /* Cedar.framework */; };
 		AECC4BEA11C6E3280027AB1B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AECC4BAD11C6E1640027AB1B /* main.m */; };
 		AEF15ACB11C97EA4005B4F92 /* PCKHTTPInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = AECC4BF511C6E38D0027AB1B /* PCKHTTPInterface.m */; };
 		AEF15ACC11C97EA9005B4F92 /* PCKHTTPInterface.h in Headers */ = {isa = PBXBuildFile; fileRef = AECC4BF411C6E38D0027AB1B /* PCKHTTPInterface.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -30,15 +34,102 @@
 		AEF15AFB11C97F95005B4F92 /* PSHKFakeHTTPURLResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF15AF911C97F95005B4F92 /* PSHKFakeHTTPURLResponse.m */; };
 		AEF15AFF11C97FF9005B4F92 /* NSURLConnectionDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = AEF15AFE11C97FF9005B4F92 /* NSURLConnectionDelegate.h */; };
 		AEF15B0911C98072005B4F92 /* PivotalSpecHelperKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEF15AE011C97F15005B4F92 /* PivotalSpecHelperKit.framework */; };
-		AEF15B2011C9810E005B4F92 /* OCMock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEF15B1F11C9810E005B4F92 /* OCMock.framework */; };
-		AEF15B2311C98128005B4F92 /* OCHamcrest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEF15B2211C98128005B4F92 /* OCHamcrest.framework */; };
 		AEF15B4511C984EB005B4F92 /* PSHKFakeResponses.h in Headers */ = {isa = PBXBuildFile; fileRef = AEF15B4311C984EB005B4F92 /* PSHKFakeResponses.h */; };
 		AEF15B4611C984EB005B4F92 /* PSHKFakeResponses.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF15B4411C984EB005B4F92 /* PSHKFakeResponses.m */; };
-		AEF15B6B11C985A1005B4F92 /* OCMock.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = AEF15B1F11C9810E005B4F92 /* OCMock.framework */; };
-		AEF15B6C11C985A1005B4F92 /* OCHamcrest.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = AEF15B2211C98128005B4F92 /* OCHamcrest.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		AE138A4311E3FEB6004E825D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE138A3911E3FEB6004E825D /* OCHamcrest.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8DC2EF5B0486A6940098B216 /* OCHamcrest.framework */;
+			remoteInfo = OCHamcrest;
+		};
+		AE138A4511E3FEB6004E825D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE138A3911E3FEB6004E825D /* OCHamcrest.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 50066DAD1191DDE700A7A86D /* libOCHamcrest-StaticLib.a */;
+			remoteInfo = "OCHamcrest-StaticLib";
+		};
+		AE138A4711E3FEB6004E825D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE138A3911E3FEB6004E825D /* OCHamcrest.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0F2A4B1F0D8B68B400051BCF /* UnitTests.octest */;
+			remoteInfo = UnitTests;
+		};
+		AE138A4D11E3FF07004E825D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE138A3911E3FEB6004E825D /* OCHamcrest.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DC2EF4F0486A6940098B216 /* OCHamcrest */;
+			remoteInfo = OCHamcrest;
+		};
+		AE138A7811E3FFC7004E825D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE138A6E11E3FFC7004E825D /* OCMock.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8DC2EF5B0486A6940098B216 /* OCMock.framework */;
+			remoteInfo = OCMock;
+		};
+		AE138A7A11E3FFC7004E825D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE138A6E11E3FFC7004E825D /* OCMock.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 03BF2D3708F1C69500978C59 /* OCMockTests.octest */;
+			remoteInfo = OCMockTests;
+		};
+		AE138A7C11E3FFC7004E825D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE138A6E11E3FFC7004E825D /* OCMock.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 508C285F119042C300E392B9 /* libOCMock-StaticLib.a */;
+			remoteInfo = "OCMock-StaticLib";
+		};
+		AE138A8F11E3FFD6004E825D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE138A8011E3FFD6004E825D /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AEEE1FB611DC271300029872 /* Cedar.framework */;
+			remoteInfo = Cedar;
+		};
+		AE138A9111E3FFD6004E825D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE138A8011E3FFD6004E825D /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AEEE218611DC28E200029872 /* Specs */;
+			remoteInfo = Specs;
+		};
+		AE138A9311E3FFD6004E825D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE138A8011E3FFD6004E825D /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AEEE222911DC2B0600029872 /* libCedar-StaticLib.a */;
+			remoteInfo = "Cedar-StaticLib";
+		};
+		AE138A9511E3FFD6004E825D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE138A8011E3FFD6004E825D /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AEEE227611DC2CF900029872 /* iPhoneSpecs.app */;
+			remoteInfo = iPhoneSpecs;
+		};
+		AE138A9B11E3FFE2004E825D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE138A8011E3FFD6004E825D /* Cedar.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = AEEE1FB511DC271300029872 /* Cedar */;
+			remoteInfo = Cedar;
+		};
+		AE138A9D11E3FFE5004E825D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE138A6E11E3FFC7004E825D /* OCMock.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DC2EF4F0486A6940098B216 /* OCMock */;
+			remoteInfo = OCMock;
+		};
 		AEF15ACD11C97ED1005B4F92 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
@@ -62,9 +153,9 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				AEF15B6B11C985A1005B4F92 /* OCMock.framework in Copy Frameworks */,
-				AEF15B6C11C985A1005B4F92 /* OCHamcrest.framework in Copy Frameworks */,
-				AECC4BDE11C6E2B30027AB1B /* Cedar.framework in Copy Frameworks */,
+				AE138ADC11E400E8004E825D /* Cedar.framework in Copy Frameworks */,
+				AE138A6711E3FF73004E825D /* OCHamcrest.framework in Copy Frameworks */,
+				AE138A9F11E3FFF3004E825D /* OCMock.framework in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -73,6 +164,9 @@
 
 /* Begin PBXFileReference section */
 		0867D69BFE84028FC02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		AE138A3911E3FEB6004E825D /* OCHamcrest.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OCHamcrest.xcodeproj; path = OCHamcrest/Source/OCHamcrest.xcodeproj; sourceTree = "<group>"; };
+		AE138A6E11E3FFC7004E825D /* OCMock.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OCMock.xcodeproj; path = OCMock/Source/OCMock.xcodeproj; sourceTree = "<group>"; };
+		AE138A8011E3FFD6004E825D /* Cedar.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Cedar.xcodeproj; path = Cedar/Cedar.xcodeproj; sourceTree = "<group>"; };
 		AE3BA38011C9381400F34485 /* BUILD-TARGETS.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "BUILD-TARGETS.markdown"; sourceTree = "<group>"; };
 		AE71473311CA9A2900672114 /* 400.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 400.txt; sourceTree = "<group>"; };
 		AE71481811CAAD4F00672114 /* NSString+PivotalCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+PivotalCore.h"; sourceTree = "<group>"; };
@@ -87,7 +181,6 @@
 		AE91CACB11DE69EE002BA6B9 /* PCKXMLParserSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCKXMLParserSpec.m; sourceTree = "<group>"; };
 		AECC4BAA11C6E0C00027AB1B /* PCKHTTPInterfaceSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCKHTTPInterfaceSpec.m; sourceTree = "<group>"; };
 		AECC4BAD11C6E1640027AB1B /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		AECC4BB111C6E1F90027AB1B /* Cedar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cedar.framework; path = /Users/pivotal/workspace/cedar/build/Release/Cedar.framework; sourceTree = "<absolute>"; };
 		AECC4BBA11C6E2280027AB1B /* Spec */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Spec; sourceTree = BUILT_PRODUCTS_DIR; };
 		AECC4BF411C6E38D0027AB1B /* PCKHTTPInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCKHTTPInterface.h; sourceTree = "<group>"; };
 		AECC4BF511C6E38D0027AB1B /* PCKHTTPInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCKHTTPInterface.m; sourceTree = "<group>"; };
@@ -100,8 +193,6 @@
 		AEF15AF811C97F95005B4F92 /* PSHKFakeHTTPURLResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSHKFakeHTTPURLResponse.h; sourceTree = "<group>"; };
 		AEF15AF911C97F95005B4F92 /* PSHKFakeHTTPURLResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSHKFakeHTTPURLResponse.m; sourceTree = "<group>"; };
 		AEF15AFE11C97FF9005B4F92 /* NSURLConnectionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSURLConnectionDelegate.h; sourceTree = "<group>"; };
-		AEF15B1F11C9810E005B4F92 /* OCMock.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OCMock.framework; path = /Users/pivotal/workspace/OCMock/Source/build/Release/OCMock.framework; sourceTree = "<absolute>"; };
-		AEF15B2211C98128005B4F92 /* OCHamcrest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OCHamcrest.framework; path = /Users/pivotal/workspace/OCHamcrest/Source/build/Release/OCHamcrest.framework; sourceTree = "<absolute>"; };
 		AEF15B4311C984EB005B4F92 /* PSHKFakeResponses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSHKFakeResponses.h; sourceTree = "<group>"; };
 		AEF15B4411C984EB005B4F92 /* PSHKFakeResponses.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSHKFakeResponses.m; sourceTree = "<group>"; };
 		AEF15C0B11C99AFE005B4F92 /* 200.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 200.txt; sourceTree = "<group>"; };
@@ -112,11 +203,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AECC4BC611C6E2660027AB1B /* Cedar.framework in Frameworks */,
+				AE138AA411E40004004E825D /* Cedar.framework in Frameworks */,
+				AE138A5E11E3FF26004E825D /* OCHamcrest.framework in Frameworks */,
+				AE138ACF11E400D2004E825D /* OCMock.framework in Frameworks */,
 				AEF15ACF11C97EDE005B4F92 /* PivotalCoreKit.framework in Frameworks */,
 				AEF15B0911C98072005B4F92 /* PivotalSpecHelperKit.framework in Frameworks */,
-				AEF15B2011C9810E005B4F92 /* OCMock.framework in Frameworks */,
-				AEF15B2311C98128005B4F92 /* OCHamcrest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,7 +245,8 @@
 				AECC4BA411C6DFF40027AB1B /* CoreLib */,
 				AEF15A1511C97747005B4F92 /* SpecHelperLib */,
 				AECC4BA711C6E0010027AB1B /* Spec */,
-				0867D69AFE84028FC02AAC07 /* External Frameworks and Libraries */,
+				0867D69AFE84028FC02AAC07 /* Frameworks */,
+				AE138A3811E3FE88004E825D /* Externals */,
 				034768DFFF38A50411DB9C8B /* Products */,
 				AE3BA38011C9381400F34485 /* BUILD-TARGETS.markdown */,
 				AEF15AC711C97E8B005B4F92 /* PivotalCoreKit-Info.plist */,
@@ -163,16 +255,54 @@
 			name = PivotalCoreKit;
 			sourceTree = "<group>";
 		};
-		0867D69AFE84028FC02AAC07 /* External Frameworks and Libraries */ = {
+		0867D69AFE84028FC02AAC07 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				0867D69BFE84028FC02AAC07 /* Foundation.framework */,
 				AE88B00711DE6D1200B65DD3 /* libxml2.dylib */,
-				AECC4BB111C6E1F90027AB1B /* Cedar.framework */,
-				AEF15B1F11C9810E005B4F92 /* OCMock.framework */,
-				AEF15B2211C98128005B4F92 /* OCHamcrest.framework */,
 			);
-			name = "External Frameworks and Libraries";
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AE138A3811E3FE88004E825D /* Externals */ = {
+			isa = PBXGroup;
+			children = (
+				AE138A8011E3FFD6004E825D /* Cedar.xcodeproj */,
+				AE138A6E11E3FFC7004E825D /* OCMock.xcodeproj */,
+				AE138A3911E3FEB6004E825D /* OCHamcrest.xcodeproj */,
+			);
+			path = Externals;
+			sourceTree = "<group>";
+		};
+		AE138A3A11E3FEB6004E825D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AE138A4411E3FEB6004E825D /* OCHamcrest.framework */,
+				AE138A4611E3FEB6004E825D /* libOCHamcrest-StaticLib.a */,
+				AE138A4811E3FEB6004E825D /* UnitTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AE138A6F11E3FFC7004E825D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AE138A7911E3FFC7004E825D /* OCMock.framework */,
+				AE138A7B11E3FFC7004E825D /* OCMockTests.octest */,
+				AE138A7D11E3FFC7004E825D /* libOCMock-StaticLib.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AE138A8111E3FFD6004E825D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AE138A9011E3FFD6004E825D /* Cedar.framework */,
+				AE138A9211E3FFD6004E825D /* Specs */,
+				AE138A9411E3FFD6004E825D /* libCedar-StaticLib.a */,
+				AE138A9611E3FFD6004E825D /* iPhoneSpecs.app */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		AE7147F711CAAB7600672114 /* Extensions */ = {
@@ -331,6 +461,9 @@
 			dependencies = (
 				AEF15ACE11C97ED1005B4F92 /* PBXTargetDependency */,
 				AEF15B1511C9809B005B4F92 /* PBXTargetDependency */,
+				AE138A4E11E3FF07004E825D /* PBXTargetDependency */,
+				AE138A9C11E3FFE2004E825D /* PBXTargetDependency */,
+				AE138A9E11E3FFE5004E825D /* PBXTargetDependency */,
 			);
 			name = Spec;
 			productName = Spec;
@@ -384,6 +517,20 @@
 			mainGroup = 0867D691FE84028FC02AAC07 /* PivotalCoreKit */;
 			productRefGroup = 034768DFFF38A50411DB9C8B /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = AE138A8111E3FFD6004E825D /* Products */;
+					ProjectRef = AE138A8011E3FFD6004E825D /* Cedar.xcodeproj */;
+				},
+				{
+					ProductGroup = AE138A3A11E3FEB6004E825D /* Products */;
+					ProjectRef = AE138A3911E3FEB6004E825D /* OCHamcrest.xcodeproj */;
+				},
+				{
+					ProductGroup = AE138A6F11E3FFC7004E825D /* Products */;
+					ProjectRef = AE138A6E11E3FFC7004E825D /* OCMock.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				AEF15AC411C97E8B005B4F92 /* PivotalCoreKit */,
@@ -392,6 +539,79 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		AE138A4411E3FEB6004E825D /* OCHamcrest.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = OCHamcrest.framework;
+			remoteRef = AE138A4311E3FEB6004E825D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AE138A4611E3FEB6004E825D /* libOCHamcrest-StaticLib.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libOCHamcrest-StaticLib.a";
+			remoteRef = AE138A4511E3FEB6004E825D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AE138A4811E3FEB6004E825D /* UnitTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = UnitTests.octest;
+			remoteRef = AE138A4711E3FEB6004E825D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AE138A7911E3FFC7004E825D /* OCMock.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = OCMock.framework;
+			remoteRef = AE138A7811E3FFC7004E825D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AE138A7B11E3FFC7004E825D /* OCMockTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = OCMockTests.octest;
+			remoteRef = AE138A7A11E3FFC7004E825D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AE138A7D11E3FFC7004E825D /* libOCMock-StaticLib.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libOCMock-StaticLib.a";
+			remoteRef = AE138A7C11E3FFC7004E825D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AE138A9011E3FFD6004E825D /* Cedar.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Cedar.framework;
+			remoteRef = AE138A8F11E3FFD6004E825D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AE138A9211E3FFD6004E825D /* Specs */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = Specs;
+			remoteRef = AE138A9111E3FFD6004E825D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AE138A9411E3FFD6004E825D /* libCedar-StaticLib.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libCedar-StaticLib.a";
+			remoteRef = AE138A9311E3FFD6004E825D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AE138A9611E3FFD6004E825D /* iPhoneSpecs.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = iPhoneSpecs.app;
+			remoteRef = AE138A9511E3FFD6004E825D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		AEF15AC111C97E8B005B4F92 /* Resources */ = {
@@ -447,6 +667,21 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		AE138A4E11E3FF07004E825D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = OCHamcrest;
+			targetProxy = AE138A4D11E3FF07004E825D /* PBXContainerItemProxy */;
+		};
+		AE138A9C11E3FFE2004E825D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Cedar;
+			targetProxy = AE138A9B11E3FFE2004E825D /* PBXContainerItemProxy */;
+		};
+		AE138A9E11E3FFE5004E825D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = OCMock;
+			targetProxy = AE138A9D11E3FFE5004E825D /* PBXContainerItemProxy */;
+		};
 		AEF15ACE11C97ED1005B4F92 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = AEF15AC411C97E8B005B4F92 /* PivotalCoreKit */;
@@ -491,12 +726,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../cedar/build/Release\"",
-					"\"$(SRCROOT)/../OCMock/Source/build/Release\"",
-					"\"$(SRCROOT)/../OCHamcrest/Source/build/Release\"",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = G5;
@@ -519,12 +749,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../cedar/build/Release\"",
-					"\"$(SRCROOT)/../OCMock/Source/build/Release\"",
-					"\"$(SRCROOT)/../OCHamcrest/Source/build/Release\"",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
