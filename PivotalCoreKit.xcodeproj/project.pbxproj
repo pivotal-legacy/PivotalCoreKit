@@ -10,9 +10,9 @@
 		AE138A5E11E3FF26004E825D /* OCHamcrest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE138A4411E3FEB6004E825D /* OCHamcrest.framework */; };
 		AE138A6711E3FF73004E825D /* OCHamcrest.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = AE138A4411E3FEB6004E825D /* OCHamcrest.framework */; };
 		AE138A9F11E3FFF3004E825D /* OCMock.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = AE138A7911E3FFC7004E825D /* OCMock.framework */; };
-		AE138AA411E40004004E825D /* Cedar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE138A9011E3FFD6004E825D /* Cedar.framework */; };
 		AE138ACF11E400D2004E825D /* OCMock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE138A7911E3FFC7004E825D /* OCMock.framework */; };
-		AE138ADC11E400E8004E825D /* Cedar.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = AE138A9011E3FFD6004E825D /* Cedar.framework */; };
+		AE138CB811E4F504004E825D /* Cedar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE138A9011E3FFD6004E825D /* Cedar.framework */; };
+		AE138CCA11E4F624004E825D /* Cedar.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = AE138A9011E3FFD6004E825D /* Cedar.framework */; };
 		AE71481A11CAAD4F00672114 /* NSString+PivotalCore.h in Headers */ = {isa = PBXBuildFile; fileRef = AE71481811CAAD4F00672114 /* NSString+PivotalCore.h */; };
 		AE71481B11CAAD4F00672114 /* NSString+PivotalCore.m in Sources */ = {isa = PBXBuildFile; fileRef = AE71481911CAAD4F00672114 /* NSString+PivotalCore.m */; };
 		AE71483211CAB2B500672114 /* NSStringSpec+PivotalCore.m in Sources */ = {isa = PBXBuildFile; fileRef = AE71481D11CAAE1600672114 /* NSStringSpec+PivotalCore.m */; };
@@ -153,7 +153,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				AE138ADC11E400E8004E825D /* Cedar.framework in Copy Frameworks */,
+				AE138CCA11E4F624004E825D /* Cedar.framework in Copy Frameworks */,
 				AE138A6711E3FF73004E825D /* OCHamcrest.framework in Copy Frameworks */,
 				AE138A9F11E3FFF3004E825D /* OCMock.framework in Copy Frameworks */,
 			);
@@ -204,11 +204,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE138AA411E40004004E825D /* Cedar.framework in Frameworks */,
 				AE138A5E11E3FF26004E825D /* OCHamcrest.framework in Frameworks */,
 				AE138ACF11E400D2004E825D /* OCMock.framework in Frameworks */,
 				AEF15ACF11C97EDE005B4F92 /* PivotalCoreKit.framework in Frameworks */,
 				AEF15B0911C98072005B4F92 /* PivotalSpecHelperKit.framework in Frameworks */,
+				AE138CB811E4F504004E825D /* Cedar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,9 +454,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AECC4BE011C6E2D50027AB1B /* Build configuration list for PBXNativeTarget "Spec" */;
 			buildPhases = (
+				AECC4BDF11C6E2D50027AB1B /* Copy Frameworks */,
 				AECC4BB711C6E2280027AB1B /* Sources */,
 				AECC4BB811C6E2280027AB1B /* Frameworks */,
-				AECC4BDF11C6E2D50027AB1B /* Copy Frameworks */,
 			);
 			buildRules = (
 			);
@@ -703,6 +703,7 @@
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -716,8 +717,10 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
 				SDKROOT = macosx10.6;
 			};
@@ -736,6 +739,8 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = "";
 				INSTALL_PATH = /usr/local/bin;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
@@ -759,6 +764,8 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = "";
 				INSTALL_PATH = /usr/local/bin;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
@@ -785,6 +792,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "PivotalCoreKit-Info.plist";
 				INSTALL_PATH = "$(HOME)/Library/Frameworks";
@@ -812,6 +820,7 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "PivotalCoreKit-Info.plist";
 				INSTALL_PATH = "$(HOME)/Library/Frameworks";

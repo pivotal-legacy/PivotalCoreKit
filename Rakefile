@@ -19,7 +19,7 @@ task :cruise do
   Rake::Task[:clean].invoke
   Rake::Task[:build_all].invoke
   Rake::Task[:specs].invoke
-  Rake::Task[:uispecs].invoke
+#  Rake::Task[:uispecs].invoke
 end
 
 task :clean do
