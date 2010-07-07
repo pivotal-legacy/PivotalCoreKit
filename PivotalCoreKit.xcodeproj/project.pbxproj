@@ -17,6 +17,9 @@
 		AE138E7511E542F1004E825D /* NSString+PivotalCore.m in Sources */ = {isa = PBXBuildFile; fileRef = AE71481911CAAD4F00672114 /* NSString+PivotalCore.m */; };
 		AE138E7611E542F1004E825D /* NSData+PivotalCore.m in Sources */ = {isa = PBXBuildFile; fileRef = AE71490211CBFDD900672114 /* NSData+PivotalCore.m */; };
 		AE138E7711E542F1004E825D /* PCKXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = AE88AF7B11DE6BE000B65DD3 /* PCKXMLParser.m */; };
+		AE138F4911E548E1004E825D /* NSURLConnection+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF15A1F11C97864005B4F92 /* NSURLConnection+Spec.m */; };
+		AE138F4A11E548E1004E825D /* PSHKFakeHTTPURLResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF15AF911C97F95005B4F92 /* PSHKFakeHTTPURLResponse.m */; };
+		AE138F4B11E548E1004E825D /* PSHKFakeResponses.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF15B4411C984EB005B4F92 /* PSHKFakeResponses.m */; };
 		AE71481A11CAAD4F00672114 /* NSString+PivotalCore.h in Headers */ = {isa = PBXBuildFile; fileRef = AE71481811CAAD4F00672114 /* NSString+PivotalCore.h */; };
 		AE71481B11CAAD4F00672114 /* NSString+PivotalCore.m in Sources */ = {isa = PBXBuildFile; fileRef = AE71481911CAAD4F00672114 /* NSString+PivotalCore.m */; };
 		AE71483211CAB2B500672114 /* NSStringSpec+PivotalCore.m in Sources */ = {isa = PBXBuildFile; fileRef = AE71481D11CAAE1600672114 /* NSStringSpec+PivotalCore.m */; };
@@ -173,6 +176,7 @@
 		AE138A8011E3FFD6004E825D /* Cedar.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Cedar.xcodeproj; path = Cedar/Cedar.xcodeproj; sourceTree = "<group>"; };
 		AE138AEA11E40674004E825D /* Rakefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Rakefile; sourceTree = "<group>"; };
 		AE138E7011E542BF004E825D /* libPivotalCoreKit-StaticLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPivotalCoreKit-StaticLib.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE138F4611E548B5004E825D /* libPivotalSpecHelperKit-StaticLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPivotalSpecHelperKit-StaticLib.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE3BA38011C9381400F34485 /* BUILD-TARGETS.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "BUILD-TARGETS.markdown"; sourceTree = "<group>"; };
 		AE71473311CA9A2900672114 /* 400.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 400.txt; sourceTree = "<group>"; };
 		AE71481811CAAD4F00672114 /* NSString+PivotalCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+PivotalCore.h"; sourceTree = "<group>"; };
@@ -206,6 +210,13 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		AE138E6E11E542BF004E825D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE138F4411E548B5004E825D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -249,6 +260,7 @@
 				AEF15AC511C97E8B005B4F92 /* PivotalCoreKit.framework */,
 				AEF15AE011C97F15005B4F92 /* PivotalSpecHelperKit.framework */,
 				AE138E7011E542BF004E825D /* libPivotalCoreKit-StaticLib.a */,
+				AE138F4611E548B5004E825D /* libPivotalSpecHelperKit-StaticLib.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -445,6 +457,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AE138F4211E548B5004E825D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AEF15AC011C97E8B005B4F92 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -485,6 +504,23 @@
 			name = "PivotalCoreKit-StaticLib";
 			productName = "PivotalCoreKit-StaticLib";
 			productReference = AE138E7011E542BF004E825D /* libPivotalCoreKit-StaticLib.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		AE138F4511E548B5004E825D /* PivotalSpecHelperKit-StaticLib */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AE138F6211E548EB004E825D /* Build configuration list for PBXNativeTarget "PivotalSpecHelperKit-StaticLib" */;
+			buildPhases = (
+				AE138F4211E548B5004E825D /* Headers */,
+				AE138F4311E548B5004E825D /* Sources */,
+				AE138F4411E548B5004E825D /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "PivotalSpecHelperKit-StaticLib";
+			productName = "PivotalSpecHelperKit-StaticLib";
+			productReference = AE138F4611E548B5004E825D /* libPivotalSpecHelperKit-StaticLib.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		AECC4BB911C6E2280027AB1B /* Spec */ = {
@@ -576,6 +612,7 @@
 				AEF15ADF11C97F15005B4F92 /* PivotalSpecHelperKit */,
 				AECC4BB911C6E2280027AB1B /* Spec */,
 				AE138E6F11E542BF004E825D /* PivotalCoreKit-StaticLib */,
+				AE138F4511E548B5004E825D /* PivotalSpecHelperKit-StaticLib */,
 			);
 		};
 /* End PBXProject section */
@@ -679,6 +716,16 @@
 				AE138E7511E542F1004E825D /* NSString+PivotalCore.m in Sources */,
 				AE138E7611E542F1004E825D /* NSData+PivotalCore.m in Sources */,
 				AE138E7711E542F1004E825D /* PCKXMLParser.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE138F4311E548B5004E825D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE138F4911E548E1004E825D /* NSURLConnection+Spec.m in Sources */,
+				AE138F4A11E548E1004E825D /* PSHKFakeHTTPURLResponse.m in Sources */,
+				AE138F4B11E548E1004E825D /* PSHKFakeResponses.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -798,6 +845,48 @@
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				PREBINDING = NO;
 				PRODUCT_NAME = "PivotalCoreKit-StaticLib";
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		AE138F4711E548B5004E825D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "";
+				INSTALL_PATH = /usr/local/lib;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = "PivotalSpecHelperKit-StaticLib";
+			};
+			name = Debug;
+		};
+		AE138F4811E548B5004E825D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "";
+				INSTALL_PATH = /usr/local/lib;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = "PivotalSpecHelperKit-StaticLib";
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -984,6 +1073,15 @@
 			buildConfigurations = (
 				AE138E7111E542BF004E825D /* Debug */,
 				AE138E7211E542BF004E825D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AE138F6211E548EB004E825D /* Build configuration list for PBXNativeTarget "PivotalSpecHelperKit-StaticLib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE138F4711E548B5004E825D /* Debug */,
+				AE138F4811E548B5004E825D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
