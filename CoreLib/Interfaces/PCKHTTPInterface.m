@@ -10,9 +10,14 @@
 - (id)initWithHTTPInterface:(PCKHTTPInterface *)interface forRequest:(NSURLRequest *)request andDelegate:(id<NSURLConnectionDelegate>)delegate {
     if (self = [super initWithRequest:request delegate:self]) {
         interface_ = interface;
-        delegate_ = delegate;
+        delegate_ = [delegate retain];
     }
     return self;
+}
+
+- (void)dealloc {
+    [delegate_ release];
+    [super dealloc];
 }
 
 - (void)cancel{
@@ -83,9 +88,9 @@
     [super dealloc];
 }
 
-- (NSURLConnection *)connectionOfClass:(Class)class forPath:(NSString *)path andDelegate:(id<NSURLConnectionDelegate>)delegate secure:(BOOL)secure {
+- (NSURLConnection *)connectionForPath:(NSString *)path andDelegate:(id<NSURLConnectionDelegate>)delegate secure:(BOOL)secure {
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[self urlForPath:path secure:secure]];
-    NSURLConnection *connection = [[class alloc] initWithHTTPInterface:self forRequest:request andDelegate:delegate];
+    NSURLConnection *connection = [[PCKHTTPConnection alloc] initWithHTTPInterface:self forRequest:request andDelegate:delegate];
     [activeConnections_ addObject:connection];
 
     [connection release];

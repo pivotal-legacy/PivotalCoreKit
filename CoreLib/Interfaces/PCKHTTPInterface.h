@@ -20,7 +20,7 @@
 @property (nonatomic, readonly) NSArray *activeConnections;
 
 #pragma mark protected
-- (NSURLConnection *)connectionOfClass:(Class)class forPath:(NSString *)path andDelegate:(id<NSURLConnectionDelegate>)delegate secure:(BOOL)secure;
+- (NSURLConnection *)connectionForPath:(NSString *)path andDelegate:(id<NSURLConnectionDelegate>)delegate secure:(BOOL)secure;
 
 @end
 

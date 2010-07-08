@@ -13,6 +13,14 @@
 #define BASE_PATH "/v1/wibble/"
 #define PATH "foo/bar"
 
+@interface TestDelegate : NSObject<NSURLConnectionDelegate>
+@end
+
+@implementation TestDelegate
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection {}
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {}
+@end
+
 @interface TestInterface : PCKHTTPInterface
 - (NSURLConnection *)makeConnectionWithDelegate:(id<NSURLConnectionDelegate>)delegate;
 @end
@@ -27,16 +35,55 @@
 }
 
 - (NSURLConnection *)makeConnectionWithDelegate:(id<NSURLConnectionDelegate>)delegate {
-    return [self connectionOfClass:[PCKHTTPConnection class] forPath:@PATH andDelegate:delegate secure:false];
+    return [self connectionForPath:@PATH andDelegate:delegate secure:false];
 }
 
 - (NSURLConnection *)makeSecureConnectionWithDelegate:(id<NSURLConnectionDelegate>)delegate {
-    return [self connectionOfClass:[PCKHTTPConnection class] forPath:@PATH andDelegate:delegate secure:true];
+    return [self connectionForPath:@PATH andDelegate:delegate secure:true];
 }
 
 @end
 
 SPEC_BEGIN(PCKHTTPInterfaceSpec)
+
+describe(@"PCKHTTPConnection", ^{
+    __block PCKHTTPConnection *connection;
+    __block TestDelegate *delegate;
+    __block id mockRequest;
+
+    beforeEach(^{
+        mockRequest = [OCMockObject niceMockForClass:[NSURLRequest class]];
+        delegate = [[TestDelegate alloc] init];
+        connection = [[PCKHTTPConnection alloc] initWithHTTPInterface:nil forRequest:mockRequest andDelegate:delegate];
+
+        // We're testing the retainCounts for connection objects here, so remove
+        // the connection we create from the containers that we've created for
+        // testing.
+        [NSURLConnection resetAll];
+    });
+
+    afterEach(^{
+        [connection release];
+        [delegate release];
+    });
+
+    describe(@"initialization", ^{
+        it(@"should retain its delegate", ^{
+            assertThatInt([delegate retainCount], equalToInt(2));
+        });
+    });
+
+    describe(@"deallocation", ^{
+        it(@"should release its delegate", ^{
+            [connection release]; connection = nil;
+            assertThatInt([delegate retainCount], equalToInt(1));
+        });
+
+        it(@"should not have an unexpectedly high retainCount", ^{
+            assertThatInt([connection retainCount], equalToInt(1));
+        });
+    });
+});
 
 describe(@"PCKHTTPInterface", ^{
     __block TestInterface *interface;
