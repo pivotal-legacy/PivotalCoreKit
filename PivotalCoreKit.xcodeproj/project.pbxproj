@@ -21,12 +21,14 @@
 		AE138F4A11E548E1004E825D /* PSHKFakeHTTPURLResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF15AF911C97F95005B4F92 /* PSHKFakeHTTPURLResponse.m */; };
 		AE138F4B11E548E1004E825D /* PSHKFakeResponses.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF15B4411C984EB005B4F92 /* PSHKFakeResponses.m */; };
 		AE13904A11E5508A004E825D /* PivotalSpecHelperKit.h in Headers */ = {isa = PBXBuildFile; fileRef = AE13904911E5508A004E825D /* PivotalSpecHelperKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AE71481A11CAAD4F00672114 /* NSString+PivotalCore.h in Headers */ = {isa = PBXBuildFile; fileRef = AE71481811CAAD4F00672114 /* NSString+PivotalCore.h */; };
+		AE13930011E64E05004E825D /* NSXMLParserDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = AE1392FF11E64E05004E825D /* NSXMLParserDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE13930111E64E05004E825D /* NSXMLParserDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = AE1392FF11E64E05004E825D /* NSXMLParserDelegate.h */; };
+		AE71481A11CAAD4F00672114 /* NSString+PivotalCore.h in Headers */ = {isa = PBXBuildFile; fileRef = AE71481811CAAD4F00672114 /* NSString+PivotalCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE71481B11CAAD4F00672114 /* NSString+PivotalCore.m in Sources */ = {isa = PBXBuildFile; fileRef = AE71481911CAAD4F00672114 /* NSString+PivotalCore.m */; };
 		AE71483211CAB2B500672114 /* NSStringSpec+PivotalCore.m in Sources */ = {isa = PBXBuildFile; fileRef = AE71481D11CAAE1600672114 /* NSStringSpec+PivotalCore.m */; };
 		AE71490511CBFE1800672114 /* NSDataSpec+PivotalCore.m in Sources */ = {isa = PBXBuildFile; fileRef = AE71490411CBFE1800672114 /* NSDataSpec+PivotalCore.m */; };
 		AE71490611CBFE2200672114 /* NSData+PivotalCore.m in Sources */ = {isa = PBXBuildFile; fileRef = AE71490211CBFDD900672114 /* NSData+PivotalCore.m */; };
-		AE71493011CC108700672114 /* NSData+PivotalCore.h in Headers */ = {isa = PBXBuildFile; fileRef = AE71490111CBFDD900672114 /* NSData+PivotalCore.h */; };
+		AE71493011CC108700672114 /* NSData+PivotalCore.h in Headers */ = {isa = PBXBuildFile; fileRef = AE71490111CBFDD900672114 /* NSData+PivotalCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE88AF7C11DE6BE000B65DD3 /* PCKXMLParser.h in Headers */ = {isa = PBXBuildFile; fileRef = AE88AF7A11DE6BE000B65DD3 /* PCKXMLParser.h */; };
 		AE88AF7D11DE6BE000B65DD3 /* PCKXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = AE88AF7B11DE6BE000B65DD3 /* PCKXMLParser.m */; };
 		AE88B00D11DE6D3600B65DD3 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AE88B00711DE6D1200B65DD3 /* libxml2.dylib */; };
@@ -40,7 +42,7 @@
 		AEF15AF211C97F51005B4F92 /* NSURLConnection+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF15A1F11C97864005B4F92 /* NSURLConnection+Spec.m */; };
 		AEF15AFA11C97F95005B4F92 /* PSHKFakeHTTPURLResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = AEF15AF811C97F95005B4F92 /* PSHKFakeHTTPURLResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AEF15AFB11C97F95005B4F92 /* PSHKFakeHTTPURLResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF15AF911C97F95005B4F92 /* PSHKFakeHTTPURLResponse.m */; };
-		AEF15AFF11C97FF9005B4F92 /* NSURLConnectionDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = AEF15AFE11C97FF9005B4F92 /* NSURLConnectionDelegate.h */; };
+		AEF15AFF11C97FF9005B4F92 /* NSURLConnectionDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = AEF15AFE11C97FF9005B4F92 /* NSURLConnectionDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AEF15B0911C98072005B4F92 /* PivotalSpecHelperKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEF15AE011C97F15005B4F92 /* PivotalSpecHelperKit.framework */; };
 		AEF15B4511C984EB005B4F92 /* PSHKFakeResponses.h in Headers */ = {isa = PBXBuildFile; fileRef = AEF15B4311C984EB005B4F92 /* PSHKFakeResponses.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AEF15B4611C984EB005B4F92 /* PSHKFakeResponses.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF15B4411C984EB005B4F92 /* PSHKFakeResponses.m */; };
@@ -179,6 +181,7 @@
 		AE138E7011E542BF004E825D /* libPivotalCoreKit-StaticLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPivotalCoreKit-StaticLib.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE138F4611E548B5004E825D /* libPivotalSpecHelperKit-StaticLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPivotalSpecHelperKit-StaticLib.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE13904911E5508A004E825D /* PivotalSpecHelperKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PivotalSpecHelperKit.h; sourceTree = "<group>"; };
+		AE1392FF11E64E05004E825D /* NSXMLParserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSXMLParserDelegate.h; sourceTree = "<group>"; };
 		AE3BA38011C9381400F34485 /* BUILD-TARGETS.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "BUILD-TARGETS.markdown"; sourceTree = "<group>"; };
 		AE71473311CA9A2900672114 /* 400.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 400.txt; sourceTree = "<group>"; };
 		AE71481811CAAD4F00672114 /* NSString+PivotalCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+PivotalCore.h"; sourceTree = "<group>"; };
@@ -341,6 +344,7 @@
 				AE71481911CAAD4F00672114 /* NSString+PivotalCore.m */,
 				AE71490111CBFDD900672114 /* NSData+PivotalCore.h */,
 				AE71490211CBFDD900672114 /* NSData+PivotalCore.m */,
+				AE1392FF11E64E05004E825D /* NSXMLParserDelegate.h */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -457,6 +461,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE13930111E64E05004E825D /* NSXMLParserDelegate.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -476,6 +481,7 @@
 				AE71481A11CAAD4F00672114 /* NSString+PivotalCore.h in Headers */,
 				AE71493011CC108700672114 /* NSData+PivotalCore.h in Headers */,
 				AE88AF7C11DE6BE000B65DD3 /* PCKXMLParser.h in Headers */,
+				AE13930011E64E05004E825D /* NSXMLParserDelegate.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
