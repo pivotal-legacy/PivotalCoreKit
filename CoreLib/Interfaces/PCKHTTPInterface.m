@@ -29,8 +29,8 @@
     return [delegate_ respondsToSelector:selector];
 }
 
-- (void)forwardInvocation:(NSInvocation *)invocation {
-    [invocation invokeWithTarget:delegate_];
+- (id)forwardingTargetForSelector:(SEL)selector {
+    return delegate_;
 }
 
 #pragma mark NSURLConnectionDelegate
