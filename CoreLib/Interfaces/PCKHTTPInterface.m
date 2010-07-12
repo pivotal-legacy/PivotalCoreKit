@@ -20,9 +20,17 @@
     [super dealloc];
 }
 
-- (void)cancel{
+- (void)cancel {
     [interface_ clearConnection:self];
     [super cancel];
+}
+
+- (BOOL)respondsToSelector:(SEL)selector {
+    return [delegate_ respondsToSelector:selector];
+}
+
+- (void)forwardInvocation:(NSInvocation *)invocation {
+    [invocation invokeWithTarget:delegate_];
 }
 
 #pragma mark NSURLConnectionDelegate
@@ -35,24 +43,6 @@
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
     [delegate_ connection:connection didFailWithError:error];
     [interface_ clearConnection:connection];
-}
-
-- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
-    if ([delegate_ respondsToSelector:@selector(connection:didReceiveResponse:)]) {
-        [delegate_ connection:connection didReceiveResponse:response];
-    }
-}
-
-- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
-    if ([delegate_ respondsToSelector:@selector(connection:didReceiveData:)]) {
-        [delegate_ connection:connection didReceiveData:data];
-    }
-}
-
-- (void)connection:(NSURLConnection *)connection didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge {
-    if ([delegate_ respondsToSelector:@selector(connection:didReceiveAuthenticationChallenge:)]) {
-        [delegate_ connection:connection didReceiveAuthenticationChallenge:challenge];
-    }
 }
 
 - (void)connection:(NSURLConnection *)connection didCancelAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge {

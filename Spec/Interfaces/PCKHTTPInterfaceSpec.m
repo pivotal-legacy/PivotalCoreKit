@@ -19,6 +19,7 @@
 @implementation TestDelegate
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {}
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {}
+- (NSInputStream *)connection:(NSURLConnection *)connection needNewBodyStream:(NSURLRequest *)request { return nil; }
 @end
 
 @interface TestInterface : PCKHTTPInterface
@@ -81,6 +82,34 @@ describe(@"PCKHTTPConnection", ^{
 
         it(@"should not have an unexpectedly high retainCount", ^{
             assertThatInt([connection retainCount], equalToInt(1));
+        });
+    });
+
+    describe(@"respondsToSelector:", ^{
+        it(@"should return true for selectors the delegate responds to", ^{
+            SEL selector = @selector(connection:needNewBodyStream:);
+
+            assertThatBool([delegate respondsToSelector:selector], equalToBool(true));
+            assertThatBool([connection respondsToSelector:selector], equalToBool(true));
+        });
+
+        it(@"should return false for selectors the delegate does not respond to", ^{
+            SEL selector = @selector(connection:canAuthenticateAgainstProtectionSpace:);
+
+            assertThatBool([delegate respondsToSelector:selector], equalToBool(false));
+            assertThatBool([connection respondsToSelector:selector], equalToBool(false));
+        });
+    });
+
+    describe(@"forwardInvocation:", ^{
+        it(@"should forward any selector the delegate responds to to the delegate", ^{
+            SEL selector = @selector(connection:needNewBodyStream:);
+
+            assertThatBool([delegate respondsToSelector:selector], equalToBool(true));
+            id mockDelegate = [OCMockObject partialMockForObject:delegate];
+            [[mockDelegate expect] connection:connection needNewBodyStream:nil];
+            [connection connection:connection needNewBodyStream:nil];
+            [mockDelegate verify];
         });
     });
 });
