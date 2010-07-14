@@ -79,7 +79,14 @@
 }
 
 - (NSURLConnection *)connectionForPath:(NSString *)path andDelegate:(id<NSURLConnectionDelegate>)delegate secure:(BOOL)secure {
+    return [self connectionForPath:path withHeaders:nil andDelegate:delegate secure:secure];
+}
+
+- (NSURLConnection *)connectionForPath:(NSString *)path withHeaders:(NSDictionary *)headers andDelegate:(id<NSURLConnectionDelegate>)delegate secure:(BOOL)secure {
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[self urlForPath:path secure:secure]];
+    if (headers) {
+        [request setAllHTTPHeaderFields:headers];
+    }
     NSURLConnection *connection = [[PCKHTTPConnection alloc] initWithHTTPInterface:self forRequest:request andDelegate:delegate];
     [activeConnections_ addObject:connection];
 

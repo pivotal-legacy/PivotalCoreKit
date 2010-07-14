@@ -43,6 +43,10 @@
     return [self connectionForPath:@PATH andDelegate:delegate secure:true];
 }
 
+- (NSURLConnection *)makeConnectionWithHeaders:(NSDictionary *)headers andDelegate:(id<NSURLConnectionDelegate>)delegate {
+    return [self connectionForPath:@PATH withHeaders:headers andDelegate:delegate secure:true];
+}
+
 @end
 
 SPEC_BEGIN(PCKHTTPInterfaceSpec)
@@ -289,6 +293,15 @@ describe(@"PCKHTTPInterface", ^{
 
         it(@"should use SSL", ^{
             assertThat([[request URL] scheme], equalTo(@"https"));
+        });
+    });
+
+    describe(@"makeConnectionWithHeaders:andDelegate:", ^{
+        it(@"should include the specified headers in the request", ^{
+            NSDictionary *headers = [NSDictionary dictionaryWithObjectsAndKeys:@"wibble", @"header1", nil];
+            NSURLConnection *connection = [interface makeConnectionWithHeaders:headers andDelegate:mockDelegate];
+            assertThat([[connection request] valueForHTTPHeaderField:@"header1"], equalTo(@"wibble"));
+
         });
     });
 });
