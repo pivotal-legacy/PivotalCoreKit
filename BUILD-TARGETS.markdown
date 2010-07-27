@@ -23,10 +23,12 @@
 
         # Move files to appropriate locations in framework paths.
         	cp "${UNIVERSAL_LIBRARY_PATH}" "${FRAMEWORK}/Versions/A" &&
-        	ln -s "${FRAMEWORK}/Versions/A" "${FRAMEWORK}/Versions/Current" &&
-        	ln -s "${FRAMEWORK}/Versions/Current/Headers" "${FRAMEWORK}/Headers" &&
-        	ln -s "${FRAMEWORK}/Versions/Current/Resources" "${FRAMEWORK}/Resources" &&
-        	ln -s "${FRAMEWORK}/Versions/Current/${PRODUCT_NAME}" "${FRAMEWORK}/${PRODUCT_NAME}"
+        	cd "${FRAMEWORK}/Versions" &&
+        	ln -s "A" "Current" &&
+        	cd "${FRAMEWORK}" &&
+        	ln -s "Versions/Current/Headers" "Headers" &&
+        	ln -s "Versions/Current/Resources" "Resources" &&
+        	ln -s "Versions/Current/${PRODUCT_NAME}" "${PRODUCT_NAME}"
 - Create a Copy Files build phase named "Copy headers to framework" that will put the necessary file headers into the framework directory structure.  Set the Destination to Absolute Path, and set the Full Path to:
         ${BUILD_DIR}/${CONFIGURATION}-iphoneuniversal/${PRODUCT_NAME}.framework/Headers
 - Add all public headers to the "Copy headers to framework" build phase.
