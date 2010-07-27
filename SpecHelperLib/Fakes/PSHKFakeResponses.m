@@ -4,6 +4,7 @@
 @interface PSHKFakeResponses (private)
 - (NSString *)responseBodyForStatusCode:(int)statusCode;
 - (PSHKFakeHTTPURLResponse *)responseForStatusCode:(int)statusCode;
+- (NSString *)fakeResponsesDirectory;
 @end
 
 @implementation PSHKFakeResponses
@@ -34,9 +35,10 @@
 
 #pragma mark private interface
 
-static const NSString *FAKE_RESPONSES_DIRECTORY = @"../../Spec/Fixtures/FakeResponses";
+
 - (NSString *)responseBodyForStatusCode:(int)statusCode {
-    NSString *filePath = [NSString pathWithComponents:[NSArray arrayWithObjects:FAKE_RESPONSES_DIRECTORY, request_, [NSString stringWithFormat:@"%d.txt", statusCode], nil]];
+    NSString *fakeResponsesDirectory = [self fakeResponsesDirectory];
+    NSString *filePath = [NSString pathWithComponents:[NSArray arrayWithObjects:fakeResponsesDirectory, request_, [NSString stringWithFormat:@"%d.txt", statusCode], nil]];
 
     if ([[NSFileManager defaultManager] fileExistsAtPath:filePath]) {
         return [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:NULL];
@@ -49,6 +51,19 @@ static const NSString *FAKE_RESPONSES_DIRECTORY = @"../../Spec/Fixtures/FakeResp
                                                      andHeaders:[NSDictionary dictionary]
                                                         andBody:[self responseBodyForStatusCode:statusCode]]
             autorelease];
+}
+
+static NSString *UNBUNDLED_FAKE_RESPONSES_DIRECTORY = @"../../Spec/Fixtures/FakeResponses";
+
+- (NSString *)fakeResponsesDirectory {
+
+    if ([[NSFileManager defaultManager] fileExistsAtPath:UNBUNDLED_FAKE_RESPONSES_DIRECTORY]) {
+        return UNBUNDLED_FAKE_RESPONSES_DIRECTORY;
+    } else {
+        NSBundle *mainBundle = [NSBundle mainBundle];
+        NSString *bundlePath = [mainBundle bundlePath];
+        return [bundlePath stringByAppendingString:@"/Fixtures/FakeResponses"];
+    }
 }
 
 @end
