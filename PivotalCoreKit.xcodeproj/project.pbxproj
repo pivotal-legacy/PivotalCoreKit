@@ -182,6 +182,7 @@
 		AE138F4611E548B5004E825D /* libPivotalSpecHelperKit-StaticLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPivotalSpecHelperKit-StaticLib.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE13904911E5508A004E825D /* PivotalSpecHelperKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PivotalSpecHelperKit.h; sourceTree = "<group>"; };
 		AE1392FF11E64E05004E825D /* NSXMLParserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSXMLParserDelegate.h; sourceTree = "<group>"; };
+		AE2BDAA21202257A001DD8D3 /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.markdown; sourceTree = "<group>"; };
 		AE3BA38011C9381400F34485 /* BUILD-TARGETS.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "BUILD-TARGETS.markdown"; sourceTree = "<group>"; };
 		AE71473311CA9A2900672114 /* 400.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 400.txt; sourceTree = "<group>"; };
 		AE71481811CAAD4F00672114 /* NSString+PivotalCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+PivotalCore.h"; sourceTree = "<group>"; };
@@ -283,6 +284,7 @@
 				AEF15AC711C97E8B005B4F92 /* PivotalCoreKit-Info.plist */,
 				AEF15AE111C97F15005B4F92 /* PivotalSpecHelperKit-Info.plist */,
 				AE138AEA11E40674004E825D /* Rakefile */,
+				AE2BDAA21202257A001DD8D3 /* README.markdown */,
 			);
 			name = PivotalCoreKit;
 			sourceTree = "<group>";
