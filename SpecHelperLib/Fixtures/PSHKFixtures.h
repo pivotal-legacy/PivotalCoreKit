@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 
-@interface Fixtures : NSObject
+@interface PSHKFixtures : NSObject
 
 + (NSString *)directory;
 + (void)setDirectory:(NSString *)directory;

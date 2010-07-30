@@ -1,8 +1,8 @@
-#import "Fixtures.h"
+#import "PSHKFixtures.h"
 
 static NSString *directory__ = nil;
 
-@implementation Fixtures
+@implementation PSHKFixtures
 
 + (NSString *)directory {
     if (!directory__) {

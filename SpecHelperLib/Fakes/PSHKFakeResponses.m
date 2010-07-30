@@ -1,6 +1,6 @@
 #import "PSHKFakeResponses.h"
 #import "PSHKFakeHTTPURLResponse.h"
-#import "Fixtures.h"
+#import "PSHKFixtures.h"
 
 @interface PSHKFakeResponses (Private)
 - (NSString *)responseBodyForStatusCode:(int)statusCode;
@@ -60,7 +60,7 @@
 }
 
 - (NSString *)fakeResponsesDirectory {
-    NSString *fakeResponsesDirectory = [[Fixtures directory] stringByAppendingPathComponent:@"FakeResponses"];
+    NSString *fakeResponsesDirectory = [[PSHKFixtures directory] stringByAppendingPathComponent:@"FakeResponses"];
     if ([[NSFileManager defaultManager] fileExistsAtPath:fakeResponsesDirectory]) {
         return fakeResponsesDirectory;
     } else {
