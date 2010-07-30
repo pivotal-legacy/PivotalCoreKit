@@ -64,9 +64,7 @@
     if ([[NSFileManager defaultManager] fileExistsAtPath:fakeResponsesDirectory]) {
         return fakeResponsesDirectory;
     } else {
-        NSBundle *mainBundle = [NSBundle mainBundle];
-        NSString *bundlePath = [mainBundle bundlePath];
-        return [bundlePath stringByAppendingString:fakeResponsesDirectory];
+        return [[[NSBundle mainBundle] bundlePath] stringByAppendingPathComponent:fakeResponsesDirectory];
     }
 }
 
