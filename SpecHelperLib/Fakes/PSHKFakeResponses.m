@@ -1,7 +1,8 @@
 #import "PSHKFakeResponses.h"
 #import "PSHKFakeHTTPURLResponse.h"
+#import "Fixtures.h"
 
-@interface PSHKFakeResponses (private)
+@interface PSHKFakeResponses (Private)
 - (NSString *)responseBodyForStatusCode:(int)statusCode;
 - (PSHKFakeHTTPURLResponse *)responseForStatusCode:(int)statusCode;
 - (NSString *)fakeResponsesDirectory;
@@ -33,8 +34,7 @@
     return [self responseForStatusCode:400];
 }
 
-#pragma mark private interface
-
+#pragma mark Private interface
 
 - (NSString *)responseBodyForStatusCode:(int)statusCode {
     NSString *fakeResponsesDirectory = [self fakeResponsesDirectory];
@@ -53,16 +53,14 @@
             autorelease];
 }
 
-static NSString *UNBUNDLED_FAKE_RESPONSES_DIRECTORY = @"../../Spec/Fixtures/FakeResponses";
-
 - (NSString *)fakeResponsesDirectory {
-
-    if ([[NSFileManager defaultManager] fileExistsAtPath:UNBUNDLED_FAKE_RESPONSES_DIRECTORY]) {
-        return UNBUNDLED_FAKE_RESPONSES_DIRECTORY;
+    NSString *fakeResponsesDirectory = [[Fixtures directory] stringByAppendingPathComponent:@"FakeResponses"];
+    if ([[NSFileManager defaultManager] fileExistsAtPath:fakeResponsesDirectory]) {
+        return fakeResponsesDirectory;
     } else {
         NSBundle *mainBundle = [NSBundle mainBundle];
         NSString *bundlePath = [mainBundle bundlePath];
-        return [bundlePath stringByAppendingString:@"/Fixtures/FakeResponses"];
+        return [bundlePath stringByAppendingString:fakeResponsesDirectory];
     }
 }
 
