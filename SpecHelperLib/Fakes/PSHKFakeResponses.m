@@ -43,7 +43,13 @@
     if ([[NSFileManager defaultManager] fileExistsAtPath:filePath]) {
         return [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:NULL];
     }
-    @throw [NSException exceptionWithName:@"FileNotFound" reason:[NSString stringWithFormat:@"No %d response found for request '%@'", statusCode, request_] userInfo:nil];
+
+    NSString *message = [NSString stringWithFormat:@"No %d response found for request '%@'\nCurrent working directory:'%@'\nFake responses directory: '%@'",
+                         statusCode,
+                         request_,
+                         [[NSFileManager defaultManager] currentDirectoryPath],
+                         fakeResponsesDirectory];
+    @throw [NSException exceptionWithName:@"FileNotFound" reason:message userInfo:nil];
 }
 
 - (PSHKFakeHTTPURLResponse *)responseForStatusCode:(int)statusCode {
