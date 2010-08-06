@@ -1,4 +1,5 @@
 #import <Foundation/Foundation.h>
+#import "PCKParser.h"
 
 // This parser uses libxml, so the implementation must be able to find and
 // access the libxml headers and libraries.  You should add  /usr/include/libxml2
@@ -8,7 +9,7 @@
 
 typedef void (^PCKParserBlock)(const char *);
 
-@interface PCKXMLParser : NSObject
+@interface PCKXMLParser : NSObject<PCKParser>
 
 @property (nonatomic, copy) PCKParserBlock didStartElement, didEndElement, didFindCharacters;
 
