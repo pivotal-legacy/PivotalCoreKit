@@ -368,13 +368,29 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		AEBD930A120C7D5E003C1C5B /* Parsers */ = {
+			isa = PBXGroup;
+			children = (
+				AE88AF7A11DE6BE000B65DD3 /* PCKXMLParser.h */,
+				AE88AF7B11DE6BE000B65DD3 /* PCKXMLParser.m */,
+			);
+			path = Parsers;
+			sourceTree = "<group>";
+		};
+		AEBD9314120C7DAA003C1C5B /* Parsers */ = {
+			isa = PBXGroup;
+			children = (
+				AE91CACB11DE69EE002BA6B9 /* PCKXMLParserSpec.m */,
+			);
+			path = Parsers;
+			sourceTree = "<group>";
+		};
 		AECC4BA411C6DFF40027AB1B /* CoreLib */ = {
 			isa = PBXGroup;
 			children = (
+				AEBD930A120C7D5E003C1C5B /* Parsers */,
 				AE7147F711CAAB7600672114 /* Extensions */,
 				AECC4BF311C6E3660027AB1B /* Interfaces */,
-				AE88AF7A11DE6BE000B65DD3 /* PCKXMLParser.h */,
-				AE88AF7B11DE6BE000B65DD3 /* PCKXMLParser.m */,
 			);
 			path = CoreLib;
 			sourceTree = "<group>";
@@ -382,11 +398,11 @@
 		AECC4BA711C6E0010027AB1B /* Spec */ = {
 			isa = PBXGroup;
 			children = (
+				AEBD9314120C7DAA003C1C5B /* Parsers */,
 				AE71481C11CAADDE00672114 /* Extensions */,
 				AEF15C0811C99A58005B4F92 /* Fixtures */,
 				AECC4BA811C6E0480027AB1B /* Interfaces */,
 				AECC4BAD11C6E1640027AB1B /* main.m */,
-				AE91CACB11DE69EE002BA6B9 /* PCKXMLParserSpec.m */,
 				AEE690FD1202584C00769ADC /* SpecHelper.m */,
 			);
 			path = Spec;

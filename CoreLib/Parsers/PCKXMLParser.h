@@ -5,8 +5,15 @@
 // libraries for the SDK you've targeted).
 #import <libxml/tree.h>
 
-@interface PCKXMLParser : NSObject {
+// TODO: consider passing C strings, rather than incurring the NSString allocation overhead in
+// every callback.
 
-}
+typedef void (^PCKParserBlock)(NSString *);
+
+@interface PCKXMLParser : NSObject
+
+@property (nonatomic, copy) PCKParserBlock didStartElement, didEndElement, didFindCharacters;
+
+- (void)parseChunk:(NSData *)chunk;
 
 @end
