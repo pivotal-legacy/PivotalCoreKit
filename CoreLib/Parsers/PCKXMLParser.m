@@ -1,4 +1,5 @@
 #import "PCKXMLParser.h"
+#import <libxml/tree.h>
 
 static xmlSAXHandler simpleSAXStruct;
 
@@ -42,18 +43,14 @@ static void parserStartElement(void *context, const xmlChar *localname, const xm
 
     PCKXMLParser *parser = ((PCKXMLParser *)context);
     if (parser.didStartElement) {
-        NSString *elementName = [[NSString alloc] initWithCString:(const char *)localname encoding:NSUTF8StringEncoding];
-        parser.didStartElement(elementName);
-        [elementName release];
+        parser.didStartElement((const char *)localname);
     }
 }
 
 static void	parserEndElement(void *context, const xmlChar *localname, const xmlChar *prefix, const xmlChar *URI) {
     PCKXMLParser *parser = ((PCKXMLParser *)context);
     if (parser.didEndElement) {
-        NSString *elementName = [[NSString alloc] initWithCString:(const char *)localname encoding:NSUTF8StringEncoding];
-        parser.didEndElement(elementName);
-        [elementName release];
+        parser.didEndElement((const char *)localname);
     }
 }
 
@@ -64,9 +61,7 @@ static void	parserCharactersFound(void *context, const xmlChar *characters, int 
         strncpy(buffer, (const char *)characters, length);
         buffer[length] = '\0';
 
-        NSString *characters = [[NSString alloc] initWithCString:buffer encoding:NSUTF8StringEncoding];
-        parser.didFindCharacters(characters);
-        [characters release];
+        parser.didFindCharacters(buffer);
     }
 }
 

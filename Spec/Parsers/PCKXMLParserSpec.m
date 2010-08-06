@@ -41,8 +41,8 @@ describe(@"PCKXMLParser", ^{
             __block size_t batCount;
 
             beforeEach(^{
-                parser.didStartElement = ^(NSString *elementName) {
-                    if ([@"bat" isEqualToString:elementName]) {
+                parser.didStartElement = ^(const char *elementName) {
+                    if (0 == strncmp(elementName, "bat", strlen(elementName))) {
                         ++batCount;
                     }
                     ++elementCount;
@@ -63,8 +63,8 @@ describe(@"PCKXMLParser", ^{
             __block size_t batCount;
 
             beforeEach(^{
-                parser.didEndElement = ^(NSString *elementName) {
-                    if ([@"bat" isEqualToString:elementName]) {
+                parser.didEndElement = ^(const char *elementName) {
+                    if (0 == strncmp(elementName, "bat", strlen(elementName))) {
                         ++batCount;
                     }
                     ++elementCount;
@@ -87,21 +87,23 @@ describe(@"PCKXMLParser", ^{
                 wibbleContent = [[NSMutableString alloc] init];
                 __block BOOL inWibbleElement = NO;
 
-                parser.didStartElement = ^(NSString *elementName) {
-                    if ([@"wibble" isEqualToString:elementName]) {
+                parser.didStartElement = ^(const char *elementName) {
+                    if (0 == strncmp(elementName, "wibble", strlen(elementName))) {
                         inWibbleElement = YES;
                     }
                 };
 
-                parser.didEndElement = ^(NSString *elementName) {
-                    if ([@"wibble" isEqualToString:elementName]) {
+                parser.didEndElement = ^(const char *elementName) {
+                    if (0 == strncmp(elementName, "wibble", strlen(elementName))) {
                         inWibbleElement = NO;
                     }
                 };
 
-                parser.didFindCharacters = ^(NSString *chars) {
+                parser.didFindCharacters = ^(const char *chars) {
                     if (inWibbleElement) {
-                        [wibbleContent appendString:chars];
+                        NSString *charsObject = [[NSString alloc] initWithCString:chars encoding:NSUTF8StringEncoding];
+                        [wibbleContent appendString:charsObject];
+                        [charsObject release];
                     }
                 };
 
