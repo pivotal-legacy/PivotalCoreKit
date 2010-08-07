@@ -34,6 +34,27 @@ didFindCharacters = didFindCharacters_;
     xmlParseChunk(self.parserContext, [chunk bytes], [chunk length], 0);
 }
 
+- (void)didStartElement:(const char *)elementName {
+    if (self.didStartElement) {
+        self.didStartElement(elementName);
+    }
+}
+
+- (void)didEndElement:(const char *)elementName {
+    if (self.didEndElement) {
+        self.didEndElement(elementName);
+    }
+}
+
+- (void)didFindCharacters:(const char *)characters length:(size_t)length {
+    if (self.didFindCharacters) {
+        char buffer[length + 1];
+        strncpy(buffer, (const char *)characters, length);
+        buffer[length] = '\0';
+        self.didFindCharacters(buffer);
+    }
+}
+
 @end
 
 #pragma mark SAX Parsing Callbacks
@@ -41,28 +62,15 @@ didFindCharacters = didFindCharacters_;
 static void parserStartElement(void *context, const xmlChar *localname, const xmlChar *prefix, const xmlChar *URI,
                                int nb_namespaces, const xmlChar **namespaces, int nb_attributes, int nb_defaulted, const xmlChar **attributes) {
 
-    PCKXMLParser *parser = ((PCKXMLParser *)context);
-    if (parser.didStartElement) {
-        parser.didStartElement((const char *)localname);
-    }
+    [(PCKXMLParser *)context didStartElement:(const char *)localname];
 }
 
 static void	parserEndElement(void *context, const xmlChar *localname, const xmlChar *prefix, const xmlChar *URI) {
-    PCKXMLParser *parser = ((PCKXMLParser *)context);
-    if (parser.didEndElement) {
-        parser.didEndElement((const char *)localname);
-    }
+    [(PCKXMLParser *)context didEndElement:(const char *)localname];
 }
 
 static void	parserCharactersFound(void *context, const xmlChar *characters, int length) {
-    PCKXMLParser *parser = ((PCKXMLParser *)context);
-    if (parser.didFindCharacters) {
-        char buffer[length + 1];
-        strncpy(buffer, (const char *)characters, length);
-        buffer[length] = '\0';
-
-        parser.didFindCharacters(buffer);
-    }
+    [(PCKXMLParser *)context didFindCharacters:(const char *)characters length:length];
 }
 
 static void parserErrorEncountered(void *context, const char *message, ...) {

@@ -23,6 +23,7 @@
 		AE13904A11E5508A004E825D /* PivotalSpecHelperKit.h in Headers */ = {isa = PBXBuildFile; fileRef = AE13904911E5508A004E825D /* PivotalSpecHelperKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE13930011E64E05004E825D /* NSXMLParserDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = AE1392FF11E64E05004E825D /* NSXMLParserDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE13930111E64E05004E825D /* NSXMLParserDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = AE1392FF11E64E05004E825D /* NSXMLParserDelegate.h */; };
+		AE64203F120CE1C90078E44F /* PCKParserDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = AE64203E120CE1C90078E44F /* PCKParserDelegate.h */; };
 		AE71481A11CAAD4F00672114 /* NSString+PivotalCore.h in Headers */ = {isa = PBXBuildFile; fileRef = AE71481811CAAD4F00672114 /* NSString+PivotalCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE71481B11CAAD4F00672114 /* NSString+PivotalCore.m in Sources */ = {isa = PBXBuildFile; fileRef = AE71481911CAAD4F00672114 /* NSString+PivotalCore.m */; };
 		AE71483211CAB2B500672114 /* NSStringSpec+PivotalCore.m in Sources */ = {isa = PBXBuildFile; fileRef = AE71481D11CAAE1600672114 /* NSStringSpec+PivotalCore.m */; };
@@ -195,6 +196,7 @@
 		AE1392FF11E64E05004E825D /* NSXMLParserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSXMLParserDelegate.h; sourceTree = "<group>"; };
 		AE2BDAA21202257A001DD8D3 /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.markdown; sourceTree = "<group>"; };
 		AE3BA38011C9381400F34485 /* BUILD-TARGETS.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "BUILD-TARGETS.markdown"; sourceTree = "<group>"; };
+		AE64203E120CE1C90078E44F /* PCKParserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCKParserDelegate.h; sourceTree = "<group>"; };
 		AE71473311CA9A2900672114 /* 400.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 400.txt; sourceTree = "<group>"; };
 		AE71481811CAAD4F00672114 /* NSString+PivotalCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+PivotalCore.h"; sourceTree = "<group>"; };
 		AE71481911CAAD4F00672114 /* NSString+PivotalCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+PivotalCore.m"; sourceTree = "<group>"; };
@@ -386,6 +388,7 @@
 				AEBD9594120CB852003C1C5B /* PCKResponseParser.h */,
 				AEBD9595120CB852003C1C5B /* PCKResponseParser.m */,
 				AEBD95A9120CBAF6003C1C5B /* PCKParser.h */,
+				AE64203E120CE1C90078E44F /* PCKParserDelegate.h */,
 			);
 			path = Parsers;
 			sourceTree = "<group>";
@@ -537,6 +540,7 @@
 				AE13930011E64E05004E825D /* NSXMLParserDelegate.h in Headers */,
 				AEBD9599120CB852003C1C5B /* PCKResponseParser.h in Headers */,
 				AEBD95AA120CBB1B003C1C5B /* PCKParser.h in Headers */,
+				AE64203F120CE1C90078E44F /* PCKParserDelegate.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
