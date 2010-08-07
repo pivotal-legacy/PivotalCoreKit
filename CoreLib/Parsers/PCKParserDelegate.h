@@ -4,6 +4,6 @@
 
 - (void)didStartElement:(const char *)elementName;
 - (void)didEndElement:(const char *)elementName;
-- (void)didFindCharacters:(const char *)characters length:(size_t)length;
+- (void)didFindCharacters:(const char *)characters;
 
 @end
