@@ -36,15 +36,17 @@
 }
 
 - (NSURLConnection *)makeConnectionWithDelegate:(id<NSURLConnectionDelegate>)delegate {
-    return [self connectionForPath:@PATH andDelegate:delegate secure:false];
+    return [self connectionForPath:@PATH secure:false andDelegate:delegate];
 }
 
 - (NSURLConnection *)makeSecureConnectionWithDelegate:(id<NSURLConnectionDelegate>)delegate {
-    return [self connectionForPath:@PATH andDelegate:delegate secure:true];
+    return [self connectionForPath:@PATH secure:true andDelegate:delegate];
 }
 
 - (NSURLConnection *)makeConnectionWithHeaders:(NSDictionary *)headers andDelegate:(id<NSURLConnectionDelegate>)delegate {
-    return [self connectionForPath:@PATH withHeaders:headers andDelegate:delegate secure:true];
+    return [self connectionForPath:@PATH secure:true andDelegate:delegate withRequestSetup:^(NSMutableURLRequest *request) {
+        [request setAllHTTPHeaderFields:headers];
+    }];
 }
 
 @end
@@ -301,7 +303,16 @@ describe(@"PCKHTTPInterface", ^{
             NSDictionary *headers = [NSDictionary dictionaryWithObjectsAndKeys:@"wibble", @"header1", nil];
             NSURLConnection *connection = [interface makeConnectionWithHeaders:headers andDelegate:mockDelegate];
             assertThat([[connection request] valueForHTTPHeaderField:@"header1"], equalTo(@"wibble"));
+        });
+    });
 
+    describe(@"connectionForPath:secure:andDelegate:withRequestSetup:", ^{
+        it(@"should set up the request as specified by the block", ^{
+            NSURLConnection *connection = [interface connectionForPath:@PATH secure:false andDelegate:mockDelegate withRequestSetup:^(NSMutableURLRequest *request) {
+                request.HTTPMethod = @"POST";
+            }];
+
+            assertThat(connection.request.HTTPMethod, equalTo(@"POST"));
         });
     });
 });

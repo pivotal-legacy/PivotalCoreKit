@@ -12,6 +12,8 @@
 @end
 
 
+typedef void (^RequestSetupBlock)(NSMutableURLRequest *);
+
 @interface PCKHTTPInterface : NSObject {
     NSURL *baseURLAndPath_, *baseSecureURLAndPath_;
     NSMutableArray *activeConnections_;
@@ -20,8 +22,8 @@
 @property (nonatomic, readonly) NSArray *activeConnections;
 
 #pragma mark protected
-- (NSURLConnection *)connectionForPath:(NSString *)path andDelegate:(id<NSURLConnectionDelegate>)delegate secure:(BOOL)secure;
-- (NSURLConnection *)connectionForPath:(NSString *)path withHeaders:(NSDictionary *)headers andDelegate:(id<NSURLConnectionDelegate>)delegate secure:(BOOL)secure;
+- (NSURLConnection *)connectionForPath:(NSString *)path secure:(BOOL)secure andDelegate:(id<NSURLConnectionDelegate>)delegate;
+- (NSURLConnection *)connectionForPath:(NSString *)path secure:(BOOL)secure andDelegate:(id<NSURLConnectionDelegate>)delegate withRequestSetup:(RequestSetupBlock)requestSetup;
 
 @end
 
