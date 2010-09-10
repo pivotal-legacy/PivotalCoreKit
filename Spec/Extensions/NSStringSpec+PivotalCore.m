@@ -84,29 +84,59 @@ describe(@"Pivotal Core extensions to NSString", ^{
         });
     });
 
-    static const NSString *INVALID_URL_CHARACTERS[] = {
+    static const NSString *ALL_INVALID_URL_CHARACTERS[] = {
         @" ", @"\"", @"#", @"$", @"%", @"&", @"+", @",",
         @"/", @":", @";", @"<", @"=", @">", @"?", @"@",
         @"[", @"\\", @"]", @"^", @"`", @"{", @"|", @"}", @"~"
     };
 
-    static const NSString *ESCAPED_URL_CHARACTERS[] = {
+    static const NSString *ALL_ESCAPED_URL_CHARACTERS[] = {
         @"%20", @"%22", @"%23", @"%24", @"%25", @"%26", @"%2B", @"%2C",
         @"%2F", @"%3A", @"%3B", @"%3C", @"%3D", @"%3E", @"%3F", @"%40",
         @"%5B", @"%5C", @"%5D", @"%5E", @"%60", @"%7B", @"%7C", @"%7D", @"%7E"
     };
 
-    describe(@"stringByAddingPercentEscapesUsingEncoding:", ^{
-        it(@"should properly escape all invalid URL characters", ^{
-            size_t invalidCount = sizeof(INVALID_URL_CHARACTERS) / sizeof(NSString *);
-            size_t escapedCount = sizeof(ESCAPED_URL_CHARACTERS) / sizeof(NSString *);
-            assertThatInt(invalidCount, equalToInt(escapedCount));
+    static const NSString *DEFAULT_INVALID_URL_CHARACTERS[] = {
+        @" ", @"\"", @"#", @"$", @"%", @"&", @"+", @",",
+        @"/", @":", @";", @"<", @"=", @">", @"?", @"@",
+        @"[", @"\\", @"]", @"^", @"`", @"{", @"|", @"}", @"~"
+    };
 
-            for (unsigned int i = 0; i < invalidCount; ++i) {
-                NSString *stringWithInvalidCharacter = [NSString stringWithFormat:@"foo%@bar", INVALID_URL_CHARACTERS[i]];
-                NSString *stringWithEscapedCharacter = [NSString stringWithFormat:@"foo%@bar", ESCAPED_URL_CHARACTERS[i]];
-                assertThat([stringWithInvalidCharacter stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding], equalTo(stringWithEscapedCharacter));
-            }
+    static const NSString *DEFAULT_ESCAPED_URL_CHARACTERS[] = {
+        @"%20", @"%22", @"%23", @"$", @"%25", @"&", @"+", @",",
+        @"/", @":", @";", @"%3C", @"=", @"%3E", @"?", @"@",
+        @"%5B", @"%5C", @"%5D", @"%5E", @"%60", @"%7B", @"%7C", @"%7D", @"~"
+    };
+
+    describe(@"stringByAddingPercentEscapesUsingEncoding:includeAll:", ^{
+        describe(@"with includeAll set to YES", ^{
+            size_t invalidCount = sizeof(ALL_INVALID_URL_CHARACTERS) / sizeof(NSString *);
+            size_t escapedCount = sizeof(ALL_ESCAPED_URL_CHARACTERS) / sizeof(NSString *);
+
+            it(@"should escape all invalid URL characters, including slashes and question marks", ^{
+                assertThatInt(invalidCount, equalToInt(escapedCount));
+
+                for (unsigned int i = 0; i < invalidCount; ++i) {
+                    NSString *stringWithInvalidCharacter = [NSString stringWithFormat:@"foo%@bar", ALL_INVALID_URL_CHARACTERS[i]];
+                    NSString *stringWithEscapedCharacter = [NSString stringWithFormat:@"foo%@bar", ALL_ESCAPED_URL_CHARACTERS[i]];
+                    assertThat([stringWithInvalidCharacter stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding includeAll:YES], equalTo(stringWithEscapedCharacter));
+                }
+            });
+        });
+
+        describe(@"with includeAll set to NO", ^{
+            size_t invalidCount = sizeof(DEFAULT_INVALID_URL_CHARACTERS) / sizeof(NSString *);
+            size_t escapedCount = sizeof(DEFAULT_ESCAPED_URL_CHARACTERS) / sizeof(NSString *);
+
+            it(@"should escape invalid URL characters, not including slashes and question marks (the default Apple-blessed behavior)", ^{
+                assertThatInt(invalidCount, equalToInt(escapedCount));
+
+                for (unsigned int i = 0; i < invalidCount; ++i) {
+                    NSString *stringWithInvalidCharacter = [NSString stringWithFormat:@"foo%@bar", DEFAULT_INVALID_URL_CHARACTERS[i]];
+                    NSString *stringWithEscapedCharacter = [NSString stringWithFormat:@"foo%@bar", DEFAULT_ESCAPED_URL_CHARACTERS[i]];
+                    assertThat([stringWithInvalidCharacter stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding includeAll:NO], equalTo(stringWithEscapedCharacter));
+                }
+            });
         });
     });
 });
