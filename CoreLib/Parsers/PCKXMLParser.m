@@ -34,18 +34,6 @@ didFindCharacters = didFindCharacters_;
     xmlParseChunk(self.parserContext, [chunk bytes], [chunk length], 0);
 }
 
-- (void)didStartElement:(const char *)elementName {
-    self.didStartElement(elementName);
-}
-
-- (void)didEndElement:(const char *)elementName {
-    self.didEndElement(elementName);
-}
-
-- (void)didFindCharacters:(const char *)characters {
-    self.didFindCharacters(characters);
-}
-
 @end
 
 #pragma mark SAX Parsing Callbacks
@@ -54,14 +42,14 @@ static void parserStartElement(void *context, const xmlChar *localname, const xm
                                int nb_namespaces, const xmlChar **namespaces, int nb_attributes, int nb_defaulted, const xmlChar **attributes) {
     PCKXMLParser *parser = (PCKXMLParser *)context;
     if (parser.didStartElement) {
-        [parser didStartElement:(const char *)localname];
+        parser.didStartElement((const char *)localname);
     }
 }
 
 static void	parserEndElement(void *context, const xmlChar *localname, const xmlChar *prefix, const xmlChar *URI) {
     PCKXMLParser *parser = (PCKXMLParser *)context;
     if (parser.didEndElement) {
-        [parser didEndElement:(const char *)localname];
+        parser.didEndElement((const char *)localname);
     }
 }
 
@@ -72,7 +60,7 @@ static void	parserCharactersFound(void *context, const xmlChar *characters, int 
         char buffer[length + 1];
         strncpy(buffer, (const char *)characters, length);
         buffer[length] = '\0';
-        [parser didFindCharacters:buffer];
+        parser.didFindCharacters(buffer);
     }
 }
 

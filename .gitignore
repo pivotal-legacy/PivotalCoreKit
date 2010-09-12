@@ -1,5 +1,5 @@
 build
-pivotal.mode1v3
-pivotal.pbxuser
+*.mode1v3
+*.pbxuser
 .DS_Store
 
