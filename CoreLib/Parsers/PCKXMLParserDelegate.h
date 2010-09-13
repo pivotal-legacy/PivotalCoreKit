@@ -8,7 +8,7 @@
 
 typedef void (^PCKXMLParserDelegateBlock)(const char *);
 
-@interface PCKXMLParserDelegate : NSObject
+@interface PCKXMLParserDelegate : NSObject <PCKXMLParserDelegate>
 
 @property (nonatomic, copy) PCKXMLParserDelegateBlock didStartElement, didEndElement, didFindCharacters;
 

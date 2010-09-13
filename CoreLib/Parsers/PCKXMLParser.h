@@ -11,8 +11,6 @@
 
 @interface PCKXMLParser : NSObject<PCKParser>
 
-@property (nonatomic, assign) PCKXMLParserDelegate *delegate;
-
 - (id)initWithDelegate:(PCKXMLParserDelegate *)delegate;
 
 @end
