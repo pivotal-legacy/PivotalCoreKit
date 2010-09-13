@@ -1,4 +1,5 @@
 #import "PCKXMLParser.h"
+#import "PCKXMLParserDelegate.h"
 #import <libxml/tree.h>
 
 static xmlSAXHandler simpleSAXStruct;
@@ -12,20 +13,21 @@ static xmlSAXHandler simpleSAXStruct;
 
 @implementation PCKXMLParser
 
-@synthesize didStartElement = didStartElement, didEndElement = didEndElement, parserContext = parserContext_,
-didFindCharacters = didFindCharacters_;
+@synthesize delegate = delegate_, parserContext = parserContext_;
 
 - (id)init {
+    @throw @"Use initWithDelegate to create a PCKXMLParser.";
+}
+
+- (id)initWithDelegate:(PCKXMLParserDelegate *)delegate {
     if (self = [super init]) {
-        self.parserContext = xmlCreatePushParserCtxt(&simpleSAXStruct, self, NULL, 0, NULL);
+        self.delegate = delegate;
+        self.parserContext = xmlCreatePushParserCtxt(&simpleSAXStruct, delegate, NULL, 0, NULL);
     }
     return self;
 }
 
 - (void)dealloc {
-    self.didStartElement = nil;
-    self.didEndElement = nil;
-    self.didFindCharacters = nil;
     xmlFreeParserCtxt(self.parserContext);
     [super dealloc];
 }
@@ -40,27 +42,27 @@ didFindCharacters = didFindCharacters_;
 
 static void parserStartElement(void *context, const xmlChar *localname, const xmlChar *prefix, const xmlChar *URI,
                                int nb_namespaces, const xmlChar **namespaces, int nb_attributes, int nb_defaulted, const xmlChar **attributes) {
-    PCKXMLParser *parser = (PCKXMLParser *)context;
-    if (parser.didStartElement) {
-        parser.didStartElement((const char *)localname);
+    PCKXMLParserDelegate *delegate = (PCKXMLParserDelegate *)context;
+    if (delegate.didStartElement) {
+        delegate.didStartElement((const char *)localname);
     }
 }
 
 static void	parserEndElement(void *context, const xmlChar *localname, const xmlChar *prefix, const xmlChar *URI) {
-    PCKXMLParser *parser = (PCKXMLParser *)context;
-    if (parser.didEndElement) {
-        parser.didEndElement((const char *)localname);
+    PCKXMLParserDelegate *delegate = (PCKXMLParserDelegate *)context;
+    if (delegate.didEndElement) {
+        delegate.didEndElement((const char *)localname);
     }
 }
 
 static void	parserCharactersFound(void *context, const xmlChar *characters, int length) {
-    PCKXMLParser *parser = (PCKXMLParser *)context;
+    PCKXMLParserDelegate *delegate = (PCKXMLParserDelegate *)context;
 
-    if (parser.didFindCharacters) {
+    if (delegate.didFindCharacters) {
         char buffer[length + 1];
         strncpy(buffer, (const char *)characters, length);
         buffer[length] = '\0';
-        parser.didFindCharacters(buffer);
+        delegate.didFindCharacters(buffer);
     }
 }
 

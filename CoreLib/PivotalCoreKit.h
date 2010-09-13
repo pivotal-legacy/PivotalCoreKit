@@ -7,5 +7,6 @@
 #import "PCKParser.h"
 #import "PCKResponseParser.h"
 #import "PCKXMLParser.h"
+#import "PCKXMLParserDelegate.h"
 #import "NSXMLParserDelegate.h"
 

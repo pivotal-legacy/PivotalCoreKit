@@ -7,18 +7,12 @@
 // link against the libxml2.dylib shared library (should be available in the list
 // of shared libraries for the SDK you've targeted).
 
-@protocol PCKXMLParser
-- (void)didStartElement:(const char *)elementName;
-- (void)didEndElement:(const char *)elementName;
-- (void)didFindCharacters:(const char *)characters;
-@end
-
-typedef void (^PCKParserBlock)(const char *);
+@class PCKXMLParserDelegate;
 
 @interface PCKXMLParser : NSObject<PCKParser>
 
-@property (nonatomic, copy) PCKParserBlock didStartElement, didEndElement, didFindCharacters;
+@property (nonatomic, assign) PCKXMLParserDelegate *delegate;
 
-- (void)parseChunk:(NSData *)chunk;
+- (id)initWithDelegate:(PCKXMLParserDelegate *)delegate;
 
 @end

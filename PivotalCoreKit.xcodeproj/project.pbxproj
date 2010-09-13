@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		66C4D699123DA5CB00CF9746 /* PCKXMLParserDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 66C4D697123DA5CB00CF9746 /* PCKXMLParserDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		66C4D69A123DA5CB00CF9746 /* PCKXMLParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C4D698123DA5CB00CF9746 /* PCKXMLParserDelegate.m */; };
+		66C4D69B123DA5CB00CF9746 /* PCKXMLParserDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 66C4D697123DA5CB00CF9746 /* PCKXMLParserDelegate.h */; };
+		66C4D69C123DA5CB00CF9746 /* PCKXMLParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C4D698123DA5CB00CF9746 /* PCKXMLParserDelegate.m */; };
 		AE138A5E11E3FF26004E825D /* OCHamcrest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE138A4411E3FEB6004E825D /* OCHamcrest.framework */; };
 		AE138A6711E3FF73004E825D /* OCHamcrest.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = AE138A4411E3FEB6004E825D /* OCHamcrest.framework */; };
 		AE138A9F11E3FFF3004E825D /* OCMock.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = AE138A7911E3FFC7004E825D /* OCMock.framework */; };
@@ -32,7 +36,7 @@
 		AE71493011CC108700672114 /* NSData+PivotalCore.h in Headers */ = {isa = PBXBuildFile; fileRef = AE71490111CBFDD900672114 /* NSData+PivotalCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE88AF7C11DE6BE000B65DD3 /* PCKXMLParser.h in Headers */ = {isa = PBXBuildFile; fileRef = AE88AF7A11DE6BE000B65DD3 /* PCKXMLParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE88AF7D11DE6BE000B65DD3 /* PCKXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = AE88AF7B11DE6BE000B65DD3 /* PCKXMLParser.m */; };
-		AE88B00D11DE6D3600B65DD3 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AE88B00711DE6D1200B65DD3 /* libxml2.dylib */; };
+		AE88B00D11DE6D3600B65DD3 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AE88B00711DE6D1200B65DD3 /* libxml2.dylib */; settings = {ATTRIBUTES = (Weak, ); }; };
 		AE91CACC11DE69EE002BA6B9 /* PCKXMLParserSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE91CACB11DE69EE002BA6B9 /* PCKXMLParserSpec.m */; };
 		AEBD9597120CB852003C1C5B /* PCKResponseParser.h in Headers */ = {isa = PBXBuildFile; fileRef = AEBD9594120CB852003C1C5B /* PCKResponseParser.h */; };
 		AEBD9598120CB852003C1C5B /* PCKResponseParser.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBD9595120CB852003C1C5B /* PCKResponseParser.m */; };
@@ -186,6 +190,8 @@
 
 /* Begin PBXFileReference section */
 		0867D69BFE84028FC02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		66C4D697123DA5CB00CF9746 /* PCKXMLParserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCKXMLParserDelegate.h; sourceTree = "<group>"; };
+		66C4D698123DA5CB00CF9746 /* PCKXMLParserDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCKXMLParserDelegate.m; sourceTree = "<group>"; };
 		AE138A3911E3FEB6004E825D /* OCHamcrest.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OCHamcrest.xcodeproj; path = OCHamcrest/Source/OCHamcrest.xcodeproj; sourceTree = "<group>"; };
 		AE138A6E11E3FFC7004E825D /* OCMock.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OCMock.xcodeproj; path = OCMock/Source/OCMock.xcodeproj; sourceTree = "<group>"; };
 		AE138A8011E3FFD6004E825D /* Cedar.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Cedar.xcodeproj; path = Cedar/Cedar.xcodeproj; sourceTree = "<group>"; };
@@ -383,11 +389,13 @@
 		AEBD930A120C7D5E003C1C5B /* Parsers */ = {
 			isa = PBXGroup;
 			children = (
+				AEBD95A9120CBAF6003C1C5B /* PCKParser.h */,
 				AE88AF7A11DE6BE000B65DD3 /* PCKXMLParser.h */,
 				AE88AF7B11DE6BE000B65DD3 /* PCKXMLParser.m */,
+				66C4D697123DA5CB00CF9746 /* PCKXMLParserDelegate.h */,
+				66C4D698123DA5CB00CF9746 /* PCKXMLParserDelegate.m */,
 				AEBD9594120CB852003C1C5B /* PCKResponseParser.h */,
 				AEBD9595120CB852003C1C5B /* PCKResponseParser.m */,
-				AEBD95A9120CBAF6003C1C5B /* PCKParser.h */,
 			);
 			path = Parsers;
 			sourceTree = "<group>";
@@ -517,6 +525,7 @@
 			files = (
 				AE13930111E64E05004E825D /* NSXMLParserDelegate.h in Headers */,
 				AEBD9597120CB852003C1C5B /* PCKResponseParser.h in Headers */,
+				66C4D69B123DA5CB00CF9746 /* PCKXMLParserDelegate.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -541,6 +550,7 @@
 				AEBD9599120CB852003C1C5B /* PCKResponseParser.h in Headers */,
 				AEBD95AA120CBB1B003C1C5B /* PCKParser.h in Headers */,
 				AE515E0E123AA778004B2CEB /* PivotalCoreKit.h in Headers */,
+				66C4D699123DA5CB00CF9746 /* PCKXMLParserDelegate.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -658,7 +668,14 @@
 			isa = PBXProject;
 			buildConfigurationList = 1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "PivotalCoreKit" */;
 			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
 			mainGroup = 0867D691FE84028FC02AAC07 /* PivotalCoreKit */;
 			productRefGroup = 034768DFFF38A50411DB9C8B /* Products */;
 			projectDirPath = "";
@@ -787,6 +804,7 @@
 				AE138E7611E542F1004E825D /* NSData+PivotalCore.m in Sources */,
 				AE138E7711E542F1004E825D /* PCKXMLParser.m in Sources */,
 				AEBD9598120CB852003C1C5B /* PCKResponseParser.m in Sources */,
+				66C4D69C123DA5CB00CF9746 /* PCKXMLParserDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -824,6 +842,7 @@
 				AE71490611CBFE2200672114 /* NSData+PivotalCore.m in Sources */,
 				AE88AF7D11DE6BE000B65DD3 /* PCKXMLParser.m in Sources */,
 				AEBD959A120CB852003C1C5B /* PCKResponseParser.m in Sources */,
+				66C4D69A123DA5CB00CF9746 /* PCKXMLParserDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -903,6 +922,10 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Externals\"",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_VERSION = coop.plausible.blocks.compilers.gcc.4_2;
@@ -918,6 +941,10 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Externals\"",
+				);
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_VERSION = coop.plausible.blocks.compilers.gcc.4_2;
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
@@ -975,7 +1002,10 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Externals\"",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = G5;
@@ -1002,7 +1032,10 @@
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Externals\"",
+				);
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1028,6 +1061,10 @@
 				COPY_PHASE_STRIP = NO;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Externals\"",
+				);
 				FRAMEWORK_VERSION = A;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
@@ -1058,6 +1095,10 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Externals\"",
+				);
 				FRAMEWORK_VERSION = A;
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_MODEL_TUNING = G5;
