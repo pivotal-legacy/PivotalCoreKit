@@ -5,8 +5,8 @@
 #import "NSURLConnectionDelegate.h"
 
 #import "PCKParser.h"
-#import "PCKXMLParser.h"
 #import "PCKResponseParser.h"
-#import "PCKParserDelegate.h"
+#import "PCKXMLParser.h"
+#import "PCKXMLParserDelegate.h"
 #import "NSXMLParserDelegate.h"
 
