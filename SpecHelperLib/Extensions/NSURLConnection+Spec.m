@@ -67,6 +67,10 @@ static NSMutableDictionary *requests__, *delegates__;
     [delegate connectionDidFinishLoading:self];
 }
 
+- (void)failWithError:(NSError *)error {
+    [[self delegate] connection:self didFailWithError:error];
+}
+
 - (void)sendAuthenticationChallengeWithCredential:(NSURLCredential *)credential {
     NSURLProtectionSpace *protectionSpace = [[NSURLProtectionSpace alloc] initWithHost:@"www.example.com" port:0 protocol:@"http" realm:nil authenticationMethod:nil];
     NSURLAuthenticationChallenge *challenge = [[NSURLAuthenticationChallenge alloc] initWithProtectionSpace:protectionSpace proposedCredential:credential previousFailureCount:1 failureResponse:nil error:nil sender:nil];

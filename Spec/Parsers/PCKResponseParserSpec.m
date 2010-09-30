@@ -56,6 +56,17 @@ describe(@"PCKResponseParser", ^{
             [mockDelegate verify];
         });
     });
+
+    describe(@"on connection failure", ^{
+        it(@"should notify the delegate of the error", ^{
+            NSError *error = [NSError errorWithDomain:@"An error" code:7 userInfo:nil];
+            [[mockDelegate expect] connection:nil didFailWithError:error];
+
+            [responseParser connection:nil didFailWithError:error];
+
+            [mockDelegate verify];
+        });
+    });
 });
 
 SPEC_END
