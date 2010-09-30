@@ -34,11 +34,6 @@
 		AE71490511CBFE1800672114 /* NSDataSpec+PivotalCore.m in Sources */ = {isa = PBXBuildFile; fileRef = AE71490411CBFE1800672114 /* NSDataSpec+PivotalCore.m */; };
 		AE71490611CBFE2200672114 /* NSData+PivotalCore.m in Sources */ = {isa = PBXBuildFile; fileRef = AE71490211CBFDD900672114 /* NSData+PivotalCore.m */; };
 		AE71493011CC108700672114 /* NSData+PivotalCore.h in Headers */ = {isa = PBXBuildFile; fileRef = AE71490111CBFDD900672114 /* NSData+PivotalCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AE7EE5B112514BCC0018B844 /* HCEmptyContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = AE7EE5AF12514BCC0018B844 /* HCEmptyContainer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AE7EE5B212514BCC0018B844 /* HCEmptyContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7EE5B012514BCC0018B844 /* HCEmptyContainer.m */; };
-		AE7EE5B312514BCC0018B844 /* HCEmptyContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = AE7EE5AF12514BCC0018B844 /* HCEmptyContainer.h */; };
-		AE7EE5B412514BCC0018B844 /* HCEmptyContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7EE5B012514BCC0018B844 /* HCEmptyContainer.m */; };
-		AE7EE5BB12514D200018B844 /* OCHamcrest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE138A4411E3FEB6004E825D /* OCHamcrest.framework */; };
 		AE88AF7C11DE6BE000B65DD3 /* PCKXMLParser.h in Headers */ = {isa = PBXBuildFile; fileRef = AE88AF7A11DE6BE000B65DD3 /* PCKXMLParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE88AF7D11DE6BE000B65DD3 /* PCKXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = AE88AF7B11DE6BE000B65DD3 /* PCKXMLParser.m */; };
 		AE88B00D11DE6D3600B65DD3 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AE88B00711DE6D1200B65DD3 /* libxml2.dylib */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -162,13 +157,6 @@
 			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
 			remoteInfo = OCMock;
 		};
-		AE7EE5BC12514D3A0018B844 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AE138A3911E3FEB6004E825D /* OCHamcrest.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
-			remoteInfo = OCHamcrest;
-		};
 		AEF15ACD11C97ED1005B4F92 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
@@ -234,8 +222,6 @@
 		AE71490111CBFDD900672114 /* NSData+PivotalCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+PivotalCore.h"; sourceTree = "<group>"; };
 		AE71490211CBFDD900672114 /* NSData+PivotalCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+PivotalCore.m"; sourceTree = "<group>"; };
 		AE71490411CBFE1800672114 /* NSDataSpec+PivotalCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDataSpec+PivotalCore.m"; sourceTree = "<group>"; };
-		AE7EE5AF12514BCC0018B844 /* HCEmptyContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCEmptyContainer.h; sourceTree = "<group>"; };
-		AE7EE5B012514BCC0018B844 /* HCEmptyContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCEmptyContainer.m; sourceTree = "<group>"; };
 		AE88AF7A11DE6BE000B65DD3 /* PCKXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCKXMLParser.h; sourceTree = "<group>"; };
 		AE88AF7B11DE6BE000B65DD3 /* PCKXMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCKXMLParser.m; sourceTree = "<group>"; };
 		AE88B00711DE6D1200B65DD3 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
@@ -305,7 +291,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE7EE5BB12514D200018B844 /* OCHamcrest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,15 +398,6 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		AE7EE5A412514B7F0018B844 /* HamcrestMatchers */ = {
-			isa = PBXGroup;
-			children = (
-				AE7EE5AF12514BCC0018B844 /* HCEmptyContainer.h */,
-				AE7EE5B012514BCC0018B844 /* HCEmptyContainer.m */,
-			);
-			path = HamcrestMatchers;
-			sourceTree = "<group>";
-		};
 		AEBD930A120C7D5E003C1C5B /* Parsers */ = {
 			isa = PBXGroup;
 			children = (
@@ -499,7 +475,6 @@
 		AEF15A1511C97747005B4F92 /* SpecHelperLib */ = {
 			isa = PBXGroup;
 			children = (
-				AE7EE5A412514B7F0018B844 /* HamcrestMatchers */,
 				AEF15AF711C97F68005B4F92 /* Fakes */,
 				AEE690851202520500769ADC /* Fixtures */,
 				AEF15A1D11C97814005B4F92 /* Extensions */,
@@ -571,7 +546,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				AEE690901202523700769ADC /* PSHKFixtures.h in Headers */,
-				AE7EE5B312514BCC0018B844 /* HCEmptyContainer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -601,7 +575,6 @@
 				AEF15B4511C984EB005B4F92 /* PSHKFakeResponses.h in Headers */,
 				AE13904A11E5508A004E825D /* PivotalSpecHelperKit.h in Headers */,
 				AEE6908E1202523700769ADC /* PSHKFixtures.h in Headers */,
-				AE7EE5B112514BCC0018B844 /* HCEmptyContainer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -695,7 +668,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				AE7EE5BD12514D3A0018B844 /* PBXTargetDependency */,
 			);
 			name = PivotalSpecHelperKit;
 			productName = PivotalSpecHelperKit;
@@ -857,7 +829,6 @@
 				AE138F4A11E548E1004E825D /* PSHKFakeHTTPURLResponse.m in Sources */,
 				AE138F4B11E548E1004E825D /* PSHKFakeResponses.m in Sources */,
 				AEE690911202523700769ADC /* PSHKFixtures.m in Sources */,
-				AE7EE5B412514BCC0018B844 /* HCEmptyContainer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -896,7 +867,6 @@
 				AEF15AFB11C97F95005B4F92 /* PSHKFakeHTTPURLResponse.m in Sources */,
 				AEF15B4611C984EB005B4F92 /* PSHKFakeResponses.m in Sources */,
 				AEE6908F1202523700769ADC /* PSHKFixtures.m in Sources */,
-				AE7EE5B212514BCC0018B844 /* HCEmptyContainer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -917,11 +887,6 @@
 			isa = PBXTargetDependency;
 			name = OCMock;
 			targetProxy = AE138A9D11E3FFE5004E825D /* PBXContainerItemProxy */;
-		};
-		AE7EE5BD12514D3A0018B844 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = OCHamcrest;
-			targetProxy = AE7EE5BC12514D3A0018B844 /* PBXContainerItemProxy */;
 		};
 		AEF15ACE11C97ED1005B4F92 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
