@@ -21,8 +21,9 @@
 }
 
 - (void)cancel {
-    [interface_ clearConnection:self];
     [super cancel];
+
+    [interface_ clearConnection:self];
 }
 
 - (BOOL)respondsToSelector:(SEL)selector {
