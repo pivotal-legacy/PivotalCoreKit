@@ -12,6 +12,7 @@
 - (id<NSURLConnectionDelegate>)delegate;
 
 - (void)returnResponse:(PSHKFakeHTTPURLResponse *)response;
+- (void)failWithError:(NSError *)error;
 - (void)sendAuthenticationChallengeWithCredential:(NSURLCredential *)credential;
 
 @end

@@ -41,6 +41,7 @@
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
+    [self.delegate connection:connection didFailWithError:error];
 }
 
 @end
