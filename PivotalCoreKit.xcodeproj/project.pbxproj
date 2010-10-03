@@ -81,21 +81,21 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 669723D512585FDC00696CAC /* YAJL.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 8DC2EF5B0486A6940098B216 /* YAJL.framework */;
+			remoteGlobalIDString = 8DC2EF5B0486A6940098B216;
 			remoteInfo = YAJL;
 		};
 		669723E012585FDC00696CAC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 669723D512585FDC00696CAC /* YAJL.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 00E5DDF80F5B6E3E00C11F1D /* Tests.framework */;
+			remoteGlobalIDString = 00E5DDF80F5B6E3E00C11F1D;
 			remoteInfo = Tests;
 		};
 		669723F41258603D00696CAC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 669723D512585FDC00696CAC /* YAJL.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 8DC2EF4F0486A6940098B216 /* YAJL */;
+			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
 			remoteInfo = YAJL;
 		};
 		AE138A4311E3FEB6004E825D /* PBXContainerItemProxy */ = {
@@ -732,6 +732,7 @@
 			isa = PBXProject;
 			buildConfigurationList = 1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "PivotalCoreKit" */;
 			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
 				English,
