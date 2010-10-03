@@ -7,10 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		669722AD125851D700696CAC /* PCKParserDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 669722AC125851D700696CAC /* PCKParserDelegate.h */; };
+		669722AE125851D700696CAC /* PCKParserDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 669722AC125851D700696CAC /* PCKParserDelegate.h */; };
+		669723E212585FE600696CAC /* YAJL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 669723DF12585FDC00696CAC /* YAJL.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		66C4D430123D72A200CF9746 /* PCKJSONParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 66C4D42E123D72A200CF9746 /* PCKJSONParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		66C4D431123D72A200CF9746 /* PCKJSONParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C4D42F123D72A200CF9746 /* PCKJSONParser.m */; };
+		66C4D432123D72A200CF9746 /* PCKJSONParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 66C4D42E123D72A200CF9746 /* PCKJSONParser.h */; };
+		66C4D433123D72A200CF9746 /* PCKJSONParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C4D42F123D72A200CF9746 /* PCKJSONParser.m */; };
+		66C4D436123D72D400CF9746 /* PCKJSONParserSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C4D435123D72D400CF9746 /* PCKJSONParserSpec.m */; };
 		66C4D699123DA5CB00CF9746 /* PCKXMLParserDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 66C4D697123DA5CB00CF9746 /* PCKXMLParserDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		66C4D69A123DA5CB00CF9746 /* PCKXMLParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C4D698123DA5CB00CF9746 /* PCKXMLParserDelegate.m */; };
 		66C4D69B123DA5CB00CF9746 /* PCKXMLParserDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 66C4D697123DA5CB00CF9746 /* PCKXMLParserDelegate.h */; };
 		66C4D69C123DA5CB00CF9746 /* PCKXMLParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C4D698123DA5CB00CF9746 /* PCKXMLParserDelegate.m */; };
+		66C4D791123DB0C400CF9746 /* PCKJSONParserDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 66C4D78F123DB0C400CF9746 /* PCKJSONParserDelegate.h */; };
+		66C4D792123DB0C400CF9746 /* PCKJSONParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C4D790123DB0C400CF9746 /* PCKJSONParserDelegate.m */; };
+		66C4D793123DB0C400CF9746 /* PCKJSONParserDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 66C4D78F123DB0C400CF9746 /* PCKJSONParserDelegate.h */; };
+		66C4D794123DB0C400CF9746 /* PCKJSONParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C4D790123DB0C400CF9746 /* PCKJSONParserDelegate.m */; };
 		AE138A5E11E3FF26004E825D /* OCHamcrest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE138A4411E3FEB6004E825D /* OCHamcrest.framework */; };
 		AE138A6711E3FF73004E825D /* OCHamcrest.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = AE138A4411E3FEB6004E825D /* OCHamcrest.framework */; };
 		AE138A9F11E3FFF3004E825D /* OCMock.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = AE138A7911E3FFC7004E825D /* OCMock.framework */; };
@@ -65,6 +77,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		669723DE12585FDC00696CAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 669723D512585FDC00696CAC /* YAJL.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8DC2EF5B0486A6940098B216 /* YAJL.framework */;
+			remoteInfo = YAJL;
+		};
+		669723E012585FDC00696CAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 669723D512585FDC00696CAC /* YAJL.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 00E5DDF80F5B6E3E00C11F1D /* Tests.framework */;
+			remoteInfo = Tests;
+		};
+		669723F41258603D00696CAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 669723D512585FDC00696CAC /* YAJL.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DC2EF4F0486A6940098B216 /* YAJL */;
+			remoteInfo = YAJL;
+		};
 		AE138A4311E3FEB6004E825D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AE138A3911E3FEB6004E825D /* OCHamcrest.xcodeproj */;
@@ -190,8 +223,15 @@
 
 /* Begin PBXFileReference section */
 		0867D69BFE84028FC02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		669722AC125851D700696CAC /* PCKParserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCKParserDelegate.h; sourceTree = "<group>"; };
+		669723D512585FDC00696CAC /* YAJL.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = YAJL.xcodeproj; path = YAJL/Project/YAJL.xcodeproj; sourceTree = "<group>"; };
+		66C4D42E123D72A200CF9746 /* PCKJSONParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCKJSONParser.h; sourceTree = "<group>"; };
+		66C4D42F123D72A200CF9746 /* PCKJSONParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCKJSONParser.m; sourceTree = "<group>"; };
+		66C4D435123D72D400CF9746 /* PCKJSONParserSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCKJSONParserSpec.m; sourceTree = "<group>"; };
 		66C4D697123DA5CB00CF9746 /* PCKXMLParserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCKXMLParserDelegate.h; sourceTree = "<group>"; };
 		66C4D698123DA5CB00CF9746 /* PCKXMLParserDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCKXMLParserDelegate.m; sourceTree = "<group>"; };
+		66C4D78F123DB0C400CF9746 /* PCKJSONParserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCKJSONParserDelegate.h; sourceTree = "<group>"; };
+		66C4D790123DB0C400CF9746 /* PCKJSONParserDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCKJSONParserDelegate.m; sourceTree = "<group>"; };
 		AE138A3911E3FEB6004E825D /* OCHamcrest.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OCHamcrest.xcodeproj; path = OCHamcrest/Source/OCHamcrest.xcodeproj; sourceTree = "<group>"; };
 		AE138A6E11E3FFC7004E825D /* OCMock.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OCMock.xcodeproj; path = OCMock/Source/OCMock.xcodeproj; sourceTree = "<group>"; };
 		AE138A8011E3FFD6004E825D /* Cedar.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Cedar.xcodeproj; path = Cedar/Cedar.xcodeproj; sourceTree = "<group>"; };
@@ -271,6 +311,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				669723E212585FE600696CAC /* YAJL.framework in Frameworks */,
 				AE88B00D11DE6D3600B65DD3 /* libxml2.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -324,9 +365,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		669723D612585FDC00696CAC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				669723DF12585FDC00696CAC /* YAJL.framework */,
+				669723E112585FDC00696CAC /* Tests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		AE138A3811E3FE88004E825D /* Externals */ = {
 			isa = PBXGroup;
 			children = (
+				669723D512585FDC00696CAC /* YAJL.xcodeproj */,
 				AE138A8011E3FFD6004E825D /* Cedar.xcodeproj */,
 				AE138A6E11E3FFC7004E825D /* OCMock.xcodeproj */,
 				AE138A3911E3FEB6004E825D /* OCHamcrest.xcodeproj */,
@@ -390,10 +441,15 @@
 			isa = PBXGroup;
 			children = (
 				AEBD95A9120CBAF6003C1C5B /* PCKParser.h */,
+				669722AC125851D700696CAC /* PCKParserDelegate.h */,
 				AE88AF7A11DE6BE000B65DD3 /* PCKXMLParser.h */,
 				AE88AF7B11DE6BE000B65DD3 /* PCKXMLParser.m */,
 				66C4D697123DA5CB00CF9746 /* PCKXMLParserDelegate.h */,
 				66C4D698123DA5CB00CF9746 /* PCKXMLParserDelegate.m */,
+				66C4D42E123D72A200CF9746 /* PCKJSONParser.h */,
+				66C4D42F123D72A200CF9746 /* PCKJSONParser.m */,
+				66C4D78F123DB0C400CF9746 /* PCKJSONParserDelegate.h */,
+				66C4D790123DB0C400CF9746 /* PCKJSONParserDelegate.m */,
 				AEBD9594120CB852003C1C5B /* PCKResponseParser.h */,
 				AEBD9595120CB852003C1C5B /* PCKResponseParser.m */,
 			);
@@ -405,6 +461,7 @@
 			children = (
 				AE91CACB11DE69EE002BA6B9 /* PCKXMLParserSpec.m */,
 				AEBD959F120CB8AA003C1C5B /* PCKResponseParserSpec.m */,
+				66C4D435123D72D400CF9746 /* PCKJSONParserSpec.m */,
 			);
 			path = Parsers;
 			sourceTree = "<group>";
@@ -525,7 +582,10 @@
 			files = (
 				AE13930111E64E05004E825D /* NSXMLParserDelegate.h in Headers */,
 				AEBD9597120CB852003C1C5B /* PCKResponseParser.h in Headers */,
+				66C4D432123D72A200CF9746 /* PCKJSONParser.h in Headers */,
 				66C4D69B123DA5CB00CF9746 /* PCKXMLParserDelegate.h in Headers */,
+				66C4D793123DB0C400CF9746 /* PCKJSONParserDelegate.h in Headers */,
+				669722AD125851D700696CAC /* PCKParserDelegate.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -550,7 +610,10 @@
 				AEBD9599120CB852003C1C5B /* PCKResponseParser.h in Headers */,
 				AEBD95AA120CBB1B003C1C5B /* PCKParser.h in Headers */,
 				AE515E0E123AA778004B2CEB /* PivotalCoreKit.h in Headers */,
+				66C4D430123D72A200CF9746 /* PCKJSONParser.h in Headers */,
 				66C4D699123DA5CB00CF9746 /* PCKXMLParserDelegate.h in Headers */,
+				66C4D791123DB0C400CF9746 /* PCKJSONParserDelegate.h in Headers */,
+				669722AE125851D700696CAC /* PCKParserDelegate.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -637,6 +700,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				669723F51258603D00696CAC /* PBXTargetDependency */,
 			);
 			name = PivotalCoreKit;
 			productName = PivotalCoreKit;
@@ -692,6 +756,10 @@
 					ProductGroup = AE138A6F11E3FFC7004E825D /* Products */;
 					ProjectRef = AE138A6E11E3FFC7004E825D /* OCMock.xcodeproj */;
 				},
+				{
+					ProductGroup = 669723D612585FDC00696CAC /* Products */;
+					ProjectRef = 669723D512585FDC00696CAC /* YAJL.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -705,6 +773,20 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		669723DF12585FDC00696CAC /* YAJL.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = YAJL.framework;
+			remoteRef = 669723DE12585FDC00696CAC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		669723E112585FDC00696CAC /* Tests.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = Tests.framework;
+			remoteRef = 669723E012585FDC00696CAC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		AE138A4411E3FEB6004E825D /* OCHamcrest.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -804,7 +886,9 @@
 				AE138E7611E542F1004E825D /* NSData+PivotalCore.m in Sources */,
 				AE138E7711E542F1004E825D /* PCKXMLParser.m in Sources */,
 				AEBD9598120CB852003C1C5B /* PCKResponseParser.m in Sources */,
+				66C4D433123D72A200CF9746 /* PCKJSONParser.m in Sources */,
 				66C4D69C123DA5CB00CF9746 /* PCKXMLParserDelegate.m in Sources */,
+				66C4D794123DB0C400CF9746 /* PCKJSONParserDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -830,6 +914,7 @@
 				AE91CACC11DE69EE002BA6B9 /* PCKXMLParserSpec.m in Sources */,
 				AEE6913B12025A8000769ADC /* SpecHelper.m in Sources */,
 				AEBD95A0120CB8AA003C1C5B /* PCKResponseParserSpec.m in Sources */,
+				66C4D436123D72D400CF9746 /* PCKJSONParserSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -842,7 +927,9 @@
 				AE71490611CBFE2200672114 /* NSData+PivotalCore.m in Sources */,
 				AE88AF7D11DE6BE000B65DD3 /* PCKXMLParser.m in Sources */,
 				AEBD959A120CB852003C1C5B /* PCKResponseParser.m in Sources */,
+				66C4D431123D72A200CF9746 /* PCKJSONParser.m in Sources */,
 				66C4D69A123DA5CB00CF9746 /* PCKXMLParserDelegate.m in Sources */,
+				66C4D792123DB0C400CF9746 /* PCKJSONParserDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -860,6 +947,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		669723F51258603D00696CAC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = YAJL;
+			targetProxy = 669723F41258603D00696CAC /* PBXContainerItemProxy */;
+		};
 		AE138A4E11E3FF07004E825D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = OCHamcrest;

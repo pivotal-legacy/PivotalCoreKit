@@ -4,7 +4,7 @@
 
 static xmlSAXHandler simpleSAXStruct;
 
-@interface PCKXMLParser()
+@interface PCKXMLParser ()
 
 @property (nonatomic, assign) PCKXMLParserDelegate *delegate;
 @property (nonatomic, assign) xmlParserCtxt *parserContext;
@@ -23,7 +23,7 @@ static xmlSAXHandler simpleSAXStruct;
 - (id)initWithDelegate:(PCKXMLParserDelegate *)delegate {
     if (self = [super init]) {
         self.delegate = delegate;
-        self.parserContext = xmlCreatePushParserCtxt(&simpleSAXStruct, delegate, NULL, 0, NULL);
+        self.parserContext = xmlCreatePushParserCtxt(&simpleSAXStruct, self, NULL, 0, NULL);
     }
     return self;
 }
@@ -33,6 +33,7 @@ static xmlSAXHandler simpleSAXStruct;
     [super dealloc];
 }
 
+#pragma mark PCKParser
 - (void)parseChunk:(NSData *)chunk {
     xmlParseChunk(self.parserContext, [chunk bytes], [chunk length], 0);
 }
@@ -40,25 +41,35 @@ static xmlSAXHandler simpleSAXStruct;
 @end
 
 #pragma mark SAX Parsing Callbacks
-
 static void parserStartElement(void *context, const xmlChar *localname, const xmlChar *prefix, const xmlChar *URI,
                                int nb_namespaces, const xmlChar **namespaces, int nb_attributes, int nb_defaulted, const xmlChar **attributes) {
-    [(PCKXMLParserDelegate *)context didStartElement:(const char *)localname];
+    PCKXMLParser *parser = context;
+    [parser.delegate parser:parser didStartElement:(const char *)localname];
 }
 
 static void	parserEndElement(void *context, const xmlChar *localname, const xmlChar *prefix, const xmlChar *URI) {
-    [(PCKXMLParserDelegate *)context didEndElement:(const char *)localname];
+    PCKXMLParser *parser = context;
+    [parser.delegate parser:parser didEndElement:(const char *)localname];
 }
 
 static void	parserCharactersFound(void *context, const xmlChar *characters, int length) {
     char buffer[length + 1];
     strncpy(buffer, (const char *)characters, length);
     buffer[length] = '\0';
-    [(PCKXMLParserDelegate *)context didFindCharacters:buffer];
+
+    PCKXMLParser *parser = context;
+    [parser.delegate parser:parser didFindCharacters:buffer];
 }
 
 static void parserErrorEncountered(void *context, const char *message, ...) {
-    @throw @"Handle errors!";
+    va_list messageArgs;
+    va_start(messageArgs, message);
+    NSString *errorMessage = [[[NSString alloc] initWithFormat:[NSString stringWithCString:message encoding:NSUTF8StringEncoding] arguments:messageArgs] autorelease];
+    va_end(messageArgs);
+    NSError *error = [NSError errorWithDomain:errorMessage code:-1 userInfo:nil];
+
+    PCKXMLParser *parser = context;
+    [parser.delegate parser:parser didEncounterError:error];
 }
 
 static xmlSAXHandler simpleSAXStruct = {

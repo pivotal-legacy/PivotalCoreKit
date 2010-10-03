@@ -20,12 +20,10 @@ NSString *xml = @""
 describe(@"PCKXMLParser and PCKXMLParserDelegate", ^{
     __block PCKXMLParser *parser;
     __block PCKXMLParserDelegate *delegate;
-    __block NSData *data;
 
     beforeEach(^{
         delegate = [[PCKXMLParserDelegate alloc] init];
         parser = [[PCKXMLParser alloc] initWithDelegate:delegate];
-        data = [xml dataUsingEncoding:NSUTF8StringEncoding];
     });
 
     afterEach(^{
@@ -34,92 +32,131 @@ describe(@"PCKXMLParser and PCKXMLParserDelegate", ^{
     });
 
     describe(@"parse", ^{
-        describe(@"with no blocks specified on the delegate", ^{
-            it(@"should execute the parse without crashing", ^{
-                [parser parseChunk:data];
+        __block NSData *data;
+
+        describe(@"with valid XML", ^{
+            beforeEach(^{
+                data = [xml dataUsingEncoding:NSUTF8StringEncoding];
+            });
+
+            describe(@"with no blocks specified on the delegate", ^{
+                it(@"should execute the parse without crashing", ^{
+                    [parser parseChunk:data];
+                });
+            });
+
+            describe(@"with a didStartElement block specified on the delegate", ^{
+                __block size_t elementCount;
+                __block size_t batCount;
+
+                beforeEach(^{
+                    delegate.didStartElement = ^(const char *elementName) {
+                        if (0 == strncmp(elementName, "bat", strlen(elementName))) {
+                            ++batCount;
+                        }
+                        ++elementCount;
+                    };
+
+                    elementCount = batCount = 0;
+                    [parser parseChunk:data];
+                });
+
+                it(@"should execute the block appropriately", ^{
+                    assertThatInt(elementCount, equalToInt(6));
+                    assertThatInt(batCount, equalToInt(2));
+                });
+            });
+
+            describe(@"with a didEndElement block specified on the delegate", ^{
+                __block size_t elementCount;
+                __block size_t batCount;
+
+                beforeEach(^{
+                    delegate.didEndElement = ^(const char *elementName) {
+                        if (0 == strncmp(elementName, "bat", strlen(elementName))) {
+                            ++batCount;
+                        }
+                        ++elementCount;
+                    };
+
+                    elementCount = batCount = 0;
+                    [parser parseChunk:data];
+                });
+
+                it(@"should execute the block appropriately", ^{
+                    assertThatInt(elementCount, equalToInt(6));
+                    assertThatInt(batCount, equalToInt(2));
+                });
+            });
+
+            describe(@"with a didFindCharacters block specified on the delegate", ^{
+                __block NSMutableString *wibbleContent;
+
+                beforeEach(^{
+                    wibbleContent = [[NSMutableString alloc] init];
+                    __block BOOL inWibbleElement = NO;
+
+                    delegate.didStartElement = ^(const char *elementName) {
+                        if (0 == strncmp(elementName, "wibble", strlen(elementName))) {
+                            inWibbleElement = YES;
+                        }
+                    };
+
+                    delegate.didEndElement = ^(const char *elementName) {
+                        if (0 == strncmp(elementName, "wibble", strlen(elementName))) {
+                            inWibbleElement = NO;
+                        }
+                    };
+
+                    delegate.didFindCharacters = ^(const char *chars) {
+                        if (inWibbleElement) {
+                            NSString *charsObject = [[NSString alloc] initWithCString:chars encoding:NSUTF8StringEncoding];
+                            [wibbleContent appendString:charsObject];
+                            [charsObject release];
+                        }
+                    };
+
+                    [parser parseChunk:data];
+                });
+
+                afterEach(^{
+                    [wibbleContent release];
+                });
+
+                it(@"should parse the wibble content", ^{
+                    assertThat(wibbleContent, equalTo(@"ABC"));
+                });
             });
         });
 
-        describe(@"with a didStartElement block specified on the delegate", ^{
-            __block size_t elementCount;
-            __block size_t batCount;
+        describe(@"with invalid XML", ^{
+            NSString *invalidXML = @"<foo><bar></foo>";
 
             beforeEach(^{
-                delegate.didStartElement = ^(const char *elementName) {
-                    if (0 == strncmp(elementName, "bat", strlen(elementName))) {
-                        ++batCount;
-                    }
-                    ++elementCount;
-                };
-
-                elementCount = batCount = 0;
-                [parser parseChunk:data];
+                data = [invalidXML dataUsingEncoding:NSUTF8StringEncoding];
             });
 
-            it(@"should execute the block appropriately", ^{
-                assertThatInt(elementCount, equalToInt(6));
-                assertThatInt(batCount, equalToInt(2));
-            });
-        });
-
-        describe(@"with a didEndElement block specified on the delegate", ^{
-            __block size_t elementCount;
-            __block size_t batCount;
-
-            beforeEach(^{
-                delegate.didEndElement = ^(const char *elementName) {
-                    if (0 == strncmp(elementName, "bat", strlen(elementName))) {
-                        ++batCount;
-                    }
-                    ++elementCount;
-                };
-
-                elementCount = batCount = 0;
-                [parser parseChunk:data];
+            describe(@"with no error block set", ^{
+                it(@"should execute the parse without crashing", ^{
+                    [parser parseChunk:data];
+                });
             });
 
-            it(@"should execute the block appropriately", ^{
-                assertThatInt(elementCount, equalToInt(6));
-                assertThatInt(batCount, equalToInt(2));
-            });
-        });
+            describe(@"with an error block set on the delegate", ^{
+                __block NSError *encounteredError;
 
-        describe(@"with a didFindCharacters block specified on the delegate", ^{
-            __block NSMutableString *wibbleContent;
+                beforeEach(^{
+                    delegate.didEncounterError = ^(NSError *error) {
+                        encounteredError = error;
+                    };
+                    encounteredError = nil;
+                    [parser parseChunk:data];
+                });
 
-            beforeEach(^{
-                wibbleContent = [[NSMutableString alloc] init];
-                __block BOOL inWibbleElement = NO;
-
-                delegate.didStartElement = ^(const char *elementName) {
-                    if (0 == strncmp(elementName, "wibble", strlen(elementName))) {
-                        inWibbleElement = YES;
-                    }
-                };
-
-                delegate.didEndElement = ^(const char *elementName) {
-                    if (0 == strncmp(elementName, "wibble", strlen(elementName))) {
-                        inWibbleElement = NO;
-                    }
-                };
-
-                delegate.didFindCharacters = ^(const char *chars) {
-                    if (inWibbleElement) {
-                        NSString *charsObject = [[NSString alloc] initWithCString:chars encoding:NSUTF8StringEncoding];
-                        [wibbleContent appendString:charsObject];
-                        [charsObject release];
-                    }
-                };
-
-                [parser parseChunk:data];
-            });
-
-            afterEach(^{
-                [wibbleContent release];
-            });
-
-            it(@"should parse the wibble content", ^{
-                assertThat(wibbleContent, equalTo(@"ABC"));
+                it(@"should execute the error block, passing a valid NSError object to the delegate", ^{
+                    assertThat(encounteredError, notNilValue());
+                    assertThat([encounteredError class], equalTo([NSError class]));
+                });
             });
         });
     });
