@@ -141,15 +141,8 @@ describe(@"PCKHTTPInterface", ^{
         beforeEach(^{
             [interface makeConnectionWithDelegate:mockDelegate];
 
-            // Specs that complete the connection (success or failure) will remove it from the list
-            // of active connections, which will release it.  Need to retain it here for specs that
-            // use it so expectations aren't using a freed object.
-            connection = [[[NSURLConnection connections] lastObject] retain];
+            connection = [[NSURLConnection connections] lastObject];
             request = [connection request];
-        });
-
-        afterEach(^{
-            [connection release];
         });
 
         it(@"should send one HTTP request", ^{
@@ -203,8 +196,8 @@ describe(@"PCKHTTPInterface", ^{
 
         describe(@"on cancel", ^{
             it(@"should not notify the delegate that the connection completed (because it didn't)", ^{
-                [[[mockDelegate stub] andThrow:[NSException exceptionWithName:@"MockFailure" reason:@"I should not be called" userInfo:nil]]connection:connection didReceiveResponse:[OCMArg any]];
-                [[[mockDelegate stub] andThrow:[NSException exceptionWithName:@"MockFailure" reason:@"I should not be called" userInfo:nil]]connection:connection didFailWithError:[OCMArg any]];
+                [[[mockDelegate stub] andThrow:[NSException exceptionWithName:@"MockFailure" reason:@"I should not be called" userInfo:nil]] connection:connection didReceiveResponse:[OCMArg any]];
+                [[[mockDelegate stub] andThrow:[NSException exceptionWithName:@"MockFailure" reason:@"I should not be called" userInfo:nil]] connection:connection didFailWithError:[OCMArg any]];
 
                 [connection cancel];
             });
@@ -212,6 +205,13 @@ describe(@"PCKHTTPInterface", ^{
             it(@"should remove the connection from the active connections", ^{
                 [[[connection retain] autorelease] cancel];
                 assertThat([interface activeConnections], isNot(hasItem(connection)));
+            });
+
+            it(@"should cancel itself BEFORE removing itself from active connections and deallocating", ^{
+                // Remove the connection from the test-specific connections container so it's not
+                // retained by any test code.
+                [NSURLConnection resetAll];
+                [connection cancel];
             });
         });
 

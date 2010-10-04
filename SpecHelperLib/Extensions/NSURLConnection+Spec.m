@@ -18,9 +18,9 @@ static NSMutableDictionary *requests__, *delegates__;
 }
 
 + (void)resetAll {
-    [connections__ removeAllObjects];
-    [requests__ removeAllObjects];
     [delegates__ removeAllObjects];
+    [requests__ removeAllObjects];
+    [connections__ removeAllObjects];
 }
 
 - (id)initWithRequest:(NSURLRequest *)request delegate:(id)delegate {

@@ -22,7 +22,6 @@
 
 - (void)cancel {
     [super cancel];
-
     [interface_ clearConnection:self];
 }
 
