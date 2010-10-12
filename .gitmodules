@@ -7,6 +7,3 @@
 [submodule "Externals/OCMock"]
 	path = Externals/OCMock
 	url = git://github.com/pivotal/OCMock.git
-[submodule "Externals/YAJL"]
-	path = Externals/YAJL
-	url = git@github.com:pivotal/yajl-objc.git
