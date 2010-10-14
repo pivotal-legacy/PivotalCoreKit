@@ -84,6 +84,14 @@ static NSMutableDictionary *attributes__;
     self.attributes.loading = loading;
 }
 
+- (void)setFrame:(CGRect)frame {
+    [super setFrame:frame];
+}
+
+- (CGRect)frame {
+    return super.frame;
+}
+
 #pragma mark Method overrides
 - (void)loadRequest:(NSURLRequest *)request {
     [self log:@"loadRequest: %@", request];

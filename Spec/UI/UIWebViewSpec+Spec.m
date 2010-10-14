@@ -172,6 +172,18 @@ describe(@"UIWebView (spec extensions)", ^{
             });
         });
     });
+
+    describe(@"frame", ^{
+        it(@"should not blow up", ^{
+            webView.frame;
+        });
+    });
+
+    describe(@"setFrame:", ^{
+        it(@"should not blow up", ^{
+            webView.frame = CGRectMake(0, 0, 0, 0);
+        });
+    });
 });
 
 SPEC_END
