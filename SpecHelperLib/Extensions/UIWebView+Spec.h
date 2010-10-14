@@ -2,6 +2,7 @@
 
 @interface UIWebView (Spec)
 
+- (void)sendClickRequest:(NSURLRequest *)request;
 - (void)finishLoad;
 - (void)setReturnValue:(NSString *)returnValue forJavaScript:(NSString *)javaScript;
 - (NSArray *)executedJavaScripts;

@@ -37,6 +37,7 @@
 static NSMutableDictionary *attributes__;
 
 @interface UIWebView (Spec_Private)
+- (void)loadRequest:(NSURLRequest *)request withNavigationType:(UIWebViewNavigationType)navigationType;
 - (UIWebViewAttributes *)attributes;
 - (void)log:(NSString *)message, ...;
 @end
@@ -96,24 +97,7 @@ static NSMutableDictionary *attributes__;
 - (void)loadRequest:(NSURLRequest *)request {
     [self log:@"loadRequest: %@", request];
 
-    if (self.request) {
-        NSString *message = [NSString stringWithFormat:@"Attempt to load request: %@ with previously loading request: %@", request, self.request];
-        [self log:message];
-        [[NSException exceptionWithName:NSInternalInconsistencyException reason:message userInfo:nil] raise];
-    }
-
-    BOOL shouldStartLoad = YES;
-    if ([self.delegate respondsToSelector:@selector(webView:shouldStartLoadWithRequest:navigationType:)]) {
-        shouldStartLoad = [self.delegate webView:self shouldStartLoadWithRequest:request navigationType:UIWebViewNavigationTypeOther];
-    }
-    if (shouldStartLoad) {
-        [self log:@"Starting load for request: %@", request];
-        self.request = request;
-        self.loading = YES;
-        if ([self.delegate respondsToSelector:@selector(webViewDidStartLoad:)]){
-            [self.delegate webViewDidStartLoad:self];
-        }
-    }
+    [self loadRequest:request withNavigationType:UIWebViewNavigationTypeOther];
 }
 
 - (NSString *)stringByEvaluatingJavaScriptFromString:(NSString *)javaScript {
@@ -122,6 +106,12 @@ static NSMutableDictionary *attributes__;
 }
 
 #pragma mark Additions
+- (void)sendClickRequest:(NSURLRequest *)request {
+    [self log:@"sendClickRequest: %@", request];
+
+    [self loadRequest:request withNavigationType:UIWebViewNavigationTypeLinkClicked];
+}
+
 - (void)finishLoad {
     [self log:@"finishLoad, for request: %@", self.request];
 
@@ -153,6 +143,27 @@ static NSMutableDictionary *attributes__;
 }
 
 #pragma mark Private interface
+- (void)loadRequest:(NSURLRequest *)request withNavigationType:(UIWebViewNavigationType)navigationType {
+    if (self.request) {
+        NSString *message = [NSString stringWithFormat:@"Attempt to load request: %@ with previously loading request: %@", request, self.request];
+        [self log:message];
+        [[NSException exceptionWithName:NSInternalInconsistencyException reason:message userInfo:nil] raise];
+    }
+
+    BOOL shouldStartLoad = YES;
+    if ([self.delegate respondsToSelector:@selector(webView:shouldStartLoadWithRequest:navigationType:)]) {
+        shouldStartLoad = [self.delegate webView:self shouldStartLoadWithRequest:request navigationType:navigationType];
+    }
+    if (shouldStartLoad) {
+        [self log:@"Starting load for request: %@", request];
+        self.request = request;
+        self.loading = YES;
+        if ([self.delegate respondsToSelector:@selector(webViewDidStartLoad:)]){
+            [self.delegate webViewDidStartLoad:self];
+        }
+    }
+}
+
 - (UIWebViewAttributes *)attributes {
     return [attributes__ objectForKey:self];
 }

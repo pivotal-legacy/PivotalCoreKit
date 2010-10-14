@@ -35,42 +35,50 @@ describe(@"UIWebView (spec extensions)", ^{
         request = [NSURLRequest requestWithURL:url];
     });
 
-    describe(@"loadRequest:", ^{
-        it(@"should send the webView:shouldStartLoadWithRequest:navigationType message to the delegate with navigation type Other", ^{
-            [[delegate expect] webView:webView shouldStartLoadWithRequest:request navigationType:UIWebViewNavigationTypeOther];
+    sharedExamplesFor(@"an operation that loads a request", ^(NSDictionary *context) {
+        __block void (^executeOperation)();
+        __block UIWebViewNavigationType navigationType;
 
-            [webView loadRequest:request];
+        beforeEach(^{
+            executeOperation = [context objectForKey:@"executeOperation"];
+            [[context objectForKey:@"navigationType"] getValue:&navigationType];
+        });
+
+        it(@"should send the webView:shouldStartLoadWithRequest:navigationType message to the delegate with the appropriate navigation type", ^{
+            [[delegate expect] webView:webView shouldStartLoadWithRequest:request navigationType:navigationType];
+
+            executeOperation();
 
             [delegate verify];
         });
 
         describe(@"if the delegate allows the request to load", ^{
             beforeEach(^{
-                [[[delegate stub] andDo:returnYes] webView:webView shouldStartLoadWithRequest:request navigationType:UIWebViewNavigationTypeOther];
+                [[[delegate stub] andDo:returnYes] webView:webView shouldStartLoadWithRequest:request navigationType:navigationType];
             });
 
             it(@"should have a pending request", ^{
-                [webView loadRequest:request];
+                executeOperation();
                 assertThat(webView.request, equalTo(request));
             });
 
             it(@"should mark the web view as loading", ^{
-                [webView loadRequest:request];
+                executeOperation();
                 assertThatBool(webView.loading, equalToBool(YES));
             });
 
             it(@"should send the webViewDidStartLoad: message to the delegate", ^{
                 [[delegate expect] webViewDidStartLoad:webView];
 
-                [webView loadRequest:request];
+                executeOperation();
                 [delegate verify];
             });
         });
 
         describe(@"if the delegate does not allow the request to load", ^{
             beforeEach(^{
-                [[[delegate stub] andDo:returnNo] webView:webView shouldStartLoadWithRequest:request navigationType:UIWebViewNavigationTypeOther];
-                [webView loadRequest:request];
+                [[[delegate stub] andDo:returnNo] webView:webView shouldStartLoadWithRequest:request navigationType:navigationType];
+                executeOperation();
             });
 
             it(@"should not have a pending request", ^{
@@ -85,14 +93,58 @@ describe(@"UIWebView (spec extensions)", ^{
         describe(@"with a request already loading", ^{
             it(@"should throw an exception", ^{
                 @try {
-                    [[[delegate stub] andDo:returnYes] webView:webView shouldStartLoadWithRequest:request navigationType:UIWebViewNavigationTypeOther];
-                    [webView loadRequest:request];
-                    [webView loadRequest:request];
+                    [[[delegate stub] andDo:returnYes] webView:webView shouldStartLoadWithRequest:request navigationType:navigationType];
+                    executeOperation();
+                    executeOperation();
                 } @catch (NSException *) {
                     return;
                 }
                 fail(@"No exception!");
             });
+        });
+    });
+
+    describe(@"loadRequest:", ^{
+        __block void (^executeOperation)();
+
+        beforeEach(^{
+            NSMutableDictionary *context = [SpecHelper specHelper].sharedExampleContext;
+            executeOperation = [^{
+                [webView loadRequest:request];
+            } copy];
+            [context setObject:executeOperation forKey:@"executeOperation"];
+
+            UIWebViewNavigationType navigationType = UIWebViewNavigationTypeOther;
+            NSValue *navigationTypeValue = [NSValue valueWithBytes:&navigationType objCType:@encode(UIWebViewNavigationType)];
+            [context setObject:navigationTypeValue forKey:@"navigationType"];
+        });
+
+        itShouldBehaveLike(@"an operation that loads a request");
+
+        afterEach(^{
+            [executeOperation release];
+        });
+    });
+
+    describe(@"sendClickRequest:", ^{
+        __block void (^executeOperation)();
+
+        beforeEach(^{
+            NSMutableDictionary *context = [SpecHelper specHelper].sharedExampleContext;
+            executeOperation = [^{
+                [webView sendClickRequest:request];
+            } copy];
+            [context setObject:executeOperation forKey:@"executeOperation"];
+
+            UIWebViewNavigationType navigationType = UIWebViewNavigationTypeLinkClicked;
+            NSValue *navigationTypeValue = [NSValue valueWithBytes:&navigationType objCType:@encode(UIWebViewNavigationType)];
+            [context setObject:navigationTypeValue forKey:@"navigationType"];
+        });
+
+        itShouldBehaveLike(@"an operation that loads a request");
+
+        afterEach(^{
+            [executeOperation release];
         });
     });
 
