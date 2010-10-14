@@ -1,8 +1,8 @@
 PROJECT_NAME = "PivotalCoreKit"
 CONFIGURATION = "Release"
 SPECS_TARGET_NAME = "Spec"
-# UI_SPECS_TARGET_NAME = "iPhoneSpecs"
-# SDK_DIR = "/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk"
+UI_SPECS_TARGET_NAME = "UISpec"
+SDK_DIR = "/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk"
 
 def build_dir(effective_platform_name)
   File.join(File.dirname(__FILE__), "build", CONFIGURATION + effective_platform_name)
@@ -14,12 +14,12 @@ def system_or_exit(cmd, stdout = nil)
   system(cmd) or raise "******** Build failed ********"
 end
 
-task :default => :specs
+task :default => [:specs, :uispecs]
 task :cruise do
   Rake::Task[:clean].invoke
   Rake::Task[:build_all].invoke
   Rake::Task[:specs].invoke
-#  Rake::Task[:uispecs].invoke
+  Rake::Task[:uispecs].invoke
 end
 
 task :clean do
@@ -34,7 +34,7 @@ end
 
 task :build_uispecs do
   stdout = File.join(ENV['CC_BUILD_ARTIFACTS'], "build_uispecs.output") if (ENV['IS_CI_BOX'])
-  system_or_exit(%Q[xcodebuild -project #{PROJECT_NAME}.xcodeproj -target #{UI_SPECS_TARGET_NAME} -configuration #{CONFIGURATION} build], stdout)
+  system_or_exit(%Q[xcodebuild -project #{PROJECT_NAME}.xcodeproj -target #{UI_SPECS_TARGET_NAME} -configuration #{CONFIGURATION} ARCHS=i386 build], stdout)
 end
 
 task :build_all do

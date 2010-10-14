@@ -1089,6 +1089,8 @@
 				);
 				INFOPLIST_FILE = "UISpec-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = "-D__IPHONE_OS_VERSION_MIN_REQUIRED=040100";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
@@ -1122,6 +1124,8 @@
 				);
 				INFOPLIST_FILE = "UISpec-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = "-D__IPHONE_OS_VERSION_MIN_REQUIRED=040100";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
