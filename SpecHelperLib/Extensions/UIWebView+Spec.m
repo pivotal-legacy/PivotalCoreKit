@@ -144,7 +144,7 @@ static NSMutableDictionary *attributes__;
 
 #pragma mark Private interface
 - (void)loadRequest:(NSURLRequest *)request withNavigationType:(UIWebViewNavigationType)navigationType {
-    if (self.request) {
+    if (self.loading) {
         NSString *message = [NSString stringWithFormat:@"Attempt to load request: %@ with previously loading request: %@", request, self.request];
         [self log:message];
         [[NSException exceptionWithName:NSInternalInconsistencyException reason:message userInfo:nil] raise];

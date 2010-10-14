@@ -102,6 +102,15 @@ describe(@"UIWebView (spec extensions)", ^{
                 fail(@"No exception!");
             });
         });
+
+        describe(@"with a request that previously completed loading", ^{
+            it(@"should succeed", ^{
+                [[[delegate stub] andDo:returnYes] webView:webView shouldStartLoadWithRequest:request navigationType:navigationType];
+                executeOperation();
+                [webView finishLoad];
+                executeOperation();
+            });
+        });
     });
 
     describe(@"loadRequest:", ^{
