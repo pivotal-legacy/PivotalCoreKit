@@ -94,11 +94,17 @@ static NSMutableDictionary *attributes__;
         [[NSException exceptionWithName:NSInternalInconsistencyException reason:message userInfo:nil] raise];
     }
 
-    if ([self.delegate webView:self shouldStartLoadWithRequest:request navigationType:UIWebViewNavigationTypeOther]) {
+    BOOL shouldStartLoad = YES;
+    if ([self.delegate respondsToSelector:@selector(webView:shouldStartLoadWithRequest:navigationType:)]) {
+        shouldStartLoad = [self.delegate webView:self shouldStartLoadWithRequest:request navigationType:UIWebViewNavigationTypeOther];
+    }
+    if (shouldStartLoad) {
         [self log:@"Starting load for request: %@", request];
         self.request = request;
         self.loading = YES;
-        [self.delegate webViewDidStartLoad:self];
+        if ([self.delegate respondsToSelector:@selector(webViewDidStartLoad:)]){
+            [self.delegate webViewDidStartLoad:self];
+        }
     }
 }
 
@@ -117,7 +123,9 @@ static NSMutableDictionary *attributes__;
         [[NSException exceptionWithName:NSInternalInconsistencyException reason:message userInfo:nil] raise];
     }
 
-    [self.delegate webViewDidFinishLoad:self];
+    if ([self.delegate respondsToSelector:@selector(webViewDidFinishLoad:)]) {
+        [self.delegate webViewDidFinishLoad:self];
+    }
     self.loading = NO;
 }
 
