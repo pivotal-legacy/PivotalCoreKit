@@ -4,6 +4,7 @@
 @implementation SpecHelper (PivotalCoreKitSpecs)
 
 - (void)beforeEach {
+    [NSURLConnection resetAll];
     [PSHKFixtures setDirectory:@FIXTURESDIR];
 }
 

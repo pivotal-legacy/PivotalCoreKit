@@ -1,16 +1,6 @@
 #import <Foundation/Foundation.h>
-#import "NSURLConnectionDelegate.h"
 
-@class PCKHTTPInterface;
-
-@interface PCKHTTPConnection : NSURLConnection <NSURLConnectionDelegate> {
-    PCKHTTPInterface *interface_;
-    id<NSURLConnectionDelegate> delegate_;
-}
-
-- (id)initWithHTTPInterface:(PCKHTTPInterface *)interface forRequest:(NSURLRequest *)request andDelegate:(id<NSURLConnectionDelegate>)delegate;
-@end
-
+@protocol NSURLConnectionDelegate;
 
 typedef void (^RequestSetupBlock)(NSMutableURLRequest *);
 

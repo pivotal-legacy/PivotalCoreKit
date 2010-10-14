@@ -8,7 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		669722AD125851D700696CAC /* PCKParserDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 669722AC125851D700696CAC /* PCKParserDelegate.h */; };
-		669722AE125851D700696CAC /* PCKParserDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 669722AC125851D700696CAC /* PCKParserDelegate.h */; };
+		669722AE125851D700696CAC /* PCKParserDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 669722AC125851D700696CAC /* PCKParserDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		669723E212585FE600696CAC /* YAJL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 669723DF12585FDC00696CAC /* YAJL.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		6697275912599D1100696CAC /* PCKHTTPConnectionOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 6697275712599D1100696CAC /* PCKHTTPConnectionOperation.h */; settings = {ATTRIBUTES = (); }; };
+		6697275A12599D1100696CAC /* PCKHTTPConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6697275812599D1100696CAC /* PCKHTTPConnectionOperation.m */; };
+		6697275B12599D1100696CAC /* PCKHTTPConnectionOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 6697275712599D1100696CAC /* PCKHTTPConnectionOperation.h */; };
+		6697275C12599D1100696CAC /* PCKHTTPConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6697275812599D1100696CAC /* PCKHTTPConnectionOperation.m */; };
+		6697275F12599F5500696CAC /* PCKHTTPConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = 6697275D12599F5500696CAC /* PCKHTTPConnection.h */; settings = {ATTRIBUTES = (); }; };
+		6697276012599F5500696CAC /* PCKHTTPConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 6697275E12599F5500696CAC /* PCKHTTPConnection.m */; };
+		6697276112599F5500696CAC /* PCKHTTPConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = 6697275D12599F5500696CAC /* PCKHTTPConnection.h */; };
+		6697276212599F5500696CAC /* PCKHTTPConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 6697275E12599F5500696CAC /* PCKHTTPConnection.m */; };
+		6697277D1259A0CE00696CAC /* PCKHTTPConnectionSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6697277C1259A0CE00696CAC /* PCKHTTPConnectionSpec.m */; };
+		669727981259A31900696CAC /* PCKHTTPConnectionOperationSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 669727971259A31900696CAC /* PCKHTTPConnectionOperationSpec.m */; };
+		6697283B1260FF9400696CAC /* FakeConnectionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6697283A1260FF9400696CAC /* FakeConnectionDelegate.m */; };
 		66C4D699123DA5CB00CF9746 /* PCKXMLParserDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 66C4D697123DA5CB00CF9746 /* PCKXMLParserDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		66C4D69A123DA5CB00CF9746 /* PCKXMLParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C4D698123DA5CB00CF9746 /* PCKXMLParserDelegate.m */; };
 		66C4D69B123DA5CB00CF9746 /* PCKXMLParserDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 66C4D697123DA5CB00CF9746 /* PCKXMLParserDelegate.h */; };
@@ -193,6 +205,14 @@
 /* Begin PBXFileReference section */
 		0867D69BFE84028FC02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		669722AC125851D700696CAC /* PCKParserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCKParserDelegate.h; sourceTree = "<group>"; };
+		6697275712599D1100696CAC /* PCKHTTPConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCKHTTPConnectionOperation.h; sourceTree = "<group>"; };
+		6697275812599D1100696CAC /* PCKHTTPConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCKHTTPConnectionOperation.m; sourceTree = "<group>"; };
+		6697275D12599F5500696CAC /* PCKHTTPConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCKHTTPConnection.h; sourceTree = "<group>"; };
+		6697275E12599F5500696CAC /* PCKHTTPConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCKHTTPConnection.m; sourceTree = "<group>"; };
+		6697277C1259A0CE00696CAC /* PCKHTTPConnectionSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCKHTTPConnectionSpec.m; sourceTree = "<group>"; };
+		669727971259A31900696CAC /* PCKHTTPConnectionOperationSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCKHTTPConnectionOperationSpec.m; sourceTree = "<group>"; };
+		669728391260FF9400696CAC /* FakeConnectionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeConnectionDelegate.h; sourceTree = "<group>"; };
+		6697283A1260FF9400696CAC /* FakeConnectionDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FakeConnectionDelegate.m; sourceTree = "<group>"; };
 		66C4D697123DA5CB00CF9746 /* PCKXMLParserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCKXMLParserDelegate.h; sourceTree = "<group>"; };
 		66C4D698123DA5CB00CF9746 /* PCKXMLParserDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCKXMLParserDelegate.m; sourceTree = "<group>"; };
 		AE138A3911E3FEB6004E825D /* OCHamcrest.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OCHamcrest.xcodeproj; path = OCHamcrest/Source/OCHamcrest.xcodeproj; sourceTree = "<group>"; };
@@ -441,6 +461,8 @@
 			isa = PBXGroup;
 			children = (
 				AECC4BAA11C6E0C00027AB1B /* PCKHTTPInterfaceSpec.m */,
+				6697277C1259A0CE00696CAC /* PCKHTTPConnectionSpec.m */,
+				669727971259A31900696CAC /* PCKHTTPConnectionOperationSpec.m */,
 			);
 			path = Interfaces;
 			sourceTree = "<group>";
@@ -451,6 +473,10 @@
 				AEF15AFE11C97FF9005B4F92 /* NSURLConnectionDelegate.h */,
 				AECC4BF411C6E38D0027AB1B /* PCKHTTPInterface.h */,
 				AECC4BF511C6E38D0027AB1B /* PCKHTTPInterface.m */,
+				6697275D12599F5500696CAC /* PCKHTTPConnection.h */,
+				6697275E12599F5500696CAC /* PCKHTTPConnection.m */,
+				6697275712599D1100696CAC /* PCKHTTPConnectionOperation.h */,
+				6697275812599D1100696CAC /* PCKHTTPConnectionOperation.m */,
 			);
 			path = Interfaces;
 			sourceTree = "<group>";
@@ -499,6 +525,8 @@
 			isa = PBXGroup;
 			children = (
 				AEF15C0911C99A87005B4F92 /* FakeResponses */,
+				669728391260FF9400696CAC /* FakeConnectionDelegate.h */,
+				6697283A1260FF9400696CAC /* FakeConnectionDelegate.m */,
 			);
 			path = Fixtures;
 			sourceTree = "<group>";
@@ -531,6 +559,8 @@
 				AEBD9597120CB852003C1C5B /* PCKResponseParser.h in Headers */,
 				66C4D69B123DA5CB00CF9746 /* PCKXMLParserDelegate.h in Headers */,
 				669722AD125851D700696CAC /* PCKParserDelegate.h in Headers */,
+				6697275B12599D1100696CAC /* PCKHTTPConnectionOperation.h in Headers */,
+				6697276112599F5500696CAC /* PCKHTTPConnection.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -557,6 +587,8 @@
 				AE515E0E123AA778004B2CEB /* PivotalCoreKit.h in Headers */,
 				66C4D699123DA5CB00CF9746 /* PCKXMLParserDelegate.h in Headers */,
 				669722AE125851D700696CAC /* PCKParserDelegate.h in Headers */,
+				6697275912599D1100696CAC /* PCKHTTPConnectionOperation.h in Headers */,
+				6697275F12599F5500696CAC /* PCKHTTPConnection.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -811,6 +843,8 @@
 				AE138E7711E542F1004E825D /* PCKXMLParser.m in Sources */,
 				AEBD9598120CB852003C1C5B /* PCKResponseParser.m in Sources */,
 				66C4D69C123DA5CB00CF9746 /* PCKXMLParserDelegate.m in Sources */,
+				6697275C12599D1100696CAC /* PCKHTTPConnectionOperation.m in Sources */,
+				6697276212599F5500696CAC /* PCKHTTPConnection.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -836,6 +870,9 @@
 				AE91CACC11DE69EE002BA6B9 /* PCKXMLParserSpec.m in Sources */,
 				AEE6913B12025A8000769ADC /* SpecHelper.m in Sources */,
 				AEBD95A0120CB8AA003C1C5B /* PCKResponseParserSpec.m in Sources */,
+				6697277D1259A0CE00696CAC /* PCKHTTPConnectionSpec.m in Sources */,
+				669727981259A31900696CAC /* PCKHTTPConnectionOperationSpec.m in Sources */,
+				6697283B1260FF9400696CAC /* FakeConnectionDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -849,6 +886,8 @@
 				AE88AF7D11DE6BE000B65DD3 /* PCKXMLParser.m in Sources */,
 				AEBD959A120CB852003C1C5B /* PCKResponseParser.m in Sources */,
 				66C4D69A123DA5CB00CF9746 /* PCKXMLParserDelegate.m in Sources */,
+				6697275A12599D1100696CAC /* PCKHTTPConnectionOperation.m in Sources */,
+				6697276012599F5500696CAC /* PCKHTTPConnection.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

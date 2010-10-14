@@ -13,15 +13,6 @@
 #define BASE_PATH "/v1/wibble/"
 #define PATH "foo/bar"
 
-@interface TestDelegate : NSObject<NSURLConnectionDelegate>
-@end
-
-@implementation TestDelegate
-- (void)connectionDidFinishLoading:(NSURLConnection *)connection {}
-- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {}
-- (NSInputStream *)connection:(NSURLConnection *)connection needNewBodyStream:(NSURLRequest *)request { return nil; }
-@end
-
 @interface TestInterface : PCKHTTPInterface
 - (NSURLConnection *)makeConnectionWithDelegate:(id<NSURLConnectionDelegate>)delegate;
 @end
@@ -52,73 +43,6 @@
 @end
 
 SPEC_BEGIN(PCKHTTPInterfaceSpec)
-
-describe(@"PCKHTTPConnection", ^{
-    __block PCKHTTPConnection *connection;
-    __block TestDelegate *delegate;
-    __block id mockRequest;
-
-    beforeEach(^{
-        mockRequest = [OCMockObject niceMockForClass:[NSURLRequest class]];
-        delegate = [[TestDelegate alloc] init];
-        connection = [[PCKHTTPConnection alloc] initWithHTTPInterface:nil forRequest:mockRequest andDelegate:delegate];
-
-        // We're testing the retainCounts for connection objects here, so remove
-        // the connection we create from the containers that we've created for
-        // testing.
-        [NSURLConnection resetAll];
-    });
-
-    afterEach(^{
-        [connection release];
-        [delegate release];
-    });
-
-    describe(@"initialization", ^{
-        it(@"should retain its delegate", ^{
-            assertThatInt([delegate retainCount], equalToInt(2));
-        });
-    });
-
-    describe(@"deallocation", ^{
-        it(@"should release its delegate", ^{
-            [connection release]; connection = nil;
-            assertThatInt([delegate retainCount], equalToInt(1));
-        });
-
-        it(@"should not have an unexpectedly high retainCount", ^{
-            assertThatInt([connection retainCount], equalToInt(1));
-        });
-    });
-
-    describe(@"respondsToSelector:", ^{
-        it(@"should return true for selectors the delegate responds to", ^{
-            SEL selector = @selector(connection:needNewBodyStream:);
-
-            assertThatBool([delegate respondsToSelector:selector], equalToBool(true));
-            assertThatBool([connection respondsToSelector:selector], equalToBool(true));
-        });
-
-        it(@"should return false for selectors the delegate does not respond to", ^{
-            SEL selector = @selector(connection:canAuthenticateAgainstProtectionSpace:);
-
-            assertThatBool([delegate respondsToSelector:selector], equalToBool(false));
-            assertThatBool([connection respondsToSelector:selector], equalToBool(false));
-        });
-    });
-
-    describe(@"forwardInvocation:", ^{
-        it(@"should forward any selector the delegate responds to to the delegate", ^{
-            SEL selector = @selector(connection:needNewBodyStream:);
-
-            assertThatBool([delegate respondsToSelector:selector], equalToBool(true));
-            id mockDelegate = [OCMockObject partialMockForObject:delegate];
-            [[mockDelegate expect] connection:connection needNewBodyStream:nil];
-            [connection connection:connection needNewBodyStream:nil];
-            [mockDelegate verify];
-        });
-    });
-});
 
 describe(@"PCKHTTPInterface", ^{
     __block TestInterface *interface;
@@ -285,11 +209,7 @@ describe(@"PCKHTTPInterface", ^{
     describe(@"makeSecureConnectionWithDelegate:", ^{
         beforeEach(^{
             [interface makeSecureConnectionWithDelegate:mockDelegate];
-
-            // Specs that complete the connection (success or failure) will remove it from the list
-            // of active connections, which will release it.  Need to retain it here for specs that
-            // use it so expectations aren't using a freed object.
-            connection = [[[NSURLConnection connections] lastObject] retain];
+            connection = [[NSURLConnection connections] lastObject];
             request = [connection request];
         });
 
