@@ -5,13 +5,13 @@
 @property (nonatomic, retain) NSURLRequest *request;
 @property (nonatomic, assign) BOOL loading, logging;
 @property (nonatomic, retain) NSMutableArray *javaScripts;
-@property (nonatomic, retain) NSMutableDictionary *returnValuesByJavaScript;
+@property (nonatomic, retain) NSMutableDictionary *returnValueBlocksByJavaScript;
 + (id)attributes;
 @end
 
 @implementation UIWebViewAttributes
 @synthesize delegate = delegate_, request = request_, loading = loading_, logging = logging_,
-    javaScripts = javaScripts_, returnValuesByJavaScript = returnValuesByJavaScript_;
+    javaScripts = javaScripts_, returnValueBlocksByJavaScript = returnValueBlocksByJavaScript_;
 
 + (id)attributes {
     return [[[[self class] alloc] init] autorelease];
@@ -20,14 +20,14 @@
 - (id)init {
     if (self = [super init]) {
         self.javaScripts = [NSMutableArray array];
-        self.returnValuesByJavaScript = [NSMutableDictionary dictionary];
+        self.returnValueBlocksByJavaScript = [NSMutableDictionary dictionary];
     }
     return self;
 }
 
 - (void)dealloc {
     self.request = nil;
-    self.returnValuesByJavaScript = nil;
+    self.returnValueBlocksByJavaScript = nil;
     self.javaScripts = nil;
     [super dealloc];
 }
@@ -102,7 +102,12 @@ static NSMutableDictionary *attributes__;
 
 - (NSString *)stringByEvaluatingJavaScriptFromString:(NSString *)javaScript {
     [self.attributes.javaScripts addObject:javaScript];
-    return [self.attributes.returnValuesByJavaScript objectForKey:javaScript];
+    UIWebViewJavaScriptReturnBlock block = [self.attributes.returnValueBlocksByJavaScript objectForKey:javaScript];
+    if (block) {
+        return block();
+    } else {
+        return nil;
+    }
 }
 
 #pragma mark Additions
@@ -128,7 +133,13 @@ static NSMutableDictionary *attributes__;
 }
 
 - (void)setReturnValue:(NSString *)returnValue forJavaScript:(NSString *)javaScript {
-    [self.attributes.returnValuesByJavaScript setObject:returnValue forKey:javaScript];
+    UIWebViewJavaScriptReturnBlock block = [[^{ return returnValue; } copy] autorelease];
+    [self.attributes.returnValueBlocksByJavaScript setObject:block forKey:javaScript];
+}
+
+- (void)setReturnBlock:(UIWebViewJavaScriptReturnBlock)block forJavaScript:(NSString *)javaScript {
+    UIWebViewJavaScriptReturnBlock copiedBlock = [[block copy] autorelease];
+    [self.attributes.returnValueBlocksByJavaScript setObject:copiedBlock forKey:javaScript];
 }
 
 - (NSArray *)executedJavaScripts {

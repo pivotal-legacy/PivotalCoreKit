@@ -232,6 +232,26 @@ describe(@"UIWebView (spec extensions)", ^{
                 assertThat(webView.executedJavaScripts, hasItem(js));
             });
         });
+
+        describe(@"with a return block", ^{
+            __block int value = 0;
+
+            beforeEach(^{
+                [webView setReturnBlock:^{ return (NSString *)[NSString stringWithFormat:@"%d", value]; } forJavaScript:js];
+            });
+
+            it(@"should return the value returned by the block", ^{
+                assertThat([webView stringByEvaluatingJavaScriptFromString:js], equalTo(@"0"));
+
+                ++value;
+                assertThat([webView stringByEvaluatingJavaScriptFromString:js], equalTo(@"1"));
+            });
+
+            it(@"should record the script", ^{
+                [webView stringByEvaluatingJavaScriptFromString:js];
+                assertThat(webView.executedJavaScripts, hasItem(js));
+            });
+        });
     });
 
     describe(@"frame", ^{
