@@ -38,6 +38,7 @@ static NSMutableDictionary *requests__, *delegates__;
 }
 
 - (void)dealloc {
+    CFDictionaryRemoveValue((CFMutableDictionaryRef)requests__, self);
     [super dealloc];
 }
 

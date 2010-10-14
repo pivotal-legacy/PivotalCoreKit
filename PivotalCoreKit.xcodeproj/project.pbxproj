@@ -7,9 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6696DFB91266DE5800111E23 /* UIWebView+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6696DFB81266DE5800111E23 /* UIWebView+Spec.m */; };
+		6696DFC81266DE8500111E23 /* libCedar-StaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE138A9411E3FFD6004E825D /* libCedar-StaticLib.a */; };
+		6696DFC91266DE8D00111E23 /* libOCMock-StaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE138A7D11E3FFC7004E825D /* libOCMock-StaticLib.a */; };
+		6696DFCA1266DE9500111E23 /* libOCHamcrest-StaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE138A4611E3FEB6004E825D /* libOCHamcrest-StaticLib.a */; };
+		6696E0011266E09800111E23 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6696E0001266E09800111E23 /* main.m */; };
+		6696E0321266E36E00111E23 /* UIWebViewSpec+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6696E0311266E36E00111E23 /* UIWebViewSpec+Spec.m */; };
+		6696E04A1266E6B900111E23 /* UIWebView+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6696DFB81266DE5800111E23 /* UIWebView+Spec.m */; };
 		669722AD125851D700696CAC /* PCKParserDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 669722AC125851D700696CAC /* PCKParserDelegate.h */; };
 		669722AE125851D700696CAC /* PCKParserDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 669722AC125851D700696CAC /* PCKParserDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		669723E212585FE600696CAC /* YAJL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 669723DF12585FDC00696CAC /* YAJL.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		6697275912599D1100696CAC /* PCKHTTPConnectionOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 6697275712599D1100696CAC /* PCKHTTPConnectionOperation.h */; settings = {ATTRIBUTES = (); }; };
 		6697275A12599D1100696CAC /* PCKHTTPConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6697275812599D1100696CAC /* PCKHTTPConnectionOperation.m */; };
 		6697275B12599D1100696CAC /* PCKHTTPConnectionOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 6697275712599D1100696CAC /* PCKHTTPConnectionOperation.h */; };
@@ -62,23 +68,43 @@
 		AECC4BEA11C6E3280027AB1B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AECC4BAD11C6E1640027AB1B /* main.m */; };
 		AEE6908E1202523700769ADC /* PSHKFixtures.h in Headers */ = {isa = PBXBuildFile; fileRef = AEE6908C1202523700769ADC /* PSHKFixtures.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AEE6908F1202523700769ADC /* PSHKFixtures.m in Sources */ = {isa = PBXBuildFile; fileRef = AEE6908D1202523700769ADC /* PSHKFixtures.m */; };
-		AEE690901202523700769ADC /* PSHKFixtures.h in Headers */ = {isa = PBXBuildFile; fileRef = AEE6908C1202523700769ADC /* PSHKFixtures.h */; };
 		AEE690911202523700769ADC /* PSHKFixtures.m in Sources */ = {isa = PBXBuildFile; fileRef = AEE6908D1202523700769ADC /* PSHKFixtures.m */; };
 		AEE6913B12025A8000769ADC /* SpecHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AEE690FD1202584C00769ADC /* SpecHelper.m */; };
 		AEF15ACB11C97EA4005B4F92 /* PCKHTTPInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = AECC4BF511C6E38D0027AB1B /* PCKHTTPInterface.m */; };
 		AEF15ACC11C97EA9005B4F92 /* PCKHTTPInterface.h in Headers */ = {isa = PBXBuildFile; fileRef = AECC4BF411C6E38D0027AB1B /* PCKHTTPInterface.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AEF15ACF11C97EDE005B4F92 /* PivotalCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEF15AC511C97E8B005B4F92 /* PivotalCoreKit.framework */; };
+		AEF15ACF11C97EDE005B4F92 /* PivotalCoreKit in Frameworks */ = {isa = PBXBuildFile; fileRef = AEF15AC511C97E8B005B4F92 /* PivotalCoreKit */; };
 		AEF15AF111C97F4C005B4F92 /* NSURLConnection+Spec.h in Headers */ = {isa = PBXBuildFile; fileRef = AEF15A1E11C97864005B4F92 /* NSURLConnection+Spec.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AEF15AF211C97F51005B4F92 /* NSURLConnection+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF15A1F11C97864005B4F92 /* NSURLConnection+Spec.m */; };
 		AEF15AFA11C97F95005B4F92 /* PSHKFakeHTTPURLResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = AEF15AF811C97F95005B4F92 /* PSHKFakeHTTPURLResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AEF15AFB11C97F95005B4F92 /* PSHKFakeHTTPURLResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF15AF911C97F95005B4F92 /* PSHKFakeHTTPURLResponse.m */; };
 		AEF15AFF11C97FF9005B4F92 /* NSURLConnectionDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = AEF15AFE11C97FF9005B4F92 /* NSURLConnectionDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AEF15B0911C98072005B4F92 /* PivotalSpecHelperKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEF15AE011C97F15005B4F92 /* PivotalSpecHelperKit.framework */; };
+		AEF15B0911C98072005B4F92 /* PivotalSpecHelperKit in Frameworks */ = {isa = PBXBuildFile; fileRef = AEF15AE011C97F15005B4F92 /* PivotalSpecHelperKit */; };
 		AEF15B4511C984EB005B4F92 /* PSHKFakeResponses.h in Headers */ = {isa = PBXBuildFile; fileRef = AEF15B4311C984EB005B4F92 /* PSHKFakeResponses.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AEF15B4611C984EB005B4F92 /* PSHKFakeResponses.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF15B4411C984EB005B4F92 /* PSHKFakeResponses.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		6696DFCB1266DEA700111E23 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE138A8011E3FFD6004E825D /* Cedar.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = AEEE222811DC2B0600029872;
+			remoteInfo = "Cedar-StaticLib";
+		};
+		6696DFCD1266DEAC00111E23 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE138A3911E3FEB6004E825D /* OCHamcrest.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 50066DAC1191DDE600A7A86D;
+			remoteInfo = "OCHamcrest-StaticLib";
+		};
+		6696DFCF1266DEB100111E23 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE138A6E11E3FFC7004E825D /* OCMock.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 508C285E119042C300E392B9;
+			remoteInfo = "OCMock-StaticLib";
+		};
 		AE138A4311E3FEB6004E825D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AE138A3911E3FEB6004E825D /* OCHamcrest.xcodeproj */;
@@ -204,6 +230,12 @@
 
 /* Begin PBXFileReference section */
 		0867D69BFE84028FC02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		6696DFB71266DE5800111E23 /* UIWebView+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+Spec.h"; sourceTree = "<group>"; };
+		6696DFB81266DE5800111E23 /* UIWebView+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+Spec.m"; sourceTree = "<group>"; };
+		6696DFC21266DE6C00111E23 /* UISpec.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UISpec.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6696DFC41266DE6C00111E23 /* UISpec-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UISpec-Info.plist"; sourceTree = "<group>"; };
+		6696E0001266E09800111E23 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6696E0311266E36E00111E23 /* UIWebViewSpec+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebViewSpec+Spec.m"; sourceTree = "<group>"; };
 		669722AC125851D700696CAC /* PCKParserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCKParserDelegate.h; sourceTree = "<group>"; };
 		6697275712599D1100696CAC /* PCKHTTPConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCKHTTPConnectionOperation.h; sourceTree = "<group>"; };
 		6697275812599D1100696CAC /* PCKHTTPConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCKHTTPConnectionOperation.m; sourceTree = "<group>"; };
@@ -243,7 +275,7 @@
 		AEBD95A9120CBAF6003C1C5B /* PCKParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCKParser.h; sourceTree = "<group>"; };
 		AECC4BAA11C6E0C00027AB1B /* PCKHTTPInterfaceSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCKHTTPInterfaceSpec.m; sourceTree = "<group>"; };
 		AECC4BAD11C6E1640027AB1B /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		AECC4BBA11C6E2280027AB1B /* Spec */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Spec; sourceTree = BUILT_PRODUCTS_DIR; };
+		AECC4BBA11C6E2280027AB1B /* Spec */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "compiled.mach-o.executable"; path = Spec; sourceTree = BUILT_PRODUCTS_DIR; };
 		AECC4BF411C6E38D0027AB1B /* PCKHTTPInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCKHTTPInterface.h; sourceTree = "<group>"; };
 		AECC4BF511C6E38D0027AB1B /* PCKHTTPInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCKHTTPInterface.m; sourceTree = "<group>"; };
 		AEE6908C1202523700769ADC /* PSHKFixtures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSHKFixtures.h; sourceTree = "<group>"; };
@@ -251,9 +283,9 @@
 		AEE690FD1202584C00769ADC /* SpecHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpecHelper.m; sourceTree = "<group>"; };
 		AEF15A1E11C97864005B4F92 /* NSURLConnection+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLConnection+Spec.h"; sourceTree = "<group>"; };
 		AEF15A1F11C97864005B4F92 /* NSURLConnection+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLConnection+Spec.m"; sourceTree = "<group>"; };
-		AEF15AC511C97E8B005B4F92 /* PivotalCoreKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PivotalCoreKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEF15AC511C97E8B005B4F92 /* PivotalCoreKit */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.framework; path = PivotalCoreKit; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEF15AC711C97E8B005B4F92 /* PivotalCoreKit-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PivotalCoreKit-Info.plist"; sourceTree = "<group>"; };
-		AEF15AE011C97F15005B4F92 /* PivotalSpecHelperKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PivotalSpecHelperKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEF15AE011C97F15005B4F92 /* PivotalSpecHelperKit */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.framework; path = PivotalSpecHelperKit; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEF15AE111C97F15005B4F92 /* PivotalSpecHelperKit-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PivotalSpecHelperKit-Info.plist"; sourceTree = "<group>"; };
 		AEF15AF811C97F95005B4F92 /* PSHKFakeHTTPURLResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSHKFakeHTTPURLResponse.h; sourceTree = "<group>"; };
 		AEF15AF911C97F95005B4F92 /* PSHKFakeHTTPURLResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSHKFakeHTTPURLResponse.m; sourceTree = "<group>"; };
@@ -264,14 +296,17 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		AE138E6E11E542BF004E825D /* Frameworks */ = {
+		6696DFC01266DE6C00111E23 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6696DFC81266DE8500111E23 /* libCedar-StaticLib.a in Frameworks */,
+				6696DFC91266DE8D00111E23 /* libOCMock-StaticLib.a in Frameworks */,
+				6696DFCA1266DE9500111E23 /* libOCHamcrest-StaticLib.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AE138F4411E548B5004E825D /* Frameworks */ = {
+		AE138E6E11E542BF004E825D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -284,8 +319,8 @@
 			files = (
 				AE138A5E11E3FF26004E825D /* OCHamcrest.framework in Frameworks */,
 				AE138ACF11E400D2004E825D /* OCMock.framework in Frameworks */,
-				AEF15ACF11C97EDE005B4F92 /* PivotalCoreKit.framework in Frameworks */,
-				AEF15B0911C98072005B4F92 /* PivotalSpecHelperKit.framework in Frameworks */,
+				AEF15ACF11C97EDE005B4F92 /* PivotalCoreKit in Frameworks */,
+				AEF15B0911C98072005B4F92 /* PivotalSpecHelperKit in Frameworks */,
 				AE138CB811E4F504004E825D /* Cedar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -312,10 +347,11 @@
 			isa = PBXGroup;
 			children = (
 				AECC4BBA11C6E2280027AB1B /* Spec */,
-				AEF15AC511C97E8B005B4F92 /* PivotalCoreKit.framework */,
-				AEF15AE011C97F15005B4F92 /* PivotalSpecHelperKit.framework */,
+				AEF15AC511C97E8B005B4F92 /* PivotalCoreKit */,
+				AEF15AE011C97F15005B4F92 /* PivotalSpecHelperKit */,
 				AE138E7011E542BF004E825D /* libPivotalCoreKit-StaticLib.a */,
 				AE138F4611E548B5004E825D /* libPivotalSpecHelperKit-StaticLib.a */,
+				6696DFC21266DE6C00111E23 /* UISpec.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -334,6 +370,7 @@
 				AEF15AE111C97F15005B4F92 /* PivotalSpecHelperKit-Info.plist */,
 				AE138AEA11E40674004E825D /* Rakefile */,
 				AE2BDAA21202257A001DD8D3 /* README.markdown */,
+				6696DFC41266DE6C00111E23 /* UISpec-Info.plist */,
 			);
 			name = PivotalCoreKit;
 			sourceTree = "<group>";
@@ -345,6 +382,34 @@
 				AE88B00711DE6D1200B65DD3 /* libxml2.dylib */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6696DFE71266DF7300111E23 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				6696E0301266E33800111E23 /* Extensions */,
+				6696E0001266E09800111E23 /* main.m */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		6696DFE81266DF7A00111E23 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				AEBD9314120C7DAA003C1C5B /* Parsers */,
+				AE71481C11CAADDE00672114 /* Extensions */,
+				AECC4BA811C6E0480027AB1B /* Interfaces */,
+				AECC4BAD11C6E1640027AB1B /* main.m */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		6696E0301266E33800111E23 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6696E0311266E36E00111E23 /* UIWebViewSpec+Spec.m */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 		AE138A3811E3FE88004E825D /* Externals */ = {
@@ -447,11 +512,9 @@
 		AECC4BA711C6E0010027AB1B /* Spec */ = {
 			isa = PBXGroup;
 			children = (
-				AEBD9314120C7DAA003C1C5B /* Parsers */,
-				AE71481C11CAADDE00672114 /* Extensions */,
+				6696DFE81266DF7A00111E23 /* Domain */,
+				6696DFE71266DF7300111E23 /* UI */,
 				AEF15C0811C99A58005B4F92 /* Fixtures */,
-				AECC4BA811C6E0480027AB1B /* Interfaces */,
-				AECC4BAD11C6E1640027AB1B /* main.m */,
 				AEE690FD1202584C00769ADC /* SpecHelper.m */,
 			);
 			path = Spec;
@@ -506,6 +569,8 @@
 			children = (
 				AEF15A1E11C97864005B4F92 /* NSURLConnection+Spec.h */,
 				AEF15A1F11C97864005B4F92 /* NSURLConnection+Spec.m */,
+				6696DFB71266DE5800111E23 /* UIWebView+Spec.h */,
+				6696DFB81266DE5800111E23 /* UIWebView+Spec.m */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -564,14 +629,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AE138F4211E548B5004E825D /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AEE690901202523700769ADC /* PSHKFixtures.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		AEF15AC011C97E8B005B4F92 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -607,6 +664,26 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		6696DFC11266DE6C00111E23 /* UISpec */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6696DFC71266DE6D00111E23 /* Build configuration list for PBXNativeTarget "UISpec" */;
+			buildPhases = (
+				6696DFBE1266DE6C00111E23 /* Resources */,
+				6696DFBF1266DE6C00111E23 /* Sources */,
+				6696DFC01266DE6C00111E23 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6696DFCC1266DEA700111E23 /* PBXTargetDependency */,
+				6696DFCE1266DEAC00111E23 /* PBXTargetDependency */,
+				6696DFD01266DEB100111E23 /* PBXTargetDependency */,
+			);
+			name = UISpec;
+			productName = UISpec;
+			productReference = 6696DFC21266DE6C00111E23 /* UISpec.app */;
+			productType = "com.apple.product-type.application";
+		};
 		AE138E6F11E542BF004E825D /* PivotalCoreKit-StaticLib */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = AE138E7311E542DD004E825D /* Build configuration list for PBXNativeTarget "PivotalCoreKit-StaticLib" */;
@@ -628,9 +705,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AE138F6211E548EB004E825D /* Build configuration list for PBXNativeTarget "PivotalSpecHelperKit-StaticLib" */;
 			buildPhases = (
-				AE138F4211E548B5004E825D /* Headers */,
 				AE138F4311E548B5004E825D /* Sources */,
-				AE138F4411E548B5004E825D /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -678,7 +753,7 @@
 			);
 			name = PivotalCoreKit;
 			productName = PivotalCoreKit;
-			productReference = AEF15AC511C97E8B005B4F92 /* PivotalCoreKit.framework */;
+			productReference = AEF15AC511C97E8B005B4F92 /* PivotalCoreKit */;
 			productType = "com.apple.product-type.framework";
 		};
 		AEF15ADF11C97F15005B4F92 /* PivotalSpecHelperKit */ = {
@@ -696,7 +771,7 @@
 			);
 			name = PivotalSpecHelperKit;
 			productName = PivotalSpecHelperKit;
-			productReference = AEF15AE011C97F15005B4F92 /* PivotalSpecHelperKit.framework */;
+			productReference = AEF15AE011C97F15005B4F92 /* PivotalSpecHelperKit */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -738,6 +813,7 @@
 				AECC4BB911C6E2280027AB1B /* Spec */,
 				AE138E6F11E542BF004E825D /* PivotalCoreKit-StaticLib */,
 				AE138F4511E548B5004E825D /* PivotalSpecHelperKit-StaticLib */,
+				6696DFC11266DE6C00111E23 /* UISpec */,
 			);
 		};
 /* End PBXProject section */
@@ -816,6 +892,13 @@
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
+		6696DFBE1266DE6C00111E23 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AEF15AC111C97E8B005B4F92 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -833,6 +916,16 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		6696DFBF1266DE6C00111E23 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6696E0011266E09800111E23 /* main.m in Sources */,
+				6696E0321266E36E00111E23 /* UIWebViewSpec+Spec.m in Sources */,
+				6696E04A1266E6B900111E23 /* UIWebView+Spec.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AE138E6D11E542BF004E825D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -856,6 +949,7 @@
 				AE138F4A11E548E1004E825D /* PSHKFakeHTTPURLResponse.m in Sources */,
 				AE138F4B11E548E1004E825D /* PSHKFakeResponses.m in Sources */,
 				AEE690911202523700769ADC /* PSHKFixtures.m in Sources */,
+				6696DFB91266DE5800111E23 /* UIWebView+Spec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -905,6 +999,21 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		6696DFCC1266DEA700111E23 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Cedar-StaticLib";
+			targetProxy = 6696DFCB1266DEA700111E23 /* PBXContainerItemProxy */;
+		};
+		6696DFCE1266DEAC00111E23 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "OCHamcrest-StaticLib";
+			targetProxy = 6696DFCD1266DEAC00111E23 /* PBXContainerItemProxy */;
+		};
+		6696DFD01266DEB100111E23 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "OCMock-StaticLib";
+			targetProxy = 6696DFCF1266DEB100111E23 /* PBXContainerItemProxy */;
+		};
 		AE138A4E11E3FF07004E825D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = OCHamcrest;
@@ -959,6 +1068,73 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
 				SDKROOT = macosx10.6;
+			};
+			name = Release;
+		};
+		6696DFC51266DE6D00111E23 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				HEADER_SEARCH_PATHS = (
+					"$SRCROOT/Externals/OCMock/**",
+					"$SRCROOT/Externals/OCHamcrest/**",
+					"$SRCROOT/Externals/Cedar/**",
+				);
+				INFOPLIST_FILE = "UISpec-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+					"-lstdc++",
+					"-framework",
+					Foundation,
+					"-framework",
+					UIKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = UISpec;
+				SDKROOT = iphonesimulator4.1;
+			};
+			name = Debug;
+		};
+		6696DFC61266DE6D00111E23 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				HEADER_SEARCH_PATHS = (
+					"$SRCROOT/Externals/OCMock/**",
+					"$SRCROOT/Externals/OCHamcrest/**",
+					"$SRCROOT/Externals/Cedar/**",
+				);
+				INFOPLIST_FILE = "UISpec-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+					"-lstdc++",
+					"-framework",
+					Foundation,
+					"-framework",
+					UIKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = UISpec;
+				SDKROOT = iphonesimulator4.1;
+				ZERO_LINK = NO;
 			};
 			name = Release;
 		};
@@ -1228,6 +1404,15 @@
 			buildConfigurations = (
 				1DEB922308733DC00010E9CD /* Debug */,
 				1DEB922408733DC00010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6696DFC71266DE6D00111E23 /* Build configuration list for PBXNativeTarget "UISpec" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6696DFC51266DE6D00111E23 /* Debug */,
+				6696DFC61266DE6D00111E23 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

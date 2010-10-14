@@ -1,4 +1,4 @@
-#import "PSHKFixtures.h"
+#import "PivotalSpecHelperKit.h"
 #import <Cedar/SpecHelper.h>
 
 @implementation SpecHelper (PivotalCoreKitSpecs)
