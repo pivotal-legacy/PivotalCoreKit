@@ -49,4 +49,11 @@
     // Stay alive
 }
 
+#pragma mark NSURLConnectionDelegate
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection {
+}
+
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
+}
+
 @end
