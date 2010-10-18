@@ -61,4 +61,21 @@ static const unsigned char BASE64_DICTIONARY[] = {
     return [escapedUrlString autorelease];
 }
 
+- (NSString *) stringByCamelizing {
+    NSMutableString *camelized = [NSMutableString string];
+    
+    for (NSUInteger i = 0; i < [self length]; ++i) {
+        unichar oneChar = [self characterAtIndex:i];
+        if (i > 0 && ([self characterAtIndex:i-1] == '_')) {
+            [camelized appendString:[[NSString stringWithFormat:@"%C", oneChar] uppercaseString]];
+        }
+        else if (oneChar != '_') {
+            [camelized appendFormat:@"%C", oneChar];
+        }
+    }
+    
+    return [camelized stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+
+}
+
 @end

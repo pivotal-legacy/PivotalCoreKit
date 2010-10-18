@@ -8,6 +8,13 @@
 SPEC_BEGIN(NSString_PivotalCore)
 
 describe(@"Pivotal Core extensions to NSString", ^{
+
+    describe(@"stringByCamelizing", ^{
+        it(@"should camelize a underscored string", ^{
+            assertThat([@"foo_bar_baz" stringByCamelizing], equalTo(@"fooBarBaz"));
+        });
+    });
+    
     describe(@"initWithBase64EncodedData:", ^{
         __block NSString *newString = nil;
 
