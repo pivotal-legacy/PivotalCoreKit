@@ -4,7 +4,7 @@
 
 + (id)stringWithBase64EncodedData:(NSData *)data;
 - (id)initWithBase64EncodedData:(NSData *)data;
-- (NSString *) stringByCamelizing;
+- (NSString *)stringByCamelizing;
 /*
  Overrides the framework version of stringbyAddingPercentEscapesUsingEncoding,
  because the framework version does not escape several characters.  See the blog

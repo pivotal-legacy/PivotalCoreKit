@@ -14,7 +14,7 @@ describe(@"Pivotal Core extensions to NSString", ^{
             assertThat([@"foo_bar_baz" stringByCamelizing], equalTo(@"fooBarBaz"));
         });
     });
-    
+
     describe(@"initWithBase64EncodedData:", ^{
         __block NSString *newString = nil;
 
