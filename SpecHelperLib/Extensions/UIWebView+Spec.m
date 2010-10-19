@@ -6,16 +6,11 @@
 @property (nonatomic, assign) BOOL loading, logging;
 @property (nonatomic, retain) NSMutableArray *javaScripts;
 @property (nonatomic, retain) NSMutableDictionary *returnValueBlocksByJavaScript;
-+ (id)attributes;
 @end
 
 @implementation UIWebViewAttributes
 @synthesize delegate = delegate_, request = request_, loading = loading_, logging = logging_,
     javaScripts = javaScripts_, returnValueBlocksByJavaScript = returnValueBlocksByJavaScript_;
-
-+ (id)attributes {
-    return [[[[self class] alloc] init] autorelease];
-}
 
 - (id)init {
     if (self = [super init]) {
@@ -45,17 +40,19 @@ static NSMutableDictionary *attributes__;
 @implementation UIWebView (Spec)
 
 + (void)initialize {
-    attributes__ = [[NSMutableDictionary alloc] init];
+    attributes__ = (NSMutableDictionary *)CFDictionaryCreateMutable(kCFAllocatorDefault, 0, NULL, NULL);
 }
 
 - (id)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
-        CFDictionaryAddValue((CFMutableDictionaryRef)attributes__, self, [UIWebViewAttributes attributes]);
+        CFDictionaryAddValue((CFMutableDictionaryRef)attributes__, self, [[UIWebViewAttributes alloc] init]);
     }
     return self;
 }
 
 - (void)dealloc {
+    UIWebViewAttributes const *attributes = CFDictionaryGetValue((CFMutableDictionaryRef)attributes__, self);
+    [attributes release];
     CFDictionaryRemoveValue((CFMutableDictionaryRef)attributes__, self);
     [super dealloc];
 }
