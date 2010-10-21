@@ -97,8 +97,11 @@ static NSMutableDictionary *attributes__;
 #pragma mark Method overrides
 - (void)loadRequest:(NSURLRequest *)request {
     [self log:@"loadRequest: %@", request];
-
     [self loadRequest:request withNavigationType:UIWebViewNavigationTypeOther];
+}
+
+- (void)loadHTMLString:(NSString *)string baseURL:(NSURL *)baseURL {
+    [self log:@"loadHTMLString:%@ baseURL:%@", string, baseURL];
 }
 
 - (NSString *)stringByEvaluatingJavaScriptFromString:(NSString *)javaScript {

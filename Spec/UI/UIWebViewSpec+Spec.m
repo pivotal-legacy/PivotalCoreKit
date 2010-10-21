@@ -263,6 +263,12 @@ describe(@"UIWebView (spec extensions)", ^{
         });
     });
 
+    describe(@"loadHTMLString:baseURL:", ^{
+        it(@"should not blow up", ^{
+            [webView loadHTMLString:@"some HTML" baseURL:[NSURL URLWithString:@"a-path"]];
+        });
+    });
+
     describe(@"when loaded from a XIB", ^{
         beforeEach(^{
             AWebViewController *controller = [[AWebViewController alloc] initWithNibName:@"AWebViewController" bundle:nil];
