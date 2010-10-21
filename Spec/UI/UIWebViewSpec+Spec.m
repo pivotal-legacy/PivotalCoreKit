@@ -2,6 +2,7 @@
 #define HC_SHORTHAND
 #import "OCHamcrest.h"
 #import "OCMock.h"
+#import "AWebViewController.h"
 
 #import "UIWebView+Spec.h"
 
@@ -118,9 +119,9 @@ describe(@"UIWebView (spec extensions)", ^{
 
         beforeEach(^{
             NSMutableDictionary *context = [SpecHelper specHelper].sharedExampleContext;
-            executeOperation = [^{
+            executeOperation = [[^{
                 [webView loadRequest:request];
-            } copy];
+            } copy] autorelease];
             [context setObject:executeOperation forKey:@"executeOperation"];
 
             UIWebViewNavigationType navigationType = UIWebViewNavigationTypeOther;
@@ -129,10 +130,6 @@ describe(@"UIWebView (spec extensions)", ^{
         });
 
         itShouldBehaveLike(@"an operation that loads a request");
-
-        afterEach(^{
-            [executeOperation release];
-        });
     });
 
     describe(@"sendClickRequest:", ^{
@@ -263,6 +260,34 @@ describe(@"UIWebView (spec extensions)", ^{
     describe(@"setFrame:", ^{
         it(@"should not blow up", ^{
             webView.frame = CGRectMake(0, 0, 0, 0);
+        });
+    });
+
+    describe(@"when loaded from a XIB", ^{
+        beforeEach(^{
+            AWebViewController *controller = [[AWebViewController alloc] initWithNibName:@"AWebViewController" bundle:nil];
+            // Load the view.
+            controller.view;
+            webView = controller.webView;
+            webView.delegate = delegate;
+        });
+
+        describe(@"loadRequest:", ^{
+            __block void (^executeOperation)();
+
+            beforeEach(^{
+                NSMutableDictionary *context = [SpecHelper specHelper].sharedExampleContext;
+                executeOperation = [[^{
+                    [webView loadRequest:request];
+                } copy] autorelease];
+                [context setObject:executeOperation forKey:@"executeOperation"];
+
+                UIWebViewNavigationType navigationType = UIWebViewNavigationTypeOther;
+                NSValue *navigationTypeValue = [NSValue valueWithBytes:&navigationType objCType:@encode(UIWebViewNavigationType)];
+                [context setObject:navigationTypeValue forKey:@"navigationType"];
+            });
+
+            itShouldBehaveLike(@"an operation that loads a request");
         });
     });
 });

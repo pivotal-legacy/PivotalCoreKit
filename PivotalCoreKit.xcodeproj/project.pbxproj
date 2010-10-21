@@ -47,6 +47,8 @@
 		AE13904A11E5508A004E825D /* PivotalSpecHelperKit.h in Headers */ = {isa = PBXBuildFile; fileRef = AE13904911E5508A004E825D /* PivotalSpecHelperKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE13930011E64E05004E825D /* NSXMLParserDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = AE1392FF11E64E05004E825D /* NSXMLParserDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE13930111E64E05004E825D /* NSXMLParserDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = AE1392FF11E64E05004E825D /* NSXMLParserDelegate.h */; };
+		AE4C17C6126FD3CE009CB34D /* AWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE4C17C4126FD3CE009CB34D /* AWebViewController.m */; };
+		AE4C17C7126FD3CE009CB34D /* AWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE4C17C5126FD3CE009CB34D /* AWebViewController.xib */; };
 		AE515E0E123AA778004B2CEB /* PivotalCoreKit.h in Headers */ = {isa = PBXBuildFile; fileRef = AE515E0D123AA778004B2CEB /* PivotalCoreKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE71481A11CAAD4F00672114 /* NSString+PivotalCore.h in Headers */ = {isa = PBXBuildFile; fileRef = AE71481811CAAD4F00672114 /* NSString+PivotalCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE71481B11CAAD4F00672114 /* NSString+PivotalCore.m in Sources */ = {isa = PBXBuildFile; fileRef = AE71481911CAAD4F00672114 /* NSString+PivotalCore.m */; };
@@ -257,6 +259,9 @@
 		AE1392FF11E64E05004E825D /* NSXMLParserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSXMLParserDelegate.h; sourceTree = "<group>"; };
 		AE2BDAA21202257A001DD8D3 /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.markdown; sourceTree = "<group>"; };
 		AE3BA38011C9381400F34485 /* BUILD-TARGETS.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "BUILD-TARGETS.markdown"; sourceTree = "<group>"; };
+		AE4C17C3126FD3CE009CB34D /* AWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWebViewController.h; sourceTree = "<group>"; };
+		AE4C17C4126FD3CE009CB34D /* AWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWebViewController.m; sourceTree = "<group>"; };
+		AE4C17C5126FD3CE009CB34D /* AWebViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AWebViewController.xib; sourceTree = "<group>"; };
 		AE515E0D123AA778004B2CEB /* PivotalCoreKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PivotalCoreKit.h; sourceTree = "<group>"; };
 		AE71473311CA9A2900672114 /* 400.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 400.txt; sourceTree = "<group>"; };
 		AE71481811CAAD4F00672114 /* NSString+PivotalCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+PivotalCore.h"; sourceTree = "<group>"; };
@@ -592,6 +597,9 @@
 				AEF15C0911C99A87005B4F92 /* FakeResponses */,
 				669728391260FF9400696CAC /* FakeConnectionDelegate.h */,
 				6697283A1260FF9400696CAC /* FakeConnectionDelegate.m */,
+				AE4C17C3126FD3CE009CB34D /* AWebViewController.h */,
+				AE4C17C4126FD3CE009CB34D /* AWebViewController.m */,
+				AE4C17C5126FD3CE009CB34D /* AWebViewController.xib */,
 			);
 			path = Fixtures;
 			sourceTree = "<group>";
@@ -896,6 +904,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE4C17C7126FD3CE009CB34D /* AWebViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -923,6 +932,7 @@
 				6696E0011266E09800111E23 /* main.m in Sources */,
 				6696E0321266E36E00111E23 /* UIWebViewSpec+Spec.m in Sources */,
 				6696E04A1266E6B900111E23 /* UIWebView+Spec.m in Sources */,
+				AE4C17C6126FD3CE009CB34D /* AWebViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -50,6 +50,10 @@ static NSMutableDictionary *attributes__;
     return self;
 }
 
+- (id)initWithCoder:(NSCoder *)decoder {
+    return [self initWithFrame:CGRectMake(0, 0, 0, 0)];
+}
+
 - (void)dealloc {
     UIWebViewAttributes const *attributes = CFDictionaryGetValue((CFMutableDictionaryRef)attributes__, self);
     [attributes release];
