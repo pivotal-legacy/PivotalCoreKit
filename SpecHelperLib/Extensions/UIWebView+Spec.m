@@ -6,11 +6,14 @@
 @property (nonatomic, assign) BOOL loading, logging;
 @property (nonatomic, retain) NSMutableArray *javaScripts;
 @property (nonatomic, retain) NSMutableDictionary *returnValueBlocksByJavaScript;
+@property (nonatomic, retain) NSString *loadedHTMLString;
+@property (nonatomic, retain) NSURL *loadedBaseURL;
 @end
 
 @implementation UIWebViewAttributes
 @synthesize delegate = delegate_, request = request_, loading = loading_, logging = logging_,
-    javaScripts = javaScripts_, returnValueBlocksByJavaScript = returnValueBlocksByJavaScript_;
+    javaScripts = javaScripts_, returnValueBlocksByJavaScript = returnValueBlocksByJavaScript_,
+    loadedHTMLString = loadedHTMLString_, loadedBaseURL = loadedBaseURL_;
 
 - (id)init {
     if (self = [super init]) {
@@ -21,6 +24,8 @@
 }
 
 - (void)dealloc {
+    self.loadedHTMLString = nil;
+    self.loadedBaseURL = nil;
     self.request = nil;
     self.returnValueBlocksByJavaScript = nil;
     self.javaScripts = nil;
@@ -101,6 +106,8 @@ static NSMutableDictionary *attributes__;
 }
 
 - (void)loadHTMLString:(NSString *)string baseURL:(NSURL *)baseURL {
+    self.attributes.loadedHTMLString = string;
+    self.attributes.loadedBaseURL = baseURL;
     [self log:@"loadHTMLString:%@ baseURL:%@", string, baseURL];
 }
 
@@ -153,8 +160,17 @@ static NSMutableDictionary *attributes__;
 - (void)enableLogging {
     self.attributes.logging = YES;
 }
+
 - (void)disableLogging {
     self.attributes.logging = NO;
+}
+
+- (NSString *)loadedHTMLString {
+    return self.attributes.loadedHTMLString;
+}
+
+- (NSURL *)loadedBaseURL {
+    return self.attributes.loadedBaseURL;
 }
 
 #pragma mark Private interface

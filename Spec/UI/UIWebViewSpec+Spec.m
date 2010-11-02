@@ -264,8 +264,16 @@ describe(@"UIWebView (spec extensions)", ^{
     });
 
     describe(@"loadHTMLString:baseURL:", ^{
-        it(@"should not blow up", ^{
+        beforeEach(^{
             [webView loadHTMLString:@"some HTML" baseURL:[NSURL URLWithString:@"a-path"]];
+        });
+
+        it(@"should record the loaded HTML", ^{
+            assertThat(webView.loadedHTMLString, equalTo(@"some HTML"));
+        });
+
+        it(@"should record the baseURL", ^{
+            assertThat(webView.loadedBaseURL, equalTo([NSURL URLWithString:@"a-path"]));
         });
     });
 

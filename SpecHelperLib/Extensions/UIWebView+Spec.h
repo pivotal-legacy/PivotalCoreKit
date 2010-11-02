@@ -11,5 +11,7 @@ typedef NSString *(^UIWebViewJavaScriptReturnBlock)();
 - (NSArray *)executedJavaScripts;
 - (void)enableLogging;
 - (void)disableLogging;
+- (NSString *)loadedHTMLString;
+- (NSURL *)loadedBaseURL;
 
 @end
