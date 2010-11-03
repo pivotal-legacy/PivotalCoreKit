@@ -7,10 +7,10 @@
 // link against the libxml2.dylib shared library (should be available in the list
 // of shared libraries for the SDK you've targeted).
 
-@class PCKXMLParserDelegate;
+@protocol PCKXMLParserDelegate;
 
 @interface PCKXMLParser : NSObject<PCKParser>
 
-- (id)initWithDelegate:(PCKXMLParserDelegate *)delegate;
+- (id)initWithDelegate:(id<PCKXMLParserDelegate>)delegate;
 
 @end

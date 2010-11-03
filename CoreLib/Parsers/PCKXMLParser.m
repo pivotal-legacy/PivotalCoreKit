@@ -6,7 +6,7 @@ static xmlSAXHandler simpleSAXStruct;
 
 @interface PCKXMLParser ()
 
-@property (nonatomic, assign) PCKXMLParserDelegate *delegate;
+@property (nonatomic, assign) id<PCKXMLParserDelegate> delegate;
 @property (nonatomic, assign) xmlParserCtxt *parserContext;
 
 @end
@@ -20,7 +20,7 @@ static xmlSAXHandler simpleSAXStruct;
     @throw @"Use initWithDelegate to create a PCKXMLParser.";
 }
 
-- (id)initWithDelegate:(PCKXMLParserDelegate *)delegate {
+- (id)initWithDelegate:(id<PCKXMLParserDelegate>)delegate {
     if (self = [super init]) {
         self.delegate = delegate;
         self.parserContext = xmlCreatePushParserCtxt(&simpleSAXStruct, self, NULL, 0, NULL);
