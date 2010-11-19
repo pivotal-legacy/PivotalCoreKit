@@ -263,6 +263,25 @@ describe(@"UIWebView (spec extensions)", ^{
         });
     });
 
+    describe(@"setDataDetectorTypes:", ^{
+        it(@"should not blow up", ^{
+            [webView setDataDetectorTypes:1];
+        });
+    });
+
+    describe(@"dataDetectorTypes", ^{
+        it(@"should default to UIDataDetectorTypePhoneNumber", ^{
+            assertThatInt(webView.dataDetectorTypes, equalToInt(UIDataDetectorTypePhoneNumber));
+        });
+
+        it(@"should return any previous set value", ^{
+            UIDataDetectorTypes setTypes = UIDataDetectorTypeCalendarEvent || UIDataDetectorTypeAddress;
+
+            webView.dataDetectorTypes = setTypes;
+            assertThatInt(webView.dataDetectorTypes, equalToInt(setTypes));
+        });
+    });
+
     describe(@"loadHTMLString:baseURL:", ^{
         beforeEach(^{
             [webView loadHTMLString:@"some HTML" baseURL:[NSURL URLWithString:@"a-path"]];

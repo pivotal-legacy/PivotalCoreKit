@@ -8,17 +8,20 @@
 @property (nonatomic, retain) NSMutableDictionary *returnValueBlocksByJavaScript;
 @property (nonatomic, retain) NSString *loadedHTMLString;
 @property (nonatomic, retain) NSURL *loadedBaseURL;
+@property (nonatomic, assign) UIDataDetectorTypes dataDetectorTypes;
 @end
 
 @implementation UIWebViewAttributes
 @synthesize delegate = delegate_, request = request_, loading = loading_, logging = logging_,
     javaScripts = javaScripts_, returnValueBlocksByJavaScript = returnValueBlocksByJavaScript_,
-    loadedHTMLString = loadedHTMLString_, loadedBaseURL = loadedBaseURL_;
+    loadedHTMLString = loadedHTMLString_, loadedBaseURL = loadedBaseURL_,
+    dataDetectorTypes = dataDetectorTypes_;
 
 - (id)init {
     if (self = [super init]) {
         self.javaScripts = [NSMutableArray array];
         self.returnValueBlocksByJavaScript = [NSMutableDictionary dictionary];
+        self.dataDetectorTypes = UIDataDetectorTypePhoneNumber;
     }
     return self;
 }
@@ -97,6 +100,14 @@ static NSMutableDictionary *attributes__;
 
 - (CGRect)frame {
     return super.frame;
+}
+
+- (void)setDataDetectorTypes:(UIDataDetectorTypes)dataDetectorTypes {
+    self.attributes.dataDetectorTypes = dataDetectorTypes;
+}
+
+- (UIDataDetectorTypes)dataDetectorTypes {
+    return self.attributes.dataDetectorTypes;
 }
 
 #pragma mark Method overrides
