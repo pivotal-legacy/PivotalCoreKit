@@ -45,8 +45,6 @@
 		AE138F4A11E548E1004E825D /* PSHKFakeHTTPURLResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF15AF911C97F95005B4F92 /* PSHKFakeHTTPURLResponse.m */; };
 		AE138F4B11E548E1004E825D /* PSHKFakeResponses.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF15B4411C984EB005B4F92 /* PSHKFakeResponses.m */; };
 		AE13904A11E5508A004E825D /* PivotalSpecHelperKit.h in Headers */ = {isa = PBXBuildFile; fileRef = AE13904911E5508A004E825D /* PivotalSpecHelperKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AE13930011E64E05004E825D /* NSXMLParserDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = AE1392FF11E64E05004E825D /* NSXMLParserDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AE13930111E64E05004E825D /* NSXMLParserDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = AE1392FF11E64E05004E825D /* NSXMLParserDelegate.h */; };
 		AE4C17C6126FD3CE009CB34D /* AWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE4C17C4126FD3CE009CB34D /* AWebViewController.m */; };
 		AE4C17C7126FD3CE009CB34D /* AWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE4C17C5126FD3CE009CB34D /* AWebViewController.xib */; };
 		AE515E0E123AA778004B2CEB /* PivotalCoreKit.h in Headers */ = {isa = PBXBuildFile; fileRef = AE515E0D123AA778004B2CEB /* PivotalCoreKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -256,7 +254,6 @@
 		AE138E7011E542BF004E825D /* libPivotalCoreKit-StaticLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPivotalCoreKit-StaticLib.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE138F4611E548B5004E825D /* libPivotalSpecHelperKit-StaticLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPivotalSpecHelperKit-StaticLib.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE13904911E5508A004E825D /* PivotalSpecHelperKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PivotalSpecHelperKit.h; sourceTree = "<group>"; };
-		AE1392FF11E64E05004E825D /* NSXMLParserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSXMLParserDelegate.h; sourceTree = "<group>"; };
 		AE2BDAA21202257A001DD8D3 /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.markdown; sourceTree = "<group>"; };
 		AE3BA38011C9381400F34485 /* BUILD-TARGETS.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "BUILD-TARGETS.markdown"; sourceTree = "<group>"; };
 		AE4C17C3126FD3CE009CB34D /* AWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWebViewController.h; sourceTree = "<group>"; };
@@ -465,7 +462,6 @@
 				AE71481911CAAD4F00672114 /* NSString+PivotalCore.m */,
 				AE71490111CBFDD900672114 /* NSData+PivotalCore.h */,
 				AE71490211CBFDD900672114 /* NSData+PivotalCore.m */,
-				AE1392FF11E64E05004E825D /* NSXMLParserDelegate.h */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -628,7 +624,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE13930111E64E05004E825D /* NSXMLParserDelegate.h in Headers */,
 				AEBD9597120CB852003C1C5B /* PCKResponseParser.h in Headers */,
 				66C4D69B123DA5CB00CF9746 /* PCKXMLParserDelegate.h in Headers */,
 				669722AD125851D700696CAC /* PCKParserDelegate.h in Headers */,
@@ -646,7 +641,6 @@
 				AE71481A11CAAD4F00672114 /* NSString+PivotalCore.h in Headers */,
 				AE71493011CC108700672114 /* NSData+PivotalCore.h in Headers */,
 				AE88AF7C11DE6BE000B65DD3 /* PCKXMLParser.h in Headers */,
-				AE13930011E64E05004E825D /* NSXMLParserDelegate.h in Headers */,
 				AEBD9599120CB852003C1C5B /* PCKResponseParser.h in Headers */,
 				AEBD95AA120CBB1B003C1C5B /* PCKParser.h in Headers */,
 				AE515E0E123AA778004B2CEB /* PivotalCoreKit.h in Headers */,
@@ -1158,6 +1152,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1165,7 +1160,7 @@
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_VERSION = coop.plausible.blocks.compilers.gcc.4_2;
+				GCC_VERSION = 4.2;
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				PREBINDING = NO;
 				PRODUCT_NAME = "PivotalCoreKit-StaticLib";
@@ -1176,6 +1171,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1183,7 +1179,7 @@
 					"\"$(SRCROOT)/Externals\"",
 				);
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				GCC_VERSION = coop.plausible.blocks.compilers.gcc.4_2;
+				GCC_VERSION = 4.2;
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				PREBINDING = NO;
 				PRODUCT_NAME = "PivotalCoreKit-StaticLib";
@@ -1317,7 +1313,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_VERSION = 4.2;
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "PivotalCoreKit-Info.plist";
 				INSTALL_PATH = "$(HOME)/Library/Frameworks";
@@ -1349,7 +1345,7 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_VERSION = 4.2;
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "PivotalCoreKit-Info.plist";
 				INSTALL_PATH = "$(HOME)/Library/Frameworks";
