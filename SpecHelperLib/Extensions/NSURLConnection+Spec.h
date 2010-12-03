@@ -1,6 +1,5 @@
 #import <Foundation/Foundation.h>
 
-@protocol NSURLConnectionDelegate;
 @class PSHKFakeHTTPURLResponse;
 
 @interface NSURLConnection (Spec)
@@ -9,7 +8,7 @@
 + (void)resetAll;
 
 - (NSURLRequest *)request;
-- (id<NSURLConnectionDelegate>)delegate;
+- (id)delegate;
 
 - (void)returnResponse:(PSHKFakeHTTPURLResponse *)response;
 - (void)failWithError:(NSError *)error;

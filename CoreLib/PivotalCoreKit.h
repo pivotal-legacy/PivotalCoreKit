@@ -2,7 +2,7 @@
 #import "NSData+PivotalCore.h"
 
 #import "PCKHTTPInterface.h"
-#import "NSURLConnectionDelegate.h"
+#import "PCKHTTPConnectionDelegate.h"
 
 #import "PCKParser.h"
 #import "PCKResponseParser.h"

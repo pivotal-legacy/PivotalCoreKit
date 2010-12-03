@@ -5,7 +5,7 @@
 @property (nonatomic, assign) PCKHTTPInterface *interface;
 @property (nonatomic, retain) NSURLRequest *request;
 @property (nonatomic, retain) NSURLConnection *connection;
-@property (nonatomic, retain) id<NSURLConnectionDelegate> connectionDelegate;
+@property (nonatomic, retain) id<PCKHTTPConnectionDelegate> connectionDelegate;
 @end
 
 @implementation PCKHTTPConnectionOperation
@@ -13,7 +13,7 @@
 @synthesize interface = interface_, request = request_, connection = connection_,
     connectionDelegate = connectionDelegate_;
 
-- (id)initWithHTTPInterface:(PCKHTTPInterface *)interface forRequest:(NSURLRequest *)request andDelegate:(id<NSURLConnectionDelegate>)delegate {
+- (id)initWithHTTPInterface:(PCKHTTPInterface *)interface forRequest:(NSURLRequest *)request andDelegate:(id<PCKHTTPConnectionDelegate>)delegate {
     if (self = [super init]) {
         self.interface = interface;
         self.request = request;
@@ -49,7 +49,7 @@
     // Stay alive
 }
 
-#pragma mark NSURLConnectionDelegate
+#pragma mark PCKHTTPConnectionDelegate
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
 }
 

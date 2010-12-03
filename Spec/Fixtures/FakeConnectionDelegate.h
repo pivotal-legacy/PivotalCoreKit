@@ -1,5 +1,5 @@
 #import <Foundation/Foundation.h>
-#import "NSURLConnectionDelegate.h"
+#import "PCKHTTPConnectionDelegate.h"
 
-@interface FakeConnectionDelegate : NSObject<NSURLConnectionDelegate>
+@interface FakeConnectionDelegate : NSObject<PCKHTTPConnectionDelegate>
 @end

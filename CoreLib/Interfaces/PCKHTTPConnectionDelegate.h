@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 
-@protocol NSURLConnectionDelegate <NSObject>
+@protocol PCKHTTPConnectionDelegate <NSObject>
 
 @required
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection;

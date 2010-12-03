@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 
-@protocol NSURLConnectionDelegate;
+@protocol PCKHTTPConnectionDelegate;
 
 typedef void (^RequestSetupBlock)(NSMutableURLRequest *);
 
@@ -12,8 +12,8 @@ typedef void (^RequestSetupBlock)(NSMutableURLRequest *);
 @property (nonatomic, readonly) NSArray *activeConnections;
 
 #pragma mark protected
-- (NSURLConnection *)connectionForPath:(NSString *)path secure:(BOOL)secure andDelegate:(id<NSURLConnectionDelegate>)delegate;
-- (NSURLConnection *)connectionForPath:(NSString *)path secure:(BOOL)secure andDelegate:(id<NSURLConnectionDelegate>)delegate withRequestSetup:(RequestSetupBlock)requestSetup;
+- (NSURLConnection *)connectionForPath:(NSString *)path secure:(BOOL)secure andDelegate:(id<PCKHTTPConnectionDelegate>)delegate;
+- (NSURLConnection *)connectionForPath:(NSString *)path secure:(BOOL)secure andDelegate:(id<PCKHTTPConnectionDelegate>)delegate withRequestSetup:(RequestSetupBlock)requestSetup;
 
 @end
 

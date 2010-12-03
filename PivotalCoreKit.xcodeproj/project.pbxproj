@@ -77,7 +77,7 @@
 		AEF15AF211C97F51005B4F92 /* NSURLConnection+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF15A1F11C97864005B4F92 /* NSURLConnection+Spec.m */; };
 		AEF15AFA11C97F95005B4F92 /* PSHKFakeHTTPURLResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = AEF15AF811C97F95005B4F92 /* PSHKFakeHTTPURLResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AEF15AFB11C97F95005B4F92 /* PSHKFakeHTTPURLResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF15AF911C97F95005B4F92 /* PSHKFakeHTTPURLResponse.m */; };
-		AEF15AFF11C97FF9005B4F92 /* NSURLConnectionDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = AEF15AFE11C97FF9005B4F92 /* NSURLConnectionDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AEF15AFF11C97FF9005B4F92 /* PCKHTTPConnectionDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = AEF15AFE11C97FF9005B4F92 /* PCKHTTPConnectionDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AEF15B0911C98072005B4F92 /* PivotalSpecHelperKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEF15AE011C97F15005B4F92 /* PivotalSpecHelperKit.framework */; };
 		AEF15B4511C984EB005B4F92 /* PSHKFakeResponses.h in Headers */ = {isa = PBXBuildFile; fileRef = AEF15B4311C984EB005B4F92 /* PSHKFakeResponses.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AEF15B4611C984EB005B4F92 /* PSHKFakeResponses.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF15B4411C984EB005B4F92 /* PSHKFakeResponses.m */; };
@@ -291,7 +291,7 @@
 		AEF15AE111C97F15005B4F92 /* PivotalSpecHelperKit-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PivotalSpecHelperKit-Info.plist"; sourceTree = "<group>"; };
 		AEF15AF811C97F95005B4F92 /* PSHKFakeHTTPURLResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSHKFakeHTTPURLResponse.h; sourceTree = "<group>"; };
 		AEF15AF911C97F95005B4F92 /* PSHKFakeHTTPURLResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSHKFakeHTTPURLResponse.m; sourceTree = "<group>"; };
-		AEF15AFE11C97FF9005B4F92 /* NSURLConnectionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSURLConnectionDelegate.h; sourceTree = "<group>"; };
+		AEF15AFE11C97FF9005B4F92 /* PCKHTTPConnectionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCKHTTPConnectionDelegate.h; sourceTree = "<group>"; };
 		AEF15B4311C984EB005B4F92 /* PSHKFakeResponses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSHKFakeResponses.h; sourceTree = "<group>"; };
 		AEF15B4411C984EB005B4F92 /* PSHKFakeResponses.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSHKFakeResponses.m; sourceTree = "<group>"; };
 		AEF15C0B11C99AFE005B4F92 /* 200.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 200.txt; sourceTree = "<group>"; };
@@ -534,7 +534,7 @@
 		AECC4BF311C6E3660027AB1B /* Interfaces */ = {
 			isa = PBXGroup;
 			children = (
-				AEF15AFE11C97FF9005B4F92 /* NSURLConnectionDelegate.h */,
+				AEF15AFE11C97FF9005B4F92 /* PCKHTTPConnectionDelegate.h */,
 				AECC4BF411C6E38D0027AB1B /* PCKHTTPInterface.h */,
 				AECC4BF511C6E38D0027AB1B /* PCKHTTPInterface.m */,
 				6697275D12599F5500696CAC /* PCKHTTPConnection.h */,
@@ -637,7 +637,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AEF15ACC11C97EA9005B4F92 /* PCKHTTPInterface.h in Headers */,
-				AEF15AFF11C97FF9005B4F92 /* NSURLConnectionDelegate.h in Headers */,
+				AEF15AFF11C97FF9005B4F92 /* PCKHTTPConnectionDelegate.h in Headers */,
 				AE71481A11CAAD4F00672114 /* NSString+PivotalCore.h in Headers */,
 				AE71493011CC108700672114 /* NSData+PivotalCore.h in Headers */,
 				AE88AF7C11DE6BE000B65DD3 /* PCKXMLParser.h in Headers */,

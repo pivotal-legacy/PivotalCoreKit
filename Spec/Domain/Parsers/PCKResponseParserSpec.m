@@ -5,7 +5,7 @@
 #import <PivotalSpecHelperKit/PivotalSpecHelperKit.h>
 
 #import "PCKResponseParser.h"
-#import "NSURLConnectionDelegate.h"
+#import "PCKHTTPConnectionDelegate.h"
 #import "PCKParser.h"
 
 SPEC_BEGIN(PCKResponseParserSpec)
@@ -16,7 +16,7 @@ describe(@"PCKResponseParser", ^{
 
     beforeEach(^{
         mockParser = [OCMockObject niceMockForProtocol:@protocol(PCKParser)];
-        mockDelegate = [OCMockObject niceMockForProtocol:@protocol(NSURLConnectionDelegate)];
+        mockDelegate = [OCMockObject niceMockForProtocol:@protocol(PCKHTTPConnectionDelegate)];
         responseParser = [[PCKResponseParser alloc] initWithParser:mockParser andDelegate:mockDelegate];
     });
 

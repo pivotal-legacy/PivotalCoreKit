@@ -1,6 +1,6 @@
 #import "NSURLConnection+Spec.h"
 #import "PSHKFakeHTTPURLResponse.h"
-#import "NSURLConnectionDelegate.h"
+#import "PCKHTTPConnectionDelegate.h"
 
 @implementation NSURLConnection (Spec)
 
@@ -56,7 +56,7 @@ static NSMutableDictionary *requests__, *delegates__;
     return [requests__ objectForKey:self];
 }
 
-- (id<NSURLConnectionDelegate>)delegate {
+- (id)delegate {
     return [delegates__ objectForKey:self];
 }
 

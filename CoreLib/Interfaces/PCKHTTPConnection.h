@@ -1,10 +1,10 @@
 #import <Foundation/Foundation.h>
-#import "NSURLConnectionDelegate.h"
+#import "PCKHTTPConnectionDelegate.h"
 
 @class PCKHTTPInterface;
 
-@interface PCKHTTPConnection : NSURLConnection <NSURLConnectionDelegate>
+@interface PCKHTTPConnection : NSURLConnection <PCKHTTPConnectionDelegate>
 
-- (id)initWithHTTPInterface:(PCKHTTPInterface *)interface forRequest:(NSURLRequest *)request andDelegate:(id<NSURLConnectionDelegate>)delegate;
+- (id)initWithHTTPInterface:(PCKHTTPInterface *)interface forRequest:(NSURLRequest *)request andDelegate:(id<PCKHTTPConnectionDelegate>)delegate;
 
 @end

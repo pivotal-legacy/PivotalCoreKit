@@ -25,11 +25,11 @@
     [super dealloc];
 }
 
-- (NSURLConnection *)connectionForPath:(NSString *)path secure:(BOOL)secure andDelegate:(id<NSURLConnectionDelegate>)delegate {
+- (NSURLConnection *)connectionForPath:(NSString *)path secure:(BOOL)secure andDelegate:(id<PCKHTTPConnectionDelegate>)delegate {
     return [self connectionForPath:path secure:secure andDelegate:delegate withRequestSetup:nil];
 }
 
-- (NSURLConnection *)connectionForPath:(NSString *)path secure:(BOOL)secure andDelegate:(id<NSURLConnectionDelegate>)delegate withRequestSetup:(RequestSetupBlock)requestSetup {
+- (NSURLConnection *)connectionForPath:(NSString *)path secure:(BOOL)secure andDelegate:(id<PCKHTTPConnectionDelegate>)delegate withRequestSetup:(RequestSetupBlock)requestSetup {
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[self urlForPath:path secure:secure]];
     if (requestSetup) {
         requestSetup(request);

@@ -4,7 +4,7 @@
 #import <OCHamcrest/OCHamcrest.h>
 
 #import "PCKHTTPInterface.h"
-#import "NSURLConnectionDelegate.h"
+#import "PCKHTTPConnectionDelegate.h"
 #import "NSURLConnection+Spec.h"
 #import "PSHKFakeResponses.h"
 #import "PSHKFakeHTTPURLResponse.h"
@@ -14,7 +14,7 @@
 #define PATH "foo/bar"
 
 @interface TestInterface : PCKHTTPInterface
-- (NSURLConnection *)makeConnectionWithDelegate:(id<NSURLConnectionDelegate>)delegate;
+- (NSURLConnection *)makeConnectionWithDelegate:(id<PCKHTTPConnectionDelegate>)delegate;
 @end
 
 @implementation TestInterface
@@ -26,15 +26,15 @@
     return @BASE_PATH;
 }
 
-- (NSURLConnection *)makeConnectionWithDelegate:(id<NSURLConnectionDelegate>)delegate {
+- (NSURLConnection *)makeConnectionWithDelegate:(id<PCKHTTPConnectionDelegate>)delegate {
     return [self connectionForPath:@PATH secure:false andDelegate:delegate];
 }
 
-- (NSURLConnection *)makeSecureConnectionWithDelegate:(id<NSURLConnectionDelegate>)delegate {
+- (NSURLConnection *)makeSecureConnectionWithDelegate:(id<PCKHTTPConnectionDelegate>)delegate {
     return [self connectionForPath:@PATH secure:true andDelegate:delegate];
 }
 
-- (NSURLConnection *)makeConnectionWithHeaders:(NSDictionary *)headers andDelegate:(id<NSURLConnectionDelegate>)delegate {
+- (NSURLConnection *)makeConnectionWithHeaders:(NSDictionary *)headers andDelegate:(id<PCKHTTPConnectionDelegate>)delegate {
     return [self connectionForPath:@PATH secure:true andDelegate:delegate withRequestSetup:^(NSMutableURLRequest *request) {
         [request setAllHTTPHeaderFields:headers];
     }];
@@ -54,7 +54,7 @@ describe(@"PCKHTTPInterface", ^{
         [NSURLConnection resetAll];
 
         interface = [[TestInterface alloc] init];
-        mockDelegate = [OCMockObject mockForProtocol:@protocol(NSURLConnectionDelegate)];
+        mockDelegate = [OCMockObject mockForProtocol:@protocol(PCKHTTPConnectionDelegate)];
     });
 
     afterEach(^{
