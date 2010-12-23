@@ -39,6 +39,14 @@ describe(@"PCKHTTPConnectionOperation", ^{
         it(@"should not create a connection", ^{
             assertThat([[NSURLConnection connections] lastObject], nilValue());
         });
+
+        it(@"should not be executing", ^{
+            assertThatBool(operation.isExecuting, equalToBool(NO));
+        });
+
+        it(@"should not be finished", ^{
+            assertThatBool(operation.isFinished, equalToBool(NO));
+        });
     });
 
     describe(@"deallocation", ^{
@@ -134,27 +142,72 @@ describe(@"PCKHTTPConnectionOperation", ^{
                 assertThatBool(operation.isExecuting, equalToBool(NO));
             });
 
-            it(@"should be finished", PENDING);
+            it(@"should be finished", ^{
+                [connection returnResponse:response];
+                assertThatBool(operation.isFinished, equalToBool(YES));
+            });
         });
 
         describe(@"on connection failure", ^{
-            it(@"should forward the failure event to the delegate", PENDING);
-            it(@"should complete the connection", PENDING);
-            it(@"should not be executing", PENDING);
-            it(@"should be finished", PENDING);
+            __block NSError *error;
+
+            beforeEach(^{
+                error = [NSError errorWithDomain:@"domain" code:7 userInfo:nil];
+            });
+
+            it(@"should forward the failure event to the delegate", ^{
+                id mockDelegate = [OCMockObject partialMockForObject:delegate];
+                [[mockDelegate expect] connection:connection didFailWithError:error];
+
+                [connection failWithError:error];
+
+                [mockDelegate verify];
+            });
+
+            it(@"should not be executing", ^{
+                [connection failWithError:error];
+                assertThatBool(operation.isExecuting, equalToBool(NO));
+            });
+
+            it(@"should be finished", ^{
+                [connection failWithError:error];
+                assertThatBool(operation.isFinished, equalToBool(YES));
+            });
         });
     });
 
     describe(@"cancel", ^{
         describe(@"when it has started", ^{
-            it(@"should cancel the connection", PENDING);
-            it(@"should not be executing", PENDING);
-            it(@"should be finished", PENDING);
+            beforeEach(^{
+                [operation start];
+                [operation cancel];
+            });
+
+            it(@"should cancel the connection", ^{
+                assertThatInt([NSURLConnection connections].count, equalToInt(0));
+            });
+
+            it(@"should not be executing", ^{
+                assertThatBool(operation.isExecuting, equalToBool(NO));
+            });
+
+            it(@"should be finished", ^{
+                assertThatBool(operation.isFinished, equalToBool(YES));
+            });
         });
 
         describe(@"when it has not started", ^{
-            it(@"should not be executing", PENDING);
-            it(@"should be finished", PENDING);
+            beforeEach(^{
+                [operation cancel];
+            });
+
+            it(@"should not be executing", ^{
+                assertThatBool(operation.isExecuting, equalToBool(NO));
+            });
+
+            it(@"should be finished", ^{
+                assertThatBool(operation.isFinished, equalToBool(YES));
+            });
         });
     });
 });
