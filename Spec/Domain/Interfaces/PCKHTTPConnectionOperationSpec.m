@@ -81,22 +81,59 @@ describe(@"PCKHTTPConnectionOperation", ^{
     });
 
     describe(@"start", ^{
+        __block NSURLConnection *connection;
+
         beforeEach(^{
+            assertThatInt([NSURLConnection connections].count, equalToInt(0));
             [operation start];
+            connection = [[NSURLConnection connections] lastObject];
         });
 
         it(@"should create a connection", ^{
-            NSURLConnection *connection = [[NSURLConnection connections] lastObject];
             assertThat(connection, notNilValue());
         });
 
-        it(@"should be executing", PENDING);
-        it(@"should not be finished", PENDING);
+        it(@"should be executing", ^{
+            assertThatBool(operation.isExecuting, equalToBool(YES));
+        });
 
-        describe(@"on connection response", ^{
-            it(@"should forward connection events to the delegate", PENDING);
-            it(@"should complete the connection", PENDING);
-            it(@"should not be executing", PENDING);
+        it(@"should not be finished", ^{
+            assertThatBool(operation.isFinished, equalToBool(NO));
+        });
+
+        describe(@"on connection success", ^{
+            __block PSHKFakeHTTPURLResponse *response;
+
+            beforeEach(^{
+                response = [[PSHKFakeResponses responsesForRequest:@"HelloWorld"] success];
+            });
+
+            it(@"should forward connection events to the delegate", ^{
+                id mockDelegate = [OCMockObject partialMockForObject:delegate];
+                [[mockDelegate expect] connection:connection didReceiveResponse:[OCMArg any]];
+                [[mockDelegate expect] connection:connection didReceiveData:[[response body] dataUsingEncoding:NSUTF8StringEncoding]];
+
+                assertThatBool([delegate respondsToSelector:@selector(connection:didReceiveResponse:)], equalToBool(YES));
+
+                [connection returnResponse:response];
+
+                [mockDelegate verify];
+            });
+
+            it(@"should complete the connection", ^{
+                id mockDelegate = [OCMockObject partialMockForObject:delegate];
+                [[mockDelegate expect] connectionDidFinishLoading:connection];
+
+                [connection returnResponse:response];
+
+                [mockDelegate verify];
+            });
+
+            it(@"should not be executing", ^{
+                [connection returnResponse:response];
+                assertThatBool(operation.isExecuting, equalToBool(NO));
+            });
+
             it(@"should be finished", PENDING);
         });
 
@@ -109,9 +146,16 @@ describe(@"PCKHTTPConnectionOperation", ^{
     });
 
     describe(@"cancel", ^{
-        it(@"should cancel the connection", PENDING);
-        it(@"should not be executing", PENDING);
-        it(@"should be finished", PENDING);
+        describe(@"when it has started", ^{
+            it(@"should cancel the connection", PENDING);
+            it(@"should not be executing", PENDING);
+            it(@"should be finished", PENDING);
+        });
+
+        describe(@"when it has not started", ^{
+            it(@"should not be executing", PENDING);
+            it(@"should be finished", PENDING);
+        });
     });
 });
 

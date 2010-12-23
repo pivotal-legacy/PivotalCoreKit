@@ -6,12 +6,13 @@
 @property (nonatomic, retain) NSURLRequest *request;
 @property (nonatomic, retain) NSURLConnection *connection;
 @property (nonatomic, retain) id<PCKHTTPConnectionDelegate> connectionDelegate;
+@property (nonatomic, assign) BOOL isExecuting;
 @end
 
 @implementation PCKHTTPConnectionOperation
 
 @synthesize interface = interface_, request = request_, connection = connection_,
-    connectionDelegate = connectionDelegate_;
+    connectionDelegate = connectionDelegate_, isExecuting = isExecuting_;
 
 - (id)initWithHTTPInterface:(PCKHTTPInterface *)interface forRequest:(NSURLRequest *)request andDelegate:(id<PCKHTTPConnectionDelegate>)delegate {
     if (self = [super init]) {
@@ -44,6 +45,7 @@
         [self performSelectorOnMainThread:@selector(start) withObject:nil waitUntilDone:NO];
     }
 
+    self.isExecuting = YES;
     self.connection = [[[PCKHTTPConnection alloc] initWithHTTPInterface:self.interface forRequest:self.request andDelegate:self] autorelease];
 
     // Stay alive
@@ -51,6 +53,8 @@
 
 #pragma mark PCKHTTPConnectionDelegate
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
+    self.isExecuting = NO;
+    [self.connectionDelegate connectionDidFinishLoading:connection];
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {

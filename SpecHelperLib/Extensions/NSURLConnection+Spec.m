@@ -61,11 +61,15 @@ static NSMutableDictionary *requests__, *delegates__;
 }
 
 - (void)returnResponse:(PSHKFakeHTTPURLResponse *)response {
-    id delegate = [self delegate];
+    if ([self.delegate respondsToSelector:@selector(connection:didReceiveResponse:)]) {
+        [self.delegate connection:self didReceiveResponse:response];
+    }
 
-    [delegate connection:self didReceiveResponse:response];
-    [delegate connection:self didReceiveData:[[response body] dataUsingEncoding:NSUTF8StringEncoding]];
-    [delegate connectionDidFinishLoading:self];
+    if ([self.delegate respondsToSelector:@selector(connection:didReceiveData:)]) {
+        [self.delegate connection:self didReceiveData:[[response body] dataUsingEncoding:NSUTF8StringEncoding]];
+    }
+
+    [self.delegate connectionDidFinishLoading:self];
 }
 
 - (void)failWithError:(NSError *)error {

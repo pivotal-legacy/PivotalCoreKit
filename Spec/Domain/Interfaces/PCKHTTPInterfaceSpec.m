@@ -131,7 +131,7 @@ describe(@"PCKHTTPInterface", ^{
                 assertThat([interface activeConnections], isNot(hasItem(connection)));
             });
 
-            it(@"should cancel itself BEFORE removing itself from active connections and deallocating", ^{
+            it(@"should cancel the connection BEFORE removing itself from active connections and deallocating", ^{
                 // Remove the connection from the test-specific connections container so it's not
                 // retained by any test code.
                 [NSURLConnection resetAll];
