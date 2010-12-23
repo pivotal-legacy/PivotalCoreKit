@@ -1,4 +1,5 @@
 #import "UIWebView+Spec.h"
+#import "objc/runtime.h"
 
 @interface UIWebViewAttributes : NSObject
 @property (nonatomic, assign) id<UIWebViewDelegate> delegate;
@@ -34,10 +35,7 @@
     self.javaScripts = nil;
     [super dealloc];
 }
-
 @end
-
-static NSMutableDictionary *attributes__;
 
 @interface UIWebView (Spec_Private)
 - (void)loadRequest:(NSURLRequest *)request withNavigationType:(UIWebViewNavigationType)navigationType;
@@ -45,15 +43,13 @@ static NSMutableDictionary *attributes__;
 - (void)log:(NSString *)message, ...;
 @end
 
-@implementation UIWebView (Spec)
+static char ASSOCIATED_ATTRIBUTES_KEY;
 
-+ (void)initialize {
-    attributes__ = (NSMutableDictionary *)CFDictionaryCreateMutable(kCFAllocatorDefault, 0, NULL, NULL);
-}
+@implementation UIWebView (Spec)
 
 - (id)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
-        CFDictionaryAddValue((CFMutableDictionaryRef)attributes__, self, [[UIWebViewAttributes alloc] init]);
+        objc_setAssociatedObject(self, &ASSOCIATED_ATTRIBUTES_KEY, [[[UIWebViewAttributes alloc] init] autorelease], OBJC_ASSOCIATION_RETAIN);
     }
     return self;
 }
@@ -63,9 +59,6 @@ static NSMutableDictionary *attributes__;
 }
 
 - (void)dealloc {
-    UIWebViewAttributes const *attributes = CFDictionaryGetValue((CFMutableDictionaryRef)attributes__, self);
-    [attributes release];
-    CFDictionaryRemoveValue((CFMutableDictionaryRef)attributes__, self);
     [super dealloc];
 }
 
@@ -207,7 +200,7 @@ static NSMutableDictionary *attributes__;
 }
 
 - (UIWebViewAttributes *)attributes {
-    return [attributes__ objectForKey:self];
+    return objc_getAssociatedObject(self, &ASSOCIATED_ATTRIBUTES_KEY);
 }
 
 - (void)log:(NSString *)message, ... {

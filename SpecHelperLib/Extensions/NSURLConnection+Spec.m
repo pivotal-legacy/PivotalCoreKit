@@ -1,16 +1,17 @@
 #import "NSURLConnection+Spec.h"
 #import "PSHKFakeHTTPURLResponse.h"
 #import "PCKHTTPConnectionDelegate.h"
+#import "objc/runtime.h"
+
+static char ASSOCIATED_REQUEST_KEY;
+static char ASSOCIATED_DELEGATE_KEY;
 
 @implementation NSURLConnection (Spec)
 
 static NSMutableArray *connections__;
-static NSMutableDictionary *requests__, *delegates__;
 
 + (void)initialize {
     connections__ = [[NSMutableArray alloc] init];
-    requests__ = [[NSMutableDictionary alloc] init];
-    delegates__ = [[NSMutableDictionary alloc] init];
 }
 
 + (NSArray *)connections {
@@ -18,8 +19,6 @@ static NSMutableDictionary *requests__, *delegates__;
 }
 
 + (void)resetAll {
-    [delegates__ removeAllObjects];
-    [requests__ removeAllObjects];
     [connections__ removeAllObjects];
 }
 
@@ -31,14 +30,17 @@ static NSMutableDictionary *requests__, *delegates__;
     if (self = [super init]) {
         [connections__ addObject:self];
 
-        CFDictionaryAddValue((CFMutableDictionaryRef)requests__, self, request);
-        CFDictionaryAddValue((CFMutableDictionaryRef)delegates__, self, delegate);
+        objc_setAssociatedObject(self, &ASSOCIATED_REQUEST_KEY, request, OBJC_ASSOCIATION_RETAIN);
+
+        // NSURLConnection objects retain delegates, weirdly.  However, they are creepily smart
+        // about not retaining the delegate if passed self as the delegate.
+        objc_AssociationPolicy delegateAssociationPolicy = (delegate == self) ? OBJC_ASSOCIATION_ASSIGN : OBJC_ASSOCIATION_RETAIN;
+        objc_setAssociatedObject(self, &ASSOCIATED_DELEGATE_KEY, delegate, delegateAssociationPolicy);
     }
     return self;
 }
 
 - (void)dealloc {
-    CFDictionaryRemoveValue((CFMutableDictionaryRef)requests__, self);
     [super dealloc];
 }
 
@@ -48,16 +50,14 @@ static NSMutableDictionary *requests__, *delegates__;
 
 - (void)cancel {
     [connections__ removeObject:self];
-    [requests__ removeObjectForKey:self];
-    [delegates__ removeObjectForKey:self];
 }
 
 - (NSURLRequest *)request {
-    return [requests__ objectForKey:self];
+    return objc_getAssociatedObject(self, &ASSOCIATED_REQUEST_KEY);
 }
 
 - (id)delegate {
-    return [delegates__ objectForKey:self];
+    return objc_getAssociatedObject(self, &ASSOCIATED_DELEGATE_KEY);
 }
 
 - (void)returnResponse:(PSHKFakeHTTPURLResponse *)response {
