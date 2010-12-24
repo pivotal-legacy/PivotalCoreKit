@@ -123,7 +123,7 @@ describe(@"PCKHTTPConnectionOperation", ^{
 
                 assertThatBool([delegate respondsToSelector:@selector(connection:didReceiveResponse:)], equalToBool(YES));
 
-                [connection returnResponse:response];
+                [connection receiveResponse:response];
 
                 [mockDelegate verify];
             });
@@ -132,18 +132,18 @@ describe(@"PCKHTTPConnectionOperation", ^{
                 id mockDelegate = [OCMockObject partialMockForObject:delegate];
                 [[mockDelegate expect] connectionDidFinishLoading:connection];
 
-                [connection returnResponse:response];
+                [connection receiveResponse:response];
 
                 [mockDelegate verify];
             });
 
             it(@"should not be executing", ^{
-                [connection returnResponse:response];
+                [connection receiveResponse:response];
                 assertThatBool(operation.isExecuting, equalToBool(NO));
             });
 
             it(@"should be finished", ^{
-                [connection returnResponse:response];
+                [connection receiveResponse:response];
                 assertThatBool(operation.isFinished, equalToBool(YES));
             });
         });

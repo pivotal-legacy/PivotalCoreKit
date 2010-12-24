@@ -61,6 +61,10 @@ static NSMutableArray *connections__;
 }
 
 - (void)returnResponse:(PSHKFakeHTTPURLResponse *)response {
+    [self receiveResponse:response];
+}
+
+- (void)receiveResponse:(PSHKFakeHTTPURLResponse *)response {
     if ([self.delegate respondsToSelector:@selector(connection:didReceiveResponse:)]) {
         [self.delegate connection:self didReceiveResponse:response];
     }
@@ -70,20 +74,30 @@ static NSMutableArray *connections__;
     }
 
     [self.delegate connectionDidFinishLoading:self];
+    [connections__ removeObject:self];
 }
 
 - (void)failWithError:(NSError *)error {
     [[self delegate] connection:self didFailWithError:error];
+    [connections__ removeObject:self];
 }
 
 - (void)sendAuthenticationChallengeWithCredential:(NSURLCredential *)credential {
-    NSURLProtectionSpace *protectionSpace = [[NSURLProtectionSpace alloc] initWithHost:@"www.example.com" port:0 protocol:@"http" realm:nil authenticationMethod:nil];
-    NSURLAuthenticationChallenge *challenge = [[NSURLAuthenticationChallenge alloc] initWithProtectionSpace:protectionSpace proposedCredential:credential previousFailureCount:1 failureResponse:nil error:nil sender:nil];
-    [protectionSpace release];
+    NSURLProtectionSpace *protectionSpace = [[[NSURLProtectionSpace alloc] initWithHost:@"www.example.com"
+                                                                                   port:0
+                                                                               protocol:@"http"
+                                                                                  realm:nil
+                                                                   authenticationMethod:nil]
+                                             autorelease];
+    NSURLAuthenticationChallenge *challenge = [[[NSURLAuthenticationChallenge alloc] initWithProtectionSpace:protectionSpace
+                                                                                          proposedCredential:credential
+                                                                                        previousFailureCount:1
+                                                                                             failureResponse:nil
+                                                                                                       error:nil
+                                                                                                      sender:nil]
+                                               autorelease];
 
     [[self delegate] connection:self didReceiveAuthenticationChallenge:challenge];
-
-    [challenge release];
 }
 
 @end

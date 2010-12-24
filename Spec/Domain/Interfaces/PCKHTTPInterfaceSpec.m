@@ -106,7 +106,7 @@ describe(@"PCKHTTPInterface", ^{
                 [[mockDelegate expect] connection:connection didReceiveData:[[response body] dataUsingEncoding:NSUTF8StringEncoding]];
                 [[mockDelegate expect] connectionDidFinishLoading:connection];
 
-                [connection returnResponse:response];
+                [connection receiveResponse:response];
             });
 
             it(@"should pass along the success response and data, and notify the delegate when the request has completed", ^{
@@ -176,7 +176,7 @@ describe(@"PCKHTTPInterface", ^{
                 [[mockDelegate stub] connection:connection didReceiveData:[OCMArg any]];
                 [[mockDelegate expect] connectionDidFinishLoading:connection];
 
-                [connection returnResponse:response];
+                [connection receiveResponse:response];
             });
 
             it(@"should pass along the failure response, and notify the delegate when the request has completed", ^{

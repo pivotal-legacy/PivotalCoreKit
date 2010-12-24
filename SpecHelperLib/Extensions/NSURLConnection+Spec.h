@@ -10,7 +10,10 @@
 - (NSURLRequest *)request;
 - (id)delegate;
 
-- (void)returnResponse:(PSHKFakeHTTPURLResponse *)response;
+// Please use -receiveResponse: rather than -returnResponse:.
+- (void)returnResponse:(PSHKFakeHTTPURLResponse *)response __attribute__((deprecated));
+
+- (void)receiveResponse:(PSHKFakeHTTPURLResponse *)response;
 - (void)failWithError:(NSError *)error;
 - (void)sendAuthenticationChallengeWithCredential:(NSURLCredential *)credential;
 
