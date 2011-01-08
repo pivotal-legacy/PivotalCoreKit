@@ -4,7 +4,7 @@
 @interface UIWebViewAttributes : NSObject
 @property (nonatomic, assign) id<UIWebViewDelegate> delegate;
 @property (nonatomic, retain) NSURLRequest *request;
-@property (nonatomic, assign) BOOL loading, logging;
+@property (nonatomic, assign) BOOL loading, logging, allowsInlineMediaPlayback;
 @property (nonatomic, retain) NSMutableArray *javaScripts;
 @property (nonatomic, retain) NSMutableDictionary *returnValueBlocksByJavaScript;
 @property (nonatomic, retain) NSString *loadedHTMLString;
@@ -16,7 +16,7 @@
 @synthesize delegate = delegate_, request = request_, loading = loading_, logging = logging_,
     javaScripts = javaScripts_, returnValueBlocksByJavaScript = returnValueBlocksByJavaScript_,
     loadedHTMLString = loadedHTMLString_, loadedBaseURL = loadedBaseURL_,
-    dataDetectorTypes = dataDetectorTypes_;
+    allowsInlineMediaPlayback = allowsInlineMediaPlayback_, dataDetectorTypes = dataDetectorTypes_;
 
 - (id)init {
     if (self = [super init]) {
@@ -85,6 +85,14 @@ static char ASSOCIATED_ATTRIBUTES_KEY;
 
 - (void)setLoading:(BOOL)loading {
     self.attributes.loading = loading;
+}
+
+- (BOOL)allowsInlineMediaPlayback {
+    return self.attributes.allowsInlineMediaPlayback;
+}
+
+- (void)setAllowsInlineMediaPlayback:(BOOL)allowed {
+    self.attributes.allowsInlineMediaPlayback = allowed;
 }
 
 - (void)setFrame:(CGRect)frame {

@@ -275,10 +275,27 @@ describe(@"UIWebView (spec extensions)", ^{
         });
 
         it(@"should return any previous set value", ^{
-            UIDataDetectorTypes setTypes = UIDataDetectorTypeCalendarEvent || UIDataDetectorTypeAddress;
+            UIDataDetectorTypes setTypes = UIDataDetectorTypeCalendarEvent | UIDataDetectorTypeAddress;
 
             webView.dataDetectorTypes = setTypes;
             assertThatInt(webView.dataDetectorTypes, equalToInt(setTypes));
+        });
+    });
+    
+    describe(@"allowsInlineMediaPlayback", ^{
+        it(@"should not explode, however quietly", ^{
+            webView.allowsInlineMediaPlayback;
+        });
+    });
+    
+    describe(@"setAllowsInlineMediaPlayback", ^{
+        beforeEach(^{
+            assertThatBool(webView.allowsInlineMediaPlayback, equalToBool(NO));
+            webView.allowsInlineMediaPlayback = YES;
+        });
+        
+        it(@"should return the previously set value", ^{
+            assertThatBool(webView.allowsInlineMediaPlayback, equalToBool(YES));
         });
     });
 
