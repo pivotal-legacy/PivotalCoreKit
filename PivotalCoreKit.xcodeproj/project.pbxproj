@@ -65,6 +65,8 @@
 		AEBD959A120CB852003C1C5B /* PCKResponseParser.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBD9595120CB852003C1C5B /* PCKResponseParser.m */; };
 		AEBD95A0120CB8AA003C1C5B /* PCKResponseParserSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBD959F120CB8AA003C1C5B /* PCKResponseParserSpec.m */; };
 		AEBD95AA120CBB1B003C1C5B /* PCKParser.h in Headers */ = {isa = PBXBuildFile; fileRef = AEBD95A9120CBAF6003C1C5B /* PCKParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AEBF55281345229500069ED3 /* UIAlertView+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBF55251345229500069ED3 /* UIAlertView+Spec.m */; };
+		AEBF55661345243600069ED3 /* UIAlertView+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBF55251345229500069ED3 /* UIAlertView+Spec.m */; };
 		AEC9DF2412C2D5BF0039512D /* NSObject+MethodDecoration.h in Headers */ = {isa = PBXBuildFile; fileRef = AEC9DF2212C2D5BF0039512D /* NSObject+MethodDecoration.h */; };
 		AEC9DF2512C2D5BF0039512D /* NSObject+MethodDecoration.m in Sources */ = {isa = PBXBuildFile; fileRef = AEC9DF2312C2D5BF0039512D /* NSObject+MethodDecoration.m */; };
 		AEC9DF2612C2D5BF0039512D /* NSObject+MethodDecoration.h in Headers */ = {isa = PBXBuildFile; fileRef = AEC9DF2212C2D5BF0039512D /* NSObject+MethodDecoration.h */; };
@@ -282,6 +284,7 @@
 		AEBD9595120CB852003C1C5B /* PCKResponseParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCKResponseParser.m; sourceTree = "<group>"; };
 		AEBD959F120CB8AA003C1C5B /* PCKResponseParserSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCKResponseParserSpec.m; sourceTree = "<group>"; };
 		AEBD95A9120CBAF6003C1C5B /* PCKParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCKParser.h; sourceTree = "<group>"; };
+		AEBF55251345229500069ED3 /* UIAlertView+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+Spec.m"; sourceTree = "<group>"; };
 		AEC9DF2212C2D5BF0039512D /* NSObject+MethodDecoration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MethodDecoration.h"; sourceTree = "<group>"; };
 		AEC9DF2312C2D5BF0039512D /* NSObject+MethodDecoration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MethodDecoration.m"; sourceTree = "<group>"; };
 		AEC9DF2812C2D5E80039512D /* NSObjectSpec+MethodDecoration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObjectSpec+MethodDecoration.m"; sourceTree = "<group>"; };
@@ -586,6 +589,7 @@
 				AEF15A1F11C97864005B4F92 /* NSURLConnection+Spec.m */,
 				6696DFB71266DE5800111E23 /* UIWebView+Spec.h */,
 				6696DFB81266DE5800111E23 /* UIWebView+Spec.m */,
+				AEBF55251345229500069ED3 /* UIAlertView+Spec.m */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -943,6 +947,7 @@
 				6696E0321266E36E00111E23 /* UIWebViewSpec+Spec.m in Sources */,
 				6696E04A1266E6B900111E23 /* UIWebView+Spec.m in Sources */,
 				AE4C17C6126FD3CE009CB34D /* AWebViewController.m in Sources */,
+				AEBF55281345229500069ED3 /* UIAlertView+Spec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -971,6 +976,7 @@
 				AE138F4B11E548E1004E825D /* PSHKFakeResponses.m in Sources */,
 				AEE690911202523700769ADC /* PSHKFixtures.m in Sources */,
 				6696DFB91266DE5800111E23 /* UIWebView+Spec.m in Sources */,
+				AEBF55661345243600069ED3 /* UIAlertView+Spec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
