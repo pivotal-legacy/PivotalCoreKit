@@ -1,7 +1,12 @@
 PROJECT_NAME = "PivotalCoreKit"
 CONFIGURATION = "Release"
+PCK_FRAMEWORK_TARGET_NAME = "PivotalCoreKit"
+PSHK_FRAMEWORK_TARGET_NAME = "PivotalSpecHelperKit"
 SPECS_TARGET_NAME = "Spec"
+PCK_STATIC_LIB_TARGET_NAME = "PivotalCoreKit-StaticLib"
+PSHK_STATIC_LIB_TARGET_NAME = "PivotalSpecHelperKit-StaticLib"
 UI_SPECS_TARGET_NAME = "UISpec"
+
 SDK_DIR = "/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk"
 
 def build_dir(effective_platform_name)
@@ -28,11 +33,14 @@ def output_file(target)
   output_file
 end
 
-task :default => [:specs, :uispecs]
+task :default => [:build_pck_framework, :build_pshk_framework, :specs, :build_pck_static_lib, :build_pshk_static_lib, :uispecs]
 task :cruise do
   Rake::Task[:clean].invoke
-  Rake::Task[:build_all].invoke
+  Rake::Task[:build_pck_framework].invoke
+  Rake::Task[:build_pshk_framework].invoke
   Rake::Task[:specs].invoke
+  Rake::Task[:build_pck_static_lib].invoke
+  Rake::Task[:build_pshk_static_lib].invoke
   Rake::Task[:uispecs].invoke
 end
 
@@ -40,17 +48,29 @@ task :clean do
   system_or_exit(%Q[xcodebuild -project #{PROJECT_NAME}.xcodeproj -alltargets -configuration #{CONFIGURATION} clean], output_file("clean"))
 end
 
+task :build_pck_framework do
+  system_or_exit(%Q[xcodebuild -project #{PROJECT_NAME}.xcodeproj -target #{PCK_FRAMEWORK_TARGET_NAME} -configuration #{CONFIGURATION} build], output_file("specs"))
+end
+
+task :build_pshk_framework do
+  system_or_exit(%Q[xcodebuild -project #{PROJECT_NAME}.xcodeproj -target #{PSHK_FRAMEWORK_TARGET_NAME} -configuration #{CONFIGURATION} build], output_file("specs"))
+end
+
 task :build_specs do
   system_or_exit(%Q[xcodebuild -project #{PROJECT_NAME}.xcodeproj -target #{SPECS_TARGET_NAME} -configuration #{CONFIGURATION} build], output_file("specs"))
+end
+
+task :build_pck_static_lib do
+  system_or_exit(%Q[xcodebuild -project #{PROJECT_NAME}.xcodeproj -target #{PCK_STATIC_LIB_TARGET_NAME} -configuration #{CONFIGURATION} ARCHS=i386 build], output_file("pck_staticlib"))
+end
+
+task :build_pshk_static_lib do
+  system_or_exit(%Q[xcodebuild -project #{PROJECT_NAME}.xcodeproj -target #{PSHK_STATIC_LIB_TARGET_NAME} -configuration #{CONFIGURATION} ARCHS=i386 build], output_file("pshk_staticlib"))
 end
 
 task :build_uispecs do
   `osascript -e 'tell application "iPhone Simulator" to quit'`
   system_or_exit(%Q[xcodebuild -project #{PROJECT_NAME}.xcodeproj -target #{UI_SPECS_TARGET_NAME} -configuration #{CONFIGURATION} ARCHS=i386 build], output_file("uispecs"))
-end
-
-task :build_all do
-  system_or_exit(%Q[xcodebuild -project #{PROJECT_NAME}.xcodeproj -alltargets -configuration #{CONFIGURATION} build], output_file("build_all"))
 end
 
 task :specs => :build_specs do
