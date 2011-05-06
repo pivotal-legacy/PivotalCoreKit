@@ -5,7 +5,7 @@
 
 #import "UIAlertView+Spec.h"
 
-SPEC_BEGIN(UIAlertViewSpec)
+SPEC_BEGIN(UIAlertViewSpecExtensionsSpec)
 
 describe(@"UIAlertView (spec extensions)", ^{
 	__block UIAlertView *alertView;
