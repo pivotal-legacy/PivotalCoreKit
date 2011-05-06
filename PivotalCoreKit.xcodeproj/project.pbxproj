@@ -89,8 +89,6 @@
 		AEF15B0911C98072005B4F92 /* PivotalSpecHelperKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEF15AE011C97F15005B4F92 /* PivotalSpecHelperKit.framework */; };
 		AEF15B4511C984EB005B4F92 /* PSHKFakeResponses.h in Headers */ = {isa = PBXBuildFile; fileRef = AEF15B4311C984EB005B4F92 /* PSHKFakeResponses.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AEF15B4611C984EB005B4F92 /* PSHKFakeResponses.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF15B4411C984EB005B4F92 /* PSHKFakeResponses.m */; };
-		E34CFF9413744F290095F2F2 /* UIAlertView+PivotalCore.h in Headers */ = {isa = PBXBuildFile; fileRef = E34CFF9213744F290095F2F2 /* UIAlertView+PivotalCore.h */; };
-		E34CFF9513744F290095F2F2 /* UIAlertView+PivotalCore.m in Sources */ = {isa = PBXBuildFile; fileRef = E34CFF9313744F290095F2F2 /* UIAlertView+PivotalCore.m */; };
 		E34CFF9613744F290095F2F2 /* UIAlertView+PivotalCore.m in Sources */ = {isa = PBXBuildFile; fileRef = E34CFF9313744F290095F2F2 /* UIAlertView+PivotalCore.m */; };
 		E34CFFAB137452CD0095F2F2 /* UIAlertViewPivotalCoreSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = E34CFFAA137452CD0095F2F2 /* UIAlertViewPivotalCoreSpec.m */; };
 		E38F9580137388990018B36A /* UIAlertViewSpec+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = E38F957F137388990018B36A /* UIAlertViewSpec+Spec.m */; };
@@ -680,7 +678,6 @@
 				6697275B12599D1100696CAC /* PCKHTTPConnectionOperation.h in Headers */,
 				6697276112599F5500696CAC /* PCKHTTPConnection.h in Headers */,
 				AEC9DF2612C2D5BF0039512D /* NSObject+MethodDecoration.h in Headers */,
-				E34CFF9413744F290095F2F2 /* UIAlertView+PivotalCore.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1001,7 +998,6 @@
 				6697275C12599D1100696CAC /* PCKHTTPConnectionOperation.m in Sources */,
 				6697276212599F5500696CAC /* PCKHTTPConnection.m in Sources */,
 				AEC9DF2712C2D5BF0039512D /* NSObject+MethodDecoration.m in Sources */,
-				E34CFF9513744F290095F2F2 /* UIAlertView+PivotalCore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
