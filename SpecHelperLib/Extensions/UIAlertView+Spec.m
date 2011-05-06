@@ -1,5 +1,4 @@
 #import "UIAlertView+Spec.h"
-#import <objc/runtime.h>
 
 static UIAlertView *currentAlertView__;
 

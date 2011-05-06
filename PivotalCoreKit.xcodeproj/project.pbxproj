@@ -31,6 +31,8 @@
 		66C4D69A123DA5CB00CF9746 /* PCKXMLParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C4D698123DA5CB00CF9746 /* PCKXMLParserDelegate.m */; };
 		66C4D69B123DA5CB00CF9746 /* PCKXMLParserDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 66C4D697123DA5CB00CF9746 /* PCKXMLParserDelegate.h */; };
 		66C4D69C123DA5CB00CF9746 /* PCKXMLParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C4D698123DA5CB00CF9746 /* PCKXMLParserDelegate.m */; };
+		AE0615E813745BD700231771 /* UIAlertView+PivotalCore.m in Sources */ = {isa = PBXBuildFile; fileRef = E34CFF9313744F290095F2F2 /* UIAlertView+PivotalCore.m */; };
+		AE0615ED13745C8C00231771 /* UIAlertView+PivotalCore.h in Headers */ = {isa = PBXBuildFile; fileRef = E34CFF9213744F290095F2F2 /* UIAlertView+PivotalCore.h */; };
 		AE138A5E11E3FF26004E825D /* OCHamcrest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE138A4411E3FEB6004E825D /* OCHamcrest.framework */; };
 		AE138A6711E3FF73004E825D /* OCHamcrest.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = AE138A4411E3FEB6004E825D /* OCHamcrest.framework */; };
 		AE138A9F11E3FFF3004E825D /* OCMock.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = AE138A7911E3FFC7004E825D /* OCMock.framework */; };
@@ -672,6 +674,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE0615ED13745C8C00231771 /* UIAlertView+PivotalCore.h in Headers */,
 				AEBD9597120CB852003C1C5B /* PCKResponseParser.h in Headers */,
 				66C4D69B123DA5CB00CF9746 /* PCKXMLParserDelegate.h in Headers */,
 				669722AD125851D700696CAC /* PCKParserDelegate.h in Headers */,
@@ -998,6 +1001,7 @@
 				6697275C12599D1100696CAC /* PCKHTTPConnectionOperation.m in Sources */,
 				6697276212599F5500696CAC /* PCKHTTPConnection.m in Sources */,
 				AEC9DF2712C2D5BF0039512D /* NSObject+MethodDecoration.m in Sources */,
+				AE0615E813745BD700231771 /* UIAlertView+PivotalCore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1212,7 +1216,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1224,6 +1228,7 @@
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				PREBINDING = NO;
 				PRODUCT_NAME = "PivotalCoreKit-StaticLib";
+				SDKROOT = iphonesimulator;
 			};
 			name = Debug;
 		};
@@ -1231,7 +1236,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1243,6 +1248,7 @@
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				PREBINDING = NO;
 				PRODUCT_NAME = "PivotalCoreKit-StaticLib";
+				SDKROOT = iphonesimulator;
 				ZERO_LINK = NO;
 			};
 			name = Release;
