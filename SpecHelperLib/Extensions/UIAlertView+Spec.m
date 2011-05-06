@@ -1,21 +1,35 @@
-#import <UIKit/UIKit.h>
+#import "UIAlertView+Spec.h"
 #import <objc/runtime.h>
 
-static char UIAlertViewShowKey;
+static UIAlertView *currentAlertView__;
 
 @implementation UIAlertView (Spec)
 
++ (UIAlertView *)currentAlertView {
+	return currentAlertView__;
+}
+
++ (void)reset {
+	[currentAlertView__ release];
+	currentAlertView__ = nil;
+}
+
++ (void)setCurrentAlertView:(UIAlertView *)alertView {
+	[alertView retain];
+	[currentAlertView__ release];
+	currentAlertView__ = alertView;
+}
+
 - (void)show {
-    objc_setAssociatedObject(self, &UIAlertViewShowKey, [NSNumber numberWithBool:YES], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+	[UIAlertView setCurrentAlertView:self];
 }
 
 - (BOOL)isVisible {
-    NSNumber *visible = objc_getAssociatedObject(self, &UIAlertViewShowKey);
-    return [visible boolValue];
+    return [UIAlertView currentAlertView] == self;
 }
 
 - (void)dismissWithClickedButtonIndex:(NSInteger)buttonIndex animated:(BOOL)animated {
-    objc_setAssociatedObject(self, &UIAlertViewShowKey, [NSNumber numberWithBool:NO], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+	[UIAlertView reset];
     [self.delegate alertView:self didDismissWithButtonIndex:buttonIndex];
 }
 
