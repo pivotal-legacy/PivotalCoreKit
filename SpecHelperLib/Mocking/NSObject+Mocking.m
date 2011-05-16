@@ -1,27 +1,6 @@
 #import "NSObject+Mocking.h"
 #import <objc/runtime.h>
-
-@interface MethodImplementation : NSObject {
-    IMP implementation;
-}
-@property (nonatomic, assign) IMP implementation;
-+ (MethodImplementation *)withImplementation:(IMP)imp;
-- (MethodImplementation *)initWithImplementation:(IMP)imp;
-@end
-
-@implementation MethodImplementation
-@synthesize implementation;
-+ (MethodImplementation *)withImplementation:(IMP)imp {
-    return [[[self alloc] initWithImplementation:imp] autorelease];
-}
-- (MethodImplementation *)initWithImplementation:(IMP)imp {
-    self = [super init];
-    if (self) {
-        self.implementation = imp;
-    }
-    return self;
-}
-@end
+#import "MethodImplementation.h"
 
 static NSMutableDictionary *originalImplementations = nil;
 static NSMutableDictionary *returnValues = nil;

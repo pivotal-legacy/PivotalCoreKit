@@ -51,6 +51,9 @@
 		AE24D5A713816BE300E4420A /* NSObject+Mocking.h in Headers */ = {isa = PBXBuildFile; fileRef = AE24D5A413816BD000E4420A /* NSObject+Mocking.h */; };
 		AE24D5A813816BE700E4420A /* NSObject+Mocking.m in Sources */ = {isa = PBXBuildFile; fileRef = AE24D5A313816BD000E4420A /* NSObject+Mocking.m */; };
 		AE24D5A913816BE800E4420A /* NSObject+Mocking.m in Sources */ = {isa = PBXBuildFile; fileRef = AE24D5A313816BD000E4420A /* NSObject+Mocking.m */; };
+		AE24D5AC13816D2900E4420A /* MethodImplementation.h in Headers */ = {isa = PBXBuildFile; fileRef = AE24D5AA13816D2900E4420A /* MethodImplementation.h */; };
+		AE24D5AD13816D2900E4420A /* MethodImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = AE24D5AB13816D2900E4420A /* MethodImplementation.m */; };
+		AE24D5AE13816D2900E4420A /* MethodImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = AE24D5AB13816D2900E4420A /* MethodImplementation.m */; };
 		AE4C17C6126FD3CE009CB34D /* AWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE4C17C4126FD3CE009CB34D /* AWebViewController.m */; };
 		AE4C17C7126FD3CE009CB34D /* AWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE4C17C5126FD3CE009CB34D /* AWebViewController.xib */; };
 		AE515E0E123AA778004B2CEB /* PivotalCoreKit.h in Headers */ = {isa = PBXBuildFile; fileRef = AE515E0D123AA778004B2CEB /* PivotalCoreKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -275,6 +278,8 @@
 		AE24D5A1137DC0E200E4420A /* NSObjectSpec+Mocking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObjectSpec+Mocking.m"; sourceTree = "<group>"; };
 		AE24D5A313816BD000E4420A /* NSObject+Mocking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Mocking.m"; sourceTree = "<group>"; };
 		AE24D5A413816BD000E4420A /* NSObject+Mocking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Mocking.h"; sourceTree = "<group>"; };
+		AE24D5AA13816D2900E4420A /* MethodImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MethodImplementation.h; sourceTree = "<group>"; };
+		AE24D5AB13816D2900E4420A /* MethodImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MethodImplementation.m; sourceTree = "<group>"; };
 		AE2BDAA21202257A001DD8D3 /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.markdown; sourceTree = "<group>"; };
 		AE3BA38011C9381400F34485 /* BUILD-TARGETS.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "BUILD-TARGETS.markdown"; sourceTree = "<group>"; };
 		AE4C17C3126FD3CE009CB34D /* AWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWebViewController.h; sourceTree = "<group>"; };
@@ -493,6 +498,8 @@
 			children = (
 				AE24D5A313816BD000E4420A /* NSObject+Mocking.m */,
 				AE24D5A413816BD000E4420A /* NSObject+Mocking.h */,
+				AE24D5AA13816D2900E4420A /* MethodImplementation.h */,
+				AE24D5AB13816D2900E4420A /* MethodImplementation.m */,
 			);
 			path = Mocking;
 			sourceTree = "<group>";
@@ -741,6 +748,7 @@
 				AE13904A11E5508A004E825D /* PivotalSpecHelperKit.h in Headers */,
 				AEE6908E1202523700769ADC /* PSHKFixtures.h in Headers */,
 				AE24D5A713816BE300E4420A /* NSObject+Mocking.h in Headers */,
+				AE24D5AC13816D2900E4420A /* MethodImplementation.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1044,6 +1052,7 @@
 				6696DFB91266DE5800111E23 /* UIWebView+Spec.m in Sources */,
 				AEBF55661345243600069ED3 /* UIAlertView+Spec.m in Sources */,
 				AE24D5A913816BE800E4420A /* NSObject+Mocking.m in Sources */,
+				AE24D5AE13816D2900E4420A /* MethodImplementation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1092,6 +1101,7 @@
 				AEF15B4611C984EB005B4F92 /* PSHKFakeResponses.m in Sources */,
 				AEE6908F1202523700769ADC /* PSHKFixtures.m in Sources */,
 				AE24D5A813816BE700E4420A /* NSObject+Mocking.m in Sources */,
+				AE24D5AD13816D2900E4420A /* MethodImplementation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
