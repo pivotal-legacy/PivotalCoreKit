@@ -2,10 +2,11 @@
 
 @implementation MockMethod
 
-@synthesize implementation, returnValue;
+@synthesize implementation, returnValue, substituteBlock;
 
 - (void)dealloc {
     self.returnValue = nil;
+    self.substituteBlock = nil;
     [super dealloc];
 }
 

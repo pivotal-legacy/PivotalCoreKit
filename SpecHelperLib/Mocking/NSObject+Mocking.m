@@ -4,15 +4,26 @@
 
 static NSMutableDictionary *mockMethods = nil;
 
-@interface NSObject() 
+@interface NSObject()
 + (id)aMethod;
 @end
 
 @implementation NSObject (PrivateInterface)
+
 + (id)aMethod:(id)firstArg, ... {
-    NSString *key = [NSString stringWithFormat:@"%@,%@", [self class], NSStringFromSelector(_cmd)];    
-    return [[mockMethods objectForKey:key] returnValue];
+    NSString *key = [NSString stringWithFormat:@"%@,%@", [self class], NSStringFromSelector(_cmd)];
+    MockMethod *mockMethod = [mockMethods objectForKey:key];
+
+    id returnValue;
+    if (mockMethod.substituteBlock) {
+        returnValue = mockMethod.substituteBlock();
+    } else {
+        returnValue = mockMethod.returnValue;
+    }
+
+    return returnValue;
 }
+
 @end
 
 @implementation NSObject (Mocking)
@@ -20,20 +31,42 @@ static NSMutableDictionary *mockMethods = nil;
 + (void)stub:(SEL)selector andReturn:(id)returnValue {
     Method originalMethod;
     IMP originalImplementation;
-        
+
     if (!mockMethods) {
         mockMethods = [[NSMutableDictionary alloc] init];
-    } 
-    
+    }
+
     Method replacementMethod = class_getClassMethod([NSObject class], @selector(aMethod:));
     IMP replacementImplementation = method_getImplementation(replacementMethod);
     originalMethod = class_getClassMethod([self class], selector);
     originalImplementation = method_getImplementation(originalMethod);
-    
+
     NSString *key = [NSString stringWithFormat:@"%@,%@", [self class], NSStringFromSelector(selector)];
 
     MockMethod * mockMethod = [MockMethod withImplementation:originalImplementation];
     mockMethod.returnValue = returnValue;
+    [mockMethods setObject:mockMethod forKey:key];
+
+    method_setImplementation(originalMethod, replacementImplementation);
+}
+
++ (void)stub:(SEL)selector andDo:(id (^)(NSInvocation * invocation))substituteBlock {
+    Method originalMethod;
+    IMP originalImplementation;
+
+    if (!mockMethods) {
+        mockMethods = [[NSMutableDictionary alloc] init];
+    }
+
+    Method replacementMethod = class_getClassMethod([NSObject class], @selector(aMethod:));
+    IMP replacementImplementation = method_getImplementation(replacementMethod);
+    originalMethod = class_getClassMethod([self class], selector);
+    originalImplementation = method_getImplementation(originalMethod);
+
+    NSString *key = [NSString stringWithFormat:@"%@,%@", [self class], NSStringFromSelector(selector)];
+
+    MockMethod * mockMethod = [MockMethod withImplementation:originalImplementation];
+    mockMethod.substituteBlock = substituteBlock;
     [mockMethods setObject:mockMethod forKey:key];
 
     method_setImplementation(originalMethod, replacementImplementation);
@@ -48,7 +81,7 @@ static NSMutableDictionary *mockMethods = nil;
         MockMethod * implementation = [mockMethods objectForKey:key];
         method_setImplementation(method, implementation.implementation);
     }
-    
+
     [mockMethods release];
     mockMethods = nil;
 }
