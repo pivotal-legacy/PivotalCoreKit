@@ -15,7 +15,7 @@
 }
 
 - (id)initForRequest:(NSString *)request {
-    if (self = [super init]) {
+    if ((self = [super init])) {
         request_ = [request copy];
     }
     return self;
