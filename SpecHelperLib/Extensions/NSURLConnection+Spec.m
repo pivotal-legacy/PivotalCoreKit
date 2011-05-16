@@ -27,7 +27,7 @@ static NSMutableArray *connections__;
 }
 
 - (id)initWithRequest:(NSURLRequest *)request delegate:(id)delegate startImmediately:(BOOL)startImmediately {
-    if (self = [super init]) {
+    if ((self = [super init])) {
         [connections__ addObject:self];
 
         objc_setAssociatedObject(self, &ASSOCIATED_REQUEST_KEY, request, OBJC_ASSOCIATION_RETAIN);
