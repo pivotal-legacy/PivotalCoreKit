@@ -1,9 +1,8 @@
 #import "NSObject+Mocking.h"
 #import <objc/runtime.h>
-#import "MethodImplementation.h"
+#import "MockMethod.h"
 
-static NSMutableDictionary *originalImplementations = nil;
-static NSMutableDictionary *returnValues = nil;
+static NSMutableDictionary *mockMethods = nil;
 
 @interface NSObject() 
 + (id)aMethod;
@@ -12,7 +11,7 @@ static NSMutableDictionary *returnValues = nil;
 @implementation NSObject (PrivateInterface)
 + (id)aMethod:(id)firstArg, ... {
     NSString *key = [NSString stringWithFormat:@"%@,%@", [self class], NSStringFromSelector(_cmd)];    
-    return [returnValues objectForKey:key];
+    return [[mockMethods objectForKey:key] returnValue];
 }
 @end
 
@@ -22,13 +21,9 @@ static NSMutableDictionary *returnValues = nil;
     Method originalMethod;
     IMP originalImplementation;
         
-    if (!originalImplementations) {
-        originalImplementations = [[NSMutableDictionary alloc] init];
+    if (!mockMethods) {
+        mockMethods = [[NSMutableDictionary alloc] init];
     } 
-    
-    if (!returnValues) {
-        returnValues = [[NSMutableDictionary alloc] init];
-    }
     
     Method replacementMethod = class_getClassMethod([NSObject class], @selector(aMethod:));
     IMP replacementImplementation = method_getImplementation(replacementMethod);
@@ -36,31 +31,26 @@ static NSMutableDictionary *returnValues = nil;
     originalImplementation = method_getImplementation(originalMethod);
     
     NSString *key = [NSString stringWithFormat:@"%@,%@", [self class], NSStringFromSelector(selector)];
-    
-    [originalImplementations setObject:[MethodImplementation withImplementation:originalImplementation]
-                                forKey:key];
 
-    if (returnValue) {
-        [returnValues setObject:returnValue forKey:key];        
-    }
+    MockMethod * mockMethod = [MockMethod withImplementation:originalImplementation];
+    mockMethod.returnValue = returnValue;
+    [mockMethods setObject:mockMethod forKey:key];
 
     method_setImplementation(originalMethod, replacementImplementation);
 }
 
 + (void)resetAllStubbedMethods {
-    for(NSString * key in originalImplementations) {
+    for(NSString * key in mockMethods) {
         NSArray * keyComponents = [key componentsSeparatedByString:@","];
         Class class = NSClassFromString([keyComponents objectAtIndex:0]);
         SEL selector = NSSelectorFromString([keyComponents objectAtIndex:1]);
         Method method = class_getClassMethod(class, selector);
-        MethodImplementation * implementation = [originalImplementations objectForKey:key];
+        MockMethod * implementation = [mockMethods objectForKey:key];
         method_setImplementation(method, implementation.implementation);
     }
     
-    [returnValues release];
-    returnValues = nil;
-    [originalImplementations release];
-    originalImplementations = nil;
+    [mockMethods release];
+    mockMethods = nil;
 }
 
 @end
