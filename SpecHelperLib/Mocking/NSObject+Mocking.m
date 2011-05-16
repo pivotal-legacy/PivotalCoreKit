@@ -16,7 +16,26 @@ static NSMutableDictionary *mockMethods = nil;
 
     id returnValue;
     if (mockMethod.substituteBlock) {
-        returnValue = mockMethod.substituteBlock();
+
+        NSUInteger numberOfArguments = method_getNumberOfArguments(mockMethod.originalMethod);
+        NSMethodSignature * signature = [NSMethodSignature signatureWithObjCTypes:method_getTypeEncoding(mockMethod.originalMethod)];
+        NSInvocation * invocation = [NSInvocation invocationWithMethodSignature:signature];
+
+        if (numberOfArguments > 2) {
+            [invocation setArgument:&firstArg atIndex:2];
+
+            id arg;
+            va_list args;
+            va_start(args, firstArg);
+            for (int i=3; i<numberOfArguments; i++) {
+                arg=va_arg(args, id);
+                [invocation setArgument:&arg atIndex:i];
+            }
+            va_end(args);
+        }
+
+        returnValue = mockMethod.substituteBlock(invocation);
+
     } else {
         returnValue = mockMethod.returnValue;
     }
@@ -67,6 +86,7 @@ static NSMutableDictionary *mockMethods = nil;
 
     MockMethod * mockMethod = [MockMethod withImplementation:originalImplementation];
     mockMethod.substituteBlock = substituteBlock;
+    mockMethod.originalMethod = originalMethod;
     [mockMethods setObject:mockMethod forKey:key];
 
     method_setImplementation(originalMethod, replacementImplementation);

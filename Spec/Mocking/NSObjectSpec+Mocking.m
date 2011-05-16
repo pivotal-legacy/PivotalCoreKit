@@ -7,6 +7,7 @@
 @interface MyClass : NSObject
 + (id)aClassMethod;
 + (id)aDifferentClassMethod;
++ (id)aClassMethodWithString:(NSString *)stringParam andNumber:(NSInteger)number;
 @end
 
 @implementation MyClass
@@ -15,6 +16,9 @@
 }
 + (id)aDifferentClassMethod {
     return @"AndNowForSomethingCompletelyDifferent";
+}
++ (id)aClassMethodWithString:(NSString *)stringParam andNumber:(NSInteger)number {
+    return @"CalledWithManyArguments";
 }
 @end
 
@@ -56,11 +60,30 @@ describe(@"Stubbing the return value of a class method", ^{
 
 describe(@"Providing a substitute implementation for a stubbed method", ^{
     it(@"should call the block", ^{
-
         id (^subtituteImplementation)() =  (id)^{ return @"substitution"; };
         [MyClass stub:@selector(aClassMethod) andDo:subtituteImplementation];
 
         assertThat([MyClass aClassMethod], equalTo(@"substitution"));
+    });
+
+    it(@"should call the block with the arguments passed to the stubbed method", ^{
+        __block NSString * stringArgument;
+        __block NSInteger integerArgument;
+        id (^substituteImplementation)() =  (id)^(NSInvocation *inv) {
+            NSString * tempString;
+            NSInteger tempInteger;
+            [inv getArgument:&tempString atIndex:2];
+            [inv getArgument:&tempInteger atIndex:3];
+            stringArgument = tempString;
+            integerArgument = tempInteger;
+            return @"substitution";
+        };
+
+        [MyClass stub:@selector(aClassMethodWithString:andNumber:) andDo:substituteImplementation];
+        [MyClass aClassMethodWithString:@"foobar" andNumber:1234];
+
+        assertThatInt(integerArgument, equalToInt(1234));
+        assertThat(stringArgument, equalTo(@"foobar"));
     });
 });
 
