@@ -132,6 +132,23 @@ describe(@"NSURLConnection (spec extensions)", ^{
             [connection receiveResponse:response];
             assertThat([NSURLConnection connections], isNot(hasItem(connection)));
         });
+
+        it(@"should not call subsequent delegate methods if cancelled", ^{
+            id mockDelegate = [OCMockObject mockForProtocol:@protocol(PCKHTTPConnectionDelegate)];
+
+            NSURLConnection * myConnection = [[NSURLConnection alloc] initWithRequest:request delegate:mockDelegate];
+
+            [[[mockDelegate expect] andDo:^(NSInvocation * inv){
+                NSURLConnection * theConnection;
+                [inv getArgument:&theConnection atIndex:2];
+                [theConnection cancel];
+            }] connection:myConnection didReceiveResponse:response];
+
+            [myConnection release];
+            [myConnection receiveResponse:response];
+
+            [mockDelegate verify];
+        });
     });
 
     describe(@"failWithError:", ^{

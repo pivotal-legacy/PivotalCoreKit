@@ -69,11 +69,14 @@ static NSMutableArray *connections__;
         [self.delegate connection:self didReceiveResponse:response];
     }
 
-    if ([self.delegate respondsToSelector:@selector(connection:didReceiveData:)]) {
+    if ([connections__ containsObject:self] && [self.delegate respondsToSelector:@selector(connection:didReceiveData:)]) {
         [self.delegate connection:self didReceiveData:[[response body] dataUsingEncoding:NSUTF8StringEncoding]];
     }
 
-    [self.delegate connectionDidFinishLoading:self];
+    if ([connections__ containsObject:self]) {
+        [self.delegate connectionDidFinishLoading:self];
+    }
+
     [connections__ removeObject:self];
 }
 
