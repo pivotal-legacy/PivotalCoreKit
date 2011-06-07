@@ -1,5 +1,9 @@
 #import "PCKXMLParserDelegate.h"
 
+#define ATTRIBUTE_SIZE 5
+#define ATTRIBUTE_START_OFFSET 3
+#define ATTRIBUTE_END_OFFSET 4
+
 @implementation PCKXMLParserDelegate
 
 @synthesize didStartElementWithAttributes = didStartElementWithAttributes_, didStartElement = didStartElement_, didEndElement = didEndElement_, didFindCharacters = didFindCharacters_;
@@ -16,10 +20,10 @@
 - (void)parser:(PCKXMLParser *)parser didStartElement:(const char *)elementName attributeCount:(int)numAttributes attributeData:(const char**)attributes {
     if (self.didStartElementWithAttributes) {
         NSMutableDictionary * attributesDictionary = [NSMutableDictionary dictionary];
-        for (int i = 0; i < (numAttributes*5); i += 5) {
+        for (int i = 0; i < (numAttributes * ATTRIBUTE_SIZE); i += ATTRIBUTE_SIZE) {
             NSString * attributeName = [NSString stringWithCString:attributes[i] encoding:NSUTF8StringEncoding];
-            const char * startAttributeValue = attributes[i+3];
-            const char * endAttributeValue = attributes[i+4];
+            const char * startAttributeValue = attributes[i + ATTRIBUTE_START_OFFSET];
+            const char * endAttributeValue = attributes[i + ATTRIBUTE_END_OFFSET];
 
             int attributeBytes = (unsigned long)endAttributeValue - (unsigned long)startAttributeValue;
             char * attributeValue = (char *)malloc(attributeBytes);
