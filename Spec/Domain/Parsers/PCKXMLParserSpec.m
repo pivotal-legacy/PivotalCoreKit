@@ -130,7 +130,7 @@ describe(@"PCKXMLParser and PCKXMLParserDelegate", ^{
         });
 
         describe(@"with XML with attributes", ^{
-            NSString * xmlWithAttributes = @"<foo bar=\"baz\" quux=\"zxzzy\"></foo>";
+            NSString * xmlWithAttributes = @"<bar parent=\"true\" whatever=\"anything\"><foo bar=\"baz\" quux=\"zxzzy\"></foo></bar>";
 
             beforeEach(^{
                 data = [xmlWithAttributes dataUsingEncoding:NSUTF8StringEncoding];

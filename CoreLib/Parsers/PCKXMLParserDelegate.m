@@ -26,7 +26,8 @@
             const char * endAttributeValue = attributes[i + ATTRIBUTE_END_OFFSET];
 
             int attributeBytes = (unsigned long)endAttributeValue - (unsigned long)startAttributeValue;
-            char * attributeValue = (char *)malloc(attributeBytes);
+            char * attributeValue = (char *)malloc(attributeBytes + 1);
+            attributeValue[attributeBytes] = 0;
             strncpy(attributeValue, startAttributeValue, attributeBytes);
             [attributesDictionary setValue:[NSString stringWithCString:attributeValue encoding:NSUTF8StringEncoding] forKey:attributeName];
             free(attributeValue);
