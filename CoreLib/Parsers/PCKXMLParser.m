@@ -44,7 +44,7 @@ static xmlSAXHandler simpleSAXStruct;
 static void parserStartElement(void *context, const xmlChar *localname, const xmlChar *prefix, const xmlChar *URI,
                                int nb_namespaces, const xmlChar **namespaces, int nb_attributes, int nb_defaulted, const xmlChar **attributes) {
     PCKXMLParser *parser = context;
-    [parser.delegate parser:parser didStartElement:(const char *)localname];
+    [parser.delegate parser:parser didStartElement:(const char *)localname attributeCount:nb_attributes attributeData:(const char **)attributes];
 }
 
 static void	parserEndElement(void *context, const xmlChar *localname, const xmlChar *prefix, const xmlChar *URI) {

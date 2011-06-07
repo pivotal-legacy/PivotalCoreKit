@@ -2,7 +2,7 @@
 
 @implementation PCKXMLParserDelegate
 
-@synthesize didStartElement = didStartElement_, didEndElement = didEndElement_, didFindCharacters = didFindCharacters_;
+@synthesize didStartElementWithAttributes = didStartElementWithAttributes_, didStartElement = didStartElement_, didEndElement = didEndElement_, didFindCharacters = didFindCharacters_;
 @synthesize didEncounterError = didEncounterError_;
 
 - (void)dealloc {
@@ -13,7 +13,22 @@
     [super dealloc];
 }
 
-- (void)parser:(PCKXMLParser *)parser didStartElement:(const char *)elementName {
+- (void)parser:(PCKXMLParser *)parser didStartElement:(const char *)elementName attributeCount:(int)numAttributes attributeData:(const char**)attributes {
+    if (self.didStartElementWithAttributes) {
+        NSMutableDictionary * attributesDictionary = [NSMutableDictionary dictionary];
+        for (int i = 0; i < (numAttributes*5); i += 5) {
+            NSString * attributeName = [NSString stringWithCString:attributes[i] encoding:NSUTF8StringEncoding];
+            const char * startAttributeValue = attributes[i+3];
+            const char * endAttributeValue = attributes[i+4];
+
+            int attributeBytes = (unsigned long)endAttributeValue - (unsigned long)startAttributeValue;
+            char * attributeValue = (char *)malloc(attributeBytes);
+            strncpy(attributeValue, startAttributeValue, attributeBytes);
+            [attributesDictionary setValue:[NSString stringWithCString:attributeValue encoding:NSUTF8StringEncoding] forKey:attributeName];
+            free(attributeValue);
+        }
+        self.didStartElementWithAttributes(elementName, attributesDictionary);
+    }
     if (self.didStartElement) {
         self.didStartElement(elementName);
     }

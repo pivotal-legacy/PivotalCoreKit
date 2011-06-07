@@ -129,6 +129,38 @@ describe(@"PCKXMLParser and PCKXMLParserDelegate", ^{
             });
         });
 
+        describe(@"with XML with attributes", ^{
+            NSString * xmlWithAttributes = @"<foo bar=\"baz\" quux=\"zxzzy\"></foo>";
+
+            beforeEach(^{
+                data = [xmlWithAttributes dataUsingEncoding:NSUTF8StringEncoding];
+            });
+
+            describe(@"with a didStartElementWithAttributes block specified on the delegate", ^{
+                __block size_t fooCount;
+                __block NSDictionary * attributes;
+
+                beforeEach(^{
+                    delegate.didStartElementWithAttributes = ^(const char *elementName, NSDictionary * theAttributes) {
+                        if (0 == strncmp(elementName, "foo", strlen(elementName))) {
+                            ++fooCount;
+                            attributes = [theAttributes copy];
+                        }
+                    };
+
+                    fooCount = 0;
+                    attributes = [NSMutableDictionary dictionary];
+                    [parser parseChunk:data];
+                });
+
+                it(@"should execute the block appropriately", ^{
+                    assertThatInt(fooCount, equalToInt(1));
+                    assertThat([attributes valueForKey:@"bar"], equalTo(@"baz"));
+                    assertThat([attributes valueForKey:@"quux"], equalTo(@"zxzzy"));
+                });
+            });
+        });
+
         describe(@"with invalid XML", ^{
             NSString *invalidXML = @"<foo><bar></foo>";
 
