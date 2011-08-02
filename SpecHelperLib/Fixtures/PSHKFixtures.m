@@ -18,7 +18,8 @@ static NSString *directory__ = nil;
 }
 
 - (id)init {
-    @throw @"Do not instantiate a Fixtures object.";
+    [self doesNotRecognizeSelector:_cmd];
+    return nil;
 }
 
 @end

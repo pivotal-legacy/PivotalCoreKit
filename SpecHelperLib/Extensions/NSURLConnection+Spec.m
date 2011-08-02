@@ -8,8 +8,12 @@ static char ASSOCIATED_DELEGATE_KEY;
 
 @implementation NSURLConnection (Spec)
 
-static NSMutableArray *connections__;
++ (void)beforeEach {
+    // Clean up all connections before each spec.
+    [self resetAll];
+}
 
+static NSMutableArray *connections__;
 + (void)initialize {
     connections__ = [[NSMutableArray alloc] init];
 }

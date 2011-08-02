@@ -33,6 +33,7 @@
 		66C4D69C123DA5CB00CF9746 /* PCKXMLParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C4D698123DA5CB00CF9746 /* PCKXMLParserDelegate.m */; };
 		AE0615E813745BD700231771 /* UIAlertView+PivotalCore.m in Sources */ = {isa = PBXBuildFile; fileRef = E34CFF9313744F290095F2F2 /* UIAlertView+PivotalCore.m */; };
 		AE0615ED13745C8C00231771 /* UIAlertView+PivotalCore.h in Headers */ = {isa = PBXBuildFile; fileRef = E34CFF9213744F290095F2F2 /* UIAlertView+PivotalCore.h */; };
+		AE0D690A13E8B8BC0048039A /* FixturesHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0D690913E8B8BC0048039A /* FixturesHelper.m */; };
 		AE138A5E11E3FF26004E825D /* OCHamcrest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE138A4411E3FEB6004E825D /* OCHamcrest.framework */; };
 		AE138ACF11E400D2004E825D /* OCMock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE138A7911E3FFC7004E825D /* OCMock.framework */; };
 		AE138CB811E4F504004E825D /* Cedar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE138A9011E3FFD6004E825D /* Cedar.framework */; };
@@ -84,7 +85,6 @@
 		AEE6908E1202523700769ADC /* PSHKFixtures.h in Headers */ = {isa = PBXBuildFile; fileRef = AEE6908C1202523700769ADC /* PSHKFixtures.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AEE6908F1202523700769ADC /* PSHKFixtures.m in Sources */ = {isa = PBXBuildFile; fileRef = AEE6908D1202523700769ADC /* PSHKFixtures.m */; };
 		AEE690911202523700769ADC /* PSHKFixtures.m in Sources */ = {isa = PBXBuildFile; fileRef = AEE6908D1202523700769ADC /* PSHKFixtures.m */; };
-		AEE6913B12025A8000769ADC /* SpecHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AEE690FD1202584C00769ADC /* SpecHelper.m */; };
 		AEF15ACB11C97EA4005B4F92 /* PCKHTTPInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = AECC4BF511C6E38D0027AB1B /* PCKHTTPInterface.m */; };
 		AEF15ACC11C97EA9005B4F92 /* PCKHTTPInterface.h in Headers */ = {isa = PBXBuildFile; fileRef = AECC4BF411C6E38D0027AB1B /* PCKHTTPInterface.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AEF15ACF11C97EDE005B4F92 /* PivotalCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEF15AC511C97E8B005B4F92 /* PivotalCoreKit.framework */; };
@@ -250,6 +250,7 @@
 		6697283A1260FF9400696CAC /* FakeConnectionDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FakeConnectionDelegate.m; sourceTree = "<group>"; };
 		66C4D697123DA5CB00CF9746 /* PCKXMLParserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCKXMLParserDelegate.h; sourceTree = "<group>"; };
 		66C4D698123DA5CB00CF9746 /* PCKXMLParserDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCKXMLParserDelegate.m; sourceTree = "<group>"; };
+		AE0D690913E8B8BC0048039A /* FixturesHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FixturesHelper.m; sourceTree = "<group>"; };
 		AE138A3911E3FEB6004E825D /* OCHamcrest.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OCHamcrest.xcodeproj; path = OCHamcrest/Source/OCHamcrest.xcodeproj; sourceTree = "<group>"; };
 		AE138A6E11E3FFC7004E825D /* OCMock.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OCMock.xcodeproj; path = OCMock/Source/OCMock.xcodeproj; sourceTree = "<group>"; };
 		AE138A8011E3FFD6004E825D /* Cedar.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Cedar.xcodeproj; path = Cedar/Cedar.xcodeproj; sourceTree = "<group>"; };
@@ -296,7 +297,6 @@
 		AECC4BF511C6E38D0027AB1B /* PCKHTTPInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCKHTTPInterface.m; sourceTree = "<group>"; };
 		AEE6908C1202523700769ADC /* PSHKFixtures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSHKFixtures.h; sourceTree = "<group>"; };
 		AEE6908D1202523700769ADC /* PSHKFixtures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSHKFixtures.m; sourceTree = "<group>"; };
-		AEE690FD1202584C00769ADC /* SpecHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpecHelper.m; sourceTree = "<group>"; };
 		AEF15A1E11C97864005B4F92 /* NSURLConnection+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLConnection+Spec.h"; sourceTree = "<group>"; };
 		AEF15A1F11C97864005B4F92 /* NSURLConnection+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLConnection+Spec.m"; sourceTree = "<group>"; };
 		AEF15AC511C97E8B005B4F92 /* PivotalCoreKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PivotalCoreKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -564,7 +564,6 @@
 				6696DFE81266DF7A00111E23 /* Domain */,
 				6696DFE71266DF7300111E23 /* UI */,
 				AEF15C0811C99A58005B4F92 /* Fixtures */,
-				AEE690FD1202584C00769ADC /* SpecHelper.m */,
 			);
 			path = Spec;
 			sourceTree = "<group>";
@@ -641,6 +640,7 @@
 		AEF15C0811C99A58005B4F92 /* Fixtures */ = {
 			isa = PBXGroup;
 			children = (
+				AE0D690913E8B8BC0048039A /* FixturesHelper.m */,
 				AEF15C0911C99A87005B4F92 /* FakeResponses */,
 				669728391260FF9400696CAC /* FakeConnectionDelegate.h */,
 				6697283A1260FF9400696CAC /* FakeConnectionDelegate.m */,
@@ -1048,7 +1048,6 @@
 				AE71483211CAB2B500672114 /* NSStringSpec+PivotalCore.m in Sources */,
 				AE71490511CBFE1800672114 /* NSDataSpec+PivotalCore.m in Sources */,
 				AE91CACC11DE69EE002BA6B9 /* PCKXMLParserSpec.m in Sources */,
-				AEE6913B12025A8000769ADC /* SpecHelper.m in Sources */,
 				AEBD95A0120CB8AA003C1C5B /* PCKResponseParserSpec.m in Sources */,
 				6697277D1259A0CE00696CAC /* PCKHTTPConnectionSpec.m in Sources */,
 				669727981259A31900696CAC /* PCKHTTPConnectionOperationSpec.m in Sources */,
@@ -1056,6 +1055,7 @@
 				AEC9DF2912C2D5E80039512D /* NSObjectSpec+MethodDecoration.m in Sources */,
 				AE6EF8DA12C41AB500EE5087 /* NSURLConnectionSpec+Spec.m in Sources */,
 				AE24D5A2137DC0E200E4420A /* NSObjectSpec+Mocking.m in Sources */,
+				AE0D690A13E8B8BC0048039A /* FixturesHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

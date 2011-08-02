@@ -51,8 +51,6 @@ describe(@"PCKHTTPInterface", ^{
     __block NSURLRequest *request;
 
     beforeEach(^{
-        [NSURLConnection resetAll];
-
         interface = [[TestInterface alloc] init];
         mockDelegate = [OCMockObject mockForProtocol:@protocol(PCKHTTPConnectionDelegate)];
     });

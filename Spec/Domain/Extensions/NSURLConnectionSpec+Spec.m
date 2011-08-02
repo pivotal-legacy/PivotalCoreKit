@@ -35,7 +35,6 @@ describe(@"NSURLConnection (spec extensions)", ^{
 
     afterEach(^{
         [connection release];
-        [NSURLConnection resetAll];
     });
 
     describe(@"+resetAll", ^{
