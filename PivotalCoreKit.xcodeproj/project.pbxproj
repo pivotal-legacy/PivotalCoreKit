@@ -34,11 +34,8 @@
 		AE0615E813745BD700231771 /* UIAlertView+PivotalCore.m in Sources */ = {isa = PBXBuildFile; fileRef = E34CFF9313744F290095F2F2 /* UIAlertView+PivotalCore.m */; };
 		AE0615ED13745C8C00231771 /* UIAlertView+PivotalCore.h in Headers */ = {isa = PBXBuildFile; fileRef = E34CFF9213744F290095F2F2 /* UIAlertView+PivotalCore.h */; };
 		AE138A5E11E3FF26004E825D /* OCHamcrest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE138A4411E3FEB6004E825D /* OCHamcrest.framework */; };
-		AE138A6711E3FF73004E825D /* OCHamcrest.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = AE138A4411E3FEB6004E825D /* OCHamcrest.framework */; };
-		AE138A9F11E3FFF3004E825D /* OCMock.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = AE138A7911E3FFC7004E825D /* OCMock.framework */; };
 		AE138ACF11E400D2004E825D /* OCMock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE138A7911E3FFC7004E825D /* OCMock.framework */; };
-		AE138CB811E4F504004E825D /* Cedar in Frameworks */ = {isa = PBXBuildFile; fileRef = AE138A9011E3FFD6004E825D /* Cedar */; };
-		AE138CCA11E4F624004E825D /* Cedar in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = AE138A9011E3FFD6004E825D /* Cedar */; };
+		AE138CB811E4F504004E825D /* Cedar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE138A9011E3FFD6004E825D /* Cedar.framework */; };
 		AE138E7411E542F1004E825D /* PCKHTTPInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = AECC4BF511C6E38D0027AB1B /* PCKHTTPInterface.m */; };
 		AE138E7511E542F1004E825D /* NSString+PivotalCore.m in Sources */ = {isa = PBXBuildFile; fileRef = AE71481911CAAD4F00672114 /* NSString+PivotalCore.m */; };
 		AE138E7611E542F1004E825D /* NSData+PivotalCore.m in Sources */ = {isa = PBXBuildFile; fileRef = AE71490211CBFDD900672114 /* NSData+PivotalCore.m */; };
@@ -234,22 +231,6 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		AECC4BDF11C6E2D50027AB1B /* Copy Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				AE138CCA11E4F624004E825D /* Cedar in Copy Frameworks */,
-				AE138A6711E3FF73004E825D /* OCHamcrest.framework in Copy Frameworks */,
-				AE138A9F11E3FFF3004E825D /* OCMock.framework in Copy Frameworks */,
-			);
-			name = "Copy Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		0867D69BFE84028FC02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		6696DFB71266DE5800111E23 /* UIWebView+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+Spec.h"; sourceTree = "<group>"; };
@@ -362,7 +343,7 @@
 				AE138ACF11E400D2004E825D /* OCMock.framework in Frameworks */,
 				AEF15ACF11C97EDE005B4F92 /* PivotalCoreKit.framework in Frameworks */,
 				AEF15B0911C98072005B4F92 /* PivotalSpecHelperKit.framework in Frameworks */,
-				AE138CB811E4F504004E825D /* Cedar in Frameworks */,
+				AE138CB811E4F504004E825D /* Cedar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -489,7 +470,7 @@
 		AE138A8111E3FFD6004E825D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AE138A9011E3FFD6004E825D /* Cedar */,
+				AE138A9011E3FFD6004E825D /* Cedar.framework */,
 				AE138A9211E3FFD6004E825D /* Specs */,
 				AE138A9411E3FFD6004E825D /* libCedar-StaticLib.a */,
 				AE138A9611E3FFD6004E825D /* iPhoneSpecs.app */,
@@ -815,7 +796,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AECC4BE011C6E2D50027AB1B /* Build configuration list for PBXNativeTarget "Spec" */;
 			buildPhases = (
-				AECC4BDF11C6E2D50027AB1B /* Copy Frameworks */,
 				AECC4BB711C6E2280027AB1B /* Sources */,
 				AECC4BB811C6E2280027AB1B /* Frameworks */,
 			);
@@ -956,10 +936,9 @@
 			remoteRef = AE138A7C11E3FFC7004E825D /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		AE138A9011E3FFD6004E825D /* Cedar */ = {
+		AE138A9011E3FFD6004E825D /* Cedar.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
-			name = Cedar;
 			path = Cedar.framework;
 			remoteRef = AE138A8F11E3FFD6004E825D /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;

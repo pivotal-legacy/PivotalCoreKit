@@ -8,9 +8,10 @@ PSHK_STATIC_LIB_TARGET_NAME = "PivotalSpecHelperKit-StaticLib"
 UI_SPECS_TARGET_NAME = "UISpec"
 
 SDK_DIR = "/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk"
+BUILD_DIR = File.join(File.dirname(__FILE__), "build")
 
 def build_dir(effective_platform_name)
-  File.join(File.dirname(__FILE__), "build", CONFIGURATION + effective_platform_name)
+  File.join(BUILD_DIR, CONFIGURATION + effective_platform_name)
 end
 
 def system_or_exit(cmd, stdout = nil)
@@ -45,27 +46,27 @@ task :cruise do
 end
 
 task :clean do
-  system_or_exit(%Q[xcodebuild -project #{PROJECT_NAME}.xcodeproj -alltargets -configuration #{CONFIGURATION} clean], output_file("clean"))
+  system_or_exit(%Q[xcodebuild -project #{PROJECT_NAME}.xcodeproj -alltargets -configuration #{CONFIGURATION} clean SYMROOT=#{BUILD_DIR}], output_file("clean"))
 end
 
 task :build_pck_framework do
-  system_or_exit(%Q[xcodebuild -project #{PROJECT_NAME}.xcodeproj -target #{PCK_FRAMEWORK_TARGET_NAME} -configuration #{CONFIGURATION} build], output_file("specs"))
+  system_or_exit(%Q[xcodebuild -project #{PROJECT_NAME}.xcodeproj -target #{PCK_FRAMEWORK_TARGET_NAME} -configuration #{CONFIGURATION} build SYMROOT=#{BUILD_DIR}], output_file("specs"))
 end
 
 task :build_pshk_framework do
-  system_or_exit(%Q[xcodebuild -project #{PROJECT_NAME}.xcodeproj -target #{PSHK_FRAMEWORK_TARGET_NAME} -configuration #{CONFIGURATION} build], output_file("specs"))
+  system_or_exit(%Q[xcodebuild -project #{PROJECT_NAME}.xcodeproj -target #{PSHK_FRAMEWORK_TARGET_NAME} -configuration #{CONFIGURATION} build SYMROOT=#{BUILD_DIR}], output_file("specs"))
 end
 
 task :build_specs do
-  system_or_exit(%Q[xcodebuild -project #{PROJECT_NAME}.xcodeproj -target #{SPECS_TARGET_NAME} -configuration #{CONFIGURATION} build], output_file("specs"))
+  system_or_exit(%Q[xcodebuild -project #{PROJECT_NAME}.xcodeproj -target #{SPECS_TARGET_NAME} -configuration #{CONFIGURATION} build SYMROOT=#{BUILD_DIR}], output_file("specs"))
 end
 
 task :build_pck_static_lib do
-  system_or_exit(%Q[xcodebuild -project #{PROJECT_NAME}.xcodeproj -target #{PCK_STATIC_LIB_TARGET_NAME} -configuration #{CONFIGURATION} ARCHS=i386 build], output_file("pck_staticlib"))
+  system_or_exit(%Q[xcodebuild -project #{PROJECT_NAME}.xcodeproj -target #{PCK_STATIC_LIB_TARGET_NAME} -configuration #{CONFIGURATION} ARCHS=i386 build SYMROOT=#{BUILD_DIR}], output_file("pck_staticlib"))
 end
 
 task :build_pshk_static_lib do
-  system_or_exit(%Q[xcodebuild -project #{PROJECT_NAME}.xcodeproj -target #{PSHK_STATIC_LIB_TARGET_NAME} -configuration #{CONFIGURATION} ARCHS=i386 build], output_file("pshk_staticlib"))
+  system_or_exit(%Q[xcodebuild -project #{PROJECT_NAME}.xcodeproj -target #{PSHK_STATIC_LIB_TARGET_NAME} -configuration #{CONFIGURATION} ARCHS=i386 build SYMROOT=#{BUILD_DIR}], output_file("pshk_staticlib"))
 end
 
 task :build_uispecs do
