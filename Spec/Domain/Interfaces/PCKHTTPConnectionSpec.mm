@@ -1,12 +1,12 @@
 #import <Cedar/SpecHelper.h>
 #import <OCMock/OCMock.h>
-#define HC_SHORTHAND
-#import <OCHamcrest/OCHamcrest.h>
 
 #import "PivotalSpecHelperKit.h"
 #import "PCKHTTPConnection.h"
 #import "PCKHTTPInterface.h"
 #import "FakeConnectionDelegate.h"
+
+using namespace Cedar::Matchers;
 
 SPEC_BEGIN(PCKHTTPConnectionSpec)
 
@@ -35,18 +35,18 @@ describe(@"PCKHTTPConnection", ^{
 
     describe(@"initialization", ^{
         it(@"should not have an unexpectedly high retainCount", ^{
-            assertThatInt([connection retainCount], equalToInt(1));
+            expect(connection.retainCount).to(equal(1));
         });
 
         it(@"should retain its delegate", ^{
-            assertThatInt([delegate retainCount], equalToInt(2));
+            expect([delegate retainCount]).to(equal(2));
         });
     });
 
     describe(@"deallocation", ^{
         it(@"should release its delegate", ^{
             [connection release]; connection = nil;
-            assertThatInt([delegate retainCount], equalToInt(1));
+            expect([delegate retainCount]).to(equal(1));
         });
     });
 
@@ -54,15 +54,15 @@ describe(@"PCKHTTPConnection", ^{
         it(@"should return true for selectors the delegate responds to", ^{
             SEL selector = @selector(connection:needNewBodyStream:);
 
-            assertThatBool([delegate respondsToSelector:selector], equalToBool(true));
-            assertThatBool([connection respondsToSelector:selector], equalToBool(true));
+            expect([delegate respondsToSelector:selector]).to(be_truthy());
+            expect([connection respondsToSelector:selector]).to(be_truthy());
         });
 
         it(@"should return false for selectors the delegate does not respond to", ^{
             SEL selector = @selector(connection:canAuthenticateAgainstProtectionSpace:);
 
-            assertThatBool([delegate respondsToSelector:selector], equalToBool(false));
-            assertThatBool([connection respondsToSelector:selector], equalToBool(false));
+            expect([delegate respondsToSelector:selector]).to_not(be_truthy());
+            expect([connection respondsToSelector:selector]).to_not(be_truthy());
         });
     });
 
@@ -70,7 +70,7 @@ describe(@"PCKHTTPConnection", ^{
         it(@"should forward any selector the delegate responds to to the delegate", ^{
             SEL selector = @selector(connection:needNewBodyStream:);
 
-            assertThatBool([delegate respondsToSelector:selector], equalToBool(true));
+            expect([delegate respondsToSelector:selector]).to(be_truthy());
             id mockDelegate = [OCMockObject partialMockForObject:delegate];
             [[mockDelegate expect] connection:connection needNewBodyStream:nil];
             [connection connection:connection needNewBodyStream:nil];

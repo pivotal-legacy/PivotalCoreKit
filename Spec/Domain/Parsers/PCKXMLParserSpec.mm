@@ -1,8 +1,9 @@
 #import <Cedar/SpecHelper.h>
-#define HC_SHORTHAND
-#import <OCHamcrest/OCHamcrest.h>
+
 #import "PCKXMLParser.h"
 #import "PCKXMLParserDelegate.h"
+
+using namespace Cedar::Matchers;
 
 SPEC_BEGIN(PCKXMLParserSpec)
 
@@ -62,8 +63,8 @@ describe(@"PCKXMLParser and PCKXMLParserDelegate", ^{
                 });
 
                 it(@"should execute the block appropriately", ^{
-                    assertThatInt(elementCount, equalToInt(6));
-                    assertThatInt(batCount, equalToInt(2));
+                    expect(elementCount).to(equal(6));
+                    expect(batCount).to(equal(2));
                 });
             });
 
@@ -84,8 +85,8 @@ describe(@"PCKXMLParser and PCKXMLParserDelegate", ^{
                 });
 
                 it(@"should execute the block appropriately", ^{
-                    assertThatInt(elementCount, equalToInt(6));
-                    assertThatInt(batCount, equalToInt(2));
+                    expect(elementCount).to(equal(6));
+                    expect(batCount).to(equal(2));
                 });
             });
 
@@ -124,13 +125,13 @@ describe(@"PCKXMLParser and PCKXMLParserDelegate", ^{
                 });
 
                 it(@"should parse the wibble content", ^{
-                    assertThat(wibbleContent, equalTo(@"ABC"));
+                    expect(wibbleContent).to(equal(@"ABC"));
                 });
             });
         });
 
         describe(@"with XML with attributes", ^{
-            NSString * xmlWithAttributes = @"<bar parent=\"true\" whatever=\"anything\"><foo bar=\"baz\" quux=\"zxzzy\"></foo></bar>";
+            NSString *xmlWithAttributes = @"<bar parent=\"true\" whatever=\"anything\"><foo bar=\"baz\" quux=\"zxzzy\"></foo></bar>";
 
             beforeEach(^{
                 data = [xmlWithAttributes dataUsingEncoding:NSUTF8StringEncoding];
@@ -154,9 +155,13 @@ describe(@"PCKXMLParser and PCKXMLParserDelegate", ^{
                 });
 
                 it(@"should execute the block appropriately", ^{
-                    assertThatInt(fooCount, equalToInt(1));
-                    assertThat([attributes valueForKey:@"bar"], equalTo(@"baz"));
-                    assertThat([attributes valueForKey:@"quux"], equalTo(@"zxzzy"));
+                    expect(fooCount).to(equal(1));
+                    
+                    NSString *value = [attributes valueForKey:@"bar"];
+                    expect(value).to(equal(@"baz"));
+                    
+                    value = [attributes valueForKey:@"quux"];
+                    expect(value).to(equal(@"zxzzy"));
                 });
             });
         });
@@ -186,8 +191,8 @@ describe(@"PCKXMLParser and PCKXMLParserDelegate", ^{
                 });
 
                 it(@"should execute the error block, passing a valid NSError object to the delegate", ^{
-                    assertThat(encounteredError, notNilValue());
-                    assertThat([encounteredError class], equalTo([NSError class]));
+                    expect(encounteredError).to_not(be_nil());
+                    expect(encounteredError).to(be_instance_of([NSError class]));
                 });
             });
         });

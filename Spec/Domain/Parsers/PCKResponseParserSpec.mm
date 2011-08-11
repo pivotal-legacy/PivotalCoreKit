@@ -1,6 +1,4 @@
 #import <Cedar/SpecHelper.h>
-#define HC_SHORTHAND
-#import <OCHamcrest/OCHamcrest.h>
 #import <OCMock/OCMock.h>
 #import <PivotalSpecHelperKit/PivotalSpecHelperKit.h>
 

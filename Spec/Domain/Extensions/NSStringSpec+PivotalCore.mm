@@ -1,92 +1,87 @@
 #import <Cedar/SpecHelper.h>
 #import <OCMock/OCMock.h>
-#define HC_SHORTHAND
-#import <OCHamcrest/OCHamcrest.h>
 
 #import "NSString+PivotalCore.h"
+
+using namespace Cedar::Matchers;
 
 SPEC_BEGIN(NSString_PivotalCore)
 
 describe(@"Pivotal Core extensions to NSString", ^{
-
     describe(@"stringByCamelizing", ^{
         it(@"should camelize a underscored string", ^{
-            assertThat([@"foo_bar_baz" stringByCamelizing], equalTo(@"fooBarBaz"));
+            NSString *camelizedString = [@"foo_bar_baz" stringByCamelizing];
+            expect(camelizedString).to(equal(@"fooBarBaz"));
         });
     });
 
     describe(@"initWithBase64EncodedData:", ^{
-        __block NSString *newString = nil;
-
-        afterEach(^{
-            [newString release];
-        });
+        __block NSString *newString;
 
         describe(@"with 20 bytes of blank data", ^{
             beforeEach(^{
                 char bytes[20];
-                for (int i = 0; i < 20; ++i) {
-                    bytes[i] = 0;
-                }
-                newString = [[NSString alloc] initWithBase64EncodedData:[NSData dataWithBytes:bytes length:20]];
+                memset(bytes, 0, 20);
+
+                newString = [[[NSString alloc] initWithBase64EncodedData:[NSData dataWithBytes:bytes length:20]] autorelease];
             });
 
             it(@"should create a correctly base-64 encoded string", ^{
-                assertThat(newString, equalTo(@"AAAAAAAAAAAAAAAAAAAAAAAAAAA="));
+                expect(newString).to(equal(@"AAAAAAAAAAAAAAAAAAAAAAAAAAA="));
             });
         });
 
         describe(@"with 20 bytes of non-blank data", ^{
             beforeEach(^{
                 const char bytes[20] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't'};
-                newString = [[NSString alloc] initWithBase64EncodedData:[NSData dataWithBytes:bytes length:20]];
+                newString = [[[NSString alloc] initWithBase64EncodedData:[NSData dataWithBytes:bytes length:20]] autorelease];
             });
 
             it(@"should create a correctly base-64 encoded string", ^{
-                assertThat(newString, equalTo(@"YWJjZGVmZ2hpamtsbW5vcHFyc3Q="));
+                expect(newString).to(equal(@"YWJjZGVmZ2hpamtsbW5vcHFyc3Q="));
             });
         });
 
         describe(@"with 0 bytes of data", ^{
             beforeEach(^{
-                newString = [[NSString alloc] initWithBase64EncodedData:[NSData data]];
+                newString = [[[NSString alloc] initWithBase64EncodedData:[NSData data]] autorelease];
             });
 
             it(@"should create a correctly base-64 encoded string", ^{
-                assertThat(newString, equalTo(@""));
+                expect(newString).to(equal(@""));
             });
         });
 
         describe(@"with 1 byte of data", ^{
             beforeEach(^{
                 const char bytes[1] = {'A'};
-                newString = [[NSString alloc] initWithBase64EncodedData:[NSData dataWithBytes:bytes length:1]];
+                newString = [[[NSString alloc] initWithBase64EncodedData:[NSData dataWithBytes:bytes length:1]] autorelease];
             });
 
             it(@"should create a correctly base-64 encoded string", ^{
-                assertThat(newString, equalTo(@"QQ=="));
+                expect(newString).to(equal(@"QQ=="));
             });
         });
 
         describe(@"with 2 bytes of data", ^{
             beforeEach(^{
                 const char bytes[2] = {'A', 'B'};
-                newString = [[NSString alloc] initWithBase64EncodedData:[NSData dataWithBytes:bytes length:2]];
+                newString = [[[NSString alloc] initWithBase64EncodedData:[NSData dataWithBytes:bytes length:2]] autorelease];
             });
 
             it(@"should create a correctly base-64 encoded string", ^{
-                assertThat(newString, equalTo(@"QUI="));
+                expect(newString).to(equal(@"QUI="));
             });
         });
 
         describe(@"with 3 bytes of data", ^{
             beforeEach(^{
                 const char bytes[3] = {'A', 'B', 'C'};
-                newString = [[NSString alloc] initWithBase64EncodedData:[NSData dataWithBytes:bytes length:3]];
+                newString = [[[NSString alloc] initWithBase64EncodedData:[NSData dataWithBytes:bytes length:3]] autorelease];
             });
 
             it(@"should create a correctly base-64 encoded string", ^{
-                assertThat(newString, equalTo(@"QUJD"));
+                expect(newString).to(equal(@"QUJD"));
             });
         });
     });
@@ -121,12 +116,14 @@ describe(@"Pivotal Core extensions to NSString", ^{
             size_t escapedCount = sizeof(ALL_ESCAPED_URL_CHARACTERS) / sizeof(NSString *);
 
             it(@"should escape all invalid URL characters, including slashes and question marks", ^{
-                assertThatInt(invalidCount, equalToInt(escapedCount));
+                expect(invalidCount).to(equal(escapedCount));
 
-                for (unsigned int i = 0; i < invalidCount; ++i) {
+                for (unsigned int i = 0; i != invalidCount; ++i) {
                     NSString *stringWithInvalidCharacter = [NSString stringWithFormat:@"foo%@bar", ALL_INVALID_URL_CHARACTERS[i]];
                     NSString *stringWithEscapedCharacter = [NSString stringWithFormat:@"foo%@bar", ALL_ESCAPED_URL_CHARACTERS[i]];
-                    assertThat([stringWithInvalidCharacter stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding includeAll:YES], equalTo(stringWithEscapedCharacter));
+                    
+                    NSString *escapedString = [stringWithInvalidCharacter stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding includeAll:YES];
+                    expect(escapedString).to(equal(stringWithEscapedCharacter));
                 }
             });
         });
@@ -136,12 +133,14 @@ describe(@"Pivotal Core extensions to NSString", ^{
             size_t escapedCount = sizeof(DEFAULT_ESCAPED_URL_CHARACTERS) / sizeof(NSString *);
 
             it(@"should escape invalid URL characters, not including slashes and question marks (the default Apple-blessed behavior)", ^{
-                assertThatInt(invalidCount, equalToInt(escapedCount));
+                expect(invalidCount).to(equal(escapedCount));
 
-                for (unsigned int i = 0; i < invalidCount; ++i) {
+                for (unsigned int i = 0; i != invalidCount; ++i) {
                     NSString *stringWithInvalidCharacter = [NSString stringWithFormat:@"foo%@bar", DEFAULT_INVALID_URL_CHARACTERS[i]];
                     NSString *stringWithEscapedCharacter = [NSString stringWithFormat:@"foo%@bar", DEFAULT_ESCAPED_URL_CHARACTERS[i]];
-                    assertThat([stringWithInvalidCharacter stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding includeAll:NO], equalTo(stringWithEscapedCharacter));
+
+                    NSString *escapedString = [stringWithInvalidCharacter stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding includeAll:NO];
+                    expect(escapedString).to(equal(stringWithEscapedCharacter));
                 }
             });
         });

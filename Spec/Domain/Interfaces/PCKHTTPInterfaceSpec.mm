@@ -1,7 +1,5 @@
 #import <Cedar/SpecHelper.h>
 #import <OCMock/OCMock.h>
-#define HC_SHORTHAND
-#import <OCHamcrest/OCHamcrest.h>
 
 #import "PCKHTTPInterface.h"
 #import "PCKHTTPConnectionDelegate.h"
@@ -42,6 +40,9 @@
 
 @end
 
+
+using namespace Cedar::Matchers;
+
 SPEC_BEGIN(PCKHTTPInterfaceSpec)
 
 describe(@"PCKHTTPInterface", ^{
@@ -68,24 +69,24 @@ describe(@"PCKHTTPInterface", ^{
         });
 
         it(@"should send one HTTP request", ^{
-            assertThatInt([[NSURLConnection connections] count], equalToInt(1));
+            expect([NSURLConnection connections].count).to(equal(1));
         });
 
         it(@"should generate the target URI from the subclass-specific host and base path, along with the specified path", ^{
-            assertThat([[request URL] host], equalTo(@HOST));
-            assertThat([[request URL] path], equalTo(@BASE_PATH PATH));
+            expect(request.URL.host).to(equal(@HOST));
+            expect(request.URL.path).to(equal(@BASE_PATH PATH));
         });
 
         it(@"should use the GET method", ^{
-            assertThat([request HTTPMethod], equalTo(@"GET"));
+            expect(request.HTTPMethod).to(equal(@"GET"));
         });
 
         it(@"should not use SSL", ^{
-            assertThat([[request URL] scheme], equalTo(@"http"));
+            expect(request.URL.scheme).to(equal(@"http"));
         });
 
         it(@"should add the new connection to the active connections", ^{
-            assertThat([interface activeConnections], hasItem(connection));
+            expect(interface.activeConnections).to(contain(connection));
         });
 
         describe(@"when called multiple times", ^{
@@ -112,7 +113,7 @@ describe(@"PCKHTTPInterface", ^{
             });
 
             it(@"should remove the connection from the active connections", ^{
-                assertThat([interface activeConnections], isNot(hasItem(connection)));
+                expect(interface.activeConnections).to_not(contain(connection));
             });
         });
 
@@ -126,7 +127,7 @@ describe(@"PCKHTTPInterface", ^{
 
             it(@"should remove the connection from the active connections", ^{
                 [[[connection retain] autorelease] cancel];
-                assertThat([interface activeConnections], isNot(hasItem(connection)));
+                expect(interface.activeConnections).to_not(contain(connection));
             });
 
             it(@"should cancel the connection BEFORE removing itself from active connections and deallocating", ^{
@@ -158,7 +159,7 @@ describe(@"PCKHTTPInterface", ^{
                 });
 
                 it(@"should remove the connection from the active connections", ^{
-                    assertThat([interface activeConnections], isNot(hasItem(connection)));
+                    expect(interface.activeConnections).to_not(contain(connection));
                 });
 
                 it(@"should notify the connection delegate", ^{
@@ -182,7 +183,7 @@ describe(@"PCKHTTPInterface", ^{
             });
 
             it(@"should remove the connection from the active connections", ^{
-                assertThat([interface activeConnections], isNot(hasItem(connection)));
+                expect(interface.activeConnections).to_not(contain(connection));
             });
         });
 
@@ -199,7 +200,7 @@ describe(@"PCKHTTPInterface", ^{
             });
 
             it(@"should remove the connection from the active connections", ^{
-                assertThat([interface activeConnections], isNot(hasItem(connection)));
+                expect(interface.activeConnections).to_not(contain(connection));
             });
         });
     });
@@ -212,7 +213,7 @@ describe(@"PCKHTTPInterface", ^{
         });
 
         it(@"should use SSL", ^{
-            assertThat([[request URL] scheme], equalTo(@"https"));
+            expect(request.URL.scheme).to(equal(@"https"));
         });
     });
 
@@ -220,7 +221,8 @@ describe(@"PCKHTTPInterface", ^{
         it(@"should include the specified headers in the request", ^{
             NSDictionary *headers = [NSDictionary dictionaryWithObjectsAndKeys:@"wibble", @"header1", nil];
             NSURLConnection *connection = [interface makeConnectionWithHeaders:headers andDelegate:mockDelegate];
-            assertThat([[connection request] valueForHTTPHeaderField:@"header1"], equalTo(@"wibble"));
+            
+            expect([connection.request valueForHTTPHeaderField:@"header1"]).to(equal(@"wibble"));
         });
     });
 
@@ -230,7 +232,7 @@ describe(@"PCKHTTPInterface", ^{
                 request.HTTPMethod = @"POST";
             }];
 
-            assertThat(connection.request.HTTPMethod, equalTo(@"POST"));
+            expect(connection.request.HTTPMethod).to(equal(@"POST"));
         });
     });
 });

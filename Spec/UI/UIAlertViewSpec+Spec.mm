@@ -1,9 +1,22 @@
 #import "SpecHelper.h"
-#define HC_SHORTHAND
-#import "OCHamcrest.h"
 #import "OCMock.h"
 
 #import "UIAlertView+Spec.h"
+
+namespace Cedar { namespace Matchers {
+    class BeVisible : public Base {        
+    public:        
+        virtual NSString * failure_message_end() const { return @"be visible"; }
+        template<typename T>
+        bool matches(T * const view) const { return view.isVisible; }
+    };
+    
+    inline BeVisible be_visible() {
+        return BeVisible();
+    }
+}}
+
+using namespace Cedar::Matchers;
 
 SPEC_BEGIN(UIAlertViewSpecExtensionsSpec)
 
@@ -27,21 +40,21 @@ describe(@"UIAlertView (spec extensions)", ^{
 	describe(@"Getting the current alert view with currentAlertView", ^{
 		describe(@"when the alert view is not shown", ^{
 			beforeEach(^{
-				assertThatBool(alertView.isVisible, equalToBool(NO));
+                expect(alertView).to_not(be_visible());
 			});
 			
 			it(@"should return nil", ^{
-				assertThat([UIAlertView currentAlertView], nilValue());
+                expect([UIAlertView currentAlertView]).to(be_nil());
 			});
 		});
 		
 		describe(@"when the alert view is shown", ^{
 			beforeEach(^{
-				alertView.show;
+				[alertView show];
 			});
 			
 			it(@"should return the alert view", ^{
-				assertThat([UIAlertView currentAlertView], equalTo(alertView));
+                expect([UIAlertView currentAlertView]).to(equal(alertView));
 			});
 			
 			describe(@"when the alertView is subsequently dismissed", ^{
@@ -51,7 +64,7 @@ describe(@"UIAlertView (spec extensions)", ^{
 				});
 				
 				it(@"should return nil", ^{
-					assertThat([UIAlertView currentAlertView], nilValue());
+                    expect([UIAlertView currentAlertView]).to(be_nil());
 				});
 			});
 			
@@ -61,7 +74,7 @@ describe(@"UIAlertView (spec extensions)", ^{
 				});
 				
 				it(@"should return nil", ^{
-					assertThat([UIAlertView currentAlertView], nilValue());
+                    expect([UIAlertView currentAlertView]).to(be_nil());
 				});
 			});
 		});
@@ -70,17 +83,17 @@ describe(@"UIAlertView (spec extensions)", ^{
 	describe(@"checking visibility with isVisible", ^{
 		describe(@"when the alert view is not shown", ^{
 			it(@"should return NO", ^{
-				assertThatBool(alertView.isVisible, equalToBool(NO));
+                expect(alertView.isVisible).to(equal(NO));
 			});
 		});
 		
 		describe(@"when the alert view is shown", ^{
 			beforeEach(^{
-				alertView.show;
+				[alertView show];
 			});
 			
 			it(@"should return YES", ^{
-				assertThatBool(alertView.isVisible, equalToBool(YES));
+                expect(alertView.isVisible).to(equal(YES));
 			});
 			
 			describe(@"when the UIAlertView class is subsequently dismissed", ^{
@@ -90,7 +103,7 @@ describe(@"UIAlertView (spec extensions)", ^{
 				});
 				
 				it(@"should return NO", ^{
-					assertThatBool(alertView.isVisible, equalToBool(NO));
+                    expect(alertView.isVisible).to(equal(NO));
 				});
 			});
 		});		
@@ -119,7 +132,6 @@ describe(@"UIAlertView (spec extensions)", ^{
 			});
 		});
 	});
-	
 });
 
 SPEC_END

@@ -1,7 +1,5 @@
 #import <Cedar/SpecHelper.h>
 #import <OCMock/OCMock.h>
-#define HC_SHORTHAND
-#import <OCHamcrest/OCHamcrest.h>
 
 #import "NSURLConnection+Spec.h"
 #import "PCKHTTPConnectionDelegate.h"
@@ -18,6 +16,8 @@
 
 @end
 
+
+using namespace Cedar::Matchers;
 
 SPEC_BEGIN(NSURLConnectionSpec_Spec)
 
@@ -39,19 +39,20 @@ describe(@"NSURLConnection (spec extensions)", ^{
 
     describe(@"+resetAll", ^{
         it(@"should remove all connections from the global list of connections", ^{
-            assertThatInt([NSURLConnection connections].count, isNot(equalToInt(0)));
+            expect([NSURLConnection connections]).to_not(be_empty());
+            
             [NSURLConnection resetAll];
-            assertThatInt([NSURLConnection connections].count, equalToInt(0));
+            expect([NSURLConnection connections]).to(be_empty());
         });
     });
 
     describe(@"on initialization", ^{
         it(@"should record the existence of the object in the global list of connections", ^{
-            assertThat([NSURLConnection connections], hasItem(connection));
+            expect([NSURLConnection connections]).to(contain(connection));
         });
 
         it(@"should retain the request", ^{
-            assertThatInt([request retainCount], equalToInt(2));
+            expect(request.retainCount).to(equal(2));
         });
 
         describe(@"when the delegate is self", ^{
@@ -62,13 +63,13 @@ describe(@"NSURLConnection (spec extensions)", ^{
 
             it(@"should not retain the delegate", ^{
                 // One retain for alloc, one retain for the connections array.
-                assertThatInt([connection retainCount], equalToInt(2));
+                expect(connection.retainCount).to(equal(2));
             });
         });
 
         describe(@"when the delegate is not self", ^{
             it(@"should retain the delegate", ^{
-                assertThatInt([mockDelegate retainCount], equalToInt(2));
+                expect([mockDelegate retainCount]).to(equal(2));
             });
         });
     });
@@ -80,7 +81,7 @@ describe(@"NSURLConnection (spec extensions)", ^{
         });
 
         it(@"should release the request", ^{
-            assertThatInt([request retainCount], equalToInt(1));
+            expect(request.retainCount).to(equal(1));
         });
 
         describe(@"when the delegate is self", ^{
@@ -97,16 +98,16 @@ describe(@"NSURLConnection (spec extensions)", ^{
 
         describe(@"when the delegate is not self", ^{
             it(@"should release the delegate", ^{
-                assertThatInt([mockDelegate retainCount], equalToInt(1));
+                expect([mockDelegate retainCount]).to(equal(1));
             });
         });
     });
 
     describe(@"cancel", ^{
         it(@"should remove the connection from the global list of connections", ^{
-            assertThat([NSURLConnection connections], hasItem(connection));
+            expect([NSURLConnection connections]).to(contain(connection));
             [connection cancel];
-            assertThat([NSURLConnection connections], isNot(hasItem(connection)));
+            expect([NSURLConnection connections]).to_not(contain(connection));
         });
     });
 
@@ -127,9 +128,9 @@ describe(@"NSURLConnection (spec extensions)", ^{
         });
 
         it(@"should remove the connection from the global list of connections", ^{
-            assertThat([NSURLConnection connections], hasItem(connection));
+            expect([NSURLConnection connections]).to(contain(connection));
             [connection receiveResponse:response];
-            assertThat([NSURLConnection connections], isNot(hasItem(connection)));
+            expect([NSURLConnection connections]).to_not(contain(connection));
         });
 
         it(@"should not call subsequent delegate methods if cancelled", ^{
@@ -164,9 +165,9 @@ describe(@"NSURLConnection (spec extensions)", ^{
         });
 
         it(@"should remove the connection from the global list of connections", ^{
-            assertThat([NSURLConnection connections], hasItem(connection));
+            expect([NSURLConnection connections]).to(contain(connection));
             [connection failWithError:error];
-            assertThat([NSURLConnection connections], isNot(hasItem(connection)));
+            expect([NSURLConnection connections]).to_not(contain(connection));
         });
     });
 });

@@ -1,8 +1,8 @@
 #import <Cedar/SpecHelper.h>
-#define HC_SHORTHAND
-#import <OCHamcrest/OCHamcrest.h>
 
 #import "NSObject+MethodDecoration.h"
+
+using namespace Cedar::Matchers;
 
 @implementation NSObject (DecoratedDescription)
 - (NSString *)descriptionWithBrackets {
@@ -21,10 +21,11 @@ describe(@"decorateMethod:with:", ^{
     });
 
     it(@"should decorate the method", ^{
-        NSString *description = [object description];
+        NSString *undecoratedDescription = object.description;
         [NSObject decorateMethod:@"description" with:@"brackets"];
 
-        assertThat([object description], equalTo([NSString stringWithFormat:@"[%@]", description]));
+        NSString *decoratedDescription = object.description;
+        expect(decoratedDescription).to(equal([NSString stringWithFormat:@"[%@]", undecoratedDescription]));
     });
 });
 

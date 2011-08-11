@@ -1,6 +1,4 @@
 #import <Cedar/SpecHelper.h>
-#define HC_SHORTHAND
-#import <OCHamcrest/OCHamcrest.h>
 #import <OCMock/OCMock.h>
 
 #import "PivotalSpecHelperKit.h"
@@ -9,6 +7,8 @@
 #import "FakeConnectionDelegate.h"
 
 SPEC_BEGIN(PCKHTTPConnectionOperationSpec)
+
+using namespace Cedar::Matchers;
 
 describe(@"PCKHTTPConnectionOperation", ^{
     __block PCKHTTPConnectionOperation *operation;
@@ -29,58 +29,58 @@ describe(@"PCKHTTPConnectionOperation", ^{
 
     describe(@"initialization", ^{
         it(@"should not have an unexpectedly high retainCount", ^{
-            assertThatInt([operation retainCount], equalToInt(1));
+            expect(operation.retainCount).to(equal(1));
         });
 
         it(@"should retain its delegate", ^{
-            assertThatInt([delegate retainCount], equalToInt(2));
+            expect([delegate retainCount]).to(equal(2));
         });
 
         it(@"should not create a connection", ^{
-            assertThat([[NSURLConnection connections] lastObject], nilValue());
+            expect([NSURLConnection connections]).to(be_empty());
         });
 
         it(@"should not be executing", ^{
-            assertThatBool(operation.isExecuting, equalToBool(NO));
+            expect(operation.isExecuting).to_not(be_truthy());
         });
 
         it(@"should not be finished", ^{
-            assertThatBool(operation.isFinished, equalToBool(NO));
+            expect(operation.isFinished).to_not(be_truthy());
         });
     });
 
     describe(@"deallocation", ^{
         it(@"should release its delegate", ^{
             [operation release]; operation = nil;
-            assertThatInt([delegate retainCount], equalToInt(1));
+            expect([delegate retainCount]).to(equal(1));
         });
     });
 
     describe(@"respondsToSelector:", ^{
         it(@"should return true for selectors NSOperation responds to", ^{
-            assertThatBool([operation respondsToSelector:@selector(start)], equalToBool(YES));
+            expect([operation respondsToSelector:@selector(start)]).to(be_truthy());
         });
 
         it(@"should return true for selectors the delegate responds to", ^{
             SEL selector = @selector(connection:needNewBodyStream:);
 
-            assertThatBool([delegate respondsToSelector:selector], equalToBool(true));
-            assertThatBool([operation respondsToSelector:selector], equalToBool(true));
+            expect([delegate respondsToSelector:selector]).to(be_truthy());
+            expect([operation respondsToSelector:selector]).to(be_truthy());
         });
 
         it(@"should return false for selectors the delegate does not respond to", ^{
             SEL selector = @selector(connection:canAuthenticateAgainstProtectionSpace:);
 
-            assertThatBool([delegate respondsToSelector:selector], equalToBool(false));
-            assertThatBool([operation respondsToSelector:selector], equalToBool(false));
+            expect([delegate respondsToSelector:selector]).to_not(be_truthy());
+            expect([operation respondsToSelector:selector]).to_not(be_truthy());
         });
     });
 
     describe(@"forwardInvocation:", ^{
         it(@"should forward any selector the delegate responds to to the delegate", ^{
             SEL selector = @selector(connection:needNewBodyStream:);
-
-            assertThatBool([delegate respondsToSelector:selector], equalToBool(true));
+            expect([delegate respondsToSelector:selector]).to(be_truthy());
+            
             id mockDelegate = [OCMockObject partialMockForObject:delegate];
             [[mockDelegate expect] connection:nil needNewBodyStream:nil];
             [operation connection:nil needNewBodyStream:nil];
@@ -92,21 +92,22 @@ describe(@"PCKHTTPConnectionOperation", ^{
         __block NSURLConnection *connection;
 
         beforeEach(^{
-            assertThatInt([NSURLConnection connections].count, equalToInt(0));
+            expect([NSURLConnection connections]).to(be_empty());
+            
             [operation start];
             connection = [[NSURLConnection connections] lastObject];
         });
 
         it(@"should create a connection", ^{
-            assertThat(connection, notNilValue());
+            expect(connection).to_not(be_nil());
         });
 
         it(@"should be executing", ^{
-            assertThatBool(operation.isExecuting, equalToBool(YES));
+            expect(operation.isExecuting).to(be_truthy());
         });
 
         it(@"should not be finished", ^{
-            assertThatBool(operation.isFinished, equalToBool(NO));
+            expect(operation.isFinished).to_not(be_truthy());
         });
 
         describe(@"on connection success", ^{
@@ -121,7 +122,7 @@ describe(@"PCKHTTPConnectionOperation", ^{
                 [[mockDelegate expect] connection:connection didReceiveResponse:[OCMArg any]];
                 [[mockDelegate expect] connection:connection didReceiveData:[[response body] dataUsingEncoding:NSUTF8StringEncoding]];
 
-                assertThatBool([delegate respondsToSelector:@selector(connection:didReceiveResponse:)], equalToBool(YES));
+                expect([delegate respondsToSelector:@selector(connection:didReceiveResponse:)]).to(be_truthy());
 
                 [connection receiveResponse:response];
 
@@ -139,12 +140,12 @@ describe(@"PCKHTTPConnectionOperation", ^{
 
             it(@"should not be executing", ^{
                 [connection receiveResponse:response];
-                assertThatBool(operation.isExecuting, equalToBool(NO));
+                expect(operation.isExecuting).to_not(be_truthy());
             });
 
             it(@"should be finished", ^{
                 [connection receiveResponse:response];
-                assertThatBool(operation.isFinished, equalToBool(YES));
+                expect(operation.isFinished).to(be_truthy());
             });
         });
 
@@ -166,12 +167,12 @@ describe(@"PCKHTTPConnectionOperation", ^{
 
             it(@"should not be executing", ^{
                 [connection failWithError:error];
-                assertThatBool(operation.isExecuting, equalToBool(NO));
+                expect(operation.isExecuting).to_not(be_truthy());
             });
 
             it(@"should be finished", ^{
                 [connection failWithError:error];
-                assertThatBool(operation.isFinished, equalToBool(YES));
+                expect(operation.isFinished).to(be_truthy());
             });
         });
     });
@@ -184,15 +185,15 @@ describe(@"PCKHTTPConnectionOperation", ^{
             });
 
             it(@"should cancel the connection", ^{
-                assertThatInt([NSURLConnection connections].count, equalToInt(0));
+                expect([NSURLConnection connections]).to(be_empty());
             });
 
             it(@"should not be executing", ^{
-                assertThatBool(operation.isExecuting, equalToBool(NO));
+                expect(operation.isExecuting).to_not(be_truthy());
             });
 
             it(@"should be finished", ^{
-                assertThatBool(operation.isFinished, equalToBool(YES));
+                expect(operation.isFinished).to(be_truthy());
             });
         });
 
@@ -202,11 +203,11 @@ describe(@"PCKHTTPConnectionOperation", ^{
             });
 
             it(@"should not be executing", ^{
-                assertThatBool(operation.isExecuting, equalToBool(NO));
+                expect(operation.isExecuting).to_not(be_truthy());
             });
 
             it(@"should be finished", ^{
-                assertThatBool(operation.isFinished, equalToBool(YES));
+                expect(operation.isFinished).to(be_truthy());
             });
         });
     });

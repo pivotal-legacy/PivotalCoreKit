@@ -1,8 +1,9 @@
 #import <Cedar/SpecHelper.h>
 #import <OCMock/OCMock.h>
-#define HC_SHORTHAND
-#import <OCHamcrest/OCHamcrest.h>
+
 #import "NSObject+Mocking.h"
+
+using namespace Cedar::Matchers;
 
 @interface MyClass : NSObject
 + (id)aClassMethod;
@@ -31,49 +32,52 @@ describe(@"resetAllStubbedMethods", ^{
 
             [NSObject resetAllStubbedMethods];
 
-            assertThat([MyClass aClassMethod], equalTo(@"aClassMethodReturnValue"));
+            NSString *classMethodResult = [MyClass aClassMethod];
+            expect(classMethodResult).to(equal(@"aClassMethodReturnValue"));
         });
     });
 });
 
 describe(@"Stubbing the return value of a class method", ^{
-    afterEach(^{
-        [NSObject resetAllStubbedMethods];
-    });
-
     it(@"should return the specified object value when the stubbed method is called", ^{
-        NSString * expected_value = @"This is the stubbed return value";
-        [MyClass stub:@selector(aClassMethod) andReturn:expected_value];
-        assertThat([MyClass aClassMethod], sameInstance(expected_value));
+        NSString * expectedValue = @"This is the stubbed return value";
+        [MyClass stub:@selector(aClassMethod) andReturn:expectedValue];
+        
+        NSString *classMethodResult = [MyClass aClassMethod];
+        expect(classMethodResult).to(be_same_instance_as(expectedValue));
     });
 
     it(@"should return the specified object value for each stubbed method", ^{
-        NSString * expected_value_1 = @"This is the first stubbed return value";
-        NSString * expected_value_2 = @"This is the second stubbed return value";
-        [MyClass stub:@selector(aClassMethod) andReturn:expected_value_1];
-        [MyClass stub:@selector(aDifferentClassMethod) andReturn:expected_value_2];
+        NSString * expectedValue1 = @"This is the first stubbed return value";
+        NSString * expectedValue2 = @"This is the second stubbed return value";
+        [MyClass stub:@selector(aClassMethod) andReturn:expectedValue1];
+        [MyClass stub:@selector(aDifferentClassMethod) andReturn:expectedValue2];
 
-        assertThat([MyClass aClassMethod], sameInstance(expected_value_1));
-        assertThat([MyClass aDifferentClassMethod], sameInstance(expected_value_2));
+        NSString *classMethodResult = [MyClass aClassMethod];
+        expect(classMethodResult).to(be_same_instance_as(expectedValue1));
+        
+        classMethodResult = [MyClass aDifferentClassMethod];
+        expect(classMethodResult).to(be_same_instance_as(expectedValue2));
     });
 });
 
 describe(@"Providing a substitute implementation for a stubbed method", ^{
     it(@"should call the block", ^{
-        id (^subtituteImplementation)() =  (id)^{ return @"substitution"; };
+        id (^subtituteImplementation)(NSInvocation *) = (id)^(NSInvocation *invocation) { return @"substitution"; };
         [MyClass stub:@selector(aClassMethod) andDo:subtituteImplementation];
 
-        assertThat([MyClass aClassMethod], equalTo(@"substitution"));
+        NSString *classMethodResult = [MyClass aClassMethod];
+        expect(classMethodResult).to(equal(@"substitution"));
     });
 
     it(@"should call the block with the arguments passed to the stubbed method", ^{
         __block NSString * stringArgument;
         __block NSInteger integerArgument;
-        id (^substituteImplementation)() =  (id)^(NSInvocation *inv) {
+        id (^substituteImplementation)(NSInvocation *) =  (id)^(NSInvocation *invocation) {
             NSString * tempString;
             NSInteger tempInteger;
-            [inv getArgument:&tempString atIndex:2];
-            [inv getArgument:&tempInteger atIndex:3];
+            [invocation getArgument:&tempString atIndex:2];
+            [invocation getArgument:&tempInteger atIndex:3];
             stringArgument = tempString;
             integerArgument = tempInteger;
             return @"substitution";
@@ -82,8 +86,8 @@ describe(@"Providing a substitute implementation for a stubbed method", ^{
         [MyClass stub:@selector(aClassMethodWithString:andNumber:) andDo:substituteImplementation];
         [MyClass aClassMethodWithString:@"foobar" andNumber:1234];
 
-        assertThatInt(integerArgument, equalToInt(1234));
-        assertThat(stringArgument, equalTo(@"foobar"));
+        expect(integerArgument).to(equal(1234));
+        expect(stringArgument).to(equal(@"foobar"));
     });
 });
 

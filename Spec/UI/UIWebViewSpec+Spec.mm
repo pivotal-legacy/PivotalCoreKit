@@ -1,10 +1,22 @@
 #import "SpecHelper.h"
-#define HC_SHORTHAND
-#import "OCHamcrest.h"
 #import "OCMock.h"
-#import "AWebViewController.h"
 
+#import "AWebViewController.h"
 #import "UIWebView+Spec.h"
+
+namespace Cedar { namespace Matchers {
+    class BeLoading : public Base {        
+    public:        
+        virtual NSString * failure_message_end() const { return @"be loading"; }
+        inline bool matches(UIWebView * const webView) const { return webView.loading; }
+    };
+    
+    inline BeLoading be_loading() {
+        return BeLoading();
+    }
+}}
+
+using namespace Cedar::Matchers;
 
 SPEC_BEGIN(UIWebViewSpec)
 
@@ -60,12 +72,12 @@ describe(@"UIWebView (spec extensions)", ^{
 
             it(@"should have a pending request", ^{
                 executeOperation();
-                assertThat(webView.request, equalTo(request));
+                expect(webView.request).to(equal(request));
             });
 
             it(@"should mark the web view as loading", ^{
                 executeOperation();
-                assertThatBool(webView.loading, equalToBool(YES));
+                expect(webView).to(be_loading());
             });
 
             it(@"should send the webViewDidStartLoad: message to the delegate", ^{
@@ -83,11 +95,11 @@ describe(@"UIWebView (spec extensions)", ^{
             });
 
             it(@"should not have a pending request", ^{
-                assertThat(webView.request, nilValue());
+                expect(webView.request).to(be_nil());
             });
 
             it(@"should not mark the web view as loading", ^{
-                assertThatBool(webView.loading, equalToBool(NO));
+                expect(webView).to_not(be_loading());
             });
         });
 
@@ -157,7 +169,7 @@ describe(@"UIWebView (spec extensions)", ^{
     describe(@"finishLoad", ^{
         describe(@"with no loading request", ^{
             beforeEach(^{
-                assertThatBool(webView.loading, equalToBool(NO));
+                expect(webView).to_not(be_loading());
             });
 
             it(@"should throw an exception", ^{
@@ -185,12 +197,12 @@ describe(@"UIWebView (spec extensions)", ^{
 
             it(@"should mark the web view as no longer loading", ^{
                 [webView finishLoad];
-                assertThatBool(webView.loading, equalToBool(NO));
+                expect(webView).to_not(be_loading());
             });
 
             it(@"should maintain the loaded request", ^{
                 [webView finishLoad];
-                assertThat(webView.request, equalTo(request));
+                expect(webView.request).to(equal(request));
             });
         });
     });
@@ -205,11 +217,11 @@ describe(@"UIWebView (spec extensions)", ^{
             });
 
             it(@"should return nil", ^{
-                assertThat(result, nilValue());
+                expect(result).to(be_nil());
             });
 
             it(@"should record the script", ^{
-                assertThat(webView.executedJavaScripts, hasItem(js));
+                expect(webView.executedJavaScripts).to(contain(js));
             });
         });
 
@@ -222,11 +234,11 @@ describe(@"UIWebView (spec extensions)", ^{
             });
 
             it(@"should return the registered value", ^{
-                assertThat(result, equalTo(returnValue));
+                expect(result).to(equal(returnValue));
             });
 
             it(@"should record the script", ^{
-                assertThat(webView.executedJavaScripts, hasItem(js));
+                expect(webView.executedJavaScripts).to(contain(js));
             });
         });
 
@@ -238,22 +250,22 @@ describe(@"UIWebView (spec extensions)", ^{
             });
 
             it(@"should return the value returned by the block", ^{
-                assertThat([webView stringByEvaluatingJavaScriptFromString:js], equalTo(@"0"));
+                expect([webView stringByEvaluatingJavaScriptFromString:js]).to(equal(@"0"));
 
                 ++value;
-                assertThat([webView stringByEvaluatingJavaScriptFromString:js], equalTo(@"1"));
+                expect([webView stringByEvaluatingJavaScriptFromString:js]).to(equal(@"1"));
             });
 
             it(@"should record the script", ^{
                 [webView stringByEvaluatingJavaScriptFromString:js];
-                assertThat(webView.executedJavaScripts, hasItem(js));
+                expect(webView.executedJavaScripts).to(contain(js));
             });
         });
     });
 
     describe(@"frame", ^{
         it(@"should not blow up", ^{
-            webView.frame;
+            [webView frame];
         });
     });
 
@@ -271,45 +283,48 @@ describe(@"UIWebView (spec extensions)", ^{
 
     describe(@"dataDetectorTypes", ^{
         it(@"should default to UIDataDetectorTypePhoneNumber", ^{
-            assertThatInt(webView.dataDetectorTypes, equalToInt(UIDataDetectorTypePhoneNumber));
+            expect(webView.dataDetectorTypes).to(equal((NSUInteger)UIDataDetectorTypePhoneNumber));
         });
 
         it(@"should return any previous set value", ^{
             UIDataDetectorTypes setTypes = UIDataDetectorTypeCalendarEvent | UIDataDetectorTypeAddress;
 
             webView.dataDetectorTypes = setTypes;
-            assertThatInt(webView.dataDetectorTypes, equalToInt(setTypes));
+            expect(webView.dataDetectorTypes).to(equal(setTypes));
         });
     });
     
     describe(@"allowsInlineMediaPlayback", ^{
         it(@"should not explode, however quietly", ^{
-            webView.allowsInlineMediaPlayback;
+            [webView allowsInlineMediaPlayback];
         });
     });
     
     describe(@"setAllowsInlineMediaPlayback", ^{
         beforeEach(^{
-            assertThatBool(webView.allowsInlineMediaPlayback, equalToBool(NO));
+            expect(webView.allowsInlineMediaPlayback).to_not(be_truthy());
             webView.allowsInlineMediaPlayback = YES;
         });
         
         it(@"should return the previously set value", ^{
-            assertThatBool(webView.allowsInlineMediaPlayback, equalToBool(YES));
+            expect(webView.allowsInlineMediaPlayback).to(be_truthy());
         });
     });
 
     describe(@"loadHTMLString:baseURL:", ^{
+        NSString *html = @"some HTML";
+        NSURL *baseURL = [NSURL URLWithString:@"a-path"];
+        
         beforeEach(^{
-            [webView loadHTMLString:@"some HTML" baseURL:[NSURL URLWithString:@"a-path"]];
+            [webView loadHTMLString:html baseURL:baseURL];
         });
 
         it(@"should record the loaded HTML", ^{
-            assertThat(webView.loadedHTMLString, equalTo(@"some HTML"));
+            expect(webView.loadedHTMLString).to(equal(html));
         });
 
         it(@"should record the baseURL", ^{
-            assertThat(webView.loadedBaseURL, equalTo([NSURL URLWithString:@"a-path"]));
+            expect(webView.loadedBaseURL).to(equal(baseURL));
         });
     });
 
@@ -317,7 +332,7 @@ describe(@"UIWebView (spec extensions)", ^{
         beforeEach(^{
             AWebViewController *controller = [[AWebViewController alloc] initWithNibName:@"AWebViewController" bundle:nil];
             // Load the view.
-            controller.view;
+            expect(controller.view).to_not(be_nil());
             webView = controller.webView;
             webView.delegate = delegate;
         });
