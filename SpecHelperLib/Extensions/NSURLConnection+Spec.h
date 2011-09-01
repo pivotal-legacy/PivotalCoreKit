@@ -1,5 +1,4 @@
 #import <Foundation/Foundation.h>
-#import "PCKHTTPConnectionDelegate.h"
 
 @class PSHKFakeHTTPURLResponse;
 

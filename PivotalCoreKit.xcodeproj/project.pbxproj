@@ -1076,7 +1076,7 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = UISpec;
-				SDKROOT = iphonesimulator4.1;
+				SDKROOT = iphonesimulator;
 			};
 			name = Debug;
 		};
@@ -1111,7 +1111,7 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = UISpec;
-				SDKROOT = iphonesimulator4.1;
+				SDKROOT = iphonesimulator;
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -1177,7 +1177,7 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = "PivotalSpecHelperKit-StaticLib";
-				SDKROOT = iphonesimulator4.1;
+				SDKROOT = iphonesimulator;
 				VALID_ARCHS = "x86_64 i386";
 			};
 			name = Debug;
@@ -1201,7 +1201,7 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = "PivotalSpecHelperKit-StaticLib";
-				SDKROOT = iphonesimulator4.1;
+				SDKROOT = iphonesimulator;
 				VALID_ARCHS = "x86_64 i386";
 				ZERO_LINK = NO;
 			};
