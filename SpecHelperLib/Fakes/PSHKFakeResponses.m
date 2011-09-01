@@ -34,6 +34,10 @@
     return [self responseForStatusCode:400];
 }
 
+- (PSHKFakeHTTPURLResponse *)authenticationFailure {
+    return [self responseForStatusCode:401];
+}
+
 #pragma mark Private interface
 
 - (NSString *)responseBodyForStatusCode:(int)statusCode {

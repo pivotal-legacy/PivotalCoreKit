@@ -11,5 +11,6 @@
 
 - (PSHKFakeHTTPURLResponse *)success;
 - (PSHKFakeHTTPURLResponse *)badRequest;
+- (PSHKFakeHTTPURLResponse *)authenticationFailure;
 
 @end
