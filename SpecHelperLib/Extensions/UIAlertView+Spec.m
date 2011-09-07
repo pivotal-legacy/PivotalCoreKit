@@ -4,6 +4,10 @@ static UIAlertView *currentAlertView__;
 
 @implementation UIAlertView (Spec)
 
++ (void)afterEach {
+    [self reset];
+}
+
 + (UIAlertView *)currentAlertView {
 	return currentAlertView__;
 }
