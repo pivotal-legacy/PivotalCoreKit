@@ -32,11 +32,7 @@ describe(@"UIAlertView (spec extensions)", ^{
 									  cancelButtonTitle:@"Cancel"
 									  otherButtonTitles:@"OK", nil] autorelease];
 	});
-	
-	afterEach(^{
-		[UIAlertView reset];
-	});
-	
+		
 	describe(@"Getting the current alert view with currentAlertView", ^{
 		describe(@"when the alert view is not shown", ^{
 			beforeEach(^{
