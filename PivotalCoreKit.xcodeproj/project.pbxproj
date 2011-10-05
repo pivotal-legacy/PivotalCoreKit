@@ -63,6 +63,12 @@
 		AE88AF7D11DE6BE000B65DD3 /* PCKXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = AE88AF7B11DE6BE000B65DD3 /* PCKXMLParser.m */; };
 		AE88B00D11DE6D3600B65DD3 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AE88B00711DE6D1200B65DD3 /* libxml2.dylib */; settings = {ATTRIBUTES = (Weak, ); }; };
 		AE91CACC11DE69EE002BA6B9 /* PCKXMLParserSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE91CACB11DE69EE002BA6B9 /* PCKXMLParserSpec.mm */; };
+		AEA94BFE143CD53000C70E89 /* UIImage+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA94BFD143CD53000C70E89 /* UIImage+Spec.m */; };
+		AEA94BFF143CD55900C70E89 /* UIImage+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA94BFD143CD53000C70E89 /* UIImage+Spec.m */; };
+		AEA94C01143CD5CE00C70E89 /* UIImageSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEA94C00143CD5CE00C70E89 /* UIImageSpec+Spec.mm */; };
+		AEA94C05143CD79500C70E89 /* logo-small.png in Resources */ = {isa = PBXBuildFile; fileRef = AEA94C03143CD79500C70E89 /* logo-small.png */; };
+		AEA94C06143CD79500C70E89 /* pivotallabs-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = AEA94C04143CD79500C70E89 /* pivotallabs-logo.png */; };
+		AEA94C0A143CD83000C70E89 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEA94C09143CD82F00C70E89 /* CoreGraphics.framework */; };
 		AEBD9597120CB852003C1C5B /* PCKResponseParser.h in Headers */ = {isa = PBXBuildFile; fileRef = AEBD9594120CB852003C1C5B /* PCKResponseParser.h */; };
 		AEBD9598120CB852003C1C5B /* PCKResponseParser.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBD9595120CB852003C1C5B /* PCKResponseParser.m */; };
 		AEBD9599120CB852003C1C5B /* PCKResponseParser.h in Headers */ = {isa = PBXBuildFile; fileRef = AEBD9594120CB852003C1C5B /* PCKResponseParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -191,7 +197,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0867D69BFE84028FC02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		6696DFB71266DE5800111E23 /* UIWebView+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+Spec.h"; sourceTree = "<group>"; };
 		6696DFB81266DE5800111E23 /* UIWebView+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+Spec.m"; sourceTree = "<group>"; };
 		6696DFC21266DE6C00111E23 /* UISpec.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UISpec.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -240,6 +245,12 @@
 		AE88AF7B11DE6BE000B65DD3 /* PCKXMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCKXMLParser.m; sourceTree = "<group>"; };
 		AE88B00711DE6D1200B65DD3 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		AE91CACB11DE69EE002BA6B9 /* PCKXMLParserSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PCKXMLParserSpec.mm; sourceTree = "<group>"; };
+		AEA94BFC143CD53000C70E89 /* UIImage+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Spec.h"; sourceTree = "<group>"; };
+		AEA94BFD143CD53000C70E89 /* UIImage+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Spec.m"; sourceTree = "<group>"; };
+		AEA94C00143CD5CE00C70E89 /* UIImageSpec+Spec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIImageSpec+Spec.mm"; sourceTree = "<group>"; };
+		AEA94C03143CD79500C70E89 /* logo-small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo-small.png"; sourceTree = "<group>"; };
+		AEA94C04143CD79500C70E89 /* pivotallabs-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pivotallabs-logo.png"; sourceTree = "<group>"; };
+		AEA94C09143CD82F00C70E89 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
 		AEBD9594120CB852003C1C5B /* PCKResponseParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCKResponseParser.h; sourceTree = "<group>"; };
 		AEBD9595120CB852003C1C5B /* PCKResponseParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCKResponseParser.m; sourceTree = "<group>"; };
 		AEBD959F120CB8AA003C1C5B /* PCKResponseParserSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PCKResponseParserSpec.mm; sourceTree = "<group>"; };
@@ -276,6 +287,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEA94C0A143CD83000C70E89 /* CoreGraphics.framework in Frameworks */,
 				6696DFC81266DE8500111E23 /* libCedar-StaticLib.a in Frameworks */,
 				6696DFC91266DE8D00111E23 /* libOCMock-StaticLib.a in Frameworks */,
 			);
@@ -334,7 +346,6 @@
 		0867D691FE84028FC02AAC07 /* PivotalCoreKit */ = {
 			isa = PBXGroup;
 			children = (
-				AE24D5AF138170CD00E4420A /* Foundation.framework */,
 				AECC4BA411C6DFF40027AB1B /* CoreLib */,
 				AEF15A1511C97747005B4F92 /* SpecHelperLib */,
 				AECC4BA711C6E0010027AB1B /* Spec */,
@@ -354,7 +365,8 @@
 		0867D69AFE84028FC02AAC07 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0867D69BFE84028FC02AAC07 /* Foundation.framework */,
+				AEA94C09143CD82F00C70E89 /* CoreGraphics.framework */,
+				AE24D5AF138170CD00E4420A /* Foundation.framework */,
 				AE88B00711DE6D1200B65DD3 /* libxml2.dylib */,
 			);
 			name = Frameworks;
@@ -385,6 +397,7 @@
 			children = (
 				6696E0311266E36E00111E23 /* UIWebViewSpec+Spec.mm */,
 				E38F957F137388990018B36A /* UIAlertViewSpec+Spec.mm */,
+				AEA94C00143CD5CE00C70E89 /* UIImageSpec+Spec.mm */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -460,6 +473,15 @@
 				AE6EF8D912C41AB500EE5087 /* NSURLConnectionSpec+Spec.mm */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		AEA94C02143CD6BA00C70E89 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				AEA94C03143CD79500C70E89 /* logo-small.png */,
+				AEA94C04143CD79500C70E89 /* pivotallabs-logo.png */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 		AEBD930A120C7D5E003C1C5B /* Parsers */ = {
@@ -562,6 +584,8 @@
 				6696DFB81266DE5800111E23 /* UIWebView+Spec.m */,
 				AEBF55251345229500069ED3 /* UIAlertView+Spec.m */,
 				E38F9581137388D30018B36A /* UIAlertView+Spec.h */,
+				AEA94BFC143CD53000C70E89 /* UIImage+Spec.h */,
+				AEA94BFD143CD53000C70E89 /* UIImage+Spec.m */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -580,6 +604,7 @@
 		AEF15C0811C99A58005B4F92 /* Fixtures */ = {
 			isa = PBXGroup;
 			children = (
+				AEA94C02143CD6BA00C70E89 /* Images */,
 				AE0D690913E8B8BC0048039A /* FixturesHelper.m */,
 				AEF15C0911C99A87005B4F92 /* FakeResponses */,
 				669728391260FF9400696CAC /* FakeConnectionDelegate.h */,
@@ -867,6 +892,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE4C17C7126FD3CE009CB34D /* AWebViewController.xib in Resources */,
+				AEA94C05143CD79500C70E89 /* logo-small.png in Resources */,
+				AEA94C06143CD79500C70E89 /* pivotallabs-logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -897,6 +924,8 @@
 				AE4C17C6126FD3CE009CB34D /* AWebViewController.m in Sources */,
 				AEBF55281345229500069ED3 /* UIAlertView+Spec.m in Sources */,
 				E38F9580137388990018B36A /* UIAlertViewSpec+Spec.mm in Sources */,
+				AEA94BFF143CD55900C70E89 /* UIImage+Spec.m in Sources */,
+				AEA94C01143CD5CE00C70E89 /* UIImageSpec+Spec.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -928,6 +957,7 @@
 				AEBF55661345243600069ED3 /* UIAlertView+Spec.m in Sources */,
 				AE24D5A913816BE800E4420A /* NSObject+Mocking.m in Sources */,
 				AE24D5AE13816D2900E4420A /* MockMethod.m in Sources */,
+				AEA94BFE143CD53000C70E89 /* UIImage+Spec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
