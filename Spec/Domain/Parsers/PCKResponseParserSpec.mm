@@ -3,7 +3,6 @@
 #import <PivotalSpecHelperKit/PivotalSpecHelperKit.h>
 
 #import "PCKResponseParser.h"
-#import "PCKHTTPConnectionDelegate.h"
 #import "PCKParser.h"
 
 SPEC_BEGIN(PCKResponseParserSpec)
@@ -14,13 +13,13 @@ describe(@"PCKResponseParser", ^{
 
     beforeEach(^{
         mockParser = [OCMockObject niceMockForProtocol:@protocol(PCKParser)];
-        mockDelegate = [OCMockObject niceMockForProtocol:@protocol(PCKHTTPConnectionDelegate)];
+        mockDelegate = [OCMockObject niceMockForProtocol:@protocol(NSURLConnectionDelegate)];
         responseParser = [[PCKResponseParser alloc] initWithParser:mockParser andDelegate:mockDelegate];
     });
 
-	afterEach(^{
-	    [responseParser release];
-	});
+    afterEach(^{
+        [responseParser release];
+    });
 
     describe(@"on success response", ^{
         NSData *data = [NSData dataWithBytes:"12345" length:5];

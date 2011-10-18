@@ -1,10 +1,9 @@
 #import <Foundation/Foundation.h>
-#import "PCKHTTPConnectionDelegate.h"
 
 @protocol PCKParser;
 
-@interface PCKResponseParser : NSObject<PCKHTTPConnectionDelegate>
+@interface PCKResponseParser : NSObject<NSURLConnectionDelegate>
 
-- (id)initWithParser:(id<PCKParser>)parser andDelegate:(id<PCKHTTPConnectionDelegate>)delegate;
+- (id)initWithParser:(id<PCKParser>)parser andDelegate:(id<NSURLConnectionDelegate>)delegate;
 
 @end

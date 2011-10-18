@@ -5,7 +5,7 @@
 @property (nonatomic, assign) PCKHTTPInterface *interface;
 @property (nonatomic, retain) NSURLRequest *request;
 @property (nonatomic, retain) NSURLConnection *connection;
-@property (nonatomic, retain) id<PCKHTTPConnectionDelegate> connectionDelegate;
+@property (nonatomic, retain) id<NSURLConnectionDelegate> connectionDelegate;
 @property (nonatomic, assign) BOOL isExecuting, isFinished;
 @end
 
@@ -14,7 +14,7 @@
 @synthesize interface = interface_, request = request_, connection = connection_,
     connectionDelegate = connectionDelegate_, isExecuting = isExecuting_, isFinished = isFinished_;
 
-- (id)initWithHTTPInterface:(PCKHTTPInterface *)interface forRequest:(NSURLRequest *)request andDelegate:(id<PCKHTTPConnectionDelegate>)delegate {
+- (id)initWithHTTPInterface:(PCKHTTPInterface *)interface forRequest:(NSURLRequest *)request andDelegate:(id<NSURLConnectionDelegate>)delegate {
     if (self = [super init]) {
         self.interface = interface;
         self.request = request;
@@ -57,7 +57,7 @@
     [self.connection cancel];
 }
 
-#pragma mark PCKHTTPConnectionDelegate
+#pragma mark NSURLConnectionDelegate
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
     self.isExecuting = NO;
     self.isFinished = YES;

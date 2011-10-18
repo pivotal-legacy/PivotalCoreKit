@@ -4,7 +4,7 @@
 @interface PCKResponseParser ()
 
 @property (nonatomic, retain) id<PCKParser> parser;
-@property (nonatomic, assign) id<PCKHTTPConnectionDelegate> delegate;
+@property (nonatomic, assign) id<NSURLConnectionDelegate> delegate;
 
 @end
 
@@ -12,7 +12,7 @@
 
 @synthesize parser = parser_, delegate = delegate_;
 
-- (id)initWithParser:(id<PCKParser>)parser andDelegate:(id<PCKHTTPConnectionDelegate>)delegate {
+- (id)initWithParser:(id<PCKParser>)parser andDelegate:(id<NSURLConnectionDelegate>)delegate {
     if (self = [super init]) {
         self.parser = parser;
         self.delegate = delegate;
@@ -25,7 +25,7 @@
     [super dealloc];
 }
 
-#pragma mark PCKHTTPConnectionDelegate
+#pragma mark NSURLConnectionDelegate
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
     if ([self.delegate respondsToSelector:@selector(connection:didReceiveResponse:)]) {
         [self.delegate connection:connection didReceiveResponse:response];

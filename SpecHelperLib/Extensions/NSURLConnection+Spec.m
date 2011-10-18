@@ -1,6 +1,5 @@
 #import "NSURLConnection+Spec.h"
 #import "PSHKFakeHTTPURLResponse.h"
-#import "PCKHTTPConnectionDelegate.h"
 #import "objc/runtime.h"
 
 static char ASSOCIATED_REQUEST_KEY;
