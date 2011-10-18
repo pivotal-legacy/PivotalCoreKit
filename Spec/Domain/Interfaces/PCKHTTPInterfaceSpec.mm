@@ -2,7 +2,6 @@
 #import <OCMock/OCMock.h>
 
 #import "PCKHTTPInterface.h"
-#import "PCKHTTPConnectionDelegate.h"
 #import "NSURLConnection+Spec.h"
 #import "PSHKFakeResponses.h"
 #import "PSHKFakeHTTPURLResponse.h"
@@ -12,7 +11,7 @@
 #define PATH "foo/bar"
 
 @interface TestInterface : PCKHTTPInterface
-- (NSURLConnection *)makeConnectionWithDelegate:(id<PCKHTTPConnectionDelegate>)delegate;
+- (NSURLConnection *)makeConnectionWithDelegate:(id<NSURLConnectionDelegate>)delegate;
 @end
 
 @implementation TestInterface
@@ -24,15 +23,15 @@
     return @BASE_PATH;
 }
 
-- (NSURLConnection *)makeConnectionWithDelegate:(id<PCKHTTPConnectionDelegate>)delegate {
+- (NSURLConnection *)makeConnectionWithDelegate:(id<NSURLConnectionDelegate>)delegate {
     return [self connectionForPath:@PATH secure:false andDelegate:delegate];
 }
 
-- (NSURLConnection *)makeSecureConnectionWithDelegate:(id<PCKHTTPConnectionDelegate>)delegate {
+- (NSURLConnection *)makeSecureConnectionWithDelegate:(id<NSURLConnectionDelegate>)delegate {
     return [self connectionForPath:@PATH secure:true andDelegate:delegate];
 }
 
-- (NSURLConnection *)makeConnectionWithHeaders:(NSDictionary *)headers andDelegate:(id<PCKHTTPConnectionDelegate>)delegate {
+- (NSURLConnection *)makeConnectionWithHeaders:(NSDictionary *)headers andDelegate:(id<NSURLConnectionDelegate>)delegate {
     return [self connectionForPath:@PATH secure:true andDelegate:delegate withRequestSetup:^(NSMutableURLRequest *request) {
         [request setAllHTTPHeaderFields:headers];
     }];
@@ -53,7 +52,7 @@ describe(@"PCKHTTPInterface", ^{
 
     beforeEach(^{
         interface = [[TestInterface alloc] init];
-        mockDelegate = [OCMockObject mockForProtocol:@protocol(PCKHTTPConnectionDelegate)];
+        mockDelegate = [OCMockObject mockForProtocol:@protocol(NSURLConnectionDelegate)];
     });
 
     afterEach(^{
@@ -221,7 +220,7 @@ describe(@"PCKHTTPInterface", ^{
         it(@"should include the specified headers in the request", ^{
             NSDictionary *headers = [NSDictionary dictionaryWithObjectsAndKeys:@"wibble", @"header1", nil];
             NSURLConnection *connection = [interface makeConnectionWithHeaders:headers andDelegate:mockDelegate];
-            
+
             expect([connection.request valueForHTTPHeaderField:@"header1"]).to(equal(@"wibble"));
         });
     });

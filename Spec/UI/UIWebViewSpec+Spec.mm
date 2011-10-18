@@ -5,12 +5,12 @@
 #import "UIWebView+Spec.h"
 
 namespace Cedar { namespace Matchers {
-    class BeLoading : public Base {        
-    public:        
+    class BeLoading : public Base {
+    public:
         virtual NSString * failure_message_end() const { return @"be loading"; }
         inline bool matches(UIWebView * const webView) const { return webView.loading; }
     };
-    
+
     inline BeLoading be_loading() {
         return BeLoading();
     }
@@ -20,7 +20,7 @@ using namespace Cedar::Matchers;
 
 SPEC_BEGIN(UIWebViewSpec)
 
-describe(@"UIWebView (spec extensions)", ^{
+xdescribe(@"UIWebView (spec extensions)", ^{
     typedef void (^AndDoBlock)(NSInvocation *);
     AndDoBlock returnYes = ^(NSInvocation *invocation) {
         BOOL yes = YES;
@@ -293,19 +293,19 @@ describe(@"UIWebView (spec extensions)", ^{
             expect(webView.dataDetectorTypes).to(equal(setTypes));
         });
     });
-    
+
     describe(@"allowsInlineMediaPlayback", ^{
         it(@"should not explode, however quietly", ^{
             [webView allowsInlineMediaPlayback];
         });
     });
-    
+
     describe(@"setAllowsInlineMediaPlayback", ^{
         beforeEach(^{
             expect(webView.allowsInlineMediaPlayback).to_not(be_truthy());
             webView.allowsInlineMediaPlayback = YES;
         });
-        
+
         it(@"should return the previously set value", ^{
             expect(webView.allowsInlineMediaPlayback).to(be_truthy());
         });
@@ -314,7 +314,7 @@ describe(@"UIWebView (spec extensions)", ^{
     describe(@"loadHTMLString:baseURL:", ^{
         NSString *html = @"some HTML";
         NSURL *baseURL = [NSURL URLWithString:@"a-path"];
-        
+
         beforeEach(^{
             [webView loadHTMLString:html baseURL:baseURL];
         });

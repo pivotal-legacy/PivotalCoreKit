@@ -2,7 +2,6 @@
 #import <OCMock/OCMock.h>
 
 #import "NSURLConnection+Spec.h"
-#import "PCKHTTPConnectionDelegate.h"
 #import "PSHKFakeHTTPURLResponse.h"
 
 @interface SelfReferentialConnection : NSURLConnection
@@ -27,7 +26,7 @@ describe(@"NSURLConnection (spec extensions)", ^{
     __block NSURLConnection *connection;
 
     beforeEach(^{
-        mockDelegate = [OCMockObject niceMockForProtocol:@protocol(PCKHTTPConnectionDelegate)];
+        mockDelegate = [OCMockObject niceMockForProtocol:@protocol(NSURLConnectionDelegate)];
         NSURL *url = [NSURL URLWithString:@"http://example.com"];
         request = [NSURLRequest requestWithURL:url];
         connection = [[NSURLConnection alloc] initWithRequest:request delegate:mockDelegate];
@@ -40,7 +39,7 @@ describe(@"NSURLConnection (spec extensions)", ^{
     describe(@"+resetAll", ^{
         it(@"should remove all connections from the global list of connections", ^{
             expect([NSURLConnection connections]).to_not(be_empty());
-            
+
             [NSURLConnection resetAll];
             expect([NSURLConnection connections]).to(be_empty());
         });
@@ -134,7 +133,7 @@ describe(@"NSURLConnection (spec extensions)", ^{
         });
 
         it(@"should not call subsequent delegate methods if cancelled", ^{
-            id mockDelegate = [OCMockObject mockForProtocol:@protocol(PCKHTTPConnectionDelegate)];
+            id mockDelegate = [OCMockObject mockForProtocol:@protocol(NSURLConnectionDelegate)];
 
             NSURLConnection * myConnection = [[NSURLConnection alloc] initWithRequest:request delegate:mockDelegate];
 
