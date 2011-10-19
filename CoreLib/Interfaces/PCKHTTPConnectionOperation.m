@@ -55,10 +55,12 @@
     self.isExecuting = NO;
     self.isFinished = YES;
     [self.connection cancel];
+    self.connection = nil;
 }
 
 #pragma mark NSURLConnectionDelegate
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
+    self.connection = nil;
     self.isExecuting = NO;
     self.isFinished = YES;
     if ([self.connectionDelegate respondsToSelector:_cmd]) {
@@ -67,6 +69,7 @@
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
+    self.connection = nil;
     self.isExecuting = NO;
     self.isFinished = YES;
     [self.connectionDelegate connection:connection didFailWithError:error];

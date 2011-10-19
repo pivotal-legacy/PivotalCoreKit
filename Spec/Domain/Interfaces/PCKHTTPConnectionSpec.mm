@@ -57,34 +57,6 @@ describe(@"PCKHTTPConnection", ^{
             expect([delegate retainCount]).to(equal(1));
         });
     });
-
-    xdescribe(@"respondsToSelector:", ^{
-        it(@"should return true for selectors the delegate responds to", ^{
-            SEL selector = @selector(connection:needNewBodyStream:);
-
-            expect([delegate respondsToSelector:selector]).to(be_truthy());
-            expect([connection respondsToSelector:selector]).to(be_truthy());
-        });
-
-        it(@"should return false for selectors the delegate does not respond to", ^{
-            SEL selector = @selector(connection:canAuthenticateAgainstProtectionSpace:);
-
-            expect([delegate respondsToSelector:selector]).to_not(be_truthy());
-            expect([connection respondsToSelector:selector]).to_not(be_truthy());
-        });
-    });
-
-    xdescribe(@"forwardInvocation:", ^{
-        it(@"should forward any selector the delegate responds to to the delegate", ^{
-            SEL selector = @selector(connection:needNewBodyStream:);
-
-            expect([delegate respondsToSelector:selector]).to(be_truthy());
-            id mockDelegate = [OCMockObject partialMockForObject:delegate];
-            [[mockDelegate expect] connection:connection needNewBodyStream:nil];
-            [connection connection:connection needNewBodyStream:nil];
-            [mockDelegate verify];
-        });
-    });
 });
 
 SPEC_END
