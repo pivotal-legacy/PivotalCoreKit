@@ -48,7 +48,7 @@
 #pragma mark NSURLConnectionDelegate
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
     if ([self.delegate respondsToSelector:_cmd]) {
-        [self.delegate connectionDidFinishLoading:connection];
+        [(id)self.delegate connectionDidFinishLoading:connection];
     }
     [self.interface clearConnection:connection];
 }

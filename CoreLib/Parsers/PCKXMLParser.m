@@ -35,7 +35,7 @@ static xmlSAXHandler simpleSAXStruct;
 
 #pragma mark PCKParser
 - (void)parseChunk:(NSData *)chunk {
-    xmlParseChunk(self.parserContext, [chunk bytes], [chunk length], 0);
+    xmlParseChunk(self.parserContext, [chunk bytes], (int)[chunk length], 0);
 }
 
 @end

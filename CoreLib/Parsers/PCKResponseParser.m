@@ -27,8 +27,8 @@
 
 #pragma mark NSURLConnectionDelegate
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
-    if ([self.delegate respondsToSelector:@selector(connection:didReceiveResponse:)]) {
-        [self.delegate connection:connection didReceiveResponse:response];
+    if ([self.delegate respondsToSelector:_cmd]) {
+        [(id)self.delegate connection:connection didReceiveResponse:response];
     }
 }
 
@@ -37,7 +37,9 @@
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
-    [self.delegate connectionDidFinishLoading:connection];
+    if ([self.delegate respondsToSelector:_cmd]) {
+        [(id)self.delegate connectionDidFinishLoading:connection];
+    }
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
