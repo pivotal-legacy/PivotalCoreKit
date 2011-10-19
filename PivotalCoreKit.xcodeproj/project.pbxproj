@@ -52,6 +52,11 @@
 		AE4C17C6126FD3CE009CB34D /* AWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE4C17C4126FD3CE009CB34D /* AWebViewController.m */; };
 		AE4C17C7126FD3CE009CB34D /* AWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE4C17C5126FD3CE009CB34D /* AWebViewController.xib */; };
 		AE515E0E123AA778004B2CEB /* PivotalCoreKit.h in Headers */ = {isa = PBXBuildFile; fileRef = AE515E0D123AA778004B2CEB /* PivotalCoreKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE69B83F144E50F400719614 /* PCKHTTPConnectionDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = AE69B83D144E50F400719614 /* PCKHTTPConnectionDelegate.h */; };
+		AE69B840144E50F400719614 /* PCKHTTPConnectionDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = AE69B83D144E50F400719614 /* PCKHTTPConnectionDelegate.h */; };
+		AE69B841144E50F400719614 /* PCKHTTPConnectionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AE69B83E144E50F400719614 /* PCKHTTPConnectionDelegate.m */; };
+		AE69B842144E50F400719614 /* PCKHTTPConnectionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AE69B83E144E50F400719614 /* PCKHTTPConnectionDelegate.m */; };
+		AE69B844144E51C800719614 /* PCKHTTPConnectionDelegateSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE69B843144E51C800719614 /* PCKHTTPConnectionDelegateSpec.mm */; };
 		AE6EF8DA12C41AB500EE5087 /* NSURLConnectionSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE6EF8D912C41AB500EE5087 /* NSURLConnectionSpec+Spec.mm */; };
 		AE71481A11CAAD4F00672114 /* NSString+PivotalCore.h in Headers */ = {isa = PBXBuildFile; fileRef = AE71481811CAAD4F00672114 /* NSString+PivotalCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE71481B11CAAD4F00672114 /* NSString+PivotalCore.m in Sources */ = {isa = PBXBuildFile; fileRef = AE71481911CAAD4F00672114 /* NSString+PivotalCore.m */; };
@@ -232,6 +237,9 @@
 		AE4C17C4126FD3CE009CB34D /* AWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWebViewController.m; sourceTree = "<group>"; };
 		AE4C17C5126FD3CE009CB34D /* AWebViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AWebViewController.xib; sourceTree = "<group>"; };
 		AE515E0D123AA778004B2CEB /* PivotalCoreKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PivotalCoreKit.h; sourceTree = "<group>"; };
+		AE69B83D144E50F400719614 /* PCKHTTPConnectionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCKHTTPConnectionDelegate.h; sourceTree = "<group>"; };
+		AE69B83E144E50F400719614 /* PCKHTTPConnectionDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCKHTTPConnectionDelegate.m; sourceTree = "<group>"; };
+		AE69B843144E51C800719614 /* PCKHTTPConnectionDelegateSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PCKHTTPConnectionDelegateSpec.mm; sourceTree = "<group>"; };
 		AE6EF8D912C41AB500EE5087 /* NSURLConnectionSpec+Spec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSURLConnectionSpec+Spec.mm"; sourceTree = "<group>"; };
 		AE71473311CA9A2900672114 /* 400.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 400.txt; sourceTree = "<group>"; };
 		AE71481811CAAD4F00672114 /* NSString+PivotalCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+PivotalCore.h"; sourceTree = "<group>"; };
@@ -534,6 +542,7 @@
 				AECC4BAA11C6E0C00027AB1B /* PCKHTTPInterfaceSpec.mm */,
 				6697277C1259A0CE00696CAC /* PCKHTTPConnectionSpec.mm */,
 				669727971259A31900696CAC /* PCKHTTPConnectionOperationSpec.mm */,
+				AE69B843144E51C800719614 /* PCKHTTPConnectionDelegateSpec.mm */,
 			);
 			path = Interfaces;
 			sourceTree = "<group>";
@@ -547,6 +556,8 @@
 				6697275E12599F5500696CAC /* PCKHTTPConnection.m */,
 				6697275712599D1100696CAC /* PCKHTTPConnectionOperation.h */,
 				6697275812599D1100696CAC /* PCKHTTPConnectionOperation.m */,
+				AE69B83D144E50F400719614 /* PCKHTTPConnectionDelegate.h */,
+				AE69B83E144E50F400719614 /* PCKHTTPConnectionDelegate.m */,
 			);
 			path = Interfaces;
 			sourceTree = "<group>";
@@ -643,6 +654,7 @@
 				6697275B12599D1100696CAC /* PCKHTTPConnectionOperation.h in Headers */,
 				6697276112599F5500696CAC /* PCKHTTPConnection.h in Headers */,
 				AEC9DF2612C2D5BF0039512D /* NSObject+MethodDecoration.h in Headers */,
+				AE69B840144E50F400719614 /* PCKHTTPConnectionDelegate.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -663,6 +675,7 @@
 				6697275F12599F5500696CAC /* PCKHTTPConnection.h in Headers */,
 				AEC9DF2412C2D5BF0039512D /* NSObject+MethodDecoration.h in Headers */,
 				E38F9582137388D30018B36A /* UIAlertView+Spec.h in Headers */,
+				AE69B83F144E50F400719614 /* PCKHTTPConnectionDelegate.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -941,6 +954,7 @@
 				6697275C12599D1100696CAC /* PCKHTTPConnectionOperation.m in Sources */,
 				6697276212599F5500696CAC /* PCKHTTPConnection.m in Sources */,
 				AEC9DF2712C2D5BF0039512D /* NSObject+MethodDecoration.m in Sources */,
+				AE69B842144E50F400719614 /* PCKHTTPConnectionDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -977,6 +991,7 @@
 				AE6EF8DA12C41AB500EE5087 /* NSURLConnectionSpec+Spec.mm in Sources */,
 				AE24D5A2137DC0E200E4420A /* NSObjectSpec+Mocking.mm in Sources */,
 				AE0D690A13E8B8BC0048039A /* FixturesHelper.m in Sources */,
+				AE69B844144E51C800719614 /* PCKHTTPConnectionDelegateSpec.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -993,6 +1008,7 @@
 				6697275A12599D1100696CAC /* PCKHTTPConnectionOperation.m in Sources */,
 				6697276012599F5500696CAC /* PCKHTTPConnection.m in Sources */,
 				AEC9DF2512C2D5BF0039512D /* NSObject+MethodDecoration.m in Sources */,
+				AE69B841144E50F400719614 /* PCKHTTPConnectionDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
