@@ -32,8 +32,8 @@ static UIAlertView *currentAlertView__;
 }
 
 - (void)dismissWithClickedButtonIndex:(NSInteger)buttonIndex animated:(BOOL)animated {
-	[UIAlertView reset];
     [self.delegate alertView:self didDismissWithButtonIndex:buttonIndex];
+	[UIAlertView reset];
 }
 
 @end
