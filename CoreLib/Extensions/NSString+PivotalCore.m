@@ -18,11 +18,11 @@ static const unsigned char BASE64_DICTIONARY[] = {
 - (id)initWithBase64EncodedData:(NSData *)data {
     // Based on standard specified in RFC4648: http://tools.ietf.org/html/rfc4648
 
-    int numberOfChunks = [data length] / 3;
-    int extraBytes = [data length] % 3;
+    size_t numberOfChunks = [data length] / 3;
+    size_t extraBytes = [data length] % 3;
 
-    int resultLength = 4 * numberOfChunks + (extraBytes ? 4 : 0);
-    char result[resultLength];
+    size_t resultLength = 4 * numberOfChunks + (extraBytes ? 4 : 0);
+    unsigned char result[resultLength];
 
     const unsigned char * bytes = [data bytes];
     for (unsigned char chunkIndex = 0; chunkIndex < numberOfChunks; ++chunkIndex) {

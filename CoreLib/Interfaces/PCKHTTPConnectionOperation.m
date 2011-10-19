@@ -62,7 +62,9 @@
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
     self.isExecuting = NO;
     self.isFinished = YES;
-    [self.connectionDelegate connectionDidFinishLoading:connection];
+    if ([self.connectionDelegate respondsToSelector:_cmd]) {
+        [(id)self.connectionDelegate connectionDidFinishLoading:connection];
+    }
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {

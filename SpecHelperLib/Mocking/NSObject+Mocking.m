@@ -34,9 +34,9 @@ static NSMutableDictionary *mockMethods__ = nil;
             id arg;
             va_list args;
             va_start(args, firstArg);
-            for (int i=3; i<numberOfArguments; i++) {
+            for (unsigned int i = 3; i < numberOfArguments; ++i) {
                 arg=va_arg(args, id);
-                [invocation setArgument:&arg atIndex:i];
+                [invocation setArgument:&arg atIndex:(NSInteger)i];
             }
             va_end(args);
         }
