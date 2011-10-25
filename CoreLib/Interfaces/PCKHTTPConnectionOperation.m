@@ -15,7 +15,7 @@
     connectionDelegate = connectionDelegate_, isExecuting = isExecuting_, isFinished = isFinished_;
 
 - (id)initWithHTTPInterface:(PCKHTTPInterface *)interface forRequest:(NSURLRequest *)request andDelegate:(id<NSURLConnectionDelegate>)delegate {
-    if (self = [super init]) {
+    if ((self = [super init])) {
         self.interface = interface;
         self.request = request;
         self.connectionDelegate = delegate;

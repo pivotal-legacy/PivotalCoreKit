@@ -16,7 +16,7 @@
 @synthesize interface = interface_;
 
 - (id)initWithHTTPInterface:(PCKHTTPInterface *)interface forRequest:(NSURLRequest *)request andDelegate:(id<NSURLConnectionDelegate>)delegate {
-    if (self = [super initWithRequest:request delegate:[PCKHTTPConnectionDelegate delegateWithInterface:interface delegate:delegate]]) {
+    if ((self = [super initWithRequest:request delegate:[PCKHTTPConnectionDelegate delegateWithInterface:interface delegate:delegate]])) {
         self.interface = interface;
     }
     return self;

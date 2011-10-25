@@ -12,7 +12,7 @@
 @synthesize activeConnections = activeConnections_;
 
 - (id)init {
-    if (self = [super init]) {
+    if ((self = [super init])) {
         activeConnections_ = [[NSMutableArray alloc] init];
     }
     return self;

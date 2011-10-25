@@ -1,5 +1,6 @@
 #import "PCKHTTPInterface.h"
 #import "PCKHTTPConnectionDelegate.h"
+#import "NSURLConnectionDelegate.h"
 
 @interface PCKHTTPInterface (PCKHTTPConnectionDelegateFriend)
 - (void)clearConnection:(NSURLConnection *)connection;
@@ -15,7 +16,7 @@
 }
 
 - (id)initWithInterface:(PCKHTTPInterface *)interface delegate:(id<NSURLConnectionDelegate>)delegate {
-    if (self = [super init]) {
+    if ((self = [super init])) {
         self.interface = interface;
         self.delegate = delegate;
     }

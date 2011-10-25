@@ -21,7 +21,7 @@ static xmlSAXHandler simpleSAXStruct;
 }
 
 - (id)initWithDelegate:(id<PCKXMLParserDelegate>)delegate {
-    if (self = [super init]) {
+    if ((self = [super init])) {
         self.delegate = delegate;
         self.parserContext = xmlCreatePushParserCtxt(&simpleSAXStruct, self, NULL, 0, NULL);
     }
@@ -47,12 +47,12 @@ static void parserStartElement(void *context, const xmlChar *localname, const xm
     [parser.delegate parser:parser didStartElement:(const char *)localname attributeCount:nb_attributes attributeData:(const char **)attributes];
 }
 
-static void	parserEndElement(void *context, const xmlChar *localname, const xmlChar *prefix, const xmlChar *URI) {
+static void parserEndElement(void *context, const xmlChar *localname, const xmlChar *prefix, const xmlChar *URI) {
     PCKXMLParser *parser = context;
     [parser.delegate parser:parser didEndElement:(const char *)localname];
 }
 
-static void	parserCharactersFound(void *context, const xmlChar *characters, int length) {
+static void parserCharactersFound(void *context, const xmlChar *characters, int length) {
     char buffer[length + 1];
     strncpy(buffer, (const char *)characters, length);
     buffer[length] = '\0';
