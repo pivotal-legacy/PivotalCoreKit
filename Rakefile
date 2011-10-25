@@ -34,7 +34,7 @@ def output_file(target)
   output_file
 end
 
-task :default => [:build_pck_framework, :build_pshk_framework, :specs, :build_pck_static_lib, :build_pshk_static_lib, :uispecs]
+task :default => [:trim_whitespace, :build_pck_framework, :build_pshk_framework, :specs, :build_pck_static_lib, :build_pshk_static_lib, :uispecs]
 task :cruise do
   Rake::Task[:clean].invoke
   Rake::Task[:build_pck_framework].invoke
