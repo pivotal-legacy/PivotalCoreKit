@@ -3,6 +3,7 @@
 
 #import "NSURLConnection+Spec.h"
 #import "PSHKFakeHTTPURLResponse.h"
+#import "NSURLConnectionDelegate.h"
 
 @interface SelfReferentialConnection : NSURLConnection
 @end

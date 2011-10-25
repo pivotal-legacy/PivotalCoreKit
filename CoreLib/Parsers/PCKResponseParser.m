@@ -13,7 +13,7 @@
 @synthesize parser = parser_, delegate = delegate_;
 
 - (id)initWithParser:(id<PCKParser>)parser andDelegate:(id<NSURLConnectionDelegate>)delegate {
-    if (self = [super init]) {
+    if ((self = [super init])) {
         self.parser = parser;
         self.delegate = delegate;
     }

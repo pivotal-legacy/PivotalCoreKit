@@ -1,5 +1,7 @@
 #import <Foundation/Foundation.h>
 
+@protocol NSURLConnectionDelegate;
+
 typedef void (^RequestSetupBlock)(NSMutableURLRequest *);
 
 @interface PCKHTTPInterface : NSObject {
