@@ -30,7 +30,7 @@
 		66C4D69A123DA5CB00CF9746 /* PCKXMLParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C4D698123DA5CB00CF9746 /* PCKXMLParserDelegate.m */; };
 		66C4D69B123DA5CB00CF9746 /* PCKXMLParserDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 66C4D697123DA5CB00CF9746 /* PCKXMLParserDelegate.h */; };
 		66C4D69C123DA5CB00CF9746 /* PCKXMLParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C4D698123DA5CB00CF9746 /* PCKXMLParserDelegate.m */; };
-		AE05D76014573D8A0044D97B /* NSURLConnectionDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = AE05D75F14573D8A0044D97B /* NSURLConnectionDelegate.h */; };
+		AE05D76014573D8A0044D97B /* NSURLConnectionDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = AE05D75F14573D8A0044D97B /* NSURLConnectionDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE0D690A13E8B8BC0048039A /* FixturesHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0D690913E8B8BC0048039A /* FixturesHelper.m */; };
 		AE138ACF11E400D2004E825D /* OCMock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE138A7911E3FFC7004E825D /* OCMock.framework */; };
 		AE138CB811E4F504004E825D /* Cedar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE138A9011E3FFD6004E825D /* Cedar.framework */; };
