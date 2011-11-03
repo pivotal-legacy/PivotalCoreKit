@@ -38,6 +38,10 @@
     return [self responseForStatusCode:401];
 }
 
+- (PSHKFakeHTTPURLResponse *)serverError {
+    return [self responseForStatusCode:500];
+}
+
 #pragma mark Private interface
 
 - (NSString *)responseBodyForStatusCode:(int)statusCode {
