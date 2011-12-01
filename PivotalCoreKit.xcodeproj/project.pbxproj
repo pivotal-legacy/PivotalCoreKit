@@ -185,6 +185,34 @@
 			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
 			remoteInfo = OCMock;
 		};
+		AE38A5651486B46D0016B266 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE138A8011E3FFD6004E825D /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 96A07F0813F276640021974D;
+			remoteInfo = FocusedSpecs;
+		};
+		AE38A5671486B46D0016B266 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE138A8011E3FFD6004E825D /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 96B5F9F6144A81A7000A6A5D;
+			remoteInfo = OCUnitApp;
+		};
+		AE38A5691486B46D0016B266 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE138A8011E3FFD6004E825D /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 96B5FA11144A81A8000A6A5D;
+			remoteInfo = OCUnitAppTests;
+		};
+		AE38A56B1486B46D0016B266 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE138A8011E3FFD6004E825D /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 96158A86144A915E005895CE;
+			remoteInfo = OCUnitAppLogicTests;
+		};
 		AEF15ACD11C97ED1005B4F92 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
@@ -434,8 +462,12 @@
 			children = (
 				AE138A9011E3FFD6004E825D /* Cedar.framework */,
 				AE138A9211E3FFD6004E825D /* Specs */,
+				AE38A5661486B46D0016B266 /* FocusedSpecs */,
 				AE138A9411E3FFD6004E825D /* libCedar-StaticLib.a */,
 				AE138A9611E3FFD6004E825D /* iPhoneSpecs.app */,
+				AE38A5681486B46D0016B266 /* OCUnitApp.app */,
+				AE38A56A1486B46D0016B266 /* OCUnitAppTests.octest */,
+				AE38A56C1486B46D0016B266 /* OCUnitAppLogicTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -898,6 +930,34 @@
 			fileType = wrapper.application;
 			path = iPhoneSpecs.app;
 			remoteRef = AE138A9511E3FFD6004E825D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AE38A5661486B46D0016B266 /* FocusedSpecs */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = FocusedSpecs;
+			remoteRef = AE38A5651486B46D0016B266 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AE38A5681486B46D0016B266 /* OCUnitApp.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = OCUnitApp.app;
+			remoteRef = AE38A5671486B46D0016B266 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AE38A56A1486B46D0016B266 /* OCUnitAppTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = OCUnitAppTests.octest;
+			remoteRef = AE38A5691486B46D0016B266 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AE38A56C1486B46D0016B266 /* OCUnitAppLogicTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = OCUnitAppLogicTests.octest;
+			remoteRef = AE38A56B1486B46D0016B266 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
