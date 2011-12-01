@@ -30,7 +30,13 @@ describe(@"NSURLConnection (spec extensions)", ^{
         mockDelegate = [OCMockObject niceMockForProtocol:@protocol(NSURLConnectionDelegate)];
         NSURL *url = [NSURL URLWithString:@"http://example.com"];
         request = [NSURLRequest requestWithURL:url];
-        connection = [[NSURLConnection alloc] initWithRequest:request delegate:mockDelegate];
+
+        // OS X 10.7 introduced the NSURLDownload class, which has an initWithRequest:delegate: initializer
+        // exactly like the one on NSURLConnection, EXCEPT that the type of the delegete argument is
+        // id<NSURLDownloadDelegate> while the type of the NSURLConnection delegate argument is id.  The
+        // compiler sees these as ambiguous methods with different arguments, so emits a warning.  Explicitly
+        // cast the result of the alloc to NSURLConnection * to quiet the compiler.
+        connection = [(NSURLConnection *)[NSURLConnection alloc] initWithRequest:request delegate:mockDelegate];
     });
 
     afterEach(^{
@@ -136,7 +142,7 @@ describe(@"NSURLConnection (spec extensions)", ^{
         it(@"should not call subsequent delegate methods if cancelled", ^{
             id mockDelegate = [OCMockObject mockForProtocol:@protocol(NSURLConnectionDelegate)];
 
-            NSURLConnection * myConnection = [[NSURLConnection alloc] initWithRequest:request delegate:mockDelegate];
+            NSURLConnection * myConnection = [(NSURLConnection *)[NSURLConnection alloc] initWithRequest:request delegate:mockDelegate];
 
             [[[mockDelegate expect] andDo:^(NSInvocation * inv){
                 NSURLConnection * theConnection;
