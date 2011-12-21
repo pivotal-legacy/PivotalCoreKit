@@ -69,12 +69,22 @@
 		AE88AF7D11DE6BE000B65DD3 /* PCKXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = AE88AF7B11DE6BE000B65DD3 /* PCKXMLParser.m */; };
 		AE88B00D11DE6D3600B65DD3 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AE88B00711DE6D1200B65DD3 /* libxml2.dylib */; settings = {ATTRIBUTES = (Weak, ); }; };
 		AE91CACC11DE69EE002BA6B9 /* PCKXMLParserSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE91CACB11DE69EE002BA6B9 /* PCKXMLParserSpec.mm */; };
+		AEA2386D148D7DEA0021CAB8 /* NSObject+Spec.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA2386B148D7DEA0021CAB8 /* NSObject+Spec.h */; };
+		AEA2386E148D7DEA0021CAB8 /* NSObject+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA2386C148D7DEA0021CAB8 /* NSObject+Spec.m */; };
+		AEA2386F148D7DEA0021CAB8 /* NSObject+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA2386C148D7DEA0021CAB8 /* NSObject+Spec.m */; };
+		AEA23872148D852A0021CAB8 /* PSHKTime.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA23870148D852A0021CAB8 /* PSHKTime.h */; };
+		AEA23873148D852A0021CAB8 /* PSHKTime.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA23871148D852A0021CAB8 /* PSHKTime.m */; };
+		AEA23874148D852A0021CAB8 /* PSHKTime.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA23871148D852A0021CAB8 /* PSHKTime.m */; };
+		AEA23878148D920A0021CAB8 /* PSHKRunQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA23876148D920A0021CAB8 /* PSHKRunQueue.h */; };
+		AEA23879148D920A0021CAB8 /* PSHKRunQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA23877148D920A0021CAB8 /* PSHKRunQueue.m */; };
+		AEA2387A148D920A0021CAB8 /* PSHKRunQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA23877148D920A0021CAB8 /* PSHKRunQueue.m */; };
 		AEA94BFE143CD53000C70E89 /* UIImage+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA94BFD143CD53000C70E89 /* UIImage+Spec.m */; };
 		AEA94BFF143CD55900C70E89 /* UIImage+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA94BFD143CD53000C70E89 /* UIImage+Spec.m */; };
 		AEA94C01143CD5CE00C70E89 /* UIImageSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEA94C00143CD5CE00C70E89 /* UIImageSpec+Spec.mm */; };
 		AEA94C05143CD79500C70E89 /* logo-small.png in Resources */ = {isa = PBXBuildFile; fileRef = AEA94C03143CD79500C70E89 /* logo-small.png */; };
 		AEA94C06143CD79500C70E89 /* pivotallabs-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = AEA94C04143CD79500C70E89 /* pivotallabs-logo.png */; };
 		AEA94C0A143CD83000C70E89 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEA94C09143CD82F00C70E89 /* CoreGraphics.framework */; };
+		AEAF7438146A0DA1009FF47D /* NSObjectSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEAF7437146A0DA1009FF47D /* NSObjectSpec+Spec.mm */; };
 		AEBD9597120CB852003C1C5B /* PCKResponseParser.h in Headers */ = {isa = PBXBuildFile; fileRef = AEBD9594120CB852003C1C5B /* PCKResponseParser.h */; };
 		AEBD9598120CB852003C1C5B /* PCKResponseParser.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBD9595120CB852003C1C5B /* PCKResponseParser.m */; };
 		AEBD9599120CB852003C1C5B /* PCKResponseParser.h in Headers */ = {isa = PBXBuildFile; fileRef = AEBD9594120CB852003C1C5B /* PCKResponseParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -185,6 +195,34 @@
 			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
 			remoteInfo = OCMock;
 		};
+		AEAF74121461A68C009FF47D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE138A8011E3FFD6004E825D /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 96A07F0813F276640021974D;
+			remoteInfo = FocusedSpecs;
+		};
+		AEAF74141461A68C009FF47D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE138A8011E3FFD6004E825D /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 96B5F9F6144A81A7000A6A5D;
+			remoteInfo = OCUnitApp;
+		};
+		AEAF74161461A68C009FF47D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE138A8011E3FFD6004E825D /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 96B5FA11144A81A8000A6A5D;
+			remoteInfo = OCUnitAppTests;
+		};
+		AEAF74181461A68C009FF47D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE138A8011E3FFD6004E825D /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 96158A86144A915E005895CE;
+			remoteInfo = OCUnitAppLogicTests;
+		};
 		AEF15ACD11C97ED1005B4F92 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
@@ -254,12 +292,19 @@
 		AE88AF7B11DE6BE000B65DD3 /* PCKXMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCKXMLParser.m; sourceTree = "<group>"; };
 		AE88B00711DE6D1200B65DD3 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		AE91CACB11DE69EE002BA6B9 /* PCKXMLParserSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PCKXMLParserSpec.mm; sourceTree = "<group>"; };
+		AEA2386B148D7DEA0021CAB8 /* NSObject+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Spec.h"; sourceTree = "<group>"; };
+		AEA2386C148D7DEA0021CAB8 /* NSObject+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Spec.m"; sourceTree = "<group>"; };
+		AEA23870148D852A0021CAB8 /* PSHKTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSHKTime.h; sourceTree = "<group>"; };
+		AEA23871148D852A0021CAB8 /* PSHKTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSHKTime.m; sourceTree = "<group>"; };
+		AEA23876148D920A0021CAB8 /* PSHKRunQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSHKRunQueue.h; sourceTree = "<group>"; };
+		AEA23877148D920A0021CAB8 /* PSHKRunQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSHKRunQueue.m; sourceTree = "<group>"; };
 		AEA94BFC143CD53000C70E89 /* UIImage+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Spec.h"; sourceTree = "<group>"; };
 		AEA94BFD143CD53000C70E89 /* UIImage+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Spec.m"; sourceTree = "<group>"; };
 		AEA94C00143CD5CE00C70E89 /* UIImageSpec+Spec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIImageSpec+Spec.mm"; sourceTree = "<group>"; };
 		AEA94C03143CD79500C70E89 /* logo-small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo-small.png"; sourceTree = "<group>"; };
 		AEA94C04143CD79500C70E89 /* pivotallabs-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pivotallabs-logo.png"; sourceTree = "<group>"; };
 		AEA94C09143CD82F00C70E89 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		AEAF7437146A0DA1009FF47D /* NSObjectSpec+Spec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSObjectSpec+Spec.mm"; sourceTree = "<group>"; };
 		AEBD9594120CB852003C1C5B /* PCKResponseParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCKResponseParser.h; sourceTree = "<group>"; };
 		AEBD9595120CB852003C1C5B /* PCKResponseParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCKResponseParser.m; sourceTree = "<group>"; };
 		AEBD959F120CB8AA003C1C5B /* PCKResponseParserSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PCKResponseParserSpec.mm; sourceTree = "<group>"; };
@@ -434,8 +479,12 @@
 			children = (
 				AE138A9011E3FFD6004E825D /* Cedar.framework */,
 				AE138A9211E3FFD6004E825D /* Specs */,
+				AEAF74131461A68C009FF47D /* FocusedSpecs */,
 				AE138A9411E3FFD6004E825D /* libCedar-StaticLib.a */,
 				AE138A9611E3FFD6004E825D /* iPhoneSpecs.app */,
+				AEAF74151461A68C009FF47D /* OCUnitApp.app */,
+				AEAF74171461A68C009FF47D /* OCUnitAppTests.octest */,
+				AEAF74191461A68C009FF47D /* OCUnitAppLogicTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -479,6 +528,7 @@
 				AE71490411CBFE1800672114 /* NSDataSpec+PivotalCore.mm */,
 				AEC9DF2812C2D5E80039512D /* NSObjectSpec+MethodDecoration.mm */,
 				AE6EF8D912C41AB500EE5087 /* NSURLConnectionSpec+Spec.mm */,
+				AEAF7437146A0DA1009FF47D /* NSObjectSpec+Spec.mm */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -597,6 +647,8 @@
 				E38F9581137388D30018B36A /* UIAlertView+Spec.h */,
 				AEA94BFC143CD53000C70E89 /* UIImage+Spec.h */,
 				AEA94BFD143CD53000C70E89 /* UIImage+Spec.m */,
+				AEA2386B148D7DEA0021CAB8 /* NSObject+Spec.h */,
+				AEA2386C148D7DEA0021CAB8 /* NSObject+Spec.m */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -608,6 +660,10 @@
 				AEF15B4411C984EB005B4F92 /* PSHKFakeResponses.m */,
 				AEF15AF811C97F95005B4F92 /* PSHKFakeHTTPURLResponse.h */,
 				AEF15AF911C97F95005B4F92 /* PSHKFakeHTTPURLResponse.m */,
+				AEA23870148D852A0021CAB8 /* PSHKTime.h */,
+				AEA23871148D852A0021CAB8 /* PSHKTime.m */,
+				AEA23876148D920A0021CAB8 /* PSHKRunQueue.h */,
+				AEA23877148D920A0021CAB8 /* PSHKRunQueue.m */,
 			);
 			path = Fakes;
 			sourceTree = "<group>";
@@ -694,6 +750,9 @@
 				AEE6908E1202523700769ADC /* PSHKFixtures.h in Headers */,
 				AE24D5A713816BE300E4420A /* NSObject+Mocking.h in Headers */,
 				AE24D5AC13816D2900E4420A /* MockMethod.h in Headers */,
+				AEA2386D148D7DEA0021CAB8 /* NSObject+Spec.h in Headers */,
+				AEA23872148D852A0021CAB8 /* PSHKTime.h in Headers */,
+				AEA23878148D920A0021CAB8 /* PSHKRunQueue.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -900,6 +959,34 @@
 			remoteRef = AE138A9511E3FFD6004E825D /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		AEAF74131461A68C009FF47D /* FocusedSpecs */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = FocusedSpecs;
+			remoteRef = AEAF74121461A68C009FF47D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AEAF74151461A68C009FF47D /* OCUnitApp.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = OCUnitApp.app;
+			remoteRef = AEAF74141461A68C009FF47D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AEAF74171461A68C009FF47D /* OCUnitAppTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = OCUnitAppTests.octest;
+			remoteRef = AEAF74161461A68C009FF47D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AEAF74191461A68C009FF47D /* OCUnitAppLogicTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = OCUnitAppLogicTests.octest;
+			remoteRef = AEAF74181461A68C009FF47D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -975,6 +1062,9 @@
 				AE24D5A913816BE800E4420A /* NSObject+Mocking.m in Sources */,
 				AE24D5AE13816D2900E4420A /* MockMethod.m in Sources */,
 				AEA94BFE143CD53000C70E89 /* UIImage+Spec.m in Sources */,
+				AEA2386F148D7DEA0021CAB8 /* NSObject+Spec.m in Sources */,
+				AEA23874148D852A0021CAB8 /* PSHKTime.m in Sources */,
+				AEA2387A148D920A0021CAB8 /* PSHKRunQueue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -996,6 +1086,7 @@
 				AE24D5A2137DC0E200E4420A /* NSObjectSpec+Mocking.mm in Sources */,
 				AE0D690A13E8B8BC0048039A /* FixturesHelper.m in Sources */,
 				AE69B844144E51C800719614 /* PCKHTTPConnectionDelegateSpec.mm in Sources */,
+				AEAF7438146A0DA1009FF47D /* NSObjectSpec+Spec.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1026,6 +1117,9 @@
 				AEE6908F1202523700769ADC /* PSHKFixtures.m in Sources */,
 				AE24D5A813816BE700E4420A /* NSObject+Mocking.m in Sources */,
 				AE24D5AD13816D2900E4420A /* MockMethod.m in Sources */,
+				AEA2386E148D7DEA0021CAB8 /* NSObject+Spec.m in Sources */,
+				AEA23873148D852A0021CAB8 /* PSHKTime.m in Sources */,
+				AEA23879148D920A0021CAB8 /* PSHKRunQueue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
