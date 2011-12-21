@@ -12,5 +12,7 @@
 - (PSHKFakeHTTPURLResponse *)success;
 - (PSHKFakeHTTPURLResponse *)badRequest;
 - (PSHKFakeHTTPURLResponse *)authenticationFailure;
+- (PSHKFakeHTTPURLResponse *)serverError;
+- (PSHKFakeHTTPURLResponse *)conflict;
 
 @end
