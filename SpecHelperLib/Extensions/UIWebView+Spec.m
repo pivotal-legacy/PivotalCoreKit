@@ -62,6 +62,17 @@ static char ASSOCIATED_ATTRIBUTES_KEY;
     [super dealloc];
 }
 
+// Call retain/release on the superclass, because the original retain/release calls for UIWebView appear to be
+// proxying the calls to some sort of internal implementation class, which we (of course) don't create in our
+// fake constructor.
+- (id)retain {
+    return [super retain];
+}
+
+- (void)release {
+    [super release];
+}
+
 #pragma mark Property overrides
 - (void)setDelegate:(id<UIWebViewDelegate>)delegate {
     self.attributes.delegate = delegate;

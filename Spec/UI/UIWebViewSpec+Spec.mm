@@ -20,7 +20,7 @@ using namespace Cedar::Matchers;
 
 SPEC_BEGIN(UIWebViewSpec)
 
-xdescribe(@"UIWebView (spec extensions)", ^{
+describe(@"UIWebView (spec extensions)", ^{
     typedef void (^AndDoBlock)(NSInvocation *);
     AndDoBlock returnYes = ^(NSInvocation *invocation) {
         BOOL yes = YES;
