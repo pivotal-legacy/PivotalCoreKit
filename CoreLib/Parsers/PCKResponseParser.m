@@ -4,7 +4,7 @@
 @interface PCKResponseParser ()
 
 @property (nonatomic, retain) id<PCKParser> parser;
-@property (nonatomic, assign) id<NSURLConnectionDelegate> delegate;
+@property (nonatomic, retain) id<NSURLConnectionDelegate> delegate;
 
 @end
 
@@ -21,7 +21,8 @@
 }
 
 - (void)dealloc {
-    self.parser = nil;
+    [delegate_ release];
+    [parser_ release];
     [super dealloc];
 }
 
