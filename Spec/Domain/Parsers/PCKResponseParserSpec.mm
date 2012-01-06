@@ -13,7 +13,7 @@ describe(@"PCKResponseParser", ^{
 
     beforeEach(^{
         mockParser = [OCMockObject niceMockForProtocol:@protocol(PCKParser)];
-        mockDelegate = [OCMockObject niceMockForProtocol:@protocol(NSURLConnectionDelegate)];
+        mockDelegate = [OCMockObject niceMockForProtocol:@protocol(NSURLConnectionDataDelegate)];
         responseParser = [[PCKResponseParser alloc] initWithParser:mockParser andDelegate:mockDelegate];
     });
 

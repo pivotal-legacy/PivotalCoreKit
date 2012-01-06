@@ -5,13 +5,14 @@
 #import "NSURLConnection+Spec.h"
 #import "PSHKFakeResponses.h"
 #import "PSHKFakeHTTPURLResponse.h"
+#import "NSURLConnectionDelegate.h"
 
 #define HOST "example.com"
 #define BASE_PATH "/v1/wibble/"
 #define PATH "foo/bar"
 
 @interface TestInterface : PCKHTTPInterface
-- (NSURLConnection *)makeConnectionWithDelegate:(id<NSURLConnectionDelegate>)delegate;
+- (NSURLConnection *)makeConnectionWithDelegate:(id<NSURLConnectionDataDelegate>)delegate;
 @end
 
 @implementation TestInterface
@@ -52,7 +53,7 @@ describe(@"PCKHTTPInterface", ^{
 
     beforeEach(^{
         interface = [[TestInterface alloc] init];
-        mockDelegate = [OCMockObject mockForProtocol:@protocol(NSURLConnectionDelegate)];
+        mockDelegate = [OCMockObject mockForProtocol:@protocol(NSURLConnectionDataDelegate)];
     });
 
     afterEach(^{
