@@ -7,7 +7,7 @@ PCK_STATIC_LIB_TARGET_NAME = "PivotalCoreKit-StaticLib"
 PSHK_STATIC_LIB_TARGET_NAME = "PivotalSpecHelperKit-StaticLib"
 UI_SPECS_TARGET_NAME = "UISpec"
 
-SDK_DIR = "/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk"
+SDK_DIR = "/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk"
 BUILD_DIR = File.join(File.dirname(__FILE__), "build")
 
 def build_dir(effective_platform_name)

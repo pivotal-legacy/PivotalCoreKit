@@ -1,8 +1,8 @@
 #import <Foundation/Foundation.h>
 
-// NSURLConnectionDelegate exists in iOS5 and 10.7, but not in 10.6.
 #ifdef __MAC_OS_X_VERSION_MAX_ALLOWED
 #if __MAC_OS_X_VERSION_MAX_ALLOWED < 1070
+// NSURLConnectionDelegate exists in iOS5 and 10.7, but not in 10.6.
 
 @protocol NSURLConnectionDelegate <NSObject>
 @optional
@@ -16,6 +16,9 @@
 - (void)connection:(NSURLConnection *)connection didCancelAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge;
 
 @end
+
+#endif
+//NSURLConnectionDataDelegate and NSURLConnectionDownloadDelegate only exist in iOS5 and must be declared for 10.6 and 10.7
 
 @protocol NSURLConnectionDataDelegate <NSURLConnectionDelegate>
 @optional
@@ -43,5 +46,4 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite;
 - (void)connectionDidFinishDownloading:(NSURLConnection *)connection destinationURL:(NSURL *) destinationURL;
 @end
 
-#endif
 #endif
