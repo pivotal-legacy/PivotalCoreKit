@@ -27,7 +27,7 @@ describe(@"NSURLConnection (spec extensions)", ^{
     __block NSURLConnection *connection;
 
     beforeEach(^{
-        mockDelegate = [OCMockObject niceMockForProtocol:@protocol(NSURLConnectionDelegate)];
+        mockDelegate = [OCMockObject niceMockForProtocol:@protocol(NSURLConnectionDataDelegate)];
         NSURL *url = [NSURL URLWithString:@"http://example.com"];
         request = [NSURLRequest requestWithURL:url];
 
@@ -140,7 +140,7 @@ describe(@"NSURLConnection (spec extensions)", ^{
         });
 
         it(@"should not call subsequent delegate methods if cancelled", ^{
-            id mockDelegate = [OCMockObject mockForProtocol:@protocol(NSURLConnectionDelegate)];
+            id mockDelegate = [OCMockObject mockForProtocol:@protocol(NSURLConnectionDataDelegate)];
 
             NSURLConnection * myConnection = [(NSURLConnection *)[NSURLConnection alloc] initWithRequest:request delegate:mockDelegate];
 
