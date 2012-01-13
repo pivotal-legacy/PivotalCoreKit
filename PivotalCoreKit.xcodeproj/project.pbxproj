@@ -75,6 +75,13 @@
 		AEA94C05143CD79500C70E89 /* logo-small.png in Resources */ = {isa = PBXBuildFile; fileRef = AEA94C03143CD79500C70E89 /* logo-small.png */; };
 		AEA94C06143CD79500C70E89 /* pivotallabs-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = AEA94C04143CD79500C70E89 /* pivotallabs-logo.png */; };
 		AEA94C0A143CD83000C70E89 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEA94C09143CD82F00C70E89 /* CoreGraphics.framework */; };
+		AEBBE00014BCB4A20005CF20 /* NSObject+MethodRedirection.h in Headers */ = {isa = PBXBuildFile; fileRef = AEBBDFFE14BCB4A20005CF20 /* NSObject+MethodRedirection.h */; };
+		AEBBE00114BCB4A20005CF20 /* NSObject+MethodRedirection.h in Headers */ = {isa = PBXBuildFile; fileRef = AEBBDFFE14BCB4A20005CF20 /* NSObject+MethodRedirection.h */; };
+		AEBBE00214BCB4A20005CF20 /* NSObject+MethodRedirection.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBBDFFF14BCB4A20005CF20 /* NSObject+MethodRedirection.m */; };
+		AEBBE00314BCB4A20005CF20 /* NSObject+MethodRedirection.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBBDFFF14BCB4A20005CF20 /* NSObject+MethodRedirection.m */; };
+		AEBBE00414BCB4A20005CF20 /* NSObject+MethodRedirection.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBBDFFF14BCB4A20005CF20 /* NSObject+MethodRedirection.m */; };
+		AEBBE00514BCB4A20005CF20 /* NSObject+MethodRedirection.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBBDFFF14BCB4A20005CF20 /* NSObject+MethodRedirection.m */; };
+		AEBBE00814BCB4CF0005CF20 /* NSObjectSpec+MethodRedirection.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEBBE00714BCB4CF0005CF20 /* NSObjectSpec+MethodRedirection.mm */; };
 		AEBD9597120CB852003C1C5B /* PCKResponseParser.h in Headers */ = {isa = PBXBuildFile; fileRef = AEBD9594120CB852003C1C5B /* PCKResponseParser.h */; };
 		AEBD9598120CB852003C1C5B /* PCKResponseParser.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBD9595120CB852003C1C5B /* PCKResponseParser.m */; };
 		AEBD9599120CB852003C1C5B /* PCKResponseParser.h in Headers */ = {isa = PBXBuildFile; fileRef = AEBD9594120CB852003C1C5B /* PCKResponseParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -288,6 +295,9 @@
 		AEA94C03143CD79500C70E89 /* logo-small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo-small.png"; sourceTree = "<group>"; };
 		AEA94C04143CD79500C70E89 /* pivotallabs-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pivotallabs-logo.png"; sourceTree = "<group>"; };
 		AEA94C09143CD82F00C70E89 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		AEBBDFFE14BCB4A20005CF20 /* NSObject+MethodRedirection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MethodRedirection.h"; sourceTree = "<group>"; };
+		AEBBDFFF14BCB4A20005CF20 /* NSObject+MethodRedirection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MethodRedirection.m"; sourceTree = "<group>"; };
+		AEBBE00714BCB4CF0005CF20 /* NSObjectSpec+MethodRedirection.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSObjectSpec+MethodRedirection.mm"; sourceTree = "<group>"; };
 		AEBD9594120CB852003C1C5B /* PCKResponseParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCKResponseParser.h; sourceTree = "<group>"; };
 		AEBD9595120CB852003C1C5B /* PCKResponseParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCKResponseParser.m; sourceTree = "<group>"; };
 		AEBD959F120CB8AA003C1C5B /* PCKResponseParserSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PCKResponseParserSpec.mm; sourceTree = "<group>"; };
@@ -500,6 +510,8 @@
 				AE71490211CBFDD900672114 /* NSData+PivotalCore.m */,
 				AEC9DF2212C2D5BF0039512D /* NSObject+MethodDecoration.h */,
 				AEC9DF2312C2D5BF0039512D /* NSObject+MethodDecoration.m */,
+				AEBBDFFE14BCB4A20005CF20 /* NSObject+MethodRedirection.h */,
+				AEBBDFFF14BCB4A20005CF20 /* NSObject+MethodRedirection.m */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -511,6 +523,7 @@
 				AE71490411CBFE1800672114 /* NSDataSpec+PivotalCore.mm */,
 				AEC9DF2812C2D5E80039512D /* NSObjectSpec+MethodDecoration.mm */,
 				AE6EF8D912C41AB500EE5087 /* NSURLConnectionSpec+Spec.mm */,
+				AEBBE00714BCB4CF0005CF20 /* NSObjectSpec+MethodRedirection.mm */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -690,6 +703,7 @@
 				6697276112599F5500696CAC /* PCKHTTPConnection.h in Headers */,
 				AEC9DF2612C2D5BF0039512D /* NSObject+MethodDecoration.h in Headers */,
 				AE69B840144E50F400719614 /* PCKHTTPConnectionDelegate.h in Headers */,
+				AEBBE00114BCB4A20005CF20 /* NSObject+MethodRedirection.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -712,6 +726,7 @@
 				E38F9582137388D30018B36A /* UIAlertView+Spec.h in Headers */,
 				AE69B83F144E50F400719614 /* PCKHTTPConnectionDelegate.h in Headers */,
 				AE05D76014573D8A0044D97B /* NSURLConnectionDelegate.h in Headers */,
+				AEBBE00014BCB4A20005CF20 /* NSObject+MethodRedirection.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1002,6 +1017,7 @@
 				E38F9580137388990018B36A /* UIAlertViewSpec+Spec.mm in Sources */,
 				AEA94BFF143CD55900C70E89 /* UIImage+Spec.m in Sources */,
 				AEA94C01143CD5CE00C70E89 /* UIImageSpec+Spec.mm in Sources */,
+				AEBBE00514BCB4A20005CF20 /* NSObject+MethodRedirection.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1019,6 +1035,7 @@
 				6697276212599F5500696CAC /* PCKHTTPConnection.m in Sources */,
 				AEC9DF2712C2D5BF0039512D /* NSObject+MethodDecoration.m in Sources */,
 				AE69B842144E50F400719614 /* PCKHTTPConnectionDelegate.m in Sources */,
+				AEBBE00414BCB4A20005CF20 /* NSObject+MethodRedirection.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1056,6 +1073,8 @@
 				AE24D5A2137DC0E200E4420A /* NSObjectSpec+Mocking.mm in Sources */,
 				AE0D690A13E8B8BC0048039A /* FixturesHelper.m in Sources */,
 				AE69B844144E51C800719614 /* PCKHTTPConnectionDelegateSpec.mm in Sources */,
+				AEBBE00314BCB4A20005CF20 /* NSObject+MethodRedirection.m in Sources */,
+				AEBBE00814BCB4CF0005CF20 /* NSObjectSpec+MethodRedirection.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1073,6 +1092,7 @@
 				6697276012599F5500696CAC /* PCKHTTPConnection.m in Sources */,
 				AEC9DF2512C2D5BF0039512D /* NSObject+MethodDecoration.m in Sources */,
 				AE69B841144E50F400719614 /* PCKHTTPConnectionDelegate.m in Sources */,
+				AEBBE00214BCB4A20005CF20 /* NSObject+MethodRedirection.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1336,7 +1356,8 @@
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/Externals\"",
+					"\"$(SRCROOT)/Externals/OCMock/Source/build/$CONFIGURATION\"",
+					"\"$(SRCROOT)/Externals/Cedar/build/$CONFIGURATION\"",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_MODEL_TUNING = G5;
@@ -1361,7 +1382,8 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/Externals\"",
+					"\"$(SRCROOT)/Externals/OCMock/Source/build/$CONFIGURATION\"",
+					"\"$(SRCROOT)/Externals/Cedar/build/$CONFIGURATION\"",
 				);
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
