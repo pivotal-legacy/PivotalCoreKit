@@ -5,6 +5,7 @@
 @interface NSURLConnection (Spec)
 
 + (NSArray *)connections;
++ (NSURLConnection *)connectionForPath:(NSString *)path;
 + (void)resetAll;
 
 - (NSURLRequest *)request;
