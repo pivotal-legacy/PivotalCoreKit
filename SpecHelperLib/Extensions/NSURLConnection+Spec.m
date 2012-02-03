@@ -21,6 +21,15 @@ static NSMutableArray *connections__;
     return connections__;
 }
 
++ (NSURLConnection *)connectionForPath:(NSString *)path {
+    for (NSURLConnection *connection in connections__) {
+        if ([connection.request.URL.path isEqualToString:path]) {
+            return connection;
+        }
+    }
+    return nil;
+}
+
 + (void)resetAll {
     [connections__ removeAllObjects];
 }
