@@ -1,3 +1,5 @@
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wobjc-protocol-method-implementation"
 #import "NSURLConnection+Spec.h"
 #import "PSHKFakeHTTPURLResponse.h"
 #import "objc/runtime.h"
