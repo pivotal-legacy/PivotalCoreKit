@@ -1,5 +1,7 @@
 #import "UIWebView+Spec.h"
 #import "objc/runtime.h"
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wobjc-protocol-method-implementation"
 
 @interface UIWebViewAttributes : NSObject
 @property (nonatomic, assign) id<UIWebViewDelegate> delegate;
