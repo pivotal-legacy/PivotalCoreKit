@@ -27,4 +27,9 @@
     [super dealloc];
 }
 
+- (NSCachedURLResponse *)asCachedResponse {
+    NSData *responseData = [self.body dataUsingEncoding:NSUTF8StringEncoding];
+    return [[[NSCachedURLResponse alloc] initWithResponse:self data:responseData] autorelease];
+}
+
 @end

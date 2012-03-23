@@ -7,5 +7,6 @@
 @property (nonatomic, assign, readonly) int statusCode;
 @property (nonatomic, retain, readonly) NSDictionary *allHeaderFields;
 @property (nonatomic, copy, readonly) NSString *body;
+- (NSCachedURLResponse *)asCachedResponse;
 
 @end
