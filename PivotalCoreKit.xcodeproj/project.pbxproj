@@ -74,7 +74,9 @@
 		AEA94C01143CD5CE00C70E89 /* UIImageSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEA94C00143CD5CE00C70E89 /* UIImageSpec+Spec.mm */; };
 		AEA94C05143CD79500C70E89 /* logo-small.png in Resources */ = {isa = PBXBuildFile; fileRef = AEA94C03143CD79500C70E89 /* logo-small.png */; };
 		AEA94C06143CD79500C70E89 /* pivotallabs-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = AEA94C04143CD79500C70E89 /* pivotallabs-logo.png */; };
-		AEA94C0A143CD83000C70E89 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEA94C09143CD82F00C70E89 /* CoreGraphics.framework */; };
+		AEBB634C152BB58D00CC7A9F /* picframe_lens.png in Resources */ = {isa = PBXBuildFile; fileRef = AEBB634B152BB52000CC7A9F /* picframe_lens.png */; };
+		AEBB634F152BB6BF00CC7A9F /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEBB6349152BB0DF00CC7A9F /* CoreText.framework */; };
+		AEBB6351152BB77A00CC7A9F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEA94C09143CD82F00C70E89 /* CoreGraphics.framework */; };
 		AEBBE00014BCB4A20005CF20 /* NSObject+MethodRedirection.h in Headers */ = {isa = PBXBuildFile; fileRef = AEBBDFFE14BCB4A20005CF20 /* NSObject+MethodRedirection.h */; };
 		AEBBE00114BCB4A20005CF20 /* NSObject+MethodRedirection.h in Headers */ = {isa = PBXBuildFile; fileRef = AEBBDFFE14BCB4A20005CF20 /* NSObject+MethodRedirection.h */; };
 		AEBBE00214BCB4A20005CF20 /* NSObject+MethodRedirection.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBBDFFF14BCB4A20005CF20 /* NSObject+MethodRedirection.m */; };
@@ -97,8 +99,6 @@
 		AEC9DF2912C2D5E80039512D /* NSObjectSpec+MethodDecoration.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEC9DF2812C2D5E80039512D /* NSObjectSpec+MethodDecoration.mm */; };
 		AECC4BD611C6E27F0027AB1B /* PCKHTTPInterfaceSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AECC4BAA11C6E0C00027AB1B /* PCKHTTPInterfaceSpec.mm */; };
 		AECC4BEA11C6E3280027AB1B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AECC4BAD11C6E1640027AB1B /* main.m */; };
-		AEE0669A152B6AFA009289FE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE24D5AF138170CD00E4420A /* Foundation.framework */; };
-		AEE066A5152B6B1B009289FE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEE066A4152B6B1B009289FE /* UIKit.framework */; };
 		AEE066A8152B6BAD009289FE /* libPivotalUICoreKit-StaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AEE06699152B6AFA009289FE /* libPivotalUICoreKit-StaticLib.a */; };
 		AEE066AE152B6BE6009289FE /* UIView+PivotalCore.h in Headers */ = {isa = PBXBuildFile; fileRef = AEE066AB152B6BE6009289FE /* UIView+PivotalCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AEE066AF152B6BE6009289FE /* UIView+PivotalCore.m in Sources */ = {isa = PBXBuildFile; fileRef = AEE066AC152B6BE6009289FE /* UIView+PivotalCore.m */; };
@@ -109,6 +109,9 @@
 		AEE0671B152B78B1009289FE /* UIBarButtonItem+Button.m in Sources */ = {isa = PBXBuildFile; fileRef = AEE06719152B78B1009289FE /* UIBarButtonItem+Button.m */; };
 		AEE0671D152B78F7009289FE /* UIBarButtonItem+ButtonSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEE0671C152B78F7009289FE /* UIBarButtonItem+ButtonSpec.mm */; };
 		AEE0671F152B80AB009289FE /* UICoreLib.h in Headers */ = {isa = PBXBuildFile; fileRef = AEE0671E152B80AB009289FE /* UICoreLib.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AEE06723152B852D009289FE /* UIImage+PivotalCoreSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEE06722152B852D009289FE /* UIImage+PivotalCoreSpec.mm */; };
+		AEE06729152BAF74009289FE /* AttributedLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = AEE06727152BAF74009289FE /* AttributedLabel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AEE0672A152BAF74009289FE /* AttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = AEE06728152BAF74009289FE /* AttributedLabel.m */; };
 		AEE6908E1202523700769ADC /* PSHKFixtures.h in Headers */ = {isa = PBXBuildFile; fileRef = AEE6908C1202523700769ADC /* PSHKFixtures.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AEE6908F1202523700769ADC /* PSHKFixtures.m in Sources */ = {isa = PBXBuildFile; fileRef = AEE6908D1202523700769ADC /* PSHKFixtures.m */; };
 		AEE690911202523700769ADC /* PSHKFixtures.m in Sources */ = {isa = PBXBuildFile; fileRef = AEE6908D1202523700769ADC /* PSHKFixtures.m */; };
@@ -123,7 +126,6 @@
 		AEF15B4511C984EB005B4F92 /* PSHKFakeResponses.h in Headers */ = {isa = PBXBuildFile; fileRef = AEF15B4311C984EB005B4F92 /* PSHKFakeResponses.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AEF15B4611C984EB005B4F92 /* PSHKFakeResponses.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF15B4411C984EB005B4F92 /* PSHKFakeResponses.m */; };
 		E38F9580137388990018B36A /* UIAlertViewSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = E38F957F137388990018B36A /* UIAlertViewSpec+Spec.mm */; };
-		E38F9582137388D30018B36A /* UIAlertView+Spec.h in Headers */ = {isa = PBXBuildFile; fileRef = E38F9581137388D30018B36A /* UIAlertView+Spec.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -314,6 +316,8 @@
 		AEA94C03143CD79500C70E89 /* logo-small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo-small.png"; sourceTree = "<group>"; };
 		AEA94C04143CD79500C70E89 /* pivotallabs-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pivotallabs-logo.png"; sourceTree = "<group>"; };
 		AEA94C09143CD82F00C70E89 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		AEBB6349152BB0DF00CC7A9F /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/System/Library/Frameworks/CoreText.framework; sourceTree = DEVELOPER_DIR; };
+		AEBB634B152BB52000CC7A9F /* picframe_lens.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = picframe_lens.png; sourceTree = "<group>"; };
 		AEBBDFFE14BCB4A20005CF20 /* NSObject+MethodRedirection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MethodRedirection.h"; sourceTree = "<group>"; };
 		AEBBDFFF14BCB4A20005CF20 /* NSObject+MethodRedirection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MethodRedirection.m"; sourceTree = "<group>"; };
 		AEBBE00714BCB4CF0005CF20 /* NSObjectSpec+MethodRedirection.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSObjectSpec+MethodRedirection.mm"; sourceTree = "<group>"; };
@@ -343,6 +347,9 @@
 		AEE06719152B78B1009289FE /* UIBarButtonItem+Button.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Button.m"; sourceTree = "<group>"; };
 		AEE0671C152B78F7009289FE /* UIBarButtonItem+ButtonSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIBarButtonItem+ButtonSpec.mm"; sourceTree = "<group>"; };
 		AEE0671E152B80AB009289FE /* UICoreLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICoreLib.h; sourceTree = "<group>"; };
+		AEE06722152B852D009289FE /* UIImage+PivotalCoreSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIImage+PivotalCoreSpec.mm"; sourceTree = "<group>"; };
+		AEE06727152BAF74009289FE /* AttributedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttributedLabel.h; sourceTree = "<group>"; };
+		AEE06728152BAF74009289FE /* AttributedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttributedLabel.m; sourceTree = "<group>"; };
 		AEE6908C1202523700769ADC /* PSHKFixtures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSHKFixtures.h; sourceTree = "<group>"; };
 		AEE6908D1202523700769ADC /* PSHKFixtures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSHKFixtures.m; sourceTree = "<group>"; };
 		AEF15A1E11C97864005B4F92 /* NSURLConnection+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLConnection+Spec.h"; sourceTree = "<group>"; };
@@ -366,9 +373,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				AEE066A8152B6BAD009289FE /* libPivotalUICoreKit-StaticLib.a in Frameworks */,
-				AEA94C0A143CD83000C70E89 /* CoreGraphics.framework in Frameworks */,
 				6696DFC81266DE8500111E23 /* libCedar-StaticLib.a in Frameworks */,
 				6696DFC91266DE8D00111E23 /* libOCMock-StaticLib.a in Frameworks */,
+				AEBB634F152BB6BF00CC7A9F /* CoreText.framework in Frameworks */,
+				AEBB6351152BB77A00CC7A9F /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,8 +403,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AEE0669A152B6AFA009289FE /* Foundation.framework in Frameworks */,
-				AEE066A5152B6B1B009289FE /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,7 +442,6 @@
 			isa = PBXGroup;
 			children = (
 				AEE066A9152B6BE6009289FE /* UICoreLib */,
-				AEE066A4152B6B1B009289FE /* UIKit.framework */,
 				AECC4BA411C6DFF40027AB1B /* CoreLib */,
 				AEF15A1511C97747005B4F92 /* SpecHelperLib */,
 				AECC4BA711C6E0010027AB1B /* Spec */,
@@ -456,6 +461,8 @@
 		0867D69AFE84028FC02AAC07 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AEBB6349152BB0DF00CC7A9F /* CoreText.framework */,
+				AEE066A4152B6B1B009289FE /* UIKit.framework */,
 				AEA94C09143CD82F00C70E89 /* CoreGraphics.framework */,
 				AE24D5AF138170CD00E4420A /* Foundation.framework */,
 				AE88B00711DE6D1200B65DD3 /* libxml2.dylib */,
@@ -491,6 +498,7 @@
 				AEA94C00143CD5CE00C70E89 /* UIImageSpec+Spec.mm */,
 				AEE066B0152B6C1A009289FE /* UIView+PivotalCoreSpec.mm */,
 				AEE0671C152B78F7009289FE /* UIBarButtonItem+ButtonSpec.mm */,
+				AEE06722152B852D009289FE /* UIImage+PivotalCoreSpec.mm */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -578,6 +586,7 @@
 		AEA94C02143CD6BA00C70E89 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				AEBB634B152BB52000CC7A9F /* picframe_lens.png */,
 				AEA94C03143CD79500C70E89 /* logo-small.png */,
 				AEA94C04143CD79500C70E89 /* pivotallabs-logo.png */,
 			);
@@ -683,6 +692,8 @@
 		AEE066AD152B6BE6009289FE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				AEE06727152BAF74009289FE /* AttributedLabel.h */,
+				AEE06728152BAF74009289FE /* AttributedLabel.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -794,6 +805,7 @@
 				AEE06716152B76CC009289FE /* UIImage+PivotalCore.h in Headers */,
 				AEE0671A152B78B1009289FE /* UIBarButtonItem+Button.h in Headers */,
 				AEE0671F152B80AB009289FE /* UICoreLib.h in Headers */,
+				AEE06729152BAF74009289FE /* AttributedLabel.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -813,7 +825,6 @@
 				6697275912599D1100696CAC /* PCKHTTPConnectionOperation.h in Headers */,
 				6697275F12599F5500696CAC /* PCKHTTPConnection.h in Headers */,
 				AEC9DF2412C2D5BF0039512D /* NSObject+MethodDecoration.h in Headers */,
-				E38F9582137388D30018B36A /* UIAlertView+Spec.h in Headers */,
 				AE69B83F144E50F400719614 /* PCKHTTPConnectionDelegate.h in Headers */,
 				AE05D76014573D8A0044D97B /* NSURLConnectionDelegate.h in Headers */,
 				AEBBE00014BCB4A20005CF20 /* NSObject+MethodRedirection.h in Headers */,
@@ -1094,6 +1105,7 @@
 				AE4C17C7126FD3CE009CB34D /* AWebViewController.xib in Resources */,
 				AEA94C05143CD79500C70E89 /* logo-small.png in Resources */,
 				AEA94C06143CD79500C70E89 /* pivotallabs-logo.png in Resources */,
+				AEBB634C152BB58D00CC7A9F /* picframe_lens.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1129,6 +1141,7 @@
 				AEBBE00514BCB4A20005CF20 /* NSObject+MethodRedirection.m in Sources */,
 				AEE066B2152B6C5B009289FE /* UIView+PivotalCoreSpec.mm in Sources */,
 				AEE0671D152B78F7009289FE /* UIBarButtonItem+ButtonSpec.mm in Sources */,
+				AEE06723152B852D009289FE /* UIImage+PivotalCoreSpec.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1196,6 +1209,7 @@
 				AEE066AF152B6BE6009289FE /* UIView+PivotalCore.m in Sources */,
 				AEE06717152B76CC009289FE /* UIImage+PivotalCore.m in Sources */,
 				AEE0671B152B78B1009289FE /* UIBarButtonItem+Button.m in Sources */,
+				AEE0672A152BAF74009289FE /* AttributedLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1321,11 +1335,13 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_NEWLINE = NO;
 				HEADER_SEARCH_PATHS = (
 					"$SRCROOT/Externals/OCMock/**",
 					"$SRCROOT/Externals/OCHamcrest/**",
@@ -1344,7 +1360,7 @@
 					UIKit,
 				);
 				PRODUCT_NAME = UISpec;
-				SDKROOT = iphonesimulator;
+				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
@@ -1356,9 +1372,11 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_NEWLINE = NO;
 				HEADER_SEARCH_PATHS = (
 					"$SRCROOT/Externals/OCMock/**",
 					"$SRCROOT/Externals/OCHamcrest/**",
@@ -1377,7 +1395,7 @@
 					UIKit,
 				);
 				PRODUCT_NAME = UISpec;
-				SDKROOT = iphonesimulator;
+				SDKROOT = iphoneos;
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -1401,7 +1419,7 @@
 				PRODUCT_NAME = "PivotalCoreKit-StaticLib";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				VALID_ARCHS = "armv6 armv7";
+				VALID_ARCHS = "armv6 armv7 i386";
 			};
 			name = Debug;
 		};
@@ -1423,7 +1441,7 @@
 				PRODUCT_NAME = "PivotalCoreKit-StaticLib";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				VALID_ARCHS = "armv6 armv7";
+				VALID_ARCHS = "armv6 armv7 i386";
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -1449,6 +1467,7 @@
 				);
 				PRODUCT_NAME = "PivotalSpecHelperKit-StaticLib";
 				SDKROOT = iphoneos;
+				VALID_ARCHS = "armv6 armv7 i386";
 			};
 			name = Debug;
 		};
@@ -1472,6 +1491,7 @@
 				);
 				PRODUCT_NAME = "PivotalSpecHelperKit-StaticLib";
 				SDKROOT = iphoneos;
+				VALID_ARCHS = "armv6 armv7 i386";
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -1550,6 +1570,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				VALIDATE_PRODUCT = NO;
+				VALID_ARCHS = "armv6 armv7 i386";
 			};
 			name = Debug;
 		};
@@ -1571,6 +1592,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				VALIDATE_PRODUCT = NO;
+				VALID_ARCHS = "armv6 armv7 i386";
 			};
 			name = Release;
 		};
@@ -1742,6 +1764,7 @@
 				AEE066A3152B6AFA009289FE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AEF15ACA11C97E8B005B4F92 /* Build configuration list for PBXNativeTarget "PivotalCoreKit" */ = {
 			isa = XCConfigurationList;
