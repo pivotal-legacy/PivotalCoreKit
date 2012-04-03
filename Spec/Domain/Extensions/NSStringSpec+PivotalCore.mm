@@ -121,7 +121,7 @@ describe(@"Pivotal Core extensions to NSString", ^{
                 for (unsigned int i = 0; i != invalidCount; ++i) {
                     NSString *stringWithInvalidCharacter = [NSString stringWithFormat:@"foo%@bar", ALL_INVALID_URL_CHARACTERS[i]];
                     NSString *stringWithEscapedCharacter = [NSString stringWithFormat:@"foo%@bar", ALL_ESCAPED_URL_CHARACTERS[i]];
-                    
+
                     NSString *escapedString = [stringWithInvalidCharacter stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding includeAll:YES];
                     expect(escapedString).to(equal(stringWithEscapedCharacter));
                 }
@@ -145,6 +145,22 @@ describe(@"Pivotal Core extensions to NSString", ^{
             });
         });
     });
+
+    describe(@"isBlank", ^{
+        it(@"should return YES for strings with nothing but whitespace", ^{
+            [@"   " isBlank] should equal(YES);
+            [@"  \t\n   " isBlank] should equal(YES);
+        });
+
+        it(@"should return YES for an empty string", ^{
+            [@"" isBlank] should equal(YES);
+        });
+
+        it(@"should return NO for strings with anything but whitespace", ^{
+            [@"blankme" isBlank] should equal(NO);
+        });
+    });
+
 });
 
 SPEC_END

@@ -4,6 +4,7 @@ PCK_FRAMEWORK_TARGET_NAME = "PivotalCoreKit"
 PSHK_FRAMEWORK_TARGET_NAME = "PivotalSpecHelperKit"
 SPECS_TARGET_NAME = "Spec"
 PCK_STATIC_LIB_TARGET_NAME = "PivotalCoreKit-StaticLib"
+PUICK_STATIC_LIB_TARGET_NAME = "PivotalUICoreKit-StaticLib"
 PSHK_STATIC_LIB_TARGET_NAME = "PivotalSpecHelperKit-StaticLib"
 UI_SPECS_TARGET_NAME = "UISpec"
 
@@ -34,7 +35,7 @@ def output_file(target)
   output_file
 end
 
-task :default => [:trim_whitespace, :build_pck_framework, :build_pshk_framework, :specs, :build_pck_static_lib, :build_pshk_static_lib, :uispecs]
+task :default => [:trim_whitespace, :build_pck_framework, :build_pshk_framework, :specs, :build_pck_static_lib, :build_puick_static_lib, :build_pshk_static_lib, :uispecs]
 task :cruise do
   Rake::Task[:clean].invoke
   Rake::Task[:build_pck_framework].invoke
@@ -42,6 +43,7 @@ task :cruise do
   Rake::Task[:specs].invoke
   Rake::Task[:build_pck_static_lib].invoke
   Rake::Task[:build_pshk_static_lib].invoke
+  Rake::Task[:build_puick_static_lib].invoke
   Rake::Task[:uispecs].invoke
 end
 
@@ -71,6 +73,10 @@ end
 
 task :build_pshk_static_lib do
   system_or_exit(%Q[xcodebuild -project #{PROJECT_NAME}.xcodeproj -target #{PSHK_STATIC_LIB_TARGET_NAME} -configuration #{CONFIGURATION} ARCHS=i386 build SYMROOT=#{BUILD_DIR}], output_file("pshk_staticlib"))
+end
+
+task :build_puick_static_lib do
+  system_or_exit(%Q[xcodebuild -project #{PROJECT_NAME}.xcodeproj -target #{PUICK_STATIC_LIB_TARGET_NAME} -configuration #{CONFIGURATION} ARCHS=i386 build SYMROOT=#{BUILD_DIR}], output_file("puick_staticlib"))
 end
 
 task :build_uispecs do
