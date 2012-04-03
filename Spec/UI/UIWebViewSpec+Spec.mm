@@ -1,4 +1,4 @@
-#import "SpecHelper.h"
+#import "UISpecHelper.h"
 #import "OCMock.h"
 
 #import "AWebViewController.h"

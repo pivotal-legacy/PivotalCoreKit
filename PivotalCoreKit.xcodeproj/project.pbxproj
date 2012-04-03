@@ -97,6 +97,18 @@
 		AEC9DF2912C2D5E80039512D /* NSObjectSpec+MethodDecoration.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEC9DF2812C2D5E80039512D /* NSObjectSpec+MethodDecoration.mm */; };
 		AECC4BD611C6E27F0027AB1B /* PCKHTTPInterfaceSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AECC4BAA11C6E0C00027AB1B /* PCKHTTPInterfaceSpec.mm */; };
 		AECC4BEA11C6E3280027AB1B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AECC4BAD11C6E1640027AB1B /* main.m */; };
+		AEE0669A152B6AFA009289FE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE24D5AF138170CD00E4420A /* Foundation.framework */; };
+		AEE066A5152B6B1B009289FE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEE066A4152B6B1B009289FE /* UIKit.framework */; };
+		AEE066A8152B6BAD009289FE /* libPivotalUICoreKit-StaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AEE06699152B6AFA009289FE /* libPivotalUICoreKit-StaticLib.a */; };
+		AEE066AE152B6BE6009289FE /* UIView+PivotalCore.h in Headers */ = {isa = PBXBuildFile; fileRef = AEE066AB152B6BE6009289FE /* UIView+PivotalCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AEE066AF152B6BE6009289FE /* UIView+PivotalCore.m in Sources */ = {isa = PBXBuildFile; fileRef = AEE066AC152B6BE6009289FE /* UIView+PivotalCore.m */; };
+		AEE066B2152B6C5B009289FE /* UIView+PivotalCoreSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEE066B0152B6C1A009289FE /* UIView+PivotalCoreSpec.mm */; };
+		AEE06716152B76CC009289FE /* UIImage+PivotalCore.h in Headers */ = {isa = PBXBuildFile; fileRef = AEE06714152B76CC009289FE /* UIImage+PivotalCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AEE06717152B76CC009289FE /* UIImage+PivotalCore.m in Sources */ = {isa = PBXBuildFile; fileRef = AEE06715152B76CC009289FE /* UIImage+PivotalCore.m */; };
+		AEE0671A152B78B1009289FE /* UIBarButtonItem+Button.h in Headers */ = {isa = PBXBuildFile; fileRef = AEE06718152B78B0009289FE /* UIBarButtonItem+Button.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AEE0671B152B78B1009289FE /* UIBarButtonItem+Button.m in Sources */ = {isa = PBXBuildFile; fileRef = AEE06719152B78B1009289FE /* UIBarButtonItem+Button.m */; };
+		AEE0671D152B78F7009289FE /* UIBarButtonItem+ButtonSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEE0671C152B78F7009289FE /* UIBarButtonItem+ButtonSpec.mm */; };
+		AEE0671F152B80AB009289FE /* UICoreLib.h in Headers */ = {isa = PBXBuildFile; fileRef = AEE0671E152B80AB009289FE /* UICoreLib.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AEE6908E1202523700769ADC /* PSHKFixtures.h in Headers */ = {isa = PBXBuildFile; fileRef = AEE6908C1202523700769ADC /* PSHKFixtures.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AEE6908F1202523700769ADC /* PSHKFixtures.m in Sources */ = {isa = PBXBuildFile; fileRef = AEE6908D1202523700769ADC /* PSHKFixtures.m */; };
 		AEE690911202523700769ADC /* PSHKFixtures.m in Sources */ = {isa = PBXBuildFile; fileRef = AEE6908D1202523700769ADC /* PSHKFixtures.m */; };
@@ -220,6 +232,13 @@
 			remoteGlobalIDString = 96158A86144A915E005895CE;
 			remoteInfo = OCUnitAppLogicTests;
 		};
+		AEE066A6152B6BA6009289FE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AEE06698152B6AFA009289FE;
+			remoteInfo = "PivotalUICoreKit-StaticLib";
+		};
 		AEF15ACD11C97ED1005B4F92 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
@@ -311,6 +330,19 @@
 		AECC4BBA11C6E2280027AB1B /* Spec */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Spec; sourceTree = BUILT_PRODUCTS_DIR; };
 		AECC4BF411C6E38D0027AB1B /* PCKHTTPInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCKHTTPInterface.h; sourceTree = "<group>"; };
 		AECC4BF511C6E38D0027AB1B /* PCKHTTPInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCKHTTPInterface.m; sourceTree = "<group>"; };
+		AEE06699152B6AFA009289FE /* libPivotalUICoreKit-StaticLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPivotalUICoreKit-StaticLib.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEE066A4152B6B1B009289FE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		AEE066AB152B6BE6009289FE /* UIView+PivotalCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+PivotalCore.h"; sourceTree = "<group>"; };
+		AEE066AC152B6BE6009289FE /* UIView+PivotalCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+PivotalCore.m"; sourceTree = "<group>"; };
+		AEE066B0152B6C1A009289FE /* UIView+PivotalCoreSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIView+PivotalCoreSpec.mm"; sourceTree = "<group>"; };
+		AEE066E0152B6DF2009289FE /* UIMatchers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIMatchers.h; sourceTree = "<group>"; };
+		AEE066E1152B6E51009289FE /* UISpecHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UISpecHelper.h; sourceTree = "<group>"; };
+		AEE06714152B76CC009289FE /* UIImage+PivotalCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+PivotalCore.h"; sourceTree = "<group>"; };
+		AEE06715152B76CC009289FE /* UIImage+PivotalCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+PivotalCore.m"; sourceTree = "<group>"; };
+		AEE06718152B78B0009289FE /* UIBarButtonItem+Button.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Button.h"; sourceTree = "<group>"; };
+		AEE06719152B78B1009289FE /* UIBarButtonItem+Button.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Button.m"; sourceTree = "<group>"; };
+		AEE0671C152B78F7009289FE /* UIBarButtonItem+ButtonSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIBarButtonItem+ButtonSpec.mm"; sourceTree = "<group>"; };
+		AEE0671E152B80AB009289FE /* UICoreLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICoreLib.h; sourceTree = "<group>"; };
 		AEE6908C1202523700769ADC /* PSHKFixtures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSHKFixtures.h; sourceTree = "<group>"; };
 		AEE6908D1202523700769ADC /* PSHKFixtures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSHKFixtures.m; sourceTree = "<group>"; };
 		AEF15A1E11C97864005B4F92 /* NSURLConnection+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLConnection+Spec.h"; sourceTree = "<group>"; };
@@ -333,6 +365,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEE066A8152B6BAD009289FE /* libPivotalUICoreKit-StaticLib.a in Frameworks */,
 				AEA94C0A143CD83000C70E89 /* CoreGraphics.framework in Frameworks */,
 				6696DFC81266DE8500111E23 /* libCedar-StaticLib.a in Frameworks */,
 				6696DFC91266DE8D00111E23 /* libOCMock-StaticLib.a in Frameworks */,
@@ -355,6 +388,15 @@
 				AEF15ACF11C97EDE005B4F92 /* PivotalCoreKit.framework in Frameworks */,
 				AEF15B0911C98072005B4F92 /* PivotalSpecHelperKit.framework in Frameworks */,
 				AE138CB811E4F504004E825D /* Cedar.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AEE06696152B6AFA009289FE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AEE0669A152B6AFA009289FE /* Foundation.framework in Frameworks */,
+				AEE066A5152B6B1B009289FE /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,6 +427,7 @@
 				AE138E7011E542BF004E825D /* libPivotalCoreKit-StaticLib.a */,
 				AE138F4611E548B5004E825D /* libPivotalSpecHelperKit-StaticLib.a */,
 				6696DFC21266DE6C00111E23 /* UISpec.app */,
+				AEE06699152B6AFA009289FE /* libPivotalUICoreKit-StaticLib.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -392,6 +435,8 @@
 		0867D691FE84028FC02AAC07 /* PivotalCoreKit */ = {
 			isa = PBXGroup;
 			children = (
+				AEE066A9152B6BE6009289FE /* UICoreLib */,
+				AEE066A4152B6B1B009289FE /* UIKit.framework */,
 				AECC4BA411C6DFF40027AB1B /* CoreLib */,
 				AEF15A1511C97747005B4F92 /* SpecHelperLib */,
 				AECC4BA711C6E0010027AB1B /* Spec */,
@@ -444,6 +489,8 @@
 				6696E0311266E36E00111E23 /* UIWebViewSpec+Spec.mm */,
 				E38F957F137388990018B36A /* UIAlertViewSpec+Spec.mm */,
 				AEA94C00143CD5CE00C70E89 /* UIImageSpec+Spec.mm */,
+				AEE066B0152B6C1A009289FE /* UIView+PivotalCoreSpec.mm */,
+				AEE0671C152B78F7009289FE /* UIBarButtonItem+ButtonSpec.mm */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -610,6 +657,36 @@
 			path = Interfaces;
 			sourceTree = "<group>";
 		};
+		AEE066A9152B6BE6009289FE /* UICoreLib */ = {
+			isa = PBXGroup;
+			children = (
+				AEE066AA152B6BE6009289FE /* Extensions */,
+				AEE066AD152B6BE6009289FE /* Views */,
+				AEE0671E152B80AB009289FE /* UICoreLib.h */,
+			);
+			path = UICoreLib;
+			sourceTree = "<group>";
+		};
+		AEE066AA152B6BE6009289FE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AEE066AB152B6BE6009289FE /* UIView+PivotalCore.h */,
+				AEE066AC152B6BE6009289FE /* UIView+PivotalCore.m */,
+				AEE06714152B76CC009289FE /* UIImage+PivotalCore.h */,
+				AEE06715152B76CC009289FE /* UIImage+PivotalCore.m */,
+				AEE06718152B78B0009289FE /* UIBarButtonItem+Button.h */,
+				AEE06719152B78B1009289FE /* UIBarButtonItem+Button.m */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		AEE066AD152B6BE6009289FE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		AEE690851202520500769ADC /* Fixtures */ = {
 			isa = PBXGroup;
 			children = (
@@ -627,6 +704,8 @@
 				AEE690851202520500769ADC /* Fixtures */,
 				AEF15A1D11C97814005B4F92 /* Extensions */,
 				AE13904911E5508A004E825D /* PivotalSpecHelperKit.h */,
+				AEE066E0152B6DF2009289FE /* UIMatchers.h */,
+				AEE066E1152B6E51009289FE /* UISpecHelper.h */,
 			);
 			path = SpecHelperLib;
 			sourceTree = "<group>";
@@ -707,6 +786,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AEE06697152B6AFA009289FE /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AEE066AE152B6BE6009289FE /* UIView+PivotalCore.h in Headers */,
+				AEE06716152B76CC009289FE /* UIImage+PivotalCore.h in Headers */,
+				AEE0671A152B78B1009289FE /* UIBarButtonItem+Button.h in Headers */,
+				AEE0671F152B80AB009289FE /* UICoreLib.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AEF15AC011C97E8B005B4F92 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -758,6 +848,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				AEE066A7152B6BA6009289FE /* PBXTargetDependency */,
 				6696DFCC1266DEA700111E23 /* PBXTargetDependency */,
 				6696DFD01266DEB100111E23 /* PBXTargetDependency */,
 			);
@@ -817,6 +908,23 @@
 			productName = Spec;
 			productReference = AECC4BBA11C6E2280027AB1B /* Spec */;
 			productType = "com.apple.product-type.tool";
+		};
+		AEE06698152B6AFA009289FE /* PivotalUICoreKit-StaticLib */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AEE066A1152B6AFA009289FE /* Build configuration list for PBXNativeTarget "PivotalUICoreKit-StaticLib" */;
+			buildPhases = (
+				AEE06695152B6AFA009289FE /* Sources */,
+				AEE06696152B6AFA009289FE /* Frameworks */,
+				AEE06697152B6AFA009289FE /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "PivotalUICoreKit-StaticLib";
+			productName = PivotalUICoreLib;
+			productReference = AEE06699152B6AFA009289FE /* libPivotalUICoreKit-StaticLib.a */;
+			productType = "com.apple.product-type.library.static";
 		};
 		AEF15AC411C97E8B005B4F92 /* PivotalCoreKit */ = {
 			isa = PBXNativeTarget;
@@ -892,6 +1000,7 @@
 				AECC4BB911C6E2280027AB1B /* Spec */,
 				AE138E6F11E542BF004E825D /* PivotalCoreKit-StaticLib */,
 				AE138F4511E548B5004E825D /* PivotalSpecHelperKit-StaticLib */,
+				AEE06698152B6AFA009289FE /* PivotalUICoreKit-StaticLib */,
 				6696DFC11266DE6C00111E23 /* UISpec */,
 			);
 		};
@@ -1018,6 +1127,8 @@
 				AEA94BFF143CD55900C70E89 /* UIImage+Spec.m in Sources */,
 				AEA94C01143CD5CE00C70E89 /* UIImageSpec+Spec.mm in Sources */,
 				AEBBE00514BCB4A20005CF20 /* NSObject+MethodRedirection.m in Sources */,
+				AEE066B2152B6C5B009289FE /* UIView+PivotalCoreSpec.mm in Sources */,
+				AEE0671D152B78F7009289FE /* UIBarButtonItem+ButtonSpec.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1078,6 +1189,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AEE06695152B6AFA009289FE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AEE066AF152B6BE6009289FE /* UIView+PivotalCore.m in Sources */,
+				AEE06717152B76CC009289FE /* UIImage+PivotalCore.m in Sources */,
+				AEE0671B152B78B1009289FE /* UIBarButtonItem+Button.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AEF15AC211C97E8B005B4F92 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1131,6 +1252,11 @@
 			isa = PBXTargetDependency;
 			name = OCMock;
 			targetProxy = AE138A9D11E3FFE5004E825D /* PBXContainerItemProxy */;
+		};
+		AEE066A7152B6BA6009289FE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AEE06698152B6AFA009289FE /* PivotalUICoreKit-StaticLib */;
+			targetProxy = AEE066A6152B6BA6009289FE /* PBXContainerItemProxy */;
 		};
 		AEF15ACE11C97ED1005B4F92 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1275,6 +1401,7 @@
 				PRODUCT_NAME = "PivotalCoreKit-StaticLib";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				VALID_ARCHS = "armv6 armv7";
 			};
 			name = Debug;
 		};
@@ -1296,6 +1423,7 @@
 				PRODUCT_NAME = "PivotalCoreKit-StaticLib";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				VALID_ARCHS = "armv6 armv7";
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -1395,6 +1523,54 @@
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = Spec;
 				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		AEE066A2152B6AFA009289FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = /tmp/PivotalUICoreLib.dst;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				VALIDATE_PRODUCT = NO;
+			};
+			name = Debug;
+		};
+		AEE066A3152B6AFA009289FE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DSTROOT = /tmp/PivotalUICoreLib.dst;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				VALIDATE_PRODUCT = NO;
 			};
 			name = Release;
 		};
@@ -1558,6 +1734,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		AEE066A1152B6AFA009289FE /* Build configuration list for PBXNativeTarget "PivotalUICoreKit-StaticLib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AEE066A2152B6AFA009289FE /* Debug */,
+				AEE066A3152B6AFA009289FE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 		AEF15ACA11C97E8B005B4F92 /* Build configuration list for PBXNativeTarget "PivotalCoreKit" */ = {
 			isa = XCConfigurationList;
