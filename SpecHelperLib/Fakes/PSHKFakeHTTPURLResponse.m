@@ -1,4 +1,5 @@
 #import "PSHKFakeHTTPURLResponse.h"
+#import "PSHKFixtures.h"
 
 @interface PSHKFakeHTTPURLResponse ()
 
@@ -30,6 +31,25 @@
 - (NSCachedURLResponse *)asCachedResponse {
     NSData *responseData = [self.body dataUsingEncoding:NSUTF8StringEncoding];
     return [[[NSCachedURLResponse alloc] initWithResponse:self data:responseData] autorelease];
+}
+
++ (PSHKFakeHTTPURLResponse *)responseFromFixtureNamed:(NSString *)fixtureName statusCode:(int)statusCode {
+    NSString *filePath = [[PSHKFixtures directory] stringByAppendingPathComponent:fixtureName];
+    NSString *responseBody;
+    if ([[NSFileManager defaultManager] fileExistsAtPath:filePath]) {
+        responseBody = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:NULL];
+    } else {
+        responseBody = @"";
+    }
+
+    return [[[PSHKFakeHTTPURLResponse alloc] initWithStatusCode:statusCode
+                                                     andHeaders:[NSDictionary dictionary]
+                                                        andBody:responseBody]
+            autorelease];
+}
+
++ (PSHKFakeHTTPURLResponse *)responseFromFixtureNamed:(NSString *)fixtureName {
+    return [PSHKFakeHTTPURLResponse responseFromFixtureNamed:fixtureName statusCode:200];
 }
 
 @end
