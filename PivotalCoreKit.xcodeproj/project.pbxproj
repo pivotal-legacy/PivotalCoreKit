@@ -74,7 +74,6 @@
 		AEA94C01143CD5CE00C70E89 /* UIImageSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEA94C00143CD5CE00C70E89 /* UIImageSpec+Spec.mm */; };
 		AEA94C05143CD79500C70E89 /* logo-small.png in Resources */ = {isa = PBXBuildFile; fileRef = AEA94C03143CD79500C70E89 /* logo-small.png */; };
 		AEA94C06143CD79500C70E89 /* pivotallabs-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = AEA94C04143CD79500C70E89 /* pivotallabs-logo.png */; };
-		AEBB634C152BB58D00CC7A9F /* picframe_lens.png in Resources */ = {isa = PBXBuildFile; fileRef = AEBB634B152BB52000CC7A9F /* picframe_lens.png */; };
 		AEBB634F152BB6BF00CC7A9F /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEBB6349152BB0DF00CC7A9F /* CoreText.framework */; };
 		AEBB6351152BB77A00CC7A9F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEA94C09143CD82F00C70E89 /* CoreGraphics.framework */; };
 		AEBBE00014BCB4A20005CF20 /* NSObject+MethodRedirection.h in Headers */ = {isa = PBXBuildFile; fileRef = AEBBDFFE14BCB4A20005CF20 /* NSObject+MethodRedirection.h */; };
@@ -317,7 +316,6 @@
 		AEA94C04143CD79500C70E89 /* pivotallabs-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pivotallabs-logo.png"; sourceTree = "<group>"; };
 		AEA94C09143CD82F00C70E89 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
 		AEBB6349152BB0DF00CC7A9F /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/System/Library/Frameworks/CoreText.framework; sourceTree = DEVELOPER_DIR; };
-		AEBB634B152BB52000CC7A9F /* picframe_lens.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = picframe_lens.png; sourceTree = "<group>"; };
 		AEBBDFFE14BCB4A20005CF20 /* NSObject+MethodRedirection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MethodRedirection.h"; sourceTree = "<group>"; };
 		AEBBDFFF14BCB4A20005CF20 /* NSObject+MethodRedirection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MethodRedirection.m"; sourceTree = "<group>"; };
 		AEBBE00714BCB4CF0005CF20 /* NSObjectSpec+MethodRedirection.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSObjectSpec+MethodRedirection.mm"; sourceTree = "<group>"; };
@@ -473,6 +471,7 @@
 		6696DFE71266DF7300111E23 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				AED4BDAD152BC265004662BD /* Views */,
 				6696E0301266E33800111E23 /* Extensions */,
 				6696E0001266E09800111E23 /* main.m */,
 			);
@@ -500,7 +499,7 @@
 				AEE0671C152B78F7009289FE /* UIBarButtonItem+ButtonSpec.mm */,
 				AEE06722152B852D009289FE /* UIImage+PivotalCoreSpec.mm */,
 			);
-			name = Extensions;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		AE138A3811E3FE88004E825D /* Externals */ = {
@@ -586,7 +585,6 @@
 		AEA94C02143CD6BA00C70E89 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				AEBB634B152BB52000CC7A9F /* picframe_lens.png */,
 				AEA94C03143CD79500C70E89 /* logo-small.png */,
 				AEA94C04143CD79500C70E89 /* pivotallabs-logo.png */,
 			);
@@ -664,6 +662,13 @@
 				AE05D75F14573D8A0044D97B /* NSURLConnectionDelegate.h */,
 			);
 			path = Interfaces;
+			sourceTree = "<group>";
+		};
+		AED4BDAD152BC265004662BD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		AEE066A9152B6BE6009289FE /* UICoreLib */ = {
@@ -1105,7 +1110,6 @@
 				AE4C17C7126FD3CE009CB34D /* AWebViewController.xib in Resources */,
 				AEA94C05143CD79500C70E89 /* logo-small.png in Resources */,
 				AEA94C06143CD79500C70E89 /* pivotallabs-logo.png in Resources */,
-				AEBB634C152BB58D00CC7A9F /* picframe_lens.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
