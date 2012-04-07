@@ -330,7 +330,7 @@ describe(@"UIWebView (spec extensions)", ^{
 
     describe(@"when loaded from a XIB", ^{
         beforeEach(^{
-            AWebViewController *controller = [[AWebViewController alloc] initWithNibName:@"AWebViewController" bundle:nil];
+            AWebViewController *controller = [[[AWebViewController alloc] initWithNibName:@"AWebViewController" bundle:nil] autorelease];
             // Load the view.
             expect(controller.view).to_not(be_nil());
             webView = controller.webView;
