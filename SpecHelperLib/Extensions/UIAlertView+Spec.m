@@ -1,9 +1,11 @@
 #import "UIAlertView+Spec.h"
+
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wobjc-protocol-method-implementation"
-static UIAlertView *currentAlertView__;
 
 @implementation UIAlertView (Spec)
+
+static UIAlertView *currentAlertView__;
 
 + (void)afterEach {
     [self reset];

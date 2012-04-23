@@ -53,6 +53,7 @@
 		AE4C17C6126FD3CE009CB34D /* AWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE4C17C4126FD3CE009CB34D /* AWebViewController.m */; };
 		AE4C17C7126FD3CE009CB34D /* AWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE4C17C5126FD3CE009CB34D /* AWebViewController.xib */; };
 		AE515E0E123AA778004B2CEB /* PivotalCoreKit.h in Headers */ = {isa = PBXBuildFile; fileRef = AE515E0D123AA778004B2CEB /* PivotalCoreKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE635F501545FB2F0029BEF6 /* UIActionSheet+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE635F4D1545FB130029BEF6 /* UIActionSheet+Spec.m */; };
 		AE69B83F144E50F400719614 /* PCKHTTPConnectionDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = AE69B83D144E50F400719614 /* PCKHTTPConnectionDelegate.h */; };
 		AE69B840144E50F400719614 /* PCKHTTPConnectionDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = AE69B83D144E50F400719614 /* PCKHTTPConnectionDelegate.h */; };
 		AE69B841144E50F400719614 /* PCKHTTPConnectionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AE69B83E144E50F400719614 /* PCKHTTPConnectionDelegate.m */; };
@@ -296,6 +297,8 @@
 		AE4C17C4126FD3CE009CB34D /* AWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWebViewController.m; sourceTree = "<group>"; };
 		AE4C17C5126FD3CE009CB34D /* AWebViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AWebViewController.xib; sourceTree = "<group>"; };
 		AE515E0D123AA778004B2CEB /* PivotalCoreKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PivotalCoreKit.h; sourceTree = "<group>"; };
+		AE635F4C1545FB130029BEF6 /* UIActionSheet+Spec.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIActionSheet+Spec.h"; sourceTree = "<group>"; };
+		AE635F4D1545FB130029BEF6 /* UIActionSheet+Spec.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIActionSheet+Spec.m"; sourceTree = "<group>"; };
 		AE69B83D144E50F400719614 /* PCKHTTPConnectionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCKHTTPConnectionDelegate.h; sourceTree = "<group>"; };
 		AE69B83E144E50F400719614 /* PCKHTTPConnectionDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCKHTTPConnectionDelegate.m; sourceTree = "<group>"; };
 		AE69B843144E51C800719614 /* PCKHTTPConnectionDelegateSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PCKHTTPConnectionDelegateSpec.mm; sourceTree = "<group>"; };
@@ -737,8 +740,10 @@
 				AEF15A1F11C97864005B4F92 /* NSURLConnection+Spec.m */,
 				6696DFB71266DE5800111E23 /* UIWebView+Spec.h */,
 				6696DFB81266DE5800111E23 /* UIWebView+Spec.m */,
-				AEBF55251345229500069ED3 /* UIAlertView+Spec.m */,
 				E38F9581137388D30018B36A /* UIAlertView+Spec.h */,
+				AEBF55251345229500069ED3 /* UIAlertView+Spec.m */,
+				AE635F4C1545FB130029BEF6 /* UIActionSheet+Spec.h */,
+				AE635F4D1545FB130029BEF6 /* UIActionSheet+Spec.m */,
 				AEA94BFC143CD53000C70E89 /* UIImage+Spec.h */,
 				AEA94BFD143CD53000C70E89 /* UIImage+Spec.m */,
 			);
@@ -1187,6 +1192,7 @@
 				AE24D5AE13816D2900E4420A /* MockMethod.m in Sources */,
 				AEA94BFE143CD53000C70E89 /* UIImage+Spec.m in Sources */,
 				AED4BDFC152BD0EA004662BD /* FakeOperationQueue.m in Sources */,
+				AE635F501545FB2F0029BEF6 /* UIActionSheet+Spec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
