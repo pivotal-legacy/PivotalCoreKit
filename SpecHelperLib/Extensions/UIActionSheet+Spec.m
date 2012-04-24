@@ -47,10 +47,10 @@ static UIView *currentActionSheetView__;
     if ([self.delegate respondsToSelector:@selector(actionSheet:willDismissWithButtonIndex:)]) {
         [self.delegate actionSheet:self willDismissWithButtonIndex:buttonIndex];
     }
-    [UIActionSheet reset];
     if ([self.delegate respondsToSelector:@selector(actionSheet:didDismissWithButtonIndex:)]) {
         [self.delegate actionSheet:self didDismissWithButtonIndex:buttonIndex];
     }
+    [UIActionSheet reset];
 }
 
 @end
