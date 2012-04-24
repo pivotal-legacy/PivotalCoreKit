@@ -41,8 +41,16 @@ static UIView *currentActionSheetView__;
 }
 
 - (void)dismissWithClickedButtonIndex:(NSInteger)buttonIndex animated:(BOOL)animated {
-    [self.delegate actionSheet:self clickedButtonAtIndex:buttonIndex];
+    if ([self.delegate respondsToSelector:@selector(actionSheet:clickedButtonAtIndex:)]) {
+        [self.delegate actionSheet:self clickedButtonAtIndex:buttonIndex];
+    }
+    if ([self.delegate respondsToSelector:@selector(actionSheet:willDismissWithButtonIndex:)]) {
+        [self.delegate actionSheet:self willDismissWithButtonIndex:buttonIndex];
+    }
     [UIActionSheet reset];
+    if ([self.delegate respondsToSelector:@selector(actionSheet:didDismissWithButtonIndex:)]) {
+        [self.delegate actionSheet:self didDismissWithButtonIndex:buttonIndex];
+    }
 }
 
 @end
