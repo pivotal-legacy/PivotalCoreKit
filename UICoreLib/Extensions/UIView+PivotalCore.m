@@ -29,6 +29,13 @@
     [self moveCorner:ViewCornerTopLeft toPoint:point];
 }
 
+- (void)moveBy:(CGPoint)pointDelta {
+    CGRect frame = self.frame;
+    frame.origin = CGPointMake(frame.origin.x + pointDelta.x,
+                               frame.origin.y + pointDelta.y);
+    self.frame = frame;
+}
+
 - (void)resizeTo:(CGSize)size keepingCorner:(ViewCorner)corner {
     CGRect frame = self.frame;
     self.frame = CGRectMake(frame.origin.x, frame.origin.y, size.width, size.height);
