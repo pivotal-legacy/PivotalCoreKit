@@ -53,4 +53,29 @@ static UIView *currentActionSheetView__;
     [UIActionSheet reset];
 }
 
+- (NSArray *)buttonTitles {
+    NSMutableArray *titles = [NSMutableArray array];
+
+    for (int i=0; i < self.numberOfButtons; i++) {
+        [titles addObject:[self buttonTitleAtIndex:i]];
+    }
+    return titles;
+}
+
+- (void)dismissByClickingButtonWithTitle:(NSString *)buttonTitle {
+    NSInteger buttonIndex = (NSInteger)[self.buttonTitles indexOfObject:buttonTitle];
+    NSAssert((buttonIndex != NSNotFound), @"Action sheet does not have a button titled '%@' -- current button titles are %@", buttonTitle, self.buttonTitles);
+    [self dismissWithClickedButtonIndex:buttonIndex animated:NO];
+}
+
+- (void)dismissByClickingDestructiveButton {
+    NSAssert((self.destructiveButtonIndex != -1), @"Action sheet does not have a valid index for the destructive button");
+    [self dismissWithClickedButtonIndex:self.destructiveButtonIndex animated:NO];
+}
+
+- (void)dismissByClickingCancelButton {
+    NSAssert((self.cancelButtonIndex != -1), @"Action sheet does not have a valid index for the cancel button");
+    [self dismissWithClickedButtonIndex:self.cancelButtonIndex animated:NO];
+}
+
 @end
