@@ -55,8 +55,7 @@ describe(@"UIAlertView (spec extensions)", ^{
 
             describe(@"when the alertView is subsequently dismissed", ^{
                 beforeEach(^{
-                    [alertView dismissWithClickedButtonIndex:alertView.cancelButtonIndex
-                                                   animated:NO];
+                    [alertView dismissWithClickedButtonIndex:alertView.cancelButtonIndex animated:NO];
                 });
 
                 it(@"should return nil", ^{
@@ -94,8 +93,7 @@ describe(@"UIAlertView (spec extensions)", ^{
 
             describe(@"when the UIAlertView class is subsequently dismissed", ^{
                 beforeEach(^{
-                    [alertView dismissWithClickedButtonIndex:alertView.cancelButtonIndex
-                                                   animated:NO];
+                    [alertView dismissWithClickedButtonIndex:alertView.cancelButtonIndex animated:NO];
                 });
 
                 it(@"should return NO", ^{
@@ -108,10 +106,11 @@ describe(@"UIAlertView (spec extensions)", ^{
     describe(@"forwarding callbacks", ^{
         describe(@"when the alertView is dismissed with the cancel button", ^{
             it(@"should notify the delegate passing in the appropriate button", ^{
+                [[mockDelegate expect] alertView:alertView clickedButtonAtIndex:alertView.cancelButtonIndex];
+                [[mockDelegate expect] alertView:alertView willDismissWithButtonIndex:alertView.cancelButtonIndex];
                 [[mockDelegate expect] alertView:alertView didDismissWithButtonIndex:alertView.cancelButtonIndex];
 
-                [alertView dismissWithClickedButtonIndex:alertView.cancelButtonIndex
-                                               animated:NO];
+                [alertView dismissWithClickedButtonIndex:alertView.cancelButtonIndex animated:NO];
 
                 [mockDelegate verify];
             });
@@ -119,10 +118,11 @@ describe(@"UIAlertView (spec extensions)", ^{
 
         describe(@"when the alertView is dismissed with the other button", ^{
             it(@"should notify the delegate passing in the appropriate button", ^{
+                [[mockDelegate expect] alertView:alertView clickedButtonAtIndex:alertView.firstOtherButtonIndex];
+                [[mockDelegate expect] alertView:alertView willDismissWithButtonIndex:alertView.firstOtherButtonIndex];
                 [[mockDelegate expect] alertView:alertView didDismissWithButtonIndex:alertView.firstOtherButtonIndex];
 
-                [alertView dismissWithClickedButtonIndex:alertView.firstOtherButtonIndex
-                                               animated:NO];
+                [alertView dismissWithClickedButtonIndex:alertView.firstOtherButtonIndex animated:NO];
 
                 [mockDelegate verify];
             });

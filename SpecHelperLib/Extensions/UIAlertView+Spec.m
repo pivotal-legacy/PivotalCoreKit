@@ -12,22 +12,25 @@ static UIAlertView *currentAlertView__;
 }
 
 + (UIAlertView *)currentAlertView {
-	return currentAlertView__;
+    return currentAlertView__;
 }
 
 + (void)reset {
-	[currentAlertView__ release];
-	currentAlertView__ = nil;
+    [currentAlertView__ release];
+    currentAlertView__ = nil;
 }
 
 + (void)setCurrentAlertView:(UIAlertView *)alertView {
-	[alertView retain];
-	[currentAlertView__ release];
-	currentAlertView__ = alertView;
+    [alertView retain];
+    [currentAlertView__ release];
+    currentAlertView__ = alertView;
 }
 
 - (void)show {
-	[UIAlertView setCurrentAlertView:self];
+    [UIAlertView setCurrentAlertView:self];
+    if ([self.delegate respondsToSelector:@selector(willPresentAlertView:)]) {
+        [self.delegate willPresentAlertView:self];
+    }
 }
 
 - (BOOL)isVisible {
@@ -35,8 +38,24 @@ static UIAlertView *currentAlertView__;
 }
 
 - (void)dismissWithClickedButtonIndex:(NSInteger)buttonIndex animated:(BOOL)animated {
-    [self.delegate alertView:self didDismissWithButtonIndex:buttonIndex];
-	[UIAlertView reset];
+    if ([self.delegate respondsToSelector:@selector(alertView:clickedButtonAtIndex:)]) {
+        [self.delegate alertView:self clickedButtonAtIndex:buttonIndex];
+    }
+    if ([self.delegate respondsToSelector:@selector(alertView:willDismissWithButtonIndex:)]) {
+        [self.delegate alertView:self willDismissWithButtonIndex:buttonIndex];
+    }
+    if ([self.delegate respondsToSelector:@selector(alertView:didDismissWithButtonIndex:)]) {
+        [self.delegate alertView:self didDismissWithButtonIndex:buttonIndex];
+    }
+    [UIAlertView reset];
+}
+
+- (void)dismissWithOkButton {
+    [self dismissWithClickedButtonIndex:self.firstOtherButtonIndex animated:NO];
+}
+
+- (void)dismissWithCancelButton {
+    [self dismissWithClickedButtonIndex:self.cancelButtonIndex animated:NO];
 }
 
 @end
