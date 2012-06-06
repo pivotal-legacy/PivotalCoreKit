@@ -102,7 +102,7 @@ describe(@"PCKHTTPInterface", ^{
             beforeEach(^{
                 PSHKFakeHTTPURLResponse *response = [[PSHKFakeResponses responsesForRequest:@"HelloWorld"] success];
                 [[mockDelegate expect] connection:connection didReceiveResponse:response];
-                [[mockDelegate expect] connection:connection didReceiveData:[[response body] dataUsingEncoding:NSUTF8StringEncoding]];
+                [[mockDelegate expect] connection:connection didReceiveData:[response bodyData]];
                 [[mockDelegate expect] connectionDidFinishLoading:connection];
 
                 [connection receiveResponse:response];

@@ -5,27 +5,36 @@
 
 @property (nonatomic, assign, readwrite) int statusCode;
 @property (nonatomic, retain, readwrite) NSDictionary *allHeaderFields;
-@property (nonatomic, copy, readwrite) NSString *body;
+@property (nonatomic, retain, readwrite) NSData *bodyData;
 
 @end
 
 @implementation PSHKFakeHTTPURLResponse
 
-@synthesize statusCode = statusCode_, allHeaderFields = headers_, body = body_;
+@synthesize statusCode = statusCode_, allHeaderFields = headers_, bodyData = bodyData_;
 
 - (id)initWithStatusCode:(int)statusCode andHeaders:(NSDictionary *)headers andBody:(NSString *)body {
+    return [self initWithStatusCode:statusCode andHeaders:headers andBodyData:[body dataUsingEncoding:NSUTF8StringEncoding]];
+}
+
+- (id)initWithStatusCode:(int)statusCode andHeaders:(NSDictionary *)headers andBodyData:(NSData *)bodyData {
     if ((self = [super initWithURL:[NSURL URLWithString:@"http://www.example.com"] MIMEType:@"application/wibble" expectedContentLength:-1 textEncodingName:nil])) {
         self.statusCode = statusCode;
         self.allHeaderFields = headers;
-        self.body = body;
+        self.bodyData = bodyData;
     }
-    return self;
+    return self;    
 }
+
 
 - (void)dealloc {
     [headers_ release];
-    [body_ release];
+    [bodyData_ release];
     [super dealloc];
+}
+
+- (NSString *)body {
+    return [NSString stringWithUTF8String:self.bodyData.bytes];
 }
 
 - (NSCachedURLResponse *)asCachedResponse {
