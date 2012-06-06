@@ -120,7 +120,7 @@ describe(@"PCKHTTPConnectionOperation", ^{
             it(@"should forward connection events to the delegate", ^{
                 id mockDelegate = [OCMockObject partialMockForObject:delegate];
                 [[mockDelegate expect] connection:connection didReceiveResponse:[OCMArg any]];
-                [[mockDelegate expect] connection:connection didReceiveData:[[response body] dataUsingEncoding:NSUTF8StringEncoding]];
+                [[mockDelegate expect] connection:connection didReceiveData:[response bodyData]];
 
                 expect([delegate respondsToSelector:@selector(connection:didReceiveResponse:)]).to(be_truthy());
 
