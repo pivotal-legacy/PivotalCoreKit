@@ -42,6 +42,7 @@
 		AE138F4A11E548E1004E825D /* PSHKFakeHTTPURLResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF15AF911C97F95005B4F92 /* PSHKFakeHTTPURLResponse.m */; };
 		AE138F4B11E548E1004E825D /* PSHKFakeResponses.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF15B4411C984EB005B4F92 /* PSHKFakeResponses.m */; };
 		AE13904A11E5508A004E825D /* PivotalSpecHelperKit.h in Headers */ = {isa = PBXBuildFile; fileRef = AE13904911E5508A004E825D /* PivotalSpecHelperKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE23C31D15869885001D23A5 /* FakeOperationQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = AED4BDFA152BD0EA004662BD /* FakeOperationQueue.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE24D5A2137DC0E200E4420A /* NSObjectSpec+Mocking.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE24D5A1137DC0E200E4420A /* NSObjectSpec+Mocking.mm */; };
 		AE24D5A713816BE300E4420A /* NSObject+Mocking.h in Headers */ = {isa = PBXBuildFile; fileRef = AE24D5A413816BD000E4420A /* NSObject+Mocking.h */; };
 		AE24D5A813816BE700E4420A /* NSObject+Mocking.m in Sources */ = {isa = PBXBuildFile; fileRef = AE24D5A313816BD000E4420A /* NSObject+Mocking.m */; };
@@ -858,6 +859,7 @@
 				AEE6908E1202523700769ADC /* PSHKFixtures.h in Headers */,
 				AE24D5A713816BE300E4420A /* NSObject+Mocking.h in Headers */,
 				AE24D5AC13816D2900E4420A /* MockMethod.h in Headers */,
+				AE23C31D15869885001D23A5 /* FakeOperationQueue.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
