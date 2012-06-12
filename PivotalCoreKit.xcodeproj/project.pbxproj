@@ -67,6 +67,9 @@
 		AE71490511CBFE1800672114 /* NSDataSpec+PivotalCore.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE71490411CBFE1800672114 /* NSDataSpec+PivotalCore.mm */; };
 		AE71490611CBFE2200672114 /* NSData+PivotalCore.m in Sources */ = {isa = PBXBuildFile; fileRef = AE71490211CBFDD900672114 /* NSData+PivotalCore.m */; };
 		AE71493011CC108700672114 /* NSData+PivotalCore.h in Headers */ = {isa = PBXBuildFile; fileRef = AE71490111CBFDD900672114 /* NSData+PivotalCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE73A6FB1587F55A0027A26F /* UIControl+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE73A6F71587F55A0027A26F /* UIControl+Spec.m */; };
+		AE73A6FC1587F55A0027A26F /* UITableViewCell+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE73A6F91587F55A0027A26F /* UITableViewCell+Spec.m */; };
+		AE73A6FD1587F55A0027A26F /* UIViewController+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE73A6FA1587F55A0027A26F /* UIViewController+Spec.m */; };
 		AE88AF7C11DE6BE000B65DD3 /* PCKXMLParser.h in Headers */ = {isa = PBXBuildFile; fileRef = AE88AF7A11DE6BE000B65DD3 /* PCKXMLParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE88AF7D11DE6BE000B65DD3 /* PCKXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = AE88AF7B11DE6BE000B65DD3 /* PCKXMLParser.m */; };
 		AE88B00D11DE6D3600B65DD3 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AE88B00711DE6D1200B65DD3 /* libxml2.dylib */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -311,6 +314,11 @@
 		AE71490111CBFDD900672114 /* NSData+PivotalCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+PivotalCore.h"; sourceTree = "<group>"; };
 		AE71490211CBFDD900672114 /* NSData+PivotalCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+PivotalCore.m"; sourceTree = "<group>"; };
 		AE71490411CBFE1800672114 /* NSDataSpec+PivotalCore.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSDataSpec+PivotalCore.mm"; sourceTree = "<group>"; };
+		AE73A6F61587F55A0027A26F /* UIControl+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+Spec.h"; sourceTree = "<group>"; };
+		AE73A6F71587F55A0027A26F /* UIControl+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIControl+Spec.m"; sourceTree = "<group>"; };
+		AE73A6F81587F55A0027A26F /* UITableViewCell+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+Spec.h"; sourceTree = "<group>"; };
+		AE73A6F91587F55A0027A26F /* UITableViewCell+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+Spec.m"; sourceTree = "<group>"; };
+		AE73A6FA1587F55A0027A26F /* UIViewController+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Spec.m"; sourceTree = "<group>"; };
 		AE88AF7A11DE6BE000B65DD3 /* PCKXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCKXMLParser.h; sourceTree = "<group>"; };
 		AE88AF7B11DE6BE000B65DD3 /* PCKXMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCKXMLParser.m; sourceTree = "<group>"; };
 		AE88B00711DE6D1200B65DD3 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
@@ -739,14 +747,19 @@
 			children = (
 				AEF15A1E11C97864005B4F92 /* NSURLConnection+Spec.h */,
 				AEF15A1F11C97864005B4F92 /* NSURLConnection+Spec.m */,
-				6696DFB71266DE5800111E23 /* UIWebView+Spec.h */,
-				6696DFB81266DE5800111E23 /* UIWebView+Spec.m */,
-				E38F9581137388D30018B36A /* UIAlertView+Spec.h */,
-				AEBF55251345229500069ED3 /* UIAlertView+Spec.m */,
 				AE635F4C1545FB130029BEF6 /* UIActionSheet+Spec.h */,
 				AE635F4D1545FB130029BEF6 /* UIActionSheet+Spec.m */,
+				E38F9581137388D30018B36A /* UIAlertView+Spec.h */,
+				AEBF55251345229500069ED3 /* UIAlertView+Spec.m */,
+				AE73A6F61587F55A0027A26F /* UIControl+Spec.h */,
+				AE73A6F71587F55A0027A26F /* UIControl+Spec.m */,
 				AEA94BFC143CD53000C70E89 /* UIImage+Spec.h */,
 				AEA94BFD143CD53000C70E89 /* UIImage+Spec.m */,
+				AE73A6F81587F55A0027A26F /* UITableViewCell+Spec.h */,
+				AE73A6F91587F55A0027A26F /* UITableViewCell+Spec.m */,
+				AE73A6FA1587F55A0027A26F /* UIViewController+Spec.m */,
+				6696DFB71266DE5800111E23 /* UIWebView+Spec.h */,
+				6696DFB81266DE5800111E23 /* UIWebView+Spec.m */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1195,6 +1208,9 @@
 				AEA94BFE143CD53000C70E89 /* UIImage+Spec.m in Sources */,
 				AED4BDFC152BD0EA004662BD /* FakeOperationQueue.m in Sources */,
 				AE635F501545FB2F0029BEF6 /* UIActionSheet+Spec.m in Sources */,
+				AE73A6FB1587F55A0027A26F /* UIControl+Spec.m in Sources */,
+				AE73A6FC1587F55A0027A26F /* UITableViewCell+Spec.m in Sources */,
+				AE73A6FD1587F55A0027A26F /* UIViewController+Spec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
