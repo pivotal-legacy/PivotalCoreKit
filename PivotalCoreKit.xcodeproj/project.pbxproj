@@ -79,6 +79,9 @@
 		AEA94C01143CD5CE00C70E89 /* UIImageSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEA94C00143CD5CE00C70E89 /* UIImageSpec+Spec.mm */; };
 		AEA94C05143CD79500C70E89 /* logo-small.png in Resources */ = {isa = PBXBuildFile; fileRef = AEA94C03143CD79500C70E89 /* logo-small.png */; };
 		AEA94C06143CD79500C70E89 /* pivotallabs-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = AEA94C04143CD79500C70E89 /* pivotallabs-logo.png */; };
+		AEB96D57158C04BA00108172 /* NSURLRequest+Spec.h in Headers */ = {isa = PBXBuildFile; fileRef = AEB96D55158C04BA00108172 /* NSURLRequest+Spec.h */; };
+		AEB96D58158C04BA00108172 /* NSURLRequest+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB96D56158C04BA00108172 /* NSURLRequest+Spec.m */; };
+		AEB96D5A158C04BA00108172 /* NSURLRequest+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB96D56158C04BA00108172 /* NSURLRequest+Spec.m */; };
 		AEBB634F152BB6BF00CC7A9F /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEBB6349152BB0DF00CC7A9F /* CoreText.framework */; };
 		AEBB6351152BB77A00CC7A9F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEA94C09143CD82F00C70E89 /* CoreGraphics.framework */; };
 		AEBBE00014BCB4A20005CF20 /* NSObject+MethodRedirection.h in Headers */ = {isa = PBXBuildFile; fileRef = AEBBDFFE14BCB4A20005CF20 /* NSObject+MethodRedirection.h */; };
@@ -329,6 +332,8 @@
 		AEA94C03143CD79500C70E89 /* logo-small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo-small.png"; sourceTree = "<group>"; };
 		AEA94C04143CD79500C70E89 /* pivotallabs-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pivotallabs-logo.png"; sourceTree = "<group>"; };
 		AEA94C09143CD82F00C70E89 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		AEB96D55158C04BA00108172 /* NSURLRequest+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLRequest+Spec.h"; sourceTree = "<group>"; };
+		AEB96D56158C04BA00108172 /* NSURLRequest+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLRequest+Spec.m"; sourceTree = "<group>"; };
 		AEBB6349152BB0DF00CC7A9F /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/System/Library/Frameworks/CoreText.framework; sourceTree = DEVELOPER_DIR; };
 		AEBBDFFE14BCB4A20005CF20 /* NSObject+MethodRedirection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MethodRedirection.h"; sourceTree = "<group>"; };
 		AEBBDFFF14BCB4A20005CF20 /* NSObject+MethodRedirection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MethodRedirection.m"; sourceTree = "<group>"; };
@@ -760,6 +765,8 @@
 				AE73A6FA1587F55A0027A26F /* UIViewController+Spec.m */,
 				6696DFB71266DE5800111E23 /* UIWebView+Spec.h */,
 				6696DFB81266DE5800111E23 /* UIWebView+Spec.m */,
+				AEB96D55158C04BA00108172 /* NSURLRequest+Spec.h */,
+				AEB96D56158C04BA00108172 /* NSURLRequest+Spec.m */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -873,6 +880,7 @@
 				AE24D5A713816BE300E4420A /* NSObject+Mocking.h in Headers */,
 				AE24D5AC13816D2900E4420A /* MockMethod.h in Headers */,
 				AE23C31D15869885001D23A5 /* FakeOperationQueue.h in Headers */,
+				AEB96D57158C04BA00108172 /* NSURLRequest+Spec.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1211,6 +1219,7 @@
 				AE73A6FB1587F55A0027A26F /* UIControl+Spec.m in Sources */,
 				AE73A6FC1587F55A0027A26F /* UITableViewCell+Spec.m in Sources */,
 				AE73A6FD1587F55A0027A26F /* UIViewController+Spec.m in Sources */,
+				AEB96D5A158C04BA00108172 /* NSURLRequest+Spec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1277,6 +1286,7 @@
 				AE24D5A813816BE700E4420A /* NSObject+Mocking.m in Sources */,
 				AE24D5AD13816D2900E4420A /* MockMethod.m in Sources */,
 				AED4BDFF152BD0F8004662BD /* FakeOperationQueue.m in Sources */,
+				AEB96D58158C04BA00108172 /* NSURLRequest+Spec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
