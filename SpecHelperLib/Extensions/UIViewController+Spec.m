@@ -8,23 +8,37 @@
 
 #pragma mark - Modals
 - (void)presentModalViewController:(UIViewController *)modalViewController animated:(BOOL)animated {
-    NSAssert(!self.modalViewController, @"Looks like modal controller is already presented.");
     self.modalViewController = modalViewController;
+    self.presentedViewController = modalViewController;
     modalViewController.presentingViewController = self;
+}
+
+- (void)dismissModalViewControllerAnimated:(BOOL)animated {
+    self.modalViewController.presentingViewController = nil;
+    self.modalViewController = nil;
+
+    if (self.presentingViewController) {
+        [self.presentingViewController dismissModalViewControllerAnimated:YES];
+    } else {
+        objc_setAssociatedObject(self.presentedViewController, @"presentingViewController", nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        objc_setAssociatedObject(self, @"presentedViewController", nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    }
 }
 
 - (void)setModalViewController:(UIViewController *)modalViewController {
     objc_setAssociatedObject(self, "modalViewController", modalViewController, OBJC_ASSOCIATION_ASSIGN);
 }
 
-- (void)dismissModalViewControllerAnimated:(BOOL)animated {
-    NSAssert(self.modalViewController, @"Looks like modal controller was not presented by the receiver.");
-    self.modalViewController.presentingViewController = nil;
-    self.modalViewController = nil;
-}
-
 - (UIViewController *)modalViewController {
     return objc_getAssociatedObject(self, "modalViewController");
+}
+
+- (void)setPresentedViewController:(UIViewController *)modalViewController {
+    objc_setAssociatedObject(self, @"presentedViewController", modalViewController, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (UIViewController *)presentedViewController {
+    return objc_getAssociatedObject(self, @"presentedViewController");
 }
 
 - (void)setPresentingViewController:(UIViewController *)presentingViewController {
