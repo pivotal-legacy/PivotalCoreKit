@@ -36,6 +36,14 @@ static UIView *currentActionSheetView__;
     [UIActionSheet setCurrentActionSheet:self forView:view];
 }
 
+- (void)showFromToolbar:(UIToolbar *)view {
+    [UIActionSheet setCurrentActionSheet:self forView:view];
+}
+
+- (void)showFromTabBar:(UITabBar *)view {
+    [UIActionSheet setCurrentActionSheet:self forView:view];
+}
+
 - (BOOL)isVisible {
     return [UIActionSheet currentActionSheet] == self;
 }
