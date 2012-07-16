@@ -23,6 +23,10 @@
     [self.mutableOperations addObject:op];
 }
 
+- (void)addOperationWithBlock:(void (^)(void))block {
+    [self.mutableOperations addObject:[block copy]];
+}
+
 - (NSArray *)operations {
     return self.mutableOperations;
 }
