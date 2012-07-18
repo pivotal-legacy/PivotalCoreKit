@@ -24,7 +24,7 @@
 }
 
 - (void)addOperationWithBlock:(void (^)(void))block {
-    [self.mutableOperations addObject:[block copy]];
+    [self.mutableOperations addObject:[[block copy] autorelease]];
 }
 
 - (NSArray *)operations {
