@@ -10,6 +10,7 @@
 - (void)presentModalViewController:(UIViewController *)modalViewController animated:(BOOL)animated {
     self.modalViewController = modalViewController;
     self.presentedViewController = modalViewController;
+    [modalViewController view];
     modalViewController.presentingViewController = self;
 }
 
