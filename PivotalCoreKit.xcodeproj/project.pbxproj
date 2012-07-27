@@ -79,7 +79,7 @@
 		AEA94C01143CD5CE00C70E89 /* UIImageSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEA94C00143CD5CE00C70E89 /* UIImageSpec+Spec.mm */; };
 		AEA94C05143CD79500C70E89 /* logo-small.png in Resources */ = {isa = PBXBuildFile; fileRef = AEA94C03143CD79500C70E89 /* logo-small.png */; };
 		AEA94C06143CD79500C70E89 /* pivotallabs-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = AEA94C04143CD79500C70E89 /* pivotallabs-logo.png */; };
-		AEB96D57158C04BA00108172 /* NSURLRequest+Spec.h in Headers */ = {isa = PBXBuildFile; fileRef = AEB96D55158C04BA00108172 /* NSURLRequest+Spec.h */; };
+		AEB96D57158C04BA00108172 /* NSURLRequest+Spec.h in Headers */ = {isa = PBXBuildFile; fileRef = AEB96D55158C04BA00108172 /* NSURLRequest+Spec.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AEB96D58158C04BA00108172 /* NSURLRequest+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB96D56158C04BA00108172 /* NSURLRequest+Spec.m */; };
 		AEB96D5A158C04BA00108172 /* NSURLRequest+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB96D56158C04BA00108172 /* NSURLRequest+Spec.m */; };
 		AEBB634F152BB6BF00CC7A9F /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEBB6349152BB0DF00CC7A9F /* CoreText.framework */; };

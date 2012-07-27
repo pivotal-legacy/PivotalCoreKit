@@ -1,4 +1,4 @@
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 #import "ComparatorsBase.h"
 
@@ -16,6 +16,11 @@ namespace Cedar { namespace Matchers { namespace Comparators {
     template<typename U>
     bool compare_equal(CGPoint const actualValue, const U & expectedValue) {
         return CGPointEqualToPoint(actualValue, expectedValue);
+    }
+
+    template<typename U>
+    bool compare_equal(UIEdgeInsets const actualValue, const U & expectedValue) {
+        return UIEdgeInsetsEqualToEdgeInsets(actualValue, expectedValue);
     }
 
     template<typename U>
@@ -38,6 +43,10 @@ namespace Cedar { namespace Matchers { namespace Stringifiers {
 
     inline NSString * string_for(const CGPoint value) {
         return NSStringFromCGPoint(value);
+    }
+
+    inline NSString * string_for(const UIEdgeInsets value) {
+        return NSStringFromUIEdgeInsets(value);
     }
 
     inline NSString * string_for(const CGAffineTransform value) {
