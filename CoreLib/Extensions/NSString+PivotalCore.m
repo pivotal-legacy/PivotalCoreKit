@@ -82,4 +82,11 @@ static const unsigned char BASE64_DICTIONARY[] = {
     return (trimmedString.length == 0);
 }
 
+- (BOOL)isValidEmailAddress {
+    // From http://www.regular-expressions.info/email.html
+    NSString *pattern = @"[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+(?:[A-Z]{2}|com|org|net|edu|gov|mil|biz|info|mobi|name|aero|asia|jobs|museum)\\b";
+    NSRegularExpression *validator = [NSRegularExpression regularExpressionWithPattern:pattern options:NSRegularExpressionCaseInsensitive error:nil];
+    return [validator numberOfMatchesInString:self options:0 range:NSMakeRange(0, self.length)];
+}
+
 @end
