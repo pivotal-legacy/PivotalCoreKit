@@ -4,32 +4,44 @@
 @interface PCKResponseParser ()
 
 @property (nonatomic, retain) id<PCKParser> parser;
-@property (nonatomic, retain) id<NSURLConnectionDelegate> delegate;
+@property (nonatomic, retain) id<NSURLConnectionDelegate> connectionDelegate;
+@property (nonatomic, assign) id<PCKParserDelegate> successParserDelegate, errorParserDelegate;
 
 @end
 
 @implementation PCKResponseParser
 
-@synthesize parser = parser_, delegate = delegate_;
+@synthesize parser = parser_
+, connectionDelegate = connectionDelegate_
+, successParserDelegate = successParserDelegate_
+, errorParserDelegate = errorParserDelegate_;
 
-- (id)initWithParser:(id<PCKParser>)parser andDelegate:(id<NSURLConnectionDelegate>)delegate {
+- (id)initWithParser:(id<PCKParser>)parser successParserDelegate:(id<PCKParserDelegate>)successParserDelegate errorParserDelegate:(id<PCKParserDelegate>)errorParserDelegate connectionDelegate:(id<NSURLConnectionDelegate>)connectionDelegate {
     if ((self = [super init])) {
         self.parser = parser;
-        self.delegate = delegate;
+        self.connectionDelegate = connectionDelegate;
+        self.successParserDelegate = successParserDelegate;
+        self.errorParserDelegate = errorParserDelegate;
     }
     return self;
 }
 
 - (void)dealloc {
-    [delegate_ release];
+    [connectionDelegate_ release];
     [parser_ release];
     [super dealloc];
 }
 
 #pragma mark NSURLConnectionDelegate
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
-    if ([self.delegate respondsToSelector:_cmd]) {
-        [(id)self.delegate connection:connection didReceiveResponse:response];
+    if ([(id)response statusCode] / 100 == 2) {
+        [self.parser setDelegate:self.successParserDelegate];
+    } else {
+        [self.parser setDelegate:self.errorParserDelegate];
+    }
+
+    if ([self.connectionDelegate respondsToSelector:_cmd]) {
+        [(id)self.connectionDelegate connection:connection didReceiveResponse:response];
     }
 }
 
@@ -38,13 +50,13 @@
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
-    if ([self.delegate respondsToSelector:_cmd]) {
-        [(id)self.delegate connectionDidFinishLoading:connection];
+    if ([self.connectionDelegate respondsToSelector:_cmd]) {
+        [(id)self.connectionDelegate connectionDidFinishLoading:connection];
     }
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
-    [self.delegate connection:connection didFailWithError:error];
+    [self.connectionDelegate connection:connection didFailWithError:error];
 }
 
 @end

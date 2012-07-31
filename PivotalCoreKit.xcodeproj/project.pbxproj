@@ -549,7 +549,7 @@
 				AE138A9211E3FFD6004E825D /* Specs */,
 				AE38A5661486B46D0016B266 /* FocusedSpecs */,
 				AE138A9411E3FFD6004E825D /* libCedar-StaticLib.a */,
-				AE138A9611E3FFD6004E825D /* iPhoneSpecs.app */,
+				AE138A9611E3FFD6004E825D /* iOSSpecs.app */,
 				AE38A5681486B46D0016B266 /* OCUnitApp.app */,
 				AE38A56A1486B46D0016B266 /* OCUnitAppTests.octest */,
 				AE38A56C1486B46D0016B266 /* OCUnitAppLogicTests.octest */,
@@ -1099,10 +1099,10 @@
 			remoteRef = AE138A9311E3FFD6004E825D /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		AE138A9611E3FFD6004E825D /* iPhoneSpecs.app */ = {
+		AE138A9611E3FFD6004E825D /* iOSSpecs.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
-			path = iPhoneSpecs.app;
+			path = iOSSpecs.app;
 			remoteRef = AE138A9511E3FFD6004E825D /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
@@ -1335,7 +1335,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
-				CLANG_WARN_IMPLICIT_SIGN_CONVERSION = YES;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
@@ -1357,7 +1356,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
-				CLANG_WARN_IMPLICIT_SIGN_CONVERSION = YES;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;

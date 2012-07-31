@@ -59,7 +59,7 @@ describe(@"NSObject_MethodRedirection", ^{
         it(@"should explode when a redirect is attempted twice", ^{
             ^{
                 [Redirectable redirectSelector:@selector(cheekify:) to:@selector(cheekify_new:) andRenameItTo:@selector(cheekify_original:)];
-            } should raise();
+            } should raise_exception();
         });
     });
 
@@ -75,7 +75,7 @@ describe(@"NSObject_MethodRedirection", ^{
         it(@"should explode when a redirect is attempted twice", ^{
             ^{
                 [Redirectable redirectClassSelector:@selector(embiggen:) to:@selector(embiggen_new:) andRenameItTo:@selector(embiggen_original:)];
-            } should raise();
+            } should raise_exception();
         });
     });
 });
