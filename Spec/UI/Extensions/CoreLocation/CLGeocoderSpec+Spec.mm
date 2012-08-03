@@ -18,6 +18,10 @@ describe(@"CLGeocoder Spec extension", ^{
         it(@"should not be geocoding", ^{
             geocoder.geocoding should_not be_truthy;
         });
+
+        it(@"should have no addressString", ^{
+            geocoder.addressString should be_nil;
+        });
     });
 
     describe(@"geocodeAddressString:inRegion:completionHandler:", ^{
@@ -25,8 +29,12 @@ describe(@"CLGeocoder Spec extension", ^{
             [geocoder geocodeAddressString:addressString inRegion:nil completionHandler:nil];
         });
 
-        it(@"should be geocoding", ^{
+        it(@"should start geocoding", ^{
             geocoder.geocoding should be_truthy;
+        });
+
+        it(@"should set addressString to the specified address", ^{
+            geocoder.addressString should equal(addressString);
         });
     });
 
@@ -38,6 +46,10 @@ describe(@"CLGeocoder Spec extension", ^{
 
         it(@"should stop geocoding", ^{
             geocoder.geocoding should_not be_truthy;
+        });
+
+        it(@"should reset the address string", ^{
+            geocoder.addressString should be_nil;
         });
     });
 
@@ -73,8 +85,12 @@ describe(@"CLGeocoder Spec extension", ^{
                 receivedPlacemarks should be_truthy;
             });
 
-            it(@"should no longer be geocoding", ^{
+            it(@"should stop geocoding", ^{
                 geocoder.geocoding should_not be_truthy;
+            });
+
+            it(@"should reset the address string", ^{
+                geocoder.addressString should be_nil;
             });
         });
 
@@ -112,8 +128,12 @@ describe(@"CLGeocoder Spec extension", ^{
                 receivedError should be_truthy;
             });
 
-            it(@"should no longer be geocoding", ^{
+            it(@"should stop geocoding", ^{
                 geocoder.geocoding should_not be_truthy;
+            });
+
+            it(@"should reset the address string", ^{
+                geocoder.addressString should be_nil;
             });
         });
     });

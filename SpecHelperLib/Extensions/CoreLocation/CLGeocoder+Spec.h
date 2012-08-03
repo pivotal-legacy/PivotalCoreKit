@@ -2,6 +2,8 @@
 
 @interface CLGeocoder (Spec)
 
+- (NSString *)addressString;
+
 - (void)completeGeocodeWithPlacemarks:(NSArray *)placemarks;
 - (void)completeGeocodeWithError:(NSError *)error;
 

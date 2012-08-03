@@ -3,15 +3,18 @@
 
 @interface CLGeocoderAttributes : NSObject
 @property (nonatomic, assign) BOOL geocoding;
+@property (nonatomic, retain) NSString *addressString;
 @property (nonatomic, copy) CLGeocodeCompletionHandler completionHandler;
 @end
 
 @implementation CLGeocoderAttributes
 @synthesize geocoding = geocoding_
-, completionHandler = completionHandler_;
+, completionHandler = completionHandler_
+, addressString = addressString_;
 
 - (void)dealloc {
     self.completionHandler = nil;
+    self.addressString = nil;
     [super dealloc];
 }
 @end
@@ -42,15 +45,22 @@ static char CLGEOCODER_ATTRIBUTES_KEY;
 
 - (void)geocodeAddressString:(NSString *)addressString inRegion:(CLRegion *)region completionHandler:(CLGeocodeCompletionHandler)completionHandler {
     self.attributes.geocoding = YES;
+    self.attributes.addressString = addressString;
     self.attributes.completionHandler = completionHandler;
 }
 
 - (void)cancelGeocode {
+    self.attributes.addressString = nil;
+    self.attributes.completionHandler = nil;
     self.attributes.geocoding = NO;
 }
 
 - (BOOL)isGeocoding {
     return self.attributes.geocoding;
+}
+
+- (NSString *)addressString {
+    return self.attributes.addressString;
 }
 
 - (void)completeGeocodeWithPlacemarks:(NSArray *)placemarks {
@@ -61,6 +71,8 @@ static char CLGEOCODER_ATTRIBUTES_KEY;
     if (self.attributes.completionHandler) {
         self.attributes.completionHandler(placemarks, nil);
     }
+    self.attributes.addressString = nil;
+    self.attributes.completionHandler = nil;
     self.attributes.geocoding = NO;
 }
 
@@ -72,6 +84,8 @@ static char CLGEOCODER_ATTRIBUTES_KEY;
     if (self.attributes.completionHandler) {
         self.attributes.completionHandler(nil, error);
     }
+    self.attributes.addressString = nil;
+    self.attributes.completionHandler = nil;
     self.attributes.geocoding = NO;
 }
 
