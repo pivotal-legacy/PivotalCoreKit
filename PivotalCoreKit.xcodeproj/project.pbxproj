@@ -70,6 +70,11 @@
 		AE73A6FB1587F55A0027A26F /* UIControl+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE73A6F71587F55A0027A26F /* UIControl+Spec.m */; };
 		AE73A6FC1587F55A0027A26F /* UITableViewCell+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE73A6F91587F55A0027A26F /* UITableViewCell+Spec.m */; };
 		AE73A6FD1587F55A0027A26F /* UIViewController+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE73A6FA1587F55A0027A26F /* UIViewController+Spec.m */; };
+		AE7C4C3315CC711C009E127E /* CLGeocoder+Spec.h in Headers */ = {isa = PBXBuildFile; fileRef = AE7C4C3115CC711C009E127E /* CLGeocoder+Spec.h */; };
+		AE7C4C3515CC711C009E127E /* CLGeocoder+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7C4C3215CC711C009E127E /* CLGeocoder+Spec.m */; };
+		AE7C4C3815CC730F009E127E /* CLGeocoderSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE7C4C3715CC730F009E127E /* CLGeocoderSpec+Spec.mm */; };
+		AE7C4C3915CC741B009E127E /* CLGeocoder+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7C4C3215CC711C009E127E /* CLGeocoder+Spec.m */; };
+		AE7C4C3B15CC7437009E127E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE7C4C3A15CC7437009E127E /* CoreLocation.framework */; };
 		AE88AF7C11DE6BE000B65DD3 /* PCKXMLParser.h in Headers */ = {isa = PBXBuildFile; fileRef = AE88AF7A11DE6BE000B65DD3 /* PCKXMLParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE88AF7D11DE6BE000B65DD3 /* PCKXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = AE88AF7B11DE6BE000B65DD3 /* PCKXMLParser.m */; };
 		AE88B00D11DE6D3600B65DD3 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AE88B00711DE6D1200B65DD3 /* libxml2.dylib */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -322,6 +327,10 @@
 		AE73A6F81587F55A0027A26F /* UITableViewCell+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+Spec.h"; sourceTree = "<group>"; };
 		AE73A6F91587F55A0027A26F /* UITableViewCell+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+Spec.m"; sourceTree = "<group>"; };
 		AE73A6FA1587F55A0027A26F /* UIViewController+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Spec.m"; sourceTree = "<group>"; };
+		AE7C4C3115CC711C009E127E /* CLGeocoder+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLGeocoder+Spec.h"; sourceTree = "<group>"; };
+		AE7C4C3215CC711C009E127E /* CLGeocoder+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CLGeocoder+Spec.m"; sourceTree = "<group>"; };
+		AE7C4C3715CC730F009E127E /* CLGeocoderSpec+Spec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "CLGeocoderSpec+Spec.mm"; sourceTree = "<group>"; };
+		AE7C4C3A15CC7437009E127E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = DEVELOPER_DIR; };
 		AE88AF7A11DE6BE000B65DD3 /* PCKXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCKXMLParser.h; sourceTree = "<group>"; };
 		AE88AF7B11DE6BE000B65DD3 /* PCKXMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCKXMLParser.m; sourceTree = "<group>"; };
 		AE88B00711DE6D1200B65DD3 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
@@ -391,6 +400,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE7C4C3B15CC7437009E127E /* CoreLocation.framework in Frameworks */,
 				AEE066A8152B6BAD009289FE /* libPivotalUICoreKit-StaticLib.a in Frameworks */,
 				6696DFC81266DE8500111E23 /* libCedar-StaticLib.a in Frameworks */,
 				6696DFC91266DE8D00111E23 /* libOCMock-StaticLib.a in Frameworks */,
@@ -460,6 +470,7 @@
 		0867D691FE84028FC02AAC07 /* PivotalCoreKit */ = {
 			isa = PBXGroup;
 			children = (
+				AE7C4C3A15CC7437009E127E /* CoreLocation.framework */,
 				AEE066A9152B6BE6009289FE /* UICoreLib */,
 				AECC4BA411C6DFF40027AB1B /* CoreLib */,
 				AEF15A1511C97747005B4F92 /* SpecHelperLib */,
@@ -513,6 +524,7 @@
 		6696E0301266E33800111E23 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				AE7C4C3615CC72E9009E127E /* CoreLocation */,
 				6696E0311266E36E00111E23 /* UIWebViewSpec+Spec.mm */,
 				E38F957F137388990018B36A /* UIAlertViewSpec+Spec.mm */,
 				AEA94C00143CD5CE00C70E89 /* UIImageSpec+Spec.mm */,
@@ -601,6 +613,23 @@
 				AEBBE00714BCB4CF0005CF20 /* NSObjectSpec+MethodRedirection.mm */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		AE7C4C2615CC70E0009E127E /* CoreLocation */ = {
+			isa = PBXGroup;
+			children = (
+				AE7C4C3115CC711C009E127E /* CLGeocoder+Spec.h */,
+				AE7C4C3215CC711C009E127E /* CLGeocoder+Spec.m */,
+			);
+			path = CoreLocation;
+			sourceTree = "<group>";
+		};
+		AE7C4C3615CC72E9009E127E /* CoreLocation */ = {
+			isa = PBXGroup;
+			children = (
+				AE7C4C3715CC730F009E127E /* CLGeocoderSpec+Spec.mm */,
+			);
+			path = CoreLocation;
 			sourceTree = "<group>";
 		};
 		AEA94C02143CD6BA00C70E89 /* Images */ = {
@@ -750,6 +779,7 @@
 		AEF15A1D11C97814005B4F92 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				AE7C4C2615CC70E0009E127E /* CoreLocation */,
 				AEF15A1E11C97864005B4F92 /* NSURLConnection+Spec.h */,
 				AEF15A1F11C97864005B4F92 /* NSURLConnection+Spec.m */,
 				AE635F4C1545FB130029BEF6 /* UIActionSheet+Spec.h */,
@@ -881,6 +911,7 @@
 				AE24D5AC13816D2900E4420A /* MockMethod.h in Headers */,
 				AE23C31D15869885001D23A5 /* FakeOperationQueue.h in Headers */,
 				AEB96D57158C04BA00108172 /* NSURLRequest+Spec.h in Headers */,
+				AE7C4C3315CC711C009E127E /* CLGeocoder+Spec.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1180,6 +1211,8 @@
 				AEE066B2152B6C5B009289FE /* UIView+PivotalCoreSpec.mm in Sources */,
 				AEE0671D152B78F7009289FE /* UIBarButtonItem+ButtonSpec.mm in Sources */,
 				AEE06723152B852D009289FE /* UIImage+PivotalCoreSpec.mm in Sources */,
+				AE7C4C3815CC730F009E127E /* CLGeocoderSpec+Spec.mm in Sources */,
+				AE7C4C3915CC741B009E127E /* CLGeocoder+Spec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1220,6 +1253,7 @@
 				AE73A6FC1587F55A0027A26F /* UITableViewCell+Spec.m in Sources */,
 				AE73A6FD1587F55A0027A26F /* UIViewController+Spec.m in Sources */,
 				AEB96D5A158C04BA00108172 /* NSURLRequest+Spec.m in Sources */,
+				AE7C4C3515CC711C009E127E /* CLGeocoder+Spec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1505,7 +1539,7 @@
 				GCC_PREFIX_HEADER = "";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INSTALL_PATH = /usr/local/lib;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
 					"-framework",
@@ -1529,7 +1563,7 @@
 				GCC_PREFIX_HEADER = "";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INSTALL_PATH = /usr/local/lib;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
 					"-framework",
