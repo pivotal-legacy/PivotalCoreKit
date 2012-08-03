@@ -5,7 +5,7 @@
 #import "UIWebView+Spec.h"
 
 namespace Cedar { namespace Matchers {
-    class BeLoading : public Base {
+    class BeLoading : public Base<> {
     public:
         virtual NSString * failure_message_end() const { return @"be loading"; }
         inline bool matches(UIWebView * const webView) const { return webView.loading; }
