@@ -4,7 +4,7 @@
 #import "UIAlertView+Spec.h"
 
 namespace Cedar { namespace Matchers {
-    class BeVisible : public Base {
+    class BeVisible : public Base<> {
     public:
         virtual NSString * failure_message_end() const { return @"be visible"; }
         template<typename T>
