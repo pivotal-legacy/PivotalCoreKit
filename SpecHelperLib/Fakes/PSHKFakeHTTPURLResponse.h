@@ -5,7 +5,7 @@
 - (id)initWithStatusCode:(int)statusCode andHeaders:(NSDictionary *)headers andBody:(NSString *)body;
 - (id)initWithStatusCode:(int)statusCode andHeaders:(NSDictionary *)headers andBodyData:(NSData *)body;
 
-@property (nonatomic, assign, readonly) int statusCode;
+@property (nonatomic, assign, readonly) NSInteger statusCode;
 @property (nonatomic, retain, readonly) NSDictionary *allHeaderFields;
 @property (nonatomic, copy, readonly) NSString *body;
 @property (nonatomic, retain, readonly) NSData *bodyData;
