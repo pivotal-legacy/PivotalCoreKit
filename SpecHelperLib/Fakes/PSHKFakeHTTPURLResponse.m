@@ -3,7 +3,7 @@
 
 @interface PSHKFakeHTTPURLResponse ()
 
-@property (nonatomic, assign, readwrite) int statusCode;
+@property (nonatomic, assign, readwrite) NSInteger statusCode;
 @property (nonatomic, retain, readwrite) NSDictionary *allHeaderFields;
 @property (nonatomic, retain, readwrite) NSData *bodyData;
 
@@ -23,7 +23,7 @@
         self.allHeaderFields = headers;
         self.bodyData = bodyData;
     }
-    return self;    
+    return self;
 }
 
 
