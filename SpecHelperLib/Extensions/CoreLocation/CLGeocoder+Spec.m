@@ -4,13 +4,15 @@
 @interface CLGeocoderAttributes : NSObject
 @property (nonatomic, assign) BOOL geocoding;
 @property (nonatomic, retain) NSString *addressString;
+@property (nonatomic, retain) CLLocation *location;
 @property (nonatomic, copy) CLGeocodeCompletionHandler completionHandler;
 @end
 
 @implementation CLGeocoderAttributes
 @synthesize geocoding = geocoding_
 , completionHandler = completionHandler_
-, addressString = addressString_;
+, addressString = addressString_
+, location = location_;
 
 - (void)dealloc {
     self.completionHandler = nil;
@@ -43,6 +45,12 @@ static char CLGEOCODER_ATTRIBUTES_KEY;
     [super dealloc];
 }
 
+- (void)reverseGeocodeLocation:(CLLocation *)location completionHandler:(CLGeocodeCompletionHandler)completionHandler {
+    self.attributes.geocoding = YES;
+    self.attributes.location = location;
+    self.attributes.completionHandler = completionHandler;
+}
+
 - (void)geocodeAddressString:(NSString *)addressString inRegion:(CLRegion *)region completionHandler:(CLGeocodeCompletionHandler)completionHandler {
     self.attributes.geocoding = YES;
     self.attributes.addressString = addressString;
@@ -63,6 +71,10 @@ static char CLGEOCODER_ATTRIBUTES_KEY;
     return self.attributes.addressString;
 }
 
+- (CLLocation *)location {
+    return self.attributes.location;
+}
+
 - (void)completeGeocodeWithPlacemarks:(NSArray *)placemarks {
     if (!self.geocoding) {
         [[NSException exceptionWithName:NSInternalInconsistencyException reason:@"Attempt to complete geocode when not geocoding" userInfo:nil] raise];
@@ -72,6 +84,18 @@ static char CLGEOCODER_ATTRIBUTES_KEY;
         self.attributes.completionHandler(placemarks, nil);
     }
     self.attributes.addressString = nil;
+    self.attributes.completionHandler = nil;
+    self.attributes.geocoding = NO;
+}
+
+- (void)completeReverseGeocodeWithPlacemarks:(NSArray *)placemarks {
+    if (!self.geocoding) {
+        [[NSException exceptionWithName:NSInternalInconsistencyException reason:@"Attempt to complete geocode when not geocoding" userInfo:nil] raise];
+    }
+
+    if (self.attributes.completionHandler) {
+        self.attributes.completionHandler(placemarks, nil);
+    }
     self.attributes.completionHandler = nil;
     self.attributes.geocoding = NO;
 }
