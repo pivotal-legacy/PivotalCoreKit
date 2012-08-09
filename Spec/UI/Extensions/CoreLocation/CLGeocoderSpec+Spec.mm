@@ -9,6 +9,7 @@ SPEC_BEGIN(CLGeocoderSpec)
 describe(@"CLGeocoder Spec extension", ^{
     __block CLGeocoder *geocoder;
     NSString *addressString = @"123 Main St.";
+    CLLocation *location = [[CLLocation alloc] initWithLatitude:44.0 longitude:-122.0];
 
     beforeEach(^{
         geocoder = [[[CLGeocoder alloc] init] autorelease];
@@ -21,6 +22,20 @@ describe(@"CLGeocoder Spec extension", ^{
 
         it(@"should have no addressString", ^{
             geocoder.addressString should be_nil;
+        });
+    });
+
+    describe(@"reverseGeocodeLocation:completionHandler:", ^{
+        beforeEach(^{
+            [geocoder reverseGeocodeLocation:location completionHandler:nil];
+        });
+
+        it(@"should start geocoding", ^{
+            geocoder.geocoding should be_truthy;
+        });
+
+        it(@"should set location to the specified location", ^{
+            geocoder.location should equal(location);
         });
     });
 
@@ -137,6 +152,8 @@ describe(@"CLGeocoder Spec extension", ^{
             });
         });
     });
+
+
 });
 
 SPEC_END
