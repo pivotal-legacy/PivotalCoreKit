@@ -12,6 +12,7 @@
     }
 
     if (indexPath != nil) {
+        [tableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
         [tableView.delegate tableView:tableView didSelectRowAtIndexPath:indexPath];
     }
 }
