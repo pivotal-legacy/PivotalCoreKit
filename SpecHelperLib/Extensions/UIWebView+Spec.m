@@ -237,3 +237,5 @@ static char ASSOCIATED_ATTRIBUTES_KEY;
 }
 
 @end
+
+#pragma clang diagnostic pop
