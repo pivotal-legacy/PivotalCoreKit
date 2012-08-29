@@ -263,6 +263,24 @@ describe(@"UIWebView (spec extensions)", ^{
         });
     });
 
+    describe(@"scalesPageToFit", ^{
+        it(@"should not blow up", ^{
+            [webView scalesPageToFit];
+        });
+
+        it(@"should return the truth", ^{
+            [webView scalesPageToFit] should equal(NO);
+            [webView setScalesPageToFit:YES];
+            [webView scalesPageToFit] should equal(YES);
+        });
+    });
+
+    describe(@"setScalesPageToFit:", ^{
+        it(@"should not blow up", ^{
+            [webView setScalesPageToFit:YES];
+        });
+    });
+
     describe(@"frame", ^{
         it(@"should not blow up", ^{
             [webView frame];
