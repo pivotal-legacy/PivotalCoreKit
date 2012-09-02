@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		6696DFB91266DE5800111E23 /* UIWebView+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6696DFB81266DE5800111E23 /* UIWebView+Spec.m */; };
 		6696DFC81266DE8500111E23 /* libCedar-StaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE138A9411E3FFD6004E825D /* libCedar-StaticLib.a */; };
-		6696DFC91266DE8D00111E23 /* libOCMock-StaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE138A7D11E3FFC7004E825D /* libOCMock-StaticLib.a */; };
 		6696E0011266E09800111E23 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6696E0001266E09800111E23 /* main.m */; };
 		6696E0321266E36E00111E23 /* UIWebViewSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6696E0311266E36E00111E23 /* UIWebViewSpec+Spec.mm */; };
 		6696E04A1266E6B900111E23 /* UIWebView+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6696DFB81266DE5800111E23 /* UIWebView+Spec.m */; };
@@ -32,7 +31,6 @@
 		66C4D69C123DA5CB00CF9746 /* PCKXMLParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C4D698123DA5CB00CF9746 /* PCKXMLParserDelegate.m */; };
 		AE05D76014573D8A0044D97B /* NSURLConnectionDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = AE05D75F14573D8A0044D97B /* NSURLConnectionDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE0D690A13E8B8BC0048039A /* FixturesHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0D690913E8B8BC0048039A /* FixturesHelper.m */; };
-		AE138ACF11E400D2004E825D /* OCMock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE138A7911E3FFC7004E825D /* OCMock.framework */; };
 		AE138CB811E4F504004E825D /* Cedar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE138A9011E3FFD6004E825D /* Cedar.framework */; };
 		AE138E7411E542F1004E825D /* PCKHTTPInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = AECC4BF511C6E38D0027AB1B /* PCKHTTPInterface.m */; };
 		AE138E7511E542F1004E825D /* NSString+PivotalCore.m in Sources */ = {isa = PBXBuildFile; fileRef = AE71481911CAAD4F00672114 /* NSString+PivotalCore.m */; };
@@ -150,34 +148,6 @@
 			remoteGlobalIDString = AEEE222811DC2B0600029872;
 			remoteInfo = "Cedar-StaticLib";
 		};
-		6696DFCF1266DEB100111E23 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AE138A6E11E3FFC7004E825D /* OCMock.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 508C285E119042C300E392B9;
-			remoteInfo = "OCMock-StaticLib";
-		};
-		AE138A7811E3FFC7004E825D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AE138A6E11E3FFC7004E825D /* OCMock.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 8DC2EF5B0486A6940098B216;
-			remoteInfo = OCMock;
-		};
-		AE138A7A11E3FFC7004E825D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AE138A6E11E3FFC7004E825D /* OCMock.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 03BF2D3708F1C69500978C59;
-			remoteInfo = OCMockTests;
-		};
-		AE138A7C11E3FFC7004E825D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AE138A6E11E3FFC7004E825D /* OCMock.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 508C285F119042C300E392B9;
-			remoteInfo = "OCMock-StaticLib";
-		};
 		AE138A8F11E3FFD6004E825D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AE138A8011E3FFD6004E825D /* Cedar.xcodeproj */;
@@ -212,13 +182,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = AEEE1FB511DC271300029872;
 			remoteInfo = Cedar;
-		};
-		AE138A9D11E3FFE5004E825D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AE138A6E11E3FFC7004E825D /* OCMock.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
-			remoteInfo = OCMock;
 		};
 		AE38A5651486B46D0016B266 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -291,7 +254,6 @@
 		66C4D698123DA5CB00CF9746 /* PCKXMLParserDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCKXMLParserDelegate.m; sourceTree = "<group>"; };
 		AE05D75F14573D8A0044D97B /* NSURLConnectionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSURLConnectionDelegate.h; sourceTree = "<group>"; };
 		AE0D690913E8B8BC0048039A /* FixturesHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FixturesHelper.m; sourceTree = "<group>"; };
-		AE138A6E11E3FFC7004E825D /* OCMock.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OCMock.xcodeproj; path = OCMock/Source/OCMock.xcodeproj; sourceTree = "<group>"; };
 		AE138A8011E3FFD6004E825D /* Cedar.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Cedar.xcodeproj; path = Cedar/Cedar.xcodeproj; sourceTree = "<group>"; };
 		AE138AEA11E40674004E825D /* Rakefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Rakefile; sourceTree = "<group>"; };
 		AE138E7011E542BF004E825D /* libPivotalCoreKit-StaticLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPivotalCoreKit-StaticLib.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -403,7 +365,6 @@
 				AE7C4C3B15CC7437009E127E /* CoreLocation.framework in Frameworks */,
 				AEE066A8152B6BAD009289FE /* libPivotalUICoreKit-StaticLib.a in Frameworks */,
 				6696DFC81266DE8500111E23 /* libCedar-StaticLib.a in Frameworks */,
-				6696DFC91266DE8D00111E23 /* libOCMock-StaticLib.a in Frameworks */,
 				AEBB634F152BB6BF00CC7A9F /* CoreText.framework in Frameworks */,
 				AEBB6351152BB77A00CC7A9F /* CoreGraphics.framework in Frameworks */,
 			);
@@ -421,7 +382,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE24D5B0138170CD00E4420A /* Foundation.framework in Frameworks */,
-				AE138ACF11E400D2004E825D /* OCMock.framework in Frameworks */,
 				AEF15ACF11C97EDE005B4F92 /* PivotalCoreKit.framework in Frameworks */,
 				AEF15B0911C98072005B4F92 /* PivotalSpecHelperKit.framework in Frameworks */,
 				AE138CB811E4F504004E825D /* Cedar.framework in Frameworks */,
@@ -539,19 +499,8 @@
 			isa = PBXGroup;
 			children = (
 				AE138A8011E3FFD6004E825D /* Cedar.xcodeproj */,
-				AE138A6E11E3FFC7004E825D /* OCMock.xcodeproj */,
 			);
 			path = Externals;
-			sourceTree = "<group>";
-		};
-		AE138A6F11E3FFC7004E825D /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				AE138A7911E3FFC7004E825D /* OCMock.framework */,
-				AE138A7B11E3FFC7004E825D /* OCMockTests.octest */,
-				AE138A7D11E3FFC7004E825D /* libOCMock-StaticLib.a */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		AE138A8111E3FFD6004E825D /* Products */ = {
@@ -931,7 +880,6 @@
 			dependencies = (
 				AEE066A7152B6BA6009289FE /* PBXTargetDependency */,
 				6696DFCC1266DEA700111E23 /* PBXTargetDependency */,
-				6696DFD01266DEB100111E23 /* PBXTargetDependency */,
 			);
 			name = UISpec;
 			productName = UISpec;
@@ -983,7 +931,6 @@
 				AEF15ACE11C97ED1005B4F92 /* PBXTargetDependency */,
 				AEF15B1511C9809B005B4F92 /* PBXTargetDependency */,
 				AE138A9C11E3FFE2004E825D /* PBXTargetDependency */,
-				AE138A9E11E3FFE5004E825D /* PBXTargetDependency */,
 			);
 			name = Spec;
 			productName = Spec;
@@ -1069,10 +1016,6 @@
 					ProductGroup = AE138A8111E3FFD6004E825D /* Products */;
 					ProjectRef = AE138A8011E3FFD6004E825D /* Cedar.xcodeproj */;
 				},
-				{
-					ProductGroup = AE138A6F11E3FFC7004E825D /* Products */;
-					ProjectRef = AE138A6E11E3FFC7004E825D /* OCMock.xcodeproj */;
-				},
 			);
 			projectRoot = "";
 			targets = (
@@ -1088,27 +1031,6 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		AE138A7911E3FFC7004E825D /* OCMock.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = OCMock.framework;
-			remoteRef = AE138A7811E3FFC7004E825D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		AE138A7B11E3FFC7004E825D /* OCMockTests.octest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = OCMockTests.octest;
-			remoteRef = AE138A7A11E3FFC7004E825D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		AE138A7D11E3FFC7004E825D /* libOCMock-StaticLib.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libOCMock-StaticLib.a";
-			remoteRef = AE138A7C11E3FFC7004E825D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		AE138A9011E3FFD6004E825D /* Cedar.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -1332,20 +1254,10 @@
 			name = "Cedar-StaticLib";
 			targetProxy = 6696DFCB1266DEA700111E23 /* PBXContainerItemProxy */;
 		};
-		6696DFD01266DEB100111E23 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "OCMock-StaticLib";
-			targetProxy = 6696DFCF1266DEB100111E23 /* PBXContainerItemProxy */;
-		};
 		AE138A9C11E3FFE2004E825D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Cedar;
 			targetProxy = AE138A9B11E3FFE2004E825D /* PBXContainerItemProxy */;
-		};
-		AE138A9E11E3FFE5004E825D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = OCMock;
-			targetProxy = AE138A9D11E3FFE5004E825D /* PBXContainerItemProxy */;
 		};
 		AEE066A7152B6BA6009289FE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1420,11 +1332,7 @@
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_MISSING_NEWLINE = NO;
-				HEADER_SEARCH_PATHS = (
-					"$SRCROOT/Externals/OCMock/**",
-					"$SRCROOT/Externals/OCHamcrest/**",
-					"$SRCROOT/Externals/Cedar/**",
-				);
+				HEADER_SEARCH_PATHS = "$SRCROOT/Externals/Cedar/**";
 				INFOPLIST_FILE = "UISpec-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				ONLY_ACTIVE_ARCH = YES;
@@ -1456,11 +1364,7 @@
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_MISSING_NEWLINE = NO;
-				HEADER_SEARCH_PATHS = (
-					"$SRCROOT/Externals/OCMock/**",
-					"$SRCROOT/Externals/OCHamcrest/**",
-					"$SRCROOT/Externals/Cedar/**",
-				);
+				HEADER_SEARCH_PATHS = "$SRCROOT/Externals/Cedar/**";
 				INFOPLIST_FILE = "UISpec-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				ONLY_ACTIVE_ARCH = YES;
@@ -1595,7 +1499,6 @@
 				GCC_PREPROCESSOR_DEFINITIONS = "FIXTURESDIR=\\\"$(SRCROOT)/Spec/Fixtures\\\"";
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INSTALL_PATH = /usr/local/bin;
-				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = Spec;
 			};
@@ -1619,7 +1522,6 @@
 				GCC_PREPROCESSOR_DEFINITIONS = "FIXTURESDIR=\\\"$(SRCROOT)/Spec/Fixtures\\\"";
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INSTALL_PATH = /usr/local/bin;
-				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = Spec;
 				ZERO_LINK = NO;
@@ -1727,7 +1629,6 @@
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "PivotalCoreKit-Info.plist";
 				INSTALL_PATH = "$(HOME)/Library/Frameworks";
-				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"-framework",
 					Foundation,

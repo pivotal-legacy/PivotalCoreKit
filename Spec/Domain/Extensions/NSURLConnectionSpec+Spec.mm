@@ -1,9 +1,9 @@
 #import <Cedar/SpecHelper.h>
-#import <OCMock/OCMock.h>
 
 #import "NSURLConnection+Spec.h"
 #import "PSHKFakeHTTPURLResponse.h"
 #import "NSURLConnectionDelegate.h"
+#import "FakeConnectionDelegate.h"
 
 @interface SelfReferentialConnection : NSURLConnection
 @end
@@ -18,16 +18,17 @@
 
 
 using namespace Cedar::Matchers;
+using namespace Cedar::Doubles;
 
 SPEC_BEGIN(NSURLConnectionSpec_Spec)
 
 describe(@"NSURLConnection (spec extensions)", ^{
     __block NSURLRequest *request;
-    __block id mockDelegate;
+    __block FakeConnectionDelegate *delegate;
     __block NSURLConnection *connection;
 
     beforeEach(^{
-        mockDelegate = [OCMockObject niceMockForProtocol:@protocol(NSURLConnectionDataDelegate)];
+        delegate = [[[FakeConnectionDelegate alloc] init] autorelease];
         NSURL *url = [NSURL URLWithString:@"http://example.com"];
         request = [NSURLRequest requestWithURL:url];
 
@@ -36,7 +37,7 @@ describe(@"NSURLConnection (spec extensions)", ^{
         // id<NSURLDownloadDelegate> while the type of the NSURLConnection delegate argument is id.  The
         // compiler sees these as ambiguous methods with different arguments, so emits a warning.  Explicitly
         // cast the result of the alloc to NSURLConnection * to quiet the compiler.
-        connection = [(NSURLConnection *)[NSURLConnection alloc] initWithRequest:request delegate:mockDelegate];
+        connection = [(NSURLConnection *)[NSURLConnection alloc] initWithRequest:request delegate:delegate];
     });
 
     afterEach(^{
@@ -75,7 +76,7 @@ describe(@"NSURLConnection (spec extensions)", ^{
 
         describe(@"when the delegate is not self", ^{
             it(@"should retain the delegate", ^{
-                expect([mockDelegate retainCount]).to(equal(2));
+                expect([delegate retainCount]).to(equal(2));
             });
         });
     });
@@ -104,7 +105,7 @@ describe(@"NSURLConnection (spec extensions)", ^{
 
         describe(@"when the delegate is not self", ^{
             it(@"should release the delegate", ^{
-                expect([mockDelegate retainCount]).to(equal(1));
+                expect([delegate retainCount]).to(equal(1));
             });
         });
     });
@@ -128,9 +129,9 @@ describe(@"NSURLConnection (spec extensions)", ^{
         });
 
         it(@"should send the response to the delegate", ^{
-            [[mockDelegate expect] connection:connection didReceiveResponse:response];
+            spy_on(delegate);
             [connection receiveResponse:response];
-            [mockDelegate verify];
+            delegate should have_received("connection:didReceiveResponse:").with(connection).and_with(response);
         });
 
         it(@"should remove the connection from the global list of connections", ^{
@@ -140,20 +141,17 @@ describe(@"NSURLConnection (spec extensions)", ^{
         });
 
         it(@"should not call subsequent delegate methods if cancelled", ^{
-            id mockDelegate = [OCMockObject mockForProtocol:@protocol(NSURLConnectionDataDelegate)];
+            spy_on(delegate);
 
-            NSURLConnection * myConnection = [(NSURLConnection *)[NSURLConnection alloc] initWithRequest:request delegate:mockDelegate];
-
-            [[[mockDelegate expect] andDo:^(NSInvocation * inv){
+            delegate stub_method("connection:didReceiveResponse:").and_do(^(NSInvocation * inv) {
                 NSURLConnection * theConnection;
                 [inv getArgument:&theConnection atIndex:2];
                 [theConnection cancel];
-            }] connection:myConnection didReceiveResponse:response];
+            });
 
-            [myConnection release];
-            [myConnection receiveResponse:response];
+            [connection receiveResponse:response];
 
-            [mockDelegate verify];
+            delegate should_not have_received("connection:didReceiveData:");
         });
     });
 
@@ -165,9 +163,10 @@ describe(@"NSURLConnection (spec extensions)", ^{
         });
 
         it(@"should send the error to the delegate", ^{
-            [[mockDelegate expect] connection:connection didFailWithError:error];
+            spy_on(delegate);
             [connection failWithError:error];
-            [mockDelegate verify];
+
+            delegate should have_received("connection:didFailWithError:").with(connection).and_with(error);
         });
 
         it(@"should remove the connection from the global list of connections", ^{

@@ -1,5 +1,4 @@
 #import <Cedar/SpecHelper.h>
-#import <OCMock/OCMock.h>
 
 #import "NSObject+Mocking.h"
 
@@ -42,7 +41,7 @@ describe(@"Stubbing the return value of a class method", ^{
     it(@"should return the specified object value when the stubbed method is called", ^{
         NSString * expectedValue = @"This is the stubbed return value";
         [MyClass stub:@selector(aClassMethod) andReturn:expectedValue];
-        
+
         NSString *classMethodResult = [MyClass aClassMethod];
         expect(classMethodResult).to(be_same_instance_as(expectedValue));
     });
@@ -55,7 +54,7 @@ describe(@"Stubbing the return value of a class method", ^{
 
         NSString *classMethodResult = [MyClass aClassMethod];
         expect(classMethodResult).to(be_same_instance_as(expectedValue1));
-        
+
         classMethodResult = [MyClass aDifferentClassMethod];
         expect(classMethodResult).to(be_same_instance_as(expectedValue2));
     });

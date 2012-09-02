@@ -1,5 +1,4 @@
 #import <Cedar/SpecHelper.h>
-#import <OCMock/OCMock.h>
 
 #import "NSString+PivotalCore.h"
 
