@@ -3,7 +3,7 @@
 
 @class PCKHTTPInterface;
 
-@interface PCKHTTPConnectionOperation : NSOperation <NSURLConnectionDelegate>
+@interface PCKHTTPConnectionOperation : NSOperation <NSURLConnectionDataDelegate>
 
 - (id)initWithHTTPInterface:(PCKHTTPInterface *)interface forRequest:(NSURLRequest *)request andDelegate:(id<NSURLConnectionDelegate>)delegate;
 

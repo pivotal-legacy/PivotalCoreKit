@@ -3,7 +3,7 @@
 
 @class PCKHTTPInterface;
 
-@interface PCKHTTPConnectionDelegate : NSObject <NSURLConnectionDelegate>
+@interface PCKHTTPConnectionDelegate : NSObject <NSURLConnectionDataDelegate>
 
 @property (nonatomic, retain) id<NSURLConnectionDelegate> delegate;
 @property (nonatomic, assign) PCKHTTPInterface *interface;
