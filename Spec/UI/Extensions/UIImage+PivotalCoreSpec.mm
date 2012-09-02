@@ -1,6 +1,5 @@
 #import "UISpecHelper.h"
 #import "UIImage+PivotalCore.h"
-#import "OCMock.h"
 
 using namespace Cedar::Matchers;
 

@@ -1,5 +1,4 @@
 #import <Cedar/SpecHelper.h>
-#import <OCMock/OCMock.h>
 
 #import "PivotalSpecHelperKit.h"
 #import "PCKHTTPConnection.h"
@@ -7,13 +6,14 @@
 #import "FakeConnectionDelegate.h"
 
 using namespace Cedar::Matchers;
+using namespace Cedar::Doubles;
 
 SPEC_BEGIN(PCKHTTPConnectionSpec)
 
 describe(@"PCKHTTPConnection", ^{
     __block PCKHTTPConnection *connection;
-    __block id mockInterface;
-    __block id mockRequest;
+    __block PCKHTTPInterface<CedarDouble> *fakeInterface;
+    __block NSURLRequest<CedarDouble> *fakeRequest;
     __block FakeConnectionDelegate *delegate;
 
     __block NSAutoreleasePool *pool;
@@ -21,10 +21,10 @@ describe(@"PCKHTTPConnection", ^{
     beforeEach(^{
         pool = [[NSAutoreleasePool alloc] init];
 
-        mockInterface = [OCMockObject niceMockForClass:[PCKHTTPInterface class]];
-        mockRequest = [OCMockObject niceMockForClass:[NSURLRequest class]];
+        fakeInterface = fake_for([PCKHTTPInterface class]);
+        fakeRequest = fake_for([NSURLRequest class]);
         delegate = [[FakeConnectionDelegate alloc] init];
-        connection = [[PCKHTTPConnection alloc] initWithHTTPInterface:mockInterface forRequest:mockRequest andDelegate:delegate];
+        connection = [[PCKHTTPConnection alloc] initWithHTTPInterface:fakeInterface forRequest:fakeRequest andDelegate:delegate];
 
         // We're testing the retainCounts for connection objects here, so remove
         // the connection we create from the containers that we've created for
