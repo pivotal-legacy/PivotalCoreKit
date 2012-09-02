@@ -20,6 +20,10 @@
 #endif
 //NSURLConnectionDataDelegate and NSURLConnectionDownloadDelegate only exist in iOS5 and must be declared for 10.6 and 10.7
 
+// But not 10.8
+
+#if __MAC_OS_X_VERSION_MAX_ALLOWED < 1080
+
 @protocol NSURLConnectionDataDelegate <NSURLConnectionDelegate>
 @optional
 - (NSURLRequest *)connection:(NSURLConnection *)connection willSendRequest:(NSURLRequest *)request redirectResponse:(NSURLResponse *)response;
@@ -46,4 +50,5 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite;
 - (void)connectionDidFinishDownloading:(NSURLConnection *)connection destinationURL:(NSURL *) destinationURL;
 @end
 
+#endif
 #endif
