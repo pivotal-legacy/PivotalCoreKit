@@ -58,6 +58,9 @@ static char CLGEOCODER_ATTRIBUTES_KEY;
 }
 
 - (void)cancelGeocode {
+    if (self.attributes.completionHandler) {
+        self.attributes.completionHandler(nil, [NSError errorWithDomain:@"Canceled" code:-1 userInfo:nil]);
+    }
     self.attributes.addressString = nil;
     self.attributes.completionHandler = nil;
     self.attributes.geocoding = NO;
