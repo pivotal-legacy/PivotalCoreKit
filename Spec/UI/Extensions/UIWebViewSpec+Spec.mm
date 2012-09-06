@@ -1,5 +1,4 @@
 #import "UISpecHelper.h"
-#import "OCMock.h"
 
 #import "AWebViewController.h"
 #import "UIWebView+Spec.h"
@@ -17,22 +16,12 @@ namespace Cedar { namespace Matchers {
 }}
 
 using namespace Cedar::Matchers;
+using namespace Cedar::Doubles;
 
 SPEC_BEGIN(UIWebViewSpec)
 
 describe(@"UIWebView (spec extensions)", ^{
-    typedef void (^AndDoBlock)(NSInvocation *);
-    AndDoBlock returnYes = ^(NSInvocation *invocation) {
-        BOOL yes = YES;
-        [invocation setReturnValue:&yes];
-    };
-
-    AndDoBlock returnNo = ^(NSInvocation *invocation) {
-        BOOL no = NO;
-        [invocation setReturnValue:&no];
-    };
-
-    __block id delegate;
+    __block id<UIWebViewDelegate, CedarDouble> delegate;
     __block UIWebView *webView;
 
     NSString *requestString = @"http://example.com/foo";
@@ -40,7 +29,7 @@ describe(@"UIWebView (spec extensions)", ^{
     __block NSURLRequest *request;
 
     beforeEach(^{
-        delegate = [OCMockObject niceMockForProtocol:@protocol(UIWebViewDelegate)];
+        delegate = nice_fake_for(@protocol(UIWebViewDelegate));
         webView = [[[UIWebView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)] autorelease];
         webView.delegate = delegate;
 
@@ -58,39 +47,32 @@ describe(@"UIWebView (spec extensions)", ^{
         });
 
         it(@"should send the webView:shouldStartLoadWithRequest:navigationType message to the delegate with the appropriate navigation type", ^{
-            [[delegate expect] webView:webView shouldStartLoadWithRequest:request navigationType:navigationType];
-
             executeOperation();
-
-            [delegate verify];
+            delegate should have_received("webView:shouldStartLoadWithRequest:navigationType:").with(webView).and_with(request).and_with(navigationType);
         });
 
         describe(@"if the delegate allows the request to load", ^{
             beforeEach(^{
-                [[[delegate stub] andDo:returnYes] webView:webView shouldStartLoadWithRequest:request navigationType:navigationType];
+                delegate stub_method("webView:shouldStartLoadWithRequest:navigationType:").and_return(YES);
+                executeOperation();
             });
 
             it(@"should have a pending request", ^{
-                executeOperation();
                 expect(webView.request).to(equal(request));
             });
 
             it(@"should mark the web view as loading", ^{
-                executeOperation();
                 expect(webView).to(be_loading());
             });
 
             it(@"should send the webViewDidStartLoad: message to the delegate", ^{
-                [[delegate expect] webViewDidStartLoad:webView];
-
-                executeOperation();
-                [delegate verify];
+                delegate should have_received("webViewDidStartLoad:").with(webView);
             });
         });
 
         describe(@"if the delegate does not allow the request to load", ^{
             beforeEach(^{
-                [[[delegate stub] andDo:returnNo] webView:webView shouldStartLoadWithRequest:request navigationType:navigationType];
+                delegate stub_method("webView:shouldStartLoadWithRequest:navigationType:").and_return(NO);
                 executeOperation();
             });
 
@@ -105,20 +87,15 @@ describe(@"UIWebView (spec extensions)", ^{
 
         describe(@"with a request already loading", ^{
             it(@"should throw an exception", ^{
-                @try {
-                    [[[delegate stub] andDo:returnYes] webView:webView shouldStartLoadWithRequest:request navigationType:navigationType];
-                    executeOperation();
-                    executeOperation();
-                } @catch (NSException *) {
-                    return;
-                }
-                fail(@"No exception!");
+                delegate stub_method("webView:shouldStartLoadWithRequest:navigationType:").and_return(YES);
+                executeOperation();
+                ^{ executeOperation(); } should raise_exception;
             });
         });
 
         describe(@"with a request that previously completed loading", ^{
             it(@"should succeed", ^{
-                [[[delegate stub] andDo:returnYes] webView:webView shouldStartLoadWithRequest:request navigationType:navigationType];
+                delegate stub_method("webView:shouldStartLoadWithRequest:navigationType:").and_return(YES);
                 executeOperation();
                 [webView finishLoad];
                 executeOperation();
@@ -149,9 +126,9 @@ describe(@"UIWebView (spec extensions)", ^{
 
         beforeEach(^{
             NSMutableDictionary *context = [SpecHelper specHelper].sharedExampleContext;
-            executeOperation = [^{
+            executeOperation = [[^{
                 [webView sendClickRequest:request];
-            } copy];
+            } copy] autorelease];
             [context setObject:executeOperation forKey:@"executeOperation"];
 
             UIWebViewNavigationType navigationType = UIWebViewNavigationTypeLinkClicked;
@@ -160,10 +137,6 @@ describe(@"UIWebView (spec extensions)", ^{
         });
 
         itShouldBehaveLike(@"an operation that loads a request");
-
-        afterEach(^{
-            [executeOperation release];
-        });
     });
 
     describe(@"finishLoad", ^{
@@ -173,35 +146,26 @@ describe(@"UIWebView (spec extensions)", ^{
             });
 
             it(@"should throw an exception", ^{
-                @try {
-                    [webView finishLoad];
-                } @catch (NSException *) {
-                    return;
-                }
-                fail(@"No exception!");
+                ^{ [webView finishLoad]; } should raise_exception;
             });
         });
 
         describe(@"with a loading request", ^{
             beforeEach(^{
-                [[[delegate stub] andDo:returnYes] webView:webView shouldStartLoadWithRequest:request navigationType:UIWebViewNavigationTypeOther];
+                delegate stub_method("webView:shouldStartLoadWithRequest:navigationType:").and_return(YES);
                 [webView loadRequest:request];
+                [webView finishLoad];
             });
 
             it(@"should send the webViewDidFinishLoad: message to the delegate", ^{
-                [[delegate expect] webViewDidFinishLoad:webView];
-
-                [webView finishLoad];
-                [delegate verify];
+                delegate should have_received("webViewDidFinishLoad:").with(webView);
             });
 
             it(@"should mark the web view as no longer loading", ^{
-                [webView finishLoad];
                 expect(webView).to_not(be_loading());
             });
 
             it(@"should maintain the loaded request", ^{
-                [webView finishLoad];
                 expect(webView.request).to(equal(request));
             });
         });
@@ -260,6 +224,24 @@ describe(@"UIWebView (spec extensions)", ^{
                 [webView stringByEvaluatingJavaScriptFromString:js];
                 expect(webView.executedJavaScripts).to(contain(js));
             });
+        });
+    });
+
+    describe(@"scalesPageToFit", ^{
+        it(@"should not blow up", ^{
+            [webView scalesPageToFit];
+        });
+
+        it(@"should return the truth", ^{
+            [webView scalesPageToFit] should equal(NO);
+            [webView setScalesPageToFit:YES];
+            [webView scalesPageToFit] should equal(YES);
+        });
+    });
+
+    describe(@"setScalesPageToFit:", ^{
+        it(@"should not blow up", ^{
+            [webView setScalesPageToFit:YES];
         });
     });
 

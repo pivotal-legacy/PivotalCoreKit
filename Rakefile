@@ -8,8 +8,18 @@ PUICK_STATIC_LIB_TARGET_NAME = "PivotalUICoreKit-StaticLib"
 PSHK_STATIC_LIB_TARGET_NAME = "PivotalSpecHelperKit-StaticLib"
 UI_SPECS_TARGET_NAME = "UISpec"
 
-SDK_DIR = "/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk"
+SDK_VERSION = "5.1"
+
 BUILD_DIR = File.join(File.dirname(__FILE__), "build")
+
+# Xcode 4.3 stores its /Developer inside /Applications/Xcode.app, Xcode 4.2 stored it in /Developer
+def xcode_developer_dir
+  `xcode-select -print-path`.strip
+end
+
+def sdk_dir
+  "#{xcode_developer_dir}/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator#{SDK_VERSION}.sdk"
+end
 
 def build_dir(effective_platform_name)
   File.join(BUILD_DIR, CONFIGURATION + effective_platform_name)
@@ -81,7 +91,7 @@ end
 
 task :build_uispecs do
   `osascript -e 'tell application "iPhone Simulator" to quit'`
-  system_or_exit(%Q[xcodebuild -project #{PROJECT_NAME}.xcodeproj -target #{UI_SPECS_TARGET_NAME} -configuration #{CONFIGURATION} ARCHS=i386 build], output_file("uispecs"))
+  system_or_exit(%Q[xcodebuild -project #{PROJECT_NAME}.xcodeproj -target #{UI_SPECS_TARGET_NAME} -configuration #{CONFIGURATION} ARCHS=i386 -sdk iphonesimulator build], output_file("uispecs"))
 end
 
 task :specs => :build_specs do
@@ -93,8 +103,8 @@ end
 
 require 'tmpdir'
 task :uispecs => :build_uispecs do
-  ENV["DYLD_ROOT_PATH"] = SDK_DIR
-  ENV["IPHONE_SIMULATOR_ROOT"] = SDK_DIR
+  ENV["DYLD_ROOT_PATH"] = sdk_dir
+  ENV["IPHONE_SIMULATOR_ROOT"] = sdk_dir
   ENV["CFFIXED_USER_HOME"] = Dir.tmpdir
   ENV["CEDAR_HEADLESS_SPECS"] = "1"
   ENV["CEDAR_REPORTER_CLASS"] = "CDRColorizedReporter"

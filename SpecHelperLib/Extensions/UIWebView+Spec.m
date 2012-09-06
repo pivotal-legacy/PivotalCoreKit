@@ -6,7 +6,7 @@
 @interface UIWebViewAttributes : NSObject
 @property (nonatomic, assign) id<UIWebViewDelegate> delegate;
 @property (nonatomic, retain) NSURLRequest *request;
-@property (nonatomic, assign) BOOL loading, logging, allowsInlineMediaPlayback;
+@property (nonatomic, assign) BOOL loading, logging, allowsInlineMediaPlayback, scalesPageToFit;
 @property (nonatomic, retain) NSMutableArray *javaScripts;
 @property (nonatomic, retain) NSMutableDictionary *returnValueBlocksByJavaScript;
 @property (nonatomic, retain) NSString *loadedHTMLString;
@@ -17,7 +17,7 @@
 @implementation UIWebViewAttributes
 @synthesize delegate = delegate_, request = request_, loading = loading_, logging = logging_,
     javaScripts = javaScripts_, returnValueBlocksByJavaScript = returnValueBlocksByJavaScript_,
-    loadedHTMLString = loadedHTMLString_, loadedBaseURL = loadedBaseURL_,
+    loadedHTMLString = loadedHTMLString_, loadedBaseURL = loadedBaseURL_, scalesPageToFit = _scalesPageToFit,
     allowsInlineMediaPlayback = allowsInlineMediaPlayback_, dataDetectorTypes = dataDetectorTypes_;
 
 - (id)init {
@@ -106,6 +106,14 @@ static char ASSOCIATED_ATTRIBUTES_KEY;
 
 - (void)setAllowsInlineMediaPlayback:(BOOL)allowed {
     self.attributes.allowsInlineMediaPlayback = allowed;
+}
+
+- (BOOL)scalesPageToFit {
+    return self.attributes.scalesPageToFit;
+}
+
+- (void)setScalesPageToFit:(BOOL)scalesPageToFit {
+    self.attributes.scalesPageToFit = scalesPageToFit;
 }
 
 - (void)setFrame:(CGRect)frame {
@@ -237,3 +245,5 @@ static char ASSOCIATED_ATTRIBUTES_KEY;
 }
 
 @end
+
+#pragma clang diagnostic pop

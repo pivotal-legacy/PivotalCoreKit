@@ -1,5 +1,4 @@
 #import <Cedar/SpecHelper.h>
-#import <OCMock/OCMock.h>
 
 #import "PivotalSpecHelperKit.h"
 #import "PCKHTTPConnectionOperation.h"
@@ -9,18 +8,17 @@
 SPEC_BEGIN(PCKHTTPConnectionOperationSpec)
 
 using namespace Cedar::Matchers;
+using namespace Cedar::Doubles;
 
 describe(@"PCKHTTPConnectionOperation", ^{
     __block PCKHTTPConnectionOperation *operation;
-    __block id mockInterface;
-    __block id mockRequest;
-    __block id delegate;
+    __block FakeConnectionDelegate *delegate;
 
     beforeEach(^{
-        mockInterface = [OCMockObject niceMockForClass:[PCKHTTPInterface class]];
-        mockRequest = [OCMockObject niceMockForClass:[NSURLRequest class]];
+        PCKHTTPInterface<CedarDouble> *interface = nice_fake_for([PCKHTTPInterface class]);
+        NSURLRequest<CedarDouble> *request = fake_for([NSURLRequest class]);
         delegate = [[[FakeConnectionDelegate alloc] init] autorelease];
-        operation = [[PCKHTTPConnectionOperation alloc] initWithHTTPInterface:mockInterface forRequest:mockRequest andDelegate:delegate];
+        operation = [[PCKHTTPConnectionOperation alloc] initWithHTTPInterface:interface forRequest:request andDelegate:delegate];
     });
 
     afterEach(^{
@@ -78,13 +76,12 @@ describe(@"PCKHTTPConnectionOperation", ^{
 
     describe(@"forwardInvocation:", ^{
         it(@"should forward any selector the delegate responds to to the delegate", ^{
-            SEL selector = @selector(connection:needNewBodyStream:);
-            expect([delegate respondsToSelector:selector]).to(be_truthy());
-            
-            id mockDelegate = [OCMockObject partialMockForObject:delegate];
-            [[mockDelegate expect] connection:nil needNewBodyStream:nil];
+            expect([delegate respondsToSelector:@selector(connection:needNewBodyStream:)]).to(be_truthy());
+
+            spy_on(delegate);
             [operation connection:nil needNewBodyStream:nil];
-            [mockDelegate verify];
+
+            delegate should have_received("connection:needNewBodyStream:");
         });
     });
 
@@ -93,7 +90,7 @@ describe(@"PCKHTTPConnectionOperation", ^{
 
         beforeEach(^{
             expect([NSURLConnection connections]).to(be_empty());
-            
+
             [operation start];
             connection = [[NSURLConnection connections] lastObject];
         });
@@ -114,37 +111,26 @@ describe(@"PCKHTTPConnectionOperation", ^{
             __block PSHKFakeHTTPURLResponse *response;
 
             beforeEach(^{
+                spy_on(delegate);
+
                 response = [[PSHKFakeResponses responsesForRequest:@"HelloWorld"] success];
+                [connection receiveResponse:response];
             });
 
             it(@"should forward connection events to the delegate", ^{
-                id mockDelegate = [OCMockObject partialMockForObject:delegate];
-                [[mockDelegate expect] connection:connection didReceiveResponse:[OCMArg any]];
-                [[mockDelegate expect] connection:connection didReceiveData:[response bodyData]];
-
-                expect([delegate respondsToSelector:@selector(connection:didReceiveResponse:)]).to(be_truthy());
-
-                [connection receiveResponse:response];
-
-                [mockDelegate verify];
+                delegate should have_received("connection:didReceiveResponse:").with(connection).and_with(response);
+                delegate should have_received("connection:didReceiveData:").with(connection).and_with(response.bodyData);
             });
 
             it(@"should complete the connection", ^{
-                id mockDelegate = [OCMockObject partialMockForObject:delegate];
-                [[mockDelegate expect] connectionDidFinishLoading:connection];
-
-                [connection receiveResponse:response];
-
-                [mockDelegate verify];
+                delegate should have_received("connectionDidFinishLoading:").with(connection);
             });
 
             it(@"should not be executing", ^{
-                [connection receiveResponse:response];
                 expect(operation.isExecuting).to_not(be_truthy());
             });
 
             it(@"should be finished", ^{
-                [connection receiveResponse:response];
                 expect(operation.isFinished).to(be_truthy());
             });
         });
@@ -153,16 +139,14 @@ describe(@"PCKHTTPConnectionOperation", ^{
             __block NSError *error;
 
             beforeEach(^{
+                spy_on(delegate);
+
                 error = [NSError errorWithDomain:@"domain" code:7 userInfo:nil];
+                [connection failWithError:error];
             });
 
             it(@"should forward the failure event to the delegate", ^{
-                id mockDelegate = [OCMockObject partialMockForObject:delegate];
-                [[mockDelegate expect] connection:connection didFailWithError:error];
-
-                [connection failWithError:error];
-
-                [mockDelegate verify];
+                delegate should have_received("connection:didFailWithError:").with(connection).and_with(error);
             });
 
             it(@"should not be executing", ^{

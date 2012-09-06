@@ -1,10 +1,10 @@
 #import <Cedar/SpecHelper.h>
-#import <OCMock/OCMock.h>
 
 #import "PCKHTTPConnectionDelegate.h"
 #import "FakeConnectionDelegate.h"
 
 using namespace Cedar::Matchers;
+using namespace Cedar::Doubles;
 
 SPEC_BEGIN(PCKHTTPConnectionDelegateSpec)
 
@@ -35,16 +35,13 @@ describe(@"PCKHTTPConnectionDelegate", ^{
 
     describe(@"forwardInvocation:", ^{
         it(@"should forward any selector the original delegate responds to to the original delegate", ^{
-            SEL selector = @selector(connection:needNewBodyStream:);
-            id connection = [OCMockObject mockForClass:[NSURLConnection class]];
+            expect([originalDelegate respondsToSelector:@selector(connection:needNewBodyStream:)]).to(be_truthy());
 
-            expect([originalDelegate respondsToSelector:selector]).to(be_truthy());
-            id mockDelegate = [OCMockObject partialMockForObject:originalDelegate];
-            [[mockDelegate expect] connection:connection needNewBodyStream:nil];
-
+            spy_on(originalDelegate);
+            NSURLConnection<CedarDouble> *connection = fake_for([NSURLConnection class]);
             [delegate connection:connection needNewBodyStream:nil];
 
-            [mockDelegate verify];
+            originalDelegate should have_received("connection:needNewBodyStream:");
         });
     });
 });
