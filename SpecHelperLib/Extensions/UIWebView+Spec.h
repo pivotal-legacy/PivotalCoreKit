@@ -13,5 +13,7 @@ typedef NSString *(^UIWebViewJavaScriptReturnBlock)();
 - (void)disableLogging;
 - (NSString *)loadedHTMLString;
 - (NSURL *)loadedBaseURL;
+- (void)setCanGoBack:(BOOL)canGoBack;
+- (void)setCanGoForward:(BOOL)canGoForward;
 
 @end
