@@ -6,7 +6,7 @@
 @interface UIWebViewAttributes : NSObject
 @property (nonatomic, assign) id<UIWebViewDelegate> delegate;
 @property (nonatomic, retain) NSURLRequest *request;
-@property (nonatomic, assign) BOOL loading, logging, allowsInlineMediaPlayback, scalesPageToFit;
+@property (nonatomic, assign) BOOL loading, logging, allowsInlineMediaPlayback, scalesPageToFit, canGoBack, canGoForward;
 @property (nonatomic, retain) NSMutableArray *javaScripts;
 @property (nonatomic, retain) NSMutableDictionary *returnValueBlocksByJavaScript;
 @property (nonatomic, retain) NSString *loadedHTMLString;
@@ -18,7 +18,8 @@
 @synthesize delegate = delegate_, request = request_, loading = loading_, logging = logging_,
     javaScripts = javaScripts_, returnValueBlocksByJavaScript = returnValueBlocksByJavaScript_,
     loadedHTMLString = loadedHTMLString_, loadedBaseURL = loadedBaseURL_, scalesPageToFit = _scalesPageToFit,
-    allowsInlineMediaPlayback = allowsInlineMediaPlayback_, dataDetectorTypes = dataDetectorTypes_;
+    allowsInlineMediaPlayback = allowsInlineMediaPlayback_, dataDetectorTypes = dataDetectorTypes_,
+    canGoBack = _canGoBack, canGoForward = _canGoForward;
 
 - (id)init {
     if (self = [super init]) {
@@ -76,6 +77,22 @@ static char ASSOCIATED_ATTRIBUTES_KEY;
 }
 
 #pragma mark Property overrides
+- (BOOL)canGoBack {
+    return self.attributes.canGoBack;
+}
+
+- (BOOL)canGoForward {
+    return self.attributes.canGoForward;
+}
+
+- (void)setCanGoBack:(BOOL)canGoBack {
+    self.attributes.canGoBack = canGoBack;
+}
+
+- (void)setCanGoForward:(BOOL)canGoForward {
+    self.attributes.canGoForward = canGoForward;
+}
+
 - (void)setDelegate:(id<UIWebViewDelegate>)delegate {
     self.attributes.delegate = delegate;
 }
