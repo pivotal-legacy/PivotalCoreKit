@@ -6,6 +6,7 @@
 - (id)initWithBase64EncodedData:(NSData *)data;
 - (NSString *)stringByCamelizing;
 - (BOOL)isBlank;
+- (BOOL)isValidEmailAddress;
 
 /*
  Overrides the framework version of stringbyAddingPercentEscapesUsingEncoding,

@@ -1,5 +1,4 @@
 #import <Cedar/SpecHelper.h>
-#import <OCMock/OCMock.h>
 
 #import "PCKHTTPInterface.h"
 #import "NSURLConnection+Spec.h"
@@ -42,18 +41,19 @@
 
 
 using namespace Cedar::Matchers;
+using namespace Cedar::Doubles;
 
 SPEC_BEGIN(PCKHTTPInterfaceSpec)
 
 describe(@"PCKHTTPInterface", ^{
     __block TestInterface *interface;
-    __block id mockDelegate;
+    __block id<NSURLConnectionDataDelegate, CedarDouble> delegate;
     __block NSURLConnection *connection;
     __block NSURLRequest *request;
 
     beforeEach(^{
         interface = [[TestInterface alloc] init];
-        mockDelegate = [OCMockObject mockForProtocol:@protocol(NSURLConnectionDataDelegate)];
+        delegate = nice_fake_for(@protocol(NSURLConnectionDataDelegate));
     });
 
     afterEach(^{
@@ -62,7 +62,7 @@ describe(@"PCKHTTPInterface", ^{
 
     describe(@"makeConnectionWithDelegate:", ^{
         beforeEach(^{
-            [interface makeConnectionWithDelegate:mockDelegate];
+            [interface makeConnectionWithDelegate:delegate];
 
             connection = [[NSURLConnection connections] lastObject];
             request = [connection request];
@@ -91,25 +91,26 @@ describe(@"PCKHTTPInterface", ^{
 
         describe(@"when called multiple times", ^{
             it(@"should cache the base URL", ^{
-                id interfaceStub = [OCMockObject partialMockForObject:interface];
-                [[[interfaceStub stub] andThrow:[NSException exceptionWithName:@"MockFailure" reason:@"I should not be called" userInfo:nil]] host];
-                [[[interfaceStub stub] andThrow:[NSException exceptionWithName:@"MockFailure" reason:@"I should not be called" userInfo:nil]] basePath];
-                [interface makeConnectionWithDelegate:mockDelegate];
+                spy_on(interface);
+                [interface makeConnectionWithDelegate:delegate];
+
+                interface should_not have_received("host");
+                interface should_not have_received("basePath");
             });
         });
 
         describe(@"on success", ^{
-            beforeEach(^{
-                PSHKFakeHTTPURLResponse *response = [[PSHKFakeResponses responsesForRequest:@"HelloWorld"] success];
-                [[mockDelegate expect] connection:connection didReceiveResponse:response];
-                [[mockDelegate expect] connection:connection didReceiveData:[[response body] dataUsingEncoding:NSUTF8StringEncoding]];
-                [[mockDelegate expect] connectionDidFinishLoading:connection];
+            __block PSHKFakeHTTPURLResponse *response;
 
+            beforeEach(^{
+                response = [[PSHKFakeResponses responsesForRequest:@"HelloWorld"] success];
                 [connection receiveResponse:response];
             });
 
             it(@"should pass along the success response and data, and notify the delegate when the request has completed", ^{
-                [mockDelegate verify];
+                delegate should have_received("connection:didReceiveResponse:").with(connection).and_with(response);
+                delegate should have_received("connection:didReceiveData:").with(connection).and_with(response.bodyData);
+                delegate should have_received("connectionDidFinishLoading:").with(connection);
             });
 
             it(@"should remove the connection from the active connections", ^{
@@ -119,10 +120,10 @@ describe(@"PCKHTTPInterface", ^{
 
         describe(@"on cancel", ^{
             it(@"should not notify the delegate that the connection completed (because it didn't)", ^{
-                [[[mockDelegate stub] andThrow:[NSException exceptionWithName:@"MockFailure" reason:@"I should not be called" userInfo:nil]] connection:connection didReceiveResponse:[OCMArg any]];
-                [[[mockDelegate stub] andThrow:[NSException exceptionWithName:@"MockFailure" reason:@"I should not be called" userInfo:nil]] connection:connection didFailWithError:[OCMArg any]];
-
                 [connection cancel];
+
+                delegate should_not have_received("connection:didReceiveResponse:");
+                delegate should_not have_received("connection:didFailWithError:");
             });
 
             it(@"should remove the connection from the active connections", ^{
@@ -140,46 +141,38 @@ describe(@"PCKHTTPInterface", ^{
 
         describe(@"on authentication challenge", ^{
             beforeEach(^{
-                [[mockDelegate expect] connection:connection didReceiveAuthenticationChallenge:[OCMArg any]];
                 NSURLCredential *credential = [NSURLCredential credentialWithUser:@"username" password:@"password" persistence:NSURLCredentialPersistenceNone];
-
                 [connection sendAuthenticationChallengeWithCredential:credential];
             });
 
             it(@"should request credentials from the delegate", ^{
-                [mockDelegate verify];
+                delegate should have_received("connection:didReceiveAuthenticationChallenge:").with(connection).and_with(Arguments::anything);
             });
 
             describe(@"when the client chooses to cancel the authentication challenge", ^{
                 beforeEach(^{
-                    id mockChallenge = [OCMockObject mockForClass:[NSURLAuthenticationChallenge class]];
-
-                    [[mockDelegate expect] connection:connection didCancelAuthenticationChallenge:mockChallenge];
-                    [[connection delegate] connection:connection didCancelAuthenticationChallenge:mockChallenge];
+                    NSURLAuthenticationChallenge<CedarDouble> *challenge = fake_for([NSURLAuthenticationChallenge class]);
+                    [connection.delegate connection:connection didCancelAuthenticationChallenge:challenge];
                 });
 
                 it(@"should remove the connection from the active connections", ^{
                     expect(interface.activeConnections).to_not(contain(connection));
                 });
-
-                it(@"should notify the connection delegate", ^{
-                    [mockDelegate verify];
-                });
             });
         });
 
         describe(@"on failure", ^{
-            beforeEach(^{
-                PSHKFakeHTTPURLResponse *response = [[PSHKFakeResponses responsesForRequest:@"HelloWorld"] badRequest];
-                [[mockDelegate expect] connection:connection didReceiveResponse:response];
-                [[mockDelegate stub] connection:connection didReceiveData:[OCMArg any]];
-                [[mockDelegate expect] connectionDidFinishLoading:connection];
+            __block PSHKFakeHTTPURLResponse *response;
 
+            beforeEach(^{
+                response = [[PSHKFakeResponses responsesForRequest:@"HelloWorld"] badRequest];
                 [connection receiveResponse:response];
             });
 
             it(@"should pass along the failure response, and notify the delegate when the request has completed", ^{
-                [mockDelegate verify];
+                delegate should have_received("connection:didReceiveResponse:").with(connection).and_with(response);
+                delegate should have_received("connection:didReceiveData:").with(connection).and_with(response.bodyData);
+                delegate should have_received("connectionDidFinishLoading:").with(connection);
             });
 
             it(@"should remove the connection from the active connections", ^{
@@ -188,15 +181,15 @@ describe(@"PCKHTTPInterface", ^{
         });
 
         describe(@"on connection error", ^{
-            beforeEach(^{
-                NSError *error = [NSError errorWithDomain:@"StoryAccepter" code:-1 userInfo:nil];
-                [[mockDelegate expect] connection:connection didFailWithError:error];
+            __block NSError *error;
 
-                [[connection delegate] connection:connection didFailWithError:error];
+            beforeEach(^{
+                error = [NSError errorWithDomain:@"StoryAccepter" code:-1 userInfo:nil];
+                [connection failWithError:error];
             });
 
             it(@"should notify the delegate of the error", ^{
-                [mockDelegate verify];
+                delegate should have_received("connection:didFailWithError:").with(connection).and_with(error);
             });
 
             it(@"should remove the connection from the active connections", ^{
@@ -207,7 +200,7 @@ describe(@"PCKHTTPInterface", ^{
 
     describe(@"makeSecureConnectionWithDelegate:", ^{
         beforeEach(^{
-            [interface makeSecureConnectionWithDelegate:mockDelegate];
+            [interface makeSecureConnectionWithDelegate:delegate];
             connection = [[NSURLConnection connections] lastObject];
             request = [connection request];
         });
@@ -220,7 +213,7 @@ describe(@"PCKHTTPInterface", ^{
     describe(@"makeConnectionWithHeaders:andDelegate:", ^{
         it(@"should include the specified headers in the request", ^{
             NSDictionary *headers = [NSDictionary dictionaryWithObjectsAndKeys:@"wibble", @"header1", nil];
-            NSURLConnection *connection = [interface makeConnectionWithHeaders:headers andDelegate:mockDelegate];
+            NSURLConnection *connection = [interface makeConnectionWithHeaders:headers andDelegate:delegate];
 
             expect([connection.request valueForHTTPHeaderField:@"header1"]).to(equal(@"wibble"));
         });
@@ -228,7 +221,7 @@ describe(@"PCKHTTPInterface", ^{
 
     describe(@"connectionForPath:secure:andDelegate:withRequestSetup:", ^{
         it(@"should set up the request as specified by the block", ^{
-            NSURLConnection *connection = [interface connectionForPath:@PATH secure:false andDelegate:mockDelegate withRequestSetup:^(NSMutableURLRequest *request) {
+            NSURLConnection *connection = [interface connectionForPath:@PATH secure:false andDelegate:delegate withRequestSetup:^(NSMutableURLRequest *request) {
                 request.HTTPMethod = @"POST";
             }];
 

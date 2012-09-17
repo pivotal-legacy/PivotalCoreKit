@@ -1,10 +1,9 @@
 #import "UISpecHelper.h"
-#import "OCMock.h"
 
 #import "UIAlertView+Spec.h"
 
 namespace Cedar { namespace Matchers {
-    class BeVisible : public Base {
+    class BeVisible : public Base<> {
     public:
         virtual NSString * failure_message_end() const { return @"be visible"; }
         template<typename T>
@@ -17,18 +16,19 @@ namespace Cedar { namespace Matchers {
 }}
 
 using namespace Cedar::Matchers;
+using namespace Cedar::Doubles;
 
 SPEC_BEGIN(UIAlertViewSpecExtensionsSpec)
 
 describe(@"UIAlertView (spec extensions)", ^{
     __block UIAlertView *alertView;
-    __block id mockDelegate;
+    __block id<UIAlertViewDelegate, CedarDouble> delegate;
 
     beforeEach(^{
-        mockDelegate = [OCMockObject niceMockForProtocol:@protocol(UIAlertViewDelegate)];
+        delegate = nice_fake_for(@protocol(UIAlertViewDelegate));
         alertView = [[[UIAlertView alloc] initWithTitle:@"Title"
                                                 message:@"Message"
-                                               delegate:mockDelegate
+                                               delegate:delegate
                                       cancelButtonTitle:@"Cancel"
                                       otherButtonTitles:@"OK", nil] autorelease];
     });
@@ -55,8 +55,7 @@ describe(@"UIAlertView (spec extensions)", ^{
 
             describe(@"when the alertView is subsequently dismissed", ^{
                 beforeEach(^{
-                    [alertView dismissWithClickedButtonIndex:alertView.cancelButtonIndex
-                                                   animated:NO];
+                    [alertView dismissWithClickedButtonIndex:alertView.cancelButtonIndex animated:NO];
                 });
 
                 it(@"should return nil", ^{
@@ -94,8 +93,7 @@ describe(@"UIAlertView (spec extensions)", ^{
 
             describe(@"when the UIAlertView class is subsequently dismissed", ^{
                 beforeEach(^{
-                    [alertView dismissWithClickedButtonIndex:alertView.cancelButtonIndex
-                                                   animated:NO];
+                    [alertView dismissWithClickedButtonIndex:alertView.cancelButtonIndex animated:NO];
                 });
 
                 it(@"should return NO", ^{
@@ -107,24 +105,26 @@ describe(@"UIAlertView (spec extensions)", ^{
 
     describe(@"forwarding callbacks", ^{
         describe(@"when the alertView is dismissed with the cancel button", ^{
-            it(@"should notify the delegate passing in the appropriate button", ^{
-                [[mockDelegate expect] alertView:alertView didDismissWithButtonIndex:alertView.cancelButtonIndex];
+            beforeEach(^{
+                [alertView dismissWithClickedButtonIndex:alertView.cancelButtonIndex animated:NO];
+            });
 
-                [alertView dismissWithClickedButtonIndex:alertView.cancelButtonIndex
-                                               animated:NO];
-
-                [mockDelegate verify];
+            it(@"should notify the delegate, passing in the appropriate button", ^{
+                delegate should have_received("alertView:clickedButtonAtIndex:").with(alertView).and_with(alertView.cancelButtonIndex);
+                delegate should have_received("alertView:willDismissWithButtonIndex:").with(alertView).and_with(alertView.cancelButtonIndex);
+                delegate should have_received("alertView:didDismissWithButtonIndex:").with(alertView).and_with(alertView.cancelButtonIndex);
             });
         });
 
         describe(@"when the alertView is dismissed with the other button", ^{
+            beforeEach(^{
+                [alertView dismissWithClickedButtonIndex:alertView.firstOtherButtonIndex animated:NO];
+            });
+
             it(@"should notify the delegate passing in the appropriate button", ^{
-                [[mockDelegate expect] alertView:alertView didDismissWithButtonIndex:alertView.firstOtherButtonIndex];
-
-                [alertView dismissWithClickedButtonIndex:alertView.firstOtherButtonIndex
-                                               animated:NO];
-
-                [mockDelegate verify];
+                delegate should have_received("alertView:clickedButtonAtIndex:").with(alertView).and_with(alertView.firstOtherButtonIndex);
+                delegate should have_received("alertView:willDismissWithButtonIndex:").with(alertView).and_with(alertView.firstOtherButtonIndex);
+                delegate should have_received("alertView:didDismissWithButtonIndex:").with(alertView).and_with(alertView.firstOtherButtonIndex);
             });
         });
     });

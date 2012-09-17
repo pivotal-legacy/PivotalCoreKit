@@ -1,5 +1,8 @@
 #import "UIImage+PivotalCore.h"
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wobjc-protocol-method-implementation"
+
 @implementation UIImage (PivotalCore)
 
 - (CGFloat)aspectRatio {
@@ -169,3 +172,5 @@
 }
 
 @end
+
+#pragma clang diagnostic pop

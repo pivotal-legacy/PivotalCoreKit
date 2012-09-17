@@ -1,5 +1,4 @@
 #import <Cedar/SpecHelper.h>
-#import <OCMock/OCMock.h>
 
 #import "NSString+PivotalCore.h"
 
@@ -161,6 +160,29 @@ describe(@"Pivotal Core extensions to NSString", ^{
         });
     });
 
+    describe(@"isValidEmailAddress", ^{
+        __block NSString *emailAddress;
+
+        context(@"with a valid email address", ^{
+            beforeEach(^{
+                emailAddress = @"foo@example.com";
+            });
+
+            it(@"should be true", ^{
+                [emailAddress isValidEmailAddress] should be_truthy;
+            });
+        });
+
+        context(@"with an invalid email address", ^{
+            beforeEach(^{
+                emailAddress = @"foo@example";
+            });
+
+            it(@"should be false", ^{
+                [emailAddress isValidEmailAddress] should_not be_truthy;
+            });
+        });
+    });
 });
 
 SPEC_END

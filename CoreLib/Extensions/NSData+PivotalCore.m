@@ -18,4 +18,21 @@
     return [self initWithBytes:digest length:CC_SHA1_DIGEST_LENGTH];
 }
 
+- (NSString *)hexadecimalString {
+    const unsigned char *dataBuffer = (const unsigned char *)[self bytes];
+
+    if (!dataBuffer) {
+        return [NSString string];
+    }
+
+    NSUInteger dataLength = [self length];
+    NSMutableString *hexString = [NSMutableString stringWithCapacity:(dataLength * 2)];
+
+    for (int i = 0; i < dataLength; ++i) {
+        [hexString appendString:[NSString stringWithFormat:@"%02x", dataBuffer[i]]];
+    }
+
+    return [NSString stringWithString:hexString];
+}
+
 @end
