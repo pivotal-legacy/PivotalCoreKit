@@ -1409,7 +1409,7 @@
 				PRODUCT_NAME = "PivotalCoreKit-StaticLib";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				VALID_ARCHS = "armv7 armv7s";
+				VALID_ARCHS = "armv7 armv7s i386";
 			};
 			name = Debug;
 		};
@@ -1431,7 +1431,7 @@
 				PRODUCT_NAME = "PivotalCoreKit-StaticLib";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				VALID_ARCHS = "armv7 armv7s";
+				VALID_ARCHS = "armv7 armv7s i386";
 				ZERO_LINK = NO;
 			};
 			name = Release;
