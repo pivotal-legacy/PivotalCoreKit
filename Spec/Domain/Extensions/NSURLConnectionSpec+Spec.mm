@@ -175,6 +175,36 @@ describe(@"NSURLConnection (spec extensions)", ^{
             expect([NSURLConnection connections]).to_not(contain(connection));
         });
     });
+    
+    describe(@"failWithError:data:", ^{
+        __block NSError *error;
+        __block NSData *data;
+        
+        beforeEach(^{
+            error = [NSError errorWithDomain:@"domain" code:8 userInfo:nil];
+            data = [@"error info" dataUsingEncoding:NSUTF8StringEncoding];
+        });
+        
+        it(@"should send the error to the delegate", ^{
+            spy_on(delegate);
+            [connection failWithError:error data:data];
+            
+            delegate should have_received("connection:didFailWithError:").with(connection).and_with(error);
+        });
+        
+        it(@"should send the data to the delegate", ^{
+            spy_on(delegate);
+            [connection failWithError:error data:data];
+            
+            delegate should have_received("connection:didReceiveData:").with(connection).and_with(data);
+        });
+        
+        it(@"should remove the connection from the global list of connections", ^{
+            expect([NSURLConnection connections]).to(contain(connection));
+            [connection failWithError:error];
+            expect([NSURLConnection connections]).to_not(contain(connection));
+        });
+    });
 });
 
 SPEC_END
