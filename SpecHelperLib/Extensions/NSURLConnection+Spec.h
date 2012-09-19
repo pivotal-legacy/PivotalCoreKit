@@ -16,6 +16,7 @@
 
 - (void)receiveResponse:(PSHKFakeHTTPURLResponse *)response;
 - (void)failWithError:(NSError *)error;
+- (void)failWithError:(NSError *)error data:(NSData *)data;
 - (void)sendAuthenticationChallengeWithCredential:(NSURLCredential *)credential;
 
 @end

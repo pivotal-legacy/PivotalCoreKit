@@ -99,6 +99,15 @@ static NSMutableArray *connections__;
     [connections__ removeObject:self];
 }
 
+- (void)failWithError:(NSError *)error data:(NSData *)data {
+    if ([connections__ containsObject:self] && [self.delegate respondsToSelector:@selector(connection:didReceiveData:)]) {
+        [self.delegate connection:self didReceiveData:data];
+    }
+
+    [[self delegate] connection:self didFailWithError:error];
+    [connections__ removeObject:self];
+}
+
 - (void)sendAuthenticationChallengeWithCredential:(NSURLCredential *)credential {
     NSURLProtectionSpace *protectionSpace = [[[NSURLProtectionSpace alloc] initWithHost:@"www.example.com"
                                                                                    port:0
