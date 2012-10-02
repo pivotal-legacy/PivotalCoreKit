@@ -15,6 +15,9 @@ typedef void (^RequestSetupBlock)(NSMutableURLRequest *);
 - (NSURLConnection *)connectionForPath:(NSString *)path secure:(BOOL)secure andDelegate:(id<NSURLConnectionDelegate>)delegate;
 - (NSURLConnection *)connectionForPath:(NSString *)path secure:(BOOL)secure andDelegate:(id<NSURLConnectionDelegate>)delegate withRequestSetup:(RequestSetupBlock)requestSetup;
 
+- (NSMutableURLRequest *)requestForPath:(NSString *)path secure:(BOOL)secure;
+- (NSURLConnection *)connectionForRequest:(NSURLRequest *)request delegate:(id<NSURLConnectionDelegate>)delegate;
+
 @end
 
 @interface PCKHTTPInterface (SubclassDelegation)
