@@ -228,6 +228,67 @@ describe(@"PCKHTTPInterface", ^{
             expect(connection.request.HTTPMethod).to(equal(@"POST"));
         });
     });
+
+    describe(@"requestForPath:secure:", ^{
+        context(@"when secure", ^{
+            beforeEach(^{
+                request = [interface requestForPath:@PATH secure:YES];
+            });
+
+            it(@"should generate the target URI from the subclass-specific host and base path, along with the specified path", ^{
+                expect(request.URL.host).to(equal(@HOST));
+                expect(request.URL.path).to(equal(@BASE_PATH PATH));
+            });
+
+            it(@"should use the GET method", ^{
+                expect(request.HTTPMethod).to(equal(@"GET"));
+            });
+
+            it(@"should use SSL", ^{
+                expect(request.URL.scheme).to(equal(@"https"));
+            });
+        });
+
+        context(@"when not secure", ^{
+            beforeEach(^{
+                request = [interface requestForPath:@PATH secure:NO];
+            });
+
+            it(@"should generate the target URI from the subclass-specific host and base path, along with the specified path", ^{
+                expect(request.URL.host).to(equal(@HOST));
+                expect(request.URL.path).to(equal(@BASE_PATH PATH));
+            });
+
+            it(@"should use the GET method", ^{
+                expect(request.HTTPMethod).to(equal(@"GET"));
+            });
+
+            it(@"should not use SSL", ^{
+                expect(request.URL.scheme).to(equal(@"http"));
+            });
+        });
+    });
+
+    describe(@"connectionForRequest:delegate:", ^{
+        __block NSURLRequest *request;
+
+        beforeEach(^{
+            request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://example.com"]];
+            connection = [interface connectionForRequest:request delegate:nil];
+        });
+
+        it(@"should send one HTTP request", ^{
+            expect([NSURLConnection connections].count).to(equal(1));
+        });
+
+        it(@"should use the specified request object", ^{
+            expect(connection.request).to(equal(request));
+        });
+
+        it(@"should add the new connection to the active connections", ^{
+            expect(interface.activeConnections).to(contain(connection));
+        });
+    });
 });
 
 SPEC_END

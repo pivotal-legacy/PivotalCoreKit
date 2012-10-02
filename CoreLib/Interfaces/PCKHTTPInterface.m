@@ -30,16 +30,20 @@
 }
 
 - (NSURLConnection *)connectionForPath:(NSString *)path secure:(BOOL)secure andDelegate:(id<NSURLConnectionDelegate>)delegate withRequestSetup:(RequestSetupBlock)requestSetup {
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[self urlForPath:path secure:secure]];
+    NSMutableURLRequest *request = [self requestForPath:path secure:secure];
     if (requestSetup) {
         requestSetup(request);
     }
-    NSURLConnection *connection = [[PCKHTTPConnection alloc] initWithHTTPInterface:self forRequest:request andDelegate:delegate];
+    return [self connectionForRequest:request delegate:delegate];
+}
+
+- (NSMutableURLRequest *)requestForPath:(NSString *)path secure:(BOOL)secure {
+    return [[[NSMutableURLRequest alloc] initWithURL:[self urlForPath:path secure:secure]] autorelease];
+}
+
+- (NSURLConnection *)connectionForRequest:(NSURLRequest *)request delegate:(id<NSURLConnectionDelegate>)delegate {
+    NSURLConnection *connection = [[[PCKHTTPConnection alloc] initWithHTTPInterface:self forRequest:request andDelegate:delegate] autorelease];
     [activeConnections_ addObject:connection];
-
-    [connection release];
-    [request release];
-
     return connection;
 }
 
