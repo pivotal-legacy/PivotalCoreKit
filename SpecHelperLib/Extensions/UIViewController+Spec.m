@@ -7,6 +7,14 @@
 @implementation UIViewController (Spec)
 
 #pragma mark - Modals
+
+- (void)presentViewController:(UIViewController *)modalViewController animated:(BOOL)animated completion:(void(^)(void))onComplete {
+    [self presentModalViewController:modalViewController animated:animated];
+    if (onComplete) {
+        onComplete();
+    }
+}
+
 - (void)presentModalViewController:(UIViewController *)modalViewController animated:(BOOL)animated {
     self.modalViewController = modalViewController;
     self.presentedViewController = modalViewController;
