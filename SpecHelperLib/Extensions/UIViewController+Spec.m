@@ -33,6 +33,13 @@
     }
 }
 
+- (void)dismissViewControllerAnimated:(BOOL)flag completion:(void (^)(void))completion {
+    [self dismissModalViewControllerAnimated:flag];
+    if (completion) {
+        completion();
+    }
+}
+
 - (void)setModalViewController:(UIViewController *)modalViewController {
     objc_setAssociatedObject(self, "modalViewController", modalViewController, OBJC_ASSOCIATION_ASSIGN);
 }
