@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B4931BB164AB9FA00A8D34E /* UIAlertView+PivotalCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA8DA36164AB69700697D10 /* UIAlertView+PivotalCore.m */; };
+		3BA8DA37164AB69700697D10 /* UIAlertView+PivotalCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BA8DA35164AB69700697D10 /* UIAlertView+PivotalCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3BA8DA38164AB69700697D10 /* UIAlertView+PivotalCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BA8DA35164AB69700697D10 /* UIAlertView+PivotalCore.h */; };
+		3BA8DA42164AB6CE00697D10 /* UIAlertViewSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3BA8DA2B164AB31800697D10 /* UIAlertViewSpec.mm */; };
 		6696DFB91266DE5800111E23 /* UIWebView+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6696DFB81266DE5800111E23 /* UIWebView+Spec.m */; };
 		6696DFC81266DE8500111E23 /* libCedar-StaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE138A9411E3FFD6004E825D /* libCedar-StaticLib.a */; };
 		6696E0011266E09800111E23 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6696E0001266E09800111E23 /* main.m */; };
@@ -236,6 +240,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3BA8DA2B164AB31800697D10 /* UIAlertViewSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = UIAlertViewSpec.mm; sourceTree = "<group>"; };
+		3BA8DA35164AB69700697D10 /* UIAlertView+PivotalCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+PivotalCore.h"; sourceTree = "<group>"; };
+		3BA8DA36164AB69700697D10 /* UIAlertView+PivotalCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+PivotalCore.m"; sourceTree = "<group>"; };
 		6696DFB71266DE5800111E23 /* UIWebView+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+Spec.h"; sourceTree = "<group>"; };
 		6696DFB81266DE5800111E23 /* UIWebView+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+Spec.m"; sourceTree = "<group>"; };
 		6696DFC21266DE6C00111E23 /* UISpec.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UISpec.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -494,6 +501,7 @@
 				AEE066B0152B6C1A009289FE /* UIView+PivotalCoreSpec.mm */,
 				AEE0671C152B78F7009289FE /* UIBarButtonItem+ButtonSpec.mm */,
 				AEE06722152B852D009289FE /* UIImage+PivotalCoreSpec.mm */,
+				3BA8DA2B164AB31800697D10 /* UIAlertViewSpec.mm */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -692,6 +700,8 @@
 				AEE06715152B76CC009289FE /* UIImage+PivotalCore.m */,
 				AEE06718152B78B0009289FE /* UIBarButtonItem+Button.h */,
 				AEE06719152B78B1009289FE /* UIBarButtonItem+Button.m */,
+				3BA8DA35164AB69700697D10 /* UIAlertView+PivotalCore.h */,
+				3BA8DA36164AB69700697D10 /* UIAlertView+PivotalCore.m */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -815,6 +825,7 @@
 				AEC9DF2612C2D5BF0039512D /* NSObject+MethodDecoration.h in Headers */,
 				AE69B840144E50F400719614 /* PCKHTTPConnectionDelegate.h in Headers */,
 				AEBBE00114BCB4A20005CF20 /* NSObject+MethodRedirection.h in Headers */,
+				3BA8DA38164AB69700697D10 /* UIAlertView+PivotalCore.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -849,6 +860,7 @@
 				AE69B83F144E50F400719614 /* PCKHTTPConnectionDelegate.h in Headers */,
 				AE05D76014573D8A0044D97B /* NSURLConnectionDelegate.h in Headers */,
 				AEBBE00014BCB4A20005CF20 /* NSObject+MethodRedirection.h in Headers */,
+				3BA8DA37164AB69700697D10 /* UIAlertView+PivotalCore.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1140,6 +1152,7 @@
 				AEE06723152B852D009289FE /* UIImage+PivotalCoreSpec.mm in Sources */,
 				AE7C4C3815CC730F009E127E /* CLGeocoderSpec+Spec.mm in Sources */,
 				AE7C4C3915CC741B009E127E /* CLGeocoder+Spec.m in Sources */,
+				3BA8DA42164AB6CE00697D10 /* UIAlertViewSpec.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1216,6 +1229,7 @@
 				AEE06717152B76CC009289FE /* UIImage+PivotalCore.m in Sources */,
 				AEE0671B152B78B1009289FE /* UIBarButtonItem+Button.m in Sources */,
 				AEE0672A152BAF74009289FE /* AttributedLabel.m in Sources */,
+				3B4931BB164AB9FA00A8D34E /* UIAlertView+PivotalCore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1345,6 +1359,7 @@
 				HEADER_SEARCH_PATHS = "$SRCROOT/Externals/Cedar/**";
 				INFOPLIST_FILE = "UISpec-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -1377,6 +1392,7 @@
 				HEADER_SEARCH_PATHS = "$SRCROOT/Externals/Cedar/**";
 				INFOPLIST_FILE = "UISpec-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"-ObjC",
