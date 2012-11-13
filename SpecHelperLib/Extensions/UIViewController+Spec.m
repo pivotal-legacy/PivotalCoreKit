@@ -16,6 +16,11 @@
 }
 
 - (void)presentModalViewController:(UIViewController *)modalViewController animated:(BOOL)animated {
+    if (self.modalViewController) {
+        NSString *errorReason = [NSString stringWithFormat:@"Presenting modal view controller (%@) with other modal (%@) previously active", modalViewController, self.modalViewController];
+        [[NSException exceptionWithName:NSInternalInconsistencyException reason:errorReason userInfo:nil] raise];
+    }
+
     self.modalViewController = modalViewController;
     self.presentedViewController = modalViewController;
     modalViewController.presentingViewController = self;
