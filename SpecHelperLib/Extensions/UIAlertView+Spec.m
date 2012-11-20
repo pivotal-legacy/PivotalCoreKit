@@ -5,25 +5,26 @@
 
 @implementation UIAlertView (Spec)
 
-static UIAlertView *currentAlertView__;
+static NSMutableArray *alertViewStack__ = nil;
 
 + (void)afterEach {
     [self reset];
 }
 
 + (UIAlertView *)currentAlertView {
-    return currentAlertView__;
+    return [alertViewStack__ lastObject];
 }
 
 + (void)reset {
-    [currentAlertView__ release];
-    currentAlertView__ = nil;
+    [alertViewStack__ release];
+    alertViewStack__ = nil;
 }
 
 + (void)setCurrentAlertView:(UIAlertView *)alertView {
-    [alertView retain];
-    [currentAlertView__ release];
-    currentAlertView__ = alertView;
+    if (!alertViewStack__) {
+        alertViewStack__ = [[NSMutableArray array] retain];
+    }
+    [alertViewStack__ addObject:alertView];
 }
 
 - (void)show {
@@ -47,7 +48,7 @@ static UIAlertView *currentAlertView__;
     if ([self.delegate respondsToSelector:@selector(alertView:didDismissWithButtonIndex:)]) {
         [self.delegate alertView:self didDismissWithButtonIndex:buttonIndex];
     }
-    [UIAlertView reset];
+    [alertViewStack__ removeObject:self];
 }
 
 - (void)dismissWithOkButton {
