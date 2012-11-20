@@ -44,6 +44,32 @@ describe(@"UIAlertView (spec extensions)", ^{
             });
         });
 
+        describe(@"when multiple alert views are being shown", ^{
+            __block UIAlertView *otherAlertView;
+
+            beforeEach(^{
+                [alertView show];
+                otherAlertView = [[[UIAlertView alloc] initWithTitle:@"Another title"
+                                                             message:@"Oy vey"
+                                                            delegate:delegate
+                                                   cancelButtonTitle:@"Cancel"
+                                                   otherButtonTitles:nil] autorelease];
+                [otherAlertView show];
+
+                UIAlertView *aThirdAlertView = [[UIAlertView alloc] initWithTitle:@"I'm going away soon"
+                                                                          message:@"Real soon now"
+                                                                         delegate:delegate
+                                                                cancelButtonTitle:@"Cancel"
+                                                                otherButtonTitles:nil];
+                [aThirdAlertView show];
+                [aThirdAlertView dismissWithCancelButton];
+            });
+
+            it(@"should return the most recently shown alert view that wasn't dismissed", ^{
+                expect([UIAlertView currentAlertView]).to(be_same_instance_as(otherAlertView));
+            });
+        });
+
         describe(@"when the alert view is shown", ^{
             beforeEach(^{
                 [alertView show];
