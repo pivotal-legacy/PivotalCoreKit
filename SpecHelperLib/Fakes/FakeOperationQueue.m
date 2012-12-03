@@ -5,7 +5,6 @@
 @end
 
 @implementation FakeOperationQueue
-@synthesize mutableOperations = mutableOperations_;
 
 - (id)init {
     if (self = [super init]) {
@@ -13,6 +12,11 @@
         [self reset];
     }
     return self;
+}
+
+- (void)dealloc {
+    self.mutableOperations = nil;
+    [super dealloc];
 }
 
 - (void)reset {
