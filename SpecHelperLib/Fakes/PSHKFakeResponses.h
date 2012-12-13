@@ -15,4 +15,6 @@
 - (PSHKFakeHTTPURLResponse *)serverError;
 - (PSHKFakeHTTPURLResponse *)conflict;
 
+- (PSHKFakeHTTPURLResponse *)responseForStatusCode:(int)statusCode;
+
 @end
