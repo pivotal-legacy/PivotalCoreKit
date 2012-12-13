@@ -46,6 +46,12 @@
     return [self responseForStatusCode:500];
 }
 
+- (PSHKFakeHTTPURLResponse *)responseForStatusCode:(int)statusCode {
+    return [[[PSHKFakeHTTPURLResponse alloc] initWithStatusCode:statusCode
+                                                     andHeaders:[NSDictionary dictionary]
+                                                        andBody:[self responseBodyForStatusCode:statusCode]]
+            autorelease];
+}
 
 #pragma mark Private interface
 
@@ -63,13 +69,6 @@
                          [[NSFileManager defaultManager] currentDirectoryPath],
                          fakeResponsesDirectory];
     @throw [NSException exceptionWithName:@"FileNotFound" reason:message userInfo:nil];
-}
-
-- (PSHKFakeHTTPURLResponse *)responseForStatusCode:(int)statusCode {
-    return [[[PSHKFakeHTTPURLResponse alloc] initWithStatusCode:statusCode
-                                                     andHeaders:[NSDictionary dictionary]
-                                                        andBody:[self responseBodyForStatusCode:statusCode]]
-            autorelease];
 }
 
 - (NSString *)fakeResponsesDirectory {
