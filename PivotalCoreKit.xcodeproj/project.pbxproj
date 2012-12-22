@@ -433,7 +433,6 @@
 		0867D691FE84028FC02AAC07 /* PivotalCoreKit */ = {
 			isa = PBXGroup;
 			children = (
-				AE7C4C3A15CC7437009E127E /* CoreLocation.framework */,
 				AEE066A9152B6BE6009289FE /* UICoreLib */,
 				AECC4BA411C6DFF40027AB1B /* CoreLib */,
 				AEF15A1511C97747005B4F92 /* SpecHelperLib */,
@@ -454,6 +453,7 @@
 		0867D69AFE84028FC02AAC07 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AE7C4C3A15CC7437009E127E /* CoreLocation.framework */,
 				AEBB6349152BB0DF00CC7A9F /* CoreText.framework */,
 				AEE066A4152B6B1B009289FE /* UIKit.framework */,
 				AEA94C09143CD82F00C70E89 /* CoreGraphics.framework */,
