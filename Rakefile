@@ -1,15 +1,5 @@
-PROJECT_NAME = "PivotalCoreKit"
 CONFIGURATION = "Release"
-PCK_FRAMEWORK_TARGET_NAME = "PivotalCoreKit"
-PSHK_FRAMEWORK_TARGET_NAME = "PivotalSpecHelperKit"
-SPECS_TARGET_NAME = "Spec"
-PCK_STATIC_LIB_TARGET_NAME = "PivotalCoreKit-StaticLib"
-PUICK_STATIC_LIB_TARGET_NAME = "PivotalUICoreKit-StaticLib"
-PSHK_STATIC_LIB_TARGET_NAME = "PivotalSpecHelperKit-StaticLib"
-UI_SPECS_TARGET_NAME = "UISpec"
-
 SDK_VERSION = "5.1"
-
 BUILD_DIR = File.join(File.dirname(__FILE__), "build")
 
 # Xcode 4.3 stores its /Developer inside /Applications/Xcode.app, Xcode 4.2 stored it in /Developer
@@ -45,69 +35,179 @@ def output_file(target)
   output_file
 end
 
-task :default => [:trim_whitespace, :build_pck_framework, :build_pshk_framework, :specs, :build_pck_static_lib, :build_puick_static_lib, :build_pshk_static_lib, :uispecs]
-task :cruise do
-  Rake::Task[:clean].invoke
-  Rake::Task[:build_pck_framework].invoke
-  Rake::Task[:build_pshk_framework].invoke
-  Rake::Task[:specs].invoke
-  Rake::Task[:build_pck_static_lib].invoke
-  Rake::Task[:build_pshk_static_lib].invoke
-  Rake::Task[:build_puick_static_lib].invoke
-  Rake::Task[:uispecs].invoke
-end
+task :default => [:trim_whitespace, "all:spec"]
+task :cruise => ["all:clean", "all:build", "all:spec"]
 
 task :trim_whitespace do
   system_or_exit(%Q[git status --short | awk '{if ($1 != "D" && $1 != "R") print $2}' | grep -e '.*\.[mh]$' | xargs sed -i '' -e 's/	/    /g;s/ *$//g;'])
 end
 
-task :clean do
-  system_or_exit(%Q[xcodebuild -project #{PROJECT_NAME}.xcodeproj -alltargets -configuration #{CONFIGURATION} clean SYMROOT=#{BUILD_DIR}], output_file("clean"))
+namespace :foundation do
+  project_name = "Foundation/Foundation"
+
+  namespace :build do
+    namespace :core do
+      task :osx do
+        system_or_exit(%Q[xcodebuild -project #{project_name}.xcodeproj -target Foundation+PivotalCore -configuration #{CONFIGURATION} build SYMROOT=#{BUILD_DIR}], output_file("foundation:build:core:osx"))
+      end
+
+      task :ios do
+        system_or_exit(%Q[xcodebuild -project #{project_name}.xcodeproj -target Foundation+PivotalCore-StaticLib -configuration #{CONFIGURATION} ARCHS=i386 -sdk iphonesimulator build SYMROOT=#{BUILD_DIR}], output_file("foundation:build:core:ios"))
+      end
+    end
+
+    task :core => ["core:osx", "core:ios"]
+
+    namespace :spec_helper do
+      task :osx do
+        system_or_exit(%Q[xcodebuild -project #{project_name}.xcodeproj -target Foundation+PivotalSpecHelper -configuration #{CONFIGURATION} build SYMROOT=#{BUILD_DIR}], output_file("foundation:build:spec_helper:osx"))
+      end
+
+      task :ios do
+        system_or_exit(%Q[xcodebuild -project #{project_name}.xcodeproj -target Foundation+PivotalSpecHelper-StaticLib -configuration #{CONFIGURATION} ARCHS=i386 -sdk iphonesimulator build SYMROOT=#{BUILD_DIR}], output_file("foundation:build:spec_helper:ios"))
+      end
+    end
+
+    task :spec_helper => ["spec_helper:osx", "spec_helper:ios"]
+  end
+
+  namespace :spec do
+    task :osx => ["build:core:osx", "build:spec_helper:osx"] do
+      system_or_exit(%Q[xcodebuild -project #{project_name}.xcodeproj -target FoundationSpec -configuration #{CONFIGURATION} build SYMROOT=#{BUILD_DIR}], output_file("foundation:spec:osx"))
+
+      build_dir = build_dir("")
+      ENV["DYLD_FRAMEWORK_PATH"] = build_dir
+      ENV["CEDAR_REPORTER_CLASS"] = "CDRColorizedReporter"
+      system_or_exit("cd #{build_dir}; ./FoundationSpec")
+    end
+
+    require 'tmpdir'
+    task :ios => ["build:core:ios", "build:spec_helper:ios"] do
+      system_or_exit(%Q[xcodebuild -project #{project_name}.xcodeproj -target Foundation-StaticLibSpec -configuration #{CONFIGURATION} ARCHS=i386 -sdk iphonesimulator build SYMROOT=#{BUILD_DIR}], output_file("foundation:spec:ios"))
+
+      `osascript -e 'tell application "iPhone Simulator" to quit'`
+      ENV["DYLD_ROOT_PATH"] = sdk_dir
+      ENV["IPHONE_SIMULATOR_ROOT"] = sdk_dir
+      ENV["CFFIXED_USER_HOME"] = Dir.tmpdir
+      ENV["CEDAR_HEADLESS_SPECS"] = "1"
+      ENV["CEDAR_REPORTER_CLASS"] = "CDRColorizedReporter"
+
+      system_or_exit(%Q[#{File.join(build_dir("-iphonesimulator"), "Foundation-StaticLibSpec.app", "Foundation-StaticLibSpec")} -RegisterForSystemEvents]);
+      `osascript -e 'tell application "iPhone Simulator" to quit'`
+    end
+  end
+
+  task :build => ["foundation:build:core", "foundation:build:spec_helper"]
+  task :spec => ["foundation:spec:osx", "foundation:spec:ios"]
+  task :clean do
+    system_or_exit(%Q[xcodebuild -project #{project_name}.xcodeproj -alltargets -configuration #{CONFIGURATION} clean SYMROOT=#{BUILD_DIR}], output_file("foundation:clean"))
+  end
 end
 
-task :build_pck_framework do
-  system_or_exit(%Q[xcodebuild -project #{PROJECT_NAME}.xcodeproj -target #{PCK_FRAMEWORK_TARGET_NAME} -configuration #{CONFIGURATION} build SYMROOT=#{BUILD_DIR}], output_file("specs"))
+task :foundation => ["foundation:build", "foundation:spec"]
+
+namespace :uikit do
+  project_name = "UIKit/UIKit"
+
+  namespace :build do
+    namespace :core do
+      task :ios do
+        system_or_exit(%Q[xcodebuild -project #{project_name}.xcodeproj -target UIKit+PivotalCore-StaticLib -configuration #{CONFIGURATION} ARCHS=i386 -sdk iphonesimulator build SYMROOT=#{BUILD_DIR}], output_file("uikit:build:core:ios"))
+      end
+    end
+
+    task :core => ["core:ios"]
+
+    namespace :spec_helper do
+      task :ios do
+        system_or_exit(%Q[xcodebuild -project #{project_name}.xcodeproj -target UIKit+PivotalSpecHelper-StaticLib -configuration #{CONFIGURATION} ARCHS=i386 -sdk iphonesimulator build SYMROOT=#{BUILD_DIR}], output_file("uikit:build:spec_helper:ios"))
+      end
+    end
+
+    task :spec_helper => ["spec_helper:ios"]
+  end
+
+  namespace :spec do
+    require 'tmpdir'
+    task :ios => ["build:core:ios", "build:spec_helper:ios"] do
+      system_or_exit(%Q[xcodebuild -project #{project_name}.xcodeproj -target UIKit-StaticLibSpec -configuration #{CONFIGURATION} ARCHS=i386 -sdk iphonesimulator build SYMROOT=#{BUILD_DIR}], output_file("uikit:spec:ios"))
+
+      `osascript -e 'tell application "iPhone Simulator" to quit'`
+      ENV["DYLD_ROOT_PATH"] = sdk_dir
+      ENV["IPHONE_SIMULATOR_ROOT"] = sdk_dir
+      ENV["CFFIXED_USER_HOME"] = Dir.tmpdir
+      ENV["CEDAR_HEADLESS_SPECS"] = "1"
+      ENV["CEDAR_REPORTER_CLASS"] = "CDRColorizedReporter"
+
+      system_or_exit(%Q[#{File.join(build_dir("-iphonesimulator"), "UIKit-StaticLibSpec.app", "UIKit-StaticLibSpec")} -RegisterForSystemEvents]);
+      `osascript -e 'tell application "iPhone Simulator" to quit'`
+    end
+  end
+
+  task :build => ["build:core"]
+  task :spec => ["spec:ios"]
+  task :clean do
+    system_or_exit(%Q[xcodebuild -project #{project_name}.xcodeproj -alltargets -configuration #{CONFIGURATION} clean SYMROOT=#{BUILD_DIR}], output_file("uikit:clean"))
+  end
 end
 
-task :build_pshk_framework do
-  system_or_exit(%Q[xcodebuild -project #{PROJECT_NAME}.xcodeproj -target #{PSHK_FRAMEWORK_TARGET_NAME} -configuration #{CONFIGURATION} build SYMROOT=#{BUILD_DIR}], output_file("specs"))
+task :uikit => ["uikit:build", "uikit:spec"]
+
+namespace :core_location do
+  project_name = "CoreLocation/CoreLocation"
+
+  namespace :build do
+    namespace :spec_helper do
+      task :osx do
+        system_or_exit(%Q[xcodebuild -project #{project_name}.xcodeproj -target CoreLocation+PivotalSpecHelper -configuration #{CONFIGURATION} build SYMROOT=#{BUILD_DIR}], output_file("core_location:build:spec_helper:osx"))
+      end
+
+      task :ios do
+        system_or_exit(%Q[xcodebuild -project #{project_name}.xcodeproj -target CoreLocation+PivotalSpecHelper-StaticLib -configuration #{CONFIGURATION} ARCHS=i386 -sdk iphonesimulator build SYMROOT=#{BUILD_DIR}], output_file("core_location:build:spec_helper:ios"))
+      end
+    end
+    
+    task :spec_helper => ["spec_helper:osx", "spec_helper:ios"]
+  end
+  
+  namespace :spec do
+    task :osx => ["build:spec_helper:osx"] do
+      system_or_exit(%Q[xcodebuild -project #{project_name}.xcodeproj -target CoreLocationSpec -configuration #{CONFIGURATION} build SYMROOT=#{BUILD_DIR}], output_file("core_location:spec:osx"))
+
+      build_dir = build_dir("")
+      ENV["DYLD_FRAMEWORK_PATH"] = build_dir
+      ENV["CEDAR_REPORTER_CLASS"] = "CDRColorizedReporter"
+      system_or_exit("cd #{build_dir}; ./CoreLocationSpec")
+    end
+
+    require 'tmpdir'
+    task :ios => ["build:spec_helper:ios"] do
+      system_or_exit(%Q[xcodebuild -project #{project_name}.xcodeproj -target CoreLocation-StaticLibSpec -configuration #{CONFIGURATION} ARCHS=i386 -sdk iphonesimulator build SYMROOT=#{BUILD_DIR}], output_file("core_location:spec:ios"))
+
+      `osascript -e 'tell application "iPhone Simulator" to quit'`
+      ENV["DYLD_ROOT_PATH"] = sdk_dir
+      ENV["IPHONE_SIMULATOR_ROOT"] = sdk_dir
+      ENV["CFFIXED_USER_HOME"] = Dir.tmpdir
+      ENV["CEDAR_HEADLESS_SPECS"] = "1"
+      ENV["CEDAR_REPORTER_CLASS"] = "CDRColorizedReporter"
+
+      system_or_exit(%Q[#{File.join(build_dir("-iphonesimulator"), "CoreLocation-StaticLibSpec.app", "CoreLocation-StaticLibSpec")} -RegisterForSystemEvents]);
+      `osascript -e 'tell application "iPhone Simulator" to quit'`
+    end
+  end
+
+  task :build => ["build:spec_helper"]
+  task :spec => ["spec:osx", "spec:ios"]
+  task :clean do
+    system_or_exit(%Q[xcodebuild -project #{project_name}.xcodeproj -alltargets -configuration #{CONFIGURATION} clean SYMROOT=#{BUILD_DIR}], output_file("core_location:clean"))
+  end
 end
 
-task :build_specs do
-  system_or_exit(%Q[xcodebuild -project #{PROJECT_NAME}.xcodeproj -target #{SPECS_TARGET_NAME} -configuration #{CONFIGURATION} build SYMROOT=#{BUILD_DIR}], output_file("specs"))
+task :core_location => ["core_location:build", "core_location:spec"]
+
+namespace :all do
+  task :build => ["foundation:build", "uikit:build", "core_location:build"]
+  task :spec => ["foundation:spec", "uikit:spec", "core_location:spec"]
+  task :clean => ["foundation:clean", "uikit:clean", "core_location:clean"]
 end
 
-task :build_pck_static_lib do
-  system_or_exit(%Q[xcodebuild -project #{PROJECT_NAME}.xcodeproj -target #{PCK_STATIC_LIB_TARGET_NAME} -configuration #{CONFIGURATION} ARCHS=i386 build SYMROOT=#{BUILD_DIR}], output_file("pck_staticlib"))
-end
-
-task :build_pshk_static_lib do
-  system_or_exit(%Q[xcodebuild -project #{PROJECT_NAME}.xcodeproj -target #{PSHK_STATIC_LIB_TARGET_NAME} -configuration #{CONFIGURATION} ARCHS=i386 build SYMROOT=#{BUILD_DIR}], output_file("pshk_staticlib"))
-end
-
-task :build_puick_static_lib do
-  system_or_exit(%Q[xcodebuild -project #{PROJECT_NAME}.xcodeproj -target #{PUICK_STATIC_LIB_TARGET_NAME} -configuration #{CONFIGURATION} ARCHS=i386 build SYMROOT=#{BUILD_DIR}], output_file("puick_staticlib"))
-end
-
-task :build_uispecs do
-  `osascript -e 'tell application "iPhone Simulator" to quit'`
-  system_or_exit(%Q[xcodebuild -project #{PROJECT_NAME}.xcodeproj -target #{UI_SPECS_TARGET_NAME} -configuration #{CONFIGURATION} ARCHS=i386 -sdk iphonesimulator build], output_file("uispecs"))
-end
-
-task :specs => :build_specs do
-  build_dir = build_dir("")
-  ENV["DYLD_FRAMEWORK_PATH"] = build_dir
-  ENV["CEDAR_REPORTER_CLASS"] = "CDRColorizedReporter"
-  system_or_exit("cd #{build_dir}; ./#{SPECS_TARGET_NAME}")
-end
-
-require 'tmpdir'
-task :uispecs => :build_uispecs do
-  ENV["DYLD_ROOT_PATH"] = sdk_dir
-  ENV["IPHONE_SIMULATOR_ROOT"] = sdk_dir
-  ENV["CFFIXED_USER_HOME"] = Dir.tmpdir
-  ENV["CEDAR_HEADLESS_SPECS"] = "1"
-  ENV["CEDAR_REPORTER_CLASS"] = "CDRColorizedReporter"
-
-  system_or_exit(%Q[#{File.join(build_dir("-iphonesimulator"), "#{UI_SPECS_TARGET_NAME}.app", UI_SPECS_TARGET_NAME)} -RegisterForSystemEvents]);
-end

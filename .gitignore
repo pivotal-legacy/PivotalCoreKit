@@ -1,6 +1,6 @@
 *.mode1v3
 *.pbxuser
-*.xcworkspace
+*.xcodeproj/*.xcworkspace
 xcuserdata
 build
 .DS_Store
