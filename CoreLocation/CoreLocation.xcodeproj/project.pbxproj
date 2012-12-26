@@ -1,0 +1,803 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AE3848DA168CD86000C99B55 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE3848D9168CD86000C99B55 /* UIKit.framework */; };
+		AE3848DC168CD86000C99B55 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE3848DB168CD86000C99B55 /* Foundation.framework */; };
+		AE3848DE168CD86000C99B55 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE3848DD168CD86000C99B55 /* CoreGraphics.framework */; };
+		AE38491A168CD8D800C99B55 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE3848DB168CD86000C99B55 /* Foundation.framework */; };
+		AE384944168CD91E00C99B55 /* Cedar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE384933168CD8FC00C99B55 /* Cedar.framework */; };
+		AE384948168CD9AA00C99B55 /* CoreLocation+PivotalSpecHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE384900168CD8C800C99B55 /* CoreLocation+PivotalSpecHelper.framework */; };
+		AE384950168CD9B600C99B55 /* CoreLocation+PivotalSpecHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = AE38494B168CD9B600C99B55 /* CoreLocation+PivotalSpecHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE384951168CD9B600C99B55 /* CLGeocoder+Spec.h in Headers */ = {isa = PBXBuildFile; fileRef = AE38494D168CD9B600C99B55 /* CLGeocoder+Spec.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE384952168CD9B600C99B55 /* CLGeocoder+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE38494E168CD9B600C99B55 /* CLGeocoder+Spec.m */; };
+		AE384954168CDA1500C99B55 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE384953168CDA1500C99B55 /* CoreLocation.framework */; };
+		AE384960168D030800C99B55 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AE38495D168D030800C99B55 /* main.m */; };
+		AE384961168D032300C99B55 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AE38495B168D030800C99B55 /* main.m */; };
+		AE384962168D033C00C99B55 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE384953168CDA1500C99B55 /* CoreLocation.framework */; };
+		AE384963168D045400C99B55 /* libCedar-StaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE384939168CD8FC00C99B55 /* libCedar-StaticLib.a */; };
+		AE384971168D04F300C99B55 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE384970168D04F300C99B55 /* CoreLocation.framework */; };
+		AE38498F168D053300C99B55 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE3848DB168CD86000C99B55 /* Foundation.framework */; };
+		AE38499A168D055A00C99B55 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE384970168D04F300C99B55 /* CoreLocation.framework */; };
+		AE38499B168D056600C99B55 /* CLGeocoder+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE38494E168CD9B600C99B55 /* CLGeocoder+Spec.m */; };
+		AE38499E168D058F00C99B55 /* libCoreLocation+PivotalSpecHelper-StaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE38498E168D053300C99B55 /* libCoreLocation+PivotalSpecHelper-StaticLib.a */; };
+		AE494744168D15C8006F3B70 /* CLGeocoderSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEC81173168D14FF00523186 /* CLGeocoderSpec+Spec.mm */; };
+		AE49474D168D15C9006F3B70 /* CLGeocoderSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEC81173168D14FF00523186 /* CLGeocoderSpec+Spec.mm */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AE384932168CD8FC00C99B55 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE384926168CD8FB00C99B55 /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AEEE1FB611DC271300029872;
+			remoteInfo = Cedar;
+		};
+		AE384934168CD8FC00C99B55 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE384926168CD8FB00C99B55 /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AEEE218611DC28E200029872;
+			remoteInfo = Specs;
+		};
+		AE384936168CD8FC00C99B55 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE384926168CD8FB00C99B55 /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 96A07F0813F276640021974D;
+			remoteInfo = FocusedSpecs;
+		};
+		AE384938168CD8FC00C99B55 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE384926168CD8FB00C99B55 /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AEEE222911DC2B0600029872;
+			remoteInfo = "Cedar-StaticLib";
+		};
+		AE38493A168CD8FC00C99B55 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE384926168CD8FB00C99B55 /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AEEE227611DC2CF900029872;
+			remoteInfo = iOSSpecs;
+		};
+		AE38493C168CD8FC00C99B55 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE384926168CD8FB00C99B55 /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 96B5F9F6144A81A7000A6A5D;
+			remoteInfo = OCUnitApp;
+		};
+		AE38493E168CD8FC00C99B55 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE384926168CD8FB00C99B55 /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 96B5FA11144A81A8000A6A5D;
+			remoteInfo = OCUnitAppTests;
+		};
+		AE384940168CD8FC00C99B55 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE384926168CD8FB00C99B55 /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 96158A86144A915E005895CE;
+			remoteInfo = OCUnitAppLogicTests;
+		};
+		AE384942168CD90C00C99B55 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE384926168CD8FB00C99B55 /* Cedar.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = AEEE1FB511DC271300029872;
+			remoteInfo = Cedar;
+		};
+		AE384946168CD92500C99B55 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE3848CC168CD86000C99B55 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AE3848FF168CD8C800C99B55;
+			remoteInfo = "CoreLocation+PivotalCore";
+		};
+		AE384964168D046400C99B55 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE384926168CD8FB00C99B55 /* Cedar.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = AEEE222811DC2B0600029872;
+			remoteInfo = "Cedar-StaticLib";
+		};
+		AE38499C168D058A00C99B55 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE3848CC168CD86000C99B55 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AE38498D168D053300C99B55;
+			remoteInfo = "CoreLocation+PivotalSpecHelper-StaticLib";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		AE384916168CD8D800C99B55 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		AE38498C168D053300C99B55 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/${PRODUCT_NAME}";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		AE3848D5168CD86000C99B55 /* CoreLocation-StaticLibSpec.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CoreLocation-StaticLibSpec.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE3848D9168CD86000C99B55 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		AE3848DB168CD86000C99B55 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		AE3848DD168CD86000C99B55 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		AE384900168CD8C800C99B55 /* CoreLocation+PivotalSpecHelper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "CoreLocation+PivotalSpecHelper.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE384918168CD8D800C99B55 /* CoreLocationSpec */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CoreLocationSpec; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE384926168CD8FB00C99B55 /* Cedar.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Cedar.xcodeproj; path = ../Externals/Cedar/Cedar.xcodeproj; sourceTree = "<group>"; };
+		AE38494A168CD9B600C99B55 /* CoreLocation+PivotalSpecHelper-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "CoreLocation+PivotalSpecHelper-Info.plist"; sourceTree = "<group>"; };
+		AE38494B168CD9B600C99B55 /* CoreLocation+PivotalSpecHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CoreLocation+PivotalSpecHelper.h"; sourceTree = "<group>"; };
+		AE38494D168CD9B600C99B55 /* CLGeocoder+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLGeocoder+Spec.h"; sourceTree = "<group>"; };
+		AE38494E168CD9B600C99B55 /* CLGeocoder+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CLGeocoder+Spec.m"; sourceTree = "<group>"; };
+		AE384953168CDA1500C99B55 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = DEVELOPER_DIR; };
+		AE384959168D030800C99B55 /* CoreLocation-StaticLibSpec-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "CoreLocation-StaticLibSpec-Info.plist"; sourceTree = "<group>"; };
+		AE38495B168D030800C99B55 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AE38495D168D030800C99B55 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AE384970168D04F300C99B55 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		AE38498E168D053300C99B55 /* libCoreLocation+PivotalSpecHelper-StaticLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libCoreLocation+PivotalSpecHelper-StaticLib.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEC81173168D14FF00523186 /* CLGeocoderSpec+Spec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "CLGeocoderSpec+Spec.mm"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AE3848D2168CD86000C99B55 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE38499E168D058F00C99B55 /* libCoreLocation+PivotalSpecHelper-StaticLib.a in Frameworks */,
+				AE384971168D04F300C99B55 /* CoreLocation.framework in Frameworks */,
+				AE384963168D045400C99B55 /* libCedar-StaticLib.a in Frameworks */,
+				AE3848DA168CD86000C99B55 /* UIKit.framework in Frameworks */,
+				AE3848DC168CD86000C99B55 /* Foundation.framework in Frameworks */,
+				AE3848DE168CD86000C99B55 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE3848FC168CD8C800C99B55 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE384954168CDA1500C99B55 /* CoreLocation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE384915168CD8D800C99B55 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE384962168D033C00C99B55 /* CoreLocation.framework in Frameworks */,
+				AE384948168CD9AA00C99B55 /* CoreLocation+PivotalSpecHelper.framework in Frameworks */,
+				AE384944168CD91E00C99B55 /* Cedar.framework in Frameworks */,
+				AE38491A168CD8D800C99B55 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE38498B168D053300C99B55 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE38499A168D055A00C99B55 /* CoreLocation.framework in Frameworks */,
+				AE38498F168D053300C99B55 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AE3848CA168CD86000C99B55 = {
+			isa = PBXGroup;
+			children = (
+				AE384949168CD9B600C99B55 /* SpecHelper */,
+				AE384955168D030800C99B55 /* Spec */,
+				AE3848D8168CD86000C99B55 /* Frameworks */,
+				AE384925168CD8E500C99B55 /* Externals */,
+				AE3848D6168CD86000C99B55 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AE3848D6168CD86000C99B55 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AE3848D5168CD86000C99B55 /* CoreLocation-StaticLibSpec.app */,
+				AE384900168CD8C800C99B55 /* CoreLocation+PivotalSpecHelper.framework */,
+				AE384918168CD8D800C99B55 /* CoreLocationSpec */,
+				AE38498E168D053300C99B55 /* libCoreLocation+PivotalSpecHelper-StaticLib.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AE3848D8168CD86000C99B55 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AE3848D9168CD86000C99B55 /* UIKit.framework */,
+				AE3848DB168CD86000C99B55 /* Foundation.framework */,
+				AE3848DD168CD86000C99B55 /* CoreGraphics.framework */,
+				AE384953168CDA1500C99B55 /* CoreLocation.framework */,
+				AE384970168D04F300C99B55 /* CoreLocation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AE384925168CD8E500C99B55 /* Externals */ = {
+			isa = PBXGroup;
+			children = (
+				AE384926168CD8FB00C99B55 /* Cedar.xcodeproj */,
+			);
+			name = Externals;
+			sourceTree = "<group>";
+		};
+		AE384927168CD8FB00C99B55 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AE384933168CD8FC00C99B55 /* Cedar.framework */,
+				AE384935168CD8FC00C99B55 /* Specs */,
+				AE384937168CD8FC00C99B55 /* FocusedSpecs */,
+				AE384939168CD8FC00C99B55 /* libCedar-StaticLib.a */,
+				AE38493B168CD8FC00C99B55 /* iOSSpecs.app */,
+				AE38493D168CD8FC00C99B55 /* OCUnitApp.app */,
+				AE38493F168CD8FC00C99B55 /* OCUnitAppTests.octest */,
+				AE384941168CD8FC00C99B55 /* OCUnitAppLogicTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AE384949168CD9B600C99B55 /* SpecHelper */ = {
+			isa = PBXGroup;
+			children = (
+				AE38494C168CD9B600C99B55 /* Extensions */,
+				AE38494B168CD9B600C99B55 /* CoreLocation+PivotalSpecHelper.h */,
+				AE38494A168CD9B600C99B55 /* CoreLocation+PivotalSpecHelper-Info.plist */,
+			);
+			path = SpecHelper;
+			sourceTree = "<group>";
+		};
+		AE38494C168CD9B600C99B55 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AE38494D168CD9B600C99B55 /* CLGeocoder+Spec.h */,
+				AE38494E168CD9B600C99B55 /* CLGeocoder+Spec.m */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		AE384955168D030800C99B55 /* Spec */ = {
+			isa = PBXGroup;
+			children = (
+				AE384956168D030800C99B55 /* Extensions */,
+				AE384958168D030800C99B55 /* iOS */,
+				AE38495C168D030800C99B55 /* OSX */,
+			);
+			path = Spec;
+			sourceTree = "<group>";
+		};
+		AE384956168D030800C99B55 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AEC81173168D14FF00523186 /* CLGeocoderSpec+Spec.mm */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		AE384958168D030800C99B55 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				AE384959168D030800C99B55 /* CoreLocation-StaticLibSpec-Info.plist */,
+				AE38495B168D030800C99B55 /* main.m */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		AE38495C168D030800C99B55 /* OSX */ = {
+			isa = PBXGroup;
+			children = (
+				AE38495D168D030800C99B55 /* main.m */,
+			);
+			path = OSX;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		AE3848FD168CD8C800C99B55 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE384950168CD9B600C99B55 /* CoreLocation+PivotalSpecHelper.h in Headers */,
+				AE384951168CD9B600C99B55 /* CLGeocoder+Spec.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		AE3848D4168CD86000C99B55 /* CoreLocation-StaticLibSpec */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AE3848F3168CD86000C99B55 /* Build configuration list for PBXNativeTarget "CoreLocation-StaticLibSpec" */;
+			buildPhases = (
+				AE3848D1168CD86000C99B55 /* Sources */,
+				AE3848D2168CD86000C99B55 /* Frameworks */,
+				AE3848D3168CD86000C99B55 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AE38499D168D058A00C99B55 /* PBXTargetDependency */,
+				AE384965168D046400C99B55 /* PBXTargetDependency */,
+			);
+			name = "CoreLocation-StaticLibSpec";
+			productName = CoreLocation;
+			productReference = AE3848D5168CD86000C99B55 /* CoreLocation-StaticLibSpec.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AE3848FF168CD8C800C99B55 /* CoreLocation+PivotalSpecHelper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AE384911168CD8C800C99B55 /* Build configuration list for PBXNativeTarget "CoreLocation+PivotalSpecHelper" */;
+			buildPhases = (
+				AE3848FB168CD8C800C99B55 /* Sources */,
+				AE3848FC168CD8C800C99B55 /* Frameworks */,
+				AE3848FD168CD8C800C99B55 /* Headers */,
+				AE3848FE168CD8C800C99B55 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "CoreLocation+PivotalSpecHelper";
+			productName = "CoreLocation+PivotalCore";
+			productReference = AE384900168CD8C800C99B55 /* CoreLocation+PivotalSpecHelper.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		AE384917168CD8D800C99B55 /* CoreLocationSpec */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AE384922168CD8D800C99B55 /* Build configuration list for PBXNativeTarget "CoreLocationSpec" */;
+			buildPhases = (
+				AE384914168CD8D800C99B55 /* Sources */,
+				AE384915168CD8D800C99B55 /* Frameworks */,
+				AE384916168CD8D800C99B55 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AE384947168CD92500C99B55 /* PBXTargetDependency */,
+				AE384943168CD90C00C99B55 /* PBXTargetDependency */,
+			);
+			name = CoreLocationSpec;
+			productName = CoreLocationSpec;
+			productReference = AE384918168CD8D800C99B55 /* CoreLocationSpec */;
+			productType = "com.apple.product-type.tool";
+		};
+		AE38498D168D053300C99B55 /* CoreLocation+PivotalSpecHelper-StaticLib */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AE384997168D053300C99B55 /* Build configuration list for PBXNativeTarget "CoreLocation+PivotalSpecHelper-StaticLib" */;
+			buildPhases = (
+				AE38498A168D053300C99B55 /* Sources */,
+				AE38498B168D053300C99B55 /* Frameworks */,
+				AE38498C168D053300C99B55 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "CoreLocation+PivotalSpecHelper-StaticLib";
+			productName = "CoreLocation+PivotalSpecHelper-StaticLib";
+			productReference = AE38498E168D053300C99B55 /* libCoreLocation+PivotalSpecHelper-StaticLib.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AE3848CC168CD86000C99B55 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "Pivotal Labs";
+			};
+			buildConfigurationList = AE3848CF168CD86000C99B55 /* Build configuration list for PBXProject "CoreLocation" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = AE3848CA168CD86000C99B55;
+			productRefGroup = AE3848D6168CD86000C99B55 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = AE384927168CD8FB00C99B55 /* Products */;
+					ProjectRef = AE384926168CD8FB00C99B55 /* Cedar.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				AE3848FF168CD8C800C99B55 /* CoreLocation+PivotalSpecHelper */,
+				AE384917168CD8D800C99B55 /* CoreLocationSpec */,
+				AE38498D168D053300C99B55 /* CoreLocation+PivotalSpecHelper-StaticLib */,
+				AE3848D4168CD86000C99B55 /* CoreLocation-StaticLibSpec */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		AE384933168CD8FC00C99B55 /* Cedar.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Cedar.framework;
+			remoteRef = AE384932168CD8FC00C99B55 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AE384935168CD8FC00C99B55 /* Specs */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = Specs;
+			remoteRef = AE384934168CD8FC00C99B55 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AE384937168CD8FC00C99B55 /* FocusedSpecs */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = FocusedSpecs;
+			remoteRef = AE384936168CD8FC00C99B55 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AE384939168CD8FC00C99B55 /* libCedar-StaticLib.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libCedar-StaticLib.a";
+			remoteRef = AE384938168CD8FC00C99B55 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AE38493B168CD8FC00C99B55 /* iOSSpecs.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = iOSSpecs.app;
+			remoteRef = AE38493A168CD8FC00C99B55 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AE38493D168CD8FC00C99B55 /* OCUnitApp.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = OCUnitApp.app;
+			remoteRef = AE38493C168CD8FC00C99B55 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AE38493F168CD8FC00C99B55 /* OCUnitAppTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = OCUnitAppTests.octest;
+			remoteRef = AE38493E168CD8FC00C99B55 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AE384941168CD8FC00C99B55 /* OCUnitAppLogicTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = OCUnitAppLogicTests.octest;
+			remoteRef = AE384940168CD8FC00C99B55 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AE3848D3168CD86000C99B55 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE3848FE168CD8C800C99B55 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AE3848D1168CD86000C99B55 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE384961168D032300C99B55 /* main.m in Sources */,
+				AE49474D168D15C9006F3B70 /* CLGeocoderSpec+Spec.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE3848FB168CD8C800C99B55 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE384952168CD9B600C99B55 /* CLGeocoder+Spec.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE384914168CD8D800C99B55 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE384960168D030800C99B55 /* main.m in Sources */,
+				AE494744168D15C8006F3B70 /* CLGeocoderSpec+Spec.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE38498A168D053300C99B55 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE38499B168D056600C99B55 /* CLGeocoder+Spec.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AE384943168CD90C00C99B55 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Cedar;
+			targetProxy = AE384942168CD90C00C99B55 /* PBXContainerItemProxy */;
+		};
+		AE384947168CD92500C99B55 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AE3848FF168CD8C800C99B55 /* CoreLocation+PivotalSpecHelper */;
+			targetProxy = AE384946168CD92500C99B55 /* PBXContainerItemProxy */;
+		};
+		AE384965168D046400C99B55 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Cedar-StaticLib";
+			targetProxy = AE384964168D046400C99B55 /* PBXContainerItemProxy */;
+		};
+		AE38499D168D058A00C99B55 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AE38498D168D053300C99B55 /* CoreLocation+PivotalSpecHelper-StaticLib */;
+			targetProxy = AE38499C168D058A00C99B55 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		AE3848F1168CD86000C99B55 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AE3848F2168CD86000C99B55 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AE3848F4168CD86000C99B55 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				HEADER_SEARCH_PATHS = "$SRCROOT/../Externals/Cedar/**";
+				INFOPLIST_FILE = "Spec/iOS/CoreLocation-StaticLibSpec-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		AE3848F5168CD86000C99B55 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				HEADER_SEARCH_PATHS = "$SRCROOT/../Externals/Cedar/**";
+				INFOPLIST_FILE = "Spec/iOS/CoreLocation-StaticLibSpec-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		AE384912168CD8C800C99B55 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
+				);
+				FRAMEWORK_VERSION = A;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				INFOPLIST_FILE = "SpecHelper/CoreLocation+PivotalSpecHelper-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Debug;
+		};
+		AE384913168CD8C800C99B55 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
+				);
+				FRAMEWORK_VERSION = A;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				INFOPLIST_FILE = "SpecHelper/CoreLocation+PivotalSpecHelper-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
+		};
+		AE384923168CD8D800C99B55 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		AE384924168CD8D800C99B55 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		AE384998168D053300C99B55 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/CoreLocation_PivotalSpecHelper_StaticLib.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		AE384999168D053300C99B55 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/CoreLocation_PivotalSpecHelper_StaticLib.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AE3848CF168CD86000C99B55 /* Build configuration list for PBXProject "CoreLocation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE3848F1168CD86000C99B55 /* Debug */,
+				AE3848F2168CD86000C99B55 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AE3848F3168CD86000C99B55 /* Build configuration list for PBXNativeTarget "CoreLocation-StaticLibSpec" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE3848F4168CD86000C99B55 /* Debug */,
+				AE3848F5168CD86000C99B55 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AE384911168CD8C800C99B55 /* Build configuration list for PBXNativeTarget "CoreLocation+PivotalSpecHelper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE384912168CD8C800C99B55 /* Debug */,
+				AE384913168CD8C800C99B55 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AE384922168CD8D800C99B55 /* Build configuration list for PBXNativeTarget "CoreLocationSpec" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE384923168CD8D800C99B55 /* Debug */,
+				AE384924168CD8D800C99B55 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AE384997168D053300C99B55 /* Build configuration list for PBXNativeTarget "CoreLocation+PivotalSpecHelper-StaticLib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE384998168D053300C99B55 /* Debug */,
+				AE384999168D053300C99B55 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AE3848CC168CD86000C99B55 /* Project object */;
+}

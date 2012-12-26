@@ -1,5 +1,0 @@
-#import "UIMatchers.h"
-#import "SpecHelper.h"
-#import "UIImage+Spec.h"
-#import "UIAlertView+Spec.h"
-#import "UIWebView+Spec.h"
