@@ -37,6 +37,7 @@
 		AEBCCC9D168B9C530056EE83 /* UIWebViewSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEBCCC96168B9C530056EE83 /* UIWebViewSpec+Spec.mm */; };
 		AEBCCC9E168B9C530056EE83 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBCCC97168B9C530056EE83 /* main.m */; };
 		AEBCCCA1168B9C7E0056EE83 /* libCedar-StaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AEBCCC07168B98110056EE83 /* libCedar-StaticLib.a */; };
+		AEC6D7FE16963F3500E10C7B /* UIControlSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEC6D7FD16963F3500E10C7B /* UIControlSpec+Spec.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -183,6 +184,7 @@
 		AEBCCC95168B9C530056EE83 /* UIView+PivotalCoreSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIView+PivotalCoreSpec.mm"; sourceTree = "<group>"; };
 		AEBCCC96168B9C530056EE83 /* UIWebViewSpec+Spec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIWebViewSpec+Spec.mm"; sourceTree = "<group>"; };
 		AEBCCC97168B9C530056EE83 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AEC6D7FD16963F3500E10C7B /* UIControlSpec+Spec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIControlSpec+Spec.mm"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -370,6 +372,7 @@
 			children = (
 				AEBCCC91168B9C530056EE83 /* UIAlertViewSpec+Spec.mm */,
 				AEBCCC92168B9C530056EE83 /* UIBarButtonItem+ButtonSpec.mm */,
+				AEC6D7FD16963F3500E10C7B /* UIControlSpec+Spec.mm */,
 				AEBCCC93168B9C530056EE83 /* UIImage+PivotalCoreSpec.mm */,
 				AEBCCC94168B9C530056EE83 /* UIImageSpec+Spec.mm */,
 				AEBCCC95168B9C530056EE83 /* UIView+PivotalCoreSpec.mm */,
@@ -564,6 +567,7 @@
 				AEBCCC9D168B9C530056EE83 /* UIWebViewSpec+Spec.mm in Sources */,
 				AEBCCC9E168B9C530056EE83 /* main.m in Sources */,
 				AE3847AD168BA0E300C99B55 /* AWebViewController.m in Sources */,
+				AEC6D7FE16963F3500E10C7B /* UIControlSpec+Spec.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
