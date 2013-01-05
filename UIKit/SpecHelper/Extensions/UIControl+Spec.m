@@ -3,8 +3,12 @@
 @implementation UIControl (Spec)
 
 - (void)tap {
-    NSAssert(self.hidden == NO, @"Can't tap an invisible control");
-    NSAssert(self.isEnabled == YES, @"Can't tap a disabled control");
+    if (self.hidden) {
+        [[NSException exceptionWithName:@"Untappable" reason:@"Can't tap an invisible control" userInfo:nil] raise];
+    }
+    if (!self.isEnabled) {
+        [[NSException exceptionWithName:@"Untappable" reason:@"Can't tap a disabled control" userInfo:nil] raise];
+    }
     [self sendActionsForControlEvents:UIControlEventTouchUpInside];
 }
 
