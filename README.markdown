@@ -1,19 +1,20 @@
-# Common library code for iOS projects.
+## Common library code for iOS projects.
 
-## Project groups:
+Pivotal Core Kit is a workspace which contains projects that mirror Apple's 
+system frameworks.  For instance, all extensions and additions to the 
+Foundation framework live in the Foundation project under the PCK workspace.
+Each project has its own builds, and its own specs.
 
-- CoreLib: shared production code
-    \- Interfaces: Common functionality for interfacing with web services
-- SpecHelperLib: shared spec code
-    \- Extensions: Additions and modifications to existing framework classes
-    \- Fakes: Replacement objects for testing (primarily used by the extensions)
-- Spec: specs for shared production code
+- <Framework>
+  - Core: extensions for use in production code
+  - SpecHelper: extenstions for use in spec code only
+  - Spec: specs for the PCK extensions
 
 
 ## MIT License
 
-Copyright (c) 2010 Pivotal Labs (www.pivotallabs.com)
-Contact email: amilligan@pivotallabs.com
+Copyright (c) 2012 Pivotal Labs (www.pivotallabs.com)
+Contact email: adam@pivotallabs.com
 
 Permission is hereby granted, free of charge, to any person
 obtaining a copy of this software and associated documentation

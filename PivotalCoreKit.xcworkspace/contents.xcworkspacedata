@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:Foundation/Foundation.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:UIKit/UIKit.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:CoreLocation/CoreLocation.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:BUILD-TARGETS.markdown">
+   </FileRef>
+   <FileRef
+      location = "group:Rakefile">
+   </FileRef>
+   <FileRef
+      location = "group:README.markdown">
+   </FileRef>
+</Workspace>

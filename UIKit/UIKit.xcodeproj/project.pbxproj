@@ -1,0 +1,820 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AE3847AD168BA0E300C99B55 /* AWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3847A7168BA0B300C99B55 /* AWebViewController.m */; };
+		AE3847AE168BA0E300C99B55 /* AWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE3847A8168BA0B300C99B55 /* AWebViewController.xib */; };
+		AE3847AF168BA11D00C99B55 /* logo-small.png in Resources */ = {isa = PBXBuildFile; fileRef = AE3847AA168BA0B300C99B55 /* logo-small.png */; };
+		AE3847B0168BA11D00C99B55 /* pivotallabs-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = AE3847AB168BA0B300C99B55 /* pivotallabs-logo.png */; };
+		AE3847B3168BA28900C99B55 /* libUIKit+PivotalSpecHelper-StaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AEBCCC64168B9AF10056EE83 /* libUIKit+PivotalSpecHelper-StaticLib.a */; };
+		AE3847B6168BA2DE00C99B55 /* libUIKit+PivotalCore-StaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AEBCCC24168B999F0056EE83 /* libUIKit+PivotalCore-StaticLib.a */; };
+		AE3847B7168BA3B500C99B55 /* UIBarButtonItem+Button.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBCCBCE168B96C80056EE83 /* UIBarButtonItem+Button.m */; };
+		AE3847B8168BA3B500C99B55 /* UIImage+PivotalCore.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBCCBD0168B96C80056EE83 /* UIImage+PivotalCore.m */; };
+		AE3847B9168BA3B500C99B55 /* UIView+PivotalCore.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBCCBD2168B96C80056EE83 /* UIView+PivotalCore.m */; };
+		AE3847BD168BACEB00C99B55 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEBCCC39168B99ED0056EE83 /* CoreGraphics.framework */; };
+		AEBCCC25168B999F0056EE83 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEBCCBE7168B97DD0056EE83 /* Foundation.framework */; };
+		AEBCCC37168B99ED0056EE83 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEBCCC36168B99ED0056EE83 /* UIKit.framework */; };
+		AEBCCC38168B99ED0056EE83 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEBCCBE7168B97DD0056EE83 /* Foundation.framework */; };
+		AEBCCC65168B9AF10056EE83 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEBCCBE7168B97DD0056EE83 /* Foundation.framework */; };
+		AEBCCC88168B9B8B0056EE83 /* UIActionSheet+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBCCC72168B9B5F0056EE83 /* UIActionSheet+Spec.m */; };
+		AEBCCC89168B9B8B0056EE83 /* UIAlertView+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBCCC74168B9B5F0056EE83 /* UIAlertView+Spec.m */; };
+		AEBCCC8A168B9B8B0056EE83 /* UIControl+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBCCC76168B9B5F0056EE83 /* UIControl+Spec.m */; };
+		AEBCCC8B168B9B8B0056EE83 /* UIImage+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBCCC78168B9B5F0056EE83 /* UIImage+Spec.m */; };
+		AEBCCC8C168B9B8B0056EE83 /* UITableViewCell+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBCCC7A168B9B5F0056EE83 /* UITableViewCell+Spec.m */; };
+		AEBCCC8D168B9B8B0056EE83 /* UIView+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBCCC7C168B9B5F0056EE83 /* UIView+Spec.m */; };
+		AEBCCC8E168B9B8B0056EE83 /* UIViewController+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBCCC7D168B9B5F0056EE83 /* UIViewController+Spec.m */; };
+		AEBCCC8F168B9B8B0056EE83 /* UIWebView+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBCCC7F168B9B5F0056EE83 /* UIWebView+Spec.m */; };
+		AEBCCC98168B9C530056EE83 /* UIAlertViewSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEBCCC91168B9C530056EE83 /* UIAlertViewSpec+Spec.mm */; };
+		AEBCCC99168B9C530056EE83 /* UIBarButtonItem+ButtonSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEBCCC92168B9C530056EE83 /* UIBarButtonItem+ButtonSpec.mm */; };
+		AEBCCC9A168B9C530056EE83 /* UIImage+PivotalCoreSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEBCCC93168B9C530056EE83 /* UIImage+PivotalCoreSpec.mm */; };
+		AEBCCC9B168B9C530056EE83 /* UIImageSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEBCCC94168B9C530056EE83 /* UIImageSpec+Spec.mm */; };
+		AEBCCC9C168B9C530056EE83 /* UIView+PivotalCoreSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEBCCC95168B9C530056EE83 /* UIView+PivotalCoreSpec.mm */; };
+		AEBCCC9D168B9C530056EE83 /* UIWebViewSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEBCCC96168B9C530056EE83 /* UIWebViewSpec+Spec.mm */; };
+		AEBCCC9E168B9C530056EE83 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBCCC97168B9C530056EE83 /* main.m */; };
+		AEBCCCA1168B9C7E0056EE83 /* libCedar-StaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AEBCCC07168B98110056EE83 /* libCedar-StaticLib.a */; };
+		AEC6D7FE16963F3500E10C7B /* UIControlSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEC6D7FD16963F3500E10C7B /* UIControlSpec+Spec.mm */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AE3847B1168BA27D00C99B55 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEBCCBA7168B95A00056EE83 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AEBCCC63168B9AF10056EE83;
+			remoteInfo = "UIKit+PivotalSpecHelper-StaticLib";
+		};
+		AE3847B4168BA2DA00C99B55 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEBCCBA7168B95A00056EE83 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AEBCCC23168B999F0056EE83;
+			remoteInfo = "UIKit+PivotalCore-StaticLib";
+		};
+		AEBCCC00168B98110056EE83 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEBCCBF4168B98100056EE83 /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AEEE1FB611DC271300029872;
+			remoteInfo = Cedar;
+		};
+		AEBCCC02168B98110056EE83 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEBCCBF4168B98100056EE83 /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AEEE218611DC28E200029872;
+			remoteInfo = Specs;
+		};
+		AEBCCC04168B98110056EE83 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEBCCBF4168B98100056EE83 /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 96A07F0813F276640021974D;
+			remoteInfo = FocusedSpecs;
+		};
+		AEBCCC06168B98110056EE83 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEBCCBF4168B98100056EE83 /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AEEE222911DC2B0600029872;
+			remoteInfo = "Cedar-StaticLib";
+		};
+		AEBCCC08168B98110056EE83 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEBCCBF4168B98100056EE83 /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AEEE227611DC2CF900029872;
+			remoteInfo = iOSSpecs;
+		};
+		AEBCCC0A168B98110056EE83 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEBCCBF4168B98100056EE83 /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 96B5F9F6144A81A7000A6A5D;
+			remoteInfo = OCUnitApp;
+		};
+		AEBCCC0C168B98110056EE83 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEBCCBF4168B98100056EE83 /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 96B5FA11144A81A8000A6A5D;
+			remoteInfo = OCUnitAppTests;
+		};
+		AEBCCC0E168B98110056EE83 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEBCCBF4168B98100056EE83 /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 96158A86144A915E005895CE;
+			remoteInfo = OCUnitAppLogicTests;
+		};
+		AEBCCC9F168B9C710056EE83 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEBCCBF4168B98100056EE83 /* Cedar.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = AEEE222811DC2B0600029872;
+			remoteInfo = "Cedar-StaticLib";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		AEBCCC22168B999F0056EE83 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/${PRODUCT_NAME}";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AEBCCC62168B9AF10056EE83 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/${PRODUCT_NAME}";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		AE3847A4168B9DF700C99B55 /* UIKitMatchers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIKitMatchers.h; sourceTree = "<group>"; };
+		AE3847A6168BA0B300C99B55 /* AWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWebViewController.h; sourceTree = "<group>"; };
+		AE3847A7168BA0B300C99B55 /* AWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWebViewController.m; sourceTree = "<group>"; };
+		AE3847A8168BA0B300C99B55 /* AWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AWebViewController.xib; sourceTree = "<group>"; };
+		AE3847AA168BA0B300C99B55 /* logo-small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo-small.png"; sourceTree = "<group>"; };
+		AE3847AB168BA0B300C99B55 /* pivotallabs-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pivotallabs-logo.png"; sourceTree = "<group>"; };
+		AEBCCBCD168B96C80056EE83 /* UIBarButtonItem+Button.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Button.h"; sourceTree = "<group>"; };
+		AEBCCBCE168B96C80056EE83 /* UIBarButtonItem+Button.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Button.m"; sourceTree = "<group>"; };
+		AEBCCBCF168B96C80056EE83 /* UIImage+PivotalCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+PivotalCore.h"; sourceTree = "<group>"; };
+		AEBCCBD0168B96C80056EE83 /* UIImage+PivotalCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+PivotalCore.m"; sourceTree = "<group>"; };
+		AEBCCBD1168B96C80056EE83 /* UIView+PivotalCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+PivotalCore.h"; sourceTree = "<group>"; };
+		AEBCCBD2168B96C80056EE83 /* UIView+PivotalCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+PivotalCore.m"; sourceTree = "<group>"; };
+		AEBCCBD3168B96C80056EE83 /* UIKit+PivotalCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIKit+PivotalCore.h"; sourceTree = "<group>"; };
+		AEBCCBE7168B97DD0056EE83 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		AEBCCBF4168B98100056EE83 /* Cedar.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Cedar.xcodeproj; path = Cedar/Cedar.xcodeproj; sourceTree = "<group>"; };
+		AEBCCC24168B999F0056EE83 /* libUIKit+PivotalCore-StaticLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libUIKit+PivotalCore-StaticLib.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEBCCC34168B99ED0056EE83 /* UIKit-StaticLibSpec.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UIKit-StaticLibSpec.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEBCCC36168B99ED0056EE83 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		AEBCCC39168B99ED0056EE83 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		AEBCCC64168B9AF10056EE83 /* libUIKit+PivotalSpecHelper-StaticLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libUIKit+PivotalSpecHelper-StaticLib.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEBCCC71168B9B5F0056EE83 /* UIActionSheet+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIActionSheet+Spec.h"; sourceTree = "<group>"; };
+		AEBCCC72168B9B5F0056EE83 /* UIActionSheet+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIActionSheet+Spec.m"; sourceTree = "<group>"; };
+		AEBCCC73168B9B5F0056EE83 /* UIAlertView+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Spec.h"; sourceTree = "<group>"; };
+		AEBCCC74168B9B5F0056EE83 /* UIAlertView+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+Spec.m"; sourceTree = "<group>"; };
+		AEBCCC75168B9B5F0056EE83 /* UIControl+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+Spec.h"; sourceTree = "<group>"; };
+		AEBCCC76168B9B5F0056EE83 /* UIControl+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIControl+Spec.m"; sourceTree = "<group>"; };
+		AEBCCC77168B9B5F0056EE83 /* UIImage+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Spec.h"; sourceTree = "<group>"; };
+		AEBCCC78168B9B5F0056EE83 /* UIImage+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Spec.m"; sourceTree = "<group>"; };
+		AEBCCC79168B9B5F0056EE83 /* UITableViewCell+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+Spec.h"; sourceTree = "<group>"; };
+		AEBCCC7A168B9B5F0056EE83 /* UITableViewCell+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+Spec.m"; sourceTree = "<group>"; };
+		AEBCCC7B168B9B5F0056EE83 /* UIView+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Spec.h"; sourceTree = "<group>"; };
+		AEBCCC7C168B9B5F0056EE83 /* UIView+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Spec.m"; sourceTree = "<group>"; };
+		AEBCCC7D168B9B5F0056EE83 /* UIViewController+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Spec.m"; sourceTree = "<group>"; };
+		AEBCCC7E168B9B5F0056EE83 /* UIWebView+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+Spec.h"; sourceTree = "<group>"; };
+		AEBCCC7F168B9B5F0056EE83 /* UIWebView+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+Spec.m"; sourceTree = "<group>"; };
+		AEBCCC91168B9C530056EE83 /* UIAlertViewSpec+Spec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIAlertViewSpec+Spec.mm"; sourceTree = "<group>"; };
+		AEBCCC92168B9C530056EE83 /* UIBarButtonItem+ButtonSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIBarButtonItem+ButtonSpec.mm"; sourceTree = "<group>"; };
+		AEBCCC93168B9C530056EE83 /* UIImage+PivotalCoreSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIImage+PivotalCoreSpec.mm"; sourceTree = "<group>"; };
+		AEBCCC94168B9C530056EE83 /* UIImageSpec+Spec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIImageSpec+Spec.mm"; sourceTree = "<group>"; };
+		AEBCCC95168B9C530056EE83 /* UIView+PivotalCoreSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIView+PivotalCoreSpec.mm"; sourceTree = "<group>"; };
+		AEBCCC96168B9C530056EE83 /* UIWebViewSpec+Spec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIWebViewSpec+Spec.mm"; sourceTree = "<group>"; };
+		AEBCCC97168B9C530056EE83 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AEC6D7FD16963F3500E10C7B /* UIControlSpec+Spec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIControlSpec+Spec.mm"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AEBCCC21168B999F0056EE83 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AEBCCC25168B999F0056EE83 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AEBCCC31168B99ED0056EE83 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE3847B6168BA2DE00C99B55 /* libUIKit+PivotalCore-StaticLib.a in Frameworks */,
+				AE3847B3168BA28900C99B55 /* libUIKit+PivotalSpecHelper-StaticLib.a in Frameworks */,
+				AEBCCCA1168B9C7E0056EE83 /* libCedar-StaticLib.a in Frameworks */,
+				AEBCCC37168B99ED0056EE83 /* UIKit.framework in Frameworks */,
+				AEBCCC38168B99ED0056EE83 /* Foundation.framework in Frameworks */,
+				AE3847BD168BACEB00C99B55 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AEBCCC61168B9AF10056EE83 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AEBCCC65168B9AF10056EE83 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AE3847A3168B9DC600C99B55 /* Matchers */ = {
+			isa = PBXGroup;
+			children = (
+				AE3847A4168B9DF700C99B55 /* UIKitMatchers.h */,
+			);
+			path = Matchers;
+			sourceTree = "<group>";
+		};
+		AE3847A5168BA07C00C99B55 /* Fixtures */ = {
+			isa = PBXGroup;
+			children = (
+				AE3847A6168BA0B300C99B55 /* AWebViewController.h */,
+				AE3847A7168BA0B300C99B55 /* AWebViewController.m */,
+				AE3847A8168BA0B300C99B55 /* AWebViewController.xib */,
+				AE3847A9168BA0B300C99B55 /* Images */,
+			);
+			path = Fixtures;
+			sourceTree = "<group>";
+		};
+		AE3847A9168BA0B300C99B55 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				AE3847AA168BA0B300C99B55 /* logo-small.png */,
+				AE3847AB168BA0B300C99B55 /* pivotallabs-logo.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		AEBCCBA5168B95A00056EE83 = {
+			isa = PBXGroup;
+			children = (
+				AEBCCBC9168B95D60056EE83 /* Core */,
+				AEBCCBCA168B95E40056EE83 /* SpecHelper */,
+				AEBCCBCB168B95F20056EE83 /* Spec */,
+				AEBCCBE6168B97DD0056EE83 /* Frameworks */,
+				AEBCCBF3168B97F80056EE83 /* Externals */,
+				AEBCCBB2168B95A00056EE83 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AEBCCBB2168B95A00056EE83 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AEBCCC24168B999F0056EE83 /* libUIKit+PivotalCore-StaticLib.a */,
+				AEBCCC34168B99ED0056EE83 /* UIKit-StaticLibSpec.app */,
+				AEBCCC64168B9AF10056EE83 /* libUIKit+PivotalSpecHelper-StaticLib.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AEBCCBC9168B95D60056EE83 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				AEBCCBCC168B96C80056EE83 /* Extensions */,
+				AEBCCBD3168B96C80056EE83 /* UIKit+PivotalCore.h */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		AEBCCBCA168B95E40056EE83 /* SpecHelper */ = {
+			isa = PBXGroup;
+			children = (
+				AEBCCC70168B9B5F0056EE83 /* Extensions */,
+				AE3847A3168B9DC600C99B55 /* Matchers */,
+			);
+			path = SpecHelper;
+			sourceTree = "<group>";
+		};
+		AEBCCBCB168B95F20056EE83 /* Spec */ = {
+			isa = PBXGroup;
+			children = (
+				AEBCCC90168B9C530056EE83 /* Extentions */,
+				AE3847A5168BA07C00C99B55 /* Fixtures */,
+				AEBCCC97168B9C530056EE83 /* main.m */,
+			);
+			path = Spec;
+			sourceTree = "<group>";
+		};
+		AEBCCBCC168B96C80056EE83 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AEBCCBCD168B96C80056EE83 /* UIBarButtonItem+Button.h */,
+				AEBCCBCE168B96C80056EE83 /* UIBarButtonItem+Button.m */,
+				AEBCCBCF168B96C80056EE83 /* UIImage+PivotalCore.h */,
+				AEBCCBD0168B96C80056EE83 /* UIImage+PivotalCore.m */,
+				AEBCCBD1168B96C80056EE83 /* UIView+PivotalCore.h */,
+				AEBCCBD2168B96C80056EE83 /* UIView+PivotalCore.m */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		AEBCCBE6168B97DD0056EE83 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AEBCCBE7168B97DD0056EE83 /* Foundation.framework */,
+				AEBCCC36168B99ED0056EE83 /* UIKit.framework */,
+				AEBCCC39168B99ED0056EE83 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AEBCCBF3168B97F80056EE83 /* Externals */ = {
+			isa = PBXGroup;
+			children = (
+				AEBCCBF4168B98100056EE83 /* Cedar.xcodeproj */,
+			);
+			name = Externals;
+			path = ../Externals;
+			sourceTree = "<group>";
+		};
+		AEBCCBF5168B98100056EE83 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AEBCCC01168B98110056EE83 /* Cedar.framework */,
+				AEBCCC03168B98110056EE83 /* Specs */,
+				AEBCCC05168B98110056EE83 /* FocusedSpecs */,
+				AEBCCC07168B98110056EE83 /* libCedar-StaticLib.a */,
+				AEBCCC09168B98110056EE83 /* iOSSpecs.app */,
+				AEBCCC0B168B98110056EE83 /* OCUnitApp.app */,
+				AEBCCC0D168B98110056EE83 /* OCUnitAppTests.octest */,
+				AEBCCC0F168B98110056EE83 /* OCUnitAppLogicTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AEBCCC70168B9B5F0056EE83 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AEBCCC71168B9B5F0056EE83 /* UIActionSheet+Spec.h */,
+				AEBCCC72168B9B5F0056EE83 /* UIActionSheet+Spec.m */,
+				AEBCCC73168B9B5F0056EE83 /* UIAlertView+Spec.h */,
+				AEBCCC74168B9B5F0056EE83 /* UIAlertView+Spec.m */,
+				AEBCCC75168B9B5F0056EE83 /* UIControl+Spec.h */,
+				AEBCCC76168B9B5F0056EE83 /* UIControl+Spec.m */,
+				AEBCCC77168B9B5F0056EE83 /* UIImage+Spec.h */,
+				AEBCCC78168B9B5F0056EE83 /* UIImage+Spec.m */,
+				AEBCCC79168B9B5F0056EE83 /* UITableViewCell+Spec.h */,
+				AEBCCC7A168B9B5F0056EE83 /* UITableViewCell+Spec.m */,
+				AEBCCC7B168B9B5F0056EE83 /* UIView+Spec.h */,
+				AEBCCC7C168B9B5F0056EE83 /* UIView+Spec.m */,
+				AEBCCC7D168B9B5F0056EE83 /* UIViewController+Spec.m */,
+				AEBCCC7E168B9B5F0056EE83 /* UIWebView+Spec.h */,
+				AEBCCC7F168B9B5F0056EE83 /* UIWebView+Spec.m */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		AEBCCC90168B9C530056EE83 /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				AEBCCC91168B9C530056EE83 /* UIAlertViewSpec+Spec.mm */,
+				AEBCCC92168B9C530056EE83 /* UIBarButtonItem+ButtonSpec.mm */,
+				AEC6D7FD16963F3500E10C7B /* UIControlSpec+Spec.mm */,
+				AEBCCC93168B9C530056EE83 /* UIImage+PivotalCoreSpec.mm */,
+				AEBCCC94168B9C530056EE83 /* UIImageSpec+Spec.mm */,
+				AEBCCC95168B9C530056EE83 /* UIView+PivotalCoreSpec.mm */,
+				AEBCCC96168B9C530056EE83 /* UIWebViewSpec+Spec.mm */,
+			);
+			path = Extentions;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AEBCCC23168B999F0056EE83 /* UIKit+PivotalCore-StaticLib */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AEBCCC2D168B999F0056EE83 /* Build configuration list for PBXNativeTarget "UIKit+PivotalCore-StaticLib" */;
+			buildPhases = (
+				AEBCCC20168B999F0056EE83 /* Sources */,
+				AEBCCC21168B999F0056EE83 /* Frameworks */,
+				AEBCCC22168B999F0056EE83 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "UIKit+PivotalCore-StaticLib";
+			productName = "UIKit+PivotalCore-StaticLib";
+			productReference = AEBCCC24168B999F0056EE83 /* libUIKit+PivotalCore-StaticLib.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		AEBCCC33168B99ED0056EE83 /* UIKit-StaticLibSpec */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AEBCCC4D168B99EE0056EE83 /* Build configuration list for PBXNativeTarget "UIKit-StaticLibSpec" */;
+			buildPhases = (
+				AEBCCC30168B99ED0056EE83 /* Sources */,
+				AEBCCC31168B99ED0056EE83 /* Frameworks */,
+				AEBCCC32168B99ED0056EE83 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AE3847B5168BA2DA00C99B55 /* PBXTargetDependency */,
+				AE3847B2168BA27D00C99B55 /* PBXTargetDependency */,
+				AEBCCCA0168B9C710056EE83 /* PBXTargetDependency */,
+			);
+			name = "UIKit-StaticLibSpec";
+			productName = "UIKit+PivotalCore-StaticLibSpec";
+			productReference = AEBCCC34168B99ED0056EE83 /* UIKit-StaticLibSpec.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AEBCCC63168B9AF10056EE83 /* UIKit+PivotalSpecHelper-StaticLib */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AEBCCC6D168B9AF10056EE83 /* Build configuration list for PBXNativeTarget "UIKit+PivotalSpecHelper-StaticLib" */;
+			buildPhases = (
+				AEBCCC60168B9AF10056EE83 /* Sources */,
+				AEBCCC61168B9AF10056EE83 /* Frameworks */,
+				AEBCCC62168B9AF10056EE83 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "UIKit+PivotalSpecHelper-StaticLib";
+			productName = "UIKit+PivotalSpecHelper-StaticLib";
+			productReference = AEBCCC64168B9AF10056EE83 /* libUIKit+PivotalSpecHelper-StaticLib.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AEBCCBA7168B95A00056EE83 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "Pivotal Labs";
+			};
+			buildConfigurationList = AEBCCBAA168B95A00056EE83 /* Build configuration list for PBXProject "UIKit" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = AEBCCBA5168B95A00056EE83;
+			productRefGroup = AEBCCBB2168B95A00056EE83 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = AEBCCBF5168B98100056EE83 /* Products */;
+					ProjectRef = AEBCCBF4168B98100056EE83 /* Cedar.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				AEBCCC23168B999F0056EE83 /* UIKit+PivotalCore-StaticLib */,
+				AEBCCC63168B9AF10056EE83 /* UIKit+PivotalSpecHelper-StaticLib */,
+				AEBCCC33168B99ED0056EE83 /* UIKit-StaticLibSpec */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		AEBCCC01168B98110056EE83 /* Cedar.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Cedar.framework;
+			remoteRef = AEBCCC00168B98110056EE83 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AEBCCC03168B98110056EE83 /* Specs */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = Specs;
+			remoteRef = AEBCCC02168B98110056EE83 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AEBCCC05168B98110056EE83 /* FocusedSpecs */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = FocusedSpecs;
+			remoteRef = AEBCCC04168B98110056EE83 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AEBCCC07168B98110056EE83 /* libCedar-StaticLib.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libCedar-StaticLib.a";
+			remoteRef = AEBCCC06168B98110056EE83 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AEBCCC09168B98110056EE83 /* iOSSpecs.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = iOSSpecs.app;
+			remoteRef = AEBCCC08168B98110056EE83 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AEBCCC0B168B98110056EE83 /* OCUnitApp.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = OCUnitApp.app;
+			remoteRef = AEBCCC0A168B98110056EE83 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AEBCCC0D168B98110056EE83 /* OCUnitAppTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = OCUnitAppTests.octest;
+			remoteRef = AEBCCC0C168B98110056EE83 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AEBCCC0F168B98110056EE83 /* OCUnitAppLogicTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = OCUnitAppLogicTests.octest;
+			remoteRef = AEBCCC0E168B98110056EE83 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AEBCCC32168B99ED0056EE83 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE3847AE168BA0E300C99B55 /* AWebViewController.xib in Resources */,
+				AE3847AF168BA11D00C99B55 /* logo-small.png in Resources */,
+				AE3847B0168BA11D00C99B55 /* pivotallabs-logo.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AEBCCC20168B999F0056EE83 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE3847B7168BA3B500C99B55 /* UIBarButtonItem+Button.m in Sources */,
+				AE3847B8168BA3B500C99B55 /* UIImage+PivotalCore.m in Sources */,
+				AE3847B9168BA3B500C99B55 /* UIView+PivotalCore.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AEBCCC30168B99ED0056EE83 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AEBCCC98168B9C530056EE83 /* UIAlertViewSpec+Spec.mm in Sources */,
+				AEBCCC99168B9C530056EE83 /* UIBarButtonItem+ButtonSpec.mm in Sources */,
+				AEBCCC9A168B9C530056EE83 /* UIImage+PivotalCoreSpec.mm in Sources */,
+				AEBCCC9B168B9C530056EE83 /* UIImageSpec+Spec.mm in Sources */,
+				AEBCCC9C168B9C530056EE83 /* UIView+PivotalCoreSpec.mm in Sources */,
+				AEBCCC9D168B9C530056EE83 /* UIWebViewSpec+Spec.mm in Sources */,
+				AEBCCC9E168B9C530056EE83 /* main.m in Sources */,
+				AE3847AD168BA0E300C99B55 /* AWebViewController.m in Sources */,
+				AEC6D7FE16963F3500E10C7B /* UIControlSpec+Spec.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AEBCCC60168B9AF10056EE83 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AEBCCC88168B9B8B0056EE83 /* UIActionSheet+Spec.m in Sources */,
+				AEBCCC89168B9B8B0056EE83 /* UIAlertView+Spec.m in Sources */,
+				AEBCCC8A168B9B8B0056EE83 /* UIControl+Spec.m in Sources */,
+				AEBCCC8B168B9B8B0056EE83 /* UIImage+Spec.m in Sources */,
+				AEBCCC8C168B9B8B0056EE83 /* UITableViewCell+Spec.m in Sources */,
+				AEBCCC8D168B9B8B0056EE83 /* UIView+Spec.m in Sources */,
+				AEBCCC8E168B9B8B0056EE83 /* UIViewController+Spec.m in Sources */,
+				AEBCCC8F168B9B8B0056EE83 /* UIWebView+Spec.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AE3847B2168BA27D00C99B55 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AEBCCC63168B9AF10056EE83 /* UIKit+PivotalSpecHelper-StaticLib */;
+			targetProxy = AE3847B1168BA27D00C99B55 /* PBXContainerItemProxy */;
+		};
+		AE3847B5168BA2DA00C99B55 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AEBCCC23168B999F0056EE83 /* UIKit+PivotalCore-StaticLib */;
+			targetProxy = AE3847B4168BA2DA00C99B55 /* PBXContainerItemProxy */;
+		};
+		AEBCCCA0168B9C710056EE83 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Cedar-StaticLib";
+			targetProxy = AEBCCC9F168B9C710056EE83 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		AEBCCBC4168B95A00056EE83 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		AEBCCBC5168B95A00056EE83 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		AEBCCC2E168B999F0056EE83 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				DSTROOT = /tmp/UIKit_PivotalCore_StaticLib.dst;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		AEBCCC2F168B999F0056EE83 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				DSTROOT = /tmp/UIKit_PivotalCore_StaticLib.dst;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AEBCCC4E168B99EE0056EE83 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"CEDAR_CUSTOM_COMPARATORS=\\\"$SRCROOT/SpecHelper/Matchers/UIKitMatchers.h\\\"",
+					"$(inherited)",
+				);
+				HEADER_SEARCH_PATHS = "$SRCROOT/../Externals/Cedar/**";
+				INFOPLIST_FILE = "Spec/UIKit-StaticLibSpec-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		AEBCCC4F168B99EE0056EE83 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"CEDAR_CUSTOM_COMPARATORS=\\\"$SRCROOT/SpecHelper/Matchers/UIKitMatchers.h\\\"",
+					"$(inherited)",
+				);
+				HEADER_SEARCH_PATHS = "$SRCROOT/../Externals/Cedar/**";
+				INFOPLIST_FILE = "Spec/UIKit-StaticLibSpec-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		AEBCCC6E168B9AF10056EE83 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				DSTROOT = /tmp/UIKit_PivotalSpecHelper_StaticLib.dst;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		AEBCCC6F168B9AF10056EE83 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				DSTROOT = /tmp/UIKit_PivotalSpecHelper_StaticLib.dst;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AEBCCBAA168B95A00056EE83 /* Build configuration list for PBXProject "UIKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AEBCCBC4168B95A00056EE83 /* Debug */,
+				AEBCCBC5168B95A00056EE83 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AEBCCC2D168B999F0056EE83 /* Build configuration list for PBXNativeTarget "UIKit+PivotalCore-StaticLib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AEBCCC2E168B999F0056EE83 /* Debug */,
+				AEBCCC2F168B999F0056EE83 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AEBCCC4D168B99EE0056EE83 /* Build configuration list for PBXNativeTarget "UIKit-StaticLibSpec" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AEBCCC4E168B99EE0056EE83 /* Debug */,
+				AEBCCC4F168B99EE0056EE83 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AEBCCC6D168B9AF10056EE83 /* Build configuration list for PBXNativeTarget "UIKit+PivotalSpecHelper-StaticLib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AEBCCC6E168B9AF10056EE83 /* Debug */,
+				AEBCCC6F168B9AF10056EE83 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AEBCCBA7168B95A00056EE83 /* Project object */;
+}
