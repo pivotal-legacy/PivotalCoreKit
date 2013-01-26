@@ -142,6 +142,12 @@ namespace :uikit do
         system_or_exit(%Q[xcodebuild -project #{project_name}.xcodeproj -target UIKit+PivotalSpecHelper-StaticLib -configuration #{CONFIGURATION} ARCHS=i386 -sdk iphonesimulator build SYMROOT=#{BUILD_DIR}], {}, output_file("uikit:build:spec_helper:ios"))
       end
     end
+    
+    namespace :spec_helper_framework do
+      task :ios do
+        system_or_exit(%Q[xcodebuild -project #{project_name}.xcodeproj -target UIKit+PivotalSpecHelper-iOS -configuration #{CONFIGURATION} build SYMROOT=#{BUILD_DIR}], {}, output_file("uikit:build:spec_helper_framework:ios"))
+      end
+    end
 
     task :spec_helper => ["spec_helper:ios"]
   end
