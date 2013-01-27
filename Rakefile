@@ -143,13 +143,15 @@ namespace :uikit do
       end
     end
     
+    task :spec_helper => ["spec_helper:ios"]
+    
     namespace :spec_helper_framework do
       task :ios do
         system_or_exit(%Q[xcodebuild -project #{project_name}.xcodeproj -target UIKit+PivotalSpecHelper-iOS -configuration #{CONFIGURATION} build SYMROOT=#{BUILD_DIR}], {}, output_file("uikit:build:spec_helper_framework:ios"))
       end
     end
 
-    task :spec_helper => ["spec_helper:ios"]
+    task :spec_helper_framework => ["spec_helper_framework:ios"]
   end
 
   namespace :spec do
