@@ -6,6 +6,22 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		B866FC0716B48C8200317E32 /* UIKit+PivotalSpecHelper-iOS */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = B866FC0A16B48C8200317E32 /* Build configuration list for PBXAggregateTarget "UIKit+PivotalSpecHelper-iOS" */;
+			buildPhases = (
+				B866FC0C16B48CA600317E32 /* Build architecture-specific static libs */,
+				B866FC0D16B48D7600317E32 /* Build universal static lib */,
+				B866FC1716B494EE00317E32 /* Copy headers to framework */,
+			);
+			dependencies = (
+			);
+			name = "UIKit+PivotalSpecHelper-iOS";
+			productName = "UIKit+PivotalSpecHelper-iOS";
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		AE3847AD168BA0E300C99B55 /* AWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3847A7168BA0B300C99B55 /* AWebViewController.m */; };
 		AE3847AE168BA0E300C99B55 /* AWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE3847A8168BA0B300C99B55 /* AWebViewController.xib */; };
@@ -38,6 +54,14 @@
 		AEBCCC9E168B9C530056EE83 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBCCC97168B9C530056EE83 /* main.m */; };
 		AEBCCCA1168B9C7E0056EE83 /* libCedar-StaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AEBCCC07168B98110056EE83 /* libCedar-StaticLib.a */; };
 		AEC6D7FE16963F3500E10C7B /* UIControlSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEC6D7FD16963F3500E10C7B /* UIControlSpec+Spec.mm */; };
+		B866FC1816B4957500317E32 /* UIActionSheet+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AEBCCC71168B9B5F0056EE83 /* UIActionSheet+Spec.h */; };
+		B866FC1916B4957500317E32 /* UIAlertView+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AEBCCC73168B9B5F0056EE83 /* UIAlertView+Spec.h */; };
+		B866FC1A16B4957500317E32 /* UIControl+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AEBCCC75168B9B5F0056EE83 /* UIControl+Spec.h */; };
+		B866FC1B16B4957500317E32 /* UIImage+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AEBCCC77168B9B5F0056EE83 /* UIImage+Spec.h */; };
+		B866FC1C16B4957500317E32 /* UITableViewCell+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AEBCCC79168B9B5F0056EE83 /* UITableViewCell+Spec.h */; };
+		B866FC1D16B4957500317E32 /* UIView+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AEBCCC7B168B9B5F0056EE83 /* UIView+Spec.h */; };
+		B866FC1E16B4957500317E32 /* UIWebView+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AEBCCC7E168B9B5F0056EE83 /* UIWebView+Spec.h */; };
+		B866FC1F16B4957500317E32 /* UIKitMatchers.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AE3847A4168B9DF700C99B55 /* UIKitMatchers.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -137,6 +161,24 @@
 			dstSubfolderSpec = 16;
 			files = (
 			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B866FC1716B494EE00317E32 /* Copy headers to framework */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "${BUILD_DIR}/${CONFIGURATION}-iphoneuniversal/${PRODUCT_NAME}.framework/Headers";
+			dstSubfolderSpec = 0;
+			files = (
+				B866FC1816B4957500317E32 /* UIActionSheet+Spec.h in Copy headers to framework */,
+				B866FC1916B4957500317E32 /* UIAlertView+Spec.h in Copy headers to framework */,
+				B866FC1A16B4957500317E32 /* UIControl+Spec.h in Copy headers to framework */,
+				B866FC1B16B4957500317E32 /* UIImage+Spec.h in Copy headers to framework */,
+				B866FC1C16B4957500317E32 /* UITableViewCell+Spec.h in Copy headers to framework */,
+				B866FC1D16B4957500317E32 /* UIView+Spec.h in Copy headers to framework */,
+				B866FC1E16B4957500317E32 /* UIWebView+Spec.h in Copy headers to framework */,
+				B866FC1F16B4957500317E32 /* UIKitMatchers.h in Copy headers to framework */,
+			);
+			name = "Copy headers to framework";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -468,6 +510,7 @@
 				AEBCCC23168B999F0056EE83 /* UIKit+PivotalCore-StaticLib */,
 				AEBCCC63168B9AF10056EE83 /* UIKit+PivotalSpecHelper-StaticLib */,
 				AEBCCC33168B99ED0056EE83 /* UIKit-StaticLibSpec */,
+				B866FC0716B48C8200317E32 /* UIKit+PivotalSpecHelper-iOS */,
 			);
 		};
 /* End PBXProject section */
@@ -543,6 +586,37 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B866FC0C16B48CA600317E32 /* Build architecture-specific static libs */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Build architecture-specific static libs";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "xcodebuild -project ${PROJECT_NAME}.xcodeproj -sdk iphonesimulator -target ${PROJECT_NAME}+PivotalSpecHelper-StaticLib -configuration ${CONFIGURATION} clean build\nxcodebuild -project ${PROJECT_NAME}.xcodeproj -sdk iphoneos -target ${PROJECT_NAME}+PivotalSpecHelper-StaticLib -configuration ${CONFIGURATION} clean build";
+		};
+		B866FC0D16B48D7600317E32 /* Build universal static lib */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Build universal static lib";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "SIMULATOR_LIBRARY_PATH=\"${PROJECT_DIR}/build/${CONFIGURATION}-iphonesimulator/lib${PROJECT_NAME}+PivotalSpecHelper-StaticLib.a\" &&\nDEVICE_LIBRARY_PATH=\"${PROJECT_DIR}/build/${CONFIGURATION}-iphoneos/lib${PROJECT_NAME}+PivotalSpecHelper-StaticLib.a\" &&\nUNIVERSAL_LIBRARY_DIR=\"${BUILD_DIR}/${CONFIGURATION}-iphoneuniversal\" &&\nUNIVERSAL_LIBRARY_PATH=\"${UNIVERSAL_LIBRARY_DIR}/${PRODUCT_NAME}\" &&\nFRAMEWORK=\"${UNIVERSAL_LIBRARY_DIR}/${PRODUCT_NAME}.framework\" &&\n\n# Create framework directory structure.\nrm -rf \"${FRAMEWORK}\" &&\nmkdir -p \"${UNIVERSAL_LIBRARY_DIR}\" &&\nmkdir -p \"${FRAMEWORK}/Versions/A/Headers\" &&\nmkdir -p \"${FRAMEWORK}/Versions/A/Resources\" &&\n\n# Generate universal binary from desktop, device, and simulator builds.\nlipo \"${SIMULATOR_LIBRARY_PATH}\" \"${DEVICE_LIBRARY_PATH}\" -create -output \"${UNIVERSAL_LIBRARY_PATH}\" &&\n\n# Move files to appropriate locations in framework paths.\ncp \"${UNIVERSAL_LIBRARY_PATH}\" \"${FRAMEWORK}/Versions/A\" &&\ncd \"${FRAMEWORK}/Versions\" &&\nln -s \"A\" \"Current\" &&\ncd \"${FRAMEWORK}\" &&\nln -s \"Versions/Current/Headers\" \"Headers\" &&\nln -s \"Versions/Current/Resources\" \"Resources\" &&\nln -s \"Versions/Current/${PRODUCT_NAME}\" \"${PRODUCT_NAME}\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AEBCCC20168B999F0056EE83 /* Sources */ = {
@@ -777,6 +851,20 @@
 			};
 			name = Release;
 		};
+		B866FC0816B48C8200317E32 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B866FC0916B48C8200317E32 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -815,6 +903,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		B866FC0A16B48C8200317E32 /* Build configuration list for PBXAggregateTarget "UIKit+PivotalSpecHelper-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B866FC0816B48C8200317E32 /* Debug */,
+				B866FC0916B48C8200317E32 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
