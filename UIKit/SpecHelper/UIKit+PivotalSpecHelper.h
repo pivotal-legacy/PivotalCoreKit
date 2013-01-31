@@ -1,0 +1,8 @@
+#import "UIActionSheet+Spec.h"
+#import "UIAlertView+Spec.h"
+#import "UIControl+Spec.h"
+#import "UIImage+Spec.h"
+#import "UISlider+Spec.h"
+#import "UITableViewCell+Spec.h"
+#import "UIView+Spec.h"
+#import "UIWebView+Spec.h"
