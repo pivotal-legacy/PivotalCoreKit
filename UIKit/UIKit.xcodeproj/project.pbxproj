@@ -23,6 +23,8 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		22601B4F16BA202A00A807CB /* UISlider+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = 22601B4E16BA202A00A807CB /* UISlider+Spec.m */; };
+		22601B5916BA209F00A807CB /* UISliderSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 22601B5816BA209F00A807CB /* UISliderSpec+Spec.mm */; };
 		AE3847AD168BA0E300C99B55 /* AWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3847A7168BA0B300C99B55 /* AWebViewController.m */; };
 		AE3847AE168BA0E300C99B55 /* AWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE3847A8168BA0B300C99B55 /* AWebViewController.xib */; };
 		AE3847AF168BA11D00C99B55 /* logo-small.png in Resources */ = {isa = PBXBuildFile; fileRef = AE3847AA168BA0B300C99B55 /* logo-small.png */; };
@@ -184,6 +186,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		22601B4D16BA202A00A807CB /* UISlider+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UISlider+Spec.h"; sourceTree = "<group>"; };
+		22601B4E16BA202A00A807CB /* UISlider+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UISlider+Spec.m"; sourceTree = "<group>"; };
+		22601B5816BA209F00A807CB /* UISliderSpec+Spec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UISliderSpec+Spec.mm"; sourceTree = "<group>"; };
 		AE3847A4168B9DF700C99B55 /* UIKitMatchers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIKitMatchers.h; sourceTree = "<group>"; };
 		AE3847A6168BA0B300C99B55 /* AWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWebViewController.h; sourceTree = "<group>"; };
 		AE3847A7168BA0B300C99B55 /* AWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWebViewController.m; sourceTree = "<group>"; };
@@ -398,6 +403,8 @@
 				AEBCCC76168B9B5F0056EE83 /* UIControl+Spec.m */,
 				AEBCCC77168B9B5F0056EE83 /* UIImage+Spec.h */,
 				AEBCCC78168B9B5F0056EE83 /* UIImage+Spec.m */,
+				22601B4D16BA202A00A807CB /* UISlider+Spec.h */,
+				22601B4E16BA202A00A807CB /* UISlider+Spec.m */,
 				AEBCCC79168B9B5F0056EE83 /* UITableViewCell+Spec.h */,
 				AEBCCC7A168B9B5F0056EE83 /* UITableViewCell+Spec.m */,
 				AEBCCC7B168B9B5F0056EE83 /* UIView+Spec.h */,
@@ -417,6 +424,7 @@
 				AEC6D7FD16963F3500E10C7B /* UIControlSpec+Spec.mm */,
 				AEBCCC93168B9C530056EE83 /* UIImage+PivotalCoreSpec.mm */,
 				AEBCCC94168B9C530056EE83 /* UIImageSpec+Spec.mm */,
+				22601B5816BA209F00A807CB /* UISliderSpec+Spec.mm */,
 				AEBCCC95168B9C530056EE83 /* UIView+PivotalCoreSpec.mm */,
 				AEBCCC96168B9C530056EE83 /* UIWebViewSpec+Spec.mm */,
 			);
@@ -642,6 +650,7 @@
 				AEBCCC9E168B9C530056EE83 /* main.m in Sources */,
 				AE3847AD168BA0E300C99B55 /* AWebViewController.m in Sources */,
 				AEC6D7FE16963F3500E10C7B /* UIControlSpec+Spec.mm in Sources */,
+				22601B5916BA209F00A807CB /* UISliderSpec+Spec.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -657,6 +666,7 @@
 				AEBCCC8D168B9B8B0056EE83 /* UIView+Spec.m in Sources */,
 				AEBCCC8E168B9B8B0056EE83 /* UIViewController+Spec.m in Sources */,
 				AEBCCC8F168B9B8B0056EE83 /* UIWebView+Spec.m in Sources */,
+				22601B4F16BA202A00A807CB /* UISlider+Spec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -911,6 +921,7 @@
 				B866FC0916B48C8200317E32 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
