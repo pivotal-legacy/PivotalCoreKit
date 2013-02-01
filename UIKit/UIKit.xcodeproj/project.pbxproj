@@ -66,6 +66,10 @@
 		B866FC1D16B4957500317E32 /* UIView+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AEBCCC7B168B9B5F0056EE83 /* UIView+Spec.h */; };
 		B866FC1E16B4957500317E32 /* UIWebView+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AEBCCC7E168B9B5F0056EE83 /* UIWebView+Spec.h */; };
 		B866FC1F16B4957500317E32 /* UIKitMatchers.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AE3847A4168B9DF700C99B55 /* UIKitMatchers.h */; };
+		B8C62E6D16BC03420009CDAD /* UIBarButtonItem+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = B8C62E6C16BC03420009CDAD /* UIBarButtonItem+Spec.m */; };
+		B8C62E6F16BC04230009CDAD /* UIBarButtonItemSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = B8C62E6E16BC04230009CDAD /* UIBarButtonItemSpec+Spec.mm */; };
+		B8C62E7216BC04940009CDAD /* Target.m in Sources */ = {isa = PBXBuildFile; fileRef = B8C62E7116BC04940009CDAD /* Target.m */; };
+		B8C62E7316BC07F60009CDAD /* UIBarButtonItem+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = B8C62E6B16BC03420009CDAD /* UIBarButtonItem+Spec.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -175,6 +179,7 @@
 			files = (
 				B866FC1816B4957500317E32 /* UIActionSheet+Spec.h in Copy headers to framework */,
 				B866FC1916B4957500317E32 /* UIAlertView+Spec.h in Copy headers to framework */,
+				B8C62E7316BC07F60009CDAD /* UIBarButtonItem+Spec.h in Copy headers to framework */,
 				B866FC1A16B4957500317E32 /* UIControl+Spec.h in Copy headers to framework */,
 				B866FC1B16B4957500317E32 /* UIImage+Spec.h in Copy headers to framework */,
 				B866FC1C16B4957500317E32 /* UITableViewCell+Spec.h in Copy headers to framework */,
@@ -237,6 +242,11 @@
 		AEBCCC96168B9C530056EE83 /* UIWebViewSpec+Spec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIWebViewSpec+Spec.mm"; sourceTree = "<group>"; };
 		AEBCCC97168B9C530056EE83 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AEC6D7FD16963F3500E10C7B /* UIControlSpec+Spec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIControlSpec+Spec.mm"; sourceTree = "<group>"; };
+		B8C62E6B16BC03420009CDAD /* UIBarButtonItem+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Spec.h"; sourceTree = "<group>"; };
+		B8C62E6C16BC03420009CDAD /* UIBarButtonItem+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Spec.m"; sourceTree = "<group>"; };
+		B8C62E6E16BC04230009CDAD /* UIBarButtonItemSpec+Spec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIBarButtonItemSpec+Spec.mm"; sourceTree = "<group>"; };
+		B8C62E7016BC04940009CDAD /* Target.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Target.h; sourceTree = "<group>"; };
+		B8C62E7116BC04940009CDAD /* Target.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Target.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -286,6 +296,8 @@
 				AE3847A6168BA0B300C99B55 /* AWebViewController.h */,
 				AE3847A7168BA0B300C99B55 /* AWebViewController.m */,
 				AE3847A8168BA0B300C99B55 /* AWebViewController.xib */,
+				B8C62E7016BC04940009CDAD /* Target.h */,
+				B8C62E7116BC04940009CDAD /* Target.m */,
 				AE3847A9168BA0B300C99B55 /* Images */,
 			);
 			path = Fixtures;
@@ -405,6 +417,8 @@
 				AEBCCC72168B9B5F0056EE83 /* UIActionSheet+Spec.m */,
 				AEBCCC73168B9B5F0056EE83 /* UIAlertView+Spec.h */,
 				AEBCCC74168B9B5F0056EE83 /* UIAlertView+Spec.m */,
+				B8C62E6B16BC03420009CDAD /* UIBarButtonItem+Spec.h */,
+				B8C62E6C16BC03420009CDAD /* UIBarButtonItem+Spec.m */,
 				AEBCCC75168B9B5F0056EE83 /* UIControl+Spec.h */,
 				AEBCCC76168B9B5F0056EE83 /* UIControl+Spec.m */,
 				AEBCCC77168B9B5F0056EE83 /* UIImage+Spec.h */,
@@ -427,6 +441,7 @@
 			children = (
 				AEBCCC91168B9C530056EE83 /* UIAlertViewSpec+Spec.mm */,
 				AEBCCC92168B9C530056EE83 /* UIBarButtonItem+ButtonSpec.mm */,
+				B8C62E6E16BC04230009CDAD /* UIBarButtonItemSpec+Spec.mm */,
 				AEC6D7FD16963F3500E10C7B /* UIControlSpec+Spec.mm */,
 				AEBCCC93168B9C530056EE83 /* UIImage+PivotalCoreSpec.mm */,
 				AEBCCC94168B9C530056EE83 /* UIImageSpec+Spec.mm */,
@@ -657,6 +672,8 @@
 				AE3847AD168BA0E300C99B55 /* AWebViewController.m in Sources */,
 				AEC6D7FE16963F3500E10C7B /* UIControlSpec+Spec.mm in Sources */,
 				22601B5916BA209F00A807CB /* UISliderSpec+Spec.mm in Sources */,
+				B8C62E6F16BC04230009CDAD /* UIBarButtonItemSpec+Spec.mm in Sources */,
+				B8C62E7216BC04940009CDAD /* Target.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -673,6 +690,7 @@
 				AEBCCC8E168B9B8B0056EE83 /* UIViewController+Spec.m in Sources */,
 				AEBCCC8F168B9B8B0056EE83 /* UIWebView+Spec.m in Sources */,
 				22601B4F16BA202A00A807CB /* UISlider+Spec.m in Sources */,
+				B8C62E6D16BC03420009CDAD /* UIBarButtonItem+Spec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
