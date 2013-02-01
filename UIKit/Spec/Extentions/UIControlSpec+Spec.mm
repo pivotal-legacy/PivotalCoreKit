@@ -1,20 +1,11 @@
 #import "SpecHelper.h"
 #import "UIControl+Spec.h"
+#import "Target.h"
 
 
 using namespace Cedar::Matchers;
 using namespace Cedar::Doubles;
 
-@interface Target : NSObject
-@property (nonatomic) BOOL wasCalled;
-- (void)callMe;
-@end
-
-@implementation Target
-- (void)callMe {
-    self.wasCalled = YES;
-}
-@end
 
 void (^expectFailureWithMessage)(NSString *, CDRSpecBlock) = ^(NSString *message, CDRSpecBlock block) {
     @try {
