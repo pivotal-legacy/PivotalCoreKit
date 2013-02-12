@@ -21,20 +21,16 @@
         [[NSException exceptionWithName:NSInternalInconsistencyException reason:errorReason userInfo:nil] raise];
     }
 
-    self.modalViewController = modalViewController;
     self.presentedViewController = modalViewController;
     modalViewController.presentingViewController = self;
 }
 
 - (void)dismissModalViewControllerAnimated:(BOOL)animated {
-    self.modalViewController.presentingViewController = nil;
-    self.modalViewController = nil;
-
-    if (self.presentingViewController) {
-        [self.presentingViewController dismissModalViewControllerAnimated:YES];
-    } else {
+    if (self.presentedViewController) {
         objc_setAssociatedObject(self.presentedViewController, @"presentingViewController", nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
         objc_setAssociatedObject(self, @"presentedViewController", nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    } else if (self.presentingViewController) {
+        [self.presentingViewController dismissModalViewControllerAnimated:YES];
     }
 }
 
@@ -45,12 +41,8 @@
     }
 }
 
-- (void)setModalViewController:(UIViewController *)modalViewController {
-    objc_setAssociatedObject(self, "modalViewController", modalViewController, OBJC_ASSOCIATION_ASSIGN);
-}
-
 - (UIViewController *)modalViewController {
-    return objc_getAssociatedObject(self, "modalViewController");
+    return objc_getAssociatedObject(self, "presentedViewController");
 }
 
 - (void)setPresentedViewController:(UIViewController *)modalViewController {
