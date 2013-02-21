@@ -4,6 +4,9 @@
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wobjc-protocol-method-implementation"
 
+static char PRESENTING_CONTROLLER_KEY;
+static char PRESENTED_CONTROLLER_KEY;
+
 @implementation UIViewController (Spec)
 
 #pragma mark - Modals
@@ -27,8 +30,8 @@
 
 - (void)dismissModalViewControllerAnimated:(BOOL)animated {
     if (self.presentedViewController) {
-        objc_setAssociatedObject(self.presentedViewController, @"presentingViewController", nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-        objc_setAssociatedObject(self, @"presentedViewController", nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        self.presentedViewController.presentingViewController = nil;
+        self.presentedViewController = nil;
     } else if (self.presentingViewController) {
         [self.presentingViewController dismissModalViewControllerAnimated:YES];
     }
@@ -42,23 +45,23 @@
 }
 
 - (UIViewController *)modalViewController {
-    return objc_getAssociatedObject(self, "presentedViewController");
+    return self.presentedViewController;
 }
 
 - (void)setPresentedViewController:(UIViewController *)modalViewController {
-    objc_setAssociatedObject(self, @"presentedViewController", modalViewController, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, &PRESENTED_CONTROLLER_KEY, modalViewController, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 - (UIViewController *)presentedViewController {
-    return objc_getAssociatedObject(self, @"presentedViewController");
+    return objc_getAssociatedObject(self, &PRESENTED_CONTROLLER_KEY);
 }
 
 - (void)setPresentingViewController:(UIViewController *)presentingViewController {
-    objc_setAssociatedObject(self, "presentingViewController", presentingViewController, OBJC_ASSOCIATION_ASSIGN);
+    objc_setAssociatedObject(self, &PRESENTING_CONTROLLER_KEY, presentingViewController, OBJC_ASSOCIATION_ASSIGN);
 }
 
 - (UIViewController *)presentingViewController {
-    return objc_getAssociatedObject(self, "presentingViewController");
+    return objc_getAssociatedObject(self, &PRESENTING_CONTROLLER_KEY);
 }
 
 
