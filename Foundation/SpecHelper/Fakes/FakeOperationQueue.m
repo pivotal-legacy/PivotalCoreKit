@@ -39,4 +39,13 @@
     return self.mutableOperations.count;
 }
 
+- (void)runOperationAtIndex:(NSUInteger)index {
+    id op = [self.mutableOperations objectAtIndex:index];
+    if ([op isKindOfClass:[NSOperation class]]) {
+        [op start];
+    } else {
+        ((void (^)())op)();
+    }
+}
+
 @end
