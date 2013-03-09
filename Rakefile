@@ -1,5 +1,5 @@
 CONFIGURATION = "Release"
-SDK_VERSION = "5.1"
+SDK_VERSION = "6.1"
 BUILD_DIR = File.join(File.dirname(__FILE__), "build")
 
 # Xcode 4.3 stores its /Developer inside /Applications/Xcode.app, Xcode 4.2 stored it in /Developer
