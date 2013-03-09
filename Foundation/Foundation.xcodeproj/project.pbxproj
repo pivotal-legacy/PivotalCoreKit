@@ -110,6 +110,8 @@
 		AEBCCB6E168B7E930056EE83 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE24D5AF138170CD00E4420A /* Foundation.framework */; };
 		AEBCCB70168B908F0056EE83 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEBCCB6F168B908E0056EE83 /* UIKit.framework */; };
 		AEBCCB71168B909D0056EE83 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AE88B00711DE6D1200B65DD3 /* libxml2.dylib */; };
+		AEF6F87816EBF0CF0004F077 /* FakeOperationQueueSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEF6F87616EBF0CF0004F077 /* FakeOperationQueueSpec.mm */; };
+		AEF6F88016EBF7D80004F077 /* FakeOperationQueueSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEF6F87616EBF0CF0004F077 /* FakeOperationQueueSpec.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -318,6 +320,7 @@
 		AEA96CBF168B6FFC00861DF1 /* Foundation+PivotalSpecHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Foundation+PivotalSpecHelper.h"; sourceTree = "<group>"; };
 		AEBCCB45168B7E370056EE83 /* Cedar.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Cedar.xcodeproj; path = Cedar/Cedar.xcodeproj; sourceTree = "<group>"; };
 		AEBCCB6F168B908E0056EE83 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		AEF6F87616EBF0CF0004F077 /* FakeOperationQueueSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FakeOperationQueueSpec.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -417,6 +420,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		AE38E70B16EBF0120026DC51 /* Fakes */ = {
+			isa = PBXGroup;
+			children = (
+				AEF6F87616EBF0CF0004F077 /* FakeOperationQueueSpec.mm */,
+			);
+			path = Fakes;
+			sourceTree = "<group>";
+		};
 		AEA96B41168B4FF800861DF1 /* Core */ = {
 			isa = PBXGroup;
 			children = (
@@ -445,6 +456,7 @@
 			isa = PBXGroup;
 			children = (
 				AEA96BE0168B56BF00861DF1 /* Extensions */,
+				AE38E70B16EBF0120026DC51 /* Fakes */,
 				AEA96BE6168B56BF00861DF1 /* Interfaces */,
 				AEA96BEC168B56BF00861DF1 /* Parsers */,
 				AEA96C05168B583200861DF1 /* Fixtures */,
@@ -965,6 +977,7 @@
 				AEA96C39168B602700861DF1 /* FixturesHelper.m in Sources */,
 				AEA96C9A168B659500861DF1 /* main.m in Sources */,
 				AE6898E716BC3B7A00F3F6BC /* NSArraySpec+PivotalCore.mm in Sources */,
+				AEF6F87816EBF0CF0004F077 /* FakeOperationQueueSpec.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1019,6 +1032,7 @@
 				AEA96CBD168B688700861DF1 /* FixturesHelper.m in Sources */,
 				AEA96CBE168B688700861DF1 /* FakeConnectionDelegate.m in Sources */,
 				AE6898E816BC3D0500F3F6BC /* NSArraySpec+PivotalCore.mm in Sources */,
+				AEF6F88016EBF7D80004F077 /* FakeOperationQueueSpec.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
