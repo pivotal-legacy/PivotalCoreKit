@@ -20,7 +20,6 @@
 
 + (void)redirectSelector:(SEL)originalSelector forClass:(Class)klass to:(SEL)newSelector andRenameItTo:(SEL)renamedSelector {
     if ([klass instancesRespondToSelector:renamedSelector]) {
-        [NSException raise:@"SelectorAlreadyExists" format:@"Attempted to rename %@ to %@, but %@ already exists.", NSStringFromSelector(originalSelector), NSStringFromSelector(renamedSelector), NSStringFromSelector(renamedSelector)];
         return;
     }
 

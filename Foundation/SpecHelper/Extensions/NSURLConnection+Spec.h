@@ -15,8 +15,13 @@
 - (void)returnResponse:(PSHKFakeHTTPURLResponse *)response __attribute__((deprecated));
 
 - (void)receiveResponse:(PSHKFakeHTTPURLResponse *)response;
+- (void)receiveSuccesfulResponseWithBody:(NSString *)responseBody;
+
 - (void)failWithError:(NSError *)error;
 - (void)failWithError:(NSError *)error data:(NSData *)data;
 - (void)sendAuthenticationChallengeWithCredential:(NSURLCredential *)credential;
+
+// Perform synchronous network requests
+- (NSData *)fetchSynchronouslyWithTimeout:(NSTimeInterval)timeout;
 
 @end

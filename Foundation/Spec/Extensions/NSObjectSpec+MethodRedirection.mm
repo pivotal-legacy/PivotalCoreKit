@@ -41,6 +41,11 @@ using namespace Cedar::Matchers;
     return [NSString stringWithFormat:@"No, really, %@", [self cheekify_original:string]];
 }
 
+- (NSString *)stodgify:(NSString *)string
+{
+    return [NSString stringWithFormat:@"%@ is so stodgy", string];
+}
+
 @end
 
 SPEC_BEGIN(NSObject_MethodRedirectionSpec)
@@ -61,10 +66,11 @@ describe(@"NSObject_MethodRedirection", ^{
             [redirectable cheekify:@"Herman"] should equal(@"No, really, Herman is so cheeky");
         });
 
-        it(@"should explode when a redirect is attempted twice", ^{
-            ^{
-                [Redirectable redirectSelector:@selector(cheekify:) to:@selector(cheekify_new:) andRenameItTo:@selector(cheekify_original:)];
-            } should raise_exception();
+        it(@"should do nothing when the new selector name (i.e. the argumen to andRenameItTo:) already exists", ^{
+            [Redirectable redirectSelector:@selector(cheekify:) to:@selector(cheekify_new:) andRenameItTo:@selector(stodgify:)];
+
+            [redirectable stodgify:@"Herman"] should equal(@"Herman is so stodgy");
+            [redirectable cheekify:@"Herman"] should equal(@"No, really, Herman is so cheeky");
         });
     });
 
@@ -75,12 +81,6 @@ describe(@"NSObject_MethodRedirection", ^{
             [Redirectable redirectClassSelector:@selector(embiggen:) to:@selector(embiggen_new:) andRenameItTo:@selector(embiggen_original:)];
 
             [Redirectable embiggen:1] should equal(3);
-        });
-
-        it(@"should explode when a redirect is attempted twice", ^{
-            ^{
-                [Redirectable redirectClassSelector:@selector(embiggen:) to:@selector(embiggen_new:) andRenameItTo:@selector(embiggen_original:)];
-            } should raise_exception();
         });
     });
 });

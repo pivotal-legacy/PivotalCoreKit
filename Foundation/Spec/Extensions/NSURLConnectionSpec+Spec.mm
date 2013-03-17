@@ -8,7 +8,7 @@
 #import "NSURLConnection+Spec.h"
 #import "PSHKFakeHTTPURLResponse.h"
 #import "NSURLConnectionDelegate.h"
-#import "FakeConnectionDelegate.h"
+#import "ConnectionDelegate.h"
 
 @interface SelfReferentialConnection : NSURLConnection
 @end
@@ -42,17 +42,12 @@ describe(@"NSURLConnection (spec extensions)", ^{
         // id<NSURLDownloadDelegate> while the type of the NSURLConnection delegate argument is id.  The
         // compiler sees these as ambiguous methods with different arguments, so emits a warning.  Explicitly
         // cast the result of the alloc to NSURLConnection * to quiet the compiler.
-        connection = [(NSURLConnection *)[NSURLConnection alloc] initWithRequest:request delegate:delegate];
-    });
-
-    afterEach(^{
-        [connection release];
+        connection = [[(NSURLConnection *)[NSURLConnection alloc] initWithRequest:request delegate:delegate] autorelease];
     });
 
     describe(@"+resetAll", ^{
         it(@"should remove all connections from the global list of connections", ^{
             expect([NSURLConnection connections]).to_not(be_empty());
-
             [NSURLConnection resetAll];
             expect([NSURLConnection connections]).to(be_empty());
         });
@@ -69,8 +64,7 @@ describe(@"NSURLConnection (spec extensions)", ^{
 
         describe(@"when the delegate is self", ^{
             beforeEach(^{
-                [connection release];
-                connection = [[SelfReferentialConnection alloc] initWithRequest:request delegate:nil startImmediately:YES];
+                connection = [[[SelfReferentialConnection alloc] initWithRequest:request delegate:nil startImmediately:YES] autorelease];
             });
 
             it(@"should not retain the delegate", ^{
@@ -80,11 +74,11 @@ describe(@"NSURLConnection (spec extensions)", ^{
         });
 
         describe(@"when the delegate is not self", ^{
-            __block FakeConnectionDelegate *delegate;
+            __block ConnectionDelegate *delegate;
 
             beforeEach(^{
-                delegate = [[[FakeConnectionDelegate alloc] init] autorelease];
-                connection = [(NSURLConnection *)[NSURLConnection alloc] initWithRequest:request delegate:delegate];
+                delegate = [[[ConnectionDelegate alloc] init] autorelease];
+                connection = [[(NSURLConnection *)[NSURLConnection alloc] initWithRequest:request delegate:delegate] autorelease];
             });
 
             it(@"should retain the delegate", ^{
@@ -95,8 +89,12 @@ describe(@"NSURLConnection (spec extensions)", ^{
 
     describe(@"on destruction", ^{
         beforeEach(^{
-            [NSURLConnection resetAll];
+            request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://exmple.com"]];
+            delegate = nice_fake_for(@protocol(NSURLConnectionDataDelegate));
+            
+            connection = [[NSURLConnection alloc] initWithRequest:request delegate:delegate];
             [connection release]; connection = nil;
+            [NSURLConnection resetAll];
         });
 
         it(@"should release the request", ^{
@@ -105,7 +103,6 @@ describe(@"NSURLConnection (spec extensions)", ^{
 
         describe(@"when the delegate is self", ^{
             beforeEach(^{
-                [connection release];
                 connection = [[SelfReferentialConnection alloc] initWithRequest:request delegate:nil startImmediately:YES];
                 [NSURLConnection resetAll];
             });
@@ -121,7 +118,54 @@ describe(@"NSURLConnection (spec extensions)", ^{
             });
         });
     });
+    
+    describe(@"when the connection is generated with the asynchronous convenience class method", ^{
+        __block NSURL *URL;
+        __block NSHTTPURLResponse *receivedResponse;
+        __block NSData *receivedData;
+        __block NSError *receivedError;
+        
+        beforeEach(^{
+            receivedResponse = nil;
+            receivedData = nil;
+            receivedError = nil;
+            
+            URL = [NSURL URLWithString:@"http://www.google.com/"];
+            NSURLRequest *request = [NSURLRequest requestWithURL:URL];
+            [NSURLConnection sendAsynchronousRequest:request
+                                               queue:[NSOperationQueue currentQueue]
+                                   completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+                                       receivedData = data;
+                                       receivedError = error;
+                                       receivedResponse = (NSHTTPURLResponse *)response;
+                                   }];
+            connection = [[NSURLConnection connections] lastObject];
+        });
+        
+        it(@"should be captured and made available in the array of connections", ^{
+            connection.request.URL should equal(URL);
+        });
+        
+        it(@"should receive responses", ^{
+            PSHKFakeHTTPURLResponse *response = [[[PSHKFakeHTTPURLResponse alloc] initWithStatusCode:200 andHeaders:nil andBody:@"Response"] autorelease];
+            [connection receiveResponse:response];
+            NSString *receivedString = [[[NSString alloc] initWithData:receivedData encoding:NSUTF8StringEncoding] autorelease];
+            receivedString should equal(@"Response");
+            receivedResponse.statusCode should equal(200);
+        });
+        
+        it(@"should receive failures", ^{
+            NSData *data = [@"Fail" dataUsingEncoding:NSUTF8StringEncoding];
+            NSError *error = [[[NSError alloc] init] autorelease];
+            
+            [connection failWithError:error data:data];
+            
+            receivedData should be_nil; //SDK docs say that data is guaranteed to be nil when an error occurs
+            receivedError should equal(error);
+        });
+    });
 
+    
     describe(@"cancel", ^{
         it(@"should remove the connection from the global list of connections", ^{
             expect([NSURLConnection connections]).to(contain(connection));
@@ -163,6 +207,16 @@ describe(@"NSURLConnection (spec extensions)", ^{
             [connection receiveResponse:response];
 
             delegate should_not have_received("connection:didReceiveData:");
+        });
+    });
+    
+    describe(@"receive succesful response", ^{
+        it(@"should send a succesful response (along with the data) to the delegate", ^{
+            ConnectionDelegate *delegate = [[[ConnectionDelegate alloc] init] autorelease];
+            connection = [NSURLConnection connectionWithRequest:request delegate:delegate];
+            [connection receiveSuccesfulResponseWithBody:@"The Internet"];
+            delegate.dataAsString should equal(@"The Internet");
+            [(NSHTTPURLResponse *)delegate.response statusCode] should equal(200);
         });
     });
 
@@ -214,6 +268,110 @@ describe(@"NSURLConnection (spec extensions)", ^{
             expect([NSURLConnection connections]).to(contain(connection));
             [connection failWithError:error];
             expect([NSURLConnection connections]).to_not(contain(connection));
+        });
+    });
+    
+    describe(@"fetching data synchronously", ^{
+        __block NSURL *URL;
+        __block NSURLRequest *request;
+        __block NSString *expectedString;
+        __block NSURLConnection *connection;
+
+        beforeEach(^{
+            [NSURLConnection resetAll];
+            URL = [NSURL URLWithString:@"http://google.com/"];
+            expectedString = @"I'm Feeling Lucky";
+            request = [NSURLRequest requestWithURL:URL];
+        });
+        
+        context(@"when the connection is built with a delegate", ^{
+            __block ConnectionDelegate *delegate;
+            
+            beforeEach(^{
+                delegate = [[[ConnectionDelegate alloc] init] autorelease];
+                connection = [NSURLConnection connectionWithRequest:request
+                                                           delegate:delegate];
+            });
+            
+            it(@"should fetch the data from the URL synchronously, return the resulting data in addition to passing it to the delegate, and remove the original request from the list of connections", ^{
+                [[NSURLConnection connections] count] should equal(1);
+                delegate.data.length should equal(0);
+                
+                NSData *data = [connection fetchSynchronouslyWithTimeout:2];
+                
+                delegate.dataAsString should contain(expectedString);
+                [[NSURLConnection connections] count] should equal(0);
+                NSString *returnedDataAsString = [[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] autorelease];
+                returnedDataAsString should contain(expectedString);
+            });
+            
+            
+            context(@"when the delegate cancels the request", ^{
+                beforeEach(^{
+                    delegate.cancelRequestWhenResponseIsReceived = YES;
+                });
+                
+                it(@"should cancel the synchronous connection", ^{
+                    delegate.data.length should equal(0);
+                    
+                    [connection fetchSynchronouslyWithTimeout:2];
+                    
+                    delegate.data.length should equal(0);
+                    [[NSURLConnection connections] count] should equal(0);
+                });
+            });
+            
+            context(@"when the connection times out", ^{
+                it(@"should cancel the underlying connection and tell the delegate an error occured", ^{
+                    delegate.data.length should equal(0);
+
+                    NSData *data = [connection fetchSynchronouslyWithTimeout:0.001]; //beat that, google!
+
+                    sleep(1); //wait for response from the other thread...
+                    
+                    delegate.data.length should equal(0); //...and there shouldn't be one
+                    delegate.error.domain should equal(NSURLErrorDomain);
+                    delegate.error.code should equal(NSURLErrorTimedOut);
+                    data should be_nil;
+                });
+            });
+        });
+        
+        describe(@"when using the convenience asynchronous class method", ^{
+            __block NSString *receivedResult;
+            __block NSError *receivedError;
+            beforeEach(^{
+                receivedResult = nil;
+                receivedError = nil;
+                
+                [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue currentQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+                    receivedResult = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+                    receivedError = error;
+                }];
+                
+                connection = [[NSURLConnection connections] lastObject];
+                connection should_not be_nil;
+                connection.request should equal(request);
+            });
+            
+            it(@"should fetch the data from the URL synchronously", ^{
+                [[NSURLConnection connections] count] should equal(1);
+                receivedResult should be_nil;
+                
+                NSData *data = [connection fetchSynchronouslyWithTimeout:2];
+                
+                receivedResult should contain(expectedString);
+                [[NSURLConnection connections] count] should equal(0);
+                NSString *returnedDataAsString = [[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] autorelease];
+                returnedDataAsString should contain(expectedString);
+            });
+            
+            it(@"should pass the appropriate error in when the request times out", ^{
+                NSData *data = [connection fetchSynchronouslyWithTimeout:0.001]; //beat that, google!
+                receivedError.domain should equal(NSURLErrorDomain);
+                receivedError.code should equal(NSURLErrorTimedOut);
+                data should be_nil;
+            });
         });
     });
 });
