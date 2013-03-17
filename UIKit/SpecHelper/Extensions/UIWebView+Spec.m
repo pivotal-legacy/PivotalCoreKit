@@ -4,28 +4,22 @@
 #pragma clang diagnostic ignored "-Wobjc-protocol-method-implementation"
 
 @interface UIWebViewAttributes : NSObject
-@property (nonatomic, assign) id<UIWebViewDelegate> delegate;
+
 @property (nonatomic, retain) NSURLRequest *request;
-@property (nonatomic, assign) BOOL loading, logging, allowsInlineMediaPlayback, scalesPageToFit, canGoBack, canGoForward;
+@property (nonatomic, assign) BOOL loading, logging, canGoBack, canGoForward;
 @property (nonatomic, retain) NSMutableArray *javaScripts;
 @property (nonatomic, retain) NSMutableDictionary *returnValueBlocksByJavaScript;
 @property (nonatomic, retain) NSString *loadedHTMLString;
 @property (nonatomic, retain) NSURL *loadedBaseURL;
-@property (nonatomic, assign) UIDataDetectorTypes dataDetectorTypes;
+
 @end
 
 @implementation UIWebViewAttributes
-@synthesize delegate = delegate_, request = request_, loading = loading_, logging = logging_,
-    javaScripts = javaScripts_, returnValueBlocksByJavaScript = returnValueBlocksByJavaScript_,
-    loadedHTMLString = loadedHTMLString_, loadedBaseURL = loadedBaseURL_, scalesPageToFit = _scalesPageToFit,
-    allowsInlineMediaPlayback = allowsInlineMediaPlayback_, dataDetectorTypes = dataDetectorTypes_,
-    canGoBack = _canGoBack, canGoForward = _canGoForward;
 
 - (id)init {
     if (self = [super init]) {
         self.javaScripts = [NSMutableArray array];
         self.returnValueBlocksByJavaScript = [NSMutableDictionary dictionary];
-        self.dataDetectorTypes = UIDataDetectorTypePhoneNumber;
     }
     return self;
 }
@@ -36,6 +30,7 @@
     self.request = nil;
     self.returnValueBlocksByJavaScript = nil;
     self.javaScripts = nil;
+
     [super dealloc];
 }
 @end
@@ -49,32 +44,6 @@
 static char ASSOCIATED_ATTRIBUTES_KEY;
 
 @implementation UIWebView (Spec)
-
-- (id)initWithFrame:(CGRect)frame {
-    if (self = [super initWithFrame:frame]) {
-        objc_setAssociatedObject(self, &ASSOCIATED_ATTRIBUTES_KEY, [[[UIWebViewAttributes alloc] init] autorelease], OBJC_ASSOCIATION_RETAIN);
-    }
-    return self;
-}
-
-- (id)initWithCoder:(NSCoder *)decoder {
-    return [self initWithFrame:CGRectMake(0, 0, 0, 0)];
-}
-
-- (void)dealloc {
-    [super dealloc];
-}
-
-// Call retain/release on the superclass, because the original retain/release calls for UIWebView appear to be
-// proxying the calls to some sort of internal implementation class, which we (of course) don't create in our
-// fake constructor.
-- (id)retain {
-    return [super retain];
-}
-
-- (void)release {
-    [super release];
-}
 
 #pragma mark Property overrides
 - (BOOL)canGoBack {
@@ -93,14 +62,6 @@ static char ASSOCIATED_ATTRIBUTES_KEY;
     self.attributes.canGoForward = canGoForward;
 }
 
-- (void)setDelegate:(id<UIWebViewDelegate>)delegate {
-    self.attributes.delegate = delegate;
-}
-
-- (id<UIWebViewDelegate>)delegate {
-    return self.attributes.delegate;
-}
-
 - (void)setRequest:(NSURLRequest *)request {
     self.attributes.request = request;
 }
@@ -115,38 +76,6 @@ static char ASSOCIATED_ATTRIBUTES_KEY;
 
 - (void)setLoading:(BOOL)loading {
     self.attributes.loading = loading;
-}
-
-- (BOOL)allowsInlineMediaPlayback {
-    return self.attributes.allowsInlineMediaPlayback;
-}
-
-- (void)setAllowsInlineMediaPlayback:(BOOL)allowed {
-    self.attributes.allowsInlineMediaPlayback = allowed;
-}
-
-- (BOOL)scalesPageToFit {
-    return self.attributes.scalesPageToFit;
-}
-
-- (void)setScalesPageToFit:(BOOL)scalesPageToFit {
-    self.attributes.scalesPageToFit = scalesPageToFit;
-}
-
-- (void)setFrame:(CGRect)frame {
-    [super setFrame:frame];
-}
-
-- (CGRect)frame {
-    return super.frame;
-}
-
-- (void)setDataDetectorTypes:(UIDataDetectorTypes)dataDetectorTypes {
-    self.attributes.dataDetectorTypes = dataDetectorTypes;
-}
-
-- (UIDataDetectorTypes)dataDetectorTypes {
-    return self.attributes.dataDetectorTypes;
 }
 
 #pragma mark Method overrides
@@ -224,6 +153,17 @@ static char ASSOCIATED_ATTRIBUTES_KEY;
 }
 
 #pragma mark Private interface
+- (UIWebViewAttributes *)attributes {
+    UIWebViewAttributes *attributes = objc_getAssociatedObject(self, &ASSOCIATED_ATTRIBUTES_KEY);
+
+    if (!attributes) {
+        attributes = [[[UIWebViewAttributes alloc] init] autorelease];
+        objc_setAssociatedObject(self, &ASSOCIATED_ATTRIBUTES_KEY, attributes, OBJC_ASSOCIATION_RETAIN);
+    }
+
+    return attributes;
+}
+
 - (void)loadRequest:(NSURLRequest *)request withNavigationType:(UIWebViewNavigationType)navigationType {
     if (self.loading) {
         NSString *message = [NSString stringWithFormat:@"Attempt to load request: %@ with previously loading request: %@", request, self.request];
@@ -243,10 +183,6 @@ static char ASSOCIATED_ATTRIBUTES_KEY;
             [self.delegate webViewDidStartLoad:self];
         }
     }
-}
-
-- (UIWebViewAttributes *)attributes {
-    return objc_getAssociatedObject(self, &ASSOCIATED_ATTRIBUTES_KEY);
 }
 
 - (void)log:(NSString *)message, ... {
