@@ -112,6 +112,18 @@
 		AEBCCB71168B909D0056EE83 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AE88B00711DE6D1200B65DD3 /* libxml2.dylib */; };
 		AEF6F87816EBF0CF0004F077 /* FakeOperationQueueSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEF6F87616EBF0CF0004F077 /* FakeOperationQueueSpec.mm */; };
 		AEF6F88016EBF7D80004F077 /* FakeOperationQueueSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEF6F87616EBF0CF0004F077 /* FakeOperationQueueSpec.mm */; };
+		E309448B16F117180034B3A9 /* PCKConnectionDelegateWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = E309448916F117180034B3A9 /* PCKConnectionDelegateWrapper.h */; };
+		E309448C16F117180034B3A9 /* PCKConnectionDelegateWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = E309448A16F117180034B3A9 /* PCKConnectionDelegateWrapper.m */; };
+		E309448D16F117180034B3A9 /* PCKConnectionDelegateWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = E309448A16F117180034B3A9 /* PCKConnectionDelegateWrapper.m */; };
+		E309449C16F3FD230034B3A9 /* ConnectionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E309449B16F3FD230034B3A9 /* ConnectionDelegate.m */; };
+		E30944A416F3FD290034B3A9 /* ConnectionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E309449B16F3FD230034B3A9 /* ConnectionDelegate.m */; };
+		E3AD57BA16F4AD0E003564BA /* PCKConnectionBlockDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = E3AD57B816F4AD0E003564BA /* PCKConnectionBlockDelegate.h */; };
+		E3AD57BB16F4AD0E003564BA /* PCKConnectionBlockDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E3AD57B916F4AD0E003564BA /* PCKConnectionBlockDelegate.m */; };
+		E3AD57BC16F4AD0E003564BA /* PCKConnectionBlockDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E3AD57B916F4AD0E003564BA /* PCKConnectionBlockDelegate.m */; };
+		E3F9C81116F50EED00347B30 /* PCKConnectionDelegateWrapperSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = E3F9C81016F50EED00347B30 /* PCKConnectionDelegateWrapperSpec.mm */; };
+		E3F9C81216F50EED00347B30 /* PCKConnectionDelegateWrapperSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = E3F9C81016F50EED00347B30 /* PCKConnectionDelegateWrapperSpec.mm */; };
+		E3F9C81416F50EFC00347B30 /* PCKConnectionBlockDelegateSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = E3F9C81316F50EFC00347B30 /* PCKConnectionBlockDelegateSpec.mm */; };
+		E3F9C81516F50EFC00347B30 /* PCKConnectionBlockDelegateSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = E3F9C81316F50EFC00347B30 /* PCKConnectionBlockDelegateSpec.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -321,6 +333,14 @@
 		AEBCCB45168B7E370056EE83 /* Cedar.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Cedar.xcodeproj; path = Cedar/Cedar.xcodeproj; sourceTree = "<group>"; };
 		AEBCCB6F168B908E0056EE83 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		AEF6F87616EBF0CF0004F077 /* FakeOperationQueueSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FakeOperationQueueSpec.mm; sourceTree = "<group>"; };
+		E309448916F117180034B3A9 /* PCKConnectionDelegateWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCKConnectionDelegateWrapper.h; sourceTree = "<group>"; };
+		E309448A16F117180034B3A9 /* PCKConnectionDelegateWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCKConnectionDelegateWrapper.m; sourceTree = "<group>"; };
+		E309449A16F3FD230034B3A9 /* ConnectionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectionDelegate.h; sourceTree = "<group>"; };
+		E309449B16F3FD230034B3A9 /* ConnectionDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectionDelegate.m; sourceTree = "<group>"; };
+		E3AD57B816F4AD0E003564BA /* PCKConnectionBlockDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCKConnectionBlockDelegate.h; sourceTree = "<group>"; };
+		E3AD57B916F4AD0E003564BA /* PCKConnectionBlockDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCKConnectionBlockDelegate.m; sourceTree = "<group>"; };
+		E3F9C81016F50EED00347B30 /* PCKConnectionDelegateWrapperSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PCKConnectionDelegateWrapperSpec.mm; sourceTree = "<group>"; };
+		E3F9C81316F50EFC00347B30 /* PCKConnectionBlockDelegateSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PCKConnectionBlockDelegateSpec.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -443,9 +463,10 @@
 		AEA96B42168B4FFE00861DF1 /* SpecHelper */ = {
 			isa = PBXGroup;
 			children = (
+				E3AD57B016F4ACC4003564BA /* Helpers */,
 				AEA96BB2168B544D00861DF1 /* Extensions */,
-				AEA96BB7168B544D00861DF1 /* Fakes */,
 				AEA96BBE168B544D00861DF1 /* Fixtures */,
+				AEA96BB7168B544D00861DF1 /* Fakes */,
 				AEA96CBF168B6FFC00861DF1 /* Foundation+PivotalSpecHelper.h */,
 				AEA96BCD168B552C00861DF1 /* Foundation+PivotalSpecHelper-Info.plist */,
 			);
@@ -455,6 +476,7 @@
 		AEA96B43168B500300861DF1 /* Spec */ = {
 			isa = PBXGroup;
 			children = (
+				E3F9C80F16F50ED300347B30 /* Helpers */,
 				AEA96BE0168B56BF00861DF1 /* Extensions */,
 				AE38E70B16EBF0120026DC51 /* Fakes */,
 				AEA96BE6168B56BF00861DF1 /* Interfaces */,
@@ -587,6 +609,8 @@
 				AEA96C38168B602700861DF1 /* FixturesHelper.m */,
 				AEA96C06168B58AA00861DF1 /* FakeConnectionDelegate.h */,
 				AEA96C07168B58AA00861DF1 /* FakeConnectionDelegate.m */,
+				E309449A16F3FD230034B3A9 /* ConnectionDelegate.h */,
+				E309449B16F3FD230034B3A9 /* ConnectionDelegate.m */,
 			);
 			path = Fixtures;
 			sourceTree = "<group>";
@@ -649,6 +673,26 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		E3AD57B016F4ACC4003564BA /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				E309448A16F117180034B3A9 /* PCKConnectionDelegateWrapper.m */,
+				E309448916F117180034B3A9 /* PCKConnectionDelegateWrapper.h */,
+				E3AD57B816F4AD0E003564BA /* PCKConnectionBlockDelegate.h */,
+				E3AD57B916F4AD0E003564BA /* PCKConnectionBlockDelegate.m */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		E3F9C80F16F50ED300347B30 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				E3F9C81016F50EED00347B30 /* PCKConnectionDelegateWrapperSpec.mm */,
+				E3F9C81316F50EFC00347B30 /* PCKConnectionBlockDelegateSpec.mm */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -686,6 +730,8 @@
 				AEA96BC9168B544D00861DF1 /* PSHKFakeResponses.h in Headers */,
 				AEA96BCB168B544D00861DF1 /* PSHKFixtures.h in Headers */,
 				AEA96CC0168B6FFC00861DF1 /* Foundation+PivotalSpecHelper.h in Headers */,
+				E309448B16F117180034B3A9 /* PCKConnectionDelegateWrapper.h in Headers */,
+				E3AD57BA16F4AD0E003564BA /* PCKConnectionBlockDelegate.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -955,6 +1001,8 @@
 				AEA96BC8168B544D00861DF1 /* PSHKFakeHTTPURLResponse.m in Sources */,
 				AEA96BCA168B544D00861DF1 /* PSHKFakeResponses.m in Sources */,
 				AEA96BCC168B544D00861DF1 /* PSHKFixtures.m in Sources */,
+				E309448C16F117180034B3A9 /* PCKConnectionDelegateWrapper.m in Sources */,
+				E3AD57BB16F4AD0E003564BA /* PCKConnectionBlockDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -978,6 +1026,9 @@
 				AEA96C9A168B659500861DF1 /* main.m in Sources */,
 				AE6898E716BC3B7A00F3F6BC /* NSArraySpec+PivotalCore.mm in Sources */,
 				AEF6F87816EBF0CF0004F077 /* FakeOperationQueueSpec.mm in Sources */,
+				E309449C16F3FD230034B3A9 /* ConnectionDelegate.m in Sources */,
+				E3F9C81116F50EED00347B30 /* PCKConnectionDelegateWrapperSpec.mm in Sources */,
+				E3F9C81416F50EFC00347B30 /* PCKConnectionBlockDelegateSpec.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1010,6 +1061,8 @@
 				AEA96CA4168B67E800861DF1 /* PSHKFakeHTTPURLResponse.m in Sources */,
 				AEA96CA5168B67E800861DF1 /* PSHKFakeResponses.m in Sources */,
 				AEA96CA6168B67E800861DF1 /* PSHKFixtures.m in Sources */,
+				E309448D16F117180034B3A9 /* PCKConnectionDelegateWrapper.m in Sources */,
+				E3AD57BC16F4AD0E003564BA /* PCKConnectionBlockDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1033,6 +1086,9 @@
 				AEA96CBE168B688700861DF1 /* FakeConnectionDelegate.m in Sources */,
 				AE6898E816BC3D0500F3F6BC /* NSArraySpec+PivotalCore.mm in Sources */,
 				AEF6F88016EBF7D80004F077 /* FakeOperationQueueSpec.mm in Sources */,
+				E30944A416F3FD290034B3A9 /* ConnectionDelegate.m in Sources */,
+				E3F9C81216F50EED00347B30 /* PCKConnectionDelegateWrapperSpec.mm in Sources */,
+				E3F9C81516F50EFC00347B30 /* PCKConnectionBlockDelegateSpec.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
