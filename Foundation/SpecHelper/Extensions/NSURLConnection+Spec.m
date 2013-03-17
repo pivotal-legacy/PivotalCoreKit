@@ -68,7 +68,7 @@ static NSOperationQueue *connectionsQueue;
 + (void)sendAsynchronousRequest:(NSURLRequest *)request queue:(NSOperationQueue *)queue completionHandler:(void (^)(NSURLResponse *, NSData *, NSError *))handler
 {
     PCKConnectionBlockDelegate *delegate = [PCKConnectionBlockDelegate delegateWithBlock:handler];
-    [[[self alloc] initWithRequest:request delegate:delegate] autorelease];
+    [[(NSURLConnection *)[self alloc] initWithRequest:request delegate:delegate] autorelease];
 }
 
 - (id)initWithRequest:(NSURLRequest *)request delegate:(id)delegate {
@@ -150,32 +150,32 @@ static NSOperationQueue *connectionsQueue;
 {
     __block BOOL finishedLoading = NO;
     __block NSData *receivedData = nil;
-    
+
     PCKConnectionDelegateWrapper *wrapper = [PCKConnectionDelegateWrapper wrapperForConnection:self
                                                                             completionCallback:^(NSData *data){
         finishedLoading = YES;
         receivedData = data;
     }];
-    
+
     self.synchronousConnection = [NSURLConnection liveConnectionWithRequest:[self.request copy]
                                                                    delegate:wrapper];
     self.synchronousConnection.delegateQueue = connectionsQueue;
     [self.synchronousConnection start];
-    
+
     NSDate *startDate = [NSDate date];
     while (!finishedLoading && -[startDate timeIntervalSinceNow] < timeout && self.synchronousConnection.requestIsLive) {
         usleep(10000);
     }
-    
+
     if (-[startDate timeIntervalSinceNow] >= timeout) {
         [self.delegate connection:self
                  didFailWithError:[NSError errorWithDomain:NSURLErrorDomain code:NSURLErrorTimedOut userInfo:nil]];
     }
 
     [self.synchronousConnection cancel];
-    
+
     [connections__ removeObject:self];
-    
+
     return receivedData;
 }
 
