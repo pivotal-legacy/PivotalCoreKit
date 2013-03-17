@@ -282,17 +282,6 @@ describe(@"UIWebView (spec extensions)", ^{
         });
     });
 
-    describe(@"setAllowsInlineMediaPlayback", ^{
-        beforeEach(^{
-            expect(webView.allowsInlineMediaPlayback).to_not(be_truthy());
-            webView.allowsInlineMediaPlayback = YES;
-        });
-
-        it(@"should return the previously set value", ^{
-            expect(webView.allowsInlineMediaPlayback).to(be_truthy());
-        });
-    });
-
     describe(@"loadHTMLString:baseURL:", ^{
         NSString *html = @"some HTML";
         NSURL *baseURL = [NSURL URLWithString:@"a-path"];
