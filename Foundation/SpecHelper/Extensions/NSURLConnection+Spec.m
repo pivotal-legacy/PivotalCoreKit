@@ -35,17 +35,20 @@ static NSOperationQueue *connectionsQueue;
 + (void)initialize {
     connections__ = [[NSMutableArray alloc] init];
     connectionsQueue = [[NSOperationQueue alloc] init];
-    [NSURLConnection redirectSelector:@selector(initWithRequest:delegate:startImmediately:)
-                                   to:@selector(pckInitWithRequest:delegate:startImmediately:)
-                        andRenameItTo:@selector(originalInitWithRequest:delegate:startImmediately:)];
 
-    [NSURLConnection redirectSelector:@selector(start)
-                                   to:@selector(pckStart)
-                        andRenameItTo:@selector(originalStart)];
+    if ([[NSURLConnection class] respondsToSelector:@selector(redirectSelector:to:andRenameItTo:)]) {
+        [NSURLConnection redirectSelector:@selector(initWithRequest:delegate:startImmediately:)
+                                       to:@selector(pckInitWithRequest:delegate:startImmediately:)
+                            andRenameItTo:@selector(originalInitWithRequest:delegate:startImmediately:)];
 
-    [NSURLConnection redirectSelector:@selector(cancel)
-                                   to:@selector(pckCancel)
-                        andRenameItTo:@selector(originalCancel)];
+        [NSURLConnection redirectSelector:@selector(start)
+                                       to:@selector(pckStart)
+                            andRenameItTo:@selector(originalStart)];
+
+        [NSURLConnection redirectSelector:@selector(cancel)
+                                       to:@selector(pckCancel)
+                            andRenameItTo:@selector(originalCancel)];
+    }
 }
 
 + (NSArray *)connections {
