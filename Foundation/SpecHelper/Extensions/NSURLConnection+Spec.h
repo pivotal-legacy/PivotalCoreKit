@@ -6,6 +6,7 @@
 
 + (NSArray *)connections;
 + (NSURLConnection *)connectionForPath:(NSString *)path;
++ (void)fetchAllPendingConnectionsSynchronouslyWithTimeout:(NSTimeInterval)timeout;
 + (void)resetAll;
 
 - (NSURLRequest *)request;
