@@ -9,5 +9,4 @@
 
 - (NSString *)dataAsString;
 
-
 @end

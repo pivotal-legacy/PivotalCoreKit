@@ -119,6 +119,15 @@ static NSOperationQueue *connectionsQueue;
 }
 
 #pragma mark - Synchronous Network Requests
++ (void)fetchAllPendingConnectionsSynchronouslyWithTimeout:(NSTimeInterval)timeout
+{
+    NSDate *startDate = [NSDate date];
+    while (self.connections.count > 0 && -[startDate timeIntervalSinceNow] < timeout) {
+        NSURLConnection *nextConnection = [self.connections objectAtIndex:0];
+        [nextConnection fetchSynchronouslyWithTimeout:timeout];
+    }
+}
+
 + (NSURLConnection *)liveConnectionWithRequest:(NSURLRequest *)request delegate:(id)delegate
 {
     NSURLConnection *connection = [[[NSURLConnection alloc] originalInitWithRequest:request delegate:delegate startImmediately:NO] autorelease];
