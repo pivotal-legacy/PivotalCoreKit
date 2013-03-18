@@ -75,6 +75,41 @@ describe(@"FakeOperationQueue", ^{
             });
         });
     });
+
+    describe(@"-runNextOperation", ^{
+        context(@"when there are operations to be run", ^{
+            __block NSString *message = nil;
+            beforeEach(^{
+                [fakeQueue addOperationWithBlock:^{
+                    message = @"Hi Mom";
+                }];
+
+                [fakeQueue addOperationWithBlock:^{
+                    message = @"Hi Dad";
+                }];
+            });
+
+            it(@"should run the next operation and remove it from the queue", ^{
+                [fakeQueue runNextOperation];
+                message should equal(@"Hi Mom");
+                fakeQueue.operationCount should equal(1);
+
+                [fakeQueue runNextOperation];
+                message should equal(@"Hi Dad");
+                fakeQueue.operationCount should equal(0);
+            });
+        });
+
+        context(@"when the queue is empty", ^{
+            beforeEach(^{
+                fakeQueue.operationCount should equal(0);
+            });
+
+            it(@"should raise an exception", ^{
+                ^{ [fakeQueue runNextOperation]; } should raise_exception;
+            });
+        });
+    });
 });
 
 SPEC_END

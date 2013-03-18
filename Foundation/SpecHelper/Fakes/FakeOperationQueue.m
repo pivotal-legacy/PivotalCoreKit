@@ -61,13 +61,17 @@
     [op waitUntilFinished];
 }
 
-- (void)runOperationAtIndex:(NSUInteger)index {
-    id op = [self.mutableOperations objectAtIndex:index];
-    if ([op isKindOfClass:[NSOperation class]]) {
-        [self executeOperationAndWait:op];
-    } else {
-        ((void (^)())op)();
+- (void)runNextOperation {
+    if (self.mutableOperations.count == 0) {
+        [[NSException exceptionWithName:NSInternalInconsistencyException reason:@"Can't run an operation that doesn't exist" userInfo:nil] raise];
     }
+    id operation = [self.mutableOperations objectAtIndex:0];
+    if ([operation isKindOfClass:[NSOperation class]]) {
+        [self executeOperationAndWait:operation];
+    } else {
+        ((void (^)())operation)();
+    }
+    [self.mutableOperations removeObject:operation];
 }
 
 @end
