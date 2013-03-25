@@ -356,7 +356,7 @@
 		AEBCCBCB168B95F20056EE83 /* Spec */ = {
 			isa = PBXGroup;
 			children = (
-				AEBCCC90168B9C530056EE83 /* Extentions */,
+				AEBCCC90168B9C530056EE83 /* Extensions */,
 				AE3847A5168BA07C00C99B55 /* Fixtures */,
 				AEBCCC97168B9C530056EE83 /* main.m */,
 			);
@@ -436,7 +436,7 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		AEBCCC90168B9C530056EE83 /* Extentions */ = {
+		AEBCCC90168B9C530056EE83 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				AEBCCC91168B9C530056EE83 /* UIAlertViewSpec+Spec.mm */,
@@ -449,7 +449,7 @@
 				AEBCCC95168B9C530056EE83 /* UIView+PivotalCoreSpec.mm */,
 				AEBCCC96168B9C530056EE83 /* UIWebViewSpec+Spec.mm */,
 			);
-			path = Extentions;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
