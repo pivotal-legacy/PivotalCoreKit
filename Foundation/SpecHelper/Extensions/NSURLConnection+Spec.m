@@ -113,6 +113,10 @@ static NSOperationQueue *connectionsQueue;
     }
 }
 
+- (NSURLRequest *)originalRequest {
+    return [self request];
+}
+
 - (NSURLRequest *)request {
     return objc_getAssociatedObject(self, &ASSOCIATED_REQUEST_KEY);
 }
