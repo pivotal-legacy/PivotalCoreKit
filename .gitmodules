@@ -1,3 +1,6 @@
 [submodule "Externals/Cedar"]
 	path = Externals/Cedar
 	url = git://github.com/pivotal/cedar.git
+[submodule "Externals/FakeHTTP"]
+	path = Externals/FakeHTTP
+	url = https://github.com/akitchen/FakeHTTP.git
