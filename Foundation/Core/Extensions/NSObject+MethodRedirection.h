@@ -1,6 +1,5 @@
 #import <Foundation/Foundation.h>
 
-#import <Foundation/Foundation.h>
 
 @interface NSObject (MethodRedirection)
 
