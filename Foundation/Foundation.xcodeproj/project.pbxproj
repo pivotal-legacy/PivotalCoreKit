@@ -6,6 +6,22 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		B88BF07D1725A56100E638D3 /* Foundation+PivotalSpecHelper-iOS */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = B88BF0871725A56100E638D3 /* Build configuration list for PBXAggregateTarget "Foundation+PivotalSpecHelper-iOS" */;
+			buildPhases = (
+				B88BF0881725A6C000E638D3 /* Build architecture-specific static libs */,
+				B88BF0891725A70900E638D3 /* Build universal static lib */,
+				B88BF08A1725A73500E638D3 /* Copy headers to framework */,
+			);
+			dependencies = (
+			);
+			name = "Foundation+PivotalSpecHelper-iOS";
+			productName = "Foundation+PivotalSpecHelper-iOS";
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		AE6898DC16BC3AF700F3F6BC /* NSArray+PivotalCore.h in Headers */ = {isa = PBXBuildFile; fileRef = AE6898DA16BC3AF700F3F6BC /* NSArray+PivotalCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE6898DD16BC3AF700F3F6BC /* NSArray+PivotalCore.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6898DB16BC3AF700F3F6BC /* NSArray+PivotalCore.m */; };
@@ -112,6 +128,15 @@
 		AEBCCB71168B909D0056EE83 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AE88B00711DE6D1200B65DD3 /* libxml2.dylib */; };
 		AEF6F87816EBF0CF0004F077 /* FakeOperationQueueSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEF6F87616EBF0CF0004F077 /* FakeOperationQueueSpec.mm */; };
 		AEF6F88016EBF7D80004F077 /* FakeOperationQueueSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEF6F87616EBF0CF0004F077 /* FakeOperationQueueSpec.mm */; };
+		B88BF09B1725A79800E638D3 /* PCKConnectionDelegateWrapper.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = E309448916F117180034B3A9 /* PCKConnectionDelegateWrapper.h */; };
+		B88BF09C1725A79E00E638D3 /* PCKConnectionBlockDelegate.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = E3AD57B816F4AD0E003564BA /* PCKConnectionBlockDelegate.h */; };
+		B88BF09D1725A7A200E638D3 /* NSURLConnection+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AEA96BB3168B544D00861DF1 /* NSURLConnection+Spec.h */; };
+		B88BF09E1725A7A500E638D3 /* NSURLRequest+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AEA96BB5168B544D00861DF1 /* NSURLRequest+Spec.h */; };
+		B88BF09F1725A7AD00E638D3 /* PSHKFixtures.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AEA96BBF168B544D00861DF1 /* PSHKFixtures.h */; };
+		B88BF0A01725A7B900E638D3 /* Foundation+PivotalSpecHelper.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AEA96CBF168B6FFC00861DF1 /* Foundation+PivotalSpecHelper.h */; };
+		B88BF0A11725A7BF00E638D3 /* FakeOperationQueue.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AEA96BB8168B544D00861DF1 /* FakeOperationQueue.h */; };
+		B88BF0A21725A7C200E638D3 /* PSHKFakeHTTPURLResponse.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AEA96BBA168B544D00861DF1 /* PSHKFakeHTTPURLResponse.h */; };
+		B88BF0A31725A7C600E638D3 /* PSHKFakeResponses.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AEA96BBC168B544D00861DF1 /* PSHKFakeResponses.h */; };
 		E309448B16F117180034B3A9 /* PCKConnectionDelegateWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = E309448916F117180034B3A9 /* PCKConnectionDelegateWrapper.h */; };
 		E309448C16F117180034B3A9 /* PCKConnectionDelegateWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = E309448A16F117180034B3A9 /* PCKConnectionDelegateWrapper.m */; };
 		E309448D16F117180034B3A9 /* PCKConnectionDelegateWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = E309448A16F117180034B3A9 /* PCKConnectionDelegateWrapper.m */; };
@@ -253,6 +278,25 @@
 			dstSubfolderSpec = 16;
 			files = (
 			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B88BF08A1725A73500E638D3 /* Copy headers to framework */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "${BUILD_DIR}/${CONFIGURATION}-iphoneuniversal/${PRODUCT_NAME}.framework/Headers";
+			dstSubfolderSpec = 0;
+			files = (
+				B88BF09B1725A79800E638D3 /* PCKConnectionDelegateWrapper.h in Copy headers to framework */,
+				B88BF09C1725A79E00E638D3 /* PCKConnectionBlockDelegate.h in Copy headers to framework */,
+				B88BF09D1725A7A200E638D3 /* NSURLConnection+Spec.h in Copy headers to framework */,
+				B88BF09E1725A7A500E638D3 /* NSURLRequest+Spec.h in Copy headers to framework */,
+				B88BF09F1725A7AD00E638D3 /* PSHKFixtures.h in Copy headers to framework */,
+				B88BF0A01725A7B900E638D3 /* Foundation+PivotalSpecHelper.h in Copy headers to framework */,
+				B88BF0A11725A7BF00E638D3 /* FakeOperationQueue.h in Copy headers to framework */,
+				B88BF0A21725A7C200E638D3 /* PSHKFakeHTTPURLResponse.h in Copy headers to framework */,
+				B88BF0A31725A7C600E638D3 /* PSHKFakeResponses.h in Copy headers to framework */,
+			);
+			name = "Copy headers to framework";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -884,6 +928,7 @@
 				AEA96C63168B63BD00861DF1 /* Foundation+PivotalSpecHelper-StaticLib */,
 				AEA96BD2168B561500861DF1 /* FoundationSpec */,
 				AEA96C73168B640B00861DF1 /* Foundation-StaticLibSpec */,
+				B88BF07D1725A56100E638D3 /* Foundation+PivotalSpecHelper-iOS */,
 			);
 		};
 /* End PBXProject section */
@@ -970,6 +1015,37 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B88BF0881725A6C000E638D3 /* Build architecture-specific static libs */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Build architecture-specific static libs";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "xcodebuild -project ${PROJECT_NAME}.xcodeproj -sdk iphonesimulator -target ${PROJECT_NAME}+PivotalSpecHelper-StaticLib -configuration ${CONFIGURATION} clean build\nxcodebuild -project ${PROJECT_NAME}.xcodeproj -sdk iphoneos -target ${PROJECT_NAME}+PivotalSpecHelper-StaticLib -configuration ${CONFIGURATION} clean build";
+		};
+		B88BF0891725A70900E638D3 /* Build universal static lib */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Build universal static lib";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "SIMULATOR_LIBRARY_PATH=\"${PROJECT_DIR}/build/${CONFIGURATION}-iphonesimulator/lib${PROJECT_NAME}+PivotalSpecHelper-StaticLib.a\" &&\nDEVICE_LIBRARY_PATH=\"${PROJECT_DIR}/build/${CONFIGURATION}-iphoneos/lib${PROJECT_NAME}+PivotalSpecHelper-StaticLib.a\" &&\nUNIVERSAL_LIBRARY_DIR=\"${BUILD_DIR}/${CONFIGURATION}-iphoneuniversal\" &&\nUNIVERSAL_LIBRARY_PATH=\"${UNIVERSAL_LIBRARY_DIR}/${PRODUCT_NAME}\" &&\nFRAMEWORK=\"${UNIVERSAL_LIBRARY_DIR}/${PRODUCT_NAME}.framework\" &&\n\n# Create framework directory structure.\nrm -rf \"${FRAMEWORK}\" &&\nmkdir -p \"${UNIVERSAL_LIBRARY_DIR}\" &&\nmkdir -p \"${FRAMEWORK}/Versions/A/Headers\" &&\nmkdir -p \"${FRAMEWORK}/Versions/A/Resources\" &&\n\n# Generate universal binary from desktop, device, and simulator builds.\nlipo \"${SIMULATOR_LIBRARY_PATH}\" \"${DEVICE_LIBRARY_PATH}\" -create -output \"${UNIVERSAL_LIBRARY_PATH}\" &&\n\n# Move files to appropriate locations in framework paths.\ncp \"${UNIVERSAL_LIBRARY_PATH}\" \"${FRAMEWORK}/Versions/A\" &&\ncd \"${FRAMEWORK}/Versions\" &&\nln -s \"A\" \"Current\" &&\ncd \"${FRAMEWORK}\" &&\nln -s \"Versions/Current/Headers\" \"Headers\" &&\nln -s \"Versions/Current/Resources\" \"Resources\" &&\nln -s \"Versions/Current/${PRODUCT_NAME}\" \"${PRODUCT_NAME}\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AEA96B44168B506500861DF1 /* Sources */ = {
@@ -1499,6 +1575,26 @@
 			};
 			name = Release;
 		};
+		B88BF07E1725A56100E638D3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				VALID_ARCHS = "armv7 armv7s i386";
+			};
+			name = Debug;
+		};
+		B88BF07F1725A56100E638D3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				VALID_ARCHS = "armv7 armv7s i386";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1564,6 +1660,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		B88BF0871725A56100E638D3 /* Build configuration list for PBXAggregateTarget "Foundation+PivotalSpecHelper-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B88BF07E1725A56100E638D3 /* Debug */,
+				B88BF07F1725A56100E638D3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
