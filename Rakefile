@@ -81,8 +81,15 @@ namespace :foundation do
         system_or_exit(%Q[xcodebuild -project #{project_name}.xcodeproj -target Foundation+PivotalSpecHelper-StaticLib -configuration #{CONFIGURATION} ARCHS=i386 -sdk iphonesimulator build SYMROOT=#{BUILD_DIR}], {}, output_file("foundation:build:spec_helper:ios"))
       end
     end
-
     task :spec_helper => ["spec_helper:osx", "spec_helper:ios"]
+    
+    namespace :spec_helper_framework do
+      task :ios do
+        system_or_exit(%Q[xcodebuild -project #{project_name}.xcodeproj -target Foundation+PivotalSpecHelper-iOS -configuration #{CONFIGURATION} build SYMROOT=#{BUILD_DIR}], {}, output_file("foundation:build:spec_helper_framework:ios"))
+      end
+    end
+    task :spec_helper_framework => ["spec_helper_framework:ios"]
+    
   end
 
   namespace :spec do
