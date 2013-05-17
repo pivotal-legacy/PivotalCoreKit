@@ -16,7 +16,8 @@ static char ASSOCIATED_SYNCHRONOUS_CONNECTION;
 
 - (id)originalInitWithRequest:(NSURLRequest *)request
                      delegate:(id)delegate
-             startImmediately:(BOOL)startImmediately;
+             startImmediately:(BOOL)startImmediately NS_RETURNS_RETAINED;
+
 - (void)originalStart;
 - (void)originalCancel;
 
@@ -173,7 +174,7 @@ static NSOperationQueue *connectionsQueue;
         receivedData = data;
     }];
 
-    self.synchronousConnection = [NSURLConnection liveConnectionWithRequest:[self.request copy]
+    self.synchronousConnection = [NSURLConnection liveConnectionWithRequest:[[self.request copy] autorelease]
                                                                    delegate:wrapper];
     self.synchronousConnection.delegateQueue = connectionsQueue;
     [self.synchronousConnection start];
