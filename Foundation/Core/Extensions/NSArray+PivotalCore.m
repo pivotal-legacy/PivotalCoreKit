@@ -14,7 +14,7 @@
 
 - (NSArray *)collect:(id(^)(id))collector boxNils:(BOOL)shouldBox {
     if (collector == nil) {
-        return [self copy];
+        return [NSArray arrayWithArray:self];
     }
 
     NSMutableArray *collected = [NSMutableArray arrayWithCapacity:self.count];
