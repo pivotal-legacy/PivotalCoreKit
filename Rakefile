@@ -148,22 +148,30 @@ namespace :uikit do
       task :ios do
         system_or_exit(%Q[xcodebuild -project #{project_name}.xcodeproj -target UIKit+PivotalSpecHelper-StaticLib -configuration #{CONFIGURATION} ARCHS=i386 -sdk iphonesimulator build SYMROOT=#{BUILD_DIR}], {}, output_file("uikit:build:spec_helper:ios"))
       end
+
+      task :ios_stubs do
+        system_or_exit(%Q[xcodebuild -project #{project_name}.xcodeproj -target UIKit+PivotalSpecHelperStubs-StaticLib -configuration #{CONFIGURATION} ARCHS=i386 -sdk iphonesimulator build SYMROOT=#{BUILD_DIR}], {}, output_file("uikit:build:spec_helper:ios_stubs"))
+      end
     end
     
-    task :spec_helper => ["spec_helper:ios"]
+    task :spec_helper => ["spec_helper:ios", "spec_helper:ios_stubs"]
     
     namespace :spec_helper_framework do
       task :ios do
         system_or_exit(%Q[xcodebuild -project #{project_name}.xcodeproj -target UIKit+PivotalSpecHelper-iOS -configuration #{CONFIGURATION} build SYMROOT=#{BUILD_DIR}], {}, output_file("uikit:build:spec_helper_framework:ios"))
       end
+
+      task :ios_stubs do
+        system_or_exit(%Q[xcodebuild -project #{project_name}.xcodeproj -target UIKit+PivotalSpecHelperStubs-iOS -configuration #{CONFIGURATION} build SYMROOT=#{BUILD_DIR}], {}, output_file("uikit:build:spec_helper_framework:ios_stubs"))
+      end
     end
 
-    task :spec_helper_framework => ["spec_helper_framework:ios"]
+    task :spec_helper_framework => ["spec_helper_framework:ios", "spec_helper_framework:ios_stubs"]
   end
 
   namespace :spec do
     require 'tmpdir'
-    task :ios => ["build:core:ios", "build:spec_helper:ios"] do
+    task :ios => ["build:core:ios", "build:spec_helper:ios", "build:spec_helper:ios_stubs"] do
       system_or_exit(%Q[xcodebuild -project #{project_name}.xcodeproj -target UIKit-StaticLibSpec -configuration #{CONFIGURATION} ARCHS=i386 -sdk iphonesimulator build SYMROOT=#{BUILD_DIR}], {}, output_file("uikit:spec:ios"))
       `osascript -e 'tell application "iPhone Simulator" to quit'`
       env_vars = {
