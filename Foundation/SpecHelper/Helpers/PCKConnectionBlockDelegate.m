@@ -5,27 +5,28 @@
 @property (nonatomic, copy) PCKConnectionAsynchronousRequestBlock block;
 @property (nonatomic, retain) NSMutableData *data;
 @property (nonatomic, retain) NSURLResponse *response;
-
+@property (nonatomic, retain) NSOperationQueue *queue;
 @end
 
 @implementation PCKConnectionBlockDelegate
 
-+ (PCKConnectionBlockDelegate *)delegateWithBlock:(PCKConnectionAsynchronousRequestBlock)block
-{
++ (PCKConnectionBlockDelegate *)delegateWithBlock:(PCKConnectionAsynchronousRequestBlock)block {
+    return [self delegateWithBlock:block queue:nil];
+}
+
++ (PCKConnectionBlockDelegate *)delegateWithBlock:(PCKConnectionAsynchronousRequestBlock)block queue:(NSOperationQueue *)queue {
     PCKConnectionBlockDelegate *delegate = [[[PCKConnectionBlockDelegate alloc] init] autorelease];
-    
     delegate.block = block;
     delegate.data = [NSMutableData data];
-    
+    delegate.queue = queue;
     return delegate;
 }
 
-- (void)dealloc
-{
+- (void)dealloc {
+    self.queue = nil;
     self.response = nil;
     self.block = nil;
     self.data = nil;
-
     [super dealloc];
 }
 
@@ -39,14 +40,24 @@
     [self.data appendData:data];
 }
 
-- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
-{
-    self.block(self.response, nil, error);
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
+    if (self.queue) {
+        [self.queue addOperationWithBlock:^{
+            self.block(self.response, nil, error);
+        }];
+    } else {
+        self.block(self.response, nil, error);
+    }
 }
 
-- (void)connectionDidFinishLoading:(NSURLConnection *)connection
-{
-    self.block(self.response, self.data, nil);
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection {
+    if (self.queue) {
+        [self.queue addOperationWithBlock:^{
+            self.block(self.response, self.data, nil);
+        }];
+    } else {
+        self.block(self.response, self.data, nil);
+    }
 }
 
 @end

@@ -6,6 +6,8 @@
 #import "NSObject+MethodRedirection.h"
 #import "PCKConnectionDelegateWrapper.h"
 #import "PCKConnectionBlockDelegate.h"
+#import "FakeOperationQueue.h"
+
 
 static char ASSOCIATED_REQUEST_KEY;
 static char ASSOCIATED_DELEGATE_KEY;
@@ -24,18 +26,18 @@ static char ASSOCIATED_SYNCHRONOUS_CONNECTION;
 @end
 
 static NSMutableArray *connections__;
-static NSOperationQueue *connectionsQueue;
+static FakeOperationQueue *connectionsQueue__;
 
 @implementation NSURLConnection (Spec)
 
 + (void)beforeEach {
     [self resetAll];
-    [connectionsQueue cancelAllOperations];
 }
 
 + (void)initialize {
     connections__ = [[NSMutableArray alloc] init];
-    connectionsQueue = [[NSOperationQueue alloc] init];
+    connectionsQueue__ = [[FakeOperationQueue alloc] init];
+    [connectionsQueue__ setRunSynchronously:YES];
 
     if ([[NSURLConnection class] respondsToSelector:@selector(redirectSelector:to:andRenameItTo:)]) {
         [NSURLConnection redirectSelector:@selector(initWithRequest:delegate:startImmediately:)
@@ -67,16 +69,22 @@ static NSOperationQueue *connectionsQueue;
 
 + (void)resetAll {
     [connections__ removeAllObjects];
+    [connectionsQueue__ cancelAllOperations];
 }
 
-+ (void)sendAsynchronousRequest:(NSURLRequest *)request queue:(NSOperationQueue *)queue completionHandler:(void (^)(NSURLResponse *, NSData *, NSError *))handler
-{
-    PCKConnectionBlockDelegate *delegate = [PCKConnectionBlockDelegate delegateWithBlock:handler];
-    [[(NSURLConnection *)[self alloc] initWithRequest:request delegate:delegate] autorelease];
++ (void)sendAsynchronousRequest:(NSURLRequest *)request queue:(NSOperationQueue *)queue completionHandler:(void (^)(NSURLResponse *, NSData *, NSError *))handler {
+    PCKConnectionBlockDelegate *delegate = [PCKConnectionBlockDelegate delegateWithBlock:handler queue:queue];
+    NSURLConnection *connection = [[[self alloc] initWithRequest:request delegate:delegate startImmediately:NO] autorelease];
+    [connection setDelegateQueue:queue];
 }
 
 - (id)initWithRequest:(NSURLRequest *)request delegate:(id)delegate {
-    return [self initWithRequest:request delegate:delegate startImmediately:YES];
+    self = [self initWithRequest:request delegate:delegate startImmediately:NO];
+    if (self) {
+        [self setDelegateQueue:connectionsQueue__];
+        [self start];
+    }
+    return self;
 }
 
 - (id)pckInitWithRequest:(NSURLRequest *)request delegate:(id)delegate startImmediately:(BOOL)startImmediately {
@@ -169,14 +177,14 @@ static NSOperationQueue *connectionsQueue;
     __block NSData *receivedData = nil;
 
     PCKConnectionDelegateWrapper *wrapper = [PCKConnectionDelegateWrapper wrapperForConnection:self
-                                                                            completionCallback:^(NSData *data){
+                                                                            completionCallback:^(NSData *data) {
         finishedLoading = YES;
         receivedData = data;
     }];
 
     self.synchronousConnection = [NSURLConnection liveConnectionWithRequest:[[self.request copy] autorelease]
                                                                    delegate:wrapper];
-    self.synchronousConnection.delegateQueue = connectionsQueue;
+    [self.synchronousConnection setDelegateQueue:connectionsQueue__];
     [self.synchronousConnection start];
 
     NSDate *startDate = [NSDate date];
@@ -218,10 +226,9 @@ static NSOperationQueue *connectionsQueue;
     [connections__ removeObject:self];
 }
 
-- (void)receiveSuccesfulResponseWithBody:(NSString *)responseBody
-{
+- (void)receiveSuccesfulResponseWithBody:(NSString *)responseBody {
     [self receiveResponse:[[[PSHKFakeHTTPURLResponse alloc] initWithStatusCode:200
-                                                                   andHeaders:nil
+                                                                    andHeaders:nil
                                                                        andBody:responseBody] autorelease]];
 }
 
