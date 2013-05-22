@@ -44,6 +44,29 @@ describe(@"FakeOperationQueue", ^{
         });
     });
 
+    describe(@"when set to run synchronously", ^{
+        beforeEach(^{
+            fakeQueue.runSynchronously = YES;
+        });
+
+        it(@"should run operations immediately when added", ^{
+            dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+            __block BOOL blockInvoked = NO;
+
+            NSBlockOperation *blockOperation = [NSBlockOperation blockOperationWithBlock:^{
+                blockInvoked = YES;
+                dispatch_semaphore_signal(semaphore);
+            }];
+
+            [fakeQueue addOperation:blockOperation];
+            dispatch_semaphore_wait(semaphore, 0.001);
+
+            blockInvoked should be_truthy;
+
+            dispatch_release(semaphore);
+        });
+    });
+
     describe(@"when an array of operations are added", ^{
         __block NSArray *operations;
         __block NSString *message;
