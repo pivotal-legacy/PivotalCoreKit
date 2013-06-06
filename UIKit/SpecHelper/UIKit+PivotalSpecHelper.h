@@ -4,3 +4,4 @@
 #import "UISlider+Spec.h"
 #import "UITableViewCell+Spec.h"
 #import "UIView+Spec.h"
+#import "UITabBarController+Spec.h"
