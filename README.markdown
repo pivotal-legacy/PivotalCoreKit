@@ -13,6 +13,26 @@ Each project has its own builds, and its own specs.
   - Spec: specs for the PCK extensions
 
 
+# Library Documentation
+
+## UIKit
+### SpecHelpers
+
+you can include all the UI spec helpers:
+
+	#include "UIKit+PivotalSpecHelpers.h"
+	
+or individually include the ones you want to use:
+
+	#include "UITabBarController+Spec.h"
+
+#### UIKit+PivotalSpecHelpers.h
+this header includes the following UI extensions
+#### UITabBarController+Spec.h
+	- (void)tapTabAtIndex:(NSUInteger)position;
+
+Simulates tapping a tab bar at index.  This will raise an assertion error if the index it out of bounds of the tabs. If the UITabBarController instance has a delegate it will test the -tabBarController:shouldSelectViewController: method and only select the tab based on the results.
+			
 ## MIT License
 
 Copyright (c) 2012 Pivotal Labs (www.pivotallabs.com)
