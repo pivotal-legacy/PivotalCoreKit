@@ -3,6 +3,7 @@
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wobjc-protocol-method-implementation"
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
 
 static char PRESENTING_CONTROLLER_KEY;
 static char PRESENTED_CONTROLLER_KEY;
