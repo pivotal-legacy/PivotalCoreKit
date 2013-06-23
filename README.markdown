@@ -1,5 +1,7 @@
 ## Common library code for iOS projects.
 
+[![Build Status](https://travis-ci.org/pivotal/PivotalCoreKit.png?branch=master)](https://travis-ci.org/pivotal/PivotalCoreKit)
+
 Pivotal Core Kit is a workspace which contains projects that mirror Apple's 
 system frameworks.  For instance, all extensions and additions to the 
 Foundation framework live in the Foundation project under the PCK workspace.

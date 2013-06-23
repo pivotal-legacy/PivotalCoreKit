@@ -23,6 +23,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		AE416AAB174D48220014A083 /* libFakeHTTP.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AEE971CD1708EB410094B5A2 /* libFakeHTTP.a */; };
 		AE6898DC16BC3AF700F3F6BC /* NSArray+PivotalCore.h in Headers */ = {isa = PBXBuildFile; fileRef = AE6898DA16BC3AF700F3F6BC /* NSArray+PivotalCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE6898DD16BC3AF700F3F6BC /* NSArray+PivotalCore.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6898DB16BC3AF700F3F6BC /* NSArray+PivotalCore.m */; };
 		AE6898DE16BC3AF700F3F6BC /* NSArray+PivotalCore.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6898DB16BC3AF700F3F6BC /* NSArray+PivotalCore.m */; };
@@ -126,6 +127,7 @@
 		AEBCCB6E168B7E930056EE83 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE24D5AF138170CD00E4420A /* Foundation.framework */; };
 		AEBCCB70168B908F0056EE83 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEBCCB6F168B908E0056EE83 /* UIKit.framework */; };
 		AEBCCB71168B909D0056EE83 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AE88B00711DE6D1200B65DD3 /* libxml2.dylib */; };
+		AEE971D41708EB760094B5A2 /* libFakeHTTP-OSX.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AEE971D11708EB410094B5A2 /* libFakeHTTP-OSX.a */; };
 		AEF6F87816EBF0CF0004F077 /* FakeOperationQueueSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEF6F87616EBF0CF0004F077 /* FakeOperationQueueSpec.mm */; };
 		AEF6F88016EBF7D80004F077 /* FakeOperationQueueSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEF6F87616EBF0CF0004F077 /* FakeOperationQueueSpec.mm */; };
 		B88BF09B1725A79800E638D3 /* PCKConnectionDelegateWrapper.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = E309448916F117180034B3A9 /* PCKConnectionDelegateWrapper.h */; };
@@ -152,6 +154,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		AE416AA9174D481C0014A083 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEE971BF1708EB400094B5A2 /* FakeHTTP.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = E1C4E7C5161E24B20005AF7B;
+			remoteInfo = FakeHTTP;
+		};
 		AEA96BFF168B570000861DF1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
@@ -249,6 +258,34 @@
 			proxyType = 1;
 			remoteGlobalIDString = AEEE222811DC2B0600029872;
 			remoteInfo = "Cedar-StaticLib";
+		};
+		AEE971CC1708EB410094B5A2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEE971BF1708EB400094B5A2 /* FakeHTTP.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E1C4E7C6161E24B20005AF7B;
+			remoteInfo = FakeHTTP;
+		};
+		AEE971CE1708EB410094B5A2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEE971BF1708EB400094B5A2 /* FakeHTTP.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E1C3F22F161E28FC0023DCBB;
+			remoteInfo = Specs;
+		};
+		AEE971D01708EB410094B5A2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEE971BF1708EB400094B5A2 /* FakeHTTP.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AE104EC51707CB5700A9171F;
+			remoteInfo = "FakeHTTP-OSX";
+		};
+		AEE971D21708EB720094B5A2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEE971BF1708EB400094B5A2 /* FakeHTTP.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = AE104EC41707CB5700A9171F;
+			remoteInfo = "FakeHTTP-OSX";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -376,6 +413,7 @@
 		AEA96CBF168B6FFC00861DF1 /* Foundation+PivotalSpecHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Foundation+PivotalSpecHelper.h"; sourceTree = "<group>"; };
 		AEBCCB45168B7E370056EE83 /* Cedar.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Cedar.xcodeproj; path = Cedar/Cedar.xcodeproj; sourceTree = "<group>"; };
 		AEBCCB6F168B908E0056EE83 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		AEE971BF1708EB400094B5A2 /* FakeHTTP.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FakeHTTP.xcodeproj; path = FakeHTTP/FakeHTTP.xcodeproj; sourceTree = "<group>"; };
 		AEF6F87616EBF0CF0004F077 /* FakeOperationQueueSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FakeOperationQueueSpec.mm; sourceTree = "<group>"; };
 		E309448916F117180034B3A9 /* PCKConnectionDelegateWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCKConnectionDelegateWrapper.h; sourceTree = "<group>"; };
 		E309448A16F117180034B3A9 /* PCKConnectionDelegateWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCKConnectionDelegateWrapper.m; sourceTree = "<group>"; };
@@ -408,6 +446,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEE971D41708EB760094B5A2 /* libFakeHTTP-OSX.a in Frameworks */,
 				AEBCCB6E168B7E930056EE83 /* Foundation.framework in Frameworks */,
 				AEBCCB6D168B7E7C0056EE83 /* Cedar.framework in Frameworks */,
 				AEA96C03168B570B00861DF1 /* Foundation+PivotalSpecHelper.framework in Frameworks */,
@@ -435,6 +474,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE416AAB174D48220014A083 /* libFakeHTTP.a in Frameworks */,
 				AEBCCB70168B908F0056EE83 /* UIKit.framework in Frameworks */,
 				AEBCCB6C168B7E6F0056EE83 /* libCedar-StaticLib.a in Frameworks */,
 				AEA96CA0168B674800861DF1 /* libFoundation+PivotalSpecHelper-StaticLib.a in Frameworks */,
@@ -697,6 +737,7 @@
 			isa = PBXGroup;
 			children = (
 				AEBCCB45168B7E370056EE83 /* Cedar.xcodeproj */,
+				AEE971BF1708EB400094B5A2 /* FakeHTTP.xcodeproj */,
 			);
 			name = Externals;
 			path = ../Externals;
@@ -713,6 +754,16 @@
 				AEBCCB63168B7E380056EE83 /* OCUnitApp.app */,
 				AEBCCB65168B7E380056EE83 /* OCUnitAppTests.octest */,
 				AEBCCB67168B7E380056EE83 /* OCUnitAppLogicTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AEE971C01708EB400094B5A2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AEE971CD1708EB410094B5A2 /* libFakeHTTP.a */,
+				AEE971CF1708EB410094B5A2 /* Specs.app */,
+				AEE971D11708EB410094B5A2 /* libFakeHTTP-OSX.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -829,6 +880,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				AEE971D31708EB720094B5A2 /* PBXTargetDependency */,
 				AEBCCB69168B7E620056EE83 /* PBXTargetDependency */,
 				AEA96C02168B570800861DF1 /* PBXTargetDependency */,
 				AEA96C00168B570000861DF1 /* PBXTargetDependency */,
@@ -883,6 +935,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				AE416AAA174D481C0014A083 /* PBXTargetDependency */,
 				AEBCCB6B168B7E680056EE83 /* PBXTargetDependency */,
 				AEA96C93168B642600861DF1 /* PBXTargetDependency */,
 				AEA96C91168B642100861DF1 /* PBXTargetDependency */,
@@ -918,6 +971,10 @@
 				{
 					ProductGroup = AEBCCB46168B7E370056EE83 /* Products */;
 					ProjectRef = AEBCCB45168B7E370056EE83 /* Cedar.xcodeproj */;
+				},
+				{
+					ProductGroup = AEE971C01708EB400094B5A2 /* Products */;
+					ProjectRef = AEE971BF1708EB400094B5A2 /* FakeHTTP.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -988,6 +1045,27 @@
 			fileType = wrapper.cfbundle;
 			path = OCUnitAppLogicTests.octest;
 			remoteRef = AEBCCB66168B7E380056EE83 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AEE971CD1708EB410094B5A2 /* libFakeHTTP.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libFakeHTTP.a;
+			remoteRef = AEE971CC1708EB410094B5A2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AEE971CF1708EB410094B5A2 /* Specs.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = Specs.app;
+			remoteRef = AEE971CE1708EB410094B5A2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AEE971D11708EB410094B5A2 /* libFakeHTTP-OSX.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libFakeHTTP-OSX.a";
+			remoteRef = AEE971D01708EB410094B5A2 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -1171,6 +1249,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		AE416AAA174D481C0014A083 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FakeHTTP;
+			targetProxy = AE416AA9174D481C0014A083 /* PBXContainerItemProxy */;
+		};
 		AEA96C00168B570000861DF1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = AEA96B48168B506500861DF1 /* Foundation+PivotalCore */;
@@ -1200,6 +1283,11 @@
 			isa = PBXTargetDependency;
 			name = "Cedar-StaticLib";
 			targetProxy = AEBCCB6A168B7E680056EE83 /* PBXContainerItemProxy */;
+		};
+		AEE971D31708EB720094B5A2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "FakeHTTP-OSX";
+			targetProxy = AEE971D21708EB720094B5A2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1375,6 +1463,7 @@
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../Externals/FakeHTTP/FakeHTTP/**";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -1391,6 +1480,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../Externals/FakeHTTP/FakeHTTP/**";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -1510,11 +1600,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/System/Library/Frameworks\"",
-					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk/System/Library/Frameworks\"",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1524,14 +1610,15 @@
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				HEADER_SEARCH_PATHS = "$SRCROOT/../Externals/Cedar/**";
+				HEADER_SEARCH_PATHS = (
+					"$SRCROOT/../Externals/Cedar/**",
+					"$(PROJECT_DIR)/../Externals/FakeHTTP/FakeHTTP/**",
+				);
 				INFOPLIST_FILE = "Spec/iOS/Foundation+PivotalCore-StaticLibSpec-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
-					"-framework",
-					Foundation,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -1549,23 +1636,20 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/System/Library/Frameworks\"",
-					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk/System/Library/Frameworks\"",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				HEADER_SEARCH_PATHS = "$SRCROOT/../Externals/Cedar/**";
+				HEADER_SEARCH_PATHS = (
+					"$SRCROOT/../Externals/Cedar/**",
+					"$(PROJECT_DIR)/../Externals/FakeHTTP/FakeHTTP/**",
+				);
 				INFOPLIST_FILE = "Spec/iOS/Foundation+PivotalCore-StaticLibSpec-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
-					"-framework",
-					Foundation,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -1668,6 +1752,7 @@
 				B88BF07F1725A56100E638D3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

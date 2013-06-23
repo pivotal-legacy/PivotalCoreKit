@@ -72,5 +72,10 @@ static char PRESENTED_CONTROLLER_KEY;
     completion(YES);
 }
 
+- (void)transitionFromViewController:(UIViewController *)fromViewController toViewController:(UIViewController *)toViewController duration:(NSTimeInterval)duration options:(UIViewAnimationOptions)options animations:(void (^)(void))animations completion:(void (^)(BOOL))completion {
+    animations();
+    completion(YES);
+}
+
 @end
 #pragma clang diagnostic pop

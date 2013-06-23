@@ -9,6 +9,9 @@
 #import "PSHKFakeHTTPURLResponse.h"
 #import "NSURLConnectionDelegate.h"
 #import "ConnectionDelegate.h"
+#import "FakeHTTP.h"
+#import "FakeOperationQueue.h"
+
 
 @interface SelfReferentialConnection : NSURLConnection
 @end
@@ -24,6 +27,7 @@
 
 using namespace Cedar::Matchers;
 using namespace Cedar::Doubles;
+
 
 SPEC_BEGIN(NSURLConnectionSpec_Spec)
 
@@ -133,7 +137,7 @@ describe(@"NSURLConnection (spec extensions)", ^{
             URL = [NSURL URLWithString:@"http://www.google.com/"];
             NSURLRequest *request = [NSURLRequest requestWithURL:URL];
             [NSURLConnection sendAsynchronousRequest:request
-                                               queue:[NSOperationQueue currentQueue]
+                                               queue:nil
                                    completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
                                        receivedData = data;
                                        receivedError = error;
@@ -148,7 +152,9 @@ describe(@"NSURLConnection (spec extensions)", ^{
 
         it(@"should receive responses", ^{
             PSHKFakeHTTPURLResponse *response = [[[PSHKFakeHTTPURLResponse alloc] initWithStatusCode:200 andHeaders:nil andBody:@"Response"] autorelease];
+
             [connection receiveResponse:response];
+
             NSString *receivedString = [[[NSString alloc] initWithData:receivedData encoding:NSUTF8StringEncoding] autorelease];
             receivedString should equal(@"Response");
             receivedResponse.statusCode should equal(200);
@@ -165,7 +171,6 @@ describe(@"NSURLConnection (spec extensions)", ^{
         });
     });
 
-
     describe(@"cancel", ^{
         it(@"should remove the connection from the global list of connections", ^{
             expect([NSURLConnection connections]).to(contain(connection));
@@ -180,8 +185,7 @@ describe(@"NSURLConnection (spec extensions)", ^{
         beforeEach(^{
             response = [[[PSHKFakeHTTPURLResponse alloc] initWithStatusCode:200
                                                                  andHeaders:[NSDictionary dictionary]
-                                                                    andBody:@"foo"]
-                        autorelease];
+                                                                    andBody:@"foo"] autorelease];
         });
 
         it(@"should send the response to the delegate", ^{
@@ -272,26 +276,40 @@ describe(@"NSURLConnection (spec extensions)", ^{
     });
 
     describe(@"fetching all pending connections synchronously", ^{
+        __block NSOperationQueue *fakeOperationQueue;
+
         __block NSData *firstData;
         __block NSData *secondData;
         __block NSData *thirdData;
 
         beforeEach(^{
+            fakeOperationQueue = [[[FakeOperationQueue alloc] init] autorelease];
+            [(FakeOperationQueue *)fakeOperationQueue setRunSynchronously:YES];
+
             [NSURLConnection resetAll];
+            [FakeHTTP startMocking];
 
             NSURLRequest *firstRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://google.com"]];
             NSURLRequest *secondRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://pivotallabs.com"]];
             NSURLRequest *thirdRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://apple.com"]];
 
-            [NSURLConnection sendAsynchronousRequest:firstRequest queue:[NSOperationQueue currentQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+            FakeHTTPURLResponse *firstResponse = [[[FakeHTTPURLResponse alloc] initWithStatusCode:200 headers:@{} body:[@"I'm Feeling Lucky" dataUsingEncoding:NSUTF8StringEncoding]] autorelease];
+            FakeHTTPURLResponse *secondResponse = [[[FakeHTTPURLResponse alloc] initWithStatusCode:200 headers:@{} body:[@"Pivotal Labs" dataUsingEncoding:NSUTF8StringEncoding]] autorelease];
+            FakeHTTPURLResponse *thirdResponse = [[[FakeHTTPURLResponse alloc] initWithStatusCode:200 headers:@{} body:[@"Apple Inc." dataUsingEncoding:NSUTF8StringEncoding]] autorelease];
+
+            [FakeHTTP registerURL:firstRequest.URL withResponse:firstResponse];
+            [FakeHTTP registerURL:secondRequest.URL withResponse:secondResponse];
+            [FakeHTTP registerURL:thirdRequest.URL withResponse:thirdResponse];
+
+            [NSURLConnection sendAsynchronousRequest:firstRequest queue:fakeOperationQueue completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
                 firstData = data;
                 //kick off another request
-                [NSURLConnection sendAsynchronousRequest:thirdRequest queue:[NSOperationQueue currentQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+                [NSURLConnection sendAsynchronousRequest:thirdRequest queue:fakeOperationQueue completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
                     thirdData = data;
                 }];
             }];
 
-            [NSURLConnection sendAsynchronousRequest:secondRequest queue:[NSOperationQueue currentQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+            [NSURLConnection sendAsynchronousRequest:secondRequest queue:fakeOperationQueue completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
                 secondData = data;
             }];
         });
@@ -300,9 +318,7 @@ describe(@"NSURLConnection (spec extensions)", ^{
             [NSURLConnection fetchAllPendingConnectionsSynchronouslyWithTimeout:2];
 
             [[[NSString alloc] initWithData:firstData encoding:NSUTF8StringEncoding] autorelease] should contain(@"I'm Feeling Lucky");
-
             [[[NSString alloc] initWithData:secondData encoding:NSUTF8StringEncoding] autorelease] should contain(@"Pivotal Labs");
-
             [[[NSString alloc] initWithData:thirdData encoding:NSUTF8StringEncoding] autorelease] should contain(@"Apple Inc.");
         });
     });
@@ -315,9 +331,17 @@ describe(@"NSURLConnection (spec extensions)", ^{
 
         beforeEach(^{
             [NSURLConnection resetAll];
+            [FakeHTTP startMocking];
+
             URL = [NSURL URLWithString:@"http://google.com/"];
             expectedString = @"I'm Feeling Lucky";
             request = [NSURLRequest requestWithURL:URL];
+
+            NSData *bodyData = [@"I'm Feeling Lucky" dataUsingEncoding:NSUTF8StringEncoding];
+            FakeHTTPURLResponse *response = [[[FakeHTTPURLResponse alloc] initWithStatusCode:200
+                                                                                     headers:@{}
+                                                                                        body:bodyData] autorelease];
+            [FakeHTTP registerURL:URL withResponse:response];
         });
 
         context(@"when the connection is built with a delegate", ^{
@@ -325,8 +349,7 @@ describe(@"NSURLConnection (spec extensions)", ^{
 
             beforeEach(^{
                 delegate = [[[ConnectionDelegate alloc] init] autorelease];
-                connection = [NSURLConnection connectionWithRequest:request
-                                                           delegate:delegate];
+                connection = [NSURLConnection connectionWithRequest:request delegate:delegate];
             });
 
             it(@"should fetch the data from the URL synchronously, return the resulting data in addition to passing it to the delegate, and remove the original request from the list of connections", ^{
@@ -361,29 +384,38 @@ describe(@"NSURLConnection (spec extensions)", ^{
                 it(@"should cancel the underlying connection and tell the delegate an error occured", ^{
                     delegate.data.length should equal(0);
 
-                    NSData *data = [connection fetchSynchronouslyWithTimeout:0.001]; //beat that, google!
+                    NSData *data = [connection fetchSynchronouslyWithTimeout:0];
 
-                    sleep(1); //wait for response from the other thread...
-
-                    delegate.data.length should equal(0); //...and there shouldn't be one
+                    delegate.data.length should equal(0);
                     delegate.error.domain should equal(NSURLErrorDomain);
                     delegate.error.code should equal(NSURLErrorTimedOut);
+
                     data should be_nil;
                 });
             });
         });
 
         describe(@"when using the convenience asynchronous class method", ^{
-            __block NSString *receivedResult;
+            __block NSOperationQueue *fakeOperationQueue;
+            __block NSData *receivedData;
             __block NSError *receivedError;
+
             beforeEach(^{
-                receivedResult = nil;
+                fakeOperationQueue = [[[FakeOperationQueue alloc] init] autorelease];
+                [(FakeOperationQueue *)fakeOperationQueue setRunSynchronously:YES];
+
+                receivedData = nil;
                 receivedError = nil;
 
-                [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue currentQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
-                    receivedResult = [[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] autorelease];
-                    receivedError = error;
-                }];
+                [NSURLConnection sendAsynchronousRequest:request
+                                                   queue:fakeOperationQueue
+                                       completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+                                           receivedData = data;
+                                           receivedError = error;
+                                       }];
+
+                [[NSURLConnection connections] count] should equal(1);
+                receivedData should be_nil;
 
                 connection = [[NSURLConnection connections] lastObject];
                 connection should_not be_nil;
@@ -391,21 +423,21 @@ describe(@"NSURLConnection (spec extensions)", ^{
             });
 
             it(@"should fetch the data from the URL synchronously", ^{
-                [[NSURLConnection connections] count] should equal(1);
-                receivedResult should be_nil;
+                NSData *data = [connection fetchSynchronouslyWithTimeout:2.0];
 
-                NSData *data = [connection fetchSynchronouslyWithTimeout:2];
+                receivedData should equal(data);
 
-                receivedResult should contain(expectedString);
                 [[NSURLConnection connections] count] should equal(0);
                 NSString *returnedDataAsString = [[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] autorelease];
                 returnedDataAsString should contain(expectedString);
             });
 
             it(@"should pass the appropriate error in when the request times out", ^{
-                NSData *data = [connection fetchSynchronouslyWithTimeout:0.001]; //beat that, google!
+                NSData *data = [connection fetchSynchronouslyWithTimeout:0];
+
                 receivedError.domain should equal(NSURLErrorDomain);
                 receivedError.code should equal(NSURLErrorTimedOut);
+
                 data should be_nil;
             });
         });
