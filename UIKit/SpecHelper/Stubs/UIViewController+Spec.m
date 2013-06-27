@@ -13,7 +13,9 @@ static char PRESENTED_CONTROLLER_KEY;
 #pragma mark - Modals
 
 - (void)presentViewController:(UIViewController *)modalViewController animated:(BOOL)animated completion:(void(^)(void))onComplete {
+    #pragma GCC diagnostic ignored "-Wdeprecated-declarations"
     [self presentModalViewController:modalViewController animated:animated];
+    #pragma GCC diagnostic warning "-Wdeprecated-declarations"
     if (onComplete) {
         onComplete();
     }
@@ -39,7 +41,9 @@ static char PRESENTED_CONTROLLER_KEY;
 }
 
 - (void)dismissViewControllerAnimated:(BOOL)flag completion:(void (^)(void))completion {
+    #pragma GCC diagnostic ignored "-Wdeprecated-declarations"
     [self dismissModalViewControllerAnimated:flag];
+    #pragma GCC diagnostic warning "-Wdeprecated-declarations"
     if (completion) {
         completion();
     }
