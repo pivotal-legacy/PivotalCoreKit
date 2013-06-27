@@ -13,7 +13,9 @@
 
     if (indexPath != nil) {
         [tableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
-        [tableView.delegate tableView:tableView didSelectRowAtIndexPath:indexPath];
+        if ([tableView.delegate respondsToSelector:@selector(tableView:didSelectRowAtIndexPath:)]) {
+            [tableView.delegate tableView:tableView didSelectRowAtIndexPath:indexPath];
+        }
     }
 }
 
