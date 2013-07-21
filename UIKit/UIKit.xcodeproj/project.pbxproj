@@ -51,6 +51,8 @@
 		AE3847B9168BA3B500C99B55 /* UIView+PivotalCore.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBCCBD2168B96C80056EE83 /* UIView+PivotalCore.m */; };
 		AE3847BD168BACEB00C99B55 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEBCCC39168B99ED0056EE83 /* CoreGraphics.framework */; };
 		AE86BD4E179C7DAD0057DEAE /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE86BD4D179C7DAD0057DEAE /* Default-568h@2x.png */; };
+		AE74426F1760FCD7009C38BD /* UITabBarController+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE74426E1760FCD7009C38BD /* UITabBarController+Spec.m */; };
+		AE7442701760FCEE009C38BD /* UITabBarController+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AE74426D1760FCD7009C38BD /* UITabBarController+Spec.h */; };
 		AEBCCC25168B999F0056EE83 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEBCCBE7168B97DD0056EE83 /* Foundation.framework */; };
 		AEBCCC37168B99ED0056EE83 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEBCCC36168B99ED0056EE83 /* UIKit.framework */; };
 		AEBCCC38168B99ED0056EE83 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEBCCBE7168B97DD0056EE83 /* Foundation.framework */; };
@@ -232,6 +234,7 @@
 				B866FC1F16B4957500317E32 /* UIKitMatchers.h in Copy headers to framework */,
 				22601B5B16BA263A00A807CB /* UIKit+PivotalSpecHelper.h in Copy headers to framework */,
 				22601B5C16BA274B00A807CB /* UISlider+Spec.h in Copy headers to framework */,
+				AE7442701760FCEE009C38BD /* UITabBarController+Spec.h in Copy headers to framework */,
 			);
 			name = "Copy headers to framework";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -250,6 +253,8 @@
 		AE3847AA168BA0B300C99B55 /* logo-small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo-small.png"; sourceTree = "<group>"; };
 		AE3847AB168BA0B300C99B55 /* pivotallabs-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pivotallabs-logo.png"; sourceTree = "<group>"; };
 		AE86BD4D179C7DAD0057DEAE /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
+		AE74426D1760FCD7009C38BD /* UITabBarController+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBarController+Spec.h"; sourceTree = "<group>"; };
+		AE74426E1760FCD7009C38BD /* UITabBarController+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBarController+Spec.m"; sourceTree = "<group>"; };
 		AEBCCBCD168B96C80056EE83 /* UIBarButtonItem+Button.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Button.h"; sourceTree = "<group>"; };
 		AEBCCBCE168B96C80056EE83 /* UIBarButtonItem+Button.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Button.m"; sourceTree = "<group>"; };
 		AEBCCBCF168B96C80056EE83 /* UIImage+PivotalCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+PivotalCore.h"; sourceTree = "<group>"; };
@@ -486,6 +491,8 @@
 				AEBCCC7A168B9B5F0056EE83 /* UITableViewCell+Spec.m */,
 				AEBCCC7B168B9B5F0056EE83 /* UIView+Spec.h */,
 				AEBCCC7C168B9B5F0056EE83 /* UIView+Spec.m */,
+				AE74426D1760FCD7009C38BD /* UITabBarController+Spec.h */,
+				AE74426E1760FCD7009C38BD /* UITabBarController+Spec.m */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -811,6 +818,7 @@
 				AEBCCC8D168B9B8B0056EE83 /* UIView+Spec.m in Sources */,
 				22601B4F16BA202A00A807CB /* UISlider+Spec.m in Sources */,
 				B8C62E6D16BC03420009CDAD /* UIBarButtonItem+Spec.m in Sources */,
+				AE74426F1760FCD7009C38BD /* UITabBarController+Spec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
