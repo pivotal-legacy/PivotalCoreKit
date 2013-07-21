@@ -2,5 +2,6 @@
 
 @interface UITabBarController (Spec)
 
--(void) tapTabAtIndex:(NSUInteger)position;
+- (void)tapTabAtIndex:(NSUInteger)position;
+
 @end
