@@ -18,6 +18,7 @@
                 NSString *existing = (NSString *)results;
                 results = [@[existing] mutableCopy];
                 queryComponents[key] = results;
+                [results release];
             }
             [(NSMutableArray *)queryComponents[key] addObject:value];
         }
