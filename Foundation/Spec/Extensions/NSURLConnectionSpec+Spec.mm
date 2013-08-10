@@ -139,17 +139,11 @@ describe(@"NSURLConnection (spec extensions)", ^{
             [NSURLConnection sendAsynchronousRequest:request
                                                queue:[NSOperationQueue mainQueue]
                                    completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
-                                       receivedData = [data retain];
-                                       receivedError = [error retain];
-                                       receivedResponse = [(NSHTTPURLResponse *)response retain];
+                                       receivedData = data;
+                                       receivedError = error;
+                                       receivedResponse = (NSHTTPURLResponse *)response;
                                    }];
             connection = [[NSURLConnection connections] lastObject];
-        });
-
-        afterEach(^{
-            [receivedData release];
-            [receivedError release];
-            [receivedResponse release];
         });
 
         it(@"should be captured and made available in the array of connections", ^{
