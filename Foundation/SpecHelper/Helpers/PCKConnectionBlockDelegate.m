@@ -11,7 +11,7 @@
 @implementation PCKConnectionBlockDelegate
 
 + (PCKConnectionBlockDelegate *)delegateWithBlock:(PCKConnectionAsynchronousRequestBlock)block {
-    return [self delegateWithBlock:block queue:nil];
+    return [self delegateWithBlock:block queue:[NSOperationQueue mainQueue]];
 }
 
 + (PCKConnectionBlockDelegate *)delegateWithBlock:(PCKConnectionAsynchronousRequestBlock)block queue:(NSOperationQueue *)queue {
@@ -41,22 +41,22 @@
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
-    if (self.queue) {
+    if ([[NSOperationQueue mainQueue] isEqual:self.queue]) {
+        self.block(self.response, nil, error);
+    } else if (self.queue){
         [self.queue addOperationWithBlock:^{
             self.block(self.response, nil, error);
         }];
-    } else {
-        self.block(self.response, nil, error);
     }
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
-    if (self.queue) {
+    if ([[NSOperationQueue mainQueue] isEqual:self.queue]) {
+        self.block(self.response, self.data, nil);
+    } else if (self.queue) {
         [self.queue addOperationWithBlock:^{
             self.block(self.response, self.data, nil);
         }];
-    } else {
-        self.block(self.response, self.data, nil);
     }
 }
 

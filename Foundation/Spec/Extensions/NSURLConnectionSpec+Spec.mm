@@ -137,13 +137,19 @@ describe(@"NSURLConnection (spec extensions)", ^{
             URL = [NSURL URLWithString:@"http://www.google.com/"];
             NSURLRequest *request = [NSURLRequest requestWithURL:URL];
             [NSURLConnection sendAsynchronousRequest:request
-                                               queue:nil
+                                               queue:[NSOperationQueue mainQueue]
                                    completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
-                                       receivedData = data;
-                                       receivedError = error;
-                                       receivedResponse = (NSHTTPURLResponse *)response;
+                                       receivedData = [data retain];
+                                       receivedError = [error retain];
+                                       receivedResponse = [(NSHTTPURLResponse *)response retain];
                                    }];
             connection = [[NSURLConnection connections] lastObject];
+        });
+
+        afterEach(^{
+            [receivedData release];
+            [receivedError release];
+            [receivedResponse release];
         });
 
         it(@"should be captured and made available in the array of connections", ^{
