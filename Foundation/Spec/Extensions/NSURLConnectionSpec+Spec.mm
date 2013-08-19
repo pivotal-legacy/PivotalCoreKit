@@ -137,7 +137,7 @@ describe(@"NSURLConnection (spec extensions)", ^{
             URL = [NSURL URLWithString:@"http://www.google.com/"];
             NSURLRequest *request = [NSURLRequest requestWithURL:URL];
             [NSURLConnection sendAsynchronousRequest:request
-                                               queue:nil
+                                               queue:[NSOperationQueue mainQueue]
                                    completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
                                        receivedData = data;
                                        receivedError = error;
