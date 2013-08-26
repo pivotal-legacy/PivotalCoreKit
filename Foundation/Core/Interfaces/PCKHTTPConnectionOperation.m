@@ -43,6 +43,7 @@
 - (void)start {
     if (![NSThread isMainThread]) {
         [self performSelectorOnMainThread:@selector(start) withObject:nil waitUntilDone:NO];
+        return;
     }
 
     self.isExecuting = YES;
@@ -56,6 +57,18 @@
     self.isFinished = YES;
     [self.connection cancel];
     self.connection = nil;
+}
+
+- (void)setIsExecuting:(BOOL)isExecuting {
+    [self willChangeValueForKey:@"isExecuting"];
+    isExecuting_ = isExecuting;
+    [self didChangeValueForKey:@"isExecuting"];
+}
+
+- (void)setIsFinished:(BOOL)isFinished {
+    [self willChangeValueForKey:@"isFinished"];
+    isFinished_ = isFinished;
+    [self didChangeValueForKey:@"isFinished"];
 }
 
 #pragma mark NSURLConnectionDelegate

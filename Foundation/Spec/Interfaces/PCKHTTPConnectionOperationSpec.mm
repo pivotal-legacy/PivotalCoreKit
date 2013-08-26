@@ -10,6 +10,7 @@
 #import "PCKHTTPConnectionOperation.h"
 #import "PCKHTTPInterface.h"
 #import "FakeConnectionDelegate.h"
+#import "PSHKObserver.h"
 
 SPEC_BEGIN(PCKHTTPConnectionOperationSpec)
 
@@ -93,8 +94,11 @@ describe(@"PCKHTTPConnectionOperation", ^{
 
     describe(@"start", ^{
         __block NSURLConnection *connection;
+        __block PSHKObserver *isExecutingObserver;
 
         beforeEach(^{
+            isExecutingObserver = [PSHKObserver observerForObject:operation keyPath:@"isExecuting"];
+
             expect([NSURLConnection connections]).to(be_empty());
 
             [operation start];
@@ -109,14 +113,20 @@ describe(@"PCKHTTPConnectionOperation", ^{
             expect(operation.isExecuting).to(be_truthy());
         });
 
+        it(@"should notify a key value observer that it is executing", ^{
+            expect(isExecutingObserver.mostRecentValue).to(equal(@YES));
+        });
+
         it(@"should not be finished", ^{
             expect(operation.isFinished).to_not(be_truthy());
         });
 
         describe(@"on connection success", ^{
             __block PSHKFakeHTTPURLResponse *response;
+            __block PSHKObserver *isFinishedObserver;
 
             beforeEach(^{
+                isFinishedObserver = [PSHKObserver observerForObject:operation keyPath:@"isFinished"];
                 spy_on(delegate);
 
                 response = [[PSHKFakeResponses responsesForRequest:@"HelloWorld"] success];
@@ -136,8 +146,16 @@ describe(@"PCKHTTPConnectionOperation", ^{
                 expect(operation.isExecuting).to_not(be_truthy());
             });
 
+            it(@"should notify observers that it is no longer executing", ^{
+                expect(isExecutingObserver.mostRecentValue).to(equal(@NO));
+            });
+
             it(@"should be finished", ^{
                 expect(operation.isFinished).to(be_truthy());
+            });
+
+            it(@"should notify observers when finished", ^{
+                expect(isFinishedObserver.mostRecentValue).to(equal(@YES));
             });
         });
 

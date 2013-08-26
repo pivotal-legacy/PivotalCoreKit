@@ -40,6 +40,8 @@
 		AE6898DE16BC3AF700F3F6BC /* NSArray+PivotalCore.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6898DB16BC3AF700F3F6BC /* NSArray+PivotalCore.m */; };
 		AE6898E716BC3B7A00F3F6BC /* NSArraySpec+PivotalCore.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE6898E616BC3B7A00F3F6BC /* NSArraySpec+PivotalCore.mm */; };
 		AE6898E816BC3D0500F3F6BC /* NSArraySpec+PivotalCore.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE6898E616BC3B7A00F3F6BC /* NSArraySpec+PivotalCore.mm */; };
+		AE9F8EF917C9B3670094079B /* PSHKObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = DE99C52A2D323A2A8E4F3EBF /* PSHKObserver.m */; };
+		AE9F8EFA17C9B3680094079B /* PSHKObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = DE99C52A2D323A2A8E4F3EBF /* PSHKObserver.m */; };
 		AEA96B7A168B50D900861DF1 /* NSData+PivotalCore.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96B5E168B50D900861DF1 /* NSData+PivotalCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AEA96B7B168B50D900861DF1 /* NSData+PivotalCore.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA96B5F168B50D900861DF1 /* NSData+PivotalCore.m */; };
 		AEA96B7C168B50D900861DF1 /* NSObject+MethodDecoration.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96B60168B50D900861DF1 /* NSObject+MethodDecoration.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -150,6 +152,7 @@
 		B88BF0A11725A7BF00E638D3 /* FakeOperationQueue.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AEA96BB8168B544D00861DF1 /* FakeOperationQueue.h */; };
 		B88BF0A21725A7C200E638D3 /* PSHKFakeHTTPURLResponse.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AEA96BBA168B544D00861DF1 /* PSHKFakeHTTPURLResponse.h */; };
 		B88BF0A31725A7C600E638D3 /* PSHKFakeResponses.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AEA96BBC168B544D00861DF1 /* PSHKFakeResponses.h */; };
+		DE99C5600FEEF8FC75AC5D85 /* PSHKObserver.h in Headers */ = {isa = PBXBuildFile; fileRef = DE99CE4876A23C42A61ED94A /* PSHKObserver.h */; };
 		E309448B16F117180034B3A9 /* PCKConnectionDelegateWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = E309448916F117180034B3A9 /* PCKConnectionDelegateWrapper.h */; };
 		E309448C16F117180034B3A9 /* PCKConnectionDelegateWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = E309448A16F117180034B3A9 /* PCKConnectionDelegateWrapper.m */; };
 		E309448D16F117180034B3A9 /* PCKConnectionDelegateWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = E309448A16F117180034B3A9 /* PCKConnectionDelegateWrapper.m */; };
@@ -433,6 +436,8 @@
 		AEBCCB6F168B908E0056EE83 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		AEE971BF1708EB400094B5A2 /* FakeHTTP.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FakeHTTP.xcodeproj; path = FakeHTTP/FakeHTTP.xcodeproj; sourceTree = "<group>"; };
 		AEF6F87616EBF0CF0004F077 /* FakeOperationQueueSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FakeOperationQueueSpec.mm; sourceTree = "<group>"; };
+		DE99C52A2D323A2A8E4F3EBF /* PSHKObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSHKObserver.m; path = SpecHelper/Helpers/PSHKObserver.m; sourceTree = SOURCE_ROOT; };
+		DE99CE4876A23C42A61ED94A /* PSHKObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSHKObserver.h; path = SpecHelper/Helpers/PSHKObserver.h; sourceTree = SOURCE_ROOT; };
 		E309448916F117180034B3A9 /* PCKConnectionDelegateWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCKConnectionDelegateWrapper.h; sourceTree = "<group>"; };
 		E309448A16F117180034B3A9 /* PCKConnectionDelegateWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCKConnectionDelegateWrapper.m; sourceTree = "<group>"; };
 		E309449A16F3FD230034B3A9 /* ConnectionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectionDelegate.h; sourceTree = "<group>"; };
@@ -806,6 +811,8 @@
 		E3F9C80F16F50ED300347B30 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				DE99CE4876A23C42A61ED94A /* PSHKObserver.h */,
+				DE99C52A2D323A2A8E4F3EBF /* PSHKObserver.m */,
 				E3F9C81016F50EED00347B30 /* PCKConnectionDelegateWrapperSpec.mm */,
 				E3F9C81316F50EFC00347B30 /* PCKConnectionBlockDelegateSpec.mm */,
 			);
@@ -853,6 +860,7 @@
 				E309448B16F117180034B3A9 /* PCKConnectionDelegateWrapper.h in Headers */,
 				E3AD57BA16F4AD0E003564BA /* PCKConnectionBlockDelegate.h in Headers */,
 				AE0CFF55176FE22200E6A958 /* NSURL+Spec.h in Headers */,
+				DE99C5600FEEF8FC75AC5D85 /* PSHKObserver.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1209,6 +1217,7 @@
 				AE6898E716BC3B7A00F3F6BC /* NSArraySpec+PivotalCore.mm in Sources */,
 				AEF6F87816EBF0CF0004F077 /* FakeOperationQueueSpec.mm in Sources */,
 				E309449C16F3FD230034B3A9 /* ConnectionDelegate.m in Sources */,
+				AE9F8EF917C9B3670094079B /* PSHKObserver.m in Sources */,
 				E3F9C81116F50EED00347B30 /* PCKConnectionDelegateWrapperSpec.mm in Sources */,
 				E3F9C81416F50EFC00347B30 /* PCKConnectionBlockDelegateSpec.mm in Sources */,
 				AE0CFF601770C81900E6A958 /* NSDictionarySpec+QueryStringSpec.mm in Sources */,
@@ -1273,6 +1282,7 @@
 				AE6898E816BC3D0500F3F6BC /* NSArraySpec+PivotalCore.mm in Sources */,
 				AEF6F88016EBF7D80004F077 /* FakeOperationQueueSpec.mm in Sources */,
 				E30944A416F3FD290034B3A9 /* ConnectionDelegate.m in Sources */,
+				AE9F8EFA17C9B3680094079B /* PSHKObserver.m in Sources */,
 				E3F9C81216F50EED00347B30 /* PCKConnectionDelegateWrapperSpec.mm in Sources */,
 				E3F9C81516F50EFC00347B30 /* PCKConnectionBlockDelegateSpec.mm in Sources */,
 				AE0CFF611770C81900E6A958 /* NSDictionarySpec+QueryStringSpec.mm in Sources */,
@@ -1498,6 +1508,7 @@
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../Externals/FakeHTTP/FakeHTTP/**";
+				MACOSX_DEPLOYMENT_TARGET = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -1515,6 +1526,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../Externals/FakeHTTP/FakeHTTP/**";
+				MACOSX_DEPLOYMENT_TARGET = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
