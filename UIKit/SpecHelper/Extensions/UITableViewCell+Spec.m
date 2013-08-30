@@ -3,8 +3,14 @@
 @implementation UITableViewCell (Spec)
 
 - (void)tap {
-    NSAssert(self.superview, @"Cell doesn't have a superview!");
-    UITableView *tableView = (UITableView *)self.superview;
+    UIView *currentView = self;
+    while (currentView.superview != nil && ![currentView isKindOfClass:[UITableView class]]) {
+        currentView = currentView.superview;
+    }
+
+    NSAssert(currentView, @"Cell must be in a table view in order to be tapped!");
+    UITableView *tableView = (UITableView *)currentView;
+
     NSIndexPath *indexPath = [tableView indexPathForCell:self];
 
     if ([tableView.delegate respondsToSelector:@selector(tableView:willSelectRowAtIndexPath:)]) {
