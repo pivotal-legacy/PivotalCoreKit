@@ -7,21 +7,6 @@ using namespace Cedar::Matchers;
 using namespace Cedar::Doubles;
 
 
-void (^expectFailureWithMessage)(NSString *, CDRSpecBlock) = ^(NSString *message, CDRSpecBlock block) {
-    @try {
-        block();
-    }
-    @catch (NSException *x) {
-        if (![message isEqualToString:x.reason]) {
-            NSString *reason = [NSString stringWithFormat:@"Expected failure message: <%@> but received failure message <%@>", message, x.reason];
-            [[CDRSpecFailure specFailureWithReason:reason] raise];
-        }
-        return;
-    }
-
-    fail(@"Expectation should have failed.");
-};
-
 SPEC_BEGIN(UIControl_SpecSpec)
 
 describe(@"UIControlSpec", ^{
