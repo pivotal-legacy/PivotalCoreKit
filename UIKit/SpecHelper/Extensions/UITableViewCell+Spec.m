@@ -18,9 +18,16 @@
     }
 
     if (indexPath != nil) {
-        [tableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
-        if ([tableView.delegate respondsToSelector:@selector(tableView:didSelectRowAtIndexPath:)]) {
-            [tableView.delegate tableView:tableView didSelectRowAtIndexPath:indexPath];
+        if (tableView.allowsMultipleSelection && [tableView.indexPathsForSelectedRows containsObject:indexPath]) {
+            [tableView deselectRowAtIndexPath:indexPath animated:NO];
+            if ([tableView.delegate respondsToSelector:@selector(tableView:didDeselectRowAtIndexPath:)]) {
+                [tableView.delegate tableView:tableView didDeselectRowAtIndexPath:indexPath];
+            }
+        } else {
+            [tableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
+            if ([tableView.delegate respondsToSelector:@selector(tableView:didSelectRowAtIndexPath:)]) {
+                [tableView.delegate tableView:tableView didSelectRowAtIndexPath:indexPath];
+            }
         }
     }
 }
