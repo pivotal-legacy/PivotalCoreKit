@@ -51,6 +51,8 @@
 		AE3847B8168BA3B500C99B55 /* UIImage+PivotalCore.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBCCBD0168B96C80056EE83 /* UIImage+PivotalCore.m */; };
 		AE3847B9168BA3B500C99B55 /* UIView+PivotalCore.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBCCBD2168B96C80056EE83 /* UIView+PivotalCore.m */; };
 		AE3847BD168BACEB00C99B55 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEBCCC39168B99ED0056EE83 /* CoreGraphics.framework */; };
+		AE53E2EC18075A810037C32E /* UIWindow+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE53E2EB18075A810037C32E /* UIWindow+Spec.m */; };
+		AE53E2F618075B080037C32E /* UIWindowSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE53E2F518075B080037C32E /* UIWindowSpec+Spec.mm */; };
 		AE7B279617CFD67600904F64 /* UIViewControllerSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE7B279517CFD67600904F64 /* UIViewControllerSpec+Spec.mm */; };
 		AE86BD42179C7C910057DEAE /* UITabBarController+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AE86BD40179C7C910057DEAE /* UITabBarController+Spec.h */; };
 		AE86BD43179C7C910057DEAE /* UITabBarController+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE86BD41179C7C910057DEAE /* UITabBarController+Spec.m */; };
@@ -258,6 +260,9 @@
 		AE3847A8168BA0B300C99B55 /* AWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AWebViewController.xib; sourceTree = "<group>"; };
 		AE3847AA168BA0B300C99B55 /* logo-small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo-small.png"; sourceTree = "<group>"; };
 		AE3847AB168BA0B300C99B55 /* pivotallabs-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pivotallabs-logo.png"; sourceTree = "<group>"; };
+		AE53E2EA18075A810037C32E /* UIWindow+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+Spec.h"; sourceTree = "<group>"; };
+		AE53E2EB18075A810037C32E /* UIWindow+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+Spec.m"; sourceTree = "<group>"; };
+		AE53E2F518075B080037C32E /* UIWindowSpec+Spec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIWindowSpec+Spec.mm"; sourceTree = "<group>"; };
 		AE7B279517CFD67600904F64 /* UIViewControllerSpec+Spec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIViewControllerSpec+Spec.mm"; sourceTree = "<group>"; };
 		AE86BD40179C7C910057DEAE /* UITabBarController+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBarController+Spec.h"; sourceTree = "<group>"; };
 		AE86BD41179C7C910057DEAE /* UITabBarController+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBarController+Spec.m"; sourceTree = "<group>"; };
@@ -503,6 +508,8 @@
 				AEBCCC7A168B9B5F0056EE83 /* UITableViewCell+Spec.m */,
 				AEBCCC7B168B9B5F0056EE83 /* UIView+Spec.h */,
 				AEBCCC7C168B9B5F0056EE83 /* UIView+Spec.m */,
+				AE53E2EA18075A810037C32E /* UIWindow+Spec.h */,
+				AE53E2EB18075A810037C32E /* UIWindow+Spec.m */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -516,9 +523,10 @@
 				AEBCCC93168B9C530056EE83 /* UIImage+PivotalCoreSpec.mm */,
 				AEBCCC94168B9C530056EE83 /* UIImageSpec+Spec.mm */,
 				22601B5816BA209F00A807CB /* UISliderSpec+Spec.mm */,
-				AE1FBEA217D15A4100B0F03B /* UITableViewCellSpec+Spec.mm */,
 				AED4BE431780C8C800390AFD /* UITabBarControllerSpec+Spec.mm */,
+				AE1FBEA217D15A4100B0F03B /* UITableViewCellSpec+Spec.mm */,
 				AEBCCC95168B9C530056EE83 /* UIView+PivotalCoreSpec.mm */,
+				AE53E2F518075B080037C32E /* UIWindowSpec+Spec.mm */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -811,6 +819,7 @@
 				AEBCCC99168B9C530056EE83 /* UIBarButtonItem+ButtonSpec.mm in Sources */,
 				AE1FBEA317D15A4100B0F03B /* UITableViewCellSpec+Spec.mm in Sources */,
 				AEBCCC9A168B9C530056EE83 /* UIImage+PivotalCoreSpec.mm in Sources */,
+				AE53E2F618075B080037C32E /* UIWindowSpec+Spec.mm in Sources */,
 				AEBCCC9B168B9C530056EE83 /* UIImageSpec+Spec.mm in Sources */,
 				AEBCCC9C168B9C530056EE83 /* UIView+PivotalCoreSpec.mm in Sources */,
 				AEBCCC9E168B9C530056EE83 /* main.m in Sources */,
@@ -834,6 +843,7 @@
 				AEBCCC8A168B9B8B0056EE83 /* UIControl+Spec.m in Sources */,
 				AEBCCC8B168B9B8B0056EE83 /* UIImage+Spec.m in Sources */,
 				AEBCCC8C168B9B8B0056EE83 /* UITableViewCell+Spec.m in Sources */,
+				AE53E2EC18075A810037C32E /* UIWindow+Spec.m in Sources */,
 				AEBCCC8D168B9B8B0056EE83 /* UIView+Spec.m in Sources */,
 				22601B4F16BA202A00A807CB /* UISlider+Spec.m in Sources */,
 				B8C62E6D16BC03420009CDAD /* UIBarButtonItem+Spec.m in Sources */,
