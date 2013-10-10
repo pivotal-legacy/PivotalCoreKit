@@ -55,6 +55,8 @@
 		AE86BD42179C7C910057DEAE /* UITabBarController+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AE86BD40179C7C910057DEAE /* UITabBarController+Spec.h */; };
 		AE86BD43179C7C910057DEAE /* UITabBarController+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE86BD41179C7C910057DEAE /* UITabBarController+Spec.m */; };
 		AE86BD4E179C7DAD0057DEAE /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE86BD4D179C7DAD0057DEAE /* Default-568h@2x.png */; };
+		AE898FF818071E2B00DDB948 /* UIViewSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE898FF718071E2B00DDB948 /* UIViewSpec+Spec.mm */; };
+		AE89900318071F3A00DDB948 /* UIView+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE89900218071F3A00DDB948 /* UIView+Spec.m */; };
 		AEBCCC25168B999F0056EE83 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEBCCBE7168B97DD0056EE83 /* Foundation.framework */; };
 		AEBCCC37168B99ED0056EE83 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEBCCC36168B99ED0056EE83 /* UIKit.framework */; };
 		AEBCCC38168B99ED0056EE83 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEBCCBE7168B97DD0056EE83 /* Foundation.framework */; };
@@ -260,6 +262,8 @@
 		AE86BD40179C7C910057DEAE /* UITabBarController+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBarController+Spec.h"; sourceTree = "<group>"; };
 		AE86BD41179C7C910057DEAE /* UITabBarController+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBarController+Spec.m"; sourceTree = "<group>"; };
 		AE86BD4D179C7DAD0057DEAE /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
+		AE898FF718071E2B00DDB948 /* UIViewSpec+Spec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIViewSpec+Spec.mm"; sourceTree = "<group>"; };
+		AE89900218071F3A00DDB948 /* UIView+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Spec.m"; sourceTree = "<group>"; };
 		AEBCCBCD168B96C80056EE83 /* UIBarButtonItem+Button.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Button.h"; sourceTree = "<group>"; };
 		AEBCCBCE168B96C80056EE83 /* UIBarButtonItem+Button.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Button.m"; sourceTree = "<group>"; };
 		AEBCCBCF168B96C80056EE83 /* UIImage+PivotalCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+PivotalCore.h"; sourceTree = "<group>"; };
@@ -526,6 +530,7 @@
 				AEC40CAF174C22BD00474D2D /* UIActionSheet+Spec.m */,
 				AEC40CB0174C22BD00474D2D /* UIAlertView+Spec.h */,
 				AEC40CB1174C22BD00474D2D /* UIAlertView+Spec.m */,
+				AE89900218071F3A00DDB948 /* UIView+Spec.m */,
 				AEC40CB2174C22BD00474D2D /* UIViewController+Spec.m */,
 				AEC40CB3174C22BD00474D2D /* UIWebView+Spec.h */,
 				AEC40CB4174C22BD00474D2D /* UIWebView+Spec.m */,
@@ -537,8 +542,9 @@
 			isa = PBXGroup;
 			children = (
 				AEC40CBE174C24CF00474D2D /* UIAlertViewSpec+Spec.mm */,
-				AEC40CBF174C24CF00474D2D /* UIWebViewSpec+Spec.mm */,
 				AE7B279517CFD67600904F64 /* UIViewControllerSpec+Spec.mm */,
+				AE898FF718071E2B00DDB948 /* UIViewSpec+Spec.mm */,
+				AEC40CBF174C24CF00474D2D /* UIWebViewSpec+Spec.mm */,
 			);
 			path = Stubs;
 			sourceTree = "<group>";
@@ -810,6 +816,7 @@
 				AEBCCC9E168B9C530056EE83 /* main.m in Sources */,
 				AE3847AD168BA0E300C99B55 /* AWebViewController.m in Sources */,
 				AEC6D7FE16963F3500E10C7B /* UIControlSpec+Spec.mm in Sources */,
+				AE898FF818071E2B00DDB948 /* UIViewSpec+Spec.mm in Sources */,
 				22601B5916BA209F00A807CB /* UISliderSpec+Spec.mm in Sources */,
 				B8C62E6F16BC04230009CDAD /* UIBarButtonItemSpec+Spec.mm in Sources */,
 				B8C62E7216BC04940009CDAD /* Target.m in Sources */,
@@ -840,6 +847,7 @@
 				AEC40CB5174C22BD00474D2D /* UIActionSheet+Spec.m in Sources */,
 				AEC40CB6174C22BD00474D2D /* UIAlertView+Spec.m in Sources */,
 				AEC40CB7174C22BD00474D2D /* UIViewController+Spec.m in Sources */,
+				AE89900318071F3A00DDB948 /* UIView+Spec.m in Sources */,
 				AEC40CB8174C22BD00474D2D /* UIWebView+Spec.m in Sources */,
 				AE86BD43179C7C910057DEAE /* UITabBarController+Spec.m in Sources */,
 			);
