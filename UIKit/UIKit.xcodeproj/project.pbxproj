@@ -96,6 +96,8 @@
 		B8C62E6F16BC04230009CDAD /* UIBarButtonItemSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = B8C62E6E16BC04230009CDAD /* UIBarButtonItemSpec+Spec.mm */; };
 		B8C62E7216BC04940009CDAD /* Target.m in Sources */ = {isa = PBXBuildFile; fileRef = B8C62E7116BC04940009CDAD /* Target.m */; };
 		B8C62E7316BC07F60009CDAD /* UIBarButtonItem+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = B8C62E6B16BC03420009CDAD /* UIBarButtonItem+Spec.h */; };
+		FA07586A18120D19001817BF /* UICollectionViewCell+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = FA07586918120D19001817BF /* UICollectionViewCell+Spec.m */; };
+		FA07586B18120E47001817BF /* UICollectionViewCellSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA07586618120BB1001817BF /* UICollectionViewCellSpec+Spec.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -314,6 +316,9 @@
 		B8C62E6E16BC04230009CDAD /* UIBarButtonItemSpec+Spec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIBarButtonItemSpec+Spec.mm"; sourceTree = "<group>"; };
 		B8C62E7016BC04940009CDAD /* Target.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Target.h; sourceTree = "<group>"; };
 		B8C62E7116BC04940009CDAD /* Target.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Target.m; sourceTree = "<group>"; };
+		FA07586618120BB1001817BF /* UICollectionViewCellSpec+Spec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UICollectionViewCellSpec+Spec.mm"; sourceTree = "<group>"; };
+		FA07586818120D19001817BF /* UICollectionViewCell+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionViewCell+Spec.h"; sourceTree = "<group>"; };
+		FA07586918120D19001817BF /* UICollectionViewCell+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionViewCell+Spec.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -510,6 +515,8 @@
 				AEBCCC7C168B9B5F0056EE83 /* UIView+Spec.m */,
 				AE53E2EA18075A810037C32E /* UIWindow+Spec.h */,
 				AE53E2EB18075A810037C32E /* UIWindow+Spec.m */,
+				FA07586818120D19001817BF /* UICollectionViewCell+Spec.h */,
+				FA07586918120D19001817BF /* UICollectionViewCell+Spec.m */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -527,6 +534,7 @@
 				AE1FBEA217D15A4100B0F03B /* UITableViewCellSpec+Spec.mm */,
 				AEBCCC95168B9C530056EE83 /* UIView+PivotalCoreSpec.mm */,
 				AE53E2F518075B080037C32E /* UIWindowSpec+Spec.mm */,
+				FA07586618120BB1001817BF /* UICollectionViewCellSpec+Spec.mm */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -808,6 +816,7 @@
 			files = (
 				AE3847B7168BA3B500C99B55 /* UIBarButtonItem+Button.m in Sources */,
 				AE3847B8168BA3B500C99B55 /* UIImage+PivotalCore.m in Sources */,
+				FA07586A18120D19001817BF /* UICollectionViewCell+Spec.m in Sources */,
 				AE3847B9168BA3B500C99B55 /* UIView+PivotalCore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -820,6 +829,7 @@
 				AE1FBEA317D15A4100B0F03B /* UITableViewCellSpec+Spec.mm in Sources */,
 				AEBCCC9A168B9C530056EE83 /* UIImage+PivotalCoreSpec.mm in Sources */,
 				AE53E2F618075B080037C32E /* UIWindowSpec+Spec.mm in Sources */,
+				FA07586B18120E47001817BF /* UICollectionViewCellSpec+Spec.mm in Sources */,
 				AEBCCC9B168B9C530056EE83 /* UIImageSpec+Spec.mm in Sources */,
 				AEBCCC9C168B9C530056EE83 /* UIView+PivotalCoreSpec.mm in Sources */,
 				AEBCCC9E168B9C530056EE83 /* main.m in Sources */,
