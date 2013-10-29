@@ -1,7 +1,5 @@
 #import "UIAlertView+Spec.h"
 
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wobjc-protocol-method-implementation"
 
 @implementation UIAlertView (Spec)
 
@@ -27,6 +25,8 @@ static NSMutableArray *alertViewStack__ = nil;
     [alertViewStack__ addObject:alertView];
 }
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wobjc-protocol-method-implementation"
 - (void)show {
     [UIAlertView setCurrentAlertView:self];
     if ([self.delegate respondsToSelector:@selector(willPresentAlertView:)]) {
@@ -50,6 +50,7 @@ static NSMutableArray *alertViewStack__ = nil;
     }
     [alertViewStack__ removeObject:self];
 }
+#pragma clang diagnostic pop
 
 - (void)dismissWithOkButton {
     [self dismissWithClickedButtonIndex:self.firstOtherButtonIndex animated:NO];
