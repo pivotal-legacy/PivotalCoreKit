@@ -141,6 +141,7 @@
 		AEBCCB70168B908F0056EE83 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEBCCB6F168B908E0056EE83 /* UIKit.framework */; };
 		AEBCCB71168B909D0056EE83 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AE88B00711DE6D1200B65DD3 /* libxml2.dylib */; };
 		AEE971D41708EB760094B5A2 /* libFakeHTTP-OSX.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AEE971D11708EB410094B5A2 /* libFakeHTTP-OSX.a */; };
+		AEEECC40181F3693006B52CD /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEEECC3F181F3693006B52CD /* Default-568h@2x.png */; };
 		AEF6F87816EBF0CF0004F077 /* FakeOperationQueueSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEF6F87616EBF0CF0004F077 /* FakeOperationQueueSpec.mm */; };
 		AEF6F88016EBF7D80004F077 /* FakeOperationQueueSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEF6F87616EBF0CF0004F077 /* FakeOperationQueueSpec.mm */; };
 		B88BF09B1725A79800E638D3 /* PCKConnectionDelegateWrapper.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = E309448916F117180034B3A9 /* PCKConnectionDelegateWrapper.h */; };
@@ -301,6 +302,13 @@
 			remoteGlobalIDString = AE104EC41707CB5700A9171F;
 			remoteInfo = "FakeHTTP-OSX";
 		};
+		AEEECC3C181F368F006B52CD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEBCCB45168B7E370056EE83 /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1F45A3DD180E4796003C1E36;
+			remoteInfo = XCUnitAppTests;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -435,6 +443,7 @@
 		AEBCCB45168B7E370056EE83 /* Cedar.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Cedar.xcodeproj; path = Cedar/Cedar.xcodeproj; sourceTree = "<group>"; };
 		AEBCCB6F168B908E0056EE83 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		AEE971BF1708EB400094B5A2 /* FakeHTTP.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FakeHTTP.xcodeproj; path = FakeHTTP/FakeHTTP.xcodeproj; sourceTree = "<group>"; };
+		AEEECC3F181F3693006B52CD /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		AEF6F87616EBF0CF0004F077 /* FakeOperationQueueSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FakeOperationQueueSpec.mm; sourceTree = "<group>"; };
 		DE99C52A2D323A2A8E4F3EBF /* PSHKObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSHKObserver.m; path = SpecHelper/Helpers/PSHKObserver.m; sourceTree = SOURCE_ROOT; };
 		DE99CE4876A23C42A61ED94A /* PSHKObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSHKObserver.h; path = SpecHelper/Helpers/PSHKObserver.h; sourceTree = SOURCE_ROOT; };
@@ -526,6 +535,7 @@
 		0867D691FE84028FC02AAC07 /* PivotalCoreKit */ = {
 			isa = PBXGroup;
 			children = (
+				AEEECC3F181F3693006B52CD /* Default-568h@2x.png */,
 				AEA96B41168B4FF800861DF1 /* Core */,
 				AEA96B42168B4FFE00861DF1 /* SpecHelper */,
 				AEA96B43168B500300861DF1 /* Spec */,
@@ -782,6 +792,7 @@
 				AEBCCB61168B7E380056EE83 /* iOSSpecs.app */,
 				AEBCCB63168B7E380056EE83 /* OCUnitApp.app */,
 				AEBCCB65168B7E380056EE83 /* OCUnitAppTests.octest */,
+				AEEECC3D181F368F006B52CD /* XCUnitAppTests.xctest */,
 				AEBCCB67168B7E380056EE83 /* OCUnitAppLogicTests.octest */,
 			);
 			name = Products;
@@ -985,7 +996,7 @@
 		0867D690FE84028FC02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0460;
+				LastUpgradeCheck = 0500;
 			};
 			buildConfigurationList = 1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "Foundation" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1102,6 +1113,13 @@
 			remoteRef = AEE971D01708EB410094B5A2 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		AEEECC3D181F368F006B52CD /* XCUnitAppTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = XCUnitAppTests.xctest;
+			remoteRef = AEEECC3C181F368F006B52CD /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -1123,6 +1141,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEEECC40181F3693006B52CD /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1339,10 +1358,11 @@
 		1DEB922308733DC00010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -1359,6 +1379,7 @@
 				GCC_WARN_STRICT_SELECTOR_MATCH = YES;
 				GCC_WARN_UNDECLARED_SELECTOR = NO;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = YES;
 			};
@@ -1367,10 +1388,11 @@
 		1DEB922408733DC00010E9CD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -1386,6 +1408,7 @@
 				GCC_WARN_STRICT_SELECTOR_MATCH = YES;
 				GCC_WARN_UNDECLARED_SELECTOR = NO;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = YES;
 			};
@@ -1535,7 +1558,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -1564,7 +1586,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -1589,7 +1610,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -1617,7 +1637,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -1708,7 +1727,6 @@
 		B88BF07E1725A56100E638D3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				VALID_ARCHS = "armv7 armv7s i386";
@@ -1718,7 +1736,6 @@
 		B88BF07F1725A56100E638D3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				VALID_ARCHS = "armv7 armv7s i386";
