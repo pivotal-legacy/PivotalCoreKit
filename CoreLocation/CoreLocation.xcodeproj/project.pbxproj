@@ -28,6 +28,7 @@
 		AE38499E168D058F00C99B55 /* libCoreLocation+PivotalSpecHelper-StaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE38498E168D053300C99B55 /* libCoreLocation+PivotalSpecHelper-StaticLib.a */; };
 		AE494744168D15C8006F3B70 /* CLGeocoderSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEC81173168D14FF00523186 /* CLGeocoderSpec+Spec.mm */; };
 		AE49474D168D15C9006F3B70 /* CLGeocoderSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEC81173168D14FF00523186 /* CLGeocoderSpec+Spec.mm */; };
+		AEEECC4C181F36B6006B52CD /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEEECC4B181F36B6006B52CD /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +116,13 @@
 			remoteGlobalIDString = AE38498D168D053300C99B55;
 			remoteInfo = "CoreLocation+PivotalSpecHelper-StaticLib";
 		};
+		AEEECC49181F36B2006B52CD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE384926168CD8FB00C99B55 /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1F45A3DD180E4796003C1E36;
+			remoteInfo = XCUnitAppTests;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -157,6 +165,7 @@
 		AE384970168D04F300C99B55 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		AE38498E168D053300C99B55 /* libCoreLocation+PivotalSpecHelper-StaticLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libCoreLocation+PivotalSpecHelper-StaticLib.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEC81173168D14FF00523186 /* CLGeocoderSpec+Spec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "CLGeocoderSpec+Spec.mm"; sourceTree = "<group>"; };
+		AEEECC4B181F36B6006B52CD /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +216,7 @@
 		AE3848CA168CD86000C99B55 = {
 			isa = PBXGroup;
 			children = (
+				AEEECC4B181F36B6006B52CD /* Default-568h@2x.png */,
 				AE384949168CD9B600C99B55 /* SpecHelper */,
 				AE384955168D030800C99B55 /* Spec */,
 				AE3848D8168CD86000C99B55 /* Frameworks */,
@@ -256,6 +266,7 @@
 				AE38493B168CD8FC00C99B55 /* iOSSpecs.app */,
 				AE38493D168CD8FC00C99B55 /* OCUnitApp.app */,
 				AE38493F168CD8FC00C99B55 /* OCUnitAppTests.octest */,
+				AEEECC4A181F36B2006B52CD /* XCUnitAppTests.xctest */,
 				AE384941168CD8FC00C99B55 /* OCUnitAppLogicTests.octest */,
 			);
 			name = Products;
@@ -409,7 +420,7 @@
 		AE3848CC168CD86000C99B55 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0450;
+				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Pivotal Labs";
 			};
 			buildConfigurationList = AE3848CF168CD86000C99B55 /* Build configuration list for PBXProject "CoreLocation" */;
@@ -495,6 +506,13 @@
 			remoteRef = AE384940168CD8FC00C99B55 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		AEEECC4A181F36B2006B52CD /* XCUnitAppTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = XCUnitAppTests.xctest;
+			remoteRef = AEEECC49181F36B2006B52CD /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -502,6 +520,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEEECC4C181F36B6006B52CD /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -654,7 +673,6 @@
 		AE384912168CD8C800C99B55 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -677,7 +695,6 @@
 		AE384913168CD8C800C99B55 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -701,7 +718,6 @@
 		AE384923168CD8D800C99B55 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -714,7 +730,6 @@
 		AE384924168CD8D800C99B55 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
