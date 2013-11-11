@@ -40,6 +40,10 @@
 		AE6898DE16BC3AF700F3F6BC /* NSArray+PivotalCore.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6898DB16BC3AF700F3F6BC /* NSArray+PivotalCore.m */; };
 		AE6898E716BC3B7A00F3F6BC /* NSArraySpec+PivotalCore.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE6898E616BC3B7A00F3F6BC /* NSArraySpec+PivotalCore.mm */; };
 		AE6898E816BC3D0500F3F6BC /* NSArraySpec+PivotalCore.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE6898E616BC3B7A00F3F6BC /* NSArraySpec+PivotalCore.mm */; };
+		AE8F8484182DA90C00A600E5 /* NSUserDefaults+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8F8483182DA90C00A600E5 /* NSUserDefaults+Spec.m */; };
+		AE8F8485182DA90C00A600E5 /* NSUserDefaults+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8F8483182DA90C00A600E5 /* NSUserDefaults+Spec.m */; };
+		AE8F8487182DAF6700A600E5 /* NSUserDefaultsSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE8F8486182DAF6700A600E5 /* NSUserDefaultsSpec.mm */; };
+		AE8F8488182DAF6700A600E5 /* NSUserDefaultsSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE8F8486182DAF6700A600E5 /* NSUserDefaultsSpec.mm */; };
 		AE9F8EF917C9B3670094079B /* PSHKObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = DE99C52A2D323A2A8E4F3EBF /* PSHKObserver.m */; };
 		AE9F8EFA17C9B3680094079B /* PSHKObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = DE99C52A2D323A2A8E4F3EBF /* PSHKObserver.m */; };
 		AEA96B7A168B50D900861DF1 /* NSData+PivotalCore.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96B5E168B50D900861DF1 /* NSData+PivotalCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -374,6 +378,9 @@
 		AE6898DB16BC3AF700F3F6BC /* NSArray+PivotalCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+PivotalCore.m"; sourceTree = "<group>"; };
 		AE6898E616BC3B7A00F3F6BC /* NSArraySpec+PivotalCore.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSArraySpec+PivotalCore.mm"; sourceTree = "<group>"; };
 		AE88B00711DE6D1200B65DD3 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		AE8F8482182DA90C00A600E5 /* NSUserDefaults+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+Spec.h"; sourceTree = "<group>"; };
+		AE8F8483182DA90C00A600E5 /* NSUserDefaults+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+Spec.m"; sourceTree = "<group>"; };
+		AE8F8486182DAF6700A600E5 /* NSUserDefaultsSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NSUserDefaultsSpec.mm; sourceTree = "<group>"; };
 		AEA96B49168B506500861DF1 /* Foundation+PivotalCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Foundation+PivotalCore.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEA96B5E168B50D900861DF1 /* NSData+PivotalCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+PivotalCore.h"; sourceTree = "<group>"; };
 		AEA96B5F168B50D900861DF1 /* NSData+PivotalCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+PivotalCore.m"; sourceTree = "<group>"; };
@@ -659,6 +666,8 @@
 			isa = PBXGroup;
 			children = (
 				AE0CFF53176FE22200E6A958 /* NSURL+Spec.h */,
+				AE8F8482182DA90C00A600E5 /* NSUserDefaults+Spec.h */,
+				AE8F8483182DA90C00A600E5 /* NSUserDefaults+Spec.m */,
 				AE0CFF54176FE22200E6A958 /* NSURL+Spec.m */,
 				AEA96BB3168B544D00861DF1 /* NSURLConnection+Spec.h */,
 				AEA96BB4168B544D00861DF1 /* NSURLConnection+Spec.m */,
@@ -693,6 +702,7 @@
 		AEA96BE0168B56BF00861DF1 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				AE8F8486182DAF6700A600E5 /* NSUserDefaultsSpec.mm */,
 				AE6898E616BC3B7A00F3F6BC /* NSArraySpec+PivotalCore.mm */,
 				AEA96BE1168B56BF00861DF1 /* NSDataSpec+PivotalCore.mm */,
 				AE0CFF5F1770C80F00E6A958 /* NSDictionarySpec+QueryStringSpec.mm */,
@@ -1235,9 +1245,11 @@
 				AEA96C9A168B659500861DF1 /* main.m in Sources */,
 				AE6898E716BC3B7A00F3F6BC /* NSArraySpec+PivotalCore.mm in Sources */,
 				AEF6F87816EBF0CF0004F077 /* FakeOperationQueueSpec.mm in Sources */,
+				AE8F8487182DAF6700A600E5 /* NSUserDefaultsSpec.mm in Sources */,
 				E309449C16F3FD230034B3A9 /* ConnectionDelegate.m in Sources */,
 				AE9F8EF917C9B3670094079B /* PSHKObserver.m in Sources */,
 				E3F9C81116F50EED00347B30 /* PCKConnectionDelegateWrapperSpec.mm in Sources */,
+				AE8F8484182DA90C00A600E5 /* NSUserDefaults+Spec.m in Sources */,
 				E3F9C81416F50EFC00347B30 /* PCKConnectionBlockDelegateSpec.mm in Sources */,
 				AE0CFF601770C81900E6A958 /* NSDictionarySpec+QueryStringSpec.mm in Sources */,
 				AE0CFF7C1770DB0100E6A958 /* NSURLSpec+Spec.mm in Sources */,
@@ -1300,9 +1312,11 @@
 				AEA96CBE168B688700861DF1 /* FakeConnectionDelegate.m in Sources */,
 				AE6898E816BC3D0500F3F6BC /* NSArraySpec+PivotalCore.mm in Sources */,
 				AEF6F88016EBF7D80004F077 /* FakeOperationQueueSpec.mm in Sources */,
+				AE8F8488182DAF6700A600E5 /* NSUserDefaultsSpec.mm in Sources */,
 				E30944A416F3FD290034B3A9 /* ConnectionDelegate.m in Sources */,
 				AE9F8EFA17C9B3680094079B /* PSHKObserver.m in Sources */,
 				E3F9C81216F50EED00347B30 /* PCKConnectionDelegateWrapperSpec.mm in Sources */,
+				AE8F8485182DA90C00A600E5 /* NSUserDefaults+Spec.m in Sources */,
 				E3F9C81516F50EFC00347B30 /* PCKConnectionBlockDelegateSpec.mm in Sources */,
 				AE0CFF611770C81900E6A958 /* NSDictionarySpec+QueryStringSpec.mm in Sources */,
 				AE0CFF7D1770DB0100E6A958 /* NSURLSpec+Spec.mm in Sources */,
