@@ -37,6 +37,14 @@
     return [self connectionForRequest:request delegate:delegate];
 }
 
+- (NSURLConnection *)connectionForURL:(NSURL*)url andDelegate:(id<NSURLConnectionDelegate>)delegate withRequestSetup:(RequestSetupBlock)requestSetup {
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
+    if (requestSetup)
+        requestSetup(request);
+
+    return [self connectionForRequest:request delegate:delegate];
+}
+
 - (NSMutableURLRequest *)requestForPath:(NSString *)path secure:(BOOL)secure {
     return [[[NSMutableURLRequest alloc] initWithURL:[self urlForPath:path secure:secure]] autorelease];
 }

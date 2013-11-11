@@ -294,6 +294,16 @@ describe(@"PCKHTTPInterface", ^{
             expect(interface.activeConnections).to(contain(connection));
         });
     });
+
+    describe(@"connectionForURL:secure:andDelegate:withRequestSetup:", ^{
+        it(@"should set up the request as specified by the block", ^{
+            NSURLConnection *connection = [interface connectionForURL:[NSURL URLWithString:@PATH] secure:false andDelegate:mockDelegate withRequestSetup:^(NSMutableURLRequest *request) {
+                request.HTTPMethod = @"POST";
+            }];
+
+            expect(connection.request.HTTPMethod).to(equal(@"POST"));
+        });
+    });
 });
 
 SPEC_END
