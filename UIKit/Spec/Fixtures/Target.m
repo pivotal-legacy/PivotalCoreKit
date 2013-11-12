@@ -3,9 +3,8 @@
 
 @implementation Target
 
-- (void)callMe
-{
-    self.wasCalled = YES;
-}
+-(void) hello {}
+-(void) goodbye {}
+-(void) ciao:(id)bella {}
 
 @end

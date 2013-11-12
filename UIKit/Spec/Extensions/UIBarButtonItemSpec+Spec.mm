@@ -15,14 +15,16 @@ describe(@"UIBarButtonItemSpec_Spec", ^{
 
     beforeEach(^{
         target = [[Target new] autorelease];
+        spy_on(target);
+
         barButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
                                                                        target:target
-                                                                       action:@selector(callMe)] autorelease];
+                                                                       action:@selector(hello)] autorelease];
     });
 
     it(@"can be 'tapped' programmatically", ^{
         [barButtonItem tap];
-        target.wasCalled should be_truthy;
+        target should have_received(@selector(hello));
     });
     
     it(@"should throw an exception if the bar button item is disabled", ^{
@@ -32,10 +34,11 @@ describe(@"UIBarButtonItemSpec_Spec", ^{
     
     it(@"should delegate down to the custom view if the custom view is a button", ^{
         UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        [button addTarget:target action:@selector(callMe) forControlEvents:UIControlEventTouchUpInside];
+        [button addTarget:target action:@selector(hello) forControlEvents:UIControlEventTouchUpInside];
         barButtonItem = [[[UIBarButtonItem alloc] initWithCustomView:button] autorelease];
         [barButtonItem tap];
-        target.wasCalled should be_truthy;
+
+        target should have_received(@selector(hello));
     });
     
 });
