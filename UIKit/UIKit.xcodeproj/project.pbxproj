@@ -59,6 +59,7 @@
 		AE86BD4E179C7DAD0057DEAE /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE86BD4D179C7DAD0057DEAE /* Default-568h@2x.png */; };
 		AE898FF818071E2B00DDB948 /* UIViewSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE898FF718071E2B00DDB948 /* UIViewSpec+Spec.mm */; };
 		AE89900318071F3A00DDB948 /* UIView+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE89900218071F3A00DDB948 /* UIView+Spec.m */; };
+		AE95306A1832EE9300C802E9 /* UIViewSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE9530691832EE9300C802E9 /* UIViewSpec+Spec.mm */; };
 		AEBCCC25168B999F0056EE83 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEBCCBE7168B97DD0056EE83 /* Foundation.framework */; };
 		AEBCCC37168B99ED0056EE83 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEBCCC36168B99ED0056EE83 /* UIKit.framework */; };
 		AEBCCC38168B99ED0056EE83 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEBCCBE7168B97DD0056EE83 /* Foundation.framework */; };
@@ -290,6 +291,7 @@
 		AE86BD4D179C7DAD0057DEAE /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		AE898FF718071E2B00DDB948 /* UIViewSpec+Spec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIViewSpec+Spec.mm"; sourceTree = "<group>"; };
 		AE89900218071F3A00DDB948 /* UIView+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Spec.m"; sourceTree = "<group>"; };
+		AE9530691832EE9300C802E9 /* UIViewSpec+Spec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIViewSpec+Spec.mm"; sourceTree = "<group>"; };
 		AEBCCBCD168B96C80056EE83 /* UIBarButtonItem+Button.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Button.h"; sourceTree = "<group>"; };
 		AEBCCBCE168B96C80056EE83 /* UIBarButtonItem+Button.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Button.m"; sourceTree = "<group>"; };
 		AEBCCBCF168B96C80056EE83 /* UIImage+PivotalCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+PivotalCore.h"; sourceTree = "<group>"; };
@@ -564,6 +566,7 @@
 				AEBCCC95168B9C530056EE83 /* UIView+PivotalCoreSpec.mm */,
 				AE53E2F518075B080037C32E /* UIWindowSpec+Spec.mm */,
 				FA07586618120BB1001817BF /* UICollectionViewCellSpec+Spec.mm */,
+				AE9530691832EE9300C802E9 /* UIViewSpec+Spec.mm */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -883,6 +886,7 @@
 				AEC40CC1174C24CF00474D2D /* UIWebViewSpec+Spec.mm in Sources */,
 				AED4BE441780C8C800390AFD /* UITabBarControllerSpec+Spec.mm in Sources */,
 				AE7B279617CFD67600904F64 /* UIViewControllerSpec+Spec.mm in Sources */,
+				AE95306A1832EE9300C802E9 /* UIViewSpec+Spec.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
