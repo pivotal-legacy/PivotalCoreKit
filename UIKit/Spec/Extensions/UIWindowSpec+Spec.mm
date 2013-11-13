@@ -13,7 +13,7 @@ describe(@"UIWindow_Spec", ^{
         __block BOOL grandchildIsFirstResponder;
 
         beforeEach(^{
-            window = [[[UIWindow alloc] init] retain];
+            window = [[UIWindow alloc] init];
             UITextField *child1 = [[[UITextField alloc] init] autorelease];
             UITextField *child2 = [[[UITextField alloc] init] autorelease];
             UITextField *grandchild1 = [[[UITextField alloc] init] autorelease];

@@ -16,16 +16,19 @@
 - (void)tap {
     void (^enumerator)(UIGestureRecognizer *, NSUInteger, BOOL *) = [self gestureEnumeratorForClass:[UITapGestureRecognizer class]];
     [self.gestureRecognizers enumerateObjectsUsingBlock:enumerator];
+    Block_release(enumerator);
 }
 
 - (void)swipe {
     void (^enumerator)(UIGestureRecognizer *, NSUInteger, BOOL *) = [self gestureEnumeratorForClass:[UISwipeGestureRecognizer class]];
     [self.gestureRecognizers enumerateObjectsUsingBlock:enumerator];
+    Block_release(enumerator);    
 }
 
 - (void)pinch {
     void (^enumerator)(UIGestureRecognizer *, NSUInteger, BOOL *) = [self gestureEnumeratorForClass:[UIPinchGestureRecognizer class]];
     [self.gestureRecognizers enumerateObjectsUsingBlock:enumerator];
+    Block_release(enumerator);
 }
 
 #pragma mark - Private

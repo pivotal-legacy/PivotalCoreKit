@@ -87,9 +87,9 @@ describe(@"UIView+Spec", ^{
         __block UIView *subview2;
 
         beforeEach(^{
-            view = [[UIView alloc] init];
-            subview1 = [[UIView alloc] init];
-            subview2 = [[UIView alloc] init];
+            view = [[[UIView alloc] init] autorelease];
+            subview1 = [[[UIView alloc] init] autorelease];
+            subview2 = [[[UIView alloc] init] autorelease];
 
             [subview1 setAccessibilityIdentifier:@"I, Robot"];
             [subview2 setAccessibilityIdentifier:@"Foundation"];
