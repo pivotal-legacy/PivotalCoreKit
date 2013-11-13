@@ -14,30 +14,24 @@
 
 #pragma mark - UIGestureRecognizer helpers
 - (void)tap {
-    void (^enumerator)(UIGestureRecognizer *, NSUInteger, BOOL *) = [self gestureEnumeratorForClass:[UITapGestureRecognizer class]];
-    [self.gestureRecognizers enumerateObjectsUsingBlock:enumerator];
-    Block_release(enumerator);
+    [self recognizeAllGesturesMatching:[UITapGestureRecognizer class]];
 }
 
 - (void)swipe {
-    void (^enumerator)(UIGestureRecognizer *, NSUInteger, BOOL *) = [self gestureEnumeratorForClass:[UISwipeGestureRecognizer class]];
-    [self.gestureRecognizers enumerateObjectsUsingBlock:enumerator];
-    Block_release(enumerator);    
+    [self recognizeAllGesturesMatching:[UISwipeGestureRecognizer class]];
 }
 
 - (void)pinch {
-    void (^enumerator)(UIGestureRecognizer *, NSUInteger, BOOL *) = [self gestureEnumeratorForClass:[UIPinchGestureRecognizer class]];
-    [self.gestureRecognizers enumerateObjectsUsingBlock:enumerator];
-    Block_release(enumerator);
+    [self recognizeAllGesturesMatching:[UIPinchGestureRecognizer class]];
 }
 
 #pragma mark - Private
-- (void (^)(UIGestureRecognizer *recognizer, NSUInteger idx, BOOL *stop))gestureEnumeratorForClass:(Class)klazz {
-    return Block_copy(^(UIGestureRecognizer *recognizer, NSUInteger idx, BOOL *stop) {
-        if([recognizer class] == klazz) {
+- (void) recognizeAllGesturesMatching:(Class)klazz {
+    for (UIGestureRecognizer *recognizer in self.gestureRecognizers) {
+        if ([recognizer class] == klazz) {
             [recognizer recognize];
         }
-    });
+    }
 }
 
 @end
