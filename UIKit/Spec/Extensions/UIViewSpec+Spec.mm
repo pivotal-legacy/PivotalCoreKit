@@ -80,6 +80,30 @@ describe(@"UIView+Spec", ^{
             otherTarget should_not have_received(@selector(hello));
         });
     });
+
+    describe(@"finding subviews by accessibility identifier", ^{
+        __block UIView *view;
+        __block UIView *subview1;
+        __block UIView *subview2;
+
+        beforeEach(^{
+            view = [[UIView alloc] init];
+            subview1 = [[UIView alloc] init];
+            subview2 = [[UIView alloc] init];
+
+            [subview1 setAccessibilityIdentifier:@"I, Robot"];
+            [subview2 setAccessibilityIdentifier:@"Foundation"];
+
+            [view addSubview:subview1];
+            [view addSubview:subview2];
+        });
+
+        it(@"should return a subview with matching accessibility identifier", ^{
+            [view subviewWithAccessibilityIdentifier:@"I, Robot"] should equal(subview1);
+            [view subviewWithAccessibilityIdentifier:@"Foundation"] should equal(subview2);
+            [view subviewWithAccessibilityIdentifier:@"Kryten"] should be_nil;
+        });
+    });
 });
 
 SPEC_END
