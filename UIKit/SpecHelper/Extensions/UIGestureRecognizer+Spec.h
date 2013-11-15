@@ -1,5 +1,7 @@
 #import <UIKit/UIKit.h>
 
 @interface UIGestureRecognizer (Spec)
--(void) recognize;
++(void)afterEach;
+-(void)recognize;
++(void)whitelistClassForGestureSnooping:(Class)klass;
 @end

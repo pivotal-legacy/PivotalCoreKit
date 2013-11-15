@@ -1,6 +1,7 @@
 #import "SpecHelper.h"
 #import "UIView+Spec.h"
 #import "Target.h"
+#import "UIGestureRecognizer+Spec.h"
 
 using namespace Cedar::Matchers;
 using namespace Cedar::Doubles;
@@ -13,6 +14,7 @@ describe(@"UIView+Spec", ^{
     __block Target *otherTarget;
 
     beforeEach(^{
+        [UIGestureRecognizer whitelistClassForGestureSnooping:[Target class]];
         view = [[[UIView alloc] init] autorelease];
         target = [[[Target alloc] init] autorelease];
         spy_on(target);

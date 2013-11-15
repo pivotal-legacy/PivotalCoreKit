@@ -1,5 +1,6 @@
 #import "UIGestureRecognizer+Spec.h"
 #import "objc/runtime.h"
+#import <UIKit/UITextField.h>
 
 @interface UIGestureRecognizer (Spec_Private)
 - (void) addUnswizzledTarget:(id)target action:(SEL)action;
@@ -43,11 +44,13 @@
     [self redirectSelector:@selector(initWithTarget:action:)
                         to:@selector(initWithSwizzledTarget:action:)
              andRenameItTo:@selector(initWithoutSwizzledTarget:action:)];
+
+    whitelistedClasses = [[NSMutableArray alloc] init];
 }
 
 -(instancetype)initWithSwizzledTarget:(id)target action:(SEL)action {
     if (self = [self initWithoutSwizzledTarget:target action:action]) {
-        [self setTargetsAndActions:[[NSMutableArray alloc] init]];
+        [self setTargetsAndActions:[[[NSMutableArray alloc] init] autorelease]];
         if(target && action) {
             [self addSnoopedTarget:target action:action];
         }
@@ -56,6 +59,11 @@
     return self;
 }
 
++(void)afterEach {
+    [whitelistedClasses removeAllObjects];
+}
+
+#pragma mark - Public interface
 -(void)recognize {
     if (self.view.hidden) {
         [[NSException exceptionWithName:@"Unrecognizable" reason:@"Can't recognize when in a hidden view" userInfo:nil] raise];
@@ -72,16 +80,31 @@
     }];
 }
 
+static NSMutableArray *whitelistedClasses;
++(void)whitelistClassForGestureSnooping:(Class)klass {
+    [whitelistedClasses addObject:klass];
+}
+
+#pragma mark - swizzled methods
 -(void)addSnoopedTarget:(id)target action:(SEL)action {
     [self addUnswizzledTarget:target action:action];
 
     NSMutableArray *targetsAndActions = [self targetsAndActions];
+
+    if (![whitelistedClasses containsObject:[target class]]) {
+        return;
+    }
+
     [targetsAndActions addObject:@[target, [NSValue valueWithPointer:action]]];
     [self setTargetsAndActions:targetsAndActions];
 }
 
 -(void)removeSnoopedTarget:(id)target action:(SEL)action {
     [self removeUnswizzledTarget:target action:action];
+
+    if (![whitelistedClasses containsObject:[target class]]) {
+        return;
+    }
 
     NSMutableArray *targetsAndActions = [self targetsAndActions];
     NSPredicate *targetAndActionPredicate = [NSPredicate predicateWithBlock:^BOOL(NSMutableArray *targetAndActionPair, NSDictionary *bindings) {
@@ -95,7 +118,6 @@
     [self setTargetsAndActions:targetsAndActions];
 }
 
-
 #pragma mark - targetsAndActions
 static char const * const targetAndActionsKey = "targetAndActionKey";
 
@@ -104,7 +126,7 @@ static char const * const targetAndActionsKey = "targetAndActionKey";
 }
 
 -(void) setTargetsAndActions:(NSMutableArray *)targetsAndActions {
-    objc_setAssociatedObject(self, &targetAndActionsKey, targetsAndActions, OBJC_ASSOCIATION_RETAIN);
+    objc_setAssociatedObject(self, &targetAndActionsKey, targetsAndActions, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 @end
