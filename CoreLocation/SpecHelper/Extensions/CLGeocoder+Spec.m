@@ -99,6 +99,7 @@ static char CLGEOCODER_ATTRIBUTES_KEY;
     if (self.attributes.completionHandler) {
         self.attributes.completionHandler(placemarks, nil);
     }
+    self.attributes.location = nil;
     self.attributes.completionHandler = nil;
     self.attributes.geocoding = NO;
 }
