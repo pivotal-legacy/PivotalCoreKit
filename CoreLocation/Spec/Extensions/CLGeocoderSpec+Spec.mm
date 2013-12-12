@@ -113,7 +113,48 @@ describe(@"CLGeocoder Spec extension", ^{
                 geocoder.addressString should be_nil;
             });
         });
+    });
 
+    describe(@"completeReverseGeocodeWithPlacemarks:", ^{
+        NSArray *expectedPlacemarks = [NSArray array];
+
+        context(@"when not geocoding", ^{
+            beforeEach(^{
+                geocoder.geocoding should_not be_truthy;
+            });
+
+            it(@"should raise an exception", ^{
+                ^{ [geocoder completeReverseGeocodeWithPlacemarks:expectedPlacemarks]; } should raise_exception;
+            });
+        });
+
+        context(@"when geocoding", ^{
+            __block CLGeocodeCompletionHandler completionHandler;
+            __block BOOL receivedPlacemarks = NO;
+
+            beforeEach(^{
+                completionHandler = ^(NSArray *placemarks, NSError *error) {
+                    if (placemarks == expectedPlacemarks) {
+                        receivedPlacemarks = YES;
+                    }
+                };
+
+                [geocoder reverseGeocodeLocation:location completionHandler:completionHandler];
+                [geocoder completeReverseGeocodeWithPlacemarks:expectedPlacemarks];
+            });
+
+            it(@"should send the placemarks to the specified completion block", ^{
+                receivedPlacemarks should be_truthy;
+            });
+
+            it(@"should stop geocoding", ^{
+                geocoder.geocoding should_not be_truthy;
+            });
+
+            it(@"should reset the location", ^{
+                geocoder.location should be_nil;
+            });
+        });
     });
 
     describe(@"completeGeocodeWithError:", ^{
@@ -157,8 +198,6 @@ describe(@"CLGeocoder Spec extension", ^{
             });
         });
     });
-
-
 });
 
 SPEC_END
