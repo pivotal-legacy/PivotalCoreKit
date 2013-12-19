@@ -107,6 +107,9 @@
 		B8C62E7216BC04940009CDAD /* Target.m in Sources */ = {isa = PBXBuildFile; fileRef = B8C62E7116BC04940009CDAD /* Target.m */; };
 		B8C62E7316BC07F60009CDAD /* UIBarButtonItem+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = B8C62E6B16BC03420009CDAD /* UIBarButtonItem+Spec.h */; };
 		FA07586B18120E47001817BF /* UICollectionViewCellSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA07586618120BB1001817BF /* UICollectionViewCellSpec+Spec.mm */; };
+		FA1A516A186290C800C22BA8 /* UIImageView+PivotalCore.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1A5169186290C800C22BA8 /* UIImageView+PivotalCore.m */; };
+		FA1A516B186290C800C22BA8 /* UIImageView+PivotalCore.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1A5169186290C800C22BA8 /* UIImageView+PivotalCore.m */; };
+		FA1A5179186290E600C22BA8 /* UIImageView+PivotalCoreSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA1A5178186290E600C22BA8 /* UIImageView+PivotalCoreSpec.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -200,6 +203,13 @@
 			proxyType = 2;
 			remoteGlobalIDString = 1F45A3DD180E4796003C1E36;
 			remoteInfo = XCUnitAppTests;
+		};
+		FA1A5176186290C900C22BA8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEBCCBF4168B98100056EE83 /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AE02E7E4184EABCD00414F19;
+			remoteInfo = iOSFrameworkSpecs;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -346,6 +356,9 @@
 		FA07586618120BB1001817BF /* UICollectionViewCellSpec+Spec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UICollectionViewCellSpec+Spec.mm"; sourceTree = "<group>"; };
 		FA07586818120D19001817BF /* UICollectionViewCell+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionViewCell+Spec.h"; sourceTree = "<group>"; };
 		FA07586918120D19001817BF /* UICollectionViewCell+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionViewCell+Spec.m"; sourceTree = "<group>"; };
+		FA1A5168186290C800C22BA8 /* UIImageView+PivotalCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+PivotalCore.h"; sourceTree = "<group>"; };
+		FA1A5169186290C800C22BA8 /* UIImageView+PivotalCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+PivotalCore.m"; sourceTree = "<group>"; };
+		FA1A5178186290E600C22BA8 /* UIImageView+PivotalCoreSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIImageView+PivotalCoreSpec.mm"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -485,6 +498,8 @@
 				AEBCCBD0168B96C80056EE83 /* UIImage+PivotalCore.m */,
 				AEBCCBD1168B96C80056EE83 /* UIView+PivotalCore.h */,
 				AEBCCBD2168B96C80056EE83 /* UIView+PivotalCore.m */,
+				FA1A5168186290C800C22BA8 /* UIImageView+PivotalCore.h */,
+				FA1A5169186290C800C22BA8 /* UIImageView+PivotalCore.m */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -516,6 +531,7 @@
 				AEBCCC05168B98110056EE83 /* FocusedSpecs */,
 				AEBCCC07168B98110056EE83 /* libCedar-StaticLib.a */,
 				AEBCCC09168B98110056EE83 /* iOSSpecs.app */,
+				FA1A5177186290C900C22BA8 /* iOSFrameworkSpecs.app */,
 				AEBCCC0B168B98110056EE83 /* OCUnitApp.app */,
 				AEBCCC0D168B98110056EE83 /* OCUnitAppTests.octest */,
 				AEEECC31181F33C5006B52CD /* XCUnitAppTests.xctest */,
@@ -567,6 +583,7 @@
 				AE53E2F518075B080037C32E /* UIWindowSpec+Spec.mm */,
 				FA07586618120BB1001817BF /* UICollectionViewCellSpec+Spec.mm */,
 				AE9530691832EE9300C802E9 /* UIViewSpec+Spec.mm */,
+				FA1A5178186290E600C22BA8 /* UIImageView+PivotalCoreSpec.mm */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -776,6 +793,13 @@
 			remoteRef = AEEECC30181F33C5006B52CD /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		FA1A5177186290C900C22BA8 /* iOSFrameworkSpecs.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = iOSFrameworkSpecs.app;
+			remoteRef = FA1A5176186290C900C22BA8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -859,6 +883,7 @@
 				AE3847B7168BA3B500C99B55 /* UIBarButtonItem+Button.m in Sources */,
 				AE3847B8168BA3B500C99B55 /* UIImage+PivotalCore.m in Sources */,
 				AE3847B9168BA3B500C99B55 /* UIView+PivotalCore.m in Sources */,
+				FA1A516A186290C800C22BA8 /* UIImageView+PivotalCore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -875,6 +900,7 @@
 				AEBCCC9B168B9C530056EE83 /* UIImageSpec+Spec.mm in Sources */,
 				AEBCCC9C168B9C530056EE83 /* UIView+PivotalCoreSpec.mm in Sources */,
 				AEBCCC9E168B9C530056EE83 /* main.m in Sources */,
+				FA1A516B186290C800C22BA8 /* UIImageView+PivotalCore.m in Sources */,
 				AEEECC33181F33F5006B52CD /* UIImagePickerControllerSpec+Spec.mm in Sources */,
 				AE3847AD168BA0E300C99B55 /* AWebViewController.m in Sources */,
 				AEC6D7FE16963F3500E10C7B /* UIControlSpec+Spec.mm in Sources */,
@@ -885,6 +911,7 @@
 				AEC40CC0174C24CF00474D2D /* UIAlertViewSpec+Spec.mm in Sources */,
 				AEC40CC1174C24CF00474D2D /* UIWebViewSpec+Spec.mm in Sources */,
 				AED4BE441780C8C800390AFD /* UITabBarControllerSpec+Spec.mm in Sources */,
+				FA1A5179186290E600C22BA8 /* UIImageView+PivotalCoreSpec.mm in Sources */,
 				AE7B279617CFD67600904F64 /* UIViewControllerSpec+Spec.mm in Sources */,
 				AE95306A1832EE9300C802E9 /* UIViewSpec+Spec.mm in Sources */,
 			);
