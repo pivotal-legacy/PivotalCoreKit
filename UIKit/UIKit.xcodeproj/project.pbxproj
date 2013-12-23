@@ -113,6 +113,9 @@
 		FA91AA91186725CC00925A6B /* NSString+PivotalCoreKit_UIKit.m in Sources */ = {isa = PBXBuildFile; fileRef = FA91AA90186725CC00925A6B /* NSString+PivotalCoreKit_UIKit.m */; };
 		FA91AA92186725CC00925A6B /* NSString+PivotalCoreKit_UIKit.m in Sources */ = {isa = PBXBuildFile; fileRef = FA91AA90186725CC00925A6B /* NSString+PivotalCoreKit_UIKit.m */; };
 		FA91AA9E1867260400925A6B /* NSString+PivotalCoreKit_UIKitSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA91AA9D1867260400925A6B /* NSString+PivotalCoreKit_UIKitSpec.mm */; };
+		FA91AAA1186737B700925A6B /* NSAttributedString+PivotalCoreKit_UIKit.m in Sources */ = {isa = PBXBuildFile; fileRef = FA91AAA0186737B700925A6B /* NSAttributedString+PivotalCoreKit_UIKit.m */; };
+		FA91AAA2186737B700925A6B /* NSAttributedString+PivotalCoreKit_UIKit.m in Sources */ = {isa = PBXBuildFile; fileRef = FA91AAA0186737B700925A6B /* NSAttributedString+PivotalCoreKit_UIKit.m */; };
+		FA91AAA41867383E00925A6B /* NSAttributedString+PivotalCoreKit_UIKitSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA91AAA31867383E00925A6B /* NSAttributedString+PivotalCoreKit_UIKitSpec.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -365,6 +368,9 @@
 		FA91AA8F186725CC00925A6B /* NSString+PivotalCoreKit_UIKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+PivotalCoreKit_UIKit.h"; sourceTree = "<group>"; };
 		FA91AA90186725CC00925A6B /* NSString+PivotalCoreKit_UIKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+PivotalCoreKit_UIKit.m"; sourceTree = "<group>"; };
 		FA91AA9D1867260400925A6B /* NSString+PivotalCoreKit_UIKitSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSString+PivotalCoreKit_UIKitSpec.mm"; sourceTree = "<group>"; };
+		FA91AA9F186737B700925A6B /* NSAttributedString+PivotalCoreKit_UIKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+PivotalCoreKit_UIKit.h"; sourceTree = "<group>"; };
+		FA91AAA0186737B700925A6B /* NSAttributedString+PivotalCoreKit_UIKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+PivotalCoreKit_UIKit.m"; sourceTree = "<group>"; };
+		FA91AAA31867383E00925A6B /* NSAttributedString+PivotalCoreKit_UIKitSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSAttributedString+PivotalCoreKit_UIKitSpec.mm"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -508,6 +514,8 @@
 				FA1A5169186290C800C22BA8 /* UIImageView+PivotalCore.m */,
 				FA91AA8F186725CC00925A6B /* NSString+PivotalCoreKit_UIKit.h */,
 				FA91AA90186725CC00925A6B /* NSString+PivotalCoreKit_UIKit.m */,
+				FA91AA9F186737B700925A6B /* NSAttributedString+PivotalCoreKit_UIKit.h */,
+				FA91AAA0186737B700925A6B /* NSAttributedString+PivotalCoreKit_UIKit.m */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -593,6 +601,7 @@
 				AE9530691832EE9300C802E9 /* UIViewSpec+Spec.mm */,
 				FA1A5178186290E600C22BA8 /* UIImageView+PivotalCoreSpec.mm */,
 				FA91AA9D1867260400925A6B /* NSString+PivotalCoreKit_UIKitSpec.mm */,
+				FA91AAA31867383E00925A6B /* NSAttributedString+PivotalCoreKit_UIKitSpec.mm */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -891,6 +900,7 @@
 			files = (
 				AE3847B7168BA3B500C99B55 /* UIBarButtonItem+Button.m in Sources */,
 				AE3847B8168BA3B500C99B55 /* UIImage+PivotalCore.m in Sources */,
+				FA91AAA1186737B700925A6B /* NSAttributedString+PivotalCoreKit_UIKit.m in Sources */,
 				AE3847B9168BA3B500C99B55 /* UIView+PivotalCore.m in Sources */,
 				FA91AA91186725CC00925A6B /* NSString+PivotalCoreKit_UIKit.m in Sources */,
 				FA1A516A186290C800C22BA8 /* UIImageView+PivotalCore.m in Sources */,
@@ -901,10 +911,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA91AAA41867383E00925A6B /* NSAttributedString+PivotalCoreKit_UIKitSpec.mm in Sources */,
 				AEBCCC99168B9C530056EE83 /* UIBarButtonItem+ButtonSpec.mm in Sources */,
 				AEF775BC18316DE4000AF17B /* UIGestureRecognizerSpec+Spec.mm in Sources */,
 				FA91AA92186725CC00925A6B /* NSString+PivotalCoreKit_UIKit.m in Sources */,
 				AE1FBEA317D15A4100B0F03B /* UITableViewCellSpec+Spec.mm in Sources */,
+				FA91AAA2186737B700925A6B /* NSAttributedString+PivotalCoreKit_UIKit.m in Sources */,
 				AEBCCC9A168B9C530056EE83 /* UIImage+PivotalCoreSpec.mm in Sources */,
 				AE53E2F618075B080037C32E /* UIWindowSpec+Spec.mm in Sources */,
 				FA07586B18120E47001817BF /* UICollectionViewCellSpec+Spec.mm in Sources */,
