@@ -110,6 +110,9 @@
 		FA1A516A186290C800C22BA8 /* UIImageView+PivotalCore.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1A5169186290C800C22BA8 /* UIImageView+PivotalCore.m */; };
 		FA1A516B186290C800C22BA8 /* UIImageView+PivotalCore.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1A5169186290C800C22BA8 /* UIImageView+PivotalCore.m */; };
 		FA1A5179186290E600C22BA8 /* UIImageView+PivotalCoreSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA1A5178186290E600C22BA8 /* UIImageView+PivotalCoreSpec.mm */; };
+		FA91AA91186725CC00925A6B /* NSString+PivotalCoreKit_UIKit.m in Sources */ = {isa = PBXBuildFile; fileRef = FA91AA90186725CC00925A6B /* NSString+PivotalCoreKit_UIKit.m */; };
+		FA91AA92186725CC00925A6B /* NSString+PivotalCoreKit_UIKit.m in Sources */ = {isa = PBXBuildFile; fileRef = FA91AA90186725CC00925A6B /* NSString+PivotalCoreKit_UIKit.m */; };
+		FA91AA9E1867260400925A6B /* NSString+PivotalCoreKit_UIKitSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA91AA9D1867260400925A6B /* NSString+PivotalCoreKit_UIKitSpec.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -359,6 +362,9 @@
 		FA1A5168186290C800C22BA8 /* UIImageView+PivotalCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+PivotalCore.h"; sourceTree = "<group>"; };
 		FA1A5169186290C800C22BA8 /* UIImageView+PivotalCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+PivotalCore.m"; sourceTree = "<group>"; };
 		FA1A5178186290E600C22BA8 /* UIImageView+PivotalCoreSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIImageView+PivotalCoreSpec.mm"; sourceTree = "<group>"; };
+		FA91AA8F186725CC00925A6B /* NSString+PivotalCoreKit_UIKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+PivotalCoreKit_UIKit.h"; sourceTree = "<group>"; };
+		FA91AA90186725CC00925A6B /* NSString+PivotalCoreKit_UIKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+PivotalCoreKit_UIKit.m"; sourceTree = "<group>"; };
+		FA91AA9D1867260400925A6B /* NSString+PivotalCoreKit_UIKitSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSString+PivotalCoreKit_UIKitSpec.mm"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -500,6 +506,8 @@
 				AEBCCBD2168B96C80056EE83 /* UIView+PivotalCore.m */,
 				FA1A5168186290C800C22BA8 /* UIImageView+PivotalCore.h */,
 				FA1A5169186290C800C22BA8 /* UIImageView+PivotalCore.m */,
+				FA91AA8F186725CC00925A6B /* NSString+PivotalCoreKit_UIKit.h */,
+				FA91AA90186725CC00925A6B /* NSString+PivotalCoreKit_UIKit.m */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -584,6 +592,7 @@
 				FA07586618120BB1001817BF /* UICollectionViewCellSpec+Spec.mm */,
 				AE9530691832EE9300C802E9 /* UIViewSpec+Spec.mm */,
 				FA1A5178186290E600C22BA8 /* UIImageView+PivotalCoreSpec.mm */,
+				FA91AA9D1867260400925A6B /* NSString+PivotalCoreKit_UIKitSpec.mm */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -883,6 +892,7 @@
 				AE3847B7168BA3B500C99B55 /* UIBarButtonItem+Button.m in Sources */,
 				AE3847B8168BA3B500C99B55 /* UIImage+PivotalCore.m in Sources */,
 				AE3847B9168BA3B500C99B55 /* UIView+PivotalCore.m in Sources */,
+				FA91AA91186725CC00925A6B /* NSString+PivotalCoreKit_UIKit.m in Sources */,
 				FA1A516A186290C800C22BA8 /* UIImageView+PivotalCore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -893,6 +903,7 @@
 			files = (
 				AEBCCC99168B9C530056EE83 /* UIBarButtonItem+ButtonSpec.mm in Sources */,
 				AEF775BC18316DE4000AF17B /* UIGestureRecognizerSpec+Spec.mm in Sources */,
+				FA91AA92186725CC00925A6B /* NSString+PivotalCoreKit_UIKit.m in Sources */,
 				AE1FBEA317D15A4100B0F03B /* UITableViewCellSpec+Spec.mm in Sources */,
 				AEBCCC9A168B9C530056EE83 /* UIImage+PivotalCoreSpec.mm in Sources */,
 				AE53E2F618075B080037C32E /* UIWindowSpec+Spec.mm in Sources */,
@@ -912,6 +923,7 @@
 				AEC40CC1174C24CF00474D2D /* UIWebViewSpec+Spec.mm in Sources */,
 				AED4BE441780C8C800390AFD /* UITabBarControllerSpec+Spec.mm in Sources */,
 				FA1A5179186290E600C22BA8 /* UIImageView+PivotalCoreSpec.mm in Sources */,
+				FA91AA9E1867260400925A6B /* NSString+PivotalCoreKit_UIKitSpec.mm in Sources */,
 				AE7B279617CFD67600904F64 /* UIViewControllerSpec+Spec.mm in Sources */,
 				AE95306A1832EE9300C802E9 /* UIViewSpec+Spec.mm in Sources */,
 			);

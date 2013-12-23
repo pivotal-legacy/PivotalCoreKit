@@ -2,3 +2,4 @@
 #import "UIImage+PivotalCore.h"
 #import "UIBarButtonItem+Button.h"
 #import "UIImageView+PivotalCore.h"
+#import "NSString+PivotalCoreKit_UIKit.h"
