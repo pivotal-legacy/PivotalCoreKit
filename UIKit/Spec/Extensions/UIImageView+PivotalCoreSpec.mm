@@ -11,7 +11,7 @@ describe(@"UIImageView_PivotalCore", ^{
     __block UIImageView *returnedImageView;
 
     beforeEach(^{
-        imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Default-568h"]];
+        imageView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Default-568h"]] autorelease];
         returnedImageView = [UIImageView imageViewWithImageNamed:@"Default-568h"];
     });
 
