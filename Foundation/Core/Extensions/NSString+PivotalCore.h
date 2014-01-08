@@ -5,7 +5,6 @@
 + (id)stringWithBase64EncodedData:(NSData *)data;
 - (id)initWithBase64EncodedData:(NSData *)data;
 - (NSString *)stringByCamelizing;
-- (BOOL)endsWith:(NSString *)ending;
 - (BOOL)isBlank;
 - (BOOL)isValidEmailAddress;
 

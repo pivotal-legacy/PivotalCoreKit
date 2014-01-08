@@ -76,11 +76,6 @@ static const unsigned char BASE64_DICTIONARY[] = {
     return [camelized stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
 }
 
-- (BOOL)endsWith:(NSString *)ending {
-    NSRange range = [self rangeOfString:ending];
-    return self.length == (range.location + range.length);
-}
-
 - (BOOL)isBlank {
     NSString *trimmedString = [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     return (trimmedString.length == 0);
