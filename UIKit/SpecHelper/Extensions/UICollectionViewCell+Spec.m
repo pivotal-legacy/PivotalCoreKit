@@ -13,6 +13,10 @@
 
     NSIndexPath *indexPath = [collectionView indexPathForCell:self];
 
+    if ([collectionView.delegate respondsToSelector:@selector(collectionView:shouldSelectItemAtIndexPath:)]) {
+        if (![collectionView.delegate collectionView:collectionView shouldSelectItemAtIndexPath:indexPath]) { return; }
+    }
+
     if (indexPath != nil) {
         if (collectionView.allowsMultipleSelection && [collectionView.indexPathsForSelectedItems containsObject:indexPath]) {
             [collectionView deselectItemAtIndexPath:indexPath animated:NO];

@@ -2,6 +2,7 @@
 #import "UICollectionViewCell+Spec.h"
 
 @interface SpecCollectionViewController : UICollectionViewController
+@property (nonatomic, assign) BOOL allowsSelection;
 @end
 
 @implementation SpecCollectionViewController
@@ -17,6 +18,10 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     return [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
+}
+
+- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    return self.allowsSelection;
 }
 
 @end
@@ -42,38 +47,54 @@ describe(@"UICollectionViewCell+Spec", ^{
     describe(@"-tap", ^{
         subjectAction(^{ [cell tap]; });
 
-        context(@"for a single selection collection view", ^{
-            it(@"should result in the cell being selected", ^{
-                [controller.collectionView indexPathsForSelectedItems][0] should equal([controller.collectionView indexPathForCell:cell]);
+        context(@"for a delegate that does not allow selection", ^{
+            beforeEach(^{
+                controller.allowsSelection = NO;
             });
 
-            it(@"should deselect the cell if another cell is tapped", ^{
-                [controller.collectionView.visibleCells[1] tap];
-
-                [controller.collectionView indexPathsForSelectedItems][0] should_not equal([controller.collectionView indexPathForCell:cell]);
+            it(@"does not select the tapped cell", ^{
+                [controller.collectionView indexPathsForSelectedItems].count should equal(0);
             });
         });
 
-        context(@"for a multiple selection collection view", ^{
+        context(@"for a delegate that allows selection", ^{
             beforeEach(^{
-                [controller.collectionView setAllowsMultipleSelection:YES];
+                controller.allowsSelection = YES;
             });
 
-            it(@"should results in the cell being selected", ^{
-                [controller.collectionView indexPathsForSelectedItems][0] should equal ([controller.collectionView indexPathForCell:cell]);
+            context(@"for a single selection collection view", ^{
+                it(@"should result in the cell being selected", ^{
+                    [controller.collectionView indexPathsForSelectedItems][0] should equal([controller.collectionView indexPathForCell:cell]);
+                });
+
+                it(@"should deselect the cell if another cell is tapped", ^{
+                    [controller.collectionView.visibleCells[1] tap];
+
+                    [controller.collectionView indexPathsForSelectedItems][0] should_not equal([controller.collectionView indexPathForCell:cell]);
+                });
             });
 
-            it(@"should deselect the cell if tapped again", ^{
-                [cell tap];
+            context(@"for a multiple selection collection view", ^{
+                beforeEach(^{
+                    [controller.collectionView setAllowsMultipleSelection:YES];
+                });
 
-                [controller.collectionView indexPathsForSelectedItems] should_not contain([controller.collectionView indexPathForCell:cell]);
-            });
+                it(@"should results in the cell being selected", ^{
+                    [controller.collectionView indexPathsForSelectedItems][0] should equal ([controller.collectionView indexPathForCell:cell]);
+                });
 
-            it(@"should not deselect the cell if another cell is tapped", ^{
-                [controller.collectionView.visibleCells[1] tap];
+                it(@"should deselect the cell if tapped again", ^{
+                    [cell tap];
 
-                [controller.collectionView indexPathsForSelectedItems] should contain([NSIndexPath indexPathForItem:0 inSection:0]);
-                [controller.collectionView indexPathsForSelectedItems] should contain([NSIndexPath indexPathForItem:1 inSection:0]);
+                    [controller.collectionView indexPathsForSelectedItems] should_not contain([controller.collectionView indexPathForCell:cell]);
+                });
+
+                it(@"should not deselect the cell if another cell is tapped", ^{
+                    [controller.collectionView.visibleCells[1] tap];
+
+                    [controller.collectionView indexPathsForSelectedItems] should contain([NSIndexPath indexPathForItem:0 inSection:0]);
+                    [controller.collectionView indexPathsForSelectedItems] should contain([NSIndexPath indexPathForItem:1 inSection:0]);
+                });
             });
         });
     });
