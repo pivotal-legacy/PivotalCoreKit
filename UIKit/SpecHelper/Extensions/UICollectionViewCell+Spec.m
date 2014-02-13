@@ -15,14 +15,28 @@
 
     if (indexPath != nil) {
         if (collectionView.allowsMultipleSelection && [collectionView.indexPathsForSelectedItems containsObject:indexPath]) {
-            [collectionView deselectItemAtIndexPath:indexPath animated:NO];
-            if ([collectionView.delegate respondsToSelector:@selector(collectionView:didDeselectItemAtIndexPath:)]) {
-                [collectionView.delegate collectionView:collectionView didDeselectItemAtIndexPath:indexPath];
+            BOOL shouldDeselect = YES;
+            if ([collectionView.delegate respondsToSelector:@selector(collectionView:shouldDeselectItemAtIndexPath:)]) {
+                shouldDeselect = [collectionView.delegate collectionView:collectionView shouldDeselectItemAtIndexPath:indexPath];
+            }
+
+            if (shouldDeselect) {
+                [collectionView deselectItemAtIndexPath:indexPath animated:NO];
+                if ([collectionView.delegate respondsToSelector:@selector(collectionView:didDeselectItemAtIndexPath:)]) {
+                    [collectionView.delegate collectionView:collectionView didDeselectItemAtIndexPath:indexPath];
+                }
             }
         } else {
-            [collectionView selectItemAtIndexPath:indexPath animated:NO scrollPosition:UICollectionViewScrollPositionNone];
-            if ([collectionView.delegate respondsToSelector:@selector(collectionView:didSelectItemAtIndexPath:)]) {
-                [collectionView.delegate collectionView:collectionView didSelectItemAtIndexPath:indexPath];
+            BOOL shouldSelect = YES;
+            if ([collectionView.delegate respondsToSelector:@selector(collectionView:shouldSelectItemAtIndexPath:)]) {
+                shouldSelect = [collectionView.delegate collectionView:collectionView shouldSelectItemAtIndexPath:indexPath];
+            }
+
+            if (shouldSelect) {
+                [collectionView selectItemAtIndexPath:indexPath animated:NO scrollPosition:UICollectionViewScrollPositionNone];
+                if ([collectionView.delegate respondsToSelector:@selector(collectionView:didSelectItemAtIndexPath:)]) {
+                    [collectionView.delegate collectionView:collectionView didSelectItemAtIndexPath:indexPath];
+                }
             }
         }
     }
