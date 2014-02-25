@@ -12,6 +12,19 @@ Each project has its own builds, and its own specs.
   - SpecHelper: extenstions for use in spec code only
   - Spec: specs for the PCK extensions
 
+# Installation
+* Create a folder: `mkdir Externals` at the root of your project (if not already created)
+* Inside the root of your project run: `git submodule add Externals/PivotalCoreKit`
+* Init update recursively PivotalCoreKit's submodules: `cd Externals/PivotalCoreKit` and run `git superpull` 
+* Inside your editor, add the folder(s) `Externals > PivotalCoreKit` if not already present
+* Add the project(s) you need into the PivotalCoreKit folder for the apporpriate target
+ * e.g. UIKit.xcodeproj
+* Add the corresponding StaticLib Target Dependency for the apporpriate target
+ * e.g. UIKit+PivotalSpecHelper-StaticLib(UIKit)
+* Link the corresponding binary under the Link Binary With Libraries section for the apporpriate target
+ * e.g. libUIKit+PivotalSpecHelper-StaticLib.a
+* Update your Header Search Paths to include the path to the necessary PCK headers for the apporpriate target
+ * e.g."$(PROJECT_DIR)/Externals/PivotalCoreKit" and make it recursive 
 
 # Library Documentation
 
