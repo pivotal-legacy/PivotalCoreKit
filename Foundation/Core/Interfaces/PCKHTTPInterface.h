@@ -24,5 +24,5 @@ typedef void (^RequestSetupBlock)(NSMutableURLRequest *);
 // required
 - (NSString *)host;
 // optional
-- (NSString *)basePath;
+- (NSString *)baseURLPath;
 @end
