@@ -7,11 +7,28 @@ system frameworks.  For instance, all extensions and additions to the
 Foundation framework live in the Foundation project under the PCK workspace.
 Each project has its own builds, and its own specs.
 
-- <Framework>
+- \<Framework\>
   - Core: extensions for use in production code
   - SpecHelper: extenstions for use in spec code only
   - Spec: specs for the PCK extensions
 
+# Installation
+* Inside the root of your project run: `git submodule add git@github.com:pivotal/PivotalCoreKit.git Externals/PivotalCoreKit`
+* Add the PivotalCoreKit project(s) you need into your project for the appropriate target
+* Add the corresponding StaticLib Target Dependency for the appropriate target
+* Link the corresponding binary under the Link Binary With Libraries section for the appropriate target
+* Update your Header Search Paths to include the path to the necessary PCK headers for the appropriate target
+ * e.g. "$(SRCROOT)/Externals/PivotalCoreKit/path/to/specific/pckProject.xcodeproj" and make it recursive
+
+### Example, adding -[UIControl tap] to a spec target
+* `git submodule add git@github.com:pivotal/PivotalCoreKit.git Externals/PivotalCoreKit`
+* Right-click Specs folder in Xcode -> Add Files
+* Navigate into PivotalCoreKit/UIKit folder, select UIKit.xcodeproj and add.
+* In root project file, choose Specs target
+* Add UIKit+PivotalSpecHelper-StaticLib to 'Target Dependencies'
+* Add libUIKit+PivotalSpecHelper-StaticLib.a in the 'Link Binary With Library' section
+* Add '$(SRCROOT)/Externals/PivotalCoreKit/UIKit/UIKit.xcodeproj' to Header Search Paths and make it recursive
+* Add #import "UIControl+Spec.h" to desired spec file, and freely use [button tap];
 
 # Library Documentation
 
