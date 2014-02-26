@@ -73,8 +73,8 @@
 
 - (NSURL *)newBaseURLAndPathWithProtocol:(NSString *)protocol {
     NSMutableString *baseURLString = [[NSMutableString alloc] initWithFormat:@"%@%@", protocol, [self host]];
-    if ([self respondsToSelector:@selector(basePath)]) {
-        [baseURLString appendString:[self basePath]];
+    if ([self respondsToSelector:@selector(baseURLPath)]) {
+        [baseURLString appendString:[self baseURLPath]];
     }
     NSURL *url = [[NSURL alloc] initWithString:baseURLString];
     [baseURLString release];

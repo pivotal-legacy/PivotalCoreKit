@@ -12,7 +12,7 @@
 #import "NSURLConnectionDelegate.h"
 
 #define HOST "example.com"
-#define BASE_PATH "/v1/wibble/"
+#define BASE_URL_PATH "/v1/wibble/"
 #define PATH "foo/bar"
 
 @interface TestInterface : PCKHTTPInterface
@@ -24,8 +24,8 @@
     return @HOST;
 }
 
-- (NSString *)basePath {
-    return @BASE_PATH;
+- (NSString *)baseURLPath {
+    return @BASE_URL_PATH;
 }
 
 - (NSURLConnection *)makeConnectionWithDelegate:(id<NSURLConnectionDelegate>)delegate {
@@ -79,7 +79,7 @@ describe(@"PCKHTTPInterface", ^{
 
         it(@"should generate the target URI from the subclass-specific host and base path, along with the specified path", ^{
             expect(request.URL.host).to(equal(@HOST));
-            expect(request.URL.path).to(equal(@BASE_PATH PATH));
+            expect(request.URL.path).to(equal(@BASE_URL_PATH PATH));
         });
 
         it(@"should use the GET method", ^{
@@ -100,7 +100,7 @@ describe(@"PCKHTTPInterface", ^{
                 [interface makeConnectionWithDelegate:delegate];
 
                 interface should_not have_received("host");
-                interface should_not have_received("basePath");
+                interface should_not have_received("baseURLPath");
             });
         });
 
@@ -242,7 +242,7 @@ describe(@"PCKHTTPInterface", ^{
 
             it(@"should generate the target URI from the subclass-specific host and base path, along with the specified path", ^{
                 expect(request.URL.host).to(equal(@HOST));
-                expect(request.URL.path).to(equal(@BASE_PATH PATH));
+                expect(request.URL.path).to(equal(@BASE_URL_PATH PATH));
             });
 
             it(@"should use the GET method", ^{
@@ -261,7 +261,7 @@ describe(@"PCKHTTPInterface", ^{
 
             it(@"should generate the target URI from the subclass-specific host and base path, along with the specified path", ^{
                 expect(request.URL.host).to(equal(@HOST));
-                expect(request.URL.path).to(equal(@BASE_PATH PATH));
+                expect(request.URL.path).to(equal(@BASE_URL_PATH PATH));
             });
 
             it(@"should use the GET method", ^{
