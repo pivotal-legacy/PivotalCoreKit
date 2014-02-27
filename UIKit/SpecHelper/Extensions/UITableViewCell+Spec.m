@@ -1,5 +1,14 @@
 #import "UITableViewCell+Spec.h"
 
+@interface UIStoryboardSegueTemplate
+- (id)identifier;
+- (id)viewController;
+@end
+
+@interface UITableViewCell ()
+- (id)selectionSegueTemplate;
+@end
+
 @implementation UITableViewCell (Spec)
 
 - (void)tap {
@@ -29,6 +38,16 @@
                 [tableView.delegate tableView:tableView didSelectRowAtIndexPath:indexPath];
             }
         }
+    }
+
+    UIStoryboardSegueTemplate *segueTemplate = self.selectionSegueTemplate;
+    if (segueTemplate) {
+        if (!segueTemplate.identifier) {
+            [[NSException exceptionWithName:NSInternalInconsistencyException
+                                     reason:[NSString stringWithFormat:@"Cell with a segue must have a segue identifier in order to be tapped"]
+                                   userInfo:nil] raise];
+        }
+        [segueTemplate.viewController performSegueWithIdentifier:segueTemplate.identifier sender:self];
     }
 }
 
