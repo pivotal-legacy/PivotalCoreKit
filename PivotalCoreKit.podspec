@@ -1,15 +1,16 @@
 Pod::Spec.new do |s|
   s.name     = 'PivotalCoreKit'
-  s.version  = '0.0.2'
+  s.version  = '0.0.3'
   s.license  = { :type => 'MIT' }
   s.summary  = 'Shared library and test code for iOS projects.'
   s.homepage = 'https://github.com/pivotal/PivotalCoreKit'
   s.author   = { 'Pivotal Labs' => 'http://pivotallabs.com' }
-  s.source   = { :git => 'https://github.com/pivotalshiny/PivotalCoreKit.git', :commit => '9cc217e858589a254003d568ebfc274fcd11e5db' }
+  s.source   = { :git => 'https://github.com/pivotal/PivotalCoreKit.git' }
   s.platform = :ios, '5.0'
 
+  s.default_subspec = 'Core'
+
   s.subspec 'Core' do |core|
-    core.default_subspec
     core.dependency 'PivotalCoreKit/UIKit/Core'
     core.dependency 'PivotalCoreKit/Foundation/Core'
   end
@@ -20,13 +21,8 @@ Pod::Spec.new do |s|
     end
 
     ui.subspec 'SpecHelper' do |spec|
-      spec.subspec 'Base' do |base|
-        base.source_files = 'UIKit/SpecHelper/UIKit+PivotalSpecHelper.h'
-        base.frameworks   = 'UIKit'
-      end
-
       spec.subspec 'Extensions' do |ext|
-        ext.source_files = 'UIKit/SpecHelper/Extensions/*.{h,m}'
+        ext.source_files = ['UIKit/SpecHelper/Extensions/*.{h,m}', 'UIKit/SpecHelper/UIKit+PivotalSpecHelper.h']
       end
 
       spec.subspec 'Matchers' do |match|
@@ -47,12 +43,6 @@ Pod::Spec.new do |s|
     end
 
     f.subspec 'SpecHelper' do |spec_helper|
-      spec_helper.subspec 'Base' do |base|
-        base.source_files = 'Foundation/SpecHelper/*.{h,m}'
-        base.frameworks   = 'UIKit'
-        base.dependency 'Cedar'
-      end
-
       spec_helper.subspec 'Extensions' do |ext|
         ext.source_files = 'Foundation/SpecHelper/Extensions/*.{h,m}'
       end
@@ -67,6 +57,7 @@ Pod::Spec.new do |s|
 
       spec_helper.subspec 'Fakes' do |fake|
         fake.source_files = 'Foundation/SpecHelper/Fakes/*.{h,m}'
+        fake.dependency 'PivotalCoreKit/Foundation/SpecHelper/Fixtures'
       end
     end
   end
