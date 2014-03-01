@@ -22,8 +22,11 @@ While it has useful functionality in a few different domains, it has a particula
 * Stub out UIWebView's functionality
 
 ### Full list
+PivotalCoreKit is split along framework lines, with separate Xcode projects for the Foundation, UIKit, and CoreLocation frameworks. Each project is then separated again out into sub-sections: Core, SpecHelper, and SpecHelperStubs. 
 
-PivotalCoreKit is split along framework lines, with separate Xcode projects for the Foundation, UIKit, and CoreLocation frameworks. Each project is then separated again out into two sections: Core and SpecHelper. Core methods are meant to be used anywhere they're useful, while SpecHelper methods are intended for testing and specs.
+**Core** methods are meant to be used anywhere they're useful, whether in specs or in the primary application.  
+**SpecHelper** extends built-in classes to make testing easier and more seemless.  
+**SpecHelperStubs** stub out (and usually replace) the methods on their classes.  
 
 Here is a (hopefully exhaustive but inevitably out of date) list of PivotalCoreKit functionality, separated by framework/section:
 
@@ -67,6 +70,7 @@ Here is a (hopefully exhaustive but inevitably out of date) list of PivotalCoreK
     * Simulate recognition of specific gesture recognizer
     * Compare UIImages for equality 
     * Query a UIWindow for the first responder
+  * SpecHelperStubs
     * Query, inspect, and simulate taps on the current UIActionSheet
     * Query, inspect, and simulate taps on the current UIAlertView
     * Simulate availability states of UIImagePickerController (camera available/not available, et cetera)
@@ -76,7 +80,7 @@ Here is a (hopefully exhaustive but inevitably out of date) list of PivotalCoreK
   * SpecHelper
     * Simulate Geocoding success or failure
 
-PivotalCoreKit is test-driven and includes Specs for all of these sections.
+PivotalCoreKit is test-driven and includes Specs in each project.
 
 ## That sounds great, give me some examples
 
@@ -105,7 +109,7 @@ describe(@"when the button is tapped", ^{
 });
 ```
 
-Say you want to check what URL a webview was asked to load.  
+Say you want to check what URL a webview was asked to load.
 ```objc
 #import "UIWebView+Spec.h"
 /* ... */
@@ -113,7 +117,7 @@ it(@"webview should load example.com", ^{
     controller.webView.request.URL.absoluteString should equal(@"http://example.com");
 });
 ```
-Without PivotalCoreKit's UIWebView stubs, the webView's NSURLRequest will be nil because UIWebView probably hasn't started actually making the request. Simply importing the file lets it pass!
+Without PivotalCoreKit's UIWebView stubs, the webView's NSURLRequest will be nil because the real UIWebView hasn't started actually making the request. A stubbed UIWebView updates the request property immediately.
 
 ## How do I install PivotalCoreKit
 * Inside the root of your project run: `git submodule add git@github.com:pivotal/PivotalCoreKit.git Externals/PivotalCoreKit`
@@ -123,7 +127,7 @@ Without PivotalCoreKit's UIWebView stubs, the webView's NSURLRequest will be nil
 * Update your Header Search Paths to include the path to the necessary PCK headers for the appropriate target
  * e.g. "$(SRCROOT)/Externals/PivotalCoreKit/path/to/specific/projectfolder" and make it recursive
 
-### Example, adding -[UIControl tap] to a spec target
+### Example, adding -[UIButton tap] to a spec target
 * `git submodule add git@github.com:pivotal/PivotalCoreKit.git Externals/PivotalCoreKit`
 * Right-click Specs folder in Xcode -> Add Files
 * Navigate into PivotalCoreKit/UIKit folder, select UIKit.xcodeproj and add.
