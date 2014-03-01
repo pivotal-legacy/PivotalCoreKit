@@ -84,7 +84,8 @@ PivotalCoreKit is test-driven and includes Specs in each project.
 
 ## That sounds great, give me some examples
 
-**Foundation+PivotalCore** Maybe you have a bunch of quarterly reports and want to collect all the finances from the first week for each report.  
+Maybe you have a bunch of quarterly reports and want to collect all the finances from the first week for each report.  
+After linking to **Foundation+PivotalCore**
 ```objc
 #import "NSArray+PivotalCore.h"
 /* ... */
@@ -94,7 +95,8 @@ NSArray *firstWeekFinances = [reports collect:^id(PLReport *report) {
 }];
 ```
 
-**UIKit+PivotalSpecHelper** Or maybe you're testing that tapping a button properly fires off a network request  
+Or maybe you're testing that tapping a button properly fires off a network request  
+After linking to **UIKit+PivotalSpecHelper**  
 ```objc
 #import "UIControl+Spec.h"
 /* ... */
@@ -109,7 +111,8 @@ describe(@"when the button is tapped", ^{
 });
 ```
 
-**UIKit+PivotalSpecHelperStubs** Say you want to check what URL a webview was asked to load.
+Say you want to check what URL a webview was asked to load.
+After linking to **UIKit+PivotalSpecHelperStubs**
 ```objc
 #import "UIWebView+Spec.h"
 /* ... */
