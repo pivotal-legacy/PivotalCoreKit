@@ -2,8 +2,11 @@
 
 @interface NSString (PivotalCore)
 
-+ (id)stringWithBase64EncodedData:(NSData *)data;
-- (id)initWithBase64EncodedData:(NSData *)data;
+// use NSData's NSDataBase64Encoding methods instead, such as -base64EncodedStringWithOptions:
+// or, in pre-iOS 7 or pre-Mavericks runtimes, use -[NSData base64Encoding]
++ (id)stringWithBase64EncodedData:(NSData *)data DEPRECATED_ATTRIBUTE;
+- (id)initWithBase64EncodedData:(NSData *)data DEPRECATED_ATTRIBUTE;
+
 - (NSString *)stringByCamelizing;
 - (BOOL)isBlank;
 - (BOOL)isValidEmailAddress;

@@ -18,77 +18,21 @@ describe(@"Pivotal Core extensions to NSString", ^{
             expect(camelizedString).to(equal(@"fooBarBaz"));
         });
     });
-
-    describe(@"initWithBase64EncodedData:", ^{
-        __block NSString *newString;
-
-        describe(@"with 20 bytes of blank data", ^{
-            beforeEach(^{
-                char bytes[20];
-                memset(bytes, 0, 20);
-
-                newString = [[[NSString alloc] initWithBase64EncodedData:[NSData dataWithBytes:bytes length:20]] autorelease];
-            });
-
-            it(@"should create a correctly base-64 encoded string", ^{
-                expect(newString).to(equal(@"AAAAAAAAAAAAAAAAAAAAAAAAAAA="));
-            });
-        });
-
-        describe(@"with 20 bytes of non-blank data", ^{
-            beforeEach(^{
-                const char bytes[20] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't'};
-                newString = [[[NSString alloc] initWithBase64EncodedData:[NSData dataWithBytes:bytes length:20]] autorelease];
-            });
-
-            it(@"should create a correctly base-64 encoded string", ^{
-                expect(newString).to(equal(@"YWJjZGVmZ2hpamtsbW5vcHFyc3Q="));
-            });
-        });
-
-        describe(@"with 0 bytes of data", ^{
-            beforeEach(^{
-                newString = [[[NSString alloc] initWithBase64EncodedData:[NSData data]] autorelease];
-            });
-
-            it(@"should create a correctly base-64 encoded string", ^{
-                expect(newString).to(equal(@""));
-            });
-        });
-
-        describe(@"with 1 byte of data", ^{
-            beforeEach(^{
-                const char bytes[1] = {'A'};
-                newString = [[[NSString alloc] initWithBase64EncodedData:[NSData dataWithBytes:bytes length:1]] autorelease];
-            });
-
-            it(@"should create a correctly base-64 encoded string", ^{
-                expect(newString).to(equal(@"QQ=="));
-            });
-        });
-
-        describe(@"with 2 bytes of data", ^{
-            beforeEach(^{
-                const char bytes[2] = {'A', 'B'};
-                newString = [[[NSString alloc] initWithBase64EncodedData:[NSData dataWithBytes:bytes length:2]] autorelease];
-            });
-
-            it(@"should create a correctly base-64 encoded string", ^{
-                expect(newString).to(equal(@"QUI="));
-            });
-        });
-
-        describe(@"with 3 bytes of data", ^{
-            beforeEach(^{
-                const char bytes[3] = {'A', 'B', 'C'};
-                newString = [[[NSString alloc] initWithBase64EncodedData:[NSData dataWithBytes:bytes length:3]] autorelease];
-            });
-
-            it(@"should create a correctly base-64 encoded string", ^{
-                expect(newString).to(equal(@"QUJD"));
-            });
+    
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+    describe(@"-initWithBase64EncodedData:", ^{
+        it(@"continues to base64 encode data", ^{
+            const char bytes[] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't'};
+            
+            NSData *data = [NSData dataWithBytes:bytes length:sizeof(bytes)];
+            NSString *string = [[[NSString alloc] initWithBase64EncodedData:data] autorelease];
+            
+            string should equal(@"YWJjZGVmZ2hpamtsbW5vcHFyc3Q=");
         });
     });
+#pragma clang diagnostic pop
+    
 
     static const NSString *ALL_INVALID_URL_CHARACTERS[] = {
         @" ", @"\"", @"#", @"$", @"%", @"&", @"+", @",",
