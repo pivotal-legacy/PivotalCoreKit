@@ -116,6 +116,13 @@
 			remoteGlobalIDString = AE38498D168D053300C99B55;
 			remoteInfo = "CoreLocation+PivotalSpecHelper-StaticLib";
 		};
+		AED5718718C54B5E004AD37D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE384926168CD8FB00C99B55 /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AE02E7E4184EABCD00414F19;
+			remoteInfo = iOSFrameworkSpecs;
+		};
 		AEEECC49181F36B2006B52CD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AE384926168CD8FB00C99B55 /* Cedar.xcodeproj */;
@@ -264,6 +271,7 @@
 				AE384937168CD8FC00C99B55 /* FocusedSpecs */,
 				AE384939168CD8FC00C99B55 /* libCedar-StaticLib.a */,
 				AE38493B168CD8FC00C99B55 /* iOSSpecs.app */,
+				AED5718818C54B5E004AD37D /* iOSFrameworkSpecs.app */,
 				AE38493D168CD8FC00C99B55 /* OCUnitApp.app */,
 				AE38493F168CD8FC00C99B55 /* OCUnitAppTests.octest */,
 				AEEECC4A181F36B2006B52CD /* XCUnitAppTests.xctest */,
@@ -420,7 +428,7 @@
 		AE3848CC168CD86000C99B55 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0450;
+				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Pivotal Labs";
 			};
 			buildConfigurationList = AE3848CF168CD86000C99B55 /* Build configuration list for PBXProject "CoreLocation" */;
@@ -504,6 +512,13 @@
 			fileType = wrapper.cfbundle;
 			path = OCUnitAppLogicTests.octest;
 			remoteRef = AE384940168CD8FC00C99B55 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AED5718818C54B5E004AD37D /* iOSFrameworkSpecs.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = iOSFrameworkSpecs.app;
+			remoteRef = AED5718718C54B5E004AD37D /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		AEEECC4A181F36B2006B52CD /* XCUnitAppTests.xctest */ = {
@@ -598,7 +613,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -627,7 +641,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -675,7 +688,6 @@
 		AE384912168CD8C800C99B55 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -698,7 +710,6 @@
 		AE384913168CD8C800C99B55 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -722,7 +733,6 @@
 		AE384923168CD8D800C99B55 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -735,7 +745,6 @@
 		AE384924168CD8D800C99B55 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
