@@ -27,7 +27,7 @@
     // Build a context that's the same dimensions as the new size
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
     CGContextRef bitmap = CGBitmapContextCreate(NULL, newRect.size.width, newRect.size.height, 8, 4 * newRect.size.width,
-                                                colorSpace, kCGImageAlphaPremultipliedFirst);
+                                                colorSpace, kCGBitmapAlphaInfoMask & kCGImageAlphaPremultipliedFirst);
     CGColorSpaceRelease(colorSpace);
 
     // Rotate and/or flip the image if required by its orientation
