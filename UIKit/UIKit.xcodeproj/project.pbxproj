@@ -61,6 +61,11 @@
 		AE89900318071F3A00DDB948 /* UIView+StubbedAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = AE89900218071F3A00DDB948 /* UIView+StubbedAnimation.m */; };
 		AE95306A1832EE9300C802E9 /* UIViewSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE9530691832EE9300C802E9 /* UIViewSpec+Spec.mm */; };
 		AEB315B518BF841400018EDD /* UITableViewCell.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEB315AB18BF830C00018EDD /* UITableViewCell.storyboard */; };
+		AEB6662C18C6681A00B09C00 /* UIPopoverController+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AEB6662A18C6681A00B09C00 /* UIPopoverController+Spec.h */; };
+		AEB6662D18C6681A00B09C00 /* UIPopoverController+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB6662B18C6681A00B09C00 /* UIPopoverController+Spec.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		AEB6662E18C6681A00B09C00 /* UIPopoverController+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB6662B18C6681A00B09C00 /* UIPopoverController+Spec.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		AEB6662F18C6681A00B09C00 /* UIPopoverController+Spec.m in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AEB6662B18C6681A00B09C00 /* UIPopoverController+Spec.m */; };
+		AEB6663E18C6685F00B09C00 /* UIPopoverControllerSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEB6663C18C6685F00B09C00 /* UIPopoverControllerSpec+Spec.mm */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		AEBCCC25168B999F0056EE83 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEBCCBE7168B97DD0056EE83 /* Foundation.framework */; };
 		AEBCCC37168B99ED0056EE83 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEBCCC36168B99ED0056EE83 /* UIKit.framework */; };
 		AEBCCC38168B99ED0056EE83 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEBCCBE7168B97DD0056EE83 /* Foundation.framework */; };
@@ -255,12 +260,14 @@
 			dstPath = "${BUILD_DIR}/${CONFIGURATION}-iphoneuniversal/${PRODUCT_NAME}.framework/Headers";
 			dstSubfolderSpec = 0;
 			files = (
+				AEB6662F18C6681A00B09C00 /* UIPopoverController+Spec.m in Copy headers to framework */,
 				AEC40CC9174C292600474D2D /* UIActionSheet+Spec.h in Copy headers to framework */,
 				AEC40CCA174C292600474D2D /* UIAlertView+Spec.h in Copy headers to framework */,
 				AEE0B69618A3572C0007A9D0 /* UIView+StubbedAnimation.h in Copy headers to framework */,
 				AEEECC1A181F3135006B52CD /* UIImagePickerController+Spec.m in Copy headers to framework */,
 				AEC40CCB174C292600474D2D /* UIWebView+Spec.h in Copy headers to framework */,
 				AEC40CCC174C292600474D2D /* UIKit+PivotalSpecHelperStubs.h in Copy headers to framework */,
+				AEB6662C18C6681A00B09C00 /* UIPopoverController+Spec.h in Copy headers to framework */,
 				AE86BD42179C7C910057DEAE /* UITabBarController+Spec.h in Copy headers to framework */,
 				AEEECC18181F3135006B52CD /* UIImagePickerController+Spec.h in Copy headers to framework */,
 			);
@@ -312,6 +319,9 @@
 		AE89900218071F3A00DDB948 /* UIView+StubbedAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+StubbedAnimation.m"; sourceTree = "<group>"; };
 		AE9530691832EE9300C802E9 /* UIViewSpec+Spec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIViewSpec+Spec.mm"; sourceTree = "<group>"; };
 		AEB315AB18BF830C00018EDD /* UITableViewCell.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UITableViewCell.storyboard; sourceTree = "<group>"; };
+		AEB6662A18C6681A00B09C00 /* UIPopoverController+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIPopoverController+Spec.h"; sourceTree = "<group>"; };
+		AEB6662B18C6681A00B09C00 /* UIPopoverController+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIPopoverController+Spec.m"; sourceTree = "<group>"; };
+		AEB6663C18C6685F00B09C00 /* UIPopoverControllerSpec+Spec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIPopoverControllerSpec+Spec.mm"; sourceTree = "<group>"; };
 		AEBCCBCD168B96C80056EE83 /* UIBarButtonItem+Button.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Button.h"; sourceTree = "<group>"; };
 		AEBCCBCE168B96C80056EE83 /* UIBarButtonItem+Button.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Button.m"; sourceTree = "<group>"; };
 		AEBCCBCF168B96C80056EE83 /* UIImage+PivotalCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+PivotalCore.h"; sourceTree = "<group>"; };
@@ -621,6 +631,8 @@
 				AEC40CB1174C22BD00474D2D /* UIAlertView+Spec.m */,
 				AEEECC16181F3135006B52CD /* UIImagePickerController+Spec.h */,
 				AEEECC17181F3135006B52CD /* UIImagePickerController+Spec.m */,
+				AEB6662A18C6681A00B09C00 /* UIPopoverController+Spec.h */,
+				AEB6662B18C6681A00B09C00 /* UIPopoverController+Spec.m */,
 				AEE0B69518A3572C0007A9D0 /* UIView+StubbedAnimation.h */,
 				AE89900218071F3A00DDB948 /* UIView+StubbedAnimation.m */,
 				AEC40CB2174C22BD00474D2D /* UIViewController+Spec.m */,
@@ -635,6 +647,7 @@
 			children = (
 				AEC40CBE174C24CF00474D2D /* UIAlertViewSpec+Spec.mm */,
 				AEEECC32181F33F5006B52CD /* UIImagePickerControllerSpec+Spec.mm */,
+				AEB6663C18C6685F00B09C00 /* UIPopoverControllerSpec+Spec.mm */,
 				AE7B279517CFD67600904F64 /* UIViewControllerSpec+Spec.mm */,
 				AE898FF718071E2B00DDB948 /* UIViewSpec+StubbedAnimations.mm */,
 				AEC40CBF174C24CF00474D2D /* UIWebViewSpec+Spec.mm */,
@@ -925,6 +938,7 @@
 				FA91AA92186725CC00925A6B /* NSString+PivotalCoreKit_UIKit.m in Sources */,
 				AE1FBEA317D15A4100B0F03B /* UITableViewCellSpec+Spec.mm in Sources */,
 				FA91AAA2186737B700925A6B /* NSAttributedString+PivotalCoreKit_UIKit.m in Sources */,
+				AEB6663E18C6685F00B09C00 /* UIPopoverControllerSpec+Spec.mm in Sources */,
 				AEBCCC9A168B9C530056EE83 /* UIImage+PivotalCoreSpec.mm in Sources */,
 				AE53E2F618075B080037C32E /* UIWindowSpec+Spec.mm in Sources */,
 				FA07586B18120E47001817BF /* UICollectionViewCellSpec+Spec.mm in Sources */,
@@ -935,6 +949,7 @@
 				AEEECC33181F33F5006B52CD /* UIImagePickerControllerSpec+Spec.mm in Sources */,
 				AE3847AD168BA0E300C99B55 /* AWebViewController.m in Sources */,
 				AEC6D7FE16963F3500E10C7B /* UIControlSpec+Spec.mm in Sources */,
+				AEB6662E18C6681A00B09C00 /* UIPopoverController+Spec.m in Sources */,
 				AE898FF818071E2B00DDB948 /* UIViewSpec+StubbedAnimations.mm in Sources */,
 				22601B5916BA209F00A807CB /* UISliderSpec+Spec.mm in Sources */,
 				B8C62E6F16BC04230009CDAD /* UIBarButtonItemSpec+Spec.mm in Sources */,
@@ -969,6 +984,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEB6662D18C6681A00B09C00 /* UIPopoverController+Spec.m in Sources */,
 				AEC40CB5174C22BD00474D2D /* UIActionSheet+Spec.m in Sources */,
 				AEC40CB6174C22BD00474D2D /* UIAlertView+Spec.m in Sources */,
 				AEEECC19181F3135006B52CD /* UIImagePickerController+Spec.m in Sources */,
