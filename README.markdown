@@ -5,9 +5,9 @@
 ## Why PivotalCoreKit
 PivotalCoreKit lets you keep creating beautiful apps without having to rewrite the same boilerplate code in every project.
 
-While it has useful functionality in a few different domains, it has a particular focus on helping developer test drive their iOS applications.
+While it has useful functionality in a few different domains, it has a particular focus on helping developers test drive their iOS applications.
 
-## What can PivotalCoreKit help me with
+## What can PivotalCoreKit help with
 
 ### Highlights
 * Method swizzling
@@ -26,7 +26,7 @@ PivotalCoreKit is split along framework lines, with separate Xcode projects for 
 
 **Core** methods are meant to be used anywhere they're useful, whether in specs or in the primary application.  
 **SpecHelper** extends built-in classes to make testing easier and more seemless.  
-**SpecHelperStubs** stub out (and usually replace) the methods on their classes.  
+**SpecHelperStubs** stub out (and replace) a class's functionality to allow a developer to more easily inspect its state.
 
 Here is a (hopefully exhaustive but inevitably out of date) list of PivotalCoreKit functionality, separated by framework/section:
 
@@ -35,7 +35,6 @@ Here is a (hopefully exhaustive but inevitably out of date) list of PivotalCoreK
     * Convert NSString into a SHA1 hash (as NSData)
     * Convert NSData into a hexadecimal string
     * Method redirection on NSObjects (also commonly called Swizzling)
-    * Convert base64-encoded NSData into an NSString
     * Convert an NSString ("Hello world I am doing great today") into camel case ("HelloWorldIAmDoingGreatToday")
     * Check if an NSString is blank
     * Check if an NSString is a valid email address
@@ -123,22 +122,22 @@ it(@"webview should load example.com", ^{
 Without PivotalCoreKit's UIWebView stubs, the webView's NSURLRequest will be nil because the real UIWebView hasn't started actually making the request. A stubbed UIWebView updates the request property immediately.
 
 ## How do I install PivotalCoreKit
-* Inside the root of your project run: `git submodule add git@github.com:pivotal/PivotalCoreKit.git Externals/PivotalCoreKit`
-* Add the PivotalCoreKit project(s) you need into your project for the appropriate target
-* Add the corresponding StaticLib Target Dependency for the appropriate target
-* Link the corresponding binary under the Link Binary With Libraries section for the appropriate target
-* Update your Header Search Paths to include the path to the necessary PCK headers for the appropriate target
- * e.g. "$(SRCROOT)/Externals/PivotalCoreKit/path/to/specific/projectfolder" and make it recursive
+* In a shell in the root of your project run: `git submodule add git@github.com:pivotal/PivotalCoreKit.git Externals/PivotalCoreKit`
+* Add the PivotalCoreKit project(s) (Foundation.xcodeproj, UIKit.xcodeproj, or CoreLocation.xcodeproj) you need into your project for the appropriate target
+* In your application's Project Settings, under Build Phases, add the desired StaticLib to "Target Dependencies"
+* Add the corresponding binary to the Link Binary With Libraries section
+* Switch to Build Settings and update your Header Search Paths to include the path to folder containing the added subproject. Make it recursive.
+ * e.g. "$(SRCROOT)/Externals/PivotalCoreKit/path/to/specific/projectfolder/". 
 
 ### Example, adding -[UIButton tap] to a spec target
 * `git submodule add git@github.com:pivotal/PivotalCoreKit.git Externals/PivotalCoreKit`
 * Right-click Specs folder in Xcode -> Add Files
 * Navigate into PivotalCoreKit/UIKit folder, select UIKit.xcodeproj and add.
 * In root project file, choose Specs target
-* Add UIKit+PivotalSpecHelper-StaticLib to 'Target Dependencies'
-* Add libUIKit+PivotalSpecHelper-StaticLib.a in the 'Link Binary With Library' section
-* Add '$(SRCROOT)/Externals/PivotalCoreKit/UIKit/' to Header Search Paths and make it recursive
-* Add #import "UIControl+Spec.h" to desired spec file, and freely use [button tap];
+* Under the "Build Phases" tab along the top of the project settings, add UIKit+PivotalSpecHelper-StaticLib to "Target Dependencies"
+* Add libUIKit+PivotalSpecHelper-StaticLib.a to the "Link Binary With Library" section
+* Switch to the "Build Settings" tab Add "$(SRCROOT)/Externals/PivotalCoreKit/UIKit/" to "Header Search Paths" and make it recursive
+* In the desired spec file, add #import "UIControl+Spec.h" and freely use [button tap];
 
 ## Library Documentation
 
