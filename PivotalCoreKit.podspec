@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name     = 'PivotalCoreKit'
   s.version  = '0.0.3'
-  s.license  = { :type => 'MIT' }
+  s.license  = { :type => 'MIT', :file => 'LICENSE.markdown' }
   s.summary  = 'Shared library and test code for iOS projects.'
   s.homepage = 'https://github.com/pivotal/PivotalCoreKit'
   s.author   = { 'Pivotal Labs' => 'http://pivotallabs.com' }
