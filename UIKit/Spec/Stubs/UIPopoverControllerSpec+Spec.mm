@@ -68,6 +68,16 @@ describe(@"UIPopoverController (spec extensions)", ^{
                     popoverController.isPopoverVisible should be_falsy;
                 });
             });
+
+            describe(@"+reset", ^{
+                beforeEach(^{
+                    [UIPopoverController reset];
+                });
+
+                it(@"clears the currentPopoverController", ^{
+                    [UIPopoverController currentPopoverController] should be_nil;
+                });
+            });
         });
 
         describe(@"when the popoverController is presented from a bar button item", ^{

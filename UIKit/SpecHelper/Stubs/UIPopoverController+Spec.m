@@ -8,6 +8,10 @@ static UIPopoverArrowDirection pckArrowDirection;
     return currentPopoverController;
 }
 
++ (void)reset {
+    currentPopoverController = nil;
+}
+
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wobjc-protocol-method-implementation"
 
