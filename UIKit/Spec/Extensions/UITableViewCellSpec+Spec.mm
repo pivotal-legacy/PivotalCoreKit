@@ -129,29 +129,67 @@ describe(@"UITableViewCell+Spec", ^{
     });
 
     describe(@"-tapDeleteAccessory", ^{
-        beforeEach(^{
-            [controller setEditing:YES animated:NO];
-            [cell tapDeleteAccessory];
+        context(@"table view is not in editing mode", ^{
+            beforeEach(^{
+                [controller.tableView setEditing:NO animated:NO];
+            });
+            
+            it(@"should raise an exception", ^{
+                ^{ [cell tapDeleteAccessory]; } should raise_exception;
+            });
         });
-
-        it(@"should expose the delete confirmation button", ^{
-            cell.showingDeleteConfirmation should be_truthy;
+        
+        context(@"table view is in editing mode", ^{
+            beforeEach(^{
+                [controller.tableView setEditing:YES animated:NO];
+                [cell tapDeleteAccessory];
+            });
+            
+            it(@"should expose the delete confirmation button", ^{
+                cell.showingDeleteConfirmation should be_truthy;
+            });
         });
     });
 
     describe(@"-tapDeleteConfirmation", ^{
-        beforeEach(^{
-            spy_on(controller.tableView.dataSource);
-            [controller setEditing:YES animated:NO];
-
-            [cell tapDeleteAccessory];
-            cell.showingDeleteConfirmation should be_truthy;
-
-            [cell tapDeleteConfirmation];
+        context(@"table view is not in editing mode", ^{
+            beforeEach(^{
+                [controller setEditing:NO animated:NO];
+            });
+            
+            it(@"should raise an exception", ^{
+                ^{ [cell tapDeleteConfirmation]; } should raise_exception;
+            });
         });
-
-        it(@"should call the appropriate handler", ^{
-            controller.tableView.dataSource should have_received(@selector(tableView:commitEditingStyle:forRowAtIndexPath:)).with(controller.tableView, UITableViewCellEditingStyleDelete, [NSIndexPath indexPathForRow:0 inSection:0]);
+        
+        context(@"table view is in editing mode", ^{
+            beforeEach(^{
+                spy_on(controller.tableView.dataSource);
+                [controller setEditing:YES animated:NO];
+            });
+            
+            context(@"delete confirmation is visible", ^{
+                beforeEach(^{
+                    [cell tapDeleteAccessory];
+                    cell.showingDeleteConfirmation should be_truthy;
+                    
+                    [cell tapDeleteConfirmation];
+                });
+                
+                it(@"should call the appropriate handler", ^{
+                    controller.tableView.dataSource should have_received(@selector(tableView:commitEditingStyle:forRowAtIndexPath:)).with(controller.tableView, UITableViewCellEditingStyleDelete, [NSIndexPath indexPathForRow:0 inSection:0]);
+                });
+            });
+            
+            context(@"delete confirmation is not visible", ^{
+                beforeEach(^{
+                    cell.showingDeleteConfirmation should_not be_truthy;
+                });
+                
+                it(@"should raise an exception", ^{
+                    ^{ [cell tapDeleteConfirmation]; } should raise_exception;
+                });
+            });
         });
     });
 });

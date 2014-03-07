@@ -55,28 +55,53 @@
 - (void)tapDeleteAccessory {
     UIControl *deleteAccessoryControl;
 
-    if ([[[UIDevice currentDevice] systemVersion] compare:@"7.0" options:NSNumericSearch] != NSOrderedAscending) {
-        UIView *cellScrollView = self.subviews[0];
-        deleteAccessoryControl = cellScrollView.subviews[2];
-    } else {
-        deleteAccessoryControl = self.subviews[2];
+    UIView *currentView = self;
+    while (currentView.superview != nil && ![currentView isKindOfClass:[UITableView class]]) {
+        currentView = currentView.superview;
     }
-
-    [deleteAccessoryControl sendActionsForControlEvents:UIControlEventTouchUpInside];
+    
+    NSAssert(currentView, @"Cell must be in a table view in order to be tapped!");
+    UITableView *tableView = (UITableView *)currentView;
+    if (!tableView.editing) {
+        @throw [NSException exceptionWithName:NSInternalInconsistencyException reason:@"Table view must be in editing mode in order to tap delete accessory" userInfo:nil];
+    } else {
+        if ([[[UIDevice currentDevice] systemVersion] compare:@"7.0" options:NSNumericSearch] != NSOrderedAscending) {
+            UIView *cellScrollView = self.subviews[0];
+            deleteAccessoryControl = cellScrollView.subviews[2];
+        } else {
+            deleteAccessoryControl = self.subviews[2];
+        }
+        
+        [deleteAccessoryControl sendActionsForControlEvents:UIControlEventTouchUpInside];
+    }
 }
 
 - (void)tapDeleteConfirmation {
     UIControl *deleteConfirmationControl;
-
-    if ([[[UIDevice currentDevice] systemVersion] compare:@"7.0" options:NSNumericSearch] != NSOrderedAscending) {
-        UIView *cellScrollView = self.subviews[0];
-        UIView *cellDeleteView = cellScrollView.subviews[0];
-        deleteConfirmationControl = (UIControl *)cellDeleteView.subviews[0];
-    } else {
-        deleteConfirmationControl = self.subviews[3];
+    
+    UIView *currentView = self;
+    while (currentView.superview != nil && ![currentView isKindOfClass:[UITableView class]]) {
+        currentView = currentView.superview;
     }
-
-    [deleteConfirmationControl tap];
+    
+    NSAssert(currentView, @"Cell must be in a table view in order to be tapped!");
+    UITableView *tableView = (UITableView *)currentView;
+    
+    if (!tableView.editing) {
+        @throw [NSException exceptionWithName:NSInternalInconsistencyException reason:@"Table view must be in editing mode in order to tap delete confirmation" userInfo:nil];
+    } else if (!self.showingDeleteConfirmation) {
+        @throw [NSException exceptionWithName:NSInternalInconsistencyException reason:@"Delete confirmation must be visible in order to tap it" userInfo:nil];
+    } else {
+        if ([[[UIDevice currentDevice] systemVersion] compare:@"7.0" options:NSNumericSearch] != NSOrderedAscending) {
+            UIView *cellScrollView = self.subviews[0];
+            UIView *cellDeleteView = cellScrollView.subviews[0];
+            deleteConfirmationControl = (UIControl *)cellDeleteView.subviews[0];
+        } else {
+            deleteConfirmationControl = self.subviews[3];
+        }
+        
+        [deleteConfirmationControl tap];
+    }
 }
 
 
