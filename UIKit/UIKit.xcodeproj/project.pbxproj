@@ -101,6 +101,7 @@
 		AEEECC33181F33F5006B52CD /* UIImagePickerControllerSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEEECC32181F33F5006B52CD /* UIImagePickerControllerSpec+Spec.mm */; };
 		AEF0A40418296C690070D98B /* UICollectionViewCell+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = FA07586918120D19001817BF /* UICollectionViewCell+Spec.m */; };
 		AEF0A40518296CDF0070D98B /* UICollectionViewCell+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = FA07586818120D19001817BF /* UICollectionViewCell+Spec.h */; };
+		AEF67CE218CA436600C221D1 /* UIActionSheetSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEF67CE018CA436600C221D1 /* UIActionSheetSpec+Spec.mm */; };
 		AEF775BC18316DE4000AF17B /* UIGestureRecognizerSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEF775BB18316DE4000AF17B /* UIGestureRecognizerSpec+Spec.mm */; };
 		AEF775C81831708D000AF17B /* UIGestureRecognizer+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AEF775C61831708D000AF17B /* UIGestureRecognizer+Spec.h */; };
 		AEF775CA183170A3000AF17B /* UIGestureRecognizer+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF775C71831708D000AF17B /* UIGestureRecognizer+Spec.m */; };
@@ -366,6 +367,7 @@
 		AEEECC16181F3135006B52CD /* UIImagePickerController+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImagePickerController+Spec.h"; sourceTree = "<group>"; };
 		AEEECC17181F3135006B52CD /* UIImagePickerController+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImagePickerController+Spec.m"; sourceTree = "<group>"; };
 		AEEECC32181F33F5006B52CD /* UIImagePickerControllerSpec+Spec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIImagePickerControllerSpec+Spec.mm"; sourceTree = "<group>"; };
+		AEF67CE018CA436600C221D1 /* UIActionSheetSpec+Spec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIActionSheetSpec+Spec.mm"; sourceTree = "<group>"; };
 		AEF775BB18316DE4000AF17B /* UIGestureRecognizerSpec+Spec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIGestureRecognizerSpec+Spec.mm"; sourceTree = "<group>"; };
 		AEF775C61831708D000AF17B /* UIGestureRecognizer+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIGestureRecognizer+Spec.h"; sourceTree = "<group>"; };
 		AEF775C71831708D000AF17B /* UIGestureRecognizer+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIGestureRecognizer+Spec.m"; sourceTree = "<group>"; };
@@ -645,6 +647,7 @@
 		AEC40CBD174C24CF00474D2D /* Stubs */ = {
 			isa = PBXGroup;
 			children = (
+				AEF67CE018CA436600C221D1 /* UIActionSheetSpec+Spec.mm */,
 				AEC40CBE174C24CF00474D2D /* UIAlertViewSpec+Spec.mm */,
 				AEEECC32181F33F5006B52CD /* UIImagePickerControllerSpec+Spec.mm */,
 				AEB6663C18C6685F00B09C00 /* UIPopoverControllerSpec+Spec.mm */,
@@ -940,6 +943,7 @@
 				FA91AAA2186737B700925A6B /* NSAttributedString+PivotalCoreKit_UIKit.m in Sources */,
 				AEB6663E18C6685F00B09C00 /* UIPopoverControllerSpec+Spec.mm in Sources */,
 				AEBCCC9A168B9C530056EE83 /* UIImage+PivotalCoreSpec.mm in Sources */,
+				AEF67CE218CA436600C221D1 /* UIActionSheetSpec+Spec.mm in Sources */,
 				AE53E2F618075B080037C32E /* UIWindowSpec+Spec.mm in Sources */,
 				FA07586B18120E47001817BF /* UICollectionViewCellSpec+Spec.mm in Sources */,
 				AEBCCC9B168B9C530056EE83 /* UIImageSpec+Spec.mm in Sources */,

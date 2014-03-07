@@ -5,7 +5,7 @@
 + (void)afterEach;
 
 + (UIActionSheet *)currentActionSheet;
-+ (UIView *)currentActionSheetView;
++ (UIView *)currentActionSheetView; // might return a UIBarButtonItem
 
 + (void)reset;
 + (void)setCurrentActionSheet:(UIActionSheet *)actionSheet forView:(UIView *)view;

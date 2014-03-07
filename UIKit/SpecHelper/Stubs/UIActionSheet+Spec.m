@@ -1,7 +1,5 @@
 #import "UIActionSheet+Spec.h"
 
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wobjc-protocol-method-implementation"
 
 @implementation UIActionSheet (Spec)
 
@@ -24,16 +22,26 @@ static UIView *currentActionSheetView__;
     [self setCurrentActionSheet:nil forView:nil];
 }
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wobjc-protocol-method-implementation"
+
 + (void)setCurrentActionSheet:(UIActionSheet *)actionSheet forView:(UIView *)view {
+    [actionSheet retain];
+    [view retain];
+
     [currentActionSheet__ release];
     [currentActionSheetView__ release];
 
-    currentActionSheet__ = [actionSheet retain];
-    currentActionSheetView__ = [view retain];
+    currentActionSheet__ = actionSheet;
+    currentActionSheetView__ = view;
 }
 
 - (void)showInView:(UIView *)view {
     [UIActionSheet setCurrentActionSheet:self forView:view];
+}
+
+- (void)showFromBarButtonItem:(UIBarButtonItem *)item animated:(BOOL)animated {
+    [UIActionSheet setCurrentActionSheet:self forView:(id)item];
 }
 
 - (void)showFromToolbar:(UIToolbar *)view {
@@ -60,6 +68,8 @@ static UIView *currentActionSheetView__;
     }
     [UIActionSheet reset];
 }
+
+#pragma clang diagnostic pop
 
 - (NSArray *)buttonTitles {
     NSMutableArray *titles = [NSMutableArray array];
