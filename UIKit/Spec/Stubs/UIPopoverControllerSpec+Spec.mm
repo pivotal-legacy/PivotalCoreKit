@@ -111,12 +111,6 @@ describe(@"UIPopoverController (spec extensions)", ^{
             });
         });
 
-        describe(@"-popoverContentSize", ^{
-            it(@"returns the content size", ^{
-                popoverController.popoverContentSize should equal(CGSizeMake(320, 480));
-            });
-        });
-
         describe(@"-setPopoverContentSize:animated:", ^{
             beforeEach(^{
                 [popoverController setPopoverContentSize:CGSizeMake(400, 500) animated:YES];
@@ -180,11 +174,15 @@ describe(@"UIPopoverController (spec extensions)", ^{
 
         describe(@"setting the background color", ^{
             beforeEach(^{
-                popoverController.backgroundColor = [UIColor magentaColor];
+                if ([popoverController respondsToSelector:@selector(backgroundColor)]) {
+                    popoverController.backgroundColor = [UIColor magentaColor];
+                }
             });
 
             it(@"changes the backgroundColor", ^{
-                popoverController.backgroundColor should equal([UIColor magentaColor]);
+                if ([popoverController respondsToSelector:@selector(backgroundColor)]) {
+                    popoverController.backgroundColor should equal([UIColor magentaColor]);
+                }
             });
         });
     });
