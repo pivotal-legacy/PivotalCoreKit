@@ -101,7 +101,7 @@
 		AEEECC33181F33F5006B52CD /* UIImagePickerControllerSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEEECC32181F33F5006B52CD /* UIImagePickerControllerSpec+Spec.mm */; };
 		AEF0A40418296C690070D98B /* UICollectionViewCell+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = FA07586918120D19001817BF /* UICollectionViewCell+Spec.m */; };
 		AEF0A40518296CDF0070D98B /* UICollectionViewCell+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = FA07586818120D19001817BF /* UICollectionViewCell+Spec.h */; };
-		AEF67CE218CA436600C221D1 /* UIActionSheetSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEF67CE018CA436600C221D1 /* UIActionSheetSpec+Spec.mm */; };
+		AEF67CE218CA436600C221D1 /* UIActionSheetSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEF67CE018CA436600C221D1 /* UIActionSheetSpec+Spec.mm */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		AEF775BC18316DE4000AF17B /* UIGestureRecognizerSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEF775BB18316DE4000AF17B /* UIGestureRecognizerSpec+Spec.mm */; };
 		AEF775C81831708D000AF17B /* UIGestureRecognizer+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AEF775C61831708D000AF17B /* UIGestureRecognizer+Spec.h */; };
 		AEF775CA183170A3000AF17B /* UIGestureRecognizer+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF775C71831708D000AF17B /* UIGestureRecognizer+Spec.m */; };
