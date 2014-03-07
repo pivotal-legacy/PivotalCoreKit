@@ -3,5 +3,6 @@
 @interface UIPopoverController (Spec)
 
 + (instancetype)currentPopoverController;
++ (void)reset;
 
 @end
