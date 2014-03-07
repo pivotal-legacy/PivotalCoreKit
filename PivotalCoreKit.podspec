@@ -44,7 +44,7 @@ Pod::Spec.new do |s|
 
     f.subspec 'SpecHelper' do |spec_helper|
       spec_helper.subspec 'Extensions' do |ext|
-        ext.source_files = 'Foundation/SpecHelper/Extensions/*.{h,m}'
+        ext.source_files = ['Foundation/Core/Extensions/NSObject+MethodRedirection.h', 'Foundation/SpecHelper/Helpers/PCKConnectionBlockDelegate.h', 'Foundation/SpecHelper/Helpers/PCKConnectionDelegateWrapper.h', 'Foundation/SpecHelper/Fakes/PSHKFakeHTTPURLResponse.h', 'Foundation/SpecHelper/Fakes/FakeOperationQueue.h', 'Foundation/SpecHelper/Extensions/*.{h,m}']
       end
 
       spec_helper.subspec 'Fixtures' do |fix|
@@ -52,7 +52,7 @@ Pod::Spec.new do |s|
       end
 
       spec_helper.subspec 'Helpers' do |help|
-        help.source_files = 'Foundation/SpecHelper/Helpers/*.{h,m}'
+        help.source_files = ['Foundation/SpecHelper/Extensions/NSURLConnection+Spec.h', 'Foundation/SpecHelper/Helpers/*.{h,m}']
       end
 
       spec_helper.subspec 'Fakes' do |fake|
