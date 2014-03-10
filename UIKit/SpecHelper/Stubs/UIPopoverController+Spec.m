@@ -1,15 +1,20 @@
 #import "UIPopoverController+Spec.h"
 
 @implementation UIPopoverController (Spec)
-static UIPopoverController *currentPopoverController;
-static UIPopoverArrowDirection pckArrowDirection;
+
+static UIPopoverController *currentPopoverController__;
+static UIPopoverArrowDirection arrowDirectionMask__;
 
 + (instancetype)currentPopoverController {
-    return currentPopoverController;
+    return currentPopoverController__;
 }
 
 + (void)reset {
-    currentPopoverController = nil;
+    currentPopoverController__ = nil;
+}
+
++ (void)afterEach {
+    [self reset];
 }
 
 #pragma clang diagnostic push
@@ -17,30 +22,29 @@ static UIPopoverArrowDirection pckArrowDirection;
 
 - (void)dealloc {
     // [super dealloc] will raise an exception if -isPopoverVisible is YES when deallocating
-    if (self == currentPopoverController) {
-        currentPopoverController = nil;
+    if (self == currentPopoverController__) {
+        currentPopoverController__ = nil;
     }
 }
 
 // -presentPopoverFromBarButtonItem:permittedArrowDirections:animated: calls through to this method
 - (void)presentPopoverFromRect:(CGRect)rect inView:(UIView *)view permittedArrowDirections:(UIPopoverArrowDirection)arrowDirections animated:(BOOL)animated {
-    currentPopoverController = self;
-
-    pckArrowDirection = arrowDirections;
+    currentPopoverController__ = self;
+    arrowDirectionMask__ = arrowDirections;
 }
 
 - (void)dismissPopoverAnimated:(BOOL)animated {
-    if (self == currentPopoverController) {
-        currentPopoverController = nil;
+    if (self == currentPopoverController__) {
+        currentPopoverController__ = nil;
     }
 }
 
 - (BOOL)isPopoverVisible {
-    return (self == currentPopoverController);
+    return (self == currentPopoverController__);
 }
 
 - (UIPopoverArrowDirection)popoverArrowDirection {
-    return pckArrowDirection;
+    return arrowDirectionMask__;
 }
 
 #pragma clang diagnostic pop
