@@ -1,4 +1,5 @@
 #import "UITableViewCell+Spec.h"
+#import "UIControl+Spec.h"
 
 @interface UIStoryboardSegueTemplate
 - (id)identifier;
@@ -50,5 +51,34 @@
         [segueTemplate.viewController performSegueWithIdentifier:segueTemplate.identifier sender:self];
     }
 }
+
+- (void)tapDeleteAccessory {
+    UIControl *deleteAccessoryControl;
+
+    if ([[[UIDevice currentDevice] systemVersion] compare:@"7.0" options:NSNumericSearch] != NSOrderedAscending) {
+        UIView *cellScrollView = self.subviews[0];
+        deleteAccessoryControl = cellScrollView.subviews[2];
+    } else {
+        deleteAccessoryControl = self.subviews[2];
+    }
+
+    [deleteAccessoryControl sendActionsForControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)tapDeleteConfirmation {
+    UIControl *deleteConfirmationControl;
+
+    if ([[[UIDevice currentDevice] systemVersion] compare:@"7.0" options:NSNumericSearch] != NSOrderedAscending) {
+        UIView *cellScrollView = self.subviews[0];
+        UIView *cellDeleteView = cellScrollView.subviews[0];
+        deleteConfirmationControl = (UIControl *)cellDeleteView.subviews[0];
+    } else {
+        deleteConfirmationControl = self.subviews[3];
+    }
+
+    [deleteConfirmationControl tap];
+}
+
+
 
 @end

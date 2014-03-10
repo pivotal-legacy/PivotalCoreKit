@@ -20,6 +20,10 @@
     return [tableView dequeueReusableCellWithIdentifier:@"Cell"];
 }
 
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    return;
+}
+
 @end
 
 
@@ -121,6 +125,33 @@ describe(@"UITableViewCell+Spec", ^{
                     ^{ [cell tap]; } should raise_exception.with_reason(@"Cell with a segue must have a segue identifier in order to be tapped");
                 });
             });
+        });
+    });
+
+    describe(@"-tapDeleteAccessory", ^{
+        beforeEach(^{
+            [controller setEditing:YES animated:NO];
+            [cell tapDeleteAccessory];
+        });
+
+        it(@"should expose the delete confirmation button", ^{
+            cell.showingDeleteConfirmation should be_truthy;
+        });
+    });
+
+    describe(@"-tapDeleteConfirmation", ^{
+        beforeEach(^{
+            spy_on(controller.tableView.dataSource);
+            [controller setEditing:YES animated:NO];
+
+            [cell tapDeleteAccessory];
+            cell.showingDeleteConfirmation should be_truthy;
+
+            [cell tapDeleteConfirmation];
+        });
+
+        it(@"should call the appropriate handler", ^{
+            controller.tableView.dataSource should have_received(@selector(tableView:commitEditingStyle:forRowAtIndexPath:)).with(controller.tableView, UITableViewCellEditingStyleDelete, [NSIndexPath indexPathForRow:0 inSection:0]);
         });
     });
 });
