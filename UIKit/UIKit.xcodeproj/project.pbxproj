@@ -63,8 +63,6 @@
 		AEB315B518BF841400018EDD /* UITableViewCell.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEB315AB18BF830C00018EDD /* UITableViewCell.storyboard */; };
 		AEB6662C18C6681A00B09C00 /* UIPopoverController+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AEB6662A18C6681A00B09C00 /* UIPopoverController+Spec.h */; };
 		AEB6662D18C6681A00B09C00 /* UIPopoverController+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB6662B18C6681A00B09C00 /* UIPopoverController+Spec.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
-		AEB6662E18C6681A00B09C00 /* UIPopoverController+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB6662B18C6681A00B09C00 /* UIPopoverController+Spec.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
-		AEB6662F18C6681A00B09C00 /* UIPopoverController+Spec.m in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AEB6662B18C6681A00B09C00 /* UIPopoverController+Spec.m */; };
 		AEB6663E18C6685F00B09C00 /* UIPopoverControllerSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEB6663C18C6685F00B09C00 /* UIPopoverControllerSpec+Spec.mm */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		AEBCCC25168B999F0056EE83 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEBCCBE7168B97DD0056EE83 /* Foundation.framework */; };
 		AEBCCC37168B99ED0056EE83 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEBCCC36168B99ED0056EE83 /* UIKit.framework */; };
@@ -261,7 +259,6 @@
 			dstPath = "${BUILD_DIR}/${CONFIGURATION}-iphoneuniversal/${PRODUCT_NAME}.framework/Headers";
 			dstSubfolderSpec = 0;
 			files = (
-				AEB6662F18C6681A00B09C00 /* UIPopoverController+Spec.m in Copy headers to framework */,
 				AEC40CC9174C292600474D2D /* UIActionSheet+Spec.h in Copy headers to framework */,
 				AEC40CCA174C292600474D2D /* UIAlertView+Spec.h in Copy headers to framework */,
 				AEE0B69618A3572C0007A9D0 /* UIView+StubbedAnimation.h in Copy headers to framework */,
@@ -953,7 +950,6 @@
 				AEEECC33181F33F5006B52CD /* UIImagePickerControllerSpec+Spec.mm in Sources */,
 				AE3847AD168BA0E300C99B55 /* AWebViewController.m in Sources */,
 				AEC6D7FE16963F3500E10C7B /* UIControlSpec+Spec.mm in Sources */,
-				AEB6662E18C6681A00B09C00 /* UIPopoverController+Spec.m in Sources */,
 				AE898FF818071E2B00DDB948 /* UIViewSpec+StubbedAnimations.mm in Sources */,
 				22601B5916BA209F00A807CB /* UISliderSpec+Spec.mm in Sources */,
 				B8C62E6F16BC04230009CDAD /* UIBarButtonItemSpec+Spec.mm in Sources */,
