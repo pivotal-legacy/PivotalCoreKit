@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
   s.summary  = 'Shared library and test code for iOS projects.'
   s.homepage = 'https://github.com/pivotal/PivotalCoreKit'
   s.author   = { 'Pivotal Labs' => 'http://pivotallabs.com' }
-  s.source   = { :git => 'https://github.com/pivotal/PivotalCoreKit.git' }
+  s.source   = { :git => 'https://github.com/pivotal/PivotalCoreKit.git', :tag => 'v0.0.3' }
   s.platform = :ios, '5.0'
 
   s.default_subspec = 'Core'
