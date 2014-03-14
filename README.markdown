@@ -72,6 +72,7 @@ Here is a (hopefully exhaustive but inevitably out of date) list of PivotalCoreK
   * SpecHelperStubs
     * Query, inspect, and simulate taps on the current UIActionSheet
     * Query, inspect, and simulate taps on the current UIAlertView
+	* Query, inspect, present and dismiss a UIPopoverController
     * Simulate availability states of UIImagePickerController (camera available/not available, et cetera)
     * Inspect arguments (duration, delay, options) on last UIView animation
     * Fake out UIWebView to inspect requests, simulate back/forward state, and simulate web loads
