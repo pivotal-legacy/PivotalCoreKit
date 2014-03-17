@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE118AE718D6BC2F00C90D6B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE3848DD168CD86000C99B55 /* CoreGraphics.framework */; };
+		AE118AE818D6BC2F00C90D6B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE3848D9168CD86000C99B55 /* UIKit.framework */; };
+		AE118AE918D6BC2F00C90D6B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE3848DB168CD86000C99B55 /* Foundation.framework */; };
+		AE118B0418D6BD3300C90D6B /* BundleSpecLoader.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE118B0218D6BCE700C90D6B /* BundleSpecLoader.mm */; };
+		AE118B0618D6BE3E00C90D6B /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE118B0518D6BE3E00C90D6B /* SenTestingKit.framework */; };
 		AE3848DA168CD86000C99B55 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE3848D9168CD86000C99B55 /* UIKit.framework */; };
 		AE3848DC168CD86000C99B55 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE3848DB168CD86000C99B55 /* Foundation.framework */; };
 		AE3848DE168CD86000C99B55 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE3848DD168CD86000C99B55 /* CoreGraphics.framework */; };
@@ -154,6 +159,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		AE118AE418D6BC2F00C90D6B /* CoreLocation-StaticLibSpecBundle.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CoreLocation-StaticLibSpecBundle.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE118AE518D6BC2F00C90D6B /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		AE118AEC18D6BC2F00C90D6B /* CoreLocation-StaticLibSpecBundle-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CoreLocation-StaticLibSpecBundle-Info.plist"; sourceTree = "<group>"; };
+		AE118B0218D6BCE700C90D6B /* BundleSpecLoader.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BundleSpecLoader.mm; sourceTree = "<group>"; };
+		AE118B0518D6BE3E00C90D6B /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		AE3848D5168CD86000C99B55 /* CoreLocation-StaticLibSpec.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CoreLocation-StaticLibSpec.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE3848D9168CD86000C99B55 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AE3848DB168CD86000C99B55 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -176,6 +186,17 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		AE118AE018D6BC2F00C90D6B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE118B0618D6BE3E00C90D6B /* SenTestingKit.framework in Frameworks */,
+				AE118AE718D6BC2F00C90D6B /* CoreGraphics.framework in Frameworks */,
+				AE118AE818D6BC2F00C90D6B /* UIKit.framework in Frameworks */,
+				AE118AE918D6BC2F00C90D6B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AE3848D2168CD86000C99B55 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -239,6 +260,7 @@
 				AE384900168CD8C800C99B55 /* CoreLocation+PivotalSpecHelper.framework */,
 				AE384918168CD8D800C99B55 /* CoreLocationSpec */,
 				AE38498E168D053300C99B55 /* libCoreLocation+PivotalSpecHelper-StaticLib.a */,
+				AE118AE418D6BC2F00C90D6B /* CoreLocation-StaticLibSpecBundle.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -246,11 +268,13 @@
 		AE3848D8168CD86000C99B55 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AE118B0518D6BE3E00C90D6B /* SenTestingKit.framework */,
 				AE3848D9168CD86000C99B55 /* UIKit.framework */,
 				AE3848DB168CD86000C99B55 /* Foundation.framework */,
 				AE3848DD168CD86000C99B55 /* CoreGraphics.framework */,
 				AE384953168CDA1500C99B55 /* CoreLocation.framework */,
 				AE384970168D04F300C99B55 /* CoreLocation.framework */,
+				AE118AE518D6BC2F00C90D6B /* SenTestingKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -320,6 +344,8 @@
 		AE384958168D030800C99B55 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				AE118B0218D6BCE700C90D6B /* BundleSpecLoader.mm */,
+				AE118AEC18D6BC2F00C90D6B /* CoreLocation-StaticLibSpecBundle-Info.plist */,
 				AE384959168D030800C99B55 /* CoreLocation-StaticLibSpec-Info.plist */,
 				AE38495B168D030800C99B55 /* main.m */,
 			);
@@ -349,6 +375,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		AE118AE318D6BC2F00C90D6B /* CoreLocation-StaticLibSpecBundle */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AE118B0118D6BC3000C90D6B /* Build configuration list for PBXNativeTarget "CoreLocation-StaticLibSpecBundle" */;
+			buildPhases = (
+				AE118ADF18D6BC2F00C90D6B /* Sources */,
+				AE118AE018D6BC2F00C90D6B /* Frameworks */,
+				AE118AE118D6BC2F00C90D6B /* Resources */,
+				AE118AE218D6BC2F00C90D6B /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "CoreLocation-StaticLibSpecBundle";
+			productName = "CoreLocation-StaticLibSpecBundle";
+			productReference = AE118AE418D6BC2F00C90D6B /* CoreLocation-StaticLibSpecBundle.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
 		AE3848D4168CD86000C99B55 /* CoreLocation-StaticLibSpec */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = AE3848F3168CD86000C99B55 /* Build configuration list for PBXNativeTarget "CoreLocation-StaticLibSpec" */;
@@ -453,6 +497,7 @@
 				AE384917168CD8D800C99B55 /* CoreLocationSpec */,
 				AE38498D168D053300C99B55 /* CoreLocation+PivotalSpecHelper-StaticLib */,
 				AE3848D4168CD86000C99B55 /* CoreLocation-StaticLibSpec */,
+				AE118AE318D6BC2F00C90D6B /* CoreLocation-StaticLibSpecBundle */,
 			);
 		};
 /* End PBXProject section */
@@ -531,6 +576,13 @@
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
+		AE118AE118D6BC2F00C90D6B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AE3848D3168CD86000C99B55 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -548,7 +600,31 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		AE118AE218D6BC2F00C90D6B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		AE118ADF18D6BC2F00C90D6B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE118B0418D6BD3300C90D6B /* BundleSpecLoader.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AE3848D1168CD86000C99B55 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -609,6 +685,95 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		AE118AF618D6BC3000C90D6B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CoreLocation-StaticLibSpec.app/CoreLocation-StaticLibSpec";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(PROJECT_DIR)/CoreLocation-StaticLibSpecBundle/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(PROJECT_DIR)/../Externals/Cedar/**",
+				);
+				INFOPLIST_FILE = "Spec/iOS/CoreLocation-StaticLibSpecBundle-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+					"-lstdc++",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		AE118AF718D6BC3000C90D6B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CoreLocation-StaticLibSpec.app/CoreLocation-StaticLibSpec";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(PROJECT_DIR)/CoreLocation-StaticLibSpecBundle/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(PROJECT_DIR)/../Externals/Cedar/**",
+				);
+				INFOPLIST_FILE = "Spec/iOS/CoreLocation-StaticLibSpecBundle-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+					"-lstdc++",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
 		AE3848F1168CD86000C99B55 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -782,6 +947,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		AE118B0118D6BC3000C90D6B /* Build configuration list for PBXNativeTarget "CoreLocation-StaticLibSpecBundle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE118AF618D6BC3000C90D6B /* Debug */,
+				AE118AF718D6BC3000C90D6B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		AE3848CF168CD86000C99B55 /* Build configuration list for PBXProject "CoreLocation" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

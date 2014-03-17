@@ -222,17 +222,15 @@ namespace :core_location do
     end
 
     require 'tmpdir'
-    task :ios => ["build:spec_helper:ios"] do
-      system_or_exit(%Q[xcodebuild -project #{project_name}.xcodeproj -target CoreLocation-StaticLibSpec -configuration #{CONFIGURATION} ARCHS=i386 -sdk iphonesimulator build SYMROOT=#{BUILD_DIR}], {}, output_file("core_location:spec:ios"))
+    task :ios do
       `osascript -e 'tell application "iPhone Simulator" to quit'`
-      env_vars = {
-        "DYLD_ROOT_PATH" => sdk_dir,
-        "CEDAR_REPORTER_CLASS" => "CDRColorizedReporter",
-        "IPHONE_SIMULATOR_ROOT" => sdk_dir,
-        "CFFIXED_USER_HOME" => Dir.tmpdir,
-        "CEDAR_HEADLESS_SPECS" => "1"
-      }
-      system_or_exit(%Q[#{File.join(build_dir("-iphonesimulator"), "CoreLocation-StaticLibSpec.app", "CoreLocation-StaticLibSpec")} -RegisterForSystemEvents], env_vars);
+      system_or_exit(
+      %Q[xcodebuild -workspace PivotalCoreKit.xcworkspace \
+                    -scheme CoreLocation-StaticLibSpec \
+                    -sdk iphonesimulator \
+                    -destination platform='iOS Simulator',OS=#{SDK_VERSION},name='iPhone Retina (4-inch)' \
+                    build test]
+      )
       `osascript -e 'tell application "iPhone Simulator" to quit'`
     end
   end
