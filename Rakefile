@@ -107,17 +107,10 @@ namespace :foundation do
     end
 
     require 'tmpdir'
-    task :ios => ["build:core:ios", "build:spec_helper:ios"] do
+    task :ios do
       system_or_exit(%Q[xcodebuild -project #{project_name}.xcodeproj -target Foundation-StaticLibSpec -configuration #{CONFIGURATION} ARCHS=i386 -sdk iphonesimulator build SYMROOT=#{BUILD_DIR}], {}, output_file("foundation:spec:ios"))
 
       `osascript -e 'tell application "iPhone Simulator" to quit'`
-      env_vars = {
-        "DYLD_ROOT_PATH" => sdk_dir,
-        "CEDAR_REPORTER_CLASS" => "CDRColorizedReporter",
-        "IPHONE_SIMULATOR_ROOT" => sdk_dir,
-        "CFFIXED_USER_HOME" => Dir.tmpdir,
-        "CEDAR_HEADLESS_SPECS" => "1"
-      }
       system_or_exit(
       %Q[xcodebuild -workspace PivotalCoreKit.xcworkspace \
                     -scheme Foundation-StaticLibSpec \
