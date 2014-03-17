@@ -3,5 +3,7 @@
 @interface UITableViewCell (SpecHelper)
 
 - (void)tap;
+- (void)tapDeleteAccessory;
+- (void)tapDeleteConfirmation;
 
 @end
