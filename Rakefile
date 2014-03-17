@@ -170,17 +170,15 @@ namespace :uikit do
 
   namespace :spec do
     require 'tmpdir'
-    task :ios => ["build:core:ios", "build:spec_helper:ios", "build:spec_helper:ios_stubs"] do
-      system_or_exit(%Q[xcodebuild -project #{project_name}.xcodeproj -target UIKit-StaticLibSpec -configuration #{CONFIGURATION} ARCHS=i386 -sdk iphonesimulator build SYMROOT=#{BUILD_DIR}], {}, output_file("uikit:spec:ios"))
+    task :ios do
       `osascript -e 'tell application "iPhone Simulator" to quit'`
-      env_vars = {
-        "DYLD_ROOT_PATH" => sdk_dir,
-        "CEDAR_REPORTER_CLASS" => "CDRColorizedReporter",
-        "IPHONE_SIMULATOR_ROOT" => sdk_dir,
-        "CFFIXED_USER_HOME" => Dir.tmpdir,
-        "CEDAR_HEADLESS_SPECS" => "1"
-      }
-      system_or_exit(%Q[#{File.join(build_dir("-iphonesimulator"), "UIKit-StaticLibSpec.app", "UIKit-StaticLibSpec")} -RegisterForSystemEvents], env_vars);
+      system_or_exit(
+      %Q[xcodebuild -workspace PivotalCoreKit.xcworkspace \
+                    -scheme UIKit-StaticLibSpec \
+                    -sdk iphonesimulator \
+                    -destination platform='iOS Simulator',OS=#{SDK_VERSION},name='iPhone Retina (4-inch)' \
+                    build test]
+      )
       `osascript -e 'tell application "iPhone Simulator" to quit'`
     end
   end
