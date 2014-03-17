@@ -82,14 +82,14 @@ namespace :foundation do
       end
     end
     task :spec_helper => ["spec_helper:osx", "spec_helper:ios"]
-    
+
     namespace :spec_helper_framework do
       task :ios do
         system_or_exit(%Q[xcodebuild -project #{project_name}.xcodeproj -target Foundation+PivotalSpecHelper-iOS -configuration #{CONFIGURATION} build SYMROOT=#{BUILD_DIR}], {}, output_file("foundation:build:spec_helper_framework:ios"))
       end
     end
     task :spec_helper_framework => ["spec_helper_framework:ios"]
-    
+
   end
 
   namespace :spec do
@@ -118,7 +118,13 @@ namespace :foundation do
         "CFFIXED_USER_HOME" => Dir.tmpdir,
         "CEDAR_HEADLESS_SPECS" => "1"
       }
-      system_or_exit(%Q[#{File.join(build_dir("-iphonesimulator"), "Foundation-StaticLibSpec.app", "Foundation-StaticLibSpec")} -RegisterForSystemEvents], env_vars)
+      system_or_exit(
+      %Q[xcodebuild -workspace PivotalCoreKit.xcworkspace \
+                    -scheme Foundation-StaticLibSpec \
+                    -sdk iphonesimulator \
+                    -destination platform='iOS Simulator',OS=#{SDK_VERSION},name='iPhone Retina (4-inch)' \
+                    build test]
+      )
       `osascript -e 'tell application "iPhone Simulator" to quit'`
     end
   end
