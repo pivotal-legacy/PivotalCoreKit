@@ -4,7 +4,7 @@
 @interface Target : NSObject
 
 
-- (void)hello;
+- (IBAction)hello;
 - (void)goodbye;
 - (void)ciao:(id)bella;
 @end
