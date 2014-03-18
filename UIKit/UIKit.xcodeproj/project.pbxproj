@@ -40,6 +40,7 @@
 		22601B5916BA209F00A807CB /* UISliderSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 22601B5816BA209F00A807CB /* UISliderSpec+Spec.mm */; };
 		22601B5B16BA263A00A807CB /* UIKit+PivotalSpecHelper.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 22601B5A16BA263A00A807CB /* UIKit+PivotalSpecHelper.h */; };
 		22601B5C16BA274B00A807CB /* UISlider+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 22601B4D16BA202A00A807CB /* UISlider+Spec.h */; };
+		346281C618D7AC1300E9C952 /* UIGestureRecognizer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 346281C518D7AC1300E9C952 /* UIGestureRecognizer.storyboard */; };
 		AE118AA418D6B57000C90D6B /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE118AA318D6B57000C90D6B /* SenTestingKit.framework */; };
 		AE118AA718D6B57000C90D6B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEBCCBE7168B97DD0056EE83 /* Foundation.framework */; };
 		AE118AC218D6B63900C90D6B /* BundleSpecLoader.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE118AC118D6B63900C90D6B /* BundleSpecLoader.mm */; };
@@ -304,6 +305,7 @@
 		22601B4E16BA202A00A807CB /* UISlider+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UISlider+Spec.m"; sourceTree = "<group>"; };
 		22601B5816BA209F00A807CB /* UISliderSpec+Spec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UISliderSpec+Spec.mm"; sourceTree = "<group>"; };
 		22601B5A16BA263A00A807CB /* UIKit+PivotalSpecHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIKit+PivotalSpecHelper.h"; sourceTree = "<group>"; };
+		346281C518D7AC1300E9C952 /* UIGestureRecognizer.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UIGestureRecognizer.storyboard; sourceTree = "<group>"; };
 		AE118AA218D6B57000C90D6B /* UIKit-StaticLibSpecBundle.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "UIKit-StaticLibSpecBundle.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE118AA318D6B57000C90D6B /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		AE118AC118D6B63900C90D6B /* BundleSpecLoader.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BundleSpecLoader.mm; sourceTree = "<group>"; };
@@ -467,6 +469,7 @@
 				B8C62E7016BC04940009CDAD /* Target.h */,
 				B8C62E7116BC04940009CDAD /* Target.m */,
 				AEB315AB18BF830C00018EDD /* UITableViewCell.storyboard */,
+				346281C518D7AC1300E9C952 /* UIGestureRecognizer.storyboard */,
 				AE3847A9168BA0B300C99B55 /* Images */,
 			);
 			path = Fixtures;
@@ -901,6 +904,7 @@
 				AE3847AF168BA11D00C99B55 /* logo-small.png in Resources */,
 				AE3847B0168BA11D00C99B55 /* pivotallabs-logo.png in Resources */,
 				AE86BD4E179C7DAD0057DEAE /* Default-568h@2x.png in Resources */,
+				346281C618D7AC1300E9C952 /* UIGestureRecognizer.storyboard in Resources */,
 				AEB315B518BF841400018EDD /* UITableViewCell.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

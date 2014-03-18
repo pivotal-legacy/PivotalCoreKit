@@ -50,7 +50,6 @@
 
 -(instancetype)initWithSwizzledTarget:(id)target action:(SEL)action {
     if (self = [self initWithoutSwizzledTarget:target action:action]) {
-        [self setTargetsAndActions:[[[NSMutableArray alloc] init] autorelease]];
         if(target && action) {
             [self addSnoopedTarget:target action:action];
         }
@@ -122,7 +121,12 @@ static NSMutableArray *whitelistedClasses;
 static char const * const targetAndActionsKey = "targetAndActionKey";
 
 -(NSMutableArray *) targetsAndActions {
-    return objc_getAssociatedObject(self, &targetAndActionsKey);
+    NSMutableArray *targetsAndActions = objc_getAssociatedObject(self, &targetAndActionsKey);
+    if (!targetsAndActions) {
+        targetsAndActions = [[[NSMutableArray alloc] init] autorelease];
+        [self setTargetsAndActions:targetsAndActions];
+    }
+    return targetsAndActions;
 }
 
 -(void) setTargetsAndActions:(NSMutableArray *)targetsAndActions {
