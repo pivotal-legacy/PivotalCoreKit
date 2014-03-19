@@ -15,6 +15,19 @@ Pod::Spec.new do |s|
     core.dependency 'PivotalCoreKit/Foundation/Core'
   end
 
+  s.subspec 'Development' do |dev|
+    dev.dependency 'PivotalCoreKit/Core'
+    dev.dependency 'PivotalCoreKit/Foundation/SpecHelper/Extensions'
+    dev.dependency 'PivotalCoreKit/Foundation/SpecHelper/Fixtures'
+    dev.dependency 'PivotalCoreKit/Foundation/SpecHelper/Helpers'
+    dev.dependency 'PivotalCoreKit/Foundation/SpecHelper/Fakes'
+    dev.dependency 'PivotalCoreKit/UIKit/SpecHelper/Extensions'
+    dev.dependency 'PivotalCoreKit/UIKit/SpecHelper/Matchers'
+    dev.dependency 'PivotalCoreKit/UIKit/SpecHelper/Stubs'
+    dev.dependency 'PivotalCoreKit/CoreLocation/SpecHelper/Base'
+    dev.dependency 'PivotalCoreKit/CoreLocation/SpecHelper/Extensions'
+  end
+
   s.subspec 'UIKit' do |ui|
     ui.subspec 'Core' do |uicore|
       uicore.source_files = 'UIKit/Core/**/*.{h,m}'
