@@ -2,7 +2,7 @@
 
 @implementation UIPopoverController (Spec)
 
-static UIPopoverController *currentPopoverController__;
+__weak static UIPopoverController *currentPopoverController__;
 static UIPopoverArrowDirection arrowDirectionMask__;
 
 + (instancetype)currentPopoverController {
