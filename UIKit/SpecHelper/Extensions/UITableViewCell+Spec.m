@@ -6,6 +6,11 @@
 - (id)viewController;
 @end
 
+@interface UITableView (ApplePrivateMethods)
+- (void)_selectRowAtIndexPath:(id)arg1 animated:(BOOL)arg2 scrollPosition:(int)arg3 notifyDelegate:(BOOL)arg4;
+- (void)_deselectRowAtIndexPath:(id)arg1 animated:(BOOL)arg2 notifyDelegate:(BOOL)arg3;
+@end
+
 @interface UITableViewCell ()
 - (id)selectionSegueTemplate;
 @end
@@ -22,33 +27,10 @@
     UITableView *tableView = (UITableView *)currentView;
 
     NSIndexPath *indexPath = [tableView indexPathForCell:self];
-
-    if ([tableView.delegate respondsToSelector:@selector(tableView:willSelectRowAtIndexPath:)]) {
-        indexPath = [tableView.delegate tableView:tableView willSelectRowAtIndexPath:indexPath];
-    }
-
-    if (indexPath != nil) {
-        if (tableView.allowsMultipleSelection && [tableView.indexPathsForSelectedRows containsObject:indexPath]) {
-            [tableView deselectRowAtIndexPath:indexPath animated:NO];
-            if ([tableView.delegate respondsToSelector:@selector(tableView:didDeselectRowAtIndexPath:)]) {
-                [tableView.delegate tableView:tableView didDeselectRowAtIndexPath:indexPath];
-            }
-        } else {
-            [tableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
-            if ([tableView.delegate respondsToSelector:@selector(tableView:didSelectRowAtIndexPath:)]) {
-                [tableView.delegate tableView:tableView didSelectRowAtIndexPath:indexPath];
-            }
-        }
-    }
-
-    UIStoryboardSegueTemplate *segueTemplate = self.selectionSegueTemplate;
-    if (segueTemplate) {
-        if (!segueTemplate.identifier) {
-            [[NSException exceptionWithName:NSInternalInconsistencyException
-                                     reason:[NSString stringWithFormat:@"Cell with a segue must have a segue identifier in order to be tapped"]
-                                   userInfo:nil] raise];
-        }
-        [segueTemplate.viewController performSegueWithIdentifier:segueTemplate.identifier sender:self];
+    if (self.isSelected) {
+        [tableView _deselectRowAtIndexPath:indexPath animated:NO notifyDelegate:YES];
+    } else {
+        [tableView _selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionMiddle notifyDelegate:YES];
     }
 }
 
