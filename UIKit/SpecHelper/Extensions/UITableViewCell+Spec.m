@@ -7,6 +7,8 @@
 @end
 
 @interface UITableView (ApplePrivateMethods)
+- (BOOL)highlightRowAtIndexPath:(id)arg1 animated:(BOOL)arg2 scrollPosition:(int)arg3;
+- (void)unhighlightRowAtIndexPath:(id)arg1 animated:(BOOL)arg2;
 - (void)_selectRowAtIndexPath:(id)arg1 animated:(BOOL)arg2 scrollPosition:(int)arg3 notifyDelegate:(BOOL)arg4;
 - (void)_deselectRowAtIndexPath:(id)arg1 animated:(BOOL)arg2 notifyDelegate:(BOOL)arg3;
 @end
@@ -25,12 +27,23 @@
 
     NSAssert(currentView, @"Cell must be in a table view in order to be tapped!");
     UITableView *tableView = (UITableView *)currentView;
-
     NSIndexPath *indexPath = [tableView indexPathForCell:self];
-    if (self.isSelected) {
-        [tableView _deselectRowAtIndexPath:indexPath animated:NO notifyDelegate:YES];
+
+    BOOL shouldContinueSelectionAfterHighlighting = YES;
+    if (self.isHighlighted) {
+        [tableView unhighlightRowAtIndexPath:indexPath animated:NO];
     } else {
-        [tableView _selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionMiddle notifyDelegate:YES];
+        // highlightRowAtIndexPath:animated:scrollPosition: checks the delegate's tableView:shouldHightRowAtIndexPath: (if the delegate responds to it).
+        // If highlightRowAtIndexPath:animated:scrollPosition: returns false, the cell should not continue with the selection process.
+        shouldContinueSelectionAfterHighlighting = [tableView highlightRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionMiddle];
+    }
+
+    if (shouldContinueSelectionAfterHighlighting) {
+        if (self.isSelected) {
+            [tableView _deselectRowAtIndexPath:indexPath animated:NO notifyDelegate:YES];
+        } else {
+            [tableView _selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionMiddle notifyDelegate:YES];
+        }
     }
 }
 

@@ -3,6 +3,7 @@
 
 
 @interface SpecTableViewController : UITableViewController
+@property (nonatomic) BOOL shouldHightlightRows;
 @end
 
 @implementation SpecTableViewController
@@ -24,8 +25,11 @@
     return;
 }
 
-@end
+- (BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath {
+    return self.shouldHightlightRows;
+}
 
+@end
 
 using namespace Cedar::Matchers;
 using namespace Cedar::Doubles;
@@ -39,6 +43,7 @@ describe(@"UITableViewCell+Spec", ^{
 
     beforeEach(^{
         controller = [[[SpecTableViewController alloc] initWithStyle:UITableViewStylePlain] autorelease];
+        controller.shouldHightlightRows = YES;
         controller.view should_not be_nil;
         [controller.view layoutIfNeeded];
 
@@ -53,6 +58,10 @@ describe(@"UITableViewCell+Spec", ^{
 
             it(@"should result in the cell being selected", ^{
                 [controller.tableView indexPathForSelectedRow] should equal([controller.tableView indexPathForCell:cell]);
+            });
+
+            it(@"should highlight the cell", ^{
+                cell.isHighlighted should be_truthy;
             });
 
             it(@"should deselect the cell if another cell is tapped", ^{
@@ -72,16 +81,41 @@ describe(@"UITableViewCell+Spec", ^{
                 [controller.tableView indexPathForSelectedRow] should equal([controller.tableView indexPathForCell:cell]);
             });
 
+            it(@"should highlight the cell", ^{
+                cell.isHighlighted should be_truthy;
+            });
+
             it(@"should deselect the cell if tapped again", ^{
                 [cell tap];
 
                 [controller.tableView indexPathsForSelectedRows] should_not contain([controller.tableView indexPathForCell:cell]);
             });
 
+            it(@"should unhighlight the cell if tapped again", ^{
+                [cell tap];
+
+                cell.isHighlighted should be_falsy;
+            });
+
             it(@"should not deselect the cell if another cell is tapped", ^{
                 [controller.tableView.visibleCells[1] tap];
 
                 [controller.tableView indexPathsForSelectedRows] should equal(@[[NSIndexPath indexPathForRow:0 inSection:0], [NSIndexPath indexPathForRow:1 inSection:0]]);
+            });
+        });
+
+        context(@"for a table with highlighting turned off", ^{
+            beforeEach(^{
+                controller.shouldHightlightRows = NO;
+                [cell tap];
+            });
+
+            it(@"should not result in the cell being selected", ^{
+                [controller.tableView indexPathForSelectedRow] should be_nil;
+            });
+
+           it(@"should not highlight the cell", ^{
+                cell.isHighlighted should be_falsy;
             });
         });
 
