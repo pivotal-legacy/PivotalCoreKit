@@ -3,6 +3,7 @@
 #import "NSArray+PivotalCore.h"
 #import "NSObject+MethodRedirection.h"
 #import "NSDictionary+QueryString.h"
+#import "NSURL+QueryComponents.h"
 
 #import "NSURLConnectionDelegate.h" // For pre-10.7 and pre-iOS5
 #import "PCKHTTPInterface.h"

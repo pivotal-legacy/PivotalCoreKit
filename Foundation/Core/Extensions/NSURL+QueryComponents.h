@@ -1,5 +1,5 @@
 #import <Foundation/Foundation.h>
 
-@interface NSURL (Spec)
+@interface NSURL (QueryComponents)
 -(NSDictionary *)queryComponents;
 @end
