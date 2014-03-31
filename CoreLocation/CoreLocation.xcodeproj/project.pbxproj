@@ -954,6 +954,7 @@
 				AE118AF718D6BC3000C90D6B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AE3848CF168CD86000C99B55 /* Build configuration list for PBXProject "CoreLocation" */ = {
 			isa = XCConfigurationList;
