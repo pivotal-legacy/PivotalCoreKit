@@ -1,9 +1,9 @@
-#import "NSURL+Spec.h"
+#import "NSURL+QueryComponents.h"
 
-@implementation NSURL (Spec)
+@implementation NSURL (QueryComponents)
 -(NSDictionary *)queryComponents {
     NSMutableDictionary *queryComponents = [NSMutableDictionary dictionary];
-    
+
     for(NSString *keyValuePairString in [self.query componentsSeparatedByString:@"&"])
     {
         NSArray *keyValuePairArray = [keyValuePairString componentsSeparatedByString:@"="];

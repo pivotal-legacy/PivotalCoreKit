@@ -23,17 +23,13 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		AE0CFF55176FE22200E6A958 /* NSURL+Spec.h in Headers */ = {isa = PBXBuildFile; fileRef = AE0CFF53176FE22200E6A958 /* NSURL+Spec.h */; };
-		AE0CFF56176FE22200E6A958 /* NSURL+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0CFF54176FE22200E6A958 /* NSURL+Spec.m */; };
-		AE0CFF58176FE46000E6A958 /* NSURL+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AE0CFF53176FE22200E6A958 /* NSURL+Spec.h */; };
-		AE0CFF59176FE47000E6A958 /* NSURL+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0CFF54176FE22200E6A958 /* NSURL+Spec.m */; };
 		AE0CFF5C1770C77D00E6A958 /* NSDictionary+QueryString.h in Headers */ = {isa = PBXBuildFile; fileRef = AE0CFF5A1770C77D00E6A958 /* NSDictionary+QueryString.h */; };
 		AE0CFF5D1770C77D00E6A958 /* NSDictionary+QueryString.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0CFF5B1770C77D00E6A958 /* NSDictionary+QueryString.m */; };
 		AE0CFF5E1770C77D00E6A958 /* NSDictionary+QueryString.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0CFF5B1770C77D00E6A958 /* NSDictionary+QueryString.m */; };
 		AE0CFF601770C81900E6A958 /* NSDictionarySpec+QueryStringSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE0CFF5F1770C80F00E6A958 /* NSDictionarySpec+QueryStringSpec.mm */; };
 		AE0CFF611770C81900E6A958 /* NSDictionarySpec+QueryStringSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE0CFF5F1770C80F00E6A958 /* NSDictionarySpec+QueryStringSpec.mm */; };
-		AE0CFF7C1770DB0100E6A958 /* NSURLSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE0CFF711770DAE300E6A958 /* NSURLSpec+Spec.mm */; };
-		AE0CFF7D1770DB0100E6A958 /* NSURLSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE0CFF711770DAE300E6A958 /* NSURLSpec+Spec.mm */; };
+		AE0CFF7C1770DB0100E6A958 /* NSURLSpec+QueryComponents.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE0CFF711770DAE300E6A958 /* NSURLSpec+QueryComponents.mm */; };
+		AE0CFF7D1770DB0100E6A958 /* NSURLSpec+QueryComponents.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE0CFF711770DAE300E6A958 /* NSURLSpec+QueryComponents.mm */; };
 		AE118A9B18D6B3CA00C90D6B /* BundleSpecLoader.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE118A9818D6B3CA00C90D6B /* BundleSpecLoader.mm */; };
 		AE2A04B318D3E6AA00D4FD96 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE384883168BBB9000C99B55 /* CoreGraphics.framework */; };
 		AE2A04B518D3E6AA00D4FD96 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE24D5AF138170CD00E4420A /* Foundation.framework */; };
@@ -46,6 +42,9 @@
 		AE6898DE16BC3AF700F3F6BC /* NSArray+PivotalCore.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6898DB16BC3AF700F3F6BC /* NSArray+PivotalCore.m */; };
 		AE6898E716BC3B7A00F3F6BC /* NSArraySpec+PivotalCore.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE6898E616BC3B7A00F3F6BC /* NSArraySpec+PivotalCore.mm */; };
 		AE6898E816BC3D0500F3F6BC /* NSArraySpec+PivotalCore.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE6898E616BC3B7A00F3F6BC /* NSArraySpec+PivotalCore.mm */; };
+		AE7A67C518E5C073004A35BE /* NSURL+QueryComponents.h in Headers */ = {isa = PBXBuildFile; fileRef = AE0CFF53176FE22200E6A958 /* NSURL+QueryComponents.h */; };
+		AE7A67C618E5C077004A35BE /* NSURL+QueryComponents.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0CFF54176FE22200E6A958 /* NSURL+QueryComponents.m */; };
+		AE7A67C718E5C077004A35BE /* NSURL+QueryComponents.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0CFF54176FE22200E6A958 /* NSURL+QueryComponents.m */; };
 		AE969353182D97A900E7306C /* NSUUIDSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE96934E182D97A900E7306C /* NSUUIDSpec+Spec.mm */; };
 		AE969354182D97A900E7306C /* NSUUIDSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE96934E182D97A900E7306C /* NSUUIDSpec+Spec.mm */; };
 		AE969361182D9A1900E7306C /* NSUUID+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE969360182D9A1900E7306C /* NSUUID+Spec.m */; };
@@ -370,7 +369,6 @@
 				B88BF0A11725A7BF00E638D3 /* FakeOperationQueue.h in Copy headers to framework */,
 				B88BF0A21725A7C200E638D3 /* PSHKFakeHTTPURLResponse.h in Copy headers to framework */,
 				B88BF0A31725A7C600E638D3 /* PSHKFakeResponses.h in Copy headers to framework */,
-				AE0CFF58176FE46000E6A958 /* NSURL+Spec.h in Copy headers to framework */,
 			);
 			name = "Copy headers to framework";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -378,12 +376,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		AE0CFF53176FE22200E6A958 /* NSURL+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+Spec.h"; sourceTree = "<group>"; };
-		AE0CFF54176FE22200E6A958 /* NSURL+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+Spec.m"; sourceTree = "<group>"; };
+		AE0CFF53176FE22200E6A958 /* NSURL+QueryComponents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+QueryComponents.h"; sourceTree = "<group>"; };
+		AE0CFF54176FE22200E6A958 /* NSURL+QueryComponents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+QueryComponents.m"; sourceTree = "<group>"; };
 		AE0CFF5A1770C77D00E6A958 /* NSDictionary+QueryString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+QueryString.h"; sourceTree = "<group>"; };
 		AE0CFF5B1770C77D00E6A958 /* NSDictionary+QueryString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+QueryString.m"; sourceTree = "<group>"; };
 		AE0CFF5F1770C80F00E6A958 /* NSDictionarySpec+QueryStringSpec.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSDictionarySpec+QueryStringSpec.mm"; sourceTree = "<group>"; };
-		AE0CFF711770DAE300E6A958 /* NSURLSpec+Spec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSURLSpec+Spec.mm"; sourceTree = "<group>"; };
+		AE0CFF711770DAE300E6A958 /* NSURLSpec+QueryComponents.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSURLSpec+QueryComponents.mm"; sourceTree = "<group>"; };
 		AE118A9818D6B3CA00C90D6B /* BundleSpecLoader.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BundleSpecLoader.mm; sourceTree = "<group>"; };
 		AE118A9918D6B3CA00C90D6B /* Foundation-StaticLibSpecBundle-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Foundation-StaticLibSpecBundle-Info.plist"; sourceTree = "<group>"; };
 		AE24D5AF138170CD00E4420A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -660,6 +658,8 @@
 				AE6898DB16BC3AF700F3F6BC /* NSArray+PivotalCore.m */,
 				AE0CFF5A1770C77D00E6A958 /* NSDictionary+QueryString.h */,
 				AE0CFF5B1770C77D00E6A958 /* NSDictionary+QueryString.m */,
+				AE0CFF53176FE22200E6A958 /* NSURL+QueryComponents.h */,
+				AE0CFF54176FE22200E6A958 /* NSURL+QueryComponents.m */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -698,8 +698,6 @@
 		AEA96BB2168B544D00861DF1 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				AE0CFF53176FE22200E6A958 /* NSURL+Spec.h */,
-				AE0CFF54176FE22200E6A958 /* NSURL+Spec.m */,
 				AEA96BB3168B544D00861DF1 /* NSURLConnection+Spec.h */,
 				AEA96BB4168B544D00861DF1 /* NSURLConnection+Spec.m */,
 				AEA96BB5168B544D00861DF1 /* NSURLRequest+Spec.h */,
@@ -742,7 +740,7 @@
 				AEA96BE3168B56BF00861DF1 /* NSObjectSpec+MethodRedirection.mm */,
 				AEA96BE4168B56BF00861DF1 /* NSStringSpec+PivotalCore.mm */,
 				AEA96BE5168B56BF00861DF1 /* NSURLConnectionSpec+Spec.mm */,
-				AE0CFF711770DAE300E6A958 /* NSURLSpec+Spec.mm */,
+				AE0CFF711770DAE300E6A958 /* NSURLSpec+QueryComponents.mm */,
 				AE96934E182D97A900E7306C /* NSUUIDSpec+Spec.mm */,
 			);
 			path = Extensions;
@@ -893,6 +891,7 @@
 				AEA96B87168B50D900861DF1 /* PCKHTTPConnectionOperation.h in Headers */,
 				AEA96B89168B50D900861DF1 /* PCKHTTPInterface.h in Headers */,
 				AEA96B8B168B50D900861DF1 /* PCKParser.h in Headers */,
+				AE7A67C518E5C073004A35BE /* NSURL+QueryComponents.h in Headers */,
 				AEA96B8C168B50D900861DF1 /* PCKParserDelegate.h in Headers */,
 				AEA96B8D168B50D900861DF1 /* PCKResponseParser.h in Headers */,
 				AEA96B8F168B50D900861DF1 /* PCKXMLParser.h in Headers */,
@@ -916,7 +915,6 @@
 				AEA96CC0168B6FFC00861DF1 /* Foundation+PivotalSpecHelper.h in Headers */,
 				E309448B16F117180034B3A9 /* PCKConnectionDelegateWrapper.h in Headers */,
 				E3AD57BA16F4AD0E003564BA /* PCKConnectionBlockDelegate.h in Headers */,
-				AE0CFF55176FE22200E6A958 /* NSURL+Spec.h in Headers */,
 				DE99C5600FEEF8FC75AC5D85 /* PSHKObserver.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1286,6 +1284,7 @@
 				AEA96B7B168B50D900861DF1 /* NSData+PivotalCore.m in Sources */,
 				AEA96B7D168B50D900861DF1 /* NSObject+MethodDecoration.m in Sources */,
 				AEA96B7F168B50D900861DF1 /* NSObject+MethodRedirection.m in Sources */,
+				AE7A67C718E5C077004A35BE /* NSURL+QueryComponents.m in Sources */,
 				AEA96B81168B50D900861DF1 /* NSString+PivotalCore.m in Sources */,
 				AEA96B84168B50D900861DF1 /* PCKHTTPConnection.m in Sources */,
 				AEA96B86168B50D900861DF1 /* PCKHTTPConnectionDelegate.m in Sources */,
@@ -1311,7 +1310,6 @@
 				AEA96BCC168B544D00861DF1 /* PSHKFixtures.m in Sources */,
 				E309448C16F117180034B3A9 /* PCKConnectionDelegateWrapper.m in Sources */,
 				E3AD57BB16F4AD0E003564BA /* PCKConnectionBlockDelegate.m in Sources */,
-				AE0CFF56176FE22200E6A958 /* NSURL+Spec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1342,7 +1340,7 @@
 				E3F9C81116F50EED00347B30 /* PCKConnectionDelegateWrapperSpec.mm in Sources */,
 				E3F9C81416F50EFC00347B30 /* PCKConnectionBlockDelegateSpec.mm in Sources */,
 				AE0CFF601770C81900E6A958 /* NSDictionarySpec+QueryStringSpec.mm in Sources */,
-				AE0CFF7C1770DB0100E6A958 /* NSURLSpec+Spec.mm in Sources */,
+				AE0CFF7C1770DB0100E6A958 /* NSURLSpec+QueryComponents.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1353,6 +1351,7 @@
 				AEA96CA7168B67FB00861DF1 /* NSData+PivotalCore.m in Sources */,
 				AEA96CA8168B67FB00861DF1 /* NSObject+MethodDecoration.m in Sources */,
 				AEA96CA9168B67FB00861DF1 /* NSObject+MethodRedirection.m in Sources */,
+				AE7A67C618E5C077004A35BE /* NSURL+QueryComponents.m in Sources */,
 				AEA96CAA168B67FB00861DF1 /* NSString+PivotalCore.m in Sources */,
 				AEA96CAB168B67FB00861DF1 /* PCKHTTPConnection.m in Sources */,
 				AEA96CAC168B67FB00861DF1 /* PCKHTTPConnectionDelegate.m in Sources */,
@@ -1378,7 +1377,6 @@
 				AEA96CA6168B67E800861DF1 /* PSHKFixtures.m in Sources */,
 				E309448D16F117180034B3A9 /* PCKConnectionDelegateWrapper.m in Sources */,
 				E3AD57BC16F4AD0E003564BA /* PCKConnectionBlockDelegate.m in Sources */,
-				AE0CFF59176FE47000E6A958 /* NSURL+Spec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1409,7 +1407,7 @@
 				E3F9C81216F50EED00347B30 /* PCKConnectionDelegateWrapperSpec.mm in Sources */,
 				E3F9C81516F50EFC00347B30 /* PCKConnectionBlockDelegateSpec.mm in Sources */,
 				AE0CFF611770C81900E6A958 /* NSDictionarySpec+QueryStringSpec.mm in Sources */,
-				AE0CFF7D1770DB0100E6A958 /* NSURLSpec+Spec.mm in Sources */,
+				AE0CFF7D1770DB0100E6A958 /* NSURLSpec+QueryComponents.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

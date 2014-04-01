@@ -5,15 +5,15 @@
 #import <Cedar/SpecHelper.h>
 #endif
 
-#import "NSURL+Spec.h"
+#import "NSURL+QueryComponents.h"
 
 using namespace Cedar::Matchers;
 using namespace Cedar::Doubles;
 
 
-SPEC_BEGIN(NSURLSpec_Spec)
+SPEC_BEGIN(NSURLSpec_QueryComponents)
 
-describe(@"NSURL (spec extensions)", ^{
+describe(@"NSURL (query components extensions)", ^{
     __block NSURL *URL;
 
     describe(@"-queryComponents", ^{
