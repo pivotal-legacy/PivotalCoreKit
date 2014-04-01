@@ -1,3 +1,7 @@
+#if !__has_feature(objc_arc)
+#error This class must be compiled with ARC
+#endif
+
 #import "UIPopoverController+Spec.h"
 
 @implementation UIPopoverController (Spec)
