@@ -7,86 +7,21 @@ using namespace Cedar::Doubles;
 SPEC_BEGIN(NSString_PivotalCoreKit_UIKitSpec)
 
 describe(@"NSString_PivotalCoreKit_UIKit", ^{
-    __block NSString *string;
-
-    beforeEach(^{
-        string = @"";
-    });
 
     describe(@"heightWithWidth:font:", ^{
-        __block CGFloat width;
         __block UIFont *font;
-        __block CGFloat height;
 
         beforeEach(^{
-            width = 300.0f;
             font = [UIFont systemFontOfSize:17.0f];
         });
 
-        context(@"< iOS 7", ^{
-            __block CGSize size;
-
-            subjectAction(^{
-                size = [string sizeWithFont:font constrainedToSize:CGSizeMake(width, CGFLOAT_MAX)];
-                height = [string heightWithWidth:width font:font];
-            });
-
-            if ([[[UIDevice currentDevice] systemVersion] compare:@"7.0" options:NSNumericSearch] == NSOrderedAscending) {
-                context(@"short string", ^{
-                    beforeEach(^{
-                        string = @"short string";
-                    });
-
-                    it(@"should return the correct height", ^{
-                        height should equal(size.height);
-                    });
-                });
-
-                context(@"long string", ^{
-                    beforeEach(^{
-                        string = @"really a very a long, probably unnecessarily long, string that undoubtedly will require several lines to render within the given height";
-                    });
-
-                    it(@"should return the correct height", ^{
-                        height should equal(size.height);
-                    });
-                });
-            }
+        it(@"should return the height for short strings", ^{
+            [@"one line" heightWithWidth:150.0f font:font] should be_close_to(21.0f).within(1.0f);
         });
 
-
-        context(@"iOS 7+", ^{
-            __block CGRect rect;
-
-            subjectAction(^{
-                rect = [string boundingRectWithSize:CGSizeMake(width, CGFLOAT_MAX)
-                                            options:(NSStringDrawingOptions)(NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading)
-                                         attributes:@{NSFontAttributeName: font}
-                                            context:nil];
-                height = [string heightWithWidth:width font:font];
-            });
-
-            if ([[[UIDevice currentDevice] systemVersion] compare:@"7.0" options:NSNumericSearch] != NSOrderedAscending) {
-                context(@"short string", ^{
-                    beforeEach(^{
-                        string = @"short string";
-                    });
-
-                    it(@"should return the correct height", ^{
-                        height should equal(rect.size.height);
-                    });
-                });
-
-                context(@"long string", ^{
-                    beforeEach(^{
-                        string = @"really a very a long, probably unnecessarily long, string that undoubtedly will require several lines to render within the given height";
-                    });
-
-                    it(@"should return the correct height", ^{
-                        height should equal(rect.size.height);
-                    });
-                });
-            }
+        it(@"should return the height for strings that wrap onto many lines", ^{
+            NSString *string = @"Really really really really really really really really really really really really really long string";
+            [string heightWithWidth:150.0f font:font] should be_close_to(105.0f).within(5.0f);
         });
 
     });
