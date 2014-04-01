@@ -107,6 +107,11 @@
 		AEDABB6818E9DE3B004E6626 /* InnerView.m in Sources */ = {isa = PBXBuildFile; fileRef = AEDABB6718E9DE3B004E6626 /* InnerView.m */; };
 		AEDABB6B18E9DFC7004E6626 /* OuterView.m in Sources */ = {isa = PBXBuildFile; fileRef = AEDABB6A18E9DFC7004E6626 /* OuterView.m */; };
 		AEDABB6D18E9DFD4004E6626 /* OuterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEDABB6C18E9DFD4004E6626 /* OuterView.xib */; };
+		AEDABBBB18EA214A004E6626 /* ChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEDABBB618EA214A004E6626 /* ChildViewController.m */; };
+		AEDABBBC18EA214A004E6626 /* ChildViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEDABBB718EA214A004E6626 /* ChildViewController.xib */; };
+		AEDABBBD18EA214A004E6626 /* MainController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEDABBB918EA214A004E6626 /* MainController.m */; };
+		AEDABBBE18EA214A004E6626 /* MainController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEDABBBA18EA214A004E6626 /* MainController.xib */; };
+		AEDABBD618EA3910004E6626 /* UIViewController+PCKNibHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = AEDABBD518EA3910004E6626 /* UIViewController+PCKNibHelpers.m */; };
 		AEE0B69618A3572C0007A9D0 /* UIView+StubbedAnimation.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AEE0B69518A3572C0007A9D0 /* UIView+StubbedAnimation.h */; };
 		AEEECC18181F3135006B52CD /* UIImagePickerController+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AEEECC16181F3135006B52CD /* UIImagePickerController+Spec.h */; };
 		AEEECC19181F3135006B52CD /* UIImagePickerController+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AEEECC17181F3135006B52CD /* UIImagePickerController+Spec.m */; };
@@ -394,6 +399,14 @@
 		AEDABB6918E9DFC7004E6626 /* OuterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OuterView.h; sourceTree = "<group>"; };
 		AEDABB6A18E9DFC7004E6626 /* OuterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OuterView.m; sourceTree = "<group>"; };
 		AEDABB6C18E9DFD4004E6626 /* OuterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OuterView.xib; sourceTree = "<group>"; };
+		AEDABBB518EA214A004E6626 /* ChildViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChildViewController.h; sourceTree = "<group>"; };
+		AEDABBB618EA214A004E6626 /* ChildViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChildViewController.m; sourceTree = "<group>"; };
+		AEDABBB718EA214A004E6626 /* ChildViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChildViewController.xib; sourceTree = "<group>"; };
+		AEDABBB818EA214A004E6626 /* MainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainController.h; sourceTree = "<group>"; };
+		AEDABBB918EA214A004E6626 /* MainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainController.m; sourceTree = "<group>"; };
+		AEDABBBA18EA214A004E6626 /* MainController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainController.xib; sourceTree = "<group>"; };
+		AEDABBD418EA3910004E6626 /* UIViewController+PCKNibHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+PCKNibHelpers.h"; sourceTree = "<group>"; };
+		AEDABBD518EA3910004E6626 /* UIViewController+PCKNibHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+PCKNibHelpers.m"; sourceTree = "<group>"; };
 		AEE0B69518A3572C0007A9D0 /* UIView+StubbedAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+StubbedAnimation.h"; sourceTree = "<group>"; };
 		AEEECC16181F3135006B52CD /* UIImagePickerController+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImagePickerController+Spec.h"; sourceTree = "<group>"; };
 		AEEECC17181F3135006B52CD /* UIImagePickerController+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImagePickerController+Spec.m"; sourceTree = "<group>"; };
@@ -495,6 +508,12 @@
 				AEDABB6918E9DFC7004E6626 /* OuterView.h */,
 				AEDABB6A18E9DFC7004E6626 /* OuterView.m */,
 				AEDABB6C18E9DFD4004E6626 /* OuterView.xib */,
+				AEDABBB518EA214A004E6626 /* ChildViewController.h */,
+				AEDABBB618EA214A004E6626 /* ChildViewController.m */,
+				AEDABBB718EA214A004E6626 /* ChildViewController.xib */,
+				AEDABBB818EA214A004E6626 /* MainController.h */,
+				AEDABBB918EA214A004E6626 /* MainController.m */,
+				AEDABBBA18EA214A004E6626 /* MainController.xib */,
 				B8C62E7016BC04940009CDAD /* Target.h */,
 				B8C62E7116BC04940009CDAD /* Target.m */,
 				346281C518D7AC1300E9C952 /* UIGestureRecognizer.storyboard */,
@@ -587,6 +606,8 @@
 				AEDABB6018E9DCC9004E6626 /* UIView+PCKNibHelpers.m */,
 				AEBCCBD1168B96C80056EE83 /* UIView+PivotalCore.h */,
 				AEBCCBD2168B96C80056EE83 /* UIView+PivotalCore.m */,
+				AEDABBD418EA3910004E6626 /* UIViewController+PCKNibHelpers.h */,
+				AEDABBD518EA3910004E6626 /* UIViewController+PCKNibHelpers.m */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -937,8 +958,10 @@
 				AEDABB6D18E9DFD4004E6626 /* OuterView.xib in Resources */,
 				AE3847AE168BA0E300C99B55 /* AWebViewController.xib in Resources */,
 				AEDABB6518E9DE2C004E6626 /* InnerView.xib in Resources */,
+				AEDABBBC18EA214A004E6626 /* ChildViewController.xib in Resources */,
 				AE3847AF168BA11D00C99B55 /* logo-small.png in Resources */,
 				AE3847B0168BA11D00C99B55 /* pivotallabs-logo.png in Resources */,
+				AEDABBBE18EA214A004E6626 /* MainController.xib in Resources */,
 				AE86BD4E179C7DAD0057DEAE /* Default-568h@2x.png in Resources */,
 				346281C618D7AC1300E9C952 /* UIGestureRecognizer.storyboard in Resources */,
 				AEB315B518BF841400018EDD /* UITableViewCell.storyboard in Resources */,
@@ -1034,6 +1057,7 @@
 			files = (
 				AE3847B7168BA3B500C99B55 /* UIBarButtonItem+Button.m in Sources */,
 				AEDABB6118E9DCC9004E6626 /* UIView+PCKNibHelpers.m in Sources */,
+				AEDABBD618EA3910004E6626 /* UIViewController+PCKNibHelpers.m in Sources */,
 				AE3847B8168BA3B500C99B55 /* UIImage+PivotalCore.m in Sources */,
 				FA91AAA1186737B700925A6B /* NSAttributedString+PivotalCoreKit_UIKit.m in Sources */,
 				AE3847B9168BA3B500C99B55 /* UIView+PivotalCore.m in Sources */,
@@ -1052,6 +1076,7 @@
 				FA91AA92186725CC00925A6B /* NSString+PivotalCoreKit_UIKit.m in Sources */,
 				AE1FBEA317D15A4100B0F03B /* UITableViewCellSpec+Spec.mm in Sources */,
 				FA91AAA2186737B700925A6B /* NSAttributedString+PivotalCoreKit_UIKit.m in Sources */,
+				AEDABBBD18EA214A004E6626 /* MainController.m in Sources */,
 				AEB6663E18C6685F00B09C00 /* UIPopoverControllerSpec+Spec.mm in Sources */,
 				AEBCCC9A168B9C530056EE83 /* UIImage+PivotalCoreSpec.mm in Sources */,
 				AEF67CE218CA436600C221D1 /* UIActionSheetSpec+Spec.mm in Sources */,
@@ -1068,6 +1093,7 @@
 				AE898FF818071E2B00DDB948 /* UIViewSpec+StubbedAnimations.mm in Sources */,
 				22601B5916BA209F00A807CB /* UISliderSpec+Spec.mm in Sources */,
 				B8C62E6F16BC04230009CDAD /* UIBarButtonItemSpec+Spec.mm in Sources */,
+				AEDABBBB18EA214A004E6626 /* ChildViewController.m in Sources */,
 				B8C62E7216BC04940009CDAD /* Target.m in Sources */,
 				AEC40CC0174C24CF00474D2D /* UIAlertViewSpec+Spec.mm in Sources */,
 				AEC40CC1174C24CF00474D2D /* UIWebViewSpec+Spec.mm in Sources */,

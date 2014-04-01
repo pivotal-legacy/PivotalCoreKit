@@ -31,23 +31,27 @@
 @implementation UIView (PCKNibHelpers)
 
 - (id)awakeAfterUsingCoder:(NSCoder *)aDecoder {
-    UINib *classNib = nil;
-    if ([self.restorationIdentifier hasPrefix:@"placeholder"] && (classNib = [UINib nibWithNibName:NSStringFromClass([self class]) bundle:nil])) {
+    NSString *nibName = NSStringFromClass([self class]);
+    if ([self.restorationIdentifier hasPrefix:@"placeholder"] && [[NSBundle mainBundle] pathForResource:nibName ofType:@"nib"]) {
+        UINib *classNib = [UINib nibWithNibName:nibName bundle:nil];
         UIView *nibInstance = [[classNib instantiateWithOwner:nil options:nil] firstObject];
-        nibInstance.translatesAutoresizingMaskIntoConstraints = NO;
-
-        for (NSLayoutConstraint *constraint in self.constraints) {
-            [nibInstance addConstraint:[constraint constraintByReplacingView:self withView:nibInstance]];
-        }
-
-        for (NSLayoutConstraint *constraint in self.superview.constraints) {
-            [self.superview addConstraint:[constraint constraintByReplacingView:self withView:nibInstance]];
-        }
-
+        [nibInstance configureWithPlaceholderView:self];
         return nibInstance;
     }
 
     return self;
+}
+
+- (void)configureWithPlaceholderView:(UIView *)placeholderView {
+    self.frame = placeholderView.frame;
+
+    for (NSLayoutConstraint *constraint in placeholderView.constraints) {
+        [self addConstraint:[constraint constraintByReplacingView:placeholderView withView:self]];
+    }
+
+    for (NSLayoutConstraint *constraint in self.superview.constraints) {
+        [placeholderView.superview addConstraint:[constraint constraintByReplacingView:placeholderView withView:self]];
+    }
 }
 
 @end

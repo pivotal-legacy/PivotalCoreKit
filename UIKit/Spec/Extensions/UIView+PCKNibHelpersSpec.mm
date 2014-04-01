@@ -1,6 +1,8 @@
 #import "SpecHelper.h"
 #import "OuterView.h"
 #import "InnerView.h"
+#import "MainController.h"
+#import "ChildViewController.h"
 
 using namespace Cedar::Matchers;
 
@@ -45,6 +47,33 @@ describe(@"Using a Nib to load another nib-based view class", ^{
         });
     });
 
+});
+
+describe(@"loading a child controller from a parent controller's nib", ^{
+    __block MainController *mainController;
+    __block ChildViewController *childController;
+    beforeEach(^{
+        mainController = [[[MainController alloc] init] autorelease];
+        [mainController.view layoutIfNeeded];
+        childController = mainController.childController;
+        [childController.view layoutIfNeeded];
+    });
+
+    it(@"should have the child", ^{
+        childController should be_instance_of([ChildViewController class]);
+    });
+
+    it(@"should correctly position the child", ^{
+        CGRectGetMinY(childController.view.frame) should be_close_to(368);
+    });
+
+    it(@"should load the child controller's view and bind its outlets", ^{
+        childController.helloLabel.text should equal(@"Hello");
+    });
+
+    it(@"should constrain the child's children", ^{
+        childController.helloLabel.center.x should be_close_to(CGRectGetMidX(childController.view.bounds));
+    });
 });
 
 SPEC_END
