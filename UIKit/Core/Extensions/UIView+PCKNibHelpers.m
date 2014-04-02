@@ -46,6 +46,10 @@
     self.frame = placeholderView.frame;
 
     for (NSLayoutConstraint *constraint in placeholderView.constraints) {
+        if ([placeholderView.subviews containsObject:constraint.firstItem] || [placeholderView.subviews containsObject:constraint.secondItem]) {
+            continue;
+        }
+
         [self addConstraint:[constraint constraintByReplacingView:placeholderView withView:self]];
     }
 
