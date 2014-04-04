@@ -22,10 +22,10 @@ While it has useful functionality in a few different domains, it has a particula
 * Stub out UIWebView's functionality
 
 ### Full list
-PivotalCoreKit is split along framework lines, with separate Xcode projects for the Foundation, UIKit, and CoreLocation frameworks. Each project is then separated again out into sub-sections: Core, SpecHelper, and SpecHelperStubs. 
+PivotalCoreKit is split along framework lines, with separate Xcode projects for the Foundation, UIKit, and CoreLocation frameworks. Each project is then separated again out into sub-sections: Core, SpecHelper, and SpecHelperStubs.
 
-**Core** methods are meant to be used anywhere they're useful, whether in specs or in the primary application.  
-**SpecHelper** extends built-in classes to make testing easier and more seemless.  
+**Core** methods are meant to be used anywhere they're useful, whether in specs or in the primary application.
+**SpecHelper** extends built-in classes to make testing easier and more seemless.
 **SpecHelperStubs** stub out (and replace) a class's functionality to allow a developer to more easily inspect its state.
 
 Here is a (hopefully exhaustive but inevitably out of date) list of PivotalCoreKit functionality, separated by framework/section:
@@ -58,7 +58,7 @@ Here is a (hopefully exhaustive but inevitably out of date) list of PivotalCoreK
     * Resizing UIViews with corner pinning
     * Calculate accurate height from NSString and NSAttributedString drawing
   * SpecHelper
-    * Simulate a tap on 
+    * Simulate a tap on
       * UIButton
       * UITableViewCell
       * UICollectionViewCell
@@ -67,7 +67,7 @@ Here is a (hopefully exhaustive but inevitably out of date) list of PivotalCoreK
     * Simulate a tap, swipe, or pinch on a UIView (triggers attached gesture recognizers)
     * Simulate a new value for a UISlider
     * Simulate recognition of specific gesture recognizer
-    * Compare UIImages for equality 
+    * Compare UIImages for equality
     * Query a UIWindow for the first responder
   * SpecHelperStubs
     * Query, inspect, and simulate taps on the current UIActionSheet
@@ -84,7 +84,7 @@ PivotalCoreKit is test-driven and includes Specs in each project.
 
 ## That sounds great, give me some examples
 
-Maybe you have a bunch of quarterly reports and want to collect all the finances from the first week for each report.  
+Maybe you have a bunch of quarterly reports and want to collect all the finances from the first week for each report.
 After linking to **Foundation+PivotalCore**
 ```objc
 #import "NSArray+PivotalCore.h"
@@ -95,8 +95,8 @@ NSArray *firstWeekFinances = [reports collect:^id(PLReport *report) {
 }];
 ```
 
-Or maybe you're testing that tapping a button properly fires off a network request  
-After linking to **UIKit+PivotalSpecHelper**  
+Or maybe you're testing that tapping a button properly fires off a network request
+After linking to **UIKit+PivotalSpecHelper**
 ```objc
 #import "UIControl+Spec.h"
 /* ... */
@@ -123,14 +123,42 @@ it(@"webview should load example.com", ^{
 Without PivotalCoreKit's UIWebView stubs, the webView's NSURLRequest will be nil because the real UIWebView hasn't started actually making the request. A stubbed UIWebView updates the request property immediately.
 
 ## How do I install PivotalCoreKit
+### Via CocoaPods
+
+1. Install [CocoaPods](http://cocoapods.org/) with `gem install cocoapods`.
+2. Create a file in your XCode project called `Podfile` and add the following line:
+
+```
+pod 'PivotalCoreKit'
+```
+
+The PivotalCoreKit cocoapod is split into multiple sub pods to allow users to pick-and-choose what parts of the library they want to use. so examine the podspec to choose what pieces you want.  An example of a more complicated PodFile would look like this:
+
+```
+target 'ImplementationTarget' do
+  pod 'PivotalCoreKit'
+end
+
+target 'Specs' do
+  pod 'PivotalCoreKit'
+  pod 'PivotalCoreKit/UIKit/SpecHelper/Extensions'
+  pod 'PivotalCoreKit/Foundation/SpecHelper/Fakes'
+end
+```
+
+3. Run `pod install` in your xcode project directory. CocoaPods should download and
+install the correct portions of the PivotalCoreKit library, and create a new Xcode workspace. Open up this workspace in Xcode.
+
+### Via Git Submodules
+
 * In a shell in the root of your project run: `git submodule add git@github.com:pivotal/PivotalCoreKit.git Externals/PivotalCoreKit`
 * Add the PivotalCoreKit project(s) (Foundation.xcodeproj, UIKit.xcodeproj, or CoreLocation.xcodeproj) you need into your project for the appropriate target
 * In your application's Project Settings, under Build Phases, add the desired StaticLib to "Target Dependencies"
 * Add the corresponding binary to the Link Binary With Libraries section
 * Switch to Build Settings and update your Header Search Paths to include the path to folder containing the added subproject. Make it recursive.
- * e.g. "$(SRCROOT)/Externals/PivotalCoreKit/path/to/specific/projectfolder/". 
+ * e.g. "$(SRCROOT)/Externals/PivotalCoreKit/path/to/specific/projectfolder/".
 
-### Example, adding -[UIButton tap] to a spec target
+#### Example, adding -[UIButton tap] to a spec target
 * `git submodule add git@github.com:pivotal/PivotalCoreKit.git Externals/PivotalCoreKit`
 * Right-click Specs folder in Xcode -> Add Files
 * Navigate into PivotalCoreKit/UIKit folder, select UIKit.xcodeproj and add.
@@ -143,10 +171,10 @@ Without PivotalCoreKit's UIWebView stubs, the webView's NSURLRequest will be nil
 ## Library Documentation
 
 Documentation for specific methods and functionality can be found at http://cocoadocs.org/docsets/PivotalCoreKit/
-			
+
 ## MIT License
 
-Copyright (c) 2014 Pivotal Labs (http://pivotallabs.com/)  
+Copyright (c) 2014 Pivotal Labs (http://pivotallabs.com/)
 Contact email: akitchen@pivotallabs.com
 
 Permission is hereby granted, free of charge, to any person
