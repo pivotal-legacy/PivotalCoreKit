@@ -43,7 +43,16 @@ Pod::Spec.new do |s|
       end
 
       spec.subspec 'Stubs' do |stub|
+        stub.requires_arc = true
+        non_arc_files = 'UIKit/SpecHelper/Stubs/UIAlertView+Spec.m',
+                        'UIKit/SpecHelper/Stubs/UIActionSheet+Spec.m',
+                        'UIKit/SpecHelper/Stubs/UIWebView+Spec.m'
         stub.source_files = ['UIKit/SpecHelper/Stubs/*.{h,m}', 'UIKit/SpecHelper/UIKit+PivotalSpecHelperStubs.h']
+        stub.exclude_files = non_arc_files
+        stub.subspec 'Stubs-no-arc' do |stub_noarc|
+          stub_noarc.requires_arc = false
+          stub_noarc.source_files = non_arc_files
+        end
       end
     end
   end
@@ -57,7 +66,7 @@ Pod::Spec.new do |s|
 
     f.subspec 'SpecHelper' do |spec_helper|
       spec_helper.subspec 'Extensions' do |ext|
-        ext.source_files = ['Foundation/Core/Extensions/NSObject+MethodRedirection.h', 'Foundation/SpecHelper/Helpers/PCKConnectionBlockDelegate.h', 'Foundation/SpecHelper/Helpers/PCKConnectionDelegateWrapper.h', 'Foundation/SpecHelper/Fakes/PSHKFakeHTTPURLResponse.h', 'Foundation/SpecHelper/Fakes/FakeOperationQueue.h', 'Foundation/SpecHelper/Extensions/*.{h,m}']
+        ext.source_files = ['Foundation/SpecHelper/Foundation+PivotalSpecHelper.h', 'Foundation/Core/Extensions/NSObject+MethodRedirection.h', 'Foundation/SpecHelper/Helpers/PCKConnectionBlockDelegate.h', 'Foundation/SpecHelper/Helpers/PCKConnectionDelegateWrapper.h', 'Foundation/SpecHelper/Fakes/PSHKFakeHTTPURLResponse.h', 'Foundation/SpecHelper/Fakes/FakeOperationQueue.h', 'Foundation/SpecHelper/Extensions/*.{h,m}']
       end
 
       spec_helper.subspec 'Fixtures' do |fix|
