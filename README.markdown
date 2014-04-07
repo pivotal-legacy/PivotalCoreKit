@@ -125,6 +125,34 @@ it(@"webview should load example.com", ^{
 Without PivotalCoreKit's UIWebView stubs, the webView's NSURLRequest will be nil because the real UIWebView hasn't started actually making the request. A stubbed UIWebView updates the request property immediately.
 
 ## How do I install PivotalCoreKit
+### Via CocoaPods
+
+1. Install [CocoaPods](http://cocoapods.org/) with `gem install cocoapods`.
+2. Create a file in your XCode project called `Podfile` and add the following line:
+
+```
+pod 'PivotalCoreKit'
+```
+
+The PivotalCoreKit cocoapod is split into multiple sub pods to allow users to pick-and-choose what parts of the library they want to use. so examine the podspec to choose what pieces you want.  An example of a more complicated PodFile would look like this:
+
+```
+target 'ImplementationTarget' do
+  pod 'PivotalCoreKit'
+end
+
+target 'Specs' do
+  pod 'PivotalCoreKit'
+  pod 'PivotalCoreKit/UIKit/SpecHelper/Extensions'
+  pod 'PivotalCoreKit/Foundation/SpecHelper/Fakes'
+end
+```
+
+3. Run `pod install` in your xcode project directory. CocoaPods should download and
+install the correct portions of the PivotalCoreKit library, and create a new Xcode workspace. Open up this workspace in Xcode.
+
+### Via Git Submodules
+
 * In a shell in the root of your project run: `git submodule add git@github.com:pivotal/PivotalCoreKit.git Externals/PivotalCoreKit`
 * Add the PivotalCoreKit project(s) (Foundation.xcodeproj, UIKit.xcodeproj, or CoreLocation.xcodeproj) you need into your project for the appropriate target
 * In your application's Project Settings, under Build Phases, add the desired StaticLib to "Target Dependencies"
@@ -132,7 +160,7 @@ Without PivotalCoreKit's UIWebView stubs, the webView's NSURLRequest will be nil
 * Switch to Build Settings and update your Header Search Paths to include the path to folder containing the added subproject. Make it recursive.
  * e.g. "$(SRCROOT)/Externals/PivotalCoreKit/path/to/specific/projectfolder/".
 
-### Example, adding -[UIButton tap] to a spec target
+#### Example, adding -[UIButton tap] to a spec target
 * `git submodule add git@github.com:pivotal/PivotalCoreKit.git Externals/PivotalCoreKit`
 * Right-click Specs folder in Xcode -> Add Files
 * Navigate into PivotalCoreKit/UIKit folder, select UIKit.xcodeproj and add.
