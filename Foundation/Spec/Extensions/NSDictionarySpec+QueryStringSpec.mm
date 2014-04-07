@@ -13,6 +13,24 @@ using namespace Cedar::Doubles;
 SPEC_BEGIN(NSDictionarySpec_QueryStringSpec)
 
 describe(@"NSDictionary (QueryString Extensions)", ^{
+    describe(@"+fromQueryString", ^{
+        it(@"does basic query string parsing", ^{
+            NSString *basicQueryString = @"foo=bar&baz=bat&1=2";
+            [NSDictionary dictionaryFromQueryString:basicQueryString] should equal(@{
+                @"foo" : @"bar",
+                @"baz" : @"bat",
+                @"1" : @"2"
+            });
+        });
+
+        it(@"url decodes parameters", ^{
+            NSString *basicQueryString = @"hat%5Bcat%5D%5Bfat%5D=foo%20%2B%20bar%20%26%20baz%20";
+            [NSDictionary dictionaryFromQueryString:basicQueryString] should equal(@{
+                @"hat[cat][fat]" : @"foo + bar & baz "
+            });
+        });
+    });
+
     describe(@"-queryString", ^{
         __block NSDictionary *dictionary;
         __block NSString *query;
@@ -35,7 +53,7 @@ describe(@"NSDictionary (QueryString Extensions)", ^{
             dictionary = @{@"hat[cat][fat]" : @"foo + bar & baz "};
 
             query = dictionary.queryString;
-            
+
             query should equal(@"hat%5Bcat%5D%5Bfat%5D=foo%20%2B%20bar%20%26%20baz%20");
         });
     });
