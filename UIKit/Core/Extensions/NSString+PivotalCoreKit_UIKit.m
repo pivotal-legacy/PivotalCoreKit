@@ -10,7 +10,10 @@
                                attributes:@{NSFontAttributeName: font}
                                   context:nil].size.height;
     }
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
     return [self sizeWithFont:font constrainedToSize:CGSizeMake(width, CGFLOAT_MAX)].height;
+#pragma clang diagnostic pop
 }
 
 @end
