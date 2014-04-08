@@ -6,7 +6,7 @@
 
 @implementation UIPopoverController (Spec)
 
-__weak static UIPopoverController *currentPopoverController__;
+static __weak UIPopoverController *currentPopoverController__;
 static UIPopoverArrowDirection arrowDirectionMask__;
 
 + (instancetype)currentPopoverController {
@@ -24,13 +24,6 @@ static UIPopoverArrowDirection arrowDirectionMask__;
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wobjc-protocol-method-implementation"
 
-- (void)dealloc {
-    // [super dealloc] will raise an exception if -isPopoverVisible is YES when deallocating
-    if (self == currentPopoverController__) {
-        currentPopoverController__ = nil;
-    }
-}
-
 // -presentPopoverFromBarButtonItem:permittedArrowDirections:animated: calls through to this method
 - (void)presentPopoverFromRect:(CGRect)rect inView:(UIView *)view permittedArrowDirections:(UIPopoverArrowDirection)arrowDirections animated:(BOOL)animated {
     currentPopoverController__ = self;
@@ -38,8 +31,8 @@ static UIPopoverArrowDirection arrowDirectionMask__;
 }
 
 - (void)dismissPopoverAnimated:(BOOL)animated {
-    if (self == currentPopoverController__) {
-        currentPopoverController__ = nil;
+    if ([self isPopoverVisible]) {
+        [[self class] reset];
     }
 }
 
