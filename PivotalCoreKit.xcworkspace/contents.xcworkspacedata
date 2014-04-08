@@ -11,7 +11,10 @@
       location = "group:CoreLocation/CoreLocation.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:BUILD-TARGETS.markdown">
+      location = "group:CHANGES.markdown">
+   </FileRef>
+   <FileRef
+      location = "group:PivotalCoreKit.podspec">
    </FileRef>
    <FileRef
       location = "group:Rakefile">
