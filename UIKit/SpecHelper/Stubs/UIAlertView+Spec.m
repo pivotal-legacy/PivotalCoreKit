@@ -1,3 +1,7 @@
+#if !__has_feature(objc_arc)
+#error This class must be compiled with ARC
+#endif
+
 #import "UIAlertView+Spec.h"
 
 
@@ -14,13 +18,12 @@ static NSMutableArray *alertViewStack__ = nil;
 }
 
 + (void)reset {
-    [alertViewStack__ release];
     alertViewStack__ = nil;
 }
 
 + (void)setCurrentAlertView:(UIAlertView *)alertView {
     if (!alertViewStack__) {
-        alertViewStack__ = [[NSMutableArray array] retain];
+        alertViewStack__ = [[NSMutableArray alloc] init];
     }
     [alertViewStack__ addObject:alertView];
 }

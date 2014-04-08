@@ -69,7 +69,7 @@
 		AE95306A1832EE9300C802E9 /* UIViewSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE9530691832EE9300C802E9 /* UIViewSpec+Spec.mm */; };
 		AEB315B518BF841400018EDD /* UITableViewCell.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEB315AB18BF830C00018EDD /* UITableViewCell.storyboard */; };
 		AEB6662C18C6681A00B09C00 /* UIPopoverController+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AEB6662A18C6681A00B09C00 /* UIPopoverController+Spec.h */; };
-		AEB6662D18C6681A00B09C00 /* UIPopoverController+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB6662B18C6681A00B09C00 /* UIPopoverController+Spec.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		AEB6662D18C6681A00B09C00 /* UIPopoverController+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB6662B18C6681A00B09C00 /* UIPopoverController+Spec.m */; };
 		AEB6663E18C6685F00B09C00 /* UIPopoverControllerSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEB6663C18C6685F00B09C00 /* UIPopoverControllerSpec+Spec.mm */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		AEBCCC25168B999F0056EE83 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEBCCBE7168B97DD0056EE83 /* Foundation.framework */; };
 		AEBCCC38168B99ED0056EE83 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEBCCBE7168B97DD0056EE83 /* Foundation.framework */; };
@@ -1364,6 +1364,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
@@ -1382,6 +1383,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;

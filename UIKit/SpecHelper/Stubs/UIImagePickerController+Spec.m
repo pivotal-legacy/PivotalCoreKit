@@ -4,8 +4,16 @@ static BOOL isCameraAvailable__, isPhotoLibraryAvailable__, isSavedPhotosAlbumAv
 
 @implementation UIImagePickerController (Spec)
 
-+ (void)initialize {
++ (void)afterEach {
+    [self reset];
+}
+
++ (void)reset {
     isCameraAvailable__ = isPhotoLibraryAvailable__ = isSavedPhotosAlbumAvailable__ = YES;
+}
+
++ (void)initialize {
+    [self reset];
 }
 
 + (void)setPhotoLibraryAvailable:(BOOL)available {

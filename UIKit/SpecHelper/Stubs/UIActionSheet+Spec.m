@@ -1,3 +1,7 @@
+#if !__has_feature(objc_arc)
+#error This class must be compiled with ARC
+#endif
+
 #import "UIActionSheet+Spec.h"
 
 
@@ -26,12 +30,6 @@ static UIView *currentActionSheetView__;
 #pragma clang diagnostic ignored "-Wobjc-protocol-method-implementation"
 
 + (void)setCurrentActionSheet:(UIActionSheet *)actionSheet forView:(UIView *)view {
-    [actionSheet retain];
-    [view retain];
-
-    [currentActionSheet__ release];
-    [currentActionSheetView__ release];
-
     currentActionSheet__ = actionSheet;
     currentActionSheetView__ = view;
 }

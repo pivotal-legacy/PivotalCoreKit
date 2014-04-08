@@ -1,16 +1,18 @@
+#if !__has_feature(objc_arc)
+#error This class must be compiled with ARC
+#endif
+
 #import "UIWebView+Spec.h"
-#import "objc/runtime.h"
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wobjc-protocol-method-implementation"
+#import <objc/runtime.h>
 
 @interface UIWebViewAttributes : NSObject
 
-@property (nonatomic, retain) NSURLRequest *request;
+@property (nonatomic, strong) NSURLRequest *request;
 @property (nonatomic, assign) BOOL loading, logging, canGoBack, canGoForward;
-@property (nonatomic, retain) NSMutableArray *javaScripts;
-@property (nonatomic, retain) NSMutableDictionary *returnValueBlocksByJavaScript;
-@property (nonatomic, retain) NSString *loadedHTMLString;
-@property (nonatomic, retain) NSURL *loadedBaseURL;
+@property (nonatomic, strong) NSMutableArray *javaScripts;
+@property (nonatomic, strong) NSMutableDictionary *returnValueBlocksByJavaScript;
+@property (nonatomic, strong) NSString *loadedHTMLString;
+@property (nonatomic, strong) NSURL *loadedBaseURL;
 
 @end
 
@@ -24,26 +26,22 @@
     return self;
 }
 
-- (void)dealloc {
-    self.loadedHTMLString = nil;
-    self.loadedBaseURL = nil;
-    self.request = nil;
-    self.returnValueBlocksByJavaScript = nil;
-    self.javaScripts = nil;
-
-    [super dealloc];
-}
 @end
 
 @interface UIWebView (Spec_Private)
+
 - (void)loadRequest:(NSURLRequest *)request withNavigationType:(UIWebViewNavigationType)navigationType;
 - (UIWebViewAttributes *)attributes;
 - (void)log:(NSString *)message, ...;
+
 @end
 
 static char ASSOCIATED_ATTRIBUTES_KEY;
 
 @implementation UIWebView (Spec)
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wobjc-protocol-method-implementation"
 
 #pragma mark Property overrides
 - (BOOL)canGoBack {
@@ -100,10 +98,11 @@ static char ASSOCIATED_ATTRIBUTES_KEY;
     }
 }
 
+#pragma clang diagnostic pop
+
 #pragma mark Additions
 - (void)sendClickRequest:(NSURLRequest *)request {
     [self log:@"sendClickRequest: %@", request];
-
     [self loadRequest:request withNavigationType:UIWebViewNavigationTypeLinkClicked];
 }
 
@@ -123,12 +122,12 @@ static char ASSOCIATED_ATTRIBUTES_KEY;
 }
 
 - (void)setReturnValue:(NSString *)returnValue forJavaScript:(NSString *)javaScript {
-    UIWebViewJavaScriptReturnBlock block = [[^{ return returnValue; } copy] autorelease];
+    UIWebViewJavaScriptReturnBlock block = [^{ return returnValue; } copy];
     [self.attributes.returnValueBlocksByJavaScript setObject:block forKey:javaScript];
 }
 
 - (void)setReturnBlock:(UIWebViewJavaScriptReturnBlock)block forJavaScript:(NSString *)javaScript {
-    UIWebViewJavaScriptReturnBlock copiedBlock = [[block copy] autorelease];
+    UIWebViewJavaScriptReturnBlock copiedBlock = [block copy];
     [self.attributes.returnValueBlocksByJavaScript setObject:copiedBlock forKey:javaScript];
 }
 
@@ -157,7 +156,7 @@ static char ASSOCIATED_ATTRIBUTES_KEY;
     UIWebViewAttributes *attributes = objc_getAssociatedObject(self, &ASSOCIATED_ATTRIBUTES_KEY);
 
     if (!attributes) {
-        attributes = [[[UIWebViewAttributes alloc] init] autorelease];
+        attributes = [[UIWebViewAttributes alloc] init];
         objc_setAssociatedObject(self, &ASSOCIATED_ATTRIBUTES_KEY, attributes, OBJC_ASSOCIATION_RETAIN);
     }
 
@@ -165,7 +164,7 @@ static char ASSOCIATED_ATTRIBUTES_KEY;
 }
 
 - (void)loadRequest:(NSURLRequest *)request withNavigationType:(UIWebViewNavigationType)navigationType {
-    if (self.loading) {
+    if (self.isLoading) {
         NSString *message = [NSString stringWithFormat:@"Attempt to load request: %@ with previously loading request: %@", request, self.request];
         [self log:message];
         [[NSException exceptionWithName:NSInternalInconsistencyException reason:message userInfo:nil] raise];
@@ -198,5 +197,3 @@ static char ASSOCIATED_ATTRIBUTES_KEY;
 }
 
 @end
-
-#pragma clang diagnostic pop
