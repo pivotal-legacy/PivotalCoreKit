@@ -2,6 +2,7 @@
 
 ### Major Enhancements
   * Adds NSDictionary+dictionaryFromQueryString
+  * UIKit+PivotalSpecHelperStubs static library and CocoaPods subspec is converted to ARC
 
 ### Minor Enhancements
 
