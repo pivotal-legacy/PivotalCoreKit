@@ -5,6 +5,7 @@
   * UIKit+PivotalSpecHelperStubs static library and CocoaPods subspec is converted to ARC
 
 ### Minor Enhancements
+  * FakeOperationQueue is renamed to PSHKFakeOperationQueue; an alias is provided for backward compatibility
 
 ### Bug Fixes
 

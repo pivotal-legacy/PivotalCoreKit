@@ -1,10 +1,10 @@
-#import "FakeOperationQueue.h"
+#import "PSHKFakeOperationQueue.h"
 
-@interface FakeOperationQueue ()
+@interface PSHKFakeOperationQueue ()
 @property (nonatomic, retain) NSMutableArray *mutableOperations;
 @end
 
-@implementation FakeOperationQueue
+@implementation PSHKFakeOperationQueue
 
 - (id)init {
     if (self = [super init]) {

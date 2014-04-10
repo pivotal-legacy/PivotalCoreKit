@@ -1,11 +1,4 @@
 #import <Foundation/Foundation.h>
+#import "PSHKFakeOperationQueue.h"
 
-@interface FakeOperationQueue : NSOperationQueue
-
-@property (nonatomic) BOOL runSynchronously;
-
-- (void)reset;
-- (void)runNextOperation;
-
-@end
-
+@compatibility_alias FakeOperationQueue PSHKFakeOperationQueue;

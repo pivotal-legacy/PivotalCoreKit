@@ -5,18 +5,18 @@
 #import <Cedar/SpecHelper.h>
 #endif
 
-#import "FakeOperationQueue.h"
+#import "PSHKFakeOperationQueue.h"
 
 using namespace Cedar::Matchers;
 using namespace Cedar::Doubles;
 
-SPEC_BEGIN(FakeOperationQueueSpec)
+SPEC_BEGIN(PSHKFakeOperationQueueSpec)
 
-describe(@"FakeOperationQueue", ^{
-    __block FakeOperationQueue *fakeQueue;
+describe(@"PSHKFakeOperationQueue", ^{
+    __block PSHKFakeOperationQueue *fakeQueue;
 
     beforeEach(^{
-        fakeQueue = [[[FakeOperationQueue alloc] init] autorelease];
+        fakeQueue = [[[PSHKFakeOperationQueue alloc] init] autorelease];
     });
 
     describe(@"when an operation is added", ^{
@@ -59,7 +59,7 @@ describe(@"FakeOperationQueue", ^{
             }];
 
             [fakeQueue addOperation:blockOperation];
-            dispatch_semaphore_wait(semaphore, 0.001);
+            dispatch_semaphore_wait(semaphore, 0.0001);
 
             blockInvoked should be_truthy;
 
