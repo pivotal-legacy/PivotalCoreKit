@@ -5,7 +5,7 @@
 using namespace Cedar::Matchers;
 using namespace Cedar::Doubles;
 
-SPEC_BEGIN(UIViewControllerSpec)
+SPEC_BEGIN(UIViewControllerSpecExtensionsSpec)
 
 describe(@"UIViewController (spec extensions)", ^{
     __block UIViewController *controller, *childController;

@@ -18,7 +18,7 @@ namespace Cedar { namespace Matchers {
 using namespace Cedar::Matchers;
 using namespace Cedar::Doubles;
 
-SPEC_BEGIN(UIWebViewSpec)
+SPEC_BEGIN(UIWebViewSpecExtensionsSpec)
 
 describe(@"UIWebView (spec extensions)", ^{
     __block id<UIWebViewDelegate, CedarDouble> delegate;

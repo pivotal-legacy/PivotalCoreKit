@@ -4,9 +4,9 @@
 using namespace Cedar::Matchers;
 using namespace Cedar::Doubles;
 
-SPEC_BEGIN(UIImagePickerController_Spec)
+SPEC_BEGIN(UIImagePickerControllerSpecExtensionsSpec)
 
-describe(@"UIImagePickerController_Spec", ^{
+describe(@"UIImagePickerController (spec extensions)", ^{
     describe(@"+isSourceTypeAvailable:", ^{
         __block BOOL sourceAvailable;
         beforeEach(^{
