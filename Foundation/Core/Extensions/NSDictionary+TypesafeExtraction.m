@@ -67,7 +67,7 @@
     if (url) { return url; }
 
     NSString *str = [self objectForKey:key requiredType:[NSString class]];
-    return ([str length] > 0) ? [[NSURL alloc] initWithString:str] : nil;
+    return ([str length] > 0) ? [NSURL URLWithString:str] : nil;
 }
 
 - (float)floatValueForKey:(id)key {
