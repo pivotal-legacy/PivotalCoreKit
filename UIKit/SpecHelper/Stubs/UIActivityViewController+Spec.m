@@ -1,11 +1,11 @@
 #import "UIActivityViewController+Spec.h"
 #import <objc/objc-runtime.h>
 
-static char const * const kActivityItemsKey = "activityItemsKey";
-static char const * const kApplicationActivitesKey = "applicationActivitesKey";
+static char kActivityItemsKey;
+static char kApplicationActivitesKey;
 
 @interface UIActivityViewController (SpecPrivate)
-- (instancetype)original_initWithActivityItems:(NSArray *)activityItems applicationActivities:(NSArray *)applicationActivities;
+- (instancetype)original_initWithActivityItems:(NSArray *)activityItems applicationActivities:(NSArray *)applicationActivities NS_RETURNS_RETAINED;
 @end
 
 @implementation UIActivityViewController (Spec)
@@ -30,30 +30,26 @@ static char const * const kApplicationActivitesKey = "applicationActivitesKey";
     class_replaceMethod(klass, originalSelector, method_getImplementation(newMethod), method_getTypeEncoding(newMethod));
 }
 
-+ (void)load
-{
++ (void)load {
     [self redirectSelector:@selector(initWithActivityItems:applicationActivities:)
                         to:@selector(_initWithActivityItems:applicationActivities:)
              andRenameItTo:@selector(original_initWithActivityItems:applicationActivities:)];
 }
 
-- (instancetype)_initWithActivityItems:(NSArray *)activityItems applicationActivities:(NSArray *)applicationActivities
-{
-    if ((self = [self original_initWithActivityItems:activityItems applicationActivities:applicationActivities])) {
-        objc_setAssociatedObject(self, kActivityItemsKey, activityItems, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-        objc_setAssociatedObject(self, kApplicationActivitesKey, applicationActivities, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+- (instancetype)_initWithActivityItems:(NSArray *)activityItems applicationActivities:(NSArray *)applicationActivities {
+    if ((self = [super init])) {
+        objc_setAssociatedObject(self, &kActivityItemsKey, activityItems, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        objc_setAssociatedObject(self, &kApplicationActivitesKey, applicationActivities, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
     return self;
 }
 
-- (NSArray *)activityItems
-{
-    return objc_getAssociatedObject(self, kActivityItemsKey);
+- (NSArray *)activityItems {
+    return objc_getAssociatedObject(self, &kActivityItemsKey);
 }
 
-- (NSArray *)applicationActivities
-{
-    return objc_getAssociatedObject(self, kApplicationActivitesKey);
+- (NSArray *)applicationActivities {
+    return objc_getAssociatedObject(self, &kApplicationActivitesKey);
 }
 
 @end
