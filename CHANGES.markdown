@@ -2,6 +2,8 @@
 
 ### Major Enhancements
   * Adds NSDictionary+dictionaryFromQueryString
+  * Adds typesafe extraction methods to NSDictionary
+  * Adds a stub for UIActivityViewController
   * UIKit+PivotalSpecHelperStubs static library and CocoaPods subspec is converted to ARC
 
 ### Minor Enhancements
