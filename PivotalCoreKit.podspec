@@ -31,7 +31,13 @@ Pod::Spec.new do |s|
 
   s.subspec 'UIKit' do |ui|
     ui.subspec 'Core' do |uicore|
+      arc_files = 'UIKit/Core/Extensions/UIView+PCKNibHelpers.m'
       uicore.source_files = 'UIKit/Core/**/*.{h,m}'
+      uicore.exclude_files = arc_files
+      uicore.subspec 'Core-arc' do |core_arc|
+        core_arc.requires_arc = true
+        core_arc.source_files = arc_files
+      end
     end
 
     ui.subspec 'SpecHelper' do |spec|
