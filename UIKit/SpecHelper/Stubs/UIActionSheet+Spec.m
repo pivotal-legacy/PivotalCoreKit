@@ -46,6 +46,10 @@ static UIView *currentActionSheetView__;
     [UIActionSheet setCurrentActionSheet:self forView:view];
 }
 
+- (void)showFromRect:(CGRect)rect inView:(UIView *)view animated:(BOOL)animated {
+    [UIActionSheet setCurrentActionSheet:self forView:view];
+}
+
 - (void)showFromTabBar:(UITabBar *)view {
     [UIActionSheet setCurrentActionSheet:self forView:view];
 }
