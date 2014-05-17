@@ -20,8 +20,10 @@
     if (!self.isEnabled) {
         [[NSException exceptionWithName:@"Untappable" reason:@"Can't toggle a disabled switch" userInfo:nil] raise];
     }
+    if (self.on != on) {
+        [self sendActionsForControlEvents:UIControlEventValueChanged];
+    }
     self.on = on;
-    [self sendActionsForControlEvents:UIControlEventValueChanged];
 }
 
 @end

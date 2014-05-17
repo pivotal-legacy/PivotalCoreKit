@@ -100,31 +100,71 @@ describe(@"UISwitch+Spec", ^{
                 uiswitch.hidden = NO;
             });
 
-            context(@"toggling to on", ^{
+            context(@"the switch is already on", ^{
                 beforeEach(^{
-                    [uiswitch toggleToOn:YES];
+                    uiswitch.on = YES;
                 });
 
-                it(@"should toggle the switch to on", ^{
-                    uiswitch.on should be_truthy;
+                context(@"toggling to on", ^{
+                    beforeEach(^{
+                        [uiswitch toggleToOn:YES];
+                    });
+
+                    it(@"should toggle the switch to on", ^{
+                        uiswitch.on should be_truthy;
+                    });
+
+                    it(@"should not send the switch's control action", ^{
+                        target should_not have_received(@selector(ciao:));
+                    });
                 });
 
-                it(@"should send the switch's control action", ^{
-                    target should have_received(@selector(ciao:)).with(uiswitch);
+                context(@"toggling to off", ^{
+                    beforeEach(^{
+                        [uiswitch toggleToOn:NO];
+                    });
+
+                    it(@"should toggle the switch to off", ^{
+                        uiswitch.on should_not be_truthy;
+                    });
+
+                    it(@"should send the switch's control action", ^{
+                        target should have_received(@selector(ciao:)).with(uiswitch);
+                    });
                 });
             });
 
-            context(@"toggling to off", ^{
+            context(@"the switch is already off", ^{
                 beforeEach(^{
-                    [uiswitch toggleToOn:NO];
+                    uiswitch.on = NO;
                 });
 
-                it(@"should toggle the switch to off", ^{
-                    uiswitch.on should_not be_truthy;
+                context(@"toggling to on", ^{
+                    beforeEach(^{
+                        [uiswitch toggleToOn:YES];
+                    });
+
+                    it(@"should toggle the switch to on", ^{
+                        uiswitch.on should be_truthy;
+                    });
+
+                    it(@"should send the switch's control action", ^{
+                        target should have_received(@selector(ciao:)).with(uiswitch);
+                    });
                 });
 
-                it(@"should send the switch's control action", ^{
-                    target should have_received(@selector(ciao:)).with(uiswitch);
+                context(@"toggling to off", ^{
+                    beforeEach(^{
+                        [uiswitch toggleToOn:NO];
+                    });
+
+                    it(@"should toggle the switch to off", ^{
+                        uiswitch.on should_not be_truthy;
+                    });
+
+                    it(@"should not send the switch's control action", ^{
+                        target should_not have_received(@selector(ciao:));
+                    });
                 });
             });
         });
