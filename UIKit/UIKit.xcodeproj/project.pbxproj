@@ -142,6 +142,8 @@
 		FA91AAA1186737B700925A6B /* NSAttributedString+PivotalCoreKit_UIKit.m in Sources */ = {isa = PBXBuildFile; fileRef = FA91AAA0186737B700925A6B /* NSAttributedString+PivotalCoreKit_UIKit.m */; };
 		FA91AAA2186737B700925A6B /* NSAttributedString+PivotalCoreKit_UIKit.m in Sources */ = {isa = PBXBuildFile; fileRef = FA91AAA0186737B700925A6B /* NSAttributedString+PivotalCoreKit_UIKit.m */; };
 		FA91AAA41867383E00925A6B /* NSAttributedString+PivotalCoreKit_UIKitSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA91AAA31867383E00925A6B /* NSAttributedString+PivotalCoreKit_UIKitSpec.mm */; };
+		FAF932D8192703490076C733 /* UISwitch+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF932CC192703280076C733 /* UISwitch+Spec.m */; };
+		FAF932DC192704750076C733 /* UISwitchSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = FAF932D9192703AA0076C733 /* UISwitchSpec+Spec.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -432,6 +434,9 @@
 		FA91AA9F186737B700925A6B /* NSAttributedString+PivotalCoreKit_UIKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+PivotalCoreKit_UIKit.h"; sourceTree = "<group>"; };
 		FA91AAA0186737B700925A6B /* NSAttributedString+PivotalCoreKit_UIKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+PivotalCoreKit_UIKit.m"; sourceTree = "<group>"; };
 		FA91AAA31867383E00925A6B /* NSAttributedString+PivotalCoreKit_UIKitSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSAttributedString+PivotalCoreKit_UIKitSpec.mm"; sourceTree = "<group>"; };
+		FAF932CB192703280076C733 /* UISwitch+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UISwitch+Spec.h"; sourceTree = "<group>"; };
+		FAF932CC192703280076C733 /* UISwitch+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UISwitch+Spec.m"; sourceTree = "<group>"; };
+		FAF932D9192703AA0076C733 /* UISwitchSpec+Spec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UISwitchSpec+Spec.mm"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -674,6 +679,8 @@
 				AE53E2EB18075A810037C32E /* UIWindow+Spec.m */,
 				FA07586818120D19001817BF /* UICollectionViewCell+Spec.h */,
 				FA07586918120D19001817BF /* UICollectionViewCell+Spec.m */,
+				FAF932CB192703280076C733 /* UISwitch+Spec.h */,
+				FAF932CC192703280076C733 /* UISwitch+Spec.m */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -698,6 +705,7 @@
 				AEBCCC95168B9C530056EE83 /* UIView+PivotalCoreSpec.mm */,
 				AE9530691832EE9300C802E9 /* UIViewSpec+Spec.mm */,
 				AE53E2F518075B080037C32E /* UIWindowSpec+Spec.mm */,
+				FAF932D9192703AA0076C733 /* UISwitchSpec+Spec.mm */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1079,6 +1087,7 @@
 				AEDABBBD18EA214A004E6626 /* MainController.m in Sources */,
 				AEB6663E18C6685F00B09C00 /* UIPopoverControllerSpec+Spec.mm in Sources */,
 				AEBCCC9A168B9C530056EE83 /* UIImage+PivotalCoreSpec.mm in Sources */,
+				FAF932DC192704750076C733 /* UISwitchSpec+Spec.mm in Sources */,
 				AEF67CE218CA436600C221D1 /* UIActionSheetSpec+Spec.mm in Sources */,
 				AE53E2F618075B080037C32E /* UIWindowSpec+Spec.mm in Sources */,
 				FA07586B18120E47001817BF /* UICollectionViewCellSpec+Spec.mm in Sources */,
@@ -1114,6 +1123,7 @@
 			files = (
 				AEF0A40418296C690070D98B /* UICollectionViewCell+Spec.m in Sources */,
 				AEF775CA183170A3000AF17B /* UIGestureRecognizer+Spec.m in Sources */,
+				FAF932D8192703490076C733 /* UISwitch+Spec.m in Sources */,
 				AEBCCC8A168B9B8B0056EE83 /* UIControl+Spec.m in Sources */,
 				AEBCCC8B168B9B8B0056EE83 /* UIImage+Spec.m in Sources */,
 				AEBCCC8C168B9B8B0056EE83 /* UITableViewCell+Spec.m in Sources */,
