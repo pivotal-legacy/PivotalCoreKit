@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 
-@interface PSHKFakeHTTPURLResponse : NSURLResponse
+@interface PSHKFakeHTTPURLResponse : NSHTTPURLResponse
 
 - (id)initWithStatusCode:(int)statusCode andHeaders:(NSDictionary *)headers andBody:(NSString *)body;
 - (id)initWithStatusCode:(int)statusCode andHeaders:(NSDictionary *)headers andBodyData:(NSData *)body;
