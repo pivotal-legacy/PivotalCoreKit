@@ -34,8 +34,6 @@ describe(@"UIPopoverController (spec extensions)", ^{
         describe(@"when the popoverController is presented from rect", ^{
             beforeEach(^{
                 UIView *presentingView = [[UIView alloc] initWithFrame:(CGRect){.size.width = 200, .size.height = 200}];
-                UIWindow *window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-                [window addSubview:presentingView];
 
                 [popoverController presentPopoverFromRect:CGRectMake(20, 20, 30, 30)
                                                    inView:presentingView
@@ -85,10 +83,6 @@ describe(@"UIPopoverController (spec extensions)", ^{
                 UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] init];
                 UIToolbar *toolbar = [[UIToolbar alloc] init];
                 toolbar.items = @[barButtonItem];
-
-                UIWindow *window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-                [window addSubview:toolbar];
-
                 [popoverController presentPopoverFromBarButtonItem:barButtonItem
                                           permittedArrowDirections:UIPopoverArrowDirectionAny
                                                           animated:YES];

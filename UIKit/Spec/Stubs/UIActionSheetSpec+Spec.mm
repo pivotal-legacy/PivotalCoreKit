@@ -135,14 +135,10 @@ describe(@"UIActionSheet (spec extensions)", ^{
 
         describe(@"showing from rect", ^{
             __block UIView *presentingView;
-            __block UIWindow *window;
 
             beforeEach(^{
                 presentingView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 400, 400)];
                 
-                window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-                [window addSubview:presentingView];
-
                 [actionSheet showFromRect:CGRectMake(30, 30, 10, 10)
                                    inView:presentingView
                                  animated:YES];

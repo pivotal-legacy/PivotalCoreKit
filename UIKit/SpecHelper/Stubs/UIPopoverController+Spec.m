@@ -24,8 +24,12 @@ static UIPopoverArrowDirection arrowDirectionMask__;
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wobjc-protocol-method-implementation"
 
-// -presentPopoverFromBarButtonItem:permittedArrowDirections:animated: calls through to this method
 - (void)presentPopoverFromRect:(CGRect)rect inView:(UIView *)view permittedArrowDirections:(UIPopoverArrowDirection)arrowDirections animated:(BOOL)animated {
+    currentPopoverController__ = self;
+    arrowDirectionMask__ = arrowDirections;
+}
+
+- (void)presentPopoverFromBarButtonItem:(UIBarButtonItem *)item permittedArrowDirections:(UIPopoverArrowDirection)arrowDirections animated:(BOOL)animated {
     currentPopoverController__ = self;
     arrowDirectionMask__ = arrowDirections;
 }
