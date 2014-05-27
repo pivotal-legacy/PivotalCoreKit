@@ -110,6 +110,8 @@ describe(@"UIViewController (spec extensions)", ^{
         });
     });
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
     describe(@"presenting modal view controllers (deprecated APIs)", ^{
         beforeEach(^{
             [controller presentModalViewController:modalController animated:YES];
@@ -147,6 +149,7 @@ describe(@"UIViewController (spec extensions)", ^{
             });
         });
     });
+#pragma clang diagnostic pop
 });
 
 SPEC_END
