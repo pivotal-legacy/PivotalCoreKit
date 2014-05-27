@@ -111,7 +111,6 @@
 		AEDABBBC18EA214A004E6626 /* ChildViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEDABBB718EA214A004E6626 /* ChildViewController.xib */; };
 		AEDABBBD18EA214A004E6626 /* MainController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEDABBB918EA214A004E6626 /* MainController.m */; };
 		AEDABBBE18EA214A004E6626 /* MainController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEDABBBA18EA214A004E6626 /* MainController.xib */; };
-		AEDABBD618EA3910004E6626 /* UIViewController+PCKNibHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = AEDABBD518EA3910004E6626 /* UIViewController+PCKNibHelpers.m */; };
 		AEE0B69618A3572C0007A9D0 /* UIView+StubbedAnimation.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AEE0B69518A3572C0007A9D0 /* UIView+StubbedAnimation.h */; };
 		AEEECC18181F3135006B52CD /* UIImagePickerController+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AEEECC16181F3135006B52CD /* UIImagePickerController+Spec.h */; };
 		AEEECC19181F3135006B52CD /* UIImagePickerController+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AEEECC17181F3135006B52CD /* UIImagePickerController+Spec.m */; };
@@ -407,8 +406,6 @@
 		AEDABBB818EA214A004E6626 /* MainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainController.h; sourceTree = "<group>"; };
 		AEDABBB918EA214A004E6626 /* MainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainController.m; sourceTree = "<group>"; };
 		AEDABBBA18EA214A004E6626 /* MainController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainController.xib; sourceTree = "<group>"; };
-		AEDABBD418EA3910004E6626 /* UIViewController+PCKNibHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+PCKNibHelpers.h"; sourceTree = "<group>"; };
-		AEDABBD518EA3910004E6626 /* UIViewController+PCKNibHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+PCKNibHelpers.m"; sourceTree = "<group>"; };
 		AEE0B69518A3572C0007A9D0 /* UIView+StubbedAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+StubbedAnimation.h"; sourceTree = "<group>"; };
 		AEEECC16181F3135006B52CD /* UIImagePickerController+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImagePickerController+Spec.h"; sourceTree = "<group>"; };
 		AEEECC17181F3135006B52CD /* UIImagePickerController+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImagePickerController+Spec.m"; sourceTree = "<group>"; };
@@ -611,8 +608,6 @@
 				AEDABB6018E9DCC9004E6626 /* UIView+PCKNibHelpers.m */,
 				AEBCCBD1168B96C80056EE83 /* UIView+PivotalCore.h */,
 				AEBCCBD2168B96C80056EE83 /* UIView+PivotalCore.m */,
-				AEDABBD418EA3910004E6626 /* UIViewController+PCKNibHelpers.h */,
-				AEDABBD518EA3910004E6626 /* UIViewController+PCKNibHelpers.m */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1065,7 +1060,6 @@
 			files = (
 				AE3847B7168BA3B500C99B55 /* UIBarButtonItem+Button.m in Sources */,
 				AEDABB6118E9DCC9004E6626 /* UIView+PCKNibHelpers.m in Sources */,
-				AEDABBD618EA3910004E6626 /* UIViewController+PCKNibHelpers.m in Sources */,
 				AE3847B8168BA3B500C99B55 /* UIImage+PivotalCore.m in Sources */,
 				FA91AAA1186737B700925A6B /* NSAttributedString+PivotalCoreKit_UIKit.m in Sources */,
 				AE3847B9168BA3B500C99B55 /* UIView+PivotalCore.m in Sources */,
