@@ -151,13 +151,14 @@ describe(@"NSURLConnection (spec extensions)", ^{
         });
 
         it(@"should receive responses", ^{
-            PSHKFakeHTTPURLResponse *response = [[[PSHKFakeHTTPURLResponse alloc] initWithStatusCode:200 andHeaders:nil andBody:@"Response"] autorelease];
+            PSHKFakeHTTPURLResponse *response = [[[PSHKFakeHTTPURLResponse alloc] initWithStatusCode:200 andHeaders:@{@"Content-Type": @"application/json"} andBody:@"Response"] autorelease];
 
             [connection receiveResponse:response];
 
             NSString *receivedString = [[[NSString alloc] initWithData:receivedData encoding:NSUTF8StringEncoding] autorelease];
             receivedString should equal(@"Response");
             receivedResponse.statusCode should equal(200);
+            [receivedResponse MIMEType] should equal(@"application/json");
         });
 
         it(@"should receive failures", ^{

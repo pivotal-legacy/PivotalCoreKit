@@ -18,7 +18,9 @@
 }
 
 - (id)initWithStatusCode:(int)statusCode andHeaders:(NSDictionary *)headers andBodyData:(NSData *)bodyData {
-    if ((self = [super initWithURL:[NSURL URLWithString:@"http://www.example.com"] MIMEType:@"application/wibble" expectedContentLength:-1 textEncodingName:nil])) {
+    NSString *mimeType = headers[@"Content-Type"] ?: @"application/wibble";
+
+    if ((self = [super initWithURL:[NSURL URLWithString:@"http://www.example.com"] MIMEType:mimeType expectedContentLength:-1 textEncodingName:nil])) {
         self.statusCode = statusCode;
         self.allHeaderFields = headers;
         self.bodyData = bodyData;
