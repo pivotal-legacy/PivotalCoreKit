@@ -6,6 +6,7 @@
   * Adds typesafe extraction methods to NSDictionary
   * Adds a stub for UIActivityViewController
   * UIKit+PivotalSpecHelperStubs static library and CocoaPods subspec is converted to ARC
+  * Adds support for instantiating prototype table view and collection view cells given a view controller from a storyboard and a cell identifier
 
 ### Minor Enhancements
   * FakeOperationQueue is renamed to PSHKFakeOperationQueue; an alias is provided for backward compatibility

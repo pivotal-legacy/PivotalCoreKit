@@ -1,5 +1,6 @@
 #import "SpecHelper.h"
 #import "UITableViewCell+Spec.h"
+#import "PrototypeCellObjects.h"
 
 
 @interface SpecTableViewController : UITableViewController
@@ -198,6 +199,37 @@ describe(@"UITableViewCell+Spec", ^{
                 it(@"should raise an exception", ^{
                     ^{ [cell tapDeleteConfirmation]; } should raise_exception;
                 });
+            });
+        });
+    });
+
+    describe(@"instantiating a prototype cell", ^{
+        __block SpecTableViewCell *cell;
+
+        context(@"when explicitly specifying the view controller and table view key path", ^{
+            beforeEach(^{
+                UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"TableViewPrototypeCells" bundle:nil];
+                cell = [SpecTableViewCell instantiatePrototypeCellFromStoryboard:storyboard viewControllerIdentifier:@"SpecTableViewPrototypeCellsViewController" tableViewKeyPath:@"tableView" cellIdentifier:@"SpecTableViewCell"];
+            });
+
+            it(@"should produce a cell of the right class", ^{
+                cell should be_instance_of([SpecTableViewCell class]);
+            });
+
+            it(@"should have its subviews populated from the storyboard", ^{
+                cell.subview should_not be_nil;
+            });
+        });
+
+        context(@"when not providing a view controller identifier or collection view key path", ^{
+            beforeEach(^{
+                UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"TableViewPrototypeCells" bundle:nil];
+                cell = [SpecTableViewCell instantiatePrototypeCellFromStoryboard:storyboard viewControllerIdentifier:nil tableViewKeyPath:nil cellIdentifier:@"SpecTableViewCell"];
+            });
+
+            it(@"should find a collection view in the initial view controller and produce a populated cell of the right class", ^{
+                cell should be_instance_of([SpecTableViewCell class]);
+                cell.subview should_not be_nil;
             });
         });
     });

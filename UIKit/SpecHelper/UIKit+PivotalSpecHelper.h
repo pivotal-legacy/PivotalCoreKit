@@ -6,4 +6,5 @@
 #import "UIView+Spec.h"
 #import "UITabBarController+Spec.h"
 #import "UICollectionViewCell+Spec.h"
+#import "UICollectionReusableView+Spec.h"
 #import "UISwitch+Spec.h"

@@ -1,5 +1,6 @@
 #import "SpecHelper.h"
 #import "UICollectionViewCell+Spec.h"
+#import "PrototypeCellObjects.h"
 
 @interface SpecCollectionViewController : UICollectionViewController
 @end
@@ -57,6 +58,37 @@ describe(@"UICollectionViewCell+Spec", ^{
         it(@"should call implemented delegate methods", ^{
             delegate should have_received(@selector(collectionView:shouldSelectItemAtIndexPath:));
             delegate should have_received(@selector(collectionView:didSelectItemAtIndexPath:)).with(controller.collectionView, indexPathForCell);
+        });
+    });
+
+    describe(@"instantiating a prototype cell", ^{
+        __block SpecCollectionViewCell *cell;
+
+        context(@"when explicitly specifying the view controller and collection view key path", ^{
+            beforeEach(^{
+                UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"CollectionViewPrototypeCells" bundle:nil];
+                cell = [SpecCollectionViewCell instantiatePrototypeCellFromStoryboard:storyboard viewControllerIdentifier:@"SpecCollectionViewPrototypeCellsViewController" collectionViewKeyPath:@"collectionView" cellIdentifier:@"SpecCollectionViewCell"];
+            });
+
+            it(@"should produce a cell of the right class", ^{
+                cell should be_instance_of([SpecCollectionViewCell class]);
+            });
+
+            it(@"should have its subviews populated from the storyboard", ^{
+                cell.subview should_not be_nil;
+            });
+        });
+
+        context(@"when not providing a view controller identifier or collection view key path", ^{
+            beforeEach(^{
+                UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"CollectionViewPrototypeCells" bundle:nil];
+                cell = [SpecCollectionViewCell instantiatePrototypeCellFromStoryboard:storyboard viewControllerIdentifier:nil collectionViewKeyPath:nil cellIdentifier:@"SpecCollectionViewCell"];
+            });
+
+            it(@"should find a collection view in the initial view controller and produce a populated cell of the right class", ^{
+                cell should be_instance_of([SpecCollectionViewCell class]);
+                cell.subview should_not be_nil;
+            });
         });
     });
 });
