@@ -4,10 +4,10 @@
 
 @interface SpecGestureRecognizerViewController : UIViewController
 @property (nonatomic, strong) IBOutlet UITapGestureRecognizer *recognizer;
+@property (nonatomic, strong) IBOutlet UITapGestureRecognizer *segueRecognizer;
 @property (nonatomic, strong) IBOutlet Target *target;
 @end
-@implementation SpecGestureRecognizerViewController
-@end
+@implementation SpecGestureRecognizerViewController @end
 
 using namespace Cedar::Matchers;
 using namespace Cedar::Doubles;
@@ -133,6 +133,20 @@ describe(@"UIGestureRecognizerSpec", ^{
         });
 
         itShouldBehaveLike(@"triggering a gesture recognizer");
+    });
+
+    context(@"for a segue-triggering gesture recognizer created in a storyboard", ^{
+        __block SpecGestureRecognizerViewController *controller;
+
+        beforeEach(^{
+            controller = [[UIStoryboard storyboardWithName:@"UIGestureRecognizer" bundle:nil] instantiateInitialViewController];
+            controller.view should_not be_nil;
+        });
+
+        it(@"should trigger the connected segue when it is recognized", ^{
+            [controller.segueRecognizer recognize];
+            controller.presentedViewController should_not be_nil;
+        });
     });
 });
 
