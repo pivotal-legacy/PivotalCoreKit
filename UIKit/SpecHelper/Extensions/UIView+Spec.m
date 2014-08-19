@@ -12,6 +12,23 @@
     return nil;
 }
 
+- (UIView *)firstSubviewOfClass:(Class)aClass {
+    NSMutableArray *subviewQueue = [NSMutableArray arrayWithArray:self.subviews];
+
+    while ([subviewQueue count] > 0) {
+        UIView *subview = [subviewQueue firstObject];
+
+        if ([subview isKindOfClass:aClass]) {
+            return subview;
+        }
+
+        [subviewQueue removeObjectAtIndex:0];
+        [subviewQueue addObjectsFromArray:subview.subviews];
+    }
+
+    return nil;
+}
+
 #pragma mark - UIGestureRecognizer helpers
 - (void)tap {
     [self recognizeAllGesturesMatching:[UITapGestureRecognizer class]];
