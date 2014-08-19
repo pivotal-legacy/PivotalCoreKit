@@ -20,7 +20,6 @@ describe(@"UIGestureRecognizerSpec", ^{
     __block UIView *view;
 
     beforeEach(^{
-        [UIGestureRecognizer whitelistClassForGestureSnooping:[Target class]];
         view = [[[UIView alloc] init] autorelease];
         target = [[[Target alloc] init] autorelease];
         spy_on(target);
@@ -134,29 +133,6 @@ describe(@"UIGestureRecognizerSpec", ^{
         });
 
         itShouldBehaveLike(@"triggering a gesture recognizer");
-    });
-
-    describe(@"cleaning up the installed whitelist", ^{
-        __block Target *aTarget;
-        __block UITapGestureRecognizer *resetRecognizer;
-
-        beforeEach(^{
-            [UIGestureRecognizer whitelistClassForGestureSnooping:[Target class]];
-            UIView *aView = [[[UIView alloc] init] autorelease];
-            aTarget = [[[Target alloc] init] autorelease];
-            spy_on(aTarget);
-
-            resetRecognizer = [[[UITapGestureRecognizer alloc] init] autorelease];
-            [aView addGestureRecognizer:resetRecognizer];
-
-        });
-
-        it(@"removes the registered whitelist of gesture recognizer targets when Cedar calls afterEach", ^{
-            [UIGestureRecognizer afterEach];
-            [resetRecognizer addTarget:aTarget action:@selector(hello)];
-            [resetRecognizer recognize];
-            aTarget should_not have_received(@selector(hello));
-        });
     });
 });
 

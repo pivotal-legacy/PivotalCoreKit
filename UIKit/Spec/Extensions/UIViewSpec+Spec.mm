@@ -14,7 +14,6 @@ describe(@"UIView+Spec", ^{
     __block Target *otherTarget;
 
     beforeEach(^{
-        [UIGestureRecognizer whitelistClassForGestureSnooping:[Target class]];
         view = [[[UIView alloc] init] autorelease];
         target = [[[Target alloc] init] autorelease];
         spy_on(target);

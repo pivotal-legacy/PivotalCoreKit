@@ -61,8 +61,6 @@
     [self redirectSelector:@selector(initWithTarget:action:)
                         to:@selector(initWithSwizzledTarget:action:)
              andRenameItTo:@selector(initWithoutSwizzledTarget:action:)];
-
-    whitelistedClasses = [[NSMutableArray alloc] init];
 }
 
 -(instancetype)initWithSwizzledTarget:(id)target action:(SEL)action {
@@ -73,10 +71,6 @@
     }
 
     return self;
-}
-
-+(void)afterEach {
-    [whitelistedClasses removeAllObjects];
 }
 
 #pragma mark - Public interface
@@ -93,27 +87,16 @@
     }];
 }
 
-static NSMutableArray *whitelistedClasses;
-+(void)whitelistClassForGestureSnooping:(Class)klass {
-    [whitelistedClasses addObject:klass];
-}
++(void)whitelistClassForGestureSnooping:(Class)klass {}
 
 #pragma mark - swizzled methods
 -(void)addSnoopedTarget:(id)target action:(SEL)action {
     [self addUnswizzledTarget:target action:action];
-
-    if (![whitelistedClasses containsObject:[target class]]) {
-        return;
-    }
     [[self targetsAndActions] addObject:[PCKGestureRecognizerTargetActionPair targetActionPairWithTarget:target action:action]];
 }
 
 -(void)removeSnoopedTarget:(id)target action:(SEL)action {
     [self removeUnswizzledTarget:target action:action];
-
-    if (![whitelistedClasses containsObject:[target class]]) {
-        return;
-    }
 
     NSMutableArray *targetsAndActions = [self targetsAndActions];
     __block id unretainedTarget = target;
