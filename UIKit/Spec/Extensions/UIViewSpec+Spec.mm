@@ -105,6 +105,28 @@ describe(@"UIView+Spec", ^{
             [view subviewWithAccessibilityIdentifier:@"Kryten"] should be_nil;
         });
     });
+
+    describe(@"finding the first subview of a class", ^{
+        __block UIView *view;
+        __block UIView *subview1;
+        __block UILabel *subview2;
+        __block UILabel *subsubview;
+
+        beforeEach(^{
+            view = [[[UIView alloc] init] autorelease];
+            subview1 = [[[UIView alloc] init] autorelease];
+            subview2 = [[[UILabel alloc] init] autorelease];
+            subsubview = [[[UILabel alloc] init] autorelease];
+
+            [view addSubview:subview1];
+            [view addSubview:subview2];
+            [subview1 addSubview:subsubview];
+        });
+
+        it(@"should return the closest subview in the tree that is of the given class", ^{
+            [view firstSubviewOfClass:[UILabel class]] should equal(subview2);
+        });
+    });
 });
 
 SPEC_END

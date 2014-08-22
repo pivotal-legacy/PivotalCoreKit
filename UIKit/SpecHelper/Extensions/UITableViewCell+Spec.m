@@ -1,5 +1,7 @@
 #import "UITableViewCell+Spec.h"
+#import "UIView+Spec.h"
 #import "UIControl+Spec.h"
+#import "../Helpers/PCKPrototypeCellInstantiatingDataSource.h"
 
 @interface UIStoryboardSegueTemplate
 - (id)identifier;
@@ -99,6 +101,24 @@
     }
 }
 
++ (instancetype)instantiatePrototypeCellFromStoryboard:(UIStoryboard *)storyboard
+                              viewControllerIdentifier:(NSString *)viewControllerIdentifier
+                                      tableViewKeyPath:(NSString *)tableViewKeyPath
+                                        cellIdentifier:(NSString *)cellIdentifier {
+    NSAssert(storyboard, @"Must provide a storyboard");
+    NSAssert([cellIdentifier length] > 0, @"Must provide a cell identifier");
 
+    UIViewController *viewController = viewControllerIdentifier ? [storyboard instantiateViewControllerWithIdentifier:viewControllerIdentifier] : [storyboard instantiateInitialViewController];
+    NSAssert(viewController, @"Could not find the view controller");
+
+    [viewController view];
+
+    UITableView *tableView = tableViewKeyPath ? [viewController valueForKeyPath:tableViewKeyPath] : [viewController.view firstSubviewOfClass:[UITableView class]];
+    NSAssert(tableView, @"Could not find the table view");
+
+    PCKPrototypeCellInstantiatingDataSource *dataSource = [[[PCKPrototypeCellInstantiatingDataSource alloc] initWithTableView:tableView] autorelease];
+    return [dataSource tableViewCellWithIdentifier:cellIdentifier];
+
+}
 
 @end

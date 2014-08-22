@@ -53,6 +53,10 @@ Pod::Spec.new do |s|
         stub.requires_arc = true
         stub.source_files = ['UIKit/SpecHelper/Stubs/*.{h,m}', 'UIKit/SpecHelper/UIKit+PivotalSpecHelperStubs.h']
       end
+
+      spec.subspec 'Helpers' do |helper|
+	helper.source_files = ['UIKit/SpecHelper/Helpers/*.{h,m}']
+      end
     end
   end
 
