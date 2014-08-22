@@ -1,7 +1,8 @@
 #import <UIKit/UIKit.h>
 
 @interface UIGestureRecognizer (Spec)
-+(void)afterEach;
--(void)recognize;
-+(void)whitelistClassForGestureSnooping:(Class)klass;
+
+- (void)recognize;
++ (void)whitelistClassForGestureSnooping:(Class)klass __attribute__((deprecated("Calling this method is no longer required")));
+
 @end

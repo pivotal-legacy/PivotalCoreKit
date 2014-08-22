@@ -6,9 +6,10 @@
   * Adds typesafe extraction methods to NSDictionary
   * Adds a stub for UIActivityViewController
   * UIKit+PivotalSpecHelperStubs static library and CocoaPods subspec is converted to ARC
-
+  * Manually triggering gesture recognizers can perform storyboard segues
 ### Minor Enhancements
   * FakeOperationQueue is renamed to PSHKFakeOperationQueue; an alias is provided for backward compatibility
+  * Removes need to whitelist target classes before manually triggering gesture recognizers
 
 ### Bug Fixes
 

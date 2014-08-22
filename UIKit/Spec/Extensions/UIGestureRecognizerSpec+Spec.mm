@@ -4,10 +4,10 @@
 
 @interface SpecGestureRecognizerViewController : UIViewController
 @property (nonatomic, strong) IBOutlet UITapGestureRecognizer *recognizer;
+@property (nonatomic, strong) IBOutlet UITapGestureRecognizer *segueRecognizer;
 @property (nonatomic, strong) IBOutlet Target *target;
 @end
-@implementation SpecGestureRecognizerViewController
-@end
+@implementation SpecGestureRecognizerViewController @end
 
 using namespace Cedar::Matchers;
 using namespace Cedar::Doubles;
@@ -20,7 +20,6 @@ describe(@"UIGestureRecognizerSpec", ^{
     __block UIView *view;
 
     beforeEach(^{
-        [UIGestureRecognizer whitelistClassForGestureSnooping:[Target class]];
         view = [[[UIView alloc] init] autorelease];
         target = [[[Target alloc] init] autorelease];
         spy_on(target);
@@ -136,26 +135,17 @@ describe(@"UIGestureRecognizerSpec", ^{
         itShouldBehaveLike(@"triggering a gesture recognizer");
     });
 
-    describe(@"cleaning up the installed whitelist", ^{
-        __block Target *aTarget;
-        __block UITapGestureRecognizer *resetRecognizer;
+    context(@"for a segue-triggering gesture recognizer created in a storyboard", ^{
+        __block SpecGestureRecognizerViewController *controller;
 
         beforeEach(^{
-            [UIGestureRecognizer whitelistClassForGestureSnooping:[Target class]];
-            UIView *aView = [[[UIView alloc] init] autorelease];
-            aTarget = [[[Target alloc] init] autorelease];
-            spy_on(aTarget);
-
-            resetRecognizer = [[[UITapGestureRecognizer alloc] init] autorelease];
-            [aView addGestureRecognizer:resetRecognizer];
-
+            controller = [[UIStoryboard storyboardWithName:@"UIGestureRecognizer" bundle:nil] instantiateInitialViewController];
+            controller.view should_not be_nil;
         });
 
-        it(@"removes the registered whitelist of gesture recognizer targets when Cedar calls afterEach", ^{
-            [UIGestureRecognizer afterEach];
-            [resetRecognizer addTarget:aTarget action:@selector(hello)];
-            [resetRecognizer recognize];
-            aTarget should_not have_received(@selector(hello));
+        it(@"should trigger the connected segue when it is recognized", ^{
+            [controller.segueRecognizer recognize];
+            controller.presentedViewController should_not be_nil;
         });
     });
 });

@@ -1,11 +1,28 @@
 #import "UIGestureRecognizer+Spec.h"
 #import "objc/runtime.h"
-#import <UIKit/UITextField.h>
+
+@interface PCKGestureRecognizerTargetActionPair : NSObject
+@property (nonatomic, unsafe_unretained) id target;
+@property (nonatomic) SEL action;
++ (instancetype)targetActionPairWithTarget:(id)target action:(SEL)action;
+@end
+
+@implementation PCKGestureRecognizerTargetActionPair
+
++ (instancetype)targetActionPairWithTarget:(id)target action:(SEL)action {
+    PCKGestureRecognizerTargetActionPair *pair = [[PCKGestureRecognizerTargetActionPair alloc] init];
+    pair.target = target;
+    pair.action = action;
+    return [pair autorelease];
+}
+
+@end
+
 
 @interface UIGestureRecognizer (Spec_Private)
-- (void) addUnswizzledTarget:(id)target action:(SEL)action;
-- (void) removeUnswizzledTarget:(id)target action:(SEL)action;
-- (instancetype) initWithoutSwizzledTarget:(id)target action:(SEL)action;
+- (void)addUnswizzledTarget:(id)target action:(SEL)action;
+- (void)removeUnswizzledTarget:(id)target action:(SEL)action;
+- (instancetype)initWithoutSwizzledTarget:(id)target action:(SEL)action;
 @end
 
 @implementation UIGestureRecognizer (Spec)
@@ -32,7 +49,7 @@
 }
 
 #pragma mark - Setup
-+(void)load {
++ (void)load {
     [self redirectSelector:@selector(addTarget:action:)
                         to:@selector(addSnoopedTarget:action:)
              andRenameItTo:@selector(addUnswizzledTarget:action:)];
@@ -44,13 +61,11 @@
     [self redirectSelector:@selector(initWithTarget:action:)
                         to:@selector(initWithSwizzledTarget:action:)
              andRenameItTo:@selector(initWithoutSwizzledTarget:action:)];
-
-    whitelistedClasses = [[NSMutableArray alloc] init];
 }
 
--(instancetype)initWithSwizzledTarget:(id)target action:(SEL)action {
+- (instancetype)initWithSwizzledTarget:(id)target action:(SEL)action {
     if (self = [self initWithoutSwizzledTarget:target action:action]) {
-        if(target && action) {
+        if (target && action) {
             [self addSnoopedTarget:target action:action];
         }
     }
@@ -58,12 +73,8 @@
     return self;
 }
 
-+(void)afterEach {
-    [whitelistedClasses removeAllObjects];
-}
-
 #pragma mark - Public interface
--(void)recognize {
+- (void)recognize {
     if (self.view.hidden) {
         [[NSException exceptionWithName:@"Unrecognizable" reason:@"Can't recognize when in a hidden view" userInfo:nil] raise];
     }
@@ -71,56 +82,36 @@
         [[NSException exceptionWithName:@"Unrecognizable" reason:@"Can't recognize when recognizer is disabled" userInfo:nil] raise];
     }
 
-    [self.targetsAndActions enumerateObjectsUsingBlock:^(NSArray *targetSelectorPair, NSUInteger index, BOOL *stop) {
-        id target = [targetSelectorPair firstObject];
-        SEL action = [[targetSelectorPair lastObject] pointerValue];
-
-        [target performSelector:action withObject:self];
+    [self.targetsAndActions enumerateObjectsUsingBlock:^(PCKGestureRecognizerTargetActionPair *targetActionPair, NSUInteger index, BOOL *stop) {
+        [targetActionPair.target performSelector:targetActionPair.action withObject:self];
     }];
 }
 
-static NSMutableArray *whitelistedClasses;
-+(void)whitelistClassForGestureSnooping:(Class)klass {
-    [whitelistedClasses addObject:klass];
-}
++ (void)whitelistClassForGestureSnooping:(Class)klass {}
 
 #pragma mark - swizzled methods
--(void)addSnoopedTarget:(id)target action:(SEL)action {
+- (void)addSnoopedTarget:(id)target action:(SEL)action {
     [self addUnswizzledTarget:target action:action];
-
-    NSMutableArray *targetsAndActions = [self targetsAndActions];
-
-    if (![whitelistedClasses containsObject:[target class]]) {
-        return;
-    }
-
-    [targetsAndActions addObject:@[target, [NSValue valueWithPointer:action]]];
-    [self setTargetsAndActions:targetsAndActions];
+    [[self targetsAndActions] addObject:[PCKGestureRecognizerTargetActionPair targetActionPairWithTarget:target action:action]];
 }
 
--(void)removeSnoopedTarget:(id)target action:(SEL)action {
+- (void)removeSnoopedTarget:(id)target action:(SEL)action {
     [self removeUnswizzledTarget:target action:action];
 
-    if (![whitelistedClasses containsObject:[target class]]) {
-        return;
-    }
-
     NSMutableArray *targetsAndActions = [self targetsAndActions];
-    NSPredicate *targetAndActionPredicate = [NSPredicate predicateWithBlock:^BOOL(NSMutableArray *targetAndActionPair, NSDictionary *bindings) {
-        id storedTarget = [targetAndActionPair firstObject];
-        SEL storedAction = [[targetAndActionPair lastObject] pointerValue];
-        return storedTarget == target && storedAction == action;
+    __block id unretainedTarget = target;
+    NSPredicate *targetAndActionPredicate = [NSPredicate predicateWithBlock:^BOOL(PCKGestureRecognizerTargetActionPair *targetActionPair, NSDictionary *bindings) {
+        return unretainedTarget == targetActionPair.target && action == targetActionPair.action;
     }];
 
     NSArray *matchingTargetsAndActions = [targetsAndActions filteredArrayUsingPredicate:targetAndActionPredicate];
     [targetsAndActions removeObjectsInArray:matchingTargetsAndActions];
-    [self setTargetsAndActions:targetsAndActions];
 }
 
 #pragma mark - targetsAndActions
 static char const * const targetAndActionsKey = "targetAndActionKey";
 
--(NSMutableArray *) targetsAndActions {
+- (NSMutableArray *)targetsAndActions {
     NSMutableArray *targetsAndActions = objc_getAssociatedObject(self, &targetAndActionsKey);
     if (!targetsAndActions) {
         targetsAndActions = [[[NSMutableArray alloc] init] autorelease];
@@ -129,7 +120,7 @@ static char const * const targetAndActionsKey = "targetAndActionKey";
     return targetsAndActions;
 }
 
--(void) setTargetsAndActions:(NSMutableArray *)targetsAndActions {
+- (void)setTargetsAndActions:(NSMutableArray *)targetsAndActions {
     objc_setAssociatedObject(self, &targetAndActionsKey, targetsAndActions, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
