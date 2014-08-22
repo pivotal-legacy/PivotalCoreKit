@@ -20,9 +20,9 @@
 
 
 @interface UIGestureRecognizer (Spec_Private)
-- (void) addUnswizzledTarget:(id)target action:(SEL)action;
-- (void) removeUnswizzledTarget:(id)target action:(SEL)action;
-- (instancetype) initWithoutSwizzledTarget:(id)target action:(SEL)action;
+- (void)addUnswizzledTarget:(id)target action:(SEL)action;
+- (void)removeUnswizzledTarget:(id)target action:(SEL)action;
+- (instancetype)initWithoutSwizzledTarget:(id)target action:(SEL)action;
 @end
 
 @implementation UIGestureRecognizer (Spec)
@@ -49,7 +49,7 @@
 }
 
 #pragma mark - Setup
-+(void)load {
++ (void)load {
     [self redirectSelector:@selector(addTarget:action:)
                         to:@selector(addSnoopedTarget:action:)
              andRenameItTo:@selector(addUnswizzledTarget:action:)];
@@ -63,9 +63,9 @@
              andRenameItTo:@selector(initWithoutSwizzledTarget:action:)];
 }
 
--(instancetype)initWithSwizzledTarget:(id)target action:(SEL)action {
+- (instancetype)initWithSwizzledTarget:(id)target action:(SEL)action {
     if (self = [self initWithoutSwizzledTarget:target action:action]) {
-        if(target && action) {
+        if (target && action) {
             [self addSnoopedTarget:target action:action];
         }
     }
@@ -74,7 +74,7 @@
 }
 
 #pragma mark - Public interface
--(void)recognize {
+- (void)recognize {
     if (self.view.hidden) {
         [[NSException exceptionWithName:@"Unrecognizable" reason:@"Can't recognize when in a hidden view" userInfo:nil] raise];
     }
@@ -87,15 +87,15 @@
     }];
 }
 
-+(void)whitelistClassForGestureSnooping:(Class)klass {}
++ (void)whitelistClassForGestureSnooping:(Class)klass {}
 
 #pragma mark - swizzled methods
--(void)addSnoopedTarget:(id)target action:(SEL)action {
+- (void)addSnoopedTarget:(id)target action:(SEL)action {
     [self addUnswizzledTarget:target action:action];
     [[self targetsAndActions] addObject:[PCKGestureRecognizerTargetActionPair targetActionPairWithTarget:target action:action]];
 }
 
--(void)removeSnoopedTarget:(id)target action:(SEL)action {
+- (void)removeSnoopedTarget:(id)target action:(SEL)action {
     [self removeUnswizzledTarget:target action:action];
 
     NSMutableArray *targetsAndActions = [self targetsAndActions];
@@ -111,7 +111,7 @@
 #pragma mark - targetsAndActions
 static char const * const targetAndActionsKey = "targetAndActionKey";
 
--(NSMutableArray *) targetsAndActions {
+- (NSMutableArray *)targetsAndActions {
     NSMutableArray *targetsAndActions = objc_getAssociatedObject(self, &targetAndActionsKey);
     if (!targetsAndActions) {
         targetsAndActions = [[[NSMutableArray alloc] init] autorelease];
@@ -120,7 +120,7 @@ static char const * const targetAndActionsKey = "targetAndActionKey";
     return targetsAndActions;
 }
 
--(void) setTargetsAndActions:(NSMutableArray *)targetsAndActions {
+- (void)setTargetsAndActions:(NSMutableArray *)targetsAndActions {
     objc_setAssociatedObject(self, &targetAndActionsKey, targetsAndActions, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
