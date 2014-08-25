@@ -29,6 +29,7 @@
 
     NSAssert(currentView, @"Cell must be in a table view in order to be tapped!");
     UITableView *tableView = (UITableView *)currentView;
+    [tableView layoutIfNeeded];
     NSIndexPath *indexPath = [tableView indexPathForCell:self];
 
     BOOL shouldContinueSelectionAfterHighlighting = YES;
