@@ -1,7 +1,7 @@
 #import "UITableViewCell+Spec.h"
 #import "UIView+Spec.h"
 #import "UIControl+Spec.h"
-#import "../Helpers/PCKPrototypeCellInstantiatingDataSource.h"
+#import "PCKPrototypeCellInstantiatingDataSource.h"
 
 @interface UIStoryboardSegueTemplate
 - (id)identifier;
