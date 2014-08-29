@@ -1,6 +1,6 @@
 #import "UICollectionViewCell+Spec.h"
 #import "UIView+Spec.h"
-#import "../Helpers/PCKPrototypeCellInstantiatingDataSource.h"
+#import "PCKPrototypeCellInstantiatingDataSource.h"
 
 @interface UICollectionView (PrivateAppleMethods)
 - (void)_userSelectItemAtIndexPath:(NSIndexPath *)indexPath;
