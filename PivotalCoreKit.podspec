@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
   s.homepage = 'https://github.com/pivotal/PivotalCoreKit'
   s.author   = { 'Pivotal Labs' => 'http://pivotallabs.com' }
   s.source   = { :git => 'https://github.com/pivotal/PivotalCoreKit.git' }
-  s.platform = :ios, '5.0'
+  s.platform = :ios, '6.0'
   s.requires_arc = false
 
   s.default_subspec = 'Core'
