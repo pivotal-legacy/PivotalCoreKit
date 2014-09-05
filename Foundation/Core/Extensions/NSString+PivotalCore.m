@@ -12,6 +12,9 @@
 }
 
 - (id)initWithBase64EncodedData:(NSData *)data DEPRECATED_ATTRIBUTE {
+    self = [self init];
+    [self release];
+
     if ([data respondsToSelector:@selector(base64EncodedStringWithOptions:)]) {
         return [[data base64EncodedStringWithOptions:0] retain];
     } else {

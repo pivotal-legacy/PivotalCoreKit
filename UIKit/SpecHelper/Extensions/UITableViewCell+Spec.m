@@ -29,6 +29,7 @@
 
     NSAssert(currentView, @"Cell must be in a table view in order to be tapped!");
     UITableView *tableView = (UITableView *)currentView;
+    [tableView layoutIfNeeded];
     NSIndexPath *indexPath = [tableView indexPathForCell:self];
 
     BOOL shouldContinueSelectionAfterHighlighting = YES;
@@ -62,7 +63,8 @@
     if (!tableView.editing) {
         @throw [NSException exceptionWithName:NSInternalInconsistencyException reason:@"Table view must be in editing mode in order to tap delete accessory" userInfo:nil];
     } else {
-        if ([[[UIDevice currentDevice] systemVersion] compare:@"7.0" options:NSNumericSearch] != NSOrderedAscending) {
+        if ([[[UIDevice currentDevice] systemVersion] compare:@"7.0" options:NSNumericSearch] != NSOrderedAscending &&
+            [[[UIDevice currentDevice] systemVersion] compare:@"8.0" options:NSNumericSearch] == NSOrderedAscending) {
             UIView *cellScrollView = [[self.subviews filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"className MATCHES %@", @"UITableViewCellScrollView"]] firstObject];
             deleteAccessoryControl = [[cellScrollView.subviews filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"className MATCHES %@", @"UITableViewCellEditControl"]] firstObject];
         } else {
@@ -89,7 +91,10 @@
     } else if (!self.showingDeleteConfirmation) {
         @throw [NSException exceptionWithName:NSInternalInconsistencyException reason:@"Delete confirmation must be visible in order to tap it" userInfo:nil];
     } else {
-        if ([[[UIDevice currentDevice] systemVersion] compare:@"7.0" options:NSNumericSearch] != NSOrderedAscending) {
+        if ([[[UIDevice currentDevice] systemVersion] compare:@"8.0" options:NSNumericSearch] != NSOrderedAscending) {
+            UIView *cellDeleteView = [[self.subviews filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"className MATCHES %@", @"UITableViewCellDeleteConfirmationView"]] firstObject];;
+            deleteConfirmationControl = (UIControl *)[[cellDeleteView.subviews filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"className MATCHES %@", @"_UITableViewCellActionButton"]] firstObject];
+        } else if ([[[UIDevice currentDevice] systemVersion] compare:@"7.0" options:NSNumericSearch] != NSOrderedAscending) {
             UIView *cellScrollView = [[self.subviews filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"className MATCHES %@", @"UITableViewCellScrollView"]] firstObject];
             UIView *cellDeleteView = cellScrollView.subviews[0];
             deleteConfirmationControl = (UIControl *)[[cellDeleteView.subviews filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"className MATCHES %@", @"UITableViewCellDeleteConfirmationButton"]] firstObject];
