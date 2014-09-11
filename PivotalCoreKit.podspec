@@ -24,6 +24,7 @@ Pod::Spec.new do |s|
     dev.dependency 'PivotalCoreKit/Foundation/SpecHelper/Fakes'
     dev.dependency 'PivotalCoreKit/UIKit/SpecHelper/Extensions'
     dev.dependency 'PivotalCoreKit/UIKit/SpecHelper/Matchers'
+    dev.dependency 'PivotalCoreKit/UIKit/SpecHelper/Helpers'
     dev.dependency 'PivotalCoreKit/UIKit/SpecHelper/Stubs'
     dev.dependency 'PivotalCoreKit/CoreLocation/SpecHelper/Base'
     dev.dependency 'PivotalCoreKit/CoreLocation/SpecHelper/Extensions'
