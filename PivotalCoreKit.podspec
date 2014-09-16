@@ -62,6 +62,8 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'Foundation' do |f|
+    f.osx.deployment_target = '10.8'
+
     f.subspec 'Core' do |c|
       c.source_files = 'Foundation/Core/**/*.{h,m}'
       c.libraries    = 'xml2'

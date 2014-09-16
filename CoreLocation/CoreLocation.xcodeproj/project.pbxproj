@@ -472,6 +472,7 @@
 		AE3848CC168CD86000C99B55 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastTestingUpgradeCheck = 0510;
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Pivotal Labs";
 			};
