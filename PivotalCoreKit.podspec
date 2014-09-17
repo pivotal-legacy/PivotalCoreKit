@@ -6,8 +6,11 @@ Pod::Spec.new do |s|
   s.homepage = 'https://github.com/pivotal/PivotalCoreKit'
   s.author   = { 'Pivotal Labs' => 'http://pivotallabs.com' }
   s.source   = { :git => 'https://github.com/pivotal/PivotalCoreKit.git' }
-  s.platform = :ios, '6.0'
   s.requires_arc = false
+
+  osx_min_version = '10.8'
+  ios_min_version = '6.0'
+  s.platform = :ios, ios_min_version
 
   s.default_subspec = 'Core'
 
@@ -62,7 +65,8 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'Foundation' do |f|
-    f.osx.deployment_target = '10.8'
+    f.osx.deployment_target = osx_min_version
+    f.ios.deployment_target = ios_min_version
 
     f.subspec 'Core' do |c|
       c.source_files = 'Foundation/Core/**/*.{h,m}'
