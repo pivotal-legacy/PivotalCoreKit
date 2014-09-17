@@ -33,7 +33,7 @@ PivotalCoreKit is split along framework lines, with separate Xcode projects for 
 
 Here is a (hopefully exhaustive but inevitably out of date) list of PivotalCoreKit functionality, separated by framework/section:
 
-* Foundation
+* Foundation (iOS and OSX)
   * Core
     * Convert NSString into a SHA1 hash (as NSData)
     * Convert NSData into a hexadecimal string
@@ -52,7 +52,7 @@ Here is a (hopefully exhaustive but inevitably out of date) list of PivotalCoreK
     * Return the body of an NSURLRequest as a string
     * Fake out +[NSUUID UUID] to return consistent results
     * Fake out NSOperationQueue to execute blocks on demand
-* UIKit
+* UIKit (iOS only)
   * Core
     * Produce a UIBarButtonItem from a UIButton
 	* Load nib-based views from other nibs with bindings and layout constraints intact
@@ -81,7 +81,7 @@ Here is a (hopefully exhaustive but inevitably out of date) list of PivotalCoreK
     * Simulate availability states of UIImagePickerController (camera available/not available, et cetera)
     * Inspect arguments (duration, delay, options) on last UIView animation
     * Fake out UIWebView to inspect requests, simulate back/forward state, and simulate web loads
-* CoreLocation
+* CoreLocation (iOS only)
   * SpecHelper
     * Simulate Geocoding success or failure
 
@@ -149,6 +149,12 @@ target 'Specs' do
   pod 'PivotalCoreKit/UIKit/SpecHelper/Extensions'
   pod 'PivotalCoreKit/Foundation/SpecHelper/Fakes'
 end
+```
+
+**For OSX Projects** - since Foundation is the only OSX-compatible framework, just add the Foundation sub pod to your Podfile.
+
+```
+pod 'PivotalCoreKit/Foundation'
 ```
 
 3. Run `pod install` in your xcode project directory. CocoaPods should download and
