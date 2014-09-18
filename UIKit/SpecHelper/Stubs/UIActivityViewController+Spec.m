@@ -1,5 +1,5 @@
 #import "UIActivityViewController+Spec.h"
-#import <objc/objc-runtime.h>
+#import <objc/runtime.h>
 
 static char kActivityItemsKey;
 static char kApplicationActivitesKey;
