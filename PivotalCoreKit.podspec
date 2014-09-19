@@ -44,6 +44,7 @@ Pod::Spec.new do |s|
     ui.subspec 'SpecHelper' do |spec|
       spec.subspec 'Extensions' do |ext|
         ext.source_files = ['UIKit/SpecHelper/Extensions/*.{h,m}', 'UIKit/SpecHelper/UIKit+PivotalSpecHelper.h']
+        ext.dependency 'PivotalCoreKit/UIKit/SpecHelper/Helpers'
       end
 
       spec.subspec 'Matchers' do |match|
