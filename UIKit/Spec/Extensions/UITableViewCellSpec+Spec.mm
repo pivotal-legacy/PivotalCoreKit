@@ -5,6 +5,7 @@
 
 @interface SpecTableViewController : UITableViewController
 @property (nonatomic) BOOL shouldHightlightRows;
+@property (nonatomic, retain) NSIndexPath *lastSelectedIndexPath;
 @end
 
 @implementation SpecTableViewController
@@ -28,6 +29,10 @@
 
 - (BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath {
     return self.shouldHightlightRows;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    self.lastSelectedIndexPath = indexPath;
 }
 
 @end
@@ -70,6 +75,16 @@ describe(@"UITableViewCell+Spec", ^{
 
                 [controller.tableView indexPathForSelectedRow] should_not equal([controller.tableView indexPathForCell:cell]);
             });
+
+            it(@"should call the delegate method when the same cell is tapped", ^{
+                controller.lastSelectedIndexPath = nil;
+
+                [cell tap];
+
+                NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+                controller.lastSelectedIndexPath should equal(indexPath);
+                controller.tableView.indexPathsForSelectedRows should equal(@[indexPath]);
+            });
         });
 
         context(@"for a multiple selection table view", ^{
@@ -102,6 +117,15 @@ describe(@"UITableViewCell+Spec", ^{
                 [controller.tableView.visibleCells[1] tap];
 
                 [controller.tableView indexPathsForSelectedRows] should equal(@[[NSIndexPath indexPathForRow:0 inSection:0], [NSIndexPath indexPathForRow:1 inSection:0]]);
+            });
+
+            it(@"should not call the delegate method when the same cell is tapped", ^{
+                controller.lastSelectedIndexPath = nil;
+
+                [cell tap];
+
+                controller.lastSelectedIndexPath should be_nil;
+                controller.tableView.indexPathsForSelectedRows should be_empty;
             });
         });
 
