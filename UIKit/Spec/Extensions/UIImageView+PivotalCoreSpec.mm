@@ -1,4 +1,4 @@
-#import "SpecHelper.h"
+#import "CDRSpecHelper.h"
 #import "UIImageView+PivotalCore.h"
 
 using namespace Cedar::Matchers;

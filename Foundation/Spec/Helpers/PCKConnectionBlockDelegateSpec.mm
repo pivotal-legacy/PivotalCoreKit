@@ -1,8 +1,8 @@
 #import <Foundation/Foundation.h>
 #if TARGET_OS_IPHONE
-#import "SpecHelper.h"
+#import "CDRSpecHelper.h"
 #else
-#import <Cedar/SpecHelper.h>
+#import <Cedar/CDRSpecHelper.h>
 #endif
 
 #import "PCKConnectionBlockDelegate.h"
@@ -17,7 +17,7 @@ describe(@"PCKConnectionBlockDelegate", ^{
     __block NSURLResponse *receivedResponse;
     __block NSData *receivedData;
     __block NSError *receivedError;
-    
+
     __block NSURLResponse *sentResponse;
 
     beforeEach(^{
@@ -30,14 +30,14 @@ describe(@"PCKConnectionBlockDelegate", ^{
             receivedData = data;
             receivedError = error;
         }];
-        
+
         sentResponse = [[[NSURLResponse alloc] init] autorelease];
-        
+
         [delegate connection:nil didReceiveResponse:sentResponse];
         [delegate connection:nil didReceiveData:[@"Hello" dataUsingEncoding:NSUTF8StringEncoding]];
         [delegate connection:nil didReceiveData:[@" World" dataUsingEncoding:NSUTF8StringEncoding]];
     });
-    
+
     context(@"when the request completes successfully", ^{
         it(@"should call the block, passing in the response, the data, and no error", ^{
             [delegate connectionDidFinishLoading:nil];
@@ -47,7 +47,7 @@ describe(@"PCKConnectionBlockDelegate", ^{
             receivedError should be_nil;
         });
     });
-    
+
     context(@"when the request fails", ^{
         it(@"should call the block, passingin the response, nil for the data, and the passed in error", ^{
             NSError *error = [[[NSError alloc] init] autorelease];

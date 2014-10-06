@@ -1,6 +1,6 @@
 CONFIGURATION = "Release"
 BUILD_SDK_VERSION = "7.1"
-SIMULATOR_VERSION = "7.0"
+SIMULATOR_VERSION = "7.0.3"
 BUILD_DIR = File.join(File.dirname(__FILE__), "build")
 
 # Xcode 4.3 stores its /Developer inside /Applications/Xcode.app, Xcode 4.2 stored it in /Developer
@@ -116,7 +116,7 @@ namespace :foundation do
       %Q[xcodebuild -workspace PivotalCoreKit.xcworkspace \
                     -scheme Foundation-StaticLibSpec \
                     -sdk iphonesimulator \
-                    -destination platform='iOS Simulator',OS=#{SIMULATOR_VERSION},name='iPhone Retina (4-inch)' \
+                    -destination platform='iOS Simulator',OS=#{SIMULATOR_VERSION},name='iPhone 5' \
                     build test]
       )
       `osascript -e 'tell application "iPhone Simulator" to quit'`
@@ -177,7 +177,7 @@ namespace :uikit do
       %Q[xcodebuild -workspace PivotalCoreKit.xcworkspace \
                     -scheme UIKit-StaticLibSpec \
                     -sdk iphonesimulator \
-                    -destination platform='iOS Simulator',OS=#{SIMULATOR_VERSION},name='iPhone Retina (4-inch)' \
+                    -destination platform='iOS Simulator',OS=#{SIMULATOR_VERSION},name='iPhone 5' \
                     build test]
       )
       `osascript -e 'tell application "iPhone Simulator" to quit'`
@@ -229,7 +229,7 @@ namespace :core_location do
       %Q[xcodebuild -workspace PivotalCoreKit.xcworkspace \
                     -scheme CoreLocation-StaticLibSpec \
                     -sdk iphonesimulator \
-                    -destination platform='iOS Simulator',OS=#{SIMULATOR_VERSION},name='iPhone Retina (4-inch)' \
+                    -destination platform='iOS Simulator',OS=#{SIMULATOR_VERSION},name='iPhone 5' \
                     build test]
       )
       `osascript -e 'tell application "iPhone Simulator" to quit'`

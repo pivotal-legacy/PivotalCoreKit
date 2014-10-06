@@ -1,4 +1,4 @@
-#import "SpecHelper.h"
+#import "CDRSpecHelper.h"
 #import "UIActionSheet+Spec.h"
 
 
@@ -138,7 +138,7 @@ describe(@"UIActionSheet (spec extensions)", ^{
 
             beforeEach(^{
                 presentingView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 400, 400)];
-                
+
                 [actionSheet showFromRect:CGRectMake(30, 30, 10, 10)
                                    inView:presentingView
                                  animated:YES];

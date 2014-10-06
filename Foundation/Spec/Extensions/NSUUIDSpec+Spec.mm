@@ -2,9 +2,9 @@
 #import "NSUUID+Spec.h"
 
 #if TARGET_OS_IPHONE
-#import "SpecHelper.h"
+#import "CDRSpecHelper.h"
 #else
-#import <Cedar/SpecHelper.h>
+#import <Cedar/CDRSpecHelper.h>
 #endif
 using namespace Cedar::Matchers;
 using namespace Cedar::Doubles;

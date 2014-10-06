@@ -1,4 +1,4 @@
-#import "SpecHelper.h"
+#import "CDRSpecHelper.h"
 #import "UITableViewCell+Spec.h"
 #import "PrototypeCellObjects.h"
 

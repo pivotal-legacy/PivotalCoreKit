@@ -1,4 +1,4 @@
-#import "SpecHelper.h"
+#import "CDRSpecHelper.h"
 #import "UITabBarController+Spec.h"
 
 using namespace Cedar::Matchers;

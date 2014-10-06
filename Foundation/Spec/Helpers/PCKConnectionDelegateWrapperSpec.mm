@@ -1,8 +1,8 @@
 #import <Foundation/Foundation.h>
 #if TARGET_OS_IPHONE
-#import "SpecHelper.h"
+#import "CDRSpecHelper.h"
 #else
-#import <Cedar/SpecHelper.h>
+#import <Cedar/CDRSpecHelper.h>
 #endif
 
 #import "PCKConnectionDelegateWrapper.h"
@@ -20,7 +20,7 @@ describe(@"PCKConnectionDelegateWrapper", ^{
     __block NSData *receivedData;
     __block id<CedarDouble, NSURLConnectionDataDelegate> delegate;
     __block NSURLConnection *proxyConnection;
-    
+
     beforeEach(^{
         receivedData = [NSData data];
         delegate = nice_fake_for(@protocol(NSURLConnectionDataDelegate));
@@ -34,7 +34,7 @@ describe(@"PCKConnectionDelegateWrapper", ^{
         proxyConnection = [NSURLConnection connectionWithRequest:request
                                                         delegate:delegateWrapper];
     });
-    
+
     context(@"when receiving a message that the delegate responds to", ^{
         it(@"should forward that message to the delegate, passing along the original connection", ^{
             NSURLResponse *response = [[[NSURLResponse alloc] init] autorelease];
@@ -43,19 +43,19 @@ describe(@"PCKConnectionDelegateWrapper", ^{
             delegate should have_received(@selector(connection:didReceiveResponse:)).with(connection).and_with(response);
         });
     });
-    
+
     context(@"when receiving data", ^{
         beforeEach(^{
             NSData *data = [@"Hello" dataUsingEncoding:NSUTF8StringEncoding];
             [delegateWrapper connection:proxyConnection didReceiveData:data];
             delegate should have_received(@selector(connection:didReceiveData:)).with(connection).and_with(data);
-            
+
             [delegate reset_sent_messages];
             data = [@" World" dataUsingEncoding:NSUTF8StringEncoding];
             [delegateWrapper connection:proxyConnection didReceiveData:data];
             delegate should have_received(@selector(connection:didReceiveData:)).with(connection).and_with(data);
         });
-        
+
         context(@"and the connection succeeds", ^{
             it(@"should tell the delegate and call the completion callback", ^{
                 [delegateWrapper connectionDidFinishLoading:proxyConnection];
@@ -65,7 +65,7 @@ describe(@"PCKConnectionDelegateWrapper", ^{
                 receivedString should equal(@"Hello World");
             });
         });
-        
+
         context(@"and the connection fails", ^{
             it(@"should tell the delegate and call the completion callback, passing nil in", ^{
                 NSError *error = [[[NSError alloc] init] autorelease];
@@ -76,7 +76,7 @@ describe(@"PCKConnectionDelegateWrapper", ^{
             });
         });
     });
-    
+
     context(@"mini-integration test: when the proxy connection receives a response", ^{
         it(@"should forward the relevant messages to the underlying delegate and call the block appropriately", ^{
             PSHKFakeHTTPURLResponse *response = [[[PSHKFakeHTTPURLResponse alloc] initWithStatusCode:200

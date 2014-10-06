@@ -1,4 +1,4 @@
-#import "SpecHelper.h"
+#import "CDRSpecHelper.h"
 #import "UIActivityViewController+Spec.h"
 
 @interface CustomActivity : UIActivity

@@ -1,4 +1,4 @@
-#import "SpecHelper.h"
+#import "CDRSpecHelper.h"
 #import "UIControl+Spec.h"
 #import "Target.h"
 
