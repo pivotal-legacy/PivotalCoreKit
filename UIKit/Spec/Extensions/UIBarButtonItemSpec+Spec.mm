@@ -1,4 +1,4 @@
-#import "SpecHelper.h"
+#import "CDRSpecHelper.h"
 #import "UIBarButtonItem+Spec.h"
 #import "Target.h"
 
@@ -26,12 +26,12 @@ describe(@"UIBarButtonItemSpec_Spec", ^{
         [barButtonItem tap];
         target should have_received(@selector(hello));
     });
-    
+
     it(@"should throw an exception if the bar button item is disabled", ^{
         barButtonItem.enabled = NO;
         expect(^{[barButtonItem tap];}).to(raise_exception());
     });
-    
+
     it(@"should delegate down to the custom view if the custom view is a button", ^{
         UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         [button addTarget:target action:@selector(hello) forControlEvents:UIControlEventTouchUpInside];
@@ -40,7 +40,7 @@ describe(@"UIBarButtonItemSpec_Spec", ^{
 
         target should have_received(@selector(hello));
     });
-    
+
 });
 
 SPEC_END

@@ -1,4 +1,4 @@
-#import "SpecHelper.h"
+#import "CDRSpecHelper.h"
 #import "OuterView.h"
 #import "InnerView.h"
 #import "MainController.h"

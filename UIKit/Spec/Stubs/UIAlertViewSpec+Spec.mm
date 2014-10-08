@@ -1,4 +1,4 @@
-#import "SpecHelper.h"
+#import "CDRSpecHelper.h"
 #import "UIAlertView+Spec.h"
 
 namespace Cedar { namespace Matchers {

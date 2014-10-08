@@ -1,4 +1,4 @@
-#import "SpecHelper.h"
+#import "CDRSpecHelper.h"
 
 #import "AWebViewController.h"
 #import "UIWebView+Spec.h"

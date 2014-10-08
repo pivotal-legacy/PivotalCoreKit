@@ -1,4 +1,4 @@
-#import "SpecHelper.h"
+#import "CDRSpecHelper.h"
 #import "UIView+Spec.h"
 #import "Target.h"
 #import "UIGestureRecognizer+Spec.h"

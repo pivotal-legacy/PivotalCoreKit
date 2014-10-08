@@ -10,37 +10,37 @@
 	<string>PivotalCoreKit</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>027D6D0C-B7CC-4DA3-809B-C4CAD8377340</key>
+		<key>5CA7C5C68EBD368708C4B6CC80230776B66D4052</key>
 		<string>https://github.com/akitchen/FakeHTTP.git</string>
-		<key>1BC383CE-2831-4C65-977B-E6E0A428E301</key>
-		<string>git://github.com/pivotal/cedar.git</string>
-		<key>8F8456F2-8607-47E4-85C9-45DA0D1432C9</key>
+		<key>8E3EABAC3DEB540C429B3EF995370DAC6D10823F</key>
 		<string>https://github.com/pivotal/PivotalCoreKit.git</string>
+		<key>9C17E6AC4A93E78FE05F88AE0011DD4EAD50139D</key>
+		<string>git://github.com/pivotal/cedar.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>PivotalCoreKit.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>027D6D0C-B7CC-4DA3-809B-C4CAD8377340</key>
+		<key>5CA7C5C68EBD368708C4B6CC80230776B66D4052</key>
 		<string>../Externals/FakeHTTP</string>
-		<key>1BC383CE-2831-4C65-977B-E6E0A428E301</key>
-		<string>../Externals/Cedar</string>
-		<key>8F8456F2-8607-47E4-85C9-45DA0D1432C9</key>
+		<key>8E3EABAC3DEB540C429B3EF995370DAC6D10823F</key>
 		<string>..</string>
+		<key>9C17E6AC4A93E78FE05F88AE0011DD4EAD50139D</key>
+		<string>../Externals/Cedar</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/pivotal/PivotalCoreKit.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>8F8456F2-8607-47E4-85C9-45DA0D1432C9</string>
+	<string>8E3EABAC3DEB540C429B3EF995370DAC6D10823F</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>1BC383CE-2831-4C65-977B-E6E0A428E301</string>
+			<string>9C17E6AC4A93E78FE05F88AE0011DD4EAD50139D</string>
 			<key>IDESourceControlWCCName</key>
 			<string>Cedar</string>
 		</dict>
@@ -48,7 +48,7 @@
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>027D6D0C-B7CC-4DA3-809B-C4CAD8377340</string>
+			<string>5CA7C5C68EBD368708C4B6CC80230776B66D4052</string>
 			<key>IDESourceControlWCCName</key>
 			<string>FakeHTTP</string>
 		</dict>
@@ -56,7 +56,7 @@
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>8F8456F2-8607-47E4-85C9-45DA0D1432C9</string>
+			<string>8E3EABAC3DEB540C429B3EF995370DAC6D10823F</string>
 			<key>IDESourceControlWCCName</key>
 			<string>PivotalCoreKit</string>
 		</dict>

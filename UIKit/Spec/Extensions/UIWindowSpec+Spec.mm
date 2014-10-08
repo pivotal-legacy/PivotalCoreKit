@@ -1,4 +1,4 @@
-#import "SpecHelper.h"
+#import "CDRSpecHelper.h"
 #import "UIWindow+Spec.h"
 
 using namespace Cedar::Matchers;

@@ -42,7 +42,7 @@
     }
 
     if (shouldContinueSelectionAfterHighlighting) {
-        if (self.isSelected) {
+        if (tableView.allowsMultipleSelection && self.isSelected) {
             [tableView _deselectRowAtIndexPath:indexPath animated:NO notifyDelegate:YES];
         } else {
             [tableView _selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionMiddle notifyDelegate:YES];

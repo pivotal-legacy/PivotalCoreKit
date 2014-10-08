@@ -1,9 +1,9 @@
 #import <Foundation/Foundation.h>
 #if TARGET_OS_IPHONE
-#import "SpecHelper.h"
+#import "CDRSpecHelper.h"
 #import "Foundation+PivotalSpecHelper.h"
 #else
-#import <Cedar/SpecHelper.h>
+#import <Cedar/CDRSpecHelper.h>
 #import <Foundation+PivotalSpecHelper/Foundation+PivotalSpecHelper.h>
 #endif
 

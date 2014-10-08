@@ -1,4 +1,4 @@
-#import "SpecHelper.h"
+#import "CDRSpecHelper.h"
 #import "UIBarButtonItem+Button.h"
 
 using namespace Cedar::Matchers;

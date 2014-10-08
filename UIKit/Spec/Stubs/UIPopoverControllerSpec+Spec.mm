@@ -1,4 +1,4 @@
-#import "SpecHelper.h"
+#import "CDRSpecHelper.h"
 #import "UIPopoverController+Spec.h"
 
 using namespace Cedar::Matchers;
