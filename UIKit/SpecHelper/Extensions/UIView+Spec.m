@@ -30,25 +30,29 @@
 }
 
 #pragma mark - UIGestureRecognizer helpers
+
 - (void)tap {
-    [self recognizeAllGesturesMatching:[UITapGestureRecognizer class]];
+    [[self recognizersWithClass:[UITapGestureRecognizer class]] makeObjectsPerformSelector:@selector(recognize)];
 }
 
 - (void)swipe {
-    [self recognizeAllGesturesMatching:[UISwipeGestureRecognizer class]];
+    [[self recognizersWithClass:[UISwipeGestureRecognizer class]] makeObjectsPerformSelector:@selector(recognize)];
 }
 
 - (void)pinch {
-    [self recognizeAllGesturesMatching:[UIPinchGestureRecognizer class]];
+    [[self recognizersWithClass:[UIPinchGestureRecognizer class]] makeObjectsPerformSelector:@selector(recognize)];
+}
+
+- (void)swipeInDirection:(UISwipeGestureRecognizerDirection)swipeDirection {
+    NSArray *swipeRecognizers = [self recognizersWithClass:[UISwipeGestureRecognizer class]];
+    NSPredicate *directionPredicate = [NSPredicate predicateWithFormat:@"direction = %@", @(swipeDirection)];
+    return [[swipeRecognizers filteredArrayUsingPredicate:directionPredicate] makeObjectsPerformSelector:@selector(recognize)];
 }
 
 #pragma mark - Private
-- (void) recognizeAllGesturesMatching:(Class)klazz {
-    for (UIGestureRecognizer *recognizer in self.gestureRecognizers) {
-        if ([recognizer class] == klazz) {
-            [recognizer recognize];
-        }
-    }
+
+- (NSArray *)recognizersWithClass:(Class)klazz {
+    return [self.gestureRecognizers filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"class = %@", klazz]];
 }
 
 @end
