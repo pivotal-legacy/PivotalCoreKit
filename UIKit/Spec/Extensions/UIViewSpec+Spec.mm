@@ -10,8 +10,7 @@ SPEC_BEGIN(UIViewSpec_Spec)
 
 describe(@"UIView+Spec", ^{
     __block UIView *view;
-    __block Target *target;
-    __block Target *otherTarget;
+    __block Target *target, *otherTarget;
 
     beforeEach(^{
         view = [[[UIView alloc] init] autorelease];
@@ -59,6 +58,74 @@ describe(@"UIView+Spec", ^{
 
             target should have_received(@selector(hello));
             otherTarget should_not have_received(@selector(hello));
+        });
+    });
+
+    describe(@"swiping the view with a direction", ^{
+        __block Target *upTarget, *leftTarget, *rightTarget, *downTarget;
+
+        beforeEach(^{
+            upTarget = nice_fake_for([Target class]);
+            leftTarget = nice_fake_for([Target class]);
+            rightTarget = nice_fake_for([Target class]);
+            downTarget = nice_fake_for([Target class]);
+
+            UISwipeGestureRecognizer *upSwipeRecognizer = [[[UISwipeGestureRecognizer alloc] init] autorelease];
+            upSwipeRecognizer.direction = UISwipeGestureRecognizerDirectionUp;
+
+            [upSwipeRecognizer addTarget:upTarget action:@selector(hello)];
+
+            UISwipeGestureRecognizer *leftSwipeRecognizer = [[[UISwipeGestureRecognizer alloc] init] autorelease];
+            leftSwipeRecognizer.direction = UISwipeGestureRecognizerDirectionLeft;
+
+            [leftSwipeRecognizer addTarget:leftTarget action:@selector(hello)];
+
+            UISwipeGestureRecognizer *rightSwipeRecognizer = [[[UISwipeGestureRecognizer alloc] init] autorelease];
+            rightSwipeRecognizer.direction = UISwipeGestureRecognizerDirectionRight;
+
+            [rightSwipeRecognizer addTarget:rightTarget action:@selector(hello)];
+
+            UISwipeGestureRecognizer *downSwipeRecognizer = [[[UISwipeGestureRecognizer alloc] init] autorelease];
+            downSwipeRecognizer.direction = UISwipeGestureRecognizerDirectionDown;
+
+            [downSwipeRecognizer addTarget:downTarget action:@selector(hello)];
+
+            [view addGestureRecognizer:upSwipeRecognizer];
+            [view addGestureRecognizer:downSwipeRecognizer];
+            [view addGestureRecognizer:leftSwipeRecognizer];
+            [view addGestureRecognizer:rightSwipeRecognizer];
+        });
+
+        it(@"should swipe events for the up direction when you call -swipeWithDirection: with UISwipeGestureRecognizerDirectionUp", ^{
+            [view swipeInDirection:UISwipeGestureRecognizerDirectionUp];
+            upTarget should have_received(@selector(hello));
+            downTarget should_not have_received(@selector(hello));
+            leftTarget should_not have_received(@selector(hello));
+            rightTarget should_not have_received(@selector(hello));
+        });
+
+        it(@"should swipe events for the up direction when you call -swipeWithDirection: with UISwipeGestureRecognizerDirectionDown", ^{
+            [view swipeInDirection:UISwipeGestureRecognizerDirectionDown];
+            downTarget should have_received(@selector(hello));
+            upTarget should_not have_received(@selector(hello));
+            leftTarget should_not have_received(@selector(hello));
+            rightTarget should_not have_received(@selector(hello));
+        });
+
+        it(@"should swipe events for the up direction when you call -swipeWithDirection: with UISwipeGestureRecognizerDirectionLeft", ^{
+            [view swipeInDirection:UISwipeGestureRecognizerDirectionLeft];
+            leftTarget should have_received(@selector(hello));
+            upTarget should_not have_received(@selector(hello));
+            downTarget should_not have_received(@selector(hello));
+            rightTarget should_not have_received(@selector(hello));
+        });
+
+        it(@"should swipe events for the up direction when you call -swipeWithDirection: with UISwipeGestureRecognizerDirectionRight", ^{
+            [view swipeInDirection:UISwipeGestureRecognizerDirectionRight];
+            rightTarget should have_received(@selector(hello));
+            upTarget should_not have_received(@selector(hello));
+            downTarget should_not have_received(@selector(hello));
+            leftTarget should_not have_received(@selector(hello));
         });
     });
 

@@ -6,6 +6,7 @@
 
 - (void)tap;
 - (void)swipe;
+- (void)swipeInDirection:(UISwipeGestureRecognizerDirection)swipeDirection;
 - (void)pinch;
 
 @end
