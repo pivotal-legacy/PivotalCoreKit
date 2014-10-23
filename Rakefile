@@ -1,6 +1,6 @@
 CONFIGURATION = "Release"
-BUILD_SDK_VERSION = "7.1"
-SIMULATOR_VERSION = "7.1"
+BUILD_SDK_VERSION = ENV['BUILD_SDK_VERSION'] || "8.1"
+SIMULATOR_VERSION = ENV['SIMULATOR_VERSION'] || "8.1"
 BUILD_DIR = File.join(File.dirname(__FILE__), "build")
 
 # Xcode 4.3 stores its /Developer inside /Applications/Xcode.app, Xcode 4.2 stored it in /Developer
