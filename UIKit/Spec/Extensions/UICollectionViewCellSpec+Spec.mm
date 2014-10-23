@@ -24,6 +24,7 @@
 
 using namespace Cedar::Matchers;
 using namespace Cedar::Doubles;
+using namespace Arguments;
 
 SPEC_BEGIN(UICollectionViewCell_SpecSpec)
 
@@ -46,6 +47,26 @@ describe(@"UICollectionViewCell+Spec", ^{
 
         cell = controller.collectionView.visibleCells[0];
         indexPathForCell = [controller.collectionView indexPathForCell:cell];
+    });
+
+    describe(@"-tapping a cell without a collection view", ^{
+        beforeEach(^{
+            cell = [controller.collectionView.dataSource collectionView:controller.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0]];
+            cell.superview should be_nil;
+        });
+
+        it(@"should raise an assertion with a message about not being in a collection view", ^{
+            NSAssertionHandler *oldAssertionHandler = [[NSThread currentThread] threadDictionary][NSAssertionHandlerKey];
+            oldAssertionHandler should be_nil;
+
+            NSAssertionHandler *assertionHandler = nice_fake_for([NSAssertionHandler class]);
+            [[NSThread currentThread] threadDictionary][NSAssertionHandlerKey] = assertionHandler;
+
+            [cell tap];
+            assertionHandler should have_received(@selector(handleFailureInMethod:object:file:lineNumber:description:)).with(anything, anything, anything, anything, @"Cell must be a in a collection view in order to be tapped!");
+
+            [[[NSThread currentThread] threadDictionary] removeObjectForKey:NSAssertionHandlerKey];
+        });
     });
 
     describe(@"-tap", ^{

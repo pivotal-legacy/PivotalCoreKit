@@ -9,7 +9,7 @@
 @implementation UICollectionViewCell (Spec)
 
 - (void)tap {
-    UIView *currentView = self;
+    UIView *currentView = self.superview;
     while (currentView.superview != nil && ![currentView isKindOfClass:[UICollectionView class]]) {
         currentView = currentView.superview;
     }
