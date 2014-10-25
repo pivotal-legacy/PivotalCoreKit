@@ -1,6 +1,5 @@
 #import <UIKit/UIKit.h>
 #import <Cedar-iOS.h>
-#import <SpecHelper.h>
 
 using namespace Cedar::Matchers;
 using namespace Cedar::Doubles;
@@ -12,9 +11,9 @@ describe(@"UIViewController (spec extensions)", ^{
     __block UINavigationController *modalController;
 
     beforeEach(^{
-        controller = [[UIViewController new] autorelease];
-        childController = [[UIViewController new] autorelease];
-        modalController = [[[UINavigationController alloc] initWithRootViewController:childController] autorelease];
+        controller = [[UIViewController alloc] init];
+        childController = [[UIViewController alloc] init];
+        modalController = [[UINavigationController alloc] initWithRootViewController:childController];
     });
 
     describe(@"presenting modal view controllers", ^{
@@ -104,15 +103,16 @@ describe(@"UIViewController (spec extensions)", ^{
         describe(@"presenting another modal controller", ^{
             it(@"should raise an exception", ^{
                 ^{
-                    [controller presentViewController:[[UIViewController new] autorelease] animated:YES completion:nil];
+                    UIViewController *viewController = [[UIViewController alloc] init];
+                    [controller presentViewController:viewController animated:YES completion:nil];
                 } should raise_exception;
             });
         });
     });
 
+    describe(@"presenting modal view controllers (deprecated APIs)", ^{
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
-    describe(@"presenting modal view controllers (deprecated APIs)", ^{
         beforeEach(^{
             [controller presentModalViewController:modalController animated:YES];
         });
@@ -148,8 +148,8 @@ describe(@"UIViewController (spec extensions)", ^{
                 modalController.presentingViewController should be_nil;
             });
         });
-    });
 #pragma clang diagnostic pop
+    });
 });
 
 SPEC_END
