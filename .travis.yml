@@ -5,7 +5,6 @@ before_install:
 
 env:
   matrix:
-    - BUILD_SDK_VERSION="8.0" SIMULATOR_VERSION="8.0"
     - BUILD_SDK_VERSION="8.0" SIMULATOR_VERSION="7.1"
     - BUILD_SDK_VERSION="7.1" SIMULATOR_VERSION="7.1"
 
