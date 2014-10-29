@@ -37,6 +37,19 @@
     [[NSRunLoop mainRunLoop] runUntilDate:[NSDate date]];
 }
 
+- (UIViewController *)visibleViewController {
+    if (self.presentedViewController) {
+        return self.presentedViewController;
+    } else {
+        for (UIViewController *viewController in self.viewControllers) {
+            if (viewController.presentedViewController) {
+                return viewController.presentedViewController;
+            }
+        }
+    }
+    return self.topViewController;
+}
+
 #pragma clang diagnostic pop
 
 @end

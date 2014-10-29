@@ -70,6 +70,36 @@ describe(@"UINavigationController (spec extensions)", ^{
             [navigationController pushViewController:pushedViewController animated:YES];
             ^{ [navigationController popToViewController:[[UIViewController alloc] init] animated:NO]; } should raise_exception;
         });
+
+        it(@"should return the expected visible view controller when a controller is presented modally", ^{
+            [navigationController pushViewController:pushedViewController animated:YES];
+
+            UIViewController *presentedViewController = [[UIViewController alloc] init];
+            [pushedViewController presentViewController:presentedViewController animated:NO completion:nil];
+
+            navigationController.topViewController should be_same_instance_as(pushedViewController);
+            navigationController.visibleViewController should be_same_instance_as(presentedViewController);
+        });
+
+        it(@"should return the expected visible view controller when the navigation controller presents a view controller modally", ^{
+            UIViewController *presentedViewController = [[UIViewController alloc] init];
+            [navigationController presentViewController:presentedViewController animated:NO completion:nil];
+
+            navigationController.topViewController should be_same_instance_as(rootViewController);
+            navigationController.visibleViewController should be_same_instance_as(presentedViewController);
+        });
+
+        it(@"should return the view controller presented by a view controller in the middle of the navigation stack", ^{
+            UIViewController *middleViewController = [[UIViewController alloc] init];
+            [navigationController pushViewController:middleViewController animated:NO];
+            [navigationController pushViewController:pushedViewController animated:NO];
+
+            UIViewController *presentedViewController = [[UIViewController alloc] init];
+            [middleViewController presentViewController:presentedViewController animated:NO completion:nil];
+
+            navigationController.topViewController should be_same_instance_as(pushedViewController);
+            navigationController.visibleViewController should be_same_instance_as(presentedViewController);
+        });
     });
 
     beforeEach(^{
