@@ -11,30 +11,27 @@
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
     NSArray *viewControllers = [self.viewControllers arrayByAddingObject:viewController];
-    [self setViewControllers:viewControllers animated:NO];
+    [self updateViewControllers:viewControllers animated:animated];
 }
 
 - (void)popViewControllerAnimated:(BOOL)animated {
     NSArray *viewControllers = [self.viewControllers subarrayWithRange:NSMakeRange(0, self.viewControllers.count - 1)];
-    [self setViewControllers:viewControllers animated:NO];
-    [[NSRunLoop mainRunLoop] runUntilDate:[NSDate date]];
+    [self updateViewControllers:viewControllers animated:animated];
 }
 
 - (void)popToViewController:(UIViewController *)viewController animated:(BOOL)animated {
     NSUInteger idx = [self.viewControllers indexOfObject:viewController];
     if (idx != NSNotFound) {
         NSArray *viewControllers = [self.viewControllers subarrayWithRange:NSMakeRange(0, idx + 1)];
-        [self setViewControllers:viewControllers animated:NO];
+        [self updateViewControllers:viewControllers animated:animated];
     } else {
         [[NSException exceptionWithName:NSInternalInconsistencyException reason:@"Can't pop to a controller which isn't in the stack" userInfo:@{}] raise];
     }
-    [[NSRunLoop mainRunLoop] runUntilDate:[NSDate date]];
 }
 
 - (void)popToRootViewControllerAnimated:(BOOL)animated {
     NSArray *viewControllers = [self.viewControllers subarrayWithRange:NSMakeRange(0, 1)];
-    [self setViewControllers:viewControllers animated:NO];
-    [[NSRunLoop mainRunLoop] runUntilDate:[NSDate date]];
+    [self updateViewControllers:viewControllers animated:animated];
 }
 
 - (UIViewController *)visibleViewController {
@@ -51,5 +48,18 @@
 }
 
 #pragma clang diagnostic pop
+
+- (void)updateViewControllers:(NSArray *)viewControllers animated:(BOOL)animated {
+    if ([self.delegate respondsToSelector:@selector(navigationController:willShowViewController:animated:)]) {
+        [self.delegate navigationController:self willShowViewController:viewControllers.lastObject animated:animated];
+    }
+
+    [self setViewControllers:viewControllers animated:animated];
+
+    if ([self.delegate respondsToSelector:@selector(navigationController:didShowViewController:animated:)]) {
+        [self.delegate navigationController:self didShowViewController:viewControllers.lastObject animated:animated];
+    }
+    [[NSRunLoop mainRunLoop] runUntilDate:[NSDate date]];
+}
 
 @end

@@ -20,6 +20,7 @@ SPEC_BEGIN(UINavigationControllerSpecExtensionsSpec)
 
 describe(@"UINavigationController (spec extensions)", ^{
     __block UINavigationController *navigationController;
+    __block id<UINavigationControllerDelegate> navigationControllerDelegate;
     __block UIViewController *rootViewController;
     __block UIViewController *pushedViewController;
 
@@ -32,6 +33,13 @@ describe(@"UINavigationController (spec extensions)", ^{
             navigationController.visibleViewController should be_same_instance_as(pushedViewController);
         });
 
+        it(@"should message the delegate when pushing onto the navigation stack", ^{
+            [navigationController pushViewController:pushedViewController animated:YES];
+
+            navigationControllerDelegate should have_received(@selector(navigationController:willShowViewController:animated:)).with(navigationController, pushedViewController, YES);
+            navigationControllerDelegate should have_received(@selector(navigationController:didShowViewController:animated:)).with(navigationController, pushedViewController, YES);
+        });
+
         it(@"should remove from the stack when popped", ^{
             [navigationController pushViewController:pushedViewController animated:YES];
 
@@ -40,6 +48,14 @@ describe(@"UINavigationController (spec extensions)", ^{
             navigationController.viewControllers.count should equal(1);
             navigationController.topViewController should be_same_instance_as(rootViewController);
             navigationController.visibleViewController should be_same_instance_as(rootViewController);
+        });
+
+        it(@"should message the delegate when popping a controller off of the navigation stack", ^{
+            [navigationController pushViewController:pushedViewController animated:YES];
+            [navigationController popViewControllerAnimated:YES];
+
+            navigationControllerDelegate should have_received(@selector(navigationController:willShowViewController:animated:)).with(navigationController, rootViewController, YES);
+            navigationControllerDelegate should have_received(@selector(navigationController:didShowViewController:animated:)).with(navigationController, rootViewController, YES);
         });
 
         it(@"should pop to a particular controller with the rest of the navigation stack intact", ^{
@@ -56,6 +72,19 @@ describe(@"UINavigationController (spec extensions)", ^{
             navigationController.visibleViewController should be_same_instance_as(middleController);
         });
 
+        it(@"should message the delegate when popping to a particular view controller in the navigation stack", ^{
+            UIViewController *middleController = [[UIViewController alloc] init];
+
+            [navigationController pushViewController:middleController animated:YES];
+            [navigationController pushViewController:pushedViewController animated:YES];
+
+            [(id<CedarDouble>)navigationControllerDelegate reset_sent_messages];
+            [navigationController popToViewController:middleController animated:YES];
+
+            navigationControllerDelegate should have_received(@selector(navigationController:willShowViewController:animated:)).with(navigationController, middleController, YES);
+            navigationControllerDelegate should have_received(@selector(navigationController:didShowViewController:animated:)).with(navigationController, middleController, YES);
+        });
+
         it(@"should pop to the root controller", ^{
             [navigationController pushViewController:pushedViewController animated:YES];
 
@@ -64,6 +93,15 @@ describe(@"UINavigationController (spec extensions)", ^{
             navigationController.viewControllers.count should equal(1);
             navigationController.visibleViewController should be_same_instance_as(rootViewController);
             navigationController.topViewController should be_same_instance_as(rootViewController);
+        });
+
+        it(@"should message the delegate when popping to the root controller", ^{
+            [navigationController pushViewController:pushedViewController animated:YES];
+
+            [navigationController popToRootViewControllerAnimated:YES];
+
+            navigationControllerDelegate should have_received(@selector(navigationController:willShowViewController:animated:)).with(navigationController, rootViewController, YES);
+            navigationControllerDelegate should have_received(@selector(navigationController:didShowViewController:animated:)).with(navigationController, rootViewController, YES);
         });
 
         it(@"should blow up when popping to a controller which isn't in the navigation stack", ^{
@@ -105,11 +143,13 @@ describe(@"UINavigationController (spec extensions)", ^{
     beforeEach(^{
         rootViewController = [[UIViewController alloc] init];
         pushedViewController = [[UIViewController alloc] init];
+        navigationControllerDelegate = nice_fake_for(@protocol(UINavigationControllerDelegate));
     });
 
     context(@"a navigation controller created with a root view controller", ^{
         beforeEach(^{
             navigationController = [[UINavigationController alloc] initWithRootViewController:rootViewController];
+            navigationController.delegate = navigationControllerDelegate;
             [navigationController view];
         });
 
@@ -120,6 +160,7 @@ describe(@"UINavigationController (spec extensions)", ^{
         beforeEach(^{
             navigationController = [[UINavigationController alloc] initWithNavigationBarClass:[CustomNavigationBar class] toolbarClass:[CustomToolbar class]];
             [navigationController pushViewController:rootViewController animated:YES];
+            navigationController.delegate = navigationControllerDelegate;
             [navigationController view];
         });
 
@@ -138,6 +179,7 @@ describe(@"UINavigationController (spec extensions)", ^{
         beforeEach(^{
             UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"NavigationStackExample" bundle:nil];
             navigationController = [storyboard instantiateInitialViewController];
+            navigationController.delegate = navigationControllerDelegate;
             rootViewController = navigationController.visibleViewController;
             [navigationController view];
         });
