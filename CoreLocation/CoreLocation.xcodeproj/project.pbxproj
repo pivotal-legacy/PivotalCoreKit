@@ -86,13 +86,6 @@
 			remoteGlobalIDString = 96B5FA11144A81A8000A6A5D;
 			remoteInfo = OCUnitAppTests;
 		};
-		AE384940168CD8FC00C99B55 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AE384926168CD8FB00C99B55 /* Cedar.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 96158A86144A915E005895CE;
-			remoteInfo = OCUnitAppLogicTests;
-		};
 		AE384942168CD90C00C99B55 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AE384926168CD8FB00C99B55 /* Cedar.xcodeproj */;
@@ -120,6 +113,34 @@
 			proxyType = 1;
 			remoteGlobalIDString = AE38498D168D053300C99B55;
 			remoteInfo = "CoreLocation+PivotalSpecHelper-StaticLib";
+		};
+		AECAF9011A0190BB002B4FD8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE3848CC168CD86000C99B55 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AE3848D4168CD86000C99B55;
+			remoteInfo = "CoreLocation-StaticLibSpec";
+		};
+		AECAF90E1A0190BB002B4FD8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE384926168CD8FB00C99B55 /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AE248F9819DCD52500092C14;
+			remoteInfo = "Cedar OS X Host App";
+		};
+		AECAF9101A0190BB002B4FD8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE384926168CD8FB00C99B55 /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AE248FAA19DCD52500092C14;
+			remoteInfo = "Cedar OS X Host AppTests";
+		};
+		AECAF9121A0190BB002B4FD8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE384926168CD8FB00C99B55 /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AEB8818719DCD62D00F081BA;
+			remoteInfo = "Cedar OS X Failing Test Bundle";
 		};
 		AED5718718C54B5E004AD37D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -299,7 +320,9 @@
 				AE38493D168CD8FC00C99B55 /* OCUnitApp.app */,
 				AE38493F168CD8FC00C99B55 /* OCUnitAppTests.octest */,
 				AEEECC4A181F36B2006B52CD /* XCUnitAppTests.xctest */,
-				AE384941168CD8FC00C99B55 /* OCUnitAppLogicTests.octest */,
+				AECAF90F1A0190BB002B4FD8 /* Cedar OS X Host App.app */,
+				AECAF9111A0190BB002B4FD8 /* Cedar OS X Host AppTests.xctest */,
+				AECAF9131A0190BB002B4FD8 /* Cedar OS X Failing Test Bundle.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -387,11 +410,12 @@
 			buildRules = (
 			);
 			dependencies = (
+				AECAF9021A0190BB002B4FD8 /* PBXTargetDependency */,
 			);
 			name = "CoreLocation-StaticLibSpecBundle";
 			productName = "CoreLocation-StaticLibSpecBundle";
 			productReference = AE118AE418D6BC2F00C90D6B /* CoreLocation-StaticLibSpecBundle.octest */;
-			productType = "com.apple.product-type.bundle";
+			productType = "com.apple.product-type.bundle.ocunit-test";
 		};
 		AE3848D4168CD86000C99B55 /* CoreLocation-StaticLibSpec */ = {
 			isa = PBXNativeTarget;
@@ -513,14 +537,14 @@
 		AE384935168CD8FC00C99B55 /* Specs */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.executable";
-			path = Specs;
+			path = "Cedar OS X Specs";
 			remoteRef = AE384934168CD8FC00C99B55 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		AE384937168CD8FC00C99B55 /* FocusedSpecs */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.executable";
-			path = FocusedSpecs;
+			path = "Cedar OS X FocusedSpecs";
 			remoteRef = AE384936168CD8FC00C99B55 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
@@ -534,35 +558,49 @@
 		AE38493B168CD8FC00C99B55 /* iOSSpecs.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
-			path = iOSSpecs.app;
+			path = "Cedar iOS Specs.app";
 			remoteRef = AE38493A168CD8FC00C99B55 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		AE38493D168CD8FC00C99B55 /* OCUnitApp.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
-			path = OCUnitApp.app;
+			path = "Cedar iOS Host App.app";
 			remoteRef = AE38493C168CD8FC00C99B55 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		AE38493F168CD8FC00C99B55 /* OCUnitAppTests.octest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
-			path = OCUnitAppTests.octest;
+			path = "Cedar iOS SenTestingKit Tests.octest";
 			remoteRef = AE38493E168CD8FC00C99B55 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		AE384941168CD8FC00C99B55 /* OCUnitAppLogicTests.octest */ = {
+		AECAF90F1A0190BB002B4FD8 /* Cedar OS X Host App.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "Cedar OS X Host App.app";
+			remoteRef = AECAF90E1A0190BB002B4FD8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AECAF9111A0190BB002B4FD8 /* Cedar OS X Host AppTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
-			path = OCUnitAppLogicTests.octest;
-			remoteRef = AE384940168CD8FC00C99B55 /* PBXContainerItemProxy */;
+			path = "Cedar OS X Host AppTests.xctest";
+			remoteRef = AECAF9101A0190BB002B4FD8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AECAF9131A0190BB002B4FD8 /* Cedar OS X Failing Test Bundle.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Cedar OS X Failing Test Bundle.octest";
+			remoteRef = AECAF9121A0190BB002B4FD8 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		AED5718818C54B5E004AD37D /* iOSFrameworkSpecs.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
-			path = iOSFrameworkSpecs.app;
+			path = "Cedar iOS FrameworkSpecs.app";
 			remoteRef = AED5718718C54B5E004AD37D /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
@@ -681,6 +719,11 @@
 			isa = PBXTargetDependency;
 			target = AE38498D168D053300C99B55 /* CoreLocation+PivotalSpecHelper-StaticLib */;
 			targetProxy = AE38499C168D058A00C99B55 /* PBXContainerItemProxy */;
+		};
+		AECAF9021A0190BB002B4FD8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AE3848D4168CD86000C99B55 /* CoreLocation-StaticLibSpec */;
+			targetProxy = AECAF9011A0190BB002B4FD8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
