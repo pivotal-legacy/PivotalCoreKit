@@ -50,22 +50,25 @@ describe(@"UICollectionViewCell+Spec", ^{
     });
 
     describe(@"-tapping a cell without a collection view", ^{
+        __block NSAssertionHandler *assertionHandler;
         beforeEach(^{
+            assertionHandler = [NSAssertionHandler currentHandler];
+            spy_on(assertionHandler);
+
+            assertionHandler stub_method(@selector(handleFailureInMethod:object:file:lineNumber:description:));
+
             cell = [controller.collectionView.dataSource collectionView:controller.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0]];
             cell.superview should be_nil;
         });
 
+        afterEach(^{
+            stop_spying_on(assertionHandler);
+        });
+
         it(@"should raise an assertion with a message about not being in a collection view", ^{
-            NSAssertionHandler *oldAssertionHandler = [[NSThread currentThread] threadDictionary][NSAssertionHandlerKey];
-            oldAssertionHandler should be_nil;
-
-            NSAssertionHandler *assertionHandler = nice_fake_for([NSAssertionHandler class]);
-            [[NSThread currentThread] threadDictionary][NSAssertionHandlerKey] = assertionHandler;
-
             [cell tap];
-            assertionHandler should have_received(@selector(handleFailureInMethod:object:file:lineNumber:description:)).with(anything, anything, anything, anything, @"Cell must be a in a collection view in order to be tapped!");
 
-            [[[NSThread currentThread] threadDictionary] removeObjectForKey:NSAssertionHandlerKey];
+            assertionHandler should have_received(@selector(handleFailureInMethod:object:file:lineNumber:description:)).with(anything, anything, anything, anything, @"Cell must be a in a collection view in order to be tapped!");
         });
     });
 

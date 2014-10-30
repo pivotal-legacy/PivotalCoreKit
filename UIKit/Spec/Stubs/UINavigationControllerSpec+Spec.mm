@@ -87,7 +87,7 @@ describe(@"UINavigationController (spec extensions)", ^{
             [navigationController pushViewController:pushedViewController animated:YES];
 
             UIViewController *presentedViewController = [[UIViewController alloc] init];
-            [pushedViewController presentViewController:presentedViewController animated:NO completion:nil];
+            [pushedViewController presentViewController:presentedViewController animated:YES completion:nil];
 
             navigationController.topViewController should be_same_instance_as(pushedViewController);
             navigationController.visibleViewController should be_same_instance_as(presentedViewController);
@@ -95,7 +95,7 @@ describe(@"UINavigationController (spec extensions)", ^{
 
         it(@"should return the expected visible view controller when the navigation controller presents a view controller modally", ^{
             UIViewController *presentedViewController = [[UIViewController alloc] init];
-            [navigationController presentViewController:presentedViewController animated:NO completion:nil];
+            [navigationController presentViewController:presentedViewController animated:YES completion:nil];
 
             navigationController.topViewController should be_same_instance_as(rootViewController);
             navigationController.visibleViewController should be_same_instance_as(presentedViewController);
@@ -103,18 +103,22 @@ describe(@"UINavigationController (spec extensions)", ^{
 
         it(@"should return the view controller presented by a view controller in the middle of the navigation stack", ^{
             UIViewController *middleViewController = [[UIViewController alloc] init];
-            [navigationController pushViewController:middleViewController animated:NO];
-            [navigationController pushViewController:pushedViewController animated:NO];
+            [navigationController pushViewController:middleViewController animated:YES];
+            [navigationController pushViewController:pushedViewController animated:YES];
 
             UIViewController *presentedViewController = [[UIViewController alloc] init];
-            [middleViewController presentViewController:presentedViewController animated:NO completion:nil];
+            [middleViewController presentViewController:presentedViewController animated:YES completion:nil];
 
             navigationController.topViewController should be_same_instance_as(pushedViewController);
             navigationController.visibleViewController should be_same_instance_as(presentedViewController);
         });
     });
 
+    __block UIWindow *window;
     beforeEach(^{
+        window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+        [window makeKeyAndVisible];
+
         rootViewController = [[UIViewController alloc] init];
         pushedViewController = [[UIViewController alloc] init];
     });
@@ -122,6 +126,7 @@ describe(@"UINavigationController (spec extensions)", ^{
     context(@"a navigation controller created with a root view controller", ^{
         beforeEach(^{
             navigationController = [[UINavigationController alloc] initWithRootViewController:rootViewController];
+            window.rootViewController = navigationController;
             [navigationController view];
         });
 
@@ -131,6 +136,8 @@ describe(@"UINavigationController (spec extensions)", ^{
     context(@"a navigation controller created with nav bar and toolbar classes", ^{
         beforeEach(^{
             navigationController = [[UINavigationController alloc] initWithNavigationBarClass:[CustomNavigationBar class] toolbarClass:[CustomToolbar class]];
+            window.rootViewController = navigationController;
+
             [navigationController pushViewController:rootViewController animated:YES];
             [navigationController view];
         });
@@ -150,6 +157,7 @@ describe(@"UINavigationController (spec extensions)", ^{
         beforeEach(^{
             UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"NavigationStackExample" bundle:nil];
             navigationController = [storyboard instantiateInitialViewController];
+            window.rootViewController = navigationController;
 
             rootViewController = navigationController.visibleViewController;
             [navigationController view];
