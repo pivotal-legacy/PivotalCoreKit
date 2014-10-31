@@ -53,13 +53,7 @@ Pod::Spec.new do |s|
 
       spec.subspec 'Stubs' do |stub|
         stub.requires_arc = true
-        noarc_files = ['UIKit/SpecHelper/Stubs/UINavigationController+Spec.m']
         stub.source_files = ['UIKit/SpecHelper/Stubs/*.{h,m}', 'UIKit/SpecHelper/UIKit+PivotalSpecHelperStubs.h']
-        stub.exclude_files = noarc_files
-        stub.subspec 'Stubs-noarc' do |no_arc|
-          no_arc.requires_arc = false
-          no_arc.source_files = noarc_files
-        end
       end
 
       spec.subspec 'Helpers' do |helper|
