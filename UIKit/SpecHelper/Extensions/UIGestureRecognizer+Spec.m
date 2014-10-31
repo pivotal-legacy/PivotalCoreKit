@@ -1,13 +1,34 @@
 #import "UIGestureRecognizer+Spec.h"
-#import "objc/runtime.h"
+#import <objc/runtime.h>
+#import "PCKMethodRedirector.h"
 
 @interface PCKGestureRecognizerTargetActionPair : NSObject
+
 @property (nonatomic, unsafe_unretained) id target;
 @property (nonatomic) SEL action;
+
 + (instancetype)targetActionPairWithTarget:(id)target action:(SEL)action;
+
 @end
 
 @implementation PCKGestureRecognizerTargetActionPair
+
++ (void)load {
+    [PCKMethodRedirector redirectSelector:@selector(addTarget:action:)
+                                 forClass:[UIGestureRecognizer class]
+                                       to:@selector(addSnoopedTarget:action:)
+                            andRenameItTo:@selector(addUnswizzledTarget:action:)];
+
+    [PCKMethodRedirector redirectSelector:@selector(removeTarget:action:)
+                                 forClass:[UIGestureRecognizer class]
+                                       to:@selector(removeSnoopedTarget:action:)
+                            andRenameItTo:@selector(removeUnswizzledTarget:action:)];
+
+    [PCKMethodRedirector redirectSelector:@selector(initWithTarget:action:)
+                                 forClass:[UIGestureRecognizer class]
+                                       to:@selector(initWithSwizzledTarget:action:)
+                            andRenameItTo:@selector(initWithoutSwizzledTarget:action:)];
+}
 
 + (instancetype)targetActionPairWithTarget:(id)target action:(SEL)action {
     PCKGestureRecognizerTargetActionPair *pair = [[PCKGestureRecognizerTargetActionPair alloc] init];
@@ -18,50 +39,17 @@
 
 @end
 
-
 @interface UIGestureRecognizer (Spec_Private)
+
 - (void)addUnswizzledTarget:(id)target action:(SEL)action;
 - (void)removeUnswizzledTarget:(id)target action:(SEL)action;
 - (instancetype)initWithoutSwizzledTarget:(id)target action:(SEL)action;
+
 @end
 
+#pragma mark -
+
 @implementation UIGestureRecognizer (Spec)
-
-#pragma mark - TODO Refactor to use code in Foundation project
-+ (void)redirectSelector:(SEL)originalSelector to:(SEL)newSelector andRenameItTo:(SEL)renamedSelector {
-    [self redirectSelector:originalSelector
-                      forClass:[self class]
-                            to:newSelector
-                 andRenameItTo:renamedSelector];
-
-}
-
-+ (void)redirectSelector:(SEL)originalSelector forClass:(Class)klass to:(SEL)newSelector andRenameItTo:(SEL)renamedSelector {
-    if ([klass instancesRespondToSelector:renamedSelector]) {
-        return;
-    }
-
-    Method originalMethod = class_getInstanceMethod(klass, originalSelector);
-    class_addMethod(klass, renamedSelector, method_getImplementation(originalMethod), method_getTypeEncoding(originalMethod));
-
-    Method newMethod = class_getInstanceMethod(klass, newSelector);
-    class_replaceMethod(klass, originalSelector, method_getImplementation(newMethod), method_getTypeEncoding(newMethod));
-}
-
-#pragma mark - Setup
-+ (void)load {
-    [self redirectSelector:@selector(addTarget:action:)
-                        to:@selector(addSnoopedTarget:action:)
-             andRenameItTo:@selector(addUnswizzledTarget:action:)];
-
-    [self redirectSelector:@selector(removeTarget:action:)
-                        to:@selector(removeSnoopedTarget:action:)
-             andRenameItTo:@selector(removeUnswizzledTarget:action:)];
-
-    [self redirectSelector:@selector(initWithTarget:action:)
-                        to:@selector(initWithSwizzledTarget:action:)
-             andRenameItTo:@selector(initWithoutSwizzledTarget:action:)];
-}
 
 - (instancetype)initWithSwizzledTarget:(id)target action:(SEL)action {
     if (self = [self initWithoutSwizzledTarget:target action:action]) {
@@ -108,11 +96,12 @@
     [targetsAndActions removeObjectsInArray:matchingTargetsAndActions];
 }
 
-#pragma mark - targetsAndActions
-static char const * const targetAndActionsKey = "targetAndActionKey";
+#pragma mark - Targets and Actions
+
+static char TARGETS_AND_ACTIONS_KEY;
 
 - (NSMutableArray *)targetsAndActions {
-    NSMutableArray *targetsAndActions = objc_getAssociatedObject(self, &targetAndActionsKey);
+    NSMutableArray *targetsAndActions = objc_getAssociatedObject(self, &TARGETS_AND_ACTIONS_KEY);
     if (!targetsAndActions) {
         targetsAndActions = [[[NSMutableArray alloc] init] autorelease];
         [self setTargetsAndActions:targetsAndActions];
@@ -121,7 +110,7 @@ static char const * const targetAndActionsKey = "targetAndActionKey";
 }
 
 - (void)setTargetsAndActions:(NSMutableArray *)targetsAndActions {
-    objc_setAssociatedObject(self, &targetAndActionsKey, targetsAndActions, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, &TARGETS_AND_ACTIONS_KEY, targetsAndActions, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 @end

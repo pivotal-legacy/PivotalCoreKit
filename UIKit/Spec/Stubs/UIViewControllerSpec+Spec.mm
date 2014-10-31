@@ -1,6 +1,5 @@
 #import <UIKit/UIKit.h>
 #import <Cedar-iOS.h>
-#import <SpecHelper.h>
 
 using namespace Cedar::Matchers;
 using namespace Cedar::Doubles;
