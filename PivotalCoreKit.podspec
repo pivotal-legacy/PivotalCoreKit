@@ -32,8 +32,8 @@ Pod::Spec.new do |s|
 
   s.subspec 'UIKit' do |ui|
     ui.subspec 'Core' do |uicore|
-      arc_files = 'UIKit/Core/Extensions/UIView+PCKNibHelpers.m'
       uicore.source_files = 'UIKit/Core/**/*.{h,m}'
+      arc_files = 'UIKit/Core/Extensions/UIView+PCKNibHelpers.{h,m}'
       uicore.exclude_files = arc_files
       uicore.subspec 'Core-arc' do |core_arc|
         core_arc.requires_arc = true
@@ -54,6 +54,7 @@ Pod::Spec.new do |s|
       spec.subspec 'Stubs' do |stub|
         stub.requires_arc = true
         stub.source_files = ['UIKit/SpecHelper/Stubs/*.{h,m}', 'UIKit/SpecHelper/UIKit+PivotalSpecHelperStubs.h']
+        stub.dependency 'PivotalCoreKit/UIKit/SpecHelper/Helpers'
       end
 
       spec.subspec 'Helpers' do |helper|
@@ -63,8 +64,8 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'Foundation' do |f|
-    f.osx.deployment_target = '10.8'
     f.ios.deployment_target = '6.0'
+    f.osx.deployment_target = '10.6'
 
     f.subspec 'Core' do |c|
       c.source_files = 'Foundation/Core/**/*.{h,m}'
@@ -74,7 +75,9 @@ Pod::Spec.new do |s|
 
     f.subspec 'SpecHelper' do |spec_helper|
       spec_helper.subspec 'Extensions' do |ext|
-        ext.source_files = ['Foundation/SpecHelper/Foundation+PivotalSpecHelper.h', 'Foundation/Core/Extensions/NSObject+MethodRedirection.h', 'Foundation/SpecHelper/Helpers/PCKConnectionBlockDelegate.h', 'Foundation/SpecHelper/Helpers/PCKConnectionDelegateWrapper.h', 'Foundation/SpecHelper/Fakes/PSHKFakeHTTPURLResponse.h', 'Foundation/SpecHelper/Fakes/FakeOperationQueue.h', 'Foundation/SpecHelper/Extensions/*.{h,m}']
+        ext.source_files = ['Foundation/SpecHelper/Extensions/*.{h,m}', 'Foundation/Core/Extensions/NSObject+MethodRedirection.{h,m}']
+        ext.dependency 'PivotalCoreKit/Foundation/SpecHelper/Helpers'
+        ext.dependency 'PivotalCoreKit/Foundation/SpecHelper/Fakes'
       end
 
       spec_helper.subspec 'Fixtures' do |fix|
@@ -82,7 +85,7 @@ Pod::Spec.new do |s|
       end
 
       spec_helper.subspec 'Helpers' do |help|
-        help.source_files = ['Foundation/SpecHelper/Extensions/NSURLConnection+Spec.h', 'Foundation/SpecHelper/Helpers/*.{h,m}']
+        help.source_files = ['Foundation/SpecHelper/Helpers/*.{h,m}', 'Foundation/SpecHelper/Extensions/NSURLConnection+Spec.h']
       end
 
       spec_helper.subspec 'Fakes' do |fake|
