@@ -128,6 +128,8 @@
 		AEEECC33181F33F5006B52CD /* UIImagePickerControllerSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEEECC32181F33F5006B52CD /* UIImagePickerControllerSpec+Spec.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		AEF0A40418296C690070D98B /* UICollectionViewCell+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = FA07586918120D19001817BF /* UICollectionViewCell+Spec.m */; };
 		AEF0A40518296CDF0070D98B /* UICollectionViewCell+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = FA07586818120D19001817BF /* UICollectionViewCell+Spec.h */; };
+		AEF5D45D1A030D2E00C4DC3D /* PCKMethodRedirector.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AEF5D45B1A030D2E00C4DC3D /* PCKMethodRedirector.h */; };
+		AEF5D45E1A030D2E00C4DC3D /* PCKMethodRedirector.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF5D45C1A030D2E00C4DC3D /* PCKMethodRedirector.m */; };
 		AEF67CE218CA436600C221D1 /* UIActionSheetSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEF67CE018CA436600C221D1 /* UIActionSheetSpec+Spec.mm */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		AEF775BC18316DE4000AF17B /* UIGestureRecognizerSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEF775BB18316DE4000AF17B /* UIGestureRecognizerSpec+Spec.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		AEF775C81831708D000AF17B /* UIGestureRecognizer+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AEF775C61831708D000AF17B /* UIGestureRecognizer+Spec.h */; };
@@ -240,26 +242,26 @@
 			remoteGlobalIDString = 1F45A3DD180E4796003C1E36;
 			remoteInfo = XCUnitAppTests;
 		};
-		AEFC4CE319EF7B880077732D /* PBXContainerItemProxy */ = {
+		AEF5D46C1A030D2F00C4DC3D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AEBCCBF4168B98100056EE83 /* Cedar.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = AE248F9819DCD52500092C14;
-			remoteInfo = "OS X Host App";
+			remoteInfo = "Cedar OS X Host App";
 		};
-		AEFC4CE519EF7B880077732D /* PBXContainerItemProxy */ = {
+		AEF5D46E1A030D2F00C4DC3D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AEBCCBF4168B98100056EE83 /* Cedar.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = AE248FAA19DCD52500092C14;
-			remoteInfo = "OS X Host AppTests";
+			remoteInfo = "Cedar OS X Host AppTests";
 		};
-		AEFC4CE719EF7B880077732D /* PBXContainerItemProxy */ = {
+		AEF5D4701A030D2F00C4DC3D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AEBCCBF4168B98100056EE83 /* Cedar.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = AEB8818719DCD62D00F081BA;
-			remoteInfo = "OS X Failing Test Bundle";
+			remoteInfo = "Cedar OS X Failing Test Bundle";
 		};
 		FA1A5176186290C900C22BA8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -309,6 +311,7 @@
 				AEE0B69618A3572C0007A9D0 /* UIView+StubbedAnimation.h in Copy headers to framework */,
 				AEEECC1A181F3135006B52CD /* UIImagePickerController+Spec.m in Copy headers to framework */,
 				AEC40CCB174C292600474D2D /* UIWebView+Spec.h in Copy headers to framework */,
+				AEF5D45D1A030D2E00C4DC3D /* PCKMethodRedirector.h in Copy headers to framework */,
 				AE244D4319077EEB00ED96E9 /* UIActivityViewController+Spec.h in Copy headers to framework */,
 				AEC40CCC174C292600474D2D /* UIKit+PivotalSpecHelperStubs.h in Copy headers to framework */,
 				AEB6662C18C6681A00B09C00 /* UIPopoverController+Spec.h in Copy headers to framework */,
@@ -447,6 +450,8 @@
 		AEEECC16181F3135006B52CD /* UIImagePickerController+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImagePickerController+Spec.h"; sourceTree = "<group>"; };
 		AEEECC17181F3135006B52CD /* UIImagePickerController+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImagePickerController+Spec.m"; sourceTree = "<group>"; };
 		AEEECC32181F33F5006B52CD /* UIImagePickerControllerSpec+Spec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIImagePickerControllerSpec+Spec.mm"; sourceTree = "<group>"; };
+		AEF5D45B1A030D2E00C4DC3D /* PCKMethodRedirector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCKMethodRedirector.h; sourceTree = "<group>"; };
+		AEF5D45C1A030D2E00C4DC3D /* PCKMethodRedirector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCKMethodRedirector.m; sourceTree = "<group>"; };
 		AEF67CE018CA436600C221D1 /* UIActionSheetSpec+Spec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIActionSheetSpec+Spec.mm"; sourceTree = "<group>"; };
 		AEF775BB18316DE4000AF17B /* UIGestureRecognizerSpec+Spec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIGestureRecognizerSpec+Spec.mm"; sourceTree = "<group>"; };
 		AEF775C61831708D000AF17B /* UIGestureRecognizer+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIGestureRecognizer+Spec.h"; sourceTree = "<group>"; };
@@ -531,6 +536,8 @@
 			children = (
 				3490AFE919A3C0A800DAA8E3 /* PCKPrototypeCellInstantiatingDataSource.h */,
 				3490AFEA19A3C0A800DAA8E3 /* PCKPrototypeCellInstantiatingDataSource.m */,
+				AEF5D45B1A030D2E00C4DC3D /* PCKMethodRedirector.h */,
+				AEF5D45C1A030D2E00C4DC3D /* PCKMethodRedirector.m */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -690,17 +697,17 @@
 			isa = PBXGroup;
 			children = (
 				AEBCCC01168B98110056EE83 /* Cedar.framework */,
-				AEBCCC03168B98110056EE83 /* Specs */,
-				AEBCCC05168B98110056EE83 /* FocusedSpecs */,
+				AEBCCC03168B98110056EE83 /* Cedar OS X Specs */,
+				AEBCCC05168B98110056EE83 /* Cedar OS X FocusedSpecs */,
 				AEBCCC07168B98110056EE83 /* libCedar-StaticLib.a */,
-				AEBCCC09168B98110056EE83 /* iOSSpecs.app */,
-				FA1A5177186290C900C22BA8 /* iOSFrameworkSpecs.app */,
-				AEBCCC0B168B98110056EE83 /* OCUnitApp.app */,
-				AEBCCC0D168B98110056EE83 /* OCUnitAppTests.octest */,
+				AEBCCC09168B98110056EE83 /* Cedar iOS Specs.app */,
+				FA1A5177186290C900C22BA8 /* Cedar iOS FrameworkSpecs.app */,
+				AEBCCC0B168B98110056EE83 /* Cedar iOS Host App.app */,
+				AEBCCC0D168B98110056EE83 /* Cedar iOS SenTestingKit Tests.octest */,
 				AEEECC31181F33C5006B52CD /* XCUnitAppTests.xctest */,
-				AEFC4CE419EF7B880077732D /* OS X Host App.app */,
-				AEFC4CE619EF7B880077732D /* OS X Host AppTests.bundle */,
-				AEFC4CE819EF7B880077732D /* OS X Failing Test Bundle.octest */,
+				AEF5D46D1A030D2F00C4DC3D /* Cedar OS X Host App.app */,
+				AEF5D46F1A030D2F00C4DC3D /* Cedar OS X Host AppTests.xctest */,
+				AEF5D4711A030D2F00C4DC3D /* Cedar OS X Failing Test Bundle.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -940,14 +947,14 @@
 			remoteRef = AEBCCC00168B98110056EE83 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		AEBCCC03168B98110056EE83 /* Specs */ = {
+		AEBCCC03168B98110056EE83 /* Cedar OS X Specs */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.executable";
 			path = "Cedar OS X Specs";
 			remoteRef = AEBCCC02168B98110056EE83 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		AEBCCC05168B98110056EE83 /* FocusedSpecs */ = {
+		AEBCCC05168B98110056EE83 /* Cedar OS X FocusedSpecs */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.executable";
 			path = "Cedar OS X FocusedSpecs";
@@ -961,21 +968,21 @@
 			remoteRef = AEBCCC06168B98110056EE83 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		AEBCCC09168B98110056EE83 /* iOSSpecs.app */ = {
+		AEBCCC09168B98110056EE83 /* Cedar iOS Specs.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
 			path = "Cedar iOS Specs.app";
 			remoteRef = AEBCCC08168B98110056EE83 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		AEBCCC0B168B98110056EE83 /* OCUnitApp.app */ = {
+		AEBCCC0B168B98110056EE83 /* Cedar iOS Host App.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
 			path = "Cedar iOS Host App.app";
 			remoteRef = AEBCCC0A168B98110056EE83 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		AEBCCC0D168B98110056EE83 /* OCUnitAppTests.octest */ = {
+		AEBCCC0D168B98110056EE83 /* Cedar iOS SenTestingKit Tests.octest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = "Cedar iOS SenTestingKit Tests.octest";
@@ -989,28 +996,28 @@
 			remoteRef = AEEECC30181F33C5006B52CD /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		AEFC4CE419EF7B880077732D /* OS X Host App.app */ = {
+		AEF5D46D1A030D2F00C4DC3D /* Cedar OS X Host App.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
 			path = "Cedar OS X Host App.app";
-			remoteRef = AEFC4CE319EF7B880077732D /* PBXContainerItemProxy */;
+			remoteRef = AEF5D46C1A030D2F00C4DC3D /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		AEFC4CE619EF7B880077732D /* OS X Host AppTests.bundle */ = {
+		AEF5D46F1A030D2F00C4DC3D /* Cedar OS X Host AppTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = "Cedar OS X Host AppTests.xctest";
-			remoteRef = AEFC4CE519EF7B880077732D /* PBXContainerItemProxy */;
+			remoteRef = AEF5D46E1A030D2F00C4DC3D /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		AEFC4CE819EF7B880077732D /* OS X Failing Test Bundle.octest */ = {
+		AEF5D4711A030D2F00C4DC3D /* Cedar OS X Failing Test Bundle.octest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = "Cedar OS X Failing Test Bundle.octest";
-			remoteRef = AEFC4CE719EF7B880077732D /* PBXContainerItemProxy */;
+			remoteRef = AEF5D4701A030D2F00C4DC3D /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		FA1A5177186290C900C22BA8 /* iOSFrameworkSpecs.app */ = {
+		FA1A5177186290C900C22BA8 /* Cedar iOS FrameworkSpecs.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
 			path = "Cedar iOS FrameworkSpecs.app";
@@ -1222,6 +1229,7 @@
 				AE89900318071F3A00DDB948 /* UIView+StubbedAnimation.m in Sources */,
 				AEC40CB8174C22BD00474D2D /* UIWebView+Spec.m in Sources */,
 				8487257E19013F6400288770 /* UIActivityViewController+Spec.m in Sources */,
+				AEF5D45E1A030D2E00C4DC3D /* PCKMethodRedirector.m in Sources */,
 				AE86BD43179C7C910057DEAE /* UITabBarController+Spec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
