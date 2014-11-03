@@ -1,46 +1,32 @@
 #import <UIKit/UIKit.h>
 #import <objc/runtime.h>
+#import "PCKMethodRedirector.h"
 
 @interface UINavigationControllerStubbing : NSObject
-
-+ (void)redirectSelector:(SEL)originalSelector forClass:(Class)klass to:(SEL)newSelector andRenameItTo:(SEL)renamedSelector;
-
 @end
 
 @implementation UINavigationControllerStubbing
 
 + (void)initialize {
-    [self redirectSelector:@selector(pushViewController:animated:)
-                  forClass:[UINavigationController class]
-                        to:@selector(pushViewController:ignoringAnimated:)
-             andRenameItTo:@selector(originalPushViewController:animated:)];
+    [PCKMethodRedirector redirectSelector:@selector(pushViewController:animated:)
+                                 forClass:[UINavigationController class]
+                                       to:@selector(pushViewController:ignoringAnimated:)
+                            andRenameItTo:@selector(originalPushViewController:animated:)];
 
-    [self redirectSelector:@selector(popViewControllerAnimated:)
-                  forClass:[UINavigationController class]
-                        to:@selector(popViewControllerIgnoringAnimated:)
-             andRenameItTo:@selector(originalPopViewControllerAnimated:)];
+    [PCKMethodRedirector redirectSelector:@selector(popViewControllerAnimated:)
+                                 forClass:[UINavigationController class]
+                                       to:@selector(popViewControllerIgnoringAnimated:)
+                            andRenameItTo:@selector(originalPopViewControllerAnimated:)];
 
-    [self redirectSelector:@selector(popToViewController:animated:)
-                  forClass:[UINavigationController class]
-                        to:@selector(popToViewController:ignoringAnimated:)
-             andRenameItTo:@selector(originalPopToViewController:animated:)];
+    [PCKMethodRedirector redirectSelector:@selector(popToViewController:animated:)
+                                 forClass:[UINavigationController class]
+                                       to:@selector(popToViewController:ignoringAnimated:)
+                            andRenameItTo:@selector(originalPopToViewController:animated:)];
 
-    [self redirectSelector:@selector(popToRootViewControllerAnimated:)
-                  forClass:[UINavigationController class]
-                        to:@selector(popToRootViewControllerIgnoringAnimated:)
-             andRenameItTo:@selector(originalPopToRootViewControllerAnimated:)];
-}
-
-+ (void)redirectSelector:(SEL)originalSelector forClass:(Class)klass to:(SEL)newSelector andRenameItTo:(SEL)renamedSelector {
-    if ([klass instancesRespondToSelector:renamedSelector]) {
-        return;
-    }
-
-    Method originalMethod = class_getInstanceMethod(klass, originalSelector);
-    class_addMethod(klass, renamedSelector, method_getImplementation(originalMethod), method_getTypeEncoding(originalMethod));
-
-    Method newMethod = class_getInstanceMethod(klass, newSelector);
-    class_replaceMethod(klass, originalSelector, method_getImplementation(newMethod), method_getTypeEncoding(newMethod));
+    [PCKMethodRedirector redirectSelector:@selector(popToRootViewControllerAnimated:)
+                                 forClass:[UINavigationController class]
+                                       to:@selector(popToRootViewControllerIgnoringAnimated:)
+                            andRenameItTo:@selector(originalPopToRootViewControllerAnimated:)];
 }
 
 @end
