@@ -6,7 +6,7 @@
 #import "NSObject+MethodRedirection.h"
 #import "PCKConnectionDelegateWrapper.h"
 #import "PCKConnectionBlockDelegate.h"
-#import "FakeOperationQueue.h"
+#import "PSHKFakeOperationQueue.h"
 
 
 static char ASSOCIATED_REQUEST_KEY;
@@ -26,7 +26,7 @@ static char ASSOCIATED_SYNCHRONOUS_CONNECTION;
 @end
 
 static NSMutableArray *connections__;
-static FakeOperationQueue *connectionsQueue__;
+static PSHKFakeOperationQueue *connectionsQueue__;
 
 @implementation NSURLConnection (Spec)
 
@@ -36,7 +36,7 @@ static FakeOperationQueue *connectionsQueue__;
 
 + (void)initialize {
     connections__ = [[NSMutableArray alloc] init];
-    connectionsQueue__ = [[FakeOperationQueue alloc] init];
+    connectionsQueue__ = [[PSHKFakeOperationQueue alloc] init];
     [connectionsQueue__ setRunSynchronously:YES];
 
     if ([[NSURLConnection class] respondsToSelector:@selector(redirectSelector:to:andRenameItTo:)]) {
