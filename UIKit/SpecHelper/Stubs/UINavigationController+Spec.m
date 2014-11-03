@@ -2,6 +2,19 @@
 #import <objc/runtime.h>
 #import "PCKMethodRedirector.h"
 
+@interface UINavigationController (SpecPrivate)
+
+- (void)originalPushViewController:(UIViewController *)viewController animated:(BOOL)animated;
+- (void)pushViewController:(UIViewController *)viewController ignoringAnimated:(BOOL)animated;
+- (UIViewController *)originalPopViewControllerAnimated:(BOOL)animated;
+- (UIViewController *)popViewControllerIgnoringAnimated:(BOOL)animated;
+- (NSArray *)originalPopToViewController:(UIViewController *)viewController animated:(BOOL)animated;
+- (NSArray *)popToViewController:(UIViewController *)viewController ignoringAnimated:(BOOL)animated;
+- (NSArray *)originalPopToRootViewControllerAnimated:(BOOL)animated;
+- (NSArray *)popToRootViewControllerIgnoringAnimated:(BOOL)animated;
+
+@end
+
 @interface UINavigationControllerStubbing : NSObject
 @end
 
@@ -31,14 +44,7 @@
 
 @end
 
-@interface UINavigationController (SpecPrivate)
-
-- (void)originalPushViewController:(UIViewController *)viewController animated:(BOOL)animated;
-- (UIViewController *)originalPopViewControllerAnimated:(BOOL)animated;
-- (NSArray *)originalPopToViewController:(UIViewController *)viewController animated:(BOOL)animated;
-- (NSArray *)originalPopToRootViewControllerAnimated:(BOOL)animated;
-
-@end
+#pragma mark -
 
 @implementation UINavigationController (Spec)
 

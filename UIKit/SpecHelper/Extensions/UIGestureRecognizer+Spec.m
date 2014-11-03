@@ -2,6 +2,17 @@
 #import <objc/runtime.h>
 #import "PCKMethodRedirector.h"
 
+@interface UIGestureRecognizer (Spec_Private)
+
+- (void)addUnswizzledTarget:(id)target action:(SEL)action;
+- (void)addSnoopedTarget:(id)target action:(SEL)action;
+- (void)removeUnswizzledTarget:(id)target action:(SEL)action;
+- (void)removeSnoopedTarget:(id)target action:(SEL)action;
+- (instancetype)initWithoutSwizzledTarget:(id)target action:(SEL)action;
+- (instancetype)initWithSwizzledTarget:(id)target action:(SEL)action;
+
+@end
+
 @interface PCKGestureRecognizerTargetActionPair : NSObject
 
 @property (nonatomic, unsafe_unretained) id target;
@@ -36,14 +47,6 @@
     pair.action = action;
     return [pair autorelease];
 }
-
-@end
-
-@interface UIGestureRecognizer (Spec_Private)
-
-- (void)addUnswizzledTarget:(id)target action:(SEL)action;
-- (void)removeUnswizzledTarget:(id)target action:(SEL)action;
-- (instancetype)initWithoutSwizzledTarget:(id)target action:(SEL)action;
 
 @end
 
