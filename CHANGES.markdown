@@ -8,6 +8,7 @@
   * UIKit+PivotalSpecHelperStubs static library and CocoaPods subspec is converted to ARC
   * Manually triggering gesture recognizers can perform storyboard segues
   * Adds support for instantiating prototype table view and collection view cells given a view controller from a storyboard and a cell identifier
+  * Improves support for UIGestureRecognizer
 
 ### Minor Enhancements
   * FakeOperationQueue is renamed to PSHKFakeOperationQueue; an alias is provided for backward compatibility

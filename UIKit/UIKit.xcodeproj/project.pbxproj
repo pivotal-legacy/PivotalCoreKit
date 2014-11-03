@@ -37,19 +37,19 @@
 
 /* Begin PBXBuildFile section */
 		22601B4F16BA202A00A807CB /* UISlider+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = 22601B4E16BA202A00A807CB /* UISlider+Spec.m */; };
-		22601B5916BA209F00A807CB /* UISliderSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 22601B5816BA209F00A807CB /* UISliderSpec+Spec.mm */; };
+		22601B5916BA209F00A807CB /* UISliderSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 22601B5816BA209F00A807CB /* UISliderSpec+Spec.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		22601B5B16BA263A00A807CB /* UIKit+PivotalSpecHelper.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 22601B5A16BA263A00A807CB /* UIKit+PivotalSpecHelper.h */; };
 		22601B5C16BA274B00A807CB /* UISlider+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 22601B4D16BA202A00A807CB /* UISlider+Spec.h */; };
 		346281C618D7AC1300E9C952 /* UIGestureRecognizer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 346281C518D7AC1300E9C952 /* UIGestureRecognizer.storyboard */; };
 		3490AFED19A3CF4700DAA8E3 /* TableViewPrototypeCells.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3490AFEC19A3CF4000DAA8E3 /* TableViewPrototypeCells.storyboard */; };
 		34BDAC6A19A3FCD90085B45A /* CollectionViewPrototypeCells.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34BDAC6919A3FCD90085B45A /* CollectionViewPrototypeCells.storyboard */; };
-		34BDAC7919A42C990085B45A /* UICollectionReusableViewSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34BDAC7819A42C990085B45A /* UICollectionReusableViewSpec+Spec.mm */; };
-		34BDAC7C19A42D1E0085B45A /* PrototypeCellObjects.m in Sources */ = {isa = PBXBuildFile; fileRef = 34BDAC7B19A42D1E0085B45A /* PrototypeCellObjects.m */; };
+		34BDAC7919A42C990085B45A /* UICollectionReusableViewSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34BDAC7819A42C990085B45A /* UICollectionReusableViewSpec+Spec.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		34BDAC7C19A42D1E0085B45A /* PrototypeCellObjects.m in Sources */ = {isa = PBXBuildFile; fileRef = 34BDAC7B19A42D1E0085B45A /* PrototypeCellObjects.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		34BDAC7D19A42E470085B45A /* UICollectionReusableView+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = 34BDAC7619A42C5F0085B45A /* UICollectionReusableView+Spec.m */; };
 		34BDAC7E19A4329C0085B45A /* PCKPrototypeCellInstantiatingDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3490AFEA19A3C0A800DAA8E3 /* PCKPrototypeCellInstantiatingDataSource.m */; };
 		34BDAC7F19A433510085B45A /* UICollectionReusableView+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 34BDAC7519A42C5F0085B45A /* UICollectionReusableView+Spec.h */; };
 		8487257E19013F6400288770 /* UIActivityViewController+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = 8487257219013F5F00288770 /* UIActivityViewController+Spec.m */; };
-		84C62A78190141DD00DF2982 /* UIActivityViewControllerSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8487257F1901402000288770 /* UIActivityViewControllerSpec+Spec.mm */; };
+		84C62A78190141DD00DF2982 /* UIActivityViewControllerSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8487257F1901402000288770 /* UIActivityViewControllerSpec+Spec.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		AE118AA418D6B57000C90D6B /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE118AA318D6B57000C90D6B /* SenTestingKit.framework */; };
 		AE118AA718D6B57000C90D6B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEBCCBE7168B97DD0056EE83 /* Foundation.framework */; };
 		AE118AC218D6B63900C90D6B /* BundleSpecLoader.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE118AC118D6B63900C90D6B /* BundleSpecLoader.mm */; };
@@ -57,9 +57,9 @@
 		AE118ADC18D6BB6D00C90D6B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE118ADB18D6BB6D00C90D6B /* CoreGraphics.framework */; };
 		AE118ADD18D6BB7E00C90D6B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE118ADB18D6BB6D00C90D6B /* CoreGraphics.framework */; };
 		AE118ADE18D6BB8300C90D6B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE118AD918D6BB6700C90D6B /* UIKit.framework */; };
-		AE1FBEA317D15A4100B0F03B /* UITableViewCellSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE1FBEA217D15A4100B0F03B /* UITableViewCellSpec+Spec.mm */; };
+		AE1FBEA317D15A4100B0F03B /* UITableViewCellSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE1FBEA217D15A4100B0F03B /* UITableViewCellSpec+Spec.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		AE244D4319077EEB00ED96E9 /* UIActivityViewController+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 8487257119013F5F00288770 /* UIActivityViewController+Spec.h */; };
-		AE3847AD168BA0E300C99B55 /* AWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3847A7168BA0B300C99B55 /* AWebViewController.m */; };
+		AE3847AD168BA0E300C99B55 /* AWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3847A7168BA0B300C99B55 /* AWebViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		AE3847AE168BA0E300C99B55 /* AWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE3847A8168BA0B300C99B55 /* AWebViewController.xib */; };
 		AE3847AF168BA11D00C99B55 /* logo-small.png in Resources */ = {isa = PBXBuildFile; fileRef = AE3847AA168BA0B300C99B55 /* logo-small.png */; };
 		AE3847B0168BA11D00C99B55 /* pivotallabs-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = AE3847AB168BA0B300C99B55 /* pivotallabs-logo.png */; };
@@ -69,18 +69,20 @@
 		AE3847B8168BA3B500C99B55 /* UIImage+PivotalCore.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBCCBD0168B96C80056EE83 /* UIImage+PivotalCore.m */; };
 		AE3847B9168BA3B500C99B55 /* UIView+PivotalCore.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBCCBD2168B96C80056EE83 /* UIView+PivotalCore.m */; };
 		AE53E2EC18075A810037C32E /* UIWindow+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE53E2EB18075A810037C32E /* UIWindow+Spec.m */; };
-		AE53E2F618075B080037C32E /* UIWindowSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE53E2F518075B080037C32E /* UIWindowSpec+Spec.mm */; };
-		AE7B279617CFD67600904F64 /* UIViewControllerSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE7B279517CFD67600904F64 /* UIViewControllerSpec+Spec.mm */; };
+		AE53E2F618075B080037C32E /* UIWindowSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE53E2F518075B080037C32E /* UIWindowSpec+Spec.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		AE7B279617CFD67600904F64 /* UIViewControllerSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE7B279517CFD67600904F64 /* UIViewControllerSpec+Spec.mm */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		AE7CE69319FACA8B007B008F /* NavigationStackExample.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE7CE69219FACA84007B008F /* NavigationStackExample.storyboard */; };
 		AE86BD42179C7C910057DEAE /* UITabBarController+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AE86BD40179C7C910057DEAE /* UITabBarController+Spec.h */; };
 		AE86BD43179C7C910057DEAE /* UITabBarController+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE86BD41179C7C910057DEAE /* UITabBarController+Spec.m */; };
 		AE86BD4E179C7DAD0057DEAE /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE86BD4D179C7DAD0057DEAE /* Default-568h@2x.png */; };
-		AE898FF818071E2B00DDB948 /* UIViewSpec+StubbedAnimations.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE898FF718071E2B00DDB948 /* UIViewSpec+StubbedAnimations.mm */; };
+		AE898FF818071E2B00DDB948 /* UIViewSpec+StubbedAnimations.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE898FF718071E2B00DDB948 /* UIViewSpec+StubbedAnimations.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		AE89900318071F3A00DDB948 /* UIView+StubbedAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = AE89900218071F3A00DDB948 /* UIView+StubbedAnimation.m */; };
-		AE95306A1832EE9300C802E9 /* UIViewSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE9530691832EE9300C802E9 /* UIViewSpec+Spec.mm */; };
+		AE95306A1832EE9300C802E9 /* UIViewSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE9530691832EE9300C802E9 /* UIViewSpec+Spec.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		AEB315B518BF841400018EDD /* UITableViewCell.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEB315AB18BF830C00018EDD /* UITableViewCell.storyboard */; };
 		AEB6662C18C6681A00B09C00 /* UIPopoverController+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AEB6662A18C6681A00B09C00 /* UIPopoverController+Spec.h */; };
 		AEB6662D18C6681A00B09C00 /* UIPopoverController+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB6662B18C6681A00B09C00 /* UIPopoverController+Spec.m */; };
 		AEB6663E18C6685F00B09C00 /* UIPopoverControllerSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEB6663C18C6685F00B09C00 /* UIPopoverControllerSpec+Spec.mm */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		AEBB53BF19F711340032947D /* UINavigationController+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBB53BE19F711340032947D /* UINavigationController+Spec.m */; };
 		AEBCCC25168B999F0056EE83 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEBCCBE7168B97DD0056EE83 /* Foundation.framework */; };
 		AEBCCC38168B99ED0056EE83 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEBCCBE7168B97DD0056EE83 /* Foundation.framework */; };
 		AEBCCC65168B9AF10056EE83 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEBCCBE7168B97DD0056EE83 /* Foundation.framework */; };
@@ -88,11 +90,11 @@
 		AEBCCC8B168B9B8B0056EE83 /* UIImage+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBCCC78168B9B5F0056EE83 /* UIImage+Spec.m */; };
 		AEBCCC8C168B9B8B0056EE83 /* UITableViewCell+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBCCC7A168B9B5F0056EE83 /* UITableViewCell+Spec.m */; };
 		AEBCCC8D168B9B8B0056EE83 /* UIView+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBCCC7C168B9B5F0056EE83 /* UIView+Spec.m */; };
-		AEBCCC99168B9C530056EE83 /* UIBarButtonItem+ButtonSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEBCCC92168B9C530056EE83 /* UIBarButtonItem+ButtonSpec.mm */; };
-		AEBCCC9A168B9C530056EE83 /* UIImage+PivotalCoreSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEBCCC93168B9C530056EE83 /* UIImage+PivotalCoreSpec.mm */; };
-		AEBCCC9B168B9C530056EE83 /* UIImageSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEBCCC94168B9C530056EE83 /* UIImageSpec+Spec.mm */; };
-		AEBCCC9C168B9C530056EE83 /* UIView+PivotalCoreSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEBCCC95168B9C530056EE83 /* UIView+PivotalCoreSpec.mm */; };
-		AEBCCC9E168B9C530056EE83 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBCCC97168B9C530056EE83 /* main.m */; };
+		AEBCCC99168B9C530056EE83 /* UIBarButtonItem+ButtonSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEBCCC92168B9C530056EE83 /* UIBarButtonItem+ButtonSpec.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		AEBCCC9A168B9C530056EE83 /* UIImage+PivotalCoreSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEBCCC93168B9C530056EE83 /* UIImage+PivotalCoreSpec.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		AEBCCC9B168B9C530056EE83 /* UIImageSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEBCCC94168B9C530056EE83 /* UIImageSpec+Spec.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		AEBCCC9C168B9C530056EE83 /* UIView+PivotalCoreSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEBCCC95168B9C530056EE83 /* UIView+PivotalCoreSpec.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		AEBCCC9E168B9C530056EE83 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBCCC97168B9C530056EE83 /* main.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		AEBCCCA1168B9C7E0056EE83 /* libCedar-StaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AEBCCC07168B98110056EE83 /* libCedar-StaticLib.a */; };
 		AEC40C8A174C203700474D2D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEBCCBE7168B97DD0056EE83 /* Foundation.framework */; };
 		AEC40CB5174C22BD00474D2D /* UIActionSheet+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AEC40CAF174C22BD00474D2D /* UIActionSheet+Spec.m */; };
@@ -100,35 +102,36 @@
 		AEC40CB7174C22BD00474D2D /* UIViewController+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AEC40CB2174C22BD00474D2D /* UIViewController+Spec.m */; };
 		AEC40CB8174C22BD00474D2D /* UIWebView+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AEC40CB4174C22BD00474D2D /* UIWebView+Spec.m */; };
 		AEC40CBC174C23EB00474D2D /* libUIKit+PivotalSpecHelperStubs-StaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AEC40C89174C203700474D2D /* libUIKit+PivotalSpecHelperStubs-StaticLib.a */; };
-		AEC40CC0174C24CF00474D2D /* UIAlertViewSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEC40CBE174C24CF00474D2D /* UIAlertViewSpec+Spec.mm */; };
-		AEC40CC1174C24CF00474D2D /* UIWebViewSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEC40CBF174C24CF00474D2D /* UIWebViewSpec+Spec.mm */; };
+		AEC40CC0174C24CF00474D2D /* UIAlertViewSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEC40CBE174C24CF00474D2D /* UIAlertViewSpec+Spec.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		AEC40CC1174C24CF00474D2D /* UIWebViewSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEC40CBF174C24CF00474D2D /* UIWebViewSpec+Spec.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		AEC40CC9174C292600474D2D /* UIActionSheet+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AEC40CAE174C22BD00474D2D /* UIActionSheet+Spec.h */; };
 		AEC40CCA174C292600474D2D /* UIAlertView+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AEC40CB0174C22BD00474D2D /* UIAlertView+Spec.h */; };
 		AEC40CCB174C292600474D2D /* UIWebView+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AEC40CB3174C22BD00474D2D /* UIWebView+Spec.h */; };
 		AEC40CCC174C292600474D2D /* UIKit+PivotalSpecHelperStubs.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AEC40CB9174C230800474D2D /* UIKit+PivotalSpecHelperStubs.h */; };
-		AEC6D7FE16963F3500E10C7B /* UIControlSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEC6D7FD16963F3500E10C7B /* UIControlSpec+Spec.mm */; };
-		AED4BE441780C8C800390AFD /* UITabBarControllerSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AED4BE431780C8C800390AFD /* UITabBarControllerSpec+Spec.mm */; };
+		AEC6D7FE16963F3500E10C7B /* UIControlSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEC6D7FD16963F3500E10C7B /* UIControlSpec+Spec.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		AED4BE441780C8C800390AFD /* UITabBarControllerSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AED4BE431780C8C800390AFD /* UITabBarControllerSpec+Spec.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		AEDABB6118E9DCC9004E6626 /* UIView+PCKNibHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = AEDABB6018E9DCC9004E6626 /* UIView+PCKNibHelpers.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
-		AEDABB6318E9DD23004E6626 /* UIView+PCKNibHelpersSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEDABB6218E9DD23004E6626 /* UIView+PCKNibHelpersSpec.mm */; };
+		AEDABB6318E9DD23004E6626 /* UIView+PCKNibHelpersSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEDABB6218E9DD23004E6626 /* UIView+PCKNibHelpersSpec.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		AEDABB6518E9DE2C004E6626 /* InnerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEDABB6418E9DE2C004E6626 /* InnerView.xib */; };
-		AEDABB6818E9DE3B004E6626 /* InnerView.m in Sources */ = {isa = PBXBuildFile; fileRef = AEDABB6718E9DE3B004E6626 /* InnerView.m */; };
-		AEDABB6B18E9DFC7004E6626 /* OuterView.m in Sources */ = {isa = PBXBuildFile; fileRef = AEDABB6A18E9DFC7004E6626 /* OuterView.m */; };
+		AEDABB6818E9DE3B004E6626 /* InnerView.m in Sources */ = {isa = PBXBuildFile; fileRef = AEDABB6718E9DE3B004E6626 /* InnerView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		AEDABB6B18E9DFC7004E6626 /* OuterView.m in Sources */ = {isa = PBXBuildFile; fileRef = AEDABB6A18E9DFC7004E6626 /* OuterView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		AEDABB6D18E9DFD4004E6626 /* OuterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEDABB6C18E9DFD4004E6626 /* OuterView.xib */; };
-		AEDABBBB18EA214A004E6626 /* ChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEDABBB618EA214A004E6626 /* ChildViewController.m */; };
+		AEDABBBB18EA214A004E6626 /* ChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEDABBB618EA214A004E6626 /* ChildViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		AEDABBBC18EA214A004E6626 /* ChildViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEDABBB718EA214A004E6626 /* ChildViewController.xib */; };
-		AEDABBBD18EA214A004E6626 /* MainController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEDABBB918EA214A004E6626 /* MainController.m */; };
+		AEDABBBD18EA214A004E6626 /* MainController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEDABBB918EA214A004E6626 /* MainController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		AEDABBBE18EA214A004E6626 /* MainController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEDABBBA18EA214A004E6626 /* MainController.xib */; };
 		AEE0B69618A3572C0007A9D0 /* UIView+StubbedAnimation.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AEE0B69518A3572C0007A9D0 /* UIView+StubbedAnimation.h */; };
+		AEEDC56819FAC2E2004AFFE9 /* UINavigationControllerSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEEDC56719FAC2E2004AFFE9 /* UINavigationControllerSpec+Spec.mm */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		AEEECC18181F3135006B52CD /* UIImagePickerController+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AEEECC16181F3135006B52CD /* UIImagePickerController+Spec.h */; };
 		AEEECC19181F3135006B52CD /* UIImagePickerController+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AEEECC17181F3135006B52CD /* UIImagePickerController+Spec.m */; };
 		AEEECC1A181F3135006B52CD /* UIImagePickerController+Spec.m in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AEEECC17181F3135006B52CD /* UIImagePickerController+Spec.m */; };
-		AEEECC33181F33F5006B52CD /* UIImagePickerControllerSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEEECC32181F33F5006B52CD /* UIImagePickerControllerSpec+Spec.mm */; };
+		AEEECC33181F33F5006B52CD /* UIImagePickerControllerSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEEECC32181F33F5006B52CD /* UIImagePickerControllerSpec+Spec.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		AEF0A40418296C690070D98B /* UICollectionViewCell+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = FA07586918120D19001817BF /* UICollectionViewCell+Spec.m */; };
 		AEF0A40518296CDF0070D98B /* UICollectionViewCell+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = FA07586818120D19001817BF /* UICollectionViewCell+Spec.h */; };
 		AEF5D45D1A030D2E00C4DC3D /* PCKMethodRedirector.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AEF5D45B1A030D2E00C4DC3D /* PCKMethodRedirector.h */; };
 		AEF5D45E1A030D2E00C4DC3D /* PCKMethodRedirector.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF5D45C1A030D2E00C4DC3D /* PCKMethodRedirector.m */; };
 		AEF67CE218CA436600C221D1 /* UIActionSheetSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEF67CE018CA436600C221D1 /* UIActionSheetSpec+Spec.mm */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
-		AEF775BC18316DE4000AF17B /* UIGestureRecognizerSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEF775BB18316DE4000AF17B /* UIGestureRecognizerSpec+Spec.mm */; };
+		AEF775BC18316DE4000AF17B /* UIGestureRecognizerSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEF775BB18316DE4000AF17B /* UIGestureRecognizerSpec+Spec.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		AEF775C81831708D000AF17B /* UIGestureRecognizer+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AEF775C61831708D000AF17B /* UIGestureRecognizer+Spec.h */; };
 		AEF775CA183170A3000AF17B /* UIGestureRecognizer+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF775C71831708D000AF17B /* UIGestureRecognizer+Spec.m */; };
 		B866FC1A16B4957500317E32 /* UIControl+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AEBCCC75168B9B5F0056EE83 /* UIControl+Spec.h */; };
@@ -137,21 +140,21 @@
 		B866FC1D16B4957500317E32 /* UIView+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AEBCCC7B168B9B5F0056EE83 /* UIView+Spec.h */; };
 		B866FC1F16B4957500317E32 /* UIKitMatchers.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AE3847A4168B9DF700C99B55 /* UIKitMatchers.h */; };
 		B8C62E6D16BC03420009CDAD /* UIBarButtonItem+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = B8C62E6C16BC03420009CDAD /* UIBarButtonItem+Spec.m */; };
-		B8C62E6F16BC04230009CDAD /* UIBarButtonItemSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = B8C62E6E16BC04230009CDAD /* UIBarButtonItemSpec+Spec.mm */; };
-		B8C62E7216BC04940009CDAD /* Target.m in Sources */ = {isa = PBXBuildFile; fileRef = B8C62E7116BC04940009CDAD /* Target.m */; };
+		B8C62E6F16BC04230009CDAD /* UIBarButtonItemSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = B8C62E6E16BC04230009CDAD /* UIBarButtonItemSpec+Spec.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		B8C62E7216BC04940009CDAD /* Target.m in Sources */ = {isa = PBXBuildFile; fileRef = B8C62E7116BC04940009CDAD /* Target.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		B8C62E7316BC07F60009CDAD /* UIBarButtonItem+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = B8C62E6B16BC03420009CDAD /* UIBarButtonItem+Spec.h */; };
-		FA07586B18120E47001817BF /* UICollectionViewCellSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA07586618120BB1001817BF /* UICollectionViewCellSpec+Spec.mm */; };
+		FA07586B18120E47001817BF /* UICollectionViewCellSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA07586618120BB1001817BF /* UICollectionViewCellSpec+Spec.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		FA1A516A186290C800C22BA8 /* UIImageView+PivotalCore.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1A5169186290C800C22BA8 /* UIImageView+PivotalCore.m */; };
-		FA1A516B186290C800C22BA8 /* UIImageView+PivotalCore.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1A5169186290C800C22BA8 /* UIImageView+PivotalCore.m */; };
-		FA1A5179186290E600C22BA8 /* UIImageView+PivotalCoreSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA1A5178186290E600C22BA8 /* UIImageView+PivotalCoreSpec.mm */; };
+		FA1A516B186290C800C22BA8 /* UIImageView+PivotalCore.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1A5169186290C800C22BA8 /* UIImageView+PivotalCore.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FA1A5179186290E600C22BA8 /* UIImageView+PivotalCoreSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA1A5178186290E600C22BA8 /* UIImageView+PivotalCoreSpec.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		FA91AA91186725CC00925A6B /* NSString+PivotalCoreKit_UIKit.m in Sources */ = {isa = PBXBuildFile; fileRef = FA91AA90186725CC00925A6B /* NSString+PivotalCoreKit_UIKit.m */; };
-		FA91AA92186725CC00925A6B /* NSString+PivotalCoreKit_UIKit.m in Sources */ = {isa = PBXBuildFile; fileRef = FA91AA90186725CC00925A6B /* NSString+PivotalCoreKit_UIKit.m */; };
-		FA91AA9E1867260400925A6B /* NSString+PivotalCoreKit_UIKitSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA91AA9D1867260400925A6B /* NSString+PivotalCoreKit_UIKitSpec.mm */; };
+		FA91AA92186725CC00925A6B /* NSString+PivotalCoreKit_UIKit.m in Sources */ = {isa = PBXBuildFile; fileRef = FA91AA90186725CC00925A6B /* NSString+PivotalCoreKit_UIKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FA91AA9E1867260400925A6B /* NSString+PivotalCoreKit_UIKitSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA91AA9D1867260400925A6B /* NSString+PivotalCoreKit_UIKitSpec.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		FA91AAA1186737B700925A6B /* NSAttributedString+PivotalCoreKit_UIKit.m in Sources */ = {isa = PBXBuildFile; fileRef = FA91AAA0186737B700925A6B /* NSAttributedString+PivotalCoreKit_UIKit.m */; };
-		FA91AAA2186737B700925A6B /* NSAttributedString+PivotalCoreKit_UIKit.m in Sources */ = {isa = PBXBuildFile; fileRef = FA91AAA0186737B700925A6B /* NSAttributedString+PivotalCoreKit_UIKit.m */; };
-		FA91AAA41867383E00925A6B /* NSAttributedString+PivotalCoreKit_UIKitSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA91AAA31867383E00925A6B /* NSAttributedString+PivotalCoreKit_UIKitSpec.mm */; };
+		FA91AAA2186737B700925A6B /* NSAttributedString+PivotalCoreKit_UIKit.m in Sources */ = {isa = PBXBuildFile; fileRef = FA91AAA0186737B700925A6B /* NSAttributedString+PivotalCoreKit_UIKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FA91AAA41867383E00925A6B /* NSAttributedString+PivotalCoreKit_UIKitSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA91AAA31867383E00925A6B /* NSAttributedString+PivotalCoreKit_UIKitSpec.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		FAF932D8192703490076C733 /* UISwitch+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF932CC192703280076C733 /* UISwitch+Spec.m */; };
-		FAF932DC192704750076C733 /* UISwitchSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = FAF932D9192703AA0076C733 /* UISwitchSpec+Spec.mm */; };
+		FAF932DC192704750076C733 /* UISwitchSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = FAF932D9192703AA0076C733 /* UISwitchSpec+Spec.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -375,6 +378,7 @@
 		AE53E2EB18075A810037C32E /* UIWindow+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+Spec.m"; sourceTree = "<group>"; };
 		AE53E2F518075B080037C32E /* UIWindowSpec+Spec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIWindowSpec+Spec.mm"; sourceTree = "<group>"; };
 		AE7B279517CFD67600904F64 /* UIViewControllerSpec+Spec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIViewControllerSpec+Spec.mm"; sourceTree = "<group>"; };
+		AE7CE69219FACA84007B008F /* NavigationStackExample.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NavigationStackExample.storyboard; sourceTree = "<group>"; };
 		AE86BD40179C7C910057DEAE /* UITabBarController+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBarController+Spec.h"; sourceTree = "<group>"; };
 		AE86BD41179C7C910057DEAE /* UITabBarController+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBarController+Spec.m"; sourceTree = "<group>"; };
 		AE86BD4D179C7DAD0057DEAE /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -385,6 +389,7 @@
 		AEB6662A18C6681A00B09C00 /* UIPopoverController+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIPopoverController+Spec.h"; sourceTree = "<group>"; };
 		AEB6662B18C6681A00B09C00 /* UIPopoverController+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIPopoverController+Spec.m"; sourceTree = "<group>"; };
 		AEB6663C18C6685F00B09C00 /* UIPopoverControllerSpec+Spec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIPopoverControllerSpec+Spec.mm"; sourceTree = "<group>"; };
+		AEBB53BE19F711340032947D /* UINavigationController+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+Spec.m"; sourceTree = "<group>"; };
 		AEBCCBCD168B96C80056EE83 /* UIBarButtonItem+Button.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Button.h"; sourceTree = "<group>"; };
 		AEBCCBCE168B96C80056EE83 /* UIBarButtonItem+Button.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Button.m"; sourceTree = "<group>"; };
 		AEBCCBCF168B96C80056EE83 /* UIImage+PivotalCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+PivotalCore.h"; sourceTree = "<group>"; };
@@ -441,6 +446,7 @@
 		AEDABBB918EA214A004E6626 /* MainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainController.m; sourceTree = "<group>"; };
 		AEDABBBA18EA214A004E6626 /* MainController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainController.xib; sourceTree = "<group>"; };
 		AEE0B69518A3572C0007A9D0 /* UIView+StubbedAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+StubbedAnimation.h"; sourceTree = "<group>"; };
+		AEEDC56719FAC2E2004AFFE9 /* UINavigationControllerSpec+Spec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UINavigationControllerSpec+Spec.mm"; sourceTree = "<group>"; };
 		AEEECC16181F3135006B52CD /* UIImagePickerController+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImagePickerController+Spec.h"; sourceTree = "<group>"; };
 		AEEECC17181F3135006B52CD /* UIImagePickerController+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImagePickerController+Spec.m"; sourceTree = "<group>"; };
 		AEEECC32181F33F5006B52CD /* UIImagePickerControllerSpec+Spec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIImagePickerControllerSpec+Spec.mm"; sourceTree = "<group>"; };
@@ -550,27 +556,28 @@
 				AE3847A6168BA0B300C99B55 /* AWebViewController.h */,
 				AE3847A7168BA0B300C99B55 /* AWebViewController.m */,
 				AE3847A8168BA0B300C99B55 /* AWebViewController.xib */,
+				AEDABBB518EA214A004E6626 /* ChildViewController.h */,
+				AEDABBB618EA214A004E6626 /* ChildViewController.m */,
+				AEDABBB718EA214A004E6626 /* ChildViewController.xib */,
+				34BDAC6919A3FCD90085B45A /* CollectionViewPrototypeCells.storyboard */,
 				AE3847A9168BA0B300C99B55 /* Images */,
 				AEDABB6618E9DE3B004E6626 /* InnerView.h */,
 				AEDABB6718E9DE3B004E6626 /* InnerView.m */,
 				AEDABB6418E9DE2C004E6626 /* InnerView.xib */,
-				AEDABB6918E9DFC7004E6626 /* OuterView.h */,
-				AEDABB6A18E9DFC7004E6626 /* OuterView.m */,
-				AEDABB6C18E9DFD4004E6626 /* OuterView.xib */,
-				AEDABBB518EA214A004E6626 /* ChildViewController.h */,
-				AEDABBB618EA214A004E6626 /* ChildViewController.m */,
-				AEDABBB718EA214A004E6626 /* ChildViewController.xib */,
 				AEDABBB818EA214A004E6626 /* MainController.h */,
 				AEDABBB918EA214A004E6626 /* MainController.m */,
 				AEDABBBA18EA214A004E6626 /* MainController.xib */,
+				AE7CE69219FACA84007B008F /* NavigationStackExample.storyboard */,
+				AEDABB6918E9DFC7004E6626 /* OuterView.h */,
+				AEDABB6A18E9DFC7004E6626 /* OuterView.m */,
+				AEDABB6C18E9DFD4004E6626 /* OuterView.xib */,
+				34BDAC7A19A42D1E0085B45A /* PrototypeCellObjects.h */,
+				34BDAC7B19A42D1E0085B45A /* PrototypeCellObjects.m */,
+				3490AFEC19A3CF4000DAA8E3 /* TableViewPrototypeCells.storyboard */,
 				B8C62E7016BC04940009CDAD /* Target.h */,
 				B8C62E7116BC04940009CDAD /* Target.m */,
 				346281C518D7AC1300E9C952 /* UIGestureRecognizer.storyboard */,
 				AEB315AB18BF830C00018EDD /* UITableViewCell.storyboard */,
-				3490AFEC19A3CF4000DAA8E3 /* TableViewPrototypeCells.storyboard */,
-				34BDAC6919A3FCD90085B45A /* CollectionViewPrototypeCells.storyboard */,
-				34BDAC7A19A42D1E0085B45A /* PrototypeCellObjects.h */,
-				34BDAC7B19A42D1E0085B45A /* PrototypeCellObjects.m */,
 			);
 			path = Fixtures;
 			sourceTree = "<group>";
@@ -767,10 +774,13 @@
 			children = (
 				AEC40CAE174C22BD00474D2D /* UIActionSheet+Spec.h */,
 				AEC40CAF174C22BD00474D2D /* UIActionSheet+Spec.m */,
+				8487257119013F5F00288770 /* UIActivityViewController+Spec.h */,
+				8487257219013F5F00288770 /* UIActivityViewController+Spec.m */,
 				AEC40CB0174C22BD00474D2D /* UIAlertView+Spec.h */,
 				AEC40CB1174C22BD00474D2D /* UIAlertView+Spec.m */,
 				AEEECC16181F3135006B52CD /* UIImagePickerController+Spec.h */,
 				AEEECC17181F3135006B52CD /* UIImagePickerController+Spec.m */,
+				AEBB53BE19F711340032947D /* UINavigationController+Spec.m */,
 				AEB6662A18C6681A00B09C00 /* UIPopoverController+Spec.h */,
 				AEB6662B18C6681A00B09C00 /* UIPopoverController+Spec.m */,
 				AEE0B69518A3572C0007A9D0 /* UIView+StubbedAnimation.h */,
@@ -778,8 +788,6 @@
 				AEC40CB2174C22BD00474D2D /* UIViewController+Spec.m */,
 				AEC40CB3174C22BD00474D2D /* UIWebView+Spec.h */,
 				AEC40CB4174C22BD00474D2D /* UIWebView+Spec.m */,
-				8487257119013F5F00288770 /* UIActivityViewController+Spec.h */,
-				8487257219013F5F00288770 /* UIActivityViewController+Spec.m */,
 			);
 			path = Stubs;
 			sourceTree = "<group>";
@@ -790,6 +798,7 @@
 				AEF67CE018CA436600C221D1 /* UIActionSheetSpec+Spec.mm */,
 				AEC40CBE174C24CF00474D2D /* UIAlertViewSpec+Spec.mm */,
 				AEEECC32181F33F5006B52CD /* UIImagePickerControllerSpec+Spec.mm */,
+				AEEDC56719FAC2E2004AFFE9 /* UINavigationControllerSpec+Spec.mm */,
 				AEB6663C18C6685F00B09C00 /* UIPopoverControllerSpec+Spec.mm */,
 				AE7B279517CFD67600904F64 /* UIViewControllerSpec+Spec.mm */,
 				AE898FF718071E2B00DDB948 /* UIViewSpec+StubbedAnimations.mm */,
@@ -1032,6 +1041,7 @@
 				AEDABB6D18E9DFD4004E6626 /* OuterView.xib in Resources */,
 				3490AFED19A3CF4700DAA8E3 /* TableViewPrototypeCells.storyboard in Resources */,
 				AE3847AE168BA0E300C99B55 /* AWebViewController.xib in Resources */,
+				AE7CE69319FACA8B007B008F /* NavigationStackExample.storyboard in Resources */,
 				AEDABB6518E9DE2C004E6626 /* InnerView.xib in Resources */,
 				AEDABBBC18EA214A004E6626 /* ChildViewController.xib in Resources */,
 				AE3847AF168BA11D00C99B55 /* logo-small.png in Resources */,
@@ -1147,6 +1157,7 @@
 			files = (
 				34BDAC7C19A42D1E0085B45A /* PrototypeCellObjects.m in Sources */,
 				FA91AAA41867383E00925A6B /* NSAttributedString+PivotalCoreKit_UIKitSpec.mm in Sources */,
+				AEEDC56819FAC2E2004AFFE9 /* UINavigationControllerSpec+Spec.mm in Sources */,
 				AEBCCC99168B9C530056EE83 /* UIBarButtonItem+ButtonSpec.mm in Sources */,
 				AEF775BC18316DE4000AF17B /* UIGestureRecognizerSpec+Spec.mm in Sources */,
 				FA91AA92186725CC00925A6B /* NSString+PivotalCoreKit_UIKit.m in Sources */,
@@ -1211,6 +1222,7 @@
 			files = (
 				AEB6662D18C6681A00B09C00 /* UIPopoverController+Spec.m in Sources */,
 				AEC40CB5174C22BD00474D2D /* UIActionSheet+Spec.m in Sources */,
+				AEBB53BF19F711340032947D /* UINavigationController+Spec.m in Sources */,
 				AEC40CB6174C22BD00474D2D /* UIAlertView+Spec.m in Sources */,
 				AEEECC19181F3135006B52CD /* UIImagePickerController+Spec.m in Sources */,
 				AEC40CB7174C22BD00474D2D /* UIViewController+Spec.m in Sources */,
@@ -1422,6 +1434,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1447,6 +1460,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

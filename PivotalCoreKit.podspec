@@ -57,7 +57,7 @@ Pod::Spec.new do |s|
       end
 
       spec.subspec 'Helpers' do |helper|
-	helper.source_files = ['UIKit/SpecHelper/Helpers/*.{h,m}']
+        helper.source_files = ['UIKit/SpecHelper/Helpers/*.{h,m}']
       end
     end
   end
