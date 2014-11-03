@@ -1,5 +1,7 @@
 ## HEAD
 
+## 0.1.0
+
 ### Major Enhancements
   * Adds NSDictionary+dictionaryFromQueryString
   * Adds support for loading nib-based UIView subclasses from other nibs with internal bindings and constraints intact
@@ -17,7 +19,7 @@
 
 ### Bug Fixes
 
-## 0.1.0 / (unreleased)
+## 0.1.1 / (unreleased)
   * preparing for next release
 
 ## 0.0.3 / 2014-03-10
