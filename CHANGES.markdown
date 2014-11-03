@@ -9,6 +9,7 @@
   * Manually triggering gesture recognizers can perform storyboard segues
   * Adds support for instantiating prototype table view and collection view cells given a view controller from a storyboard and a cell identifier
   * Improves support for UIGestureRecognizer
+  * Adds support for UINavigationController iOS 8 changes
 
 ### Minor Enhancements
   * FakeOperationQueue is renamed to PSHKFakeOperationQueue; an alias is provided for backward compatibility
