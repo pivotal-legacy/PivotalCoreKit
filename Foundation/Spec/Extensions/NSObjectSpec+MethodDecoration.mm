@@ -9,12 +9,15 @@
 
 using namespace Cedar::Matchers;
 
+@interface NSObject (DecoratedDescriptionDeclaration)
+- (NSString *)descriptionWithoutBrackets;
+@end
+
 @implementation NSObject (DecoratedDescription)
 - (NSString *)descriptionWithBrackets {
     return [NSString stringWithFormat:@"[%@]", [self performSelector:@selector(descriptionWithoutBrackets)]];
 }
 @end
-
 
 SPEC_BEGIN(NSObjectSpec_MethodDecoration)
 

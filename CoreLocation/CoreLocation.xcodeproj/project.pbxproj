@@ -312,13 +312,13 @@
 			isa = PBXGroup;
 			children = (
 				AE384933168CD8FC00C99B55 /* Cedar.framework */,
-				AE384935168CD8FC00C99B55 /* Specs */,
-				AE384937168CD8FC00C99B55 /* FocusedSpecs */,
+				AE384935168CD8FC00C99B55 /* Cedar OS X Specs */,
+				AE384937168CD8FC00C99B55 /* Cedar OS X FocusedSpecs */,
 				AE384939168CD8FC00C99B55 /* libCedar-StaticLib.a */,
-				AE38493B168CD8FC00C99B55 /* iOSSpecs.app */,
-				AED5718818C54B5E004AD37D /* iOSFrameworkSpecs.app */,
-				AE38493D168CD8FC00C99B55 /* OCUnitApp.app */,
-				AE38493F168CD8FC00C99B55 /* OCUnitAppTests.octest */,
+				AE38493B168CD8FC00C99B55 /* Cedar iOS Specs.app */,
+				AED5718818C54B5E004AD37D /* Cedar iOS FrameworkSpecs.app */,
+				AE38493D168CD8FC00C99B55 /* Cedar iOS Host App.app */,
+				AE38493F168CD8FC00C99B55 /* Cedar iOS SenTestingKit Tests.octest */,
 				AEEECC4A181F36B2006B52CD /* XCUnitAppTests.xctest */,
 				AECAF90F1A0190BB002B4FD8 /* Cedar OS X Host App.app */,
 				AECAF9111A0190BB002B4FD8 /* Cedar OS X Host AppTests.xctest */,
@@ -534,14 +534,14 @@
 			remoteRef = AE384932168CD8FC00C99B55 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		AE384935168CD8FC00C99B55 /* Specs */ = {
+		AE384935168CD8FC00C99B55 /* Cedar OS X Specs */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.executable";
 			path = "Cedar OS X Specs";
 			remoteRef = AE384934168CD8FC00C99B55 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		AE384937168CD8FC00C99B55 /* FocusedSpecs */ = {
+		AE384937168CD8FC00C99B55 /* Cedar OS X FocusedSpecs */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.executable";
 			path = "Cedar OS X FocusedSpecs";
@@ -555,21 +555,21 @@
 			remoteRef = AE384938168CD8FC00C99B55 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		AE38493B168CD8FC00C99B55 /* iOSSpecs.app */ = {
+		AE38493B168CD8FC00C99B55 /* Cedar iOS Specs.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
 			path = "Cedar iOS Specs.app";
 			remoteRef = AE38493A168CD8FC00C99B55 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		AE38493D168CD8FC00C99B55 /* OCUnitApp.app */ = {
+		AE38493D168CD8FC00C99B55 /* Cedar iOS Host App.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
 			path = "Cedar iOS Host App.app";
 			remoteRef = AE38493C168CD8FC00C99B55 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		AE38493F168CD8FC00C99B55 /* OCUnitAppTests.octest */ = {
+		AE38493F168CD8FC00C99B55 /* Cedar iOS SenTestingKit Tests.octest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = "Cedar iOS SenTestingKit Tests.octest";
@@ -597,7 +597,7 @@
 			remoteRef = AECAF9121A0190BB002B4FD8 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		AED5718818C54B5E004AD37D /* iOSFrameworkSpecs.app */ = {
+		AED5718818C54B5E004AD37D /* Cedar iOS FrameworkSpecs.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
 			path = "Cedar iOS FrameworkSpecs.app";
@@ -836,6 +836,7 @@
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
@@ -857,6 +858,7 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
