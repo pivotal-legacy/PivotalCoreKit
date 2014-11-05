@@ -18,16 +18,9 @@ Pod::Spec.new do |s|
 
   s.subspec 'Development' do |dev|
     dev.dependency 'PivotalCoreKit/Core'
-    dev.dependency 'PivotalCoreKit/Foundation/SpecHelper/Extensions'
-    dev.dependency 'PivotalCoreKit/Foundation/SpecHelper/Fixtures'
-    dev.dependency 'PivotalCoreKit/Foundation/SpecHelper/Helpers'
-    dev.dependency 'PivotalCoreKit/Foundation/SpecHelper/Fakes'
-    dev.dependency 'PivotalCoreKit/UIKit/SpecHelper/Extensions'
-    dev.dependency 'PivotalCoreKit/UIKit/SpecHelper/Matchers'
-    dev.dependency 'PivotalCoreKit/UIKit/SpecHelper/Helpers'
-    dev.dependency 'PivotalCoreKit/UIKit/SpecHelper/Stubs'
-    dev.dependency 'PivotalCoreKit/CoreLocation/SpecHelper/Base'
-    dev.dependency 'PivotalCoreKit/CoreLocation/SpecHelper/Extensions'
+    dev.dependency 'PivotalCoreKit/Foundation/SpecHelper'
+    dev.dependency 'PivotalCoreKit/UIKit/SpecHelper'
+    dev.dependency 'PivotalCoreKit/CoreLocation/SpecHelper'
   end
 
   s.subspec 'UIKit' do |ui|
@@ -74,6 +67,8 @@ Pod::Spec.new do |s|
     end
 
     f.subspec 'SpecHelper' do |spec_helper|
+      spec_helper.source_files = [ 'Foundation/SpecHelper/Foundation+PivotalSpecHelper.h' ]
+
       spec_helper.subspec 'Extensions' do |ext|
         ext.source_files = ['Foundation/SpecHelper/Extensions/*.{h,m}', 'Foundation/Core/Extensions/NSObject+MethodRedirection.{h,m}']
         ext.dependency 'PivotalCoreKit/Foundation/SpecHelper/Helpers'
