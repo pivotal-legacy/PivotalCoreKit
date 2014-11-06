@@ -1,7 +1,9 @@
 #import "NSString+PivotalCore.h"
 #import "NSData+PivotalCore.h"
 #import "NSArray+PivotalCore.h"
+#import "NSObject+MethodDecoration.h"
 #import "NSObject+MethodRedirection.h"
+#import "NSDictionary+TypesafeExtraction.h"
 #import "NSDictionary+QueryString.h"
 #import "NSURL+QueryComponents.h"
 
