@@ -29,4 +29,18 @@
     return [NSArray arrayWithArray:collected];
 }
 
+- (id)reduce:(id(^)(id accumulator, id input))f initialValue:(id)initialValue {
+    NSParameterAssert(f);
+    id accumulator = initialValue;
+    for (id o in self) {
+        accumulator = f(accumulator, o);
+    }
+    return accumulator;
+}
+
+- (id)reduce:(id(^)(id accumulator, id input))f {
+    NSParameterAssert(f);
+    return [[self subarrayWithRange:NSMakeRange(1, self.count - 1)] reduce:f initialValue:[self objectAtIndex:0]];
+}
+
 @end
