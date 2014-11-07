@@ -13,20 +13,19 @@
 }
 
 - (NSArray *)collect:(id(^)(id))collector boxNils:(BOOL)shouldBox {
-    if (collector == nil) {
+    if (!collector) {
         return [NSArray arrayWithArray:self];
     }
 
-    NSMutableArray *collected = [NSMutableArray arrayWithCapacity:self.count];
-    [self enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        id result = collector(obj);
-        if (result) {
-            [collected addObject:result];
+    return [self reduce:^id(id accumulator, id input) {
+        id v = collector(input);
+        if (v) {
+            [accumulator addObject:v];
         } else if (shouldBox) {
-            [collected addObject:[NSNull null]];
+            [accumulator addObject:[NSNull null]];
         }
-    }];
-    return [NSArray arrayWithArray:collected];
+        return accumulator;
+    } initialValue:[NSMutableArray arrayWithCapacity:self.count]];
 }
 
 - (id)reduce:(id(^)(id accumulator, id input))f initialValue:(id)initialValue {
@@ -41,6 +40,14 @@
 - (id)reduce:(id(^)(id accumulator, id input))f {
     NSParameterAssert(f);
     return [[self subarrayWithRange:NSMakeRange(1, self.count - 1)] reduce:f initialValue:[self objectAtIndex:0]];
+}
+
+- (id)map:(id(^)(id))f {
+    NSParameterAssert(f);
+    return [self reduce:^id(id accumulator, id input) {
+        [accumulator addObject:f(input)];
+        return accumulator;
+    } initialValue:[NSMutableArray arrayWithCapacity:self.count]];
 }
 
 @end

@@ -9,6 +9,6 @@
 - (id)reduce:(id(^)(id accumulator, id input))f initialValue:(id)initialValue;
 - (id)reduce:(id(^)(id accumulator, id input))f;
 
-- (instancetype)map:(id(^)(id))f;
+- (id)map:(id(^)(id))f;
 
 @end
