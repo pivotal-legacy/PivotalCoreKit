@@ -1,5 +1,7 @@
 ## HEAD
 
+## 0.1.2 (in progress)
+
 ## 0.1.1
   * Fixes to podspec for Cocoapods users
   * Cocoapods projects should no longer see warnings appear when using PCK libs as pod dependencies
