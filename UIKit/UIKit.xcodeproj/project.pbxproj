@@ -139,6 +139,7 @@
 		B866FC1C16B4957500317E32 /* UITableViewCell+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AEBCCC79168B9B5F0056EE83 /* UITableViewCell+Spec.h */; };
 		B866FC1D16B4957500317E32 /* UIView+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AEBCCC7B168B9B5F0056EE83 /* UIView+Spec.h */; };
 		B866FC1F16B4957500317E32 /* UIKitMatchers.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AE3847A4168B9DF700C99B55 /* UIKitMatchers.h */; };
+		B86B686B1A132EF700F283F7 /* __PCKSilenceLinkerWarnings.m in Sources */ = {isa = PBXBuildFile; fileRef = B86B686A1A132EF700F283F7 /* __PCKSilenceLinkerWarnings.m */; };
 		B8C62E6D16BC03420009CDAD /* UIBarButtonItem+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = B8C62E6C16BC03420009CDAD /* UIBarButtonItem+Spec.m */; };
 		B8C62E6F16BC04230009CDAD /* UIBarButtonItemSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = B8C62E6E16BC04230009CDAD /* UIBarButtonItemSpec+Spec.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		B8C62E7216BC04940009CDAD /* Target.m in Sources */ = {isa = PBXBuildFile; fileRef = B8C62E7116BC04940009CDAD /* Target.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -463,6 +464,7 @@
 		AEF775BB18316DE4000AF17B /* UIGestureRecognizerSpec+Spec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIGestureRecognizerSpec+Spec.mm"; sourceTree = "<group>"; };
 		AEF775C61831708D000AF17B /* UIGestureRecognizer+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIGestureRecognizer+Spec.h"; sourceTree = "<group>"; };
 		AEF775C71831708D000AF17B /* UIGestureRecognizer+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIGestureRecognizer+Spec.m"; sourceTree = "<group>"; };
+		B86B686A1A132EF700F283F7 /* __PCKSilenceLinkerWarnings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = __PCKSilenceLinkerWarnings.m; sourceTree = "<group>"; };
 		B8C62E6B16BC03420009CDAD /* UIBarButtonItem+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Spec.h"; sourceTree = "<group>"; };
 		B8C62E6C16BC03420009CDAD /* UIBarButtonItem+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Spec.m"; sourceTree = "<group>"; };
 		B8C62E6E16BC04230009CDAD /* UIBarButtonItemSpec+Spec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIBarButtonItemSpec+Spec.mm"; sourceTree = "<group>"; };
@@ -626,6 +628,7 @@
 			isa = PBXGroup;
 			children = (
 				AEBCCBCC168B96C80056EE83 /* Extensions */,
+				B86B68681A132EBB00F283F7 /* Private */,
 				AEBCCBD3168B96C80056EE83 /* UIKit+PivotalCore.h */,
 			);
 			path = Core;
@@ -813,6 +816,14 @@
 				8487257F1901402000288770 /* UIActivityViewControllerSpec+Spec.mm */,
 			);
 			path = Stubs;
+			sourceTree = "<group>";
+		};
+		B86B68681A132EBB00F283F7 /* Private */ = {
+			isa = PBXGroup;
+			children = (
+				B86B686A1A132EF700F283F7 /* __PCKSilenceLinkerWarnings.m */,
+			);
+			path = Private;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1152,6 +1163,7 @@
 				AE3847B7168BA3B500C99B55 /* UIBarButtonItem+Button.m in Sources */,
 				AEDABB6118E9DCC9004E6626 /* UIView+PCKNibHelpers.m in Sources */,
 				AE3847B8168BA3B500C99B55 /* UIImage+PivotalCore.m in Sources */,
+				B86B686B1A132EF700F283F7 /* __PCKSilenceLinkerWarnings.m in Sources */,
 				FA91AAA1186737B700925A6B /* NSAttributedString+PivotalCoreKit_UIKit.m in Sources */,
 				AE3847B9168BA3B500C99B55 /* UIView+PivotalCore.m in Sources */,
 				FA91AA91186725CC00925A6B /* NSString+PivotalCoreKit_UIKit.m in Sources */,
