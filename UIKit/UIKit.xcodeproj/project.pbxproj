@@ -263,6 +263,13 @@
 			remoteGlobalIDString = AEB8818719DCD62D00F081BA;
 			remoteInfo = "Cedar OS X Failing Test Bundle";
 		};
+		AEF6633B1A12E167003AFD0D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEBCCBA7168B95A00056EE83 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AEBCCC33168B99ED0056EE83;
+			remoteInfo = "UIKit-StaticLibSpec";
+		};
 		FA1A5176186290C900C22BA8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AEBCCBF4168B98100056EE83 /* Cedar.xcodeproj */;
@@ -823,6 +830,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				AEF6633C1A12E167003AFD0D /* PBXTargetDependency */,
 			);
 			name = "UIKit-StaticLibSpecBundle";
 			productName = "UIKit-StaticLibSpecBundle";
@@ -1257,6 +1265,11 @@
 			target = AEC40C88174C203700474D2D /* UIKit+PivotalSpecHelperStubs-StaticLib */;
 			targetProxy = AEC40CBA174C23DF00474D2D /* PBXContainerItemProxy */;
 		};
+		AEF6633C1A12E167003AFD0D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AEBCCC33168B99ED0056EE83 /* UIKit-StaticLibSpec */;
+			targetProxy = AEF6633B1A12E167003AFD0D /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
@@ -1286,7 +1299,6 @@
 					"$(inherited)",
 				);
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				HEADER_SEARCH_PATHS = (
@@ -1329,7 +1341,6 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				HEADER_SEARCH_PATHS = (
@@ -1368,6 +1379,7 @@
 					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -1393,6 +1405,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
