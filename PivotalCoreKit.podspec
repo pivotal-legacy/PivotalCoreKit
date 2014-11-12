@@ -1,11 +1,11 @@
 Pod::Spec.new do |s|
   s.name     = 'PivotalCoreKit'
-  s.version  = '0.1.0'
+  s.version  = '0.1.1'
   s.license  = { :type => 'MIT', :file => 'LICENSE.markdown' }
   s.summary  = 'Shared library and test code for iOS projects.'
   s.homepage = 'https://github.com/pivotal/PivotalCoreKit'
   s.author   = { 'Pivotal Labs' => 'http://pivotallabs.com' }
-  s.source   = { :git => 'https://github.com/pivotal/PivotalCoreKit.git' }
+  s.source   = { :git => 'https://github.com/pivotal/PivotalCoreKit.git', :tag => 'v0.1.1' }
   s.platform = :ios, '6.0'
   s.requires_arc = false
 

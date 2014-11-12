@@ -1,5 +1,9 @@
 ## HEAD
 
+## 0.1.1
+  * Fixes to podspec for Cocoapods users
+  * Cocoapods projects should no longer see warnings appear when using PCK libs as pod dependencies
+
 ## 0.1.0
 
 ### Major Enhancements
@@ -18,9 +22,6 @@
   * Removes need to whitelist target classes before manually triggering gesture recognizers
 
 ### Bug Fixes
-
-## 0.1.1 / (unreleased)
-  * preparing for next release
 
 ## 0.0.3 / 2014-03-10
   * first versioned release
