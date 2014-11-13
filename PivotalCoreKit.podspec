@@ -32,7 +32,7 @@ Pod::Spec.new do |s|
         core_arc.requires_arc = true
         core_arc.source_files = arc_files
       end
-    endx
+    end
 
     ui.subspec 'SpecHelper' do |spec|
       spec.subspec 'Extensions' do |ext|
