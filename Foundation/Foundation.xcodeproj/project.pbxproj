@@ -28,6 +28,18 @@
 		34681C1118FD9516009D38AC /* NSDictionary+TypesafeExtraction.m in Sources */ = {isa = PBXBuildFile; fileRef = 34681C0E18FD9516009D38AC /* NSDictionary+TypesafeExtraction.m */; };
 		34681C1D18FD9873009D38AC /* NSDictionarySpec+TypesafeExtraction.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34681C1C18FD9873009D38AC /* NSDictionarySpec+TypesafeExtraction.mm */; };
 		34681C1E18FD9873009D38AC /* NSDictionarySpec+TypesafeExtraction.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34681C1C18FD9873009D38AC /* NSDictionarySpec+TypesafeExtraction.mm */; };
+		AB3CA197EC99D816B4AAED4F /* PCKMaybeSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB3CA7A3A3B6119475C0AD0C /* PCKMaybeSpec.mm */; };
+		AB3CA21D309D6ED58D2FEE8B /* PCKErrorMonadSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB3CA491C2D37554D15B7B11 /* PCKErrorMonadSpec.mm */; };
+		AB3CA3EA56DF3AABE4AD2E8B /* PCKErrorMonadSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB3CA491C2D37554D15B7B11 /* PCKErrorMonadSpec.mm */; };
+		AB3CA47A28CD03E0199FD57B /* PCKMonad.h in Headers */ = {isa = PBXBuildFile; fileRef = AB3CA86CE1E06EC451FEBB33 /* PCKMonad.h */; };
+		AB3CA65C79B642CB4DDB3459 /* PCKMaybe.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3CAB32C9792AB4CDF52181 /* PCKMaybe.m */; };
+		AB3CA7AEEC91A3417CD14DB3 /* PCKMaybe.h in Headers */ = {isa = PBXBuildFile; fileRef = AB3CA5C371E589667FE4D0C0 /* PCKMaybe.h */; };
+		AB3CA87BA169B7FADF10D92F /* PCKErrorMonad.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3CA50EBEA9B52F7AADA663 /* PCKErrorMonad.m */; };
+		AB3CAB2EE53CEC98DEBB216D /* PCKErrorMonad.h in Headers */ = {isa = PBXBuildFile; fileRef = AB3CA6C718FCE8E2D949A73D /* PCKErrorMonad.h */; };
+		AB3CAD49C2F06A04497DE9B2 /* PCKMaybe.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3CAB32C9792AB4CDF52181 /* PCKMaybe.m */; };
+		AB3CADF7BFCF405B26FCF5D8 /* PCKReducable.h in Headers */ = {isa = PBXBuildFile; fileRef = AB3CA16AA25276C6492C1383 /* PCKReducable.h */; };
+		AB3CAE327D5B3F187C74DA0A /* PCKErrorMonad.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3CA50EBEA9B52F7AADA663 /* PCKErrorMonad.m */; };
+		AB3CAFC4090A8520BF7B8E02 /* PCKMaybeSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB3CA7A3A3B6119475C0AD0C /* PCKMaybeSpec.mm */; };
 		AE0CFF5C1770C77D00E6A958 /* NSDictionary+QueryString.h in Headers */ = {isa = PBXBuildFile; fileRef = AE0CFF5A1770C77D00E6A958 /* NSDictionary+QueryString.h */; };
 		AE0CFF5D1770C77D00E6A958 /* NSDictionary+QueryString.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0CFF5B1770C77D00E6A958 /* NSDictionary+QueryString.m */; };
 		AE0CFF5E1770C77D00E6A958 /* NSDictionary+QueryString.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0CFF5B1770C77D00E6A958 /* NSDictionary+QueryString.m */; };
@@ -408,6 +420,14 @@
 		34681C0D18FD9516009D38AC /* NSDictionary+TypesafeExtraction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+TypesafeExtraction.h"; sourceTree = "<group>"; };
 		34681C0E18FD9516009D38AC /* NSDictionary+TypesafeExtraction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+TypesafeExtraction.m"; sourceTree = "<group>"; };
 		34681C1C18FD9873009D38AC /* NSDictionarySpec+TypesafeExtraction.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSDictionarySpec+TypesafeExtraction.mm"; sourceTree = "<group>"; };
+		AB3CA16AA25276C6492C1383 /* PCKReducable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCKReducable.h; sourceTree = "<group>"; };
+		AB3CA491C2D37554D15B7B11 /* PCKErrorMonadSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PCKErrorMonadSpec.mm; sourceTree = "<group>"; };
+		AB3CA50EBEA9B52F7AADA663 /* PCKErrorMonad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCKErrorMonad.m; sourceTree = "<group>"; };
+		AB3CA5C371E589667FE4D0C0 /* PCKMaybe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCKMaybe.h; sourceTree = "<group>"; };
+		AB3CA6C718FCE8E2D949A73D /* PCKErrorMonad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCKErrorMonad.h; sourceTree = "<group>"; };
+		AB3CA7A3A3B6119475C0AD0C /* PCKMaybeSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PCKMaybeSpec.mm; sourceTree = "<group>"; };
+		AB3CA86CE1E06EC451FEBB33 /* PCKMonad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCKMonad.h; sourceTree = "<group>"; };
+		AB3CAB32C9792AB4CDF52181 /* PCKMaybe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCKMaybe.m; sourceTree = "<group>"; };
 		AE0CFF53176FE22200E6A958 /* NSURL+QueryComponents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+QueryComponents.h"; sourceTree = "<group>"; };
 		AE0CFF54176FE22200E6A958 /* NSURL+QueryComponents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+QueryComponents.m"; sourceTree = "<group>"; };
 		AE0CFF5A1770C77D00E6A958 /* NSDictionary+QueryString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+QueryString.h"; sourceTree = "<group>"; };
@@ -628,6 +648,27 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		AB3CA369E89AC04E4F2ADA46 /* Monads */ = {
+			isa = PBXGroup;
+			children = (
+				AB3CA491C2D37554D15B7B11 /* PCKErrorMonadSpec.mm */,
+				AB3CA7A3A3B6119475C0AD0C /* PCKMaybeSpec.mm */,
+			);
+			path = Monads;
+			sourceTree = "<group>";
+		};
+		AB3CA3F647E6E1AECA7A33A2 /* Monads */ = {
+			isa = PBXGroup;
+			children = (
+				AB3CA5C371E589667FE4D0C0 /* PCKMaybe.h */,
+				AB3CAB32C9792AB4CDF52181 /* PCKMaybe.m */,
+				AB3CA50EBEA9B52F7AADA663 /* PCKErrorMonad.m */,
+				AB3CA6C718FCE8E2D949A73D /* PCKErrorMonad.h */,
+				AB3CA86CE1E06EC451FEBB33 /* PCKMonad.h */,
+			);
+			path = Monads;
+			sourceTree = "<group>";
+		};
 		AE38E70B16EBF0120026DC51 /* Fakes */ = {
 			isa = PBXGroup;
 			children = (
@@ -644,6 +685,7 @@
 				AEA96B70168B50D900861DF1 /* Parsers */,
 				AEA96B79168B50D900861DF1 /* Foundation+PivotalCore.h */,
 				AEA96BCE168B554000861DF1 /* Foundation+PivotalCore-Info.plist */,
+				AB3CA3F647E6E1AECA7A33A2 /* Monads */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -672,6 +714,7 @@
 				AEA96C05168B583200861DF1 /* Fixtures */,
 				AEA96C94168B656700861DF1 /* iOS */,
 				AEA96C97168B658A00861DF1 /* OSX */,
+				AB3CA369E89AC04E4F2ADA46 /* Monads */,
 			);
 			path = Spec;
 			sourceTree = "<group>";
@@ -695,6 +738,7 @@
 				AE0CFF5B1770C77D00E6A958 /* NSDictionary+QueryString.m */,
 				AE0CFF53176FE22200E6A958 /* NSURL+QueryComponents.h */,
 				AE0CFF54176FE22200E6A958 /* NSURL+QueryComponents.m */,
+				AB3CA16AA25276C6492C1383 /* PCKReducable.h */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -939,6 +983,10 @@
 				AEA96B93168B50D900861DF1 /* Foundation+PivotalCore.h in Headers */,
 				AE6898DC16BC3AF700F3F6BC /* NSArray+PivotalCore.h in Headers */,
 				AE0CFF5C1770C77D00E6A958 /* NSDictionary+QueryString.h in Headers */,
+				AB3CA7AEEC91A3417CD14DB3 /* PCKMaybe.h in Headers */,
+				AB3CAB2EE53CEC98DEBB216D /* PCKErrorMonad.h in Headers */,
+				AB3CA47A28CD03E0199FD57B /* PCKMonad.h in Headers */,
+				AB3CADF7BFCF405B26FCF5D8 /* PCKReducable.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1353,6 +1401,8 @@
 				AEA96B92168B50D900861DF1 /* PCKXMLParserDelegate.m in Sources */,
 				AE6898DD16BC3AF700F3F6BC /* NSArray+PivotalCore.m in Sources */,
 				AE0CFF5D1770C77D00E6A958 /* NSDictionary+QueryString.m in Sources */,
+				AB3CA65C79B642CB4DDB3459 /* PCKMaybe.m in Sources */,
+				AB3CA87BA169B7FADF10D92F /* PCKErrorMonad.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1400,6 +1450,8 @@
 				E3F9C81416F50EFC00347B30 /* PCKConnectionBlockDelegateSpec.mm in Sources */,
 				AE0CFF601770C81900E6A958 /* NSDictionarySpec+QueryStringSpec.mm in Sources */,
 				AE0CFF7C1770DB0100E6A958 /* NSURLSpec+QueryComponents.mm in Sources */,
+				AB3CA3EA56DF3AABE4AD2E8B /* PCKErrorMonadSpec.mm in Sources */,
+				AB3CA197EC99D816B4AAED4F /* PCKMaybeSpec.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1422,6 +1474,8 @@
 				AEA96CB1168B67FB00861DF1 /* PCKXMLParserDelegate.m in Sources */,
 				AE6898DE16BC3AF700F3F6BC /* NSArray+PivotalCore.m in Sources */,
 				AE0CFF5E1770C77D00E6A958 /* NSDictionary+QueryString.m in Sources */,
+				AB3CAD49C2F06A04497DE9B2 /* PCKMaybe.m in Sources */,
+				AB3CAE327D5B3F187C74DA0A /* PCKErrorMonad.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1469,6 +1523,8 @@
 				E3F9C81516F50EFC00347B30 /* PCKConnectionBlockDelegateSpec.mm in Sources */,
 				AE0CFF611770C81900E6A958 /* NSDictionarySpec+QueryStringSpec.mm in Sources */,
 				AE0CFF7D1770DB0100E6A958 /* NSURLSpec+QueryComponents.mm in Sources */,
+				AB3CA21D309D6ED58D2FEE8B /* PCKErrorMonadSpec.mm in Sources */,
+				AB3CAFC4090A8520BF7B8E02 /* PCKMaybeSpec.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

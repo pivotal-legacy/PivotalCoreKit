@@ -1,4 +1,5 @@
 #import <Foundation/Foundation.h>
+#import "PCKReducable.h"
 
 @interface NSArray (PivotalCore)
 
@@ -6,9 +7,7 @@
 - (NSArray *)collect:(id(^)(id))collector boxNils:(BOOL)shouldBox;
 - (NSArray *)collectWithKeyPath:(NSString *)keyPath;
 
-- (id)reduce:(id(^)(id accumulator, id input))f initialValue:(id)initialValue;
-- (id)reduce:(id(^)(id accumulator, id input))f;
+@end
 
-- (id)map:(id(^)(id))f;
-
+@interface NSArray () <PCKReducable>
 @end

@@ -28,6 +28,8 @@
     } initialValue:[NSMutableArray arrayWithCapacity:self.count]];
 }
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wobjc-protocol-method-implementation"
 - (id)reduce:(id(^)(id accumulator, id input))f initialValue:(id)initialValue {
     NSParameterAssert(f);
     id accumulator = initialValue;
@@ -49,5 +51,16 @@
         return accumulator;
     } initialValue:[NSMutableArray arrayWithCapacity:self.count]];
 }
+
+- (id)filter:(BOOL(^)(id))f {
+    NSParameterAssert(f);
+    return [self reduce:^id(id accumulator, id input) {
+        if (f(input)) {
+            [accumulator addObject:input];
+        }
+        return accumulator;
+    } initialValue:[NSMutableArray array]];
+}
+#pragma clang diagnostic pop
 
 @end
