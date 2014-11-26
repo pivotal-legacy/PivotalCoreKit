@@ -121,6 +121,7 @@
 		AEDABBBD18EA214A004E6626 /* MainController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEDABBB918EA214A004E6626 /* MainController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		AEDABBBE18EA214A004E6626 /* MainController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEDABBBA18EA214A004E6626 /* MainController.xib */; };
 		AEE0B69618A3572C0007A9D0 /* UIView+StubbedAnimation.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AEE0B69518A3572C0007A9D0 /* UIView+StubbedAnimation.h */; };
+		AEEDA0891A2556390041EDC6 /* PCKMethodRedirector.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF5D45C1A030D2E00C4DC3D /* PCKMethodRedirector.m */; };
 		AEEDC56819FAC2E2004AFFE9 /* UINavigationControllerSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEEDC56719FAC2E2004AFFE9 /* UINavigationControllerSpec+Spec.mm */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		AEEECC18181F3135006B52CD /* UIImagePickerController+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AEEECC16181F3135006B52CD /* UIImagePickerController+Spec.h */; };
 		AEEECC19181F3135006B52CD /* UIImagePickerController+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AEEECC17181F3135006B52CD /* UIImagePickerController+Spec.m */; };
@@ -129,7 +130,6 @@
 		AEF0A40418296C690070D98B /* UICollectionViewCell+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = FA07586918120D19001817BF /* UICollectionViewCell+Spec.m */; };
 		AEF0A40518296CDF0070D98B /* UICollectionViewCell+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = FA07586818120D19001817BF /* UICollectionViewCell+Spec.h */; };
 		AEF5D45D1A030D2E00C4DC3D /* PCKMethodRedirector.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AEF5D45B1A030D2E00C4DC3D /* PCKMethodRedirector.h */; };
-		AEF5D45E1A030D2E00C4DC3D /* PCKMethodRedirector.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF5D45C1A030D2E00C4DC3D /* PCKMethodRedirector.m */; };
 		AEF67CE218CA436600C221D1 /* UIActionSheetSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEF67CE018CA436600C221D1 /* UIActionSheetSpec+Spec.mm */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		AEF775BC18316DE4000AF17B /* UIGestureRecognizerSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEF775BB18316DE4000AF17B /* UIGestureRecognizerSpec+Spec.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		AEF775C81831708D000AF17B /* UIGestureRecognizer+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AEF775C61831708D000AF17B /* UIGestureRecognizer+Spec.h */; };
@@ -1222,6 +1222,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				34BDAC7E19A4329C0085B45A /* PCKPrototypeCellInstantiatingDataSource.m in Sources */,
+				AEEDA0891A2556390041EDC6 /* PCKMethodRedirector.m in Sources */,
 				AEF0A40418296C690070D98B /* UICollectionViewCell+Spec.m in Sources */,
 				AEF775CA183170A3000AF17B /* UIGestureRecognizer+Spec.m in Sources */,
 				FAF932D8192703490076C733 /* UISwitch+Spec.m in Sources */,
@@ -1249,7 +1250,6 @@
 				AE89900318071F3A00DDB948 /* UIView+StubbedAnimation.m in Sources */,
 				AEC40CB8174C22BD00474D2D /* UIWebView+Spec.m in Sources */,
 				8487257E19013F6400288770 /* UIActivityViewController+Spec.m in Sources */,
-				AEF5D45E1A030D2E00C4DC3D /* PCKMethodRedirector.m in Sources */,
 				AE86BD43179C7C910057DEAE /* UITabBarController+Spec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
