@@ -60,6 +60,42 @@ describe(@"NSArray", ^{
             [anArray collectWithKeyPath:@"foo"] should equal(@[@1]);
         });
     });
+
+    describe(@"-reduce:initialValue:", ^{
+        it(@"applies the function to the first element and the initial value, to that result and the second,...", ^{
+            NSArray *anArray = @[@1, @2, @3];
+            [anArray reduce:^id(id accumulator, id input) {
+                return @([accumulator integerValue] + [input integerValue]);
+            } initialValue:@0] should equal(@6);
+        });
+    });
+
+    describe(@"-reduce:", ^{
+        it(@"applies the function to the first element and the second element, to that result and the third,...", ^{
+            NSArray *anArray = @[@1, @2, @3];
+            [anArray reduce:^id(id accumulator, id input) {
+                return @([accumulator integerValue] + [input integerValue]);
+            }] should equal(@6);
+        });
+    });
+
+    describe(@"-map:", ^{
+        it(@"it returns a new array by applying f to each element in the array", ^{
+            NSArray *anArray = @[@"one", @"two", @"three"];
+            [anArray map:^id(id o) {
+                return [(NSString *)o uppercaseString];
+            }] should equal(@[@"ONE", @"TWO", @"THREE"]);
+        });
+    });
+
+    describe(@"-filter:", ^{
+        it(@"it returns a new array containing the elements for which f is true", ^{
+            NSArray *anArray = @[@"one", @"two", @"three"];
+            [anArray filter:^BOOL(id o) {
+                return [(NSString *) o hasPrefix:@"t"];
+            }] should equal(@[@"two", @"three"]);
+        });
+    });
 });
 
 SPEC_END
