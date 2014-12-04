@@ -35,9 +35,9 @@ Pod::Spec.new do |s|
     end
 
     ui.subspec 'SpecHelper' do |spec|
-      spec.subspec 'Extensions' do |ext|
-        ext.source_files = ['UIKit/SpecHelper/Extensions/*.{h,m}', 'UIKit/SpecHelper/UIKit+PivotalSpecHelper.h']
-        ext.dependency 'PivotalCoreKit/UIKit/SpecHelper/Helpers'
+      spec.subspec 'Helpers' do |ext|
+        ext.source_files = ['UIKit/SpecHelper/Helpers/*.{h,m}', 'UIKit/SpecHelper/UIKit+PivotalSpecHelper.h']
+        ext.dependency 'PivotalCoreKit/UIKit/SpecHelper/Support'
       end
 
       spec.subspec 'Matchers' do |match|
@@ -48,10 +48,16 @@ Pod::Spec.new do |s|
         stub.requires_arc = true
         stub.source_files = ['UIKit/SpecHelper/Stubs/*.{h,m}', 'UIKit/SpecHelper/UIKit+PivotalSpecHelperStubs.h']
         stub.dependency 'PivotalCoreKit/UIKit/SpecHelper/Helpers'
+        narc_files = ['UIKit/SpecHelper/Stubs/UIGestureRecognizer+Spec.m']
+        stub.exclude_files = narc_files
+        stub.subspec 'Stubs-noarc' do |narc|
+          narc.requires_arc = false
+          narc.source_files = narc_files
+        end
       end
 
-      spec.subspec 'Helpers' do |helper|
-        helper.source_files = ['UIKit/SpecHelper/Helpers/*.{h,m}']
+      spec.subspec 'Support' do |helper|
+        helper.source_files = ['UIKit/SpecHelper/Support/*.{h,m}']
       end
     end
   end
