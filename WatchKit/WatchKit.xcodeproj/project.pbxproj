@@ -1,0 +1,670 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AE25D5DD1A38F664008A1920 /* WatchKit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = AE25D5DC1A38F664008A1920 /* WatchKit.h */; };
+		AE25D5DF1A38F664008A1920 /* WatchKit.m in Sources */ = {isa = PBXBuildFile; fileRef = AE25D5DE1A38F664008A1920 /* WatchKit.m */; };
+		AE25D5FE1A38F6C9008A1920 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE25D5FD1A38F6C9008A1920 /* XCTest.framework */; };
+		AE25D6001A38F6C9008A1920 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE25D5FF1A38F6C9008A1920 /* CoreGraphics.framework */; };
+		AE25D6021A38F6C9008A1920 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE25D6011A38F6C9008A1920 /* UIKit.framework */; };
+		AE25D6041A38F6C9008A1920 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE25D6031A38F6C9008A1920 /* Foundation.framework */; };
+		AE25D6091A38F6C9008A1920 /* Specs-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE25D6081A38F6C9008A1920 /* Specs-Info.plist */; };
+		AE25D60B1A38F6C9008A1920 /* ExampleSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE25D60A1A38F6C9008A1920 /* ExampleSpec.mm */; };
+		AE25D60F1A38F6CA008A1920 /* libWatchKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE25D5D91A38F664008A1920 /* libWatchKit.a */; };
+		AE25D6411A38F79E008A1920 /* libCedar-StaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE25D62E1A38F77D008A1920 /* libCedar-StaticLib.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AE25D6101A38F6CA008A1920 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE25D5D11A38F664008A1920 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AE25D5D81A38F664008A1920;
+			remoteInfo = WatchKit;
+		};
+		AE25D6271A38F77D008A1920 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE25D6171A38F77D008A1920 /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AEEE1FB611DC271300029872;
+			remoteInfo = Cedar;
+		};
+		AE25D6291A38F77D008A1920 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE25D6171A38F77D008A1920 /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AEEE218611DC28E200029872;
+			remoteInfo = "Cedar OS X Specs";
+		};
+		AE25D62B1A38F77D008A1920 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE25D6171A38F77D008A1920 /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 96A07F0813F276640021974D;
+			remoteInfo = "Cedar OS X FocusedSpecs";
+		};
+		AE25D62D1A38F77D008A1920 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE25D6171A38F77D008A1920 /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AEEE222911DC2B0600029872;
+			remoteInfo = "Cedar-StaticLib";
+		};
+		AE25D62F1A38F77D008A1920 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE25D6171A38F77D008A1920 /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AEEE227611DC2CF900029872;
+			remoteInfo = "Cedar iOS Specs";
+		};
+		AE25D6311A38F77D008A1920 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE25D6171A38F77D008A1920 /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AE02E7E4184EABCD00414F19;
+			remoteInfo = "Cedar iOS FrameworkSpecs";
+		};
+		AE25D6331A38F77D008A1920 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE25D6171A38F77D008A1920 /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 96B5F9F6144A81A7000A6A5D;
+			remoteInfo = "Cedar iOS Host App";
+		};
+		AE25D6351A38F77D008A1920 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE25D6171A38F77D008A1920 /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 96B5FA11144A81A8000A6A5D;
+			remoteInfo = "Cedar iOS SenTestingKit Tests";
+		};
+		AE25D6371A38F77D008A1920 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE25D6171A38F77D008A1920 /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1F45A3DD180E4796003C1E36;
+			remoteInfo = "Cedar iOS XCTest Tests";
+		};
+		AE25D6391A38F77D008A1920 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE25D6171A38F77D008A1920 /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AE248F9819DCD52500092C14;
+			remoteInfo = "Cedar OS X Host App";
+		};
+		AE25D63B1A38F77D008A1920 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE25D6171A38F77D008A1920 /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AE248FAA19DCD52500092C14;
+			remoteInfo = "Cedar OS X Host AppTests";
+		};
+		AE25D63D1A38F77D008A1920 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE25D6171A38F77D008A1920 /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AEB8818719DCD62D00F081BA;
+			remoteInfo = "Cedar OS X Failing Test Bundle";
+		};
+		AE25D63F1A38F794008A1920 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE25D6171A38F77D008A1920 /* Cedar.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = AEEE222811DC2B0600029872;
+			remoteInfo = "Cedar-StaticLib";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		AE25D5D71A38F664008A1920 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				AE25D5DD1A38F664008A1920 /* WatchKit.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		AE25D5D91A38F664008A1920 /* libWatchKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libWatchKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE25D5DC1A38F664008A1920 /* WatchKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WatchKit.h; sourceTree = "<group>"; };
+		AE25D5DE1A38F664008A1920 /* WatchKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WatchKit.m; sourceTree = "<group>"; };
+		AE25D5FB1A38F6C9008A1920 /* Specs.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Specs.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE25D5FD1A38F6C9008A1920 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		AE25D5FF1A38F6C9008A1920 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = /System/Library/Frameworks/CoreGraphics.framework; sourceTree = "<absolute>"; };
+		AE25D6011A38F6C9008A1920 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		AE25D6031A38F6C9008A1920 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		AE25D6071A38F6C9008A1920 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AE25D6081A38F6C9008A1920 /* Specs-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Specs-Info.plist"; sourceTree = "<group>"; };
+		AE25D60A1A38F6C9008A1920 /* ExampleSpec.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ExampleSpec.mm; sourceTree = "<group>"; };
+		AE25D60C1A38F6C9008A1920 /* Rakefile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Rakefile; sourceTree = "<group>"; };
+		AE25D6171A38F77D008A1920 /* Cedar.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Cedar.xcodeproj; path = Cedar/Cedar.xcodeproj; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AE25D5D61A38F664008A1920 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE25D5F41A38F6C9008A1920 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE25D6411A38F79E008A1920 /* libCedar-StaticLib.a in Frameworks */,
+				AE25D60F1A38F6CA008A1920 /* libWatchKit.a in Frameworks */,
+				AE25D6001A38F6C9008A1920 /* CoreGraphics.framework in Frameworks */,
+				AE25D6021A38F6C9008A1920 /* UIKit.framework in Frameworks */,
+				AE25D5FE1A38F6C9008A1920 /* XCTest.framework in Frameworks */,
+				AE25D6041A38F6C9008A1920 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AE25D5D01A38F664008A1920 = {
+			isa = PBXGroup;
+			children = (
+				AE25D6161A38F75D008A1920 /* Externals */,
+				AE25D5DB1A38F664008A1920 /* WatchKit */,
+				AE25D6051A38F6C9008A1920 /* Specs */,
+				AE25D5FC1A38F6C9008A1920 /* Frameworks */,
+				AE25D5DA1A38F664008A1920 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AE25D5DA1A38F664008A1920 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AE25D5D91A38F664008A1920 /* libWatchKit.a */,
+				AE25D5FB1A38F6C9008A1920 /* Specs.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AE25D5DB1A38F664008A1920 /* WatchKit */ = {
+			isa = PBXGroup;
+			children = (
+				AE25D5DC1A38F664008A1920 /* WatchKit.h */,
+				AE25D5DE1A38F664008A1920 /* WatchKit.m */,
+			);
+			path = WatchKit;
+			sourceTree = "<group>";
+		};
+		AE25D5FC1A38F6C9008A1920 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AE25D5FD1A38F6C9008A1920 /* XCTest.framework */,
+				AE25D5FF1A38F6C9008A1920 /* CoreGraphics.framework */,
+				AE25D6011A38F6C9008A1920 /* UIKit.framework */,
+				AE25D6031A38F6C9008A1920 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AE25D6051A38F6C9008A1920 /* Specs */ = {
+			isa = PBXGroup;
+			children = (
+				AE25D6081A38F6C9008A1920 /* Specs-Info.plist */,
+				AE25D60A1A38F6C9008A1920 /* ExampleSpec.mm */,
+				AE25D60C1A38F6C9008A1920 /* Rakefile */,
+				AE25D6061A38F6C9008A1920 /* Supporting Files */,
+			);
+			path = Specs;
+			sourceTree = "<group>";
+		};
+		AE25D6061A38F6C9008A1920 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AE25D6071A38F6C9008A1920 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AE25D6161A38F75D008A1920 /* Externals */ = {
+			isa = PBXGroup;
+			children = (
+				AE25D6171A38F77D008A1920 /* Cedar.xcodeproj */,
+			);
+			name = Externals;
+			path = ../Externals;
+			sourceTree = "<group>";
+		};
+		AE25D6181A38F77D008A1920 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AE25D6281A38F77D008A1920 /* Cedar.framework */,
+				AE25D62A1A38F77D008A1920 /* Cedar OS X Specs */,
+				AE25D62C1A38F77D008A1920 /* Cedar OS X FocusedSpecs */,
+				AE25D62E1A38F77D008A1920 /* libCedar-StaticLib.a */,
+				AE25D6301A38F77D008A1920 /* Cedar iOS Specs.app */,
+				AE25D6321A38F77D008A1920 /* Cedar iOS FrameworkSpecs.app */,
+				AE25D6341A38F77D008A1920 /* Cedar iOS Host App.app */,
+				AE25D6361A38F77D008A1920 /* Cedar iOS SenTestingKit Tests.octest */,
+				AE25D6381A38F77D008A1920 /* XCUnitAppTests.xctest */,
+				AE25D63A1A38F77D008A1920 /* Cedar OS X Host App.app */,
+				AE25D63C1A38F77D008A1920 /* Cedar OS X Host AppTests.xctest */,
+				AE25D63E1A38F77D008A1920 /* Cedar OS X Failing Test Bundle.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AE25D5D81A38F664008A1920 /* WatchKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AE25D5ED1A38F664008A1920 /* Build configuration list for PBXNativeTarget "WatchKit" */;
+			buildPhases = (
+				AE25D5D51A38F664008A1920 /* Sources */,
+				AE25D5D61A38F664008A1920 /* Frameworks */,
+				AE25D5D71A38F664008A1920 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WatchKit;
+			productName = WatchKit;
+			productReference = AE25D5D91A38F664008A1920 /* libWatchKit.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		AE25D5FA1A38F6C9008A1920 /* Specs */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AE25D6121A38F6CA008A1920 /* Build configuration list for PBXNativeTarget "Specs" */;
+			buildPhases = (
+				AE25D5F31A38F6C9008A1920 /* Sources */,
+				AE25D5F41A38F6C9008A1920 /* Frameworks */,
+				AE25D5F51A38F6C9008A1920 /* Resources */,
+				AE25D5F91A38F6C9008A1920 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AE25D6401A38F794008A1920 /* PBXTargetDependency */,
+				AE25D6111A38F6CA008A1920 /* PBXTargetDependency */,
+			);
+			name = Specs;
+			productName = Specs;
+			productReference = AE25D5FB1A38F6C9008A1920 /* Specs.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AE25D5D11A38F664008A1920 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = Pivotal;
+				TargetAttributes = {
+					AE25D5D81A38F664008A1920 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					AE25D5FA1A38F6C9008A1920 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+				};
+			};
+			buildConfigurationList = AE25D5D41A38F664008A1920 /* Build configuration list for PBXProject "WatchKit" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = AE25D5D01A38F664008A1920;
+			productRefGroup = AE25D5DA1A38F664008A1920 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = AE25D6181A38F77D008A1920 /* Products */;
+					ProjectRef = AE25D6171A38F77D008A1920 /* Cedar.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				AE25D5D81A38F664008A1920 /* WatchKit */,
+				AE25D5FA1A38F6C9008A1920 /* Specs */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		AE25D6281A38F77D008A1920 /* Cedar.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Cedar.framework;
+			remoteRef = AE25D6271A38F77D008A1920 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AE25D62A1A38F77D008A1920 /* Cedar OS X Specs */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = "Cedar OS X Specs";
+			remoteRef = AE25D6291A38F77D008A1920 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AE25D62C1A38F77D008A1920 /* Cedar OS X FocusedSpecs */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = "Cedar OS X FocusedSpecs";
+			remoteRef = AE25D62B1A38F77D008A1920 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AE25D62E1A38F77D008A1920 /* libCedar-StaticLib.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libCedar-StaticLib.a";
+			remoteRef = AE25D62D1A38F77D008A1920 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AE25D6301A38F77D008A1920 /* Cedar iOS Specs.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "Cedar iOS Specs.app";
+			remoteRef = AE25D62F1A38F77D008A1920 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AE25D6321A38F77D008A1920 /* Cedar iOS FrameworkSpecs.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "Cedar iOS FrameworkSpecs.app";
+			remoteRef = AE25D6311A38F77D008A1920 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AE25D6341A38F77D008A1920 /* Cedar iOS Host App.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "Cedar iOS Host App.app";
+			remoteRef = AE25D6331A38F77D008A1920 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AE25D6361A38F77D008A1920 /* Cedar iOS SenTestingKit Tests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Cedar iOS SenTestingKit Tests.octest";
+			remoteRef = AE25D6351A38F77D008A1920 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AE25D6381A38F77D008A1920 /* XCUnitAppTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = XCUnitAppTests.xctest;
+			remoteRef = AE25D6371A38F77D008A1920 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AE25D63A1A38F77D008A1920 /* Cedar OS X Host App.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "Cedar OS X Host App.app";
+			remoteRef = AE25D6391A38F77D008A1920 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AE25D63C1A38F77D008A1920 /* Cedar OS X Host AppTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Cedar OS X Host AppTests.xctest";
+			remoteRef = AE25D63B1A38F77D008A1920 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AE25D63E1A38F77D008A1920 /* Cedar OS X Failing Test Bundle.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Cedar OS X Failing Test Bundle.octest";
+			remoteRef = AE25D63D1A38F77D008A1920 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AE25D5F51A38F6C9008A1920 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE25D6091A38F6C9008A1920 /* Specs-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		AE25D5F91A38F6C9008A1920 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n            \"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n            ";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AE25D5D51A38F664008A1920 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE25D5DF1A38F664008A1920 /* WatchKit.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE25D5F31A38F6C9008A1920 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE25D60B1A38F6C9008A1920 /* ExampleSpec.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AE25D6111A38F6CA008A1920 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AE25D5D81A38F664008A1920 /* WatchKit */;
+			targetProxy = AE25D6101A38F6CA008A1920 /* PBXContainerItemProxy */;
+		};
+		AE25D6401A38F794008A1920 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Cedar-StaticLib";
+			targetProxy = AE25D63F1A38F794008A1920 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		AE25D5EB1A38F664008A1920 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		AE25D5EC1A38F664008A1920 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AE25D5EE1A38F664008A1920 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		AE25D5EF1A38F664008A1920 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		AE25D6131A38F6CA008A1920 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PREFIX_HEADER = "";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = Specs/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+					"-lstdc++",
+					"$(inherited)",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "\"$PROJECT_DIR/../Externals/Cedar/Source/Headers/\"/**";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		AE25D6141A38F6CA008A1920 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PREFIX_HEADER = "";
+				INFOPLIST_FILE = Specs/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+					"-lstdc++",
+					"$(inherited)",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "\"$PROJECT_DIR/../Externals/Cedar/Source/Headers/\"/**";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AE25D5D41A38F664008A1920 /* Build configuration list for PBXProject "WatchKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE25D5EB1A38F664008A1920 /* Debug */,
+				AE25D5EC1A38F664008A1920 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AE25D5ED1A38F664008A1920 /* Build configuration list for PBXNativeTarget "WatchKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE25D5EE1A38F664008A1920 /* Debug */,
+				AE25D5EF1A38F664008A1920 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		AE25D6121A38F6CA008A1920 /* Build configuration list for PBXNativeTarget "Specs" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE25D6131A38F6CA008A1920 /* Debug */,
+				AE25D6141A38F6CA008A1920 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AE25D5D11A38F664008A1920 /* Project object */;
+}
