@@ -7,16 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AE25D5DD1A38F664008A1920 /* WatchKit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = AE25D5DC1A38F664008A1920 /* WatchKit.h */; };
-		AE25D5DF1A38F664008A1920 /* WatchKit.m in Sources */ = {isa = PBXBuildFile; fileRef = AE25D5DE1A38F664008A1920 /* WatchKit.m */; };
 		AE25D5FE1A38F6C9008A1920 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE25D5FD1A38F6C9008A1920 /* XCTest.framework */; };
 		AE25D6001A38F6C9008A1920 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE25D5FF1A38F6C9008A1920 /* CoreGraphics.framework */; };
 		AE25D6021A38F6C9008A1920 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE25D6011A38F6C9008A1920 /* UIKit.framework */; };
 		AE25D6041A38F6C9008A1920 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE25D6031A38F6C9008A1920 /* Foundation.framework */; };
 		AE25D6091A38F6C9008A1920 /* Specs-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE25D6081A38F6C9008A1920 /* Specs-Info.plist */; };
-		AE25D60B1A38F6C9008A1920 /* ExampleSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE25D60A1A38F6C9008A1920 /* ExampleSpec.mm */; };
 		AE25D60F1A38F6CA008A1920 /* libWatchKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE25D5D91A38F664008A1920 /* libWatchKit.a */; };
 		AE25D6411A38F79E008A1920 /* libCedar-StaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE25D62E1A38F77D008A1920 /* libCedar-StaticLib.a */; };
+		AE25D6551A38FB46008A1920 /* InterfaceControllerLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = AE25D6541A38FB46008A1920 /* InterfaceControllerLoader.m */; };
+		AE25D65B1A38FC4E008A1920 /* InterfaceControllerLoaderSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE25D6591A38FC4E008A1920 /* InterfaceControllerLoaderSpec.mm */; };
+		AE25D65E1A38FFA9008A1920 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE25D65D1A38FFA9008A1920 /* Interface.storyboard */; };
+		AE25D6611A390480008A1920 /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE25D6601A390480008A1920 /* InterfaceController.m */; };
+		AE25D66D1A3906A6008A1920 /* WKInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE25D66A1A3906A6008A1920 /* WKInterfaceController.m */; };
+		AE25D66E1A3906A6008A1920 /* WKInterfaceLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = AE25D66C1A3906A6008A1920 /* WKInterfaceLabel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,7 +130,6 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				AE25D5DD1A38F664008A1920 /* WatchKit.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,8 +137,6 @@
 
 /* Begin PBXFileReference section */
 		AE25D5D91A38F664008A1920 /* libWatchKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libWatchKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		AE25D5DC1A38F664008A1920 /* WatchKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WatchKit.h; sourceTree = "<group>"; };
-		AE25D5DE1A38F664008A1920 /* WatchKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WatchKit.m; sourceTree = "<group>"; };
 		AE25D5FB1A38F6C9008A1920 /* Specs.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Specs.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE25D5FD1A38F6C9008A1920 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		AE25D5FF1A38F6C9008A1920 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = /System/Library/Frameworks/CoreGraphics.framework; sourceTree = "<absolute>"; };
@@ -144,9 +144,21 @@
 		AE25D6031A38F6C9008A1920 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		AE25D6071A38F6C9008A1920 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE25D6081A38F6C9008A1920 /* Specs-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Specs-Info.plist"; sourceTree = "<group>"; };
-		AE25D60A1A38F6C9008A1920 /* ExampleSpec.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ExampleSpec.mm; sourceTree = "<group>"; };
 		AE25D60C1A38F6C9008A1920 /* Rakefile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Rakefile; sourceTree = "<group>"; };
 		AE25D6171A38F77D008A1920 /* Cedar.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Cedar.xcodeproj; path = Cedar/Cedar.xcodeproj; sourceTree = "<group>"; };
+		AE25D6531A38FB46008A1920 /* InterfaceControllerLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterfaceControllerLoader.h; sourceTree = "<group>"; };
+		AE25D6541A38FB46008A1920 /* InterfaceControllerLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterfaceControllerLoader.m; sourceTree = "<group>"; };
+		AE25D6591A38FC4E008A1920 /* InterfaceControllerLoaderSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = InterfaceControllerLoaderSpec.mm; sourceTree = "<group>"; };
+		AE25D65D1A38FFA9008A1920 /* Interface.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Interface.storyboard; sourceTree = "<group>"; };
+		AE25D65F1A390480008A1920 /* InterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterfaceController.h; sourceTree = "<group>"; };
+		AE25D6601A390480008A1920 /* InterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterfaceController.m; sourceTree = "<group>"; };
+		AE25D6661A39066B008A1920 /* WatchKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WatchKit.h; sourceTree = "<group>"; };
+		AE25D6691A3906A6008A1920 /* WKInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKInterfaceController.h; sourceTree = "<group>"; };
+		AE25D66A1A3906A6008A1920 /* WKInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKInterfaceController.m; sourceTree = "<group>"; };
+		AE25D66B1A3906A6008A1920 /* WKInterfaceLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKInterfaceLabel.h; sourceTree = "<group>"; };
+		AE25D66C1A3906A6008A1920 /* WKInterfaceLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKInterfaceLabel.m; sourceTree = "<group>"; };
+		AE25D66F1A3907BC008A1920 /* TestableWKInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestableWKInterfaceController.h; sourceTree = "<group>"; };
+		AE25D6701A3907BC008A1920 /* TestableWKInterfaceLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestableWKInterfaceLabel.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,8 +189,8 @@
 			isa = PBXGroup;
 			children = (
 				AE25D6161A38F75D008A1920 /* Externals */,
-				AE25D5DB1A38F664008A1920 /* WatchKit */,
 				AE25D6051A38F6C9008A1920 /* Specs */,
+				AE25D6421A38FAA6008A1920 /* SpecHelper */,
 				AE25D5FC1A38F6C9008A1920 /* Frameworks */,
 				AE25D5DA1A38F664008A1920 /* Products */,
 			);
@@ -191,15 +203,6 @@
 				AE25D5FB1A38F6C9008A1920 /* Specs.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		AE25D5DB1A38F664008A1920 /* WatchKit */ = {
-			isa = PBXGroup;
-			children = (
-				AE25D5DC1A38F664008A1920 /* WatchKit.h */,
-				AE25D5DE1A38F664008A1920 /* WatchKit.m */,
-			);
-			path = WatchKit;
 			sourceTree = "<group>";
 		};
 		AE25D5FC1A38F6C9008A1920 /* Frameworks */ = {
@@ -216,9 +219,8 @@
 		AE25D6051A38F6C9008A1920 /* Specs */ = {
 			isa = PBXGroup;
 			children = (
-				AE25D6081A38F6C9008A1920 /* Specs-Info.plist */,
-				AE25D60A1A38F6C9008A1920 /* ExampleSpec.mm */,
-				AE25D60C1A38F6C9008A1920 /* Rakefile */,
+				AE25D65C1A38FF83008A1920 /* Fixtures */,
+				AE25D6581A38FC28008A1920 /* Helpers */,
 				AE25D6061A38F6C9008A1920 /* Supporting Files */,
 			);
 			path = Specs;
@@ -227,6 +229,8 @@
 		AE25D6061A38F6C9008A1920 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AE25D6081A38F6C9008A1920 /* Specs-Info.plist */,
+				AE25D60C1A38F6C9008A1920 /* Rakefile */,
 				AE25D6071A38F6C9008A1920 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -258,6 +262,57 @@
 				AE25D63E1A38F77D008A1920 /* Cedar OS X Failing Test Bundle.octest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		AE25D6421A38FAA6008A1920 /* SpecHelper */ = {
+			isa = PBXGroup;
+			children = (
+				AE25D6521A38FB16008A1920 /* Helpers */,
+				AE25D6651A39066B008A1920 /* FakeWatchKit */,
+			);
+			path = SpecHelper;
+			sourceTree = "<group>";
+		};
+		AE25D6521A38FB16008A1920 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				AE25D6531A38FB46008A1920 /* InterfaceControllerLoader.h */,
+				AE25D6541A38FB46008A1920 /* InterfaceControllerLoader.m */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		AE25D6581A38FC28008A1920 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				AE25D6591A38FC4E008A1920 /* InterfaceControllerLoaderSpec.mm */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		AE25D65C1A38FF83008A1920 /* Fixtures */ = {
+			isa = PBXGroup;
+			children = (
+				AE25D65F1A390480008A1920 /* InterfaceController.h */,
+				AE25D6601A390480008A1920 /* InterfaceController.m */,
+				AE25D65D1A38FFA9008A1920 /* Interface.storyboard */,
+			);
+			path = Fixtures;
+			sourceTree = "<group>";
+		};
+		AE25D6651A39066B008A1920 /* FakeWatchKit */ = {
+			isa = PBXGroup;
+			children = (
+				AE25D66F1A3907BC008A1920 /* TestableWKInterfaceController.h */,
+				AE25D6701A3907BC008A1920 /* TestableWKInterfaceLabel.h */,
+				AE25D6661A39066B008A1920 /* WatchKit.h */,
+				AE25D6691A3906A6008A1920 /* WKInterfaceController.h */,
+				AE25D66A1A3906A6008A1920 /* WKInterfaceController.m */,
+				AE25D66B1A3906A6008A1920 /* WKInterfaceLabel.h */,
+				AE25D66C1A3906A6008A1920 /* WKInterfaceLabel.m */,
+			);
+			name = FakeWatchKit;
+			path = WatchKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -433,6 +488,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE25D65E1A38FFA9008A1920 /* Interface.storyboard in Resources */,
 				AE25D6091A38F6C9008A1920 /* Specs-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -460,7 +516,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE25D5DF1A38F664008A1920 /* WatchKit.m in Sources */,
+				AE25D6551A38FB46008A1920 /* InterfaceControllerLoader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,7 +524,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE25D60B1A38F6C9008A1920 /* ExampleSpec.mm in Sources */,
+				AE25D66D1A3906A6008A1920 /* WKInterfaceController.m in Sources */,
+				AE25D66E1A3906A6008A1920 /* WKInterfaceLabel.m in Sources */,
+				AE25D65B1A38FC4E008A1920 /* InterfaceControllerLoaderSpec.mm in Sources */,
+				AE25D6611A390480008A1920 /* InterfaceController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -584,12 +643,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
 				GCC_PREFIX_HEADER = "";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -605,7 +658,7 @@
 					"$(inherited)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "\"$PROJECT_DIR/../Externals/Cedar/Source/Headers/\"/**";
+				USER_HEADER_SEARCH_PATHS = "\"$PROJECT_DIR/SpecHelper/\" \"$PROJECT_DIR/../Externals/Cedar/Source/Headers/\"/**";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
@@ -614,12 +667,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = Specs/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
@@ -631,7 +678,7 @@
 					"$(inherited)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "\"$PROJECT_DIR/../Externals/Cedar/Source/Headers/\"/**";
+				USER_HEADER_SEARCH_PATHS = "\"$PROJECT_DIR/SpecHelper/\" \"$PROJECT_DIR/../Externals/Cedar/Source/Headers/\"/**";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
