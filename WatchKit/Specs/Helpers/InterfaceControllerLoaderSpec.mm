@@ -45,9 +45,24 @@ describe(@"InterfaceControllerLoader", ^{
             });
 
             describe(@"the interface controller's properties", ^{
-                it(@"should have a title label (when one was specified in the storyboard)", ^{
-                    controller.titleLabel.text should equal(@"Some text");
+                describe(@"the title label", ^{
+                    __block id <TestableWKInterfaceLabel> titleLabel;
+                    beforeEach(^{
+                        titleLabel = controller.titleLabel;
+                    });
+
+                    it(@"should have the correct text", ^{
+                        titleLabel.text should equal(@"Some text");
+                    });
+
+                    it(@"should have the correct text color", ^{
+                        titleLabel.textColor should equal([UIColor colorWithRed:255.0f / 255.0f
+                                                                          green:125.0f / 255.0f
+                                                                           blue:55.0f / 255.0f
+                                                                          alpha:1.0]);
+                    });
                 });
+
 
                 it(@"should have a image (when one was specified in the storyboard)", ^{
                     controller.image.image should equal([UIImage imageNamed:@"corgi.jpeg"]);

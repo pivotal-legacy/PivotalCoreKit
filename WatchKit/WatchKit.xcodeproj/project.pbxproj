@@ -12,6 +12,7 @@
 		AE03A33B1A3A1B2100AD4964 /* WKInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE25D66A1A3906A6008A1920 /* WKInterfaceController.m */; };
 		AE03A33C1A3A1B2800AD4964 /* WKInterfaceLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = AE25D66C1A3906A6008A1920 /* WKInterfaceLabel.m */; };
 		AE03A33D1A3A1B2C00AD4964 /* WKInterfaceSeparator.m in Sources */ = {isa = PBXBuildFile; fileRef = AE03A03C1A39227E00AD4964 /* WKInterfaceSeparator.m */; };
+		AE03A3461A3A217000AD4964 /* UIColor+PCK_StringToColor.m in Sources */ = {isa = PBXBuildFile; fileRef = AE03A3451A3A217000AD4964 /* UIColor+PCK_StringToColor.m */; };
 		AE25D5FE1A38F6C9008A1920 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE25D5FD1A38F6C9008A1920 /* XCTest.framework */; };
 		AE25D6001A38F6C9008A1920 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE25D5FF1A38F6C9008A1920 /* CoreGraphics.framework */; };
 		AE25D6021A38F6C9008A1920 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE25D6011A38F6C9008A1920 /* UIKit.framework */; };
@@ -146,6 +147,8 @@
 		AE03A03B1A39227E00AD4964 /* WKInterfaceSeparator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKInterfaceSeparator.h; sourceTree = "<group>"; };
 		AE03A03C1A39227E00AD4964 /* WKInterfaceSeparator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKInterfaceSeparator.m; sourceTree = "<group>"; };
 		AE03A03E1A3922E600AD4964 /* TestableWKInterfaceSeparator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestableWKInterfaceSeparator.h; sourceTree = "<group>"; };
+		AE03A3441A3A217000AD4964 /* UIColor+PCK_StringToColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+PCK_StringToColor.h"; sourceTree = "<group>"; };
+		AE03A3451A3A217000AD4964 /* UIColor+PCK_StringToColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+PCK_StringToColor.m"; sourceTree = "<group>"; };
 		AE25D5D91A38F664008A1920 /* libWatchKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libWatchKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE25D5FB1A38F6C9008A1920 /* Specs.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Specs.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE25D5FD1A38F6C9008A1920 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -195,6 +198,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AE03A3431A3A215D00AD4964 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				AE03A3441A3A217000AD4964 /* UIColor+PCK_StringToColor.h */,
+				AE03A3451A3A217000AD4964 /* UIColor+PCK_StringToColor.m */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		AE25D5D01A38F664008A1920 = {
 			isa = PBXGroup;
 			children = (
@@ -232,6 +244,7 @@
 				AE25D65C1A38FF83008A1920 /* Fixtures */,
 				AE25D6581A38FC28008A1920 /* Helpers */,
 				AE25D6061A38F6C9008A1920 /* Supporting Files */,
+				AE03A3431A3A215D00AD4964 /* Utilities */,
 			);
 			path = Specs;
 			sourceTree = "<group>";
@@ -547,6 +560,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE25D65B1A38FC4E008A1920 /* InterfaceControllerLoaderSpec.mm in Sources */,
+				AE03A3461A3A217000AD4964 /* UIColor+PCK_StringToColor.m in Sources */,
 				AE25D6611A390480008A1920 /* InterfaceController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
