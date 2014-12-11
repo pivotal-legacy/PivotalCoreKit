@@ -4,6 +4,7 @@
 @interface InterfaceControllerLoader : NSObject
 
 -(id)interfaceControllerWithStoryboardName:(NSString *)storyboardName
-                                  objectID:(NSString *)objectID
+                                identifier:(NSString *)objectID
                                    context:(id)context;
+
 @end

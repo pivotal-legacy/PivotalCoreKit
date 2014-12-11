@@ -22,8 +22,9 @@
     }
     return self;
 }
+
 -(id)interfaceControllerWithStoryboardName:(NSString *)storyboardName
-                                  objectID:(NSString *)objectID
+                                identifier:(NSString *)objectID
                                    context:(id)context
 {
     NSBundle *bundle = [NSBundle bundleForClass:[self class]];
@@ -32,18 +33,18 @@
         [NSException raise:NSInvalidArgumentException format:@"No storyboard named '%@' exists in the test target.  Did you forget to add it?", storyboardName];
         return nil;
     }
-    
+
     NSDictionary *dictionary = [NSDictionary dictionaryWithContentsOfFile:pathForPlist][@"controllers"];
     NSString* controllerID = [NSString stringWithFormat:@"controller-%@", objectID];
-    NSDictionary* controllerProperties = dictionary[controllerID];
+    NSDictionary* controllerProperties = dictionary[controllerID] ? : dictionary[objectID]; 
     if (!controllerProperties) {
         [NSException raise:NSInvalidArgumentException format:@"No interface controller named '%@' exists in the storyboard '%@'.  Please check the storyboard and try again.", objectID, storyboardName];
         return nil;
     }
-    
+
     Class interfaceControllerClass = NSClassFromString(controllerProperties[@"controllerClass"]);
     id interfaceController = [[interfaceControllerClass alloc] initWithContext:context];
-    
+
     NSDictionary *propertyTypes = @{@"label": @"WKInterfaceLabel",
                                     @"image": @"WKInterfaceImage",
                                     @"separator": @"WKInterfaceSeparator",
@@ -55,7 +56,7 @@
         NSString *propertyType = propertiesDictionary[@"type"];
         NSString *propertyClassName = propertyTypes[propertyType];
         Class propertyClass = NSClassFromString(propertyClassName);
-        
+
         id property = [[propertyClass alloc] init];
         [self.propertiesThatMayOrMayNotBeWeaklyRetainedByTheirInterfaceControllers addObject:property];
 
@@ -71,10 +72,10 @@
                 NSLog(@"Tried to set %@ := %@ on %@", name, value, propertyKey);
             }
         }
-        
+
         [interfaceController setValue:property forKey:propertyKey];
     }
-    
+
     return interfaceController;
     return nil;
 }

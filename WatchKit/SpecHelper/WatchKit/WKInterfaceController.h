@@ -1,8 +1,9 @@
 #import <Foundation/Foundation.h>
 #import <CoreGraphics/CoreGraphics.h>
+#import "TestableWKInterfaceController.h"
 
 
-@interface WKInterfaceController : NSObject
+@interface WKInterfaceController : NSObject <TestableWKInterfaceController>
 
 - (instancetype)initWithContext:(id)context NS_DESIGNATED_INITIALIZER;
 

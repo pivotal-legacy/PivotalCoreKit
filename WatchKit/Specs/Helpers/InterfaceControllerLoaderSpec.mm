@@ -19,7 +19,7 @@ describe(@"InterfaceControllerLoader", ^{
         
         context(@"when there is no storyboard matching the name", ^{
             it(@"should raise an exception with a helpful message", ^{
-                ^{ [subject interfaceControllerWithStoryboardName:@"NonExistantName" objectID:@"DoesntMatter" context:nil]; } should raise_exception
+                ^{ [subject interfaceControllerWithStoryboardName:@"NonExistantName" identifier:@"DoesntMatter" context:nil]; } should raise_exception
                     .with_name(NSInvalidArgumentException)
                     .with_reason(@"No storyboard named 'NonExistantName' exists in the test target.  Did you forget to add it?");
                 
@@ -28,7 +28,7 @@ describe(@"InterfaceControllerLoader", ^{
         
         context(@"when there is no interface controller matching the object id", ^{
             it(@"should raise an exception with a helpful message", ^{
-                ^{ [subject interfaceControllerWithStoryboardName:@"Interface" objectID:@"NonExistantController" context:nil]; } should raise_exception
+                ^{ [subject interfaceControllerWithStoryboardName:@"Interface" identifier:@"NonExistantController" context:nil]; } should raise_exception
                     .with_name(NSInvalidArgumentException)
                     .with_reason(@"No interface controller named 'NonExistantController' exists in the storyboard 'Interface'.  Please check the storyboard and try again.");
             });
@@ -38,7 +38,7 @@ describe(@"InterfaceControllerLoader", ^{
             __block InterfaceController *controller;
 
             beforeEach(^{
-                controller = [subject interfaceControllerWithStoryboardName:@"Interface" objectID:@"AgC-eL-Hgc" context:nil];
+                controller = [subject interfaceControllerWithStoryboardName:@"Interface" identifier:@"AgC-eL-Hgc" context:nil];
             });
 
             it(@"should return the correct type of interface controller", ^{

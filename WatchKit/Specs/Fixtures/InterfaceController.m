@@ -20,6 +20,8 @@
     return self;
 }
 
+#pragma mark - WKInterfaceController
+
 - (void)willActivate {
     [self.titleLabel setText:@"My Special Text"];
 }

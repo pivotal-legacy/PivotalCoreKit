@@ -29,7 +29,14 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="-121" y="150"/>
+            <point key="canvasLocation" x="89" y="156"/>
+        </scene>
+        <!--MyFirstCorgiController-->
+        <scene sceneID="nKH-Pr-Foq">
+            <objects>
+                <controller identifier="MyFirstCorgiController" id="UTG-vB-Nc3" customClass="CorgisController"/>
+            </objects>
+            <point key="canvasLocation" x="89" y="433"/>
         </scene>
     </scenes>
 </document>
