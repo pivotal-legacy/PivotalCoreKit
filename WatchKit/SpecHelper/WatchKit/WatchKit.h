@@ -2,3 +2,4 @@
 #import "WKInterfaceController.h"
 #import "WKInterfaceLabel.h"
 #import "WKInterfaceImage.h"
+#import "WKInterfaceSeparator.h"

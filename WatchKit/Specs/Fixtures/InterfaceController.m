@@ -5,6 +5,7 @@
 
 @property (weak, nonatomic) IBOutlet WKInterfaceLabel *titleLabel;
 @property (weak, nonatomic) IBOutlet WKInterfaceImage *image;
+@property (weak, nonatomic) IBOutlet WKInterfaceSeparator *separator;
 
 @end
 

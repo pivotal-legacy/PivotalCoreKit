@@ -11,14 +11,19 @@
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController">
                     <items>
                         <label alignment="center" text="Some text" textAlignment="center" id="fWh-mQ-CyP"/>
+                        <separator alignment="center" id="FBI-ul-8F7">
+                            <color key="color" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        </separator>
                         <imageView alignment="center" image="corgi.jpeg" id="I6V-K6-R7W"/>
                     </items>
                     <connections>
                         <outlet property="image" destination="I6V-K6-R7W" id="2hY-b4-JBi"/>
+                        <outlet property="separator" destination="FBI-ul-8F7" id="mOZ-90-hBd"/>
                         <outlet property="titleLabel" destination="fWh-mQ-CyP" id="3Mf-es-9Mx"/>
                     </connections>
                 </controller>
             </objects>
+            <point key="canvasLocation" x="-121" y="150"/>
         </scene>
     </scenes>
 </document>

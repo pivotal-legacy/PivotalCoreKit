@@ -52,6 +52,10 @@ describe(@"InterfaceControllerLoader", ^{
                 it(@"should have a image (when one was specified in the storyboard)", ^{
                     controller.image.image should equal([UIImage imageNamed:@"corgi.jpeg"]);
                 });
+
+                it(@"should have a separator (when one was specified in the storyboard)", ^{
+                    controller.separator.color should equal([UIColor darkGrayColor]);
+                });
             });
         });
     });

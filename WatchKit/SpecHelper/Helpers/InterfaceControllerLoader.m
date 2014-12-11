@@ -45,7 +45,8 @@
     id interfaceController = [[interfaceControllerClass alloc] initWithContext:context];
     
     NSDictionary *propertyTypes = @{@"label": @"WKInterfaceLabel",
-                                    @"image": @"WKInterfaceImage"};
+                                    @"image": @"WKInterfaceImage",
+                                    @"separator": @"WKInterfaceSeparator"};
     NSDictionary *properties = dictionary[controllerID][@"items"];
 
     for (NSDictionary *propertiesDictionary in properties) {
@@ -61,12 +62,8 @@
         [propertyValues removeObjectForKey:@"property"];
         [propertyValues removeObjectForKey:@"type"];
         for (NSString *name in propertyValues) {
-            id value = propertyValues[name];
+            NSString *value = propertyValues[name];
             @try {
-                if ([propertyType isEqualToString:@"image"] && [name isEqualToString:@"image"]) {
-                    value = [UIImage imageNamed:value];
-                }
-
                 [property setValue:value forKey:name];
             }
             @catch (NSException *exception) {
