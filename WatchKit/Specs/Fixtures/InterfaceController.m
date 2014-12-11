@@ -6,6 +6,7 @@
 @property (weak, nonatomic) IBOutlet WKInterfaceLabel *titleLabel;
 @property (weak, nonatomic) IBOutlet WKInterfaceImage *image;
 @property (weak, nonatomic) IBOutlet WKInterfaceSeparator *separator;
+@property (weak, nonatomic) IBOutlet WKInterfaceButton *button;
 
 @end
 
@@ -24,7 +25,7 @@
 }
 
 - (void)didDeactivate {
-    
+    self.button.enabled = NO;
 }
 
 @end

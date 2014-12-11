@@ -1,6 +1,7 @@
 #import "Cedar.h"
 #import "InterfaceController.h"
 #import "InterfaceControllerLoader.h"
+#import "TestableWKInterfaceButton.h"
 
 using namespace Cedar::Matchers;
 using namespace Cedar::Doubles;
@@ -63,6 +64,29 @@ describe(@"InterfaceControllerLoader", ^{
                     });
                 });
 
+                describe(@"the button", ^{
+                    __block id <TestableWKInterfaceButton> button;
+                    beforeEach(^{
+                        button = controller.button;
+                    });
+
+                    it(@"should have the correct text", ^{
+                        button.title should equal(@"Button");
+                    });
+
+                    it(@"should have the correct text", ^{
+                        button.color should equal([UIColor lightGrayColor]);
+                    });
+
+                    it(@"should have the correct default enabled property", ^{
+                        button.enabled should be_truthy;
+                    });
+
+                    it(@"should all the enabled property to be toggled programatically", ^{
+                        [controller didDeactivate];
+                        button.enabled should_not be_truthy;
+                    });
+                });
 
                 it(@"should have a image (when one was specified in the storyboard)", ^{
                     controller.image.image should equal([UIImage imageNamed:@"corgi.jpeg"]);

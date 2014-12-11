@@ -46,7 +46,8 @@
     
     NSDictionary *propertyTypes = @{@"label": @"WKInterfaceLabel",
                                     @"image": @"WKInterfaceImage",
-                                    @"separator": @"WKInterfaceSeparator"};
+                                    @"separator": @"WKInterfaceSeparator",
+                                    @"button": @"WKInterfaceButton"};
     NSDictionary *properties = dictionary[controllerID][@"items"];
 
     for (NSDictionary *propertiesDictionary in properties) {
