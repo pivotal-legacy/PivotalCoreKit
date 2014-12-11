@@ -35,15 +35,16 @@
     }
 
     NSDictionary *dictionary = [NSDictionary dictionaryWithContentsOfFile:pathForPlist][@"controllers"];
-    NSString* controllerID = [NSString stringWithFormat:@"controller-%@", objectID];
-    NSDictionary* controllerProperties = dictionary[controllerID] ? : dictionary[objectID]; 
+    NSString* controllerID = dictionary[objectID] ? objectID : [NSString stringWithFormat:@"controller-%@", objectID];
+    NSDictionary* controllerProperties = dictionary[controllerID];
     if (!controllerProperties) {
         [NSException raise:NSInvalidArgumentException format:@"No interface controller named '%@' exists in the storyboard '%@'.  Please check the storyboard and try again.", objectID, storyboardName];
         return nil;
     }
 
     Class interfaceControllerClass = NSClassFromString(controllerProperties[@"controllerClass"]);
-    id interfaceController = [[interfaceControllerClass alloc] initWithContext:context];
+
+    id interfaceController = [interfaceControllerClass alloc];
 
     NSDictionary *propertyTypes = @{@"label": @"WKInterfaceLabel",
                                     @"image": @"WKInterfaceImage",
@@ -65,19 +66,23 @@
         [propertyValues removeObjectForKey:@"type"];
         for (NSString *name in propertyValues) {
             NSString *value = propertyValues[name];
-            @try {
+            SEL setterSelector = [self setterNameWithGetterName:name];
+            if ([property respondsToSelector:setterSelector]) {
                 [property setValue:value forKey:name];
-            }
-            @catch (NSException *exception) {
-                NSLog(@"Tried to set %@ := %@ on %@", name, value, propertyKey);
             }
         }
 
         [interfaceController setValue:property forKey:propertyKey];
     }
 
-    return interfaceController;
-    return nil;
+    return [interfaceController initWithContext:context];
+}
+
+- (SEL)setterNameWithGetterName:(NSString *)getterName
+{
+    NSString *capitalizedFirstLetter = [[getterName substringWithRange:NSMakeRange(0, 1)] capitalizedString];
+    NSString *remainder = [getterName substringWithRange:NSMakeRange(1, [getterName length] - 1)];
+    return NSSelectorFromString([NSString stringWithFormat:@"set%@%@:", capitalizedFirstLetter, remainder]);
 }
 
 @end

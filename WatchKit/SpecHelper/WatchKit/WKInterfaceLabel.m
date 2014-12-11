@@ -4,8 +4,8 @@
 
 @implementation WKInterfaceLabel
 
--(void)setColor:(NSString *)textColor {
-    _textColor = [UIColor colorWithNameOrHexValue:textColor];
+-(void)setColor:(id)textColor {
+    _textColor = [textColor isKindOfClass:[UIColor class]] ? textColor : [UIColor colorWithNameOrHexValue:textColor];
 }
 
 - (UIColor *)color

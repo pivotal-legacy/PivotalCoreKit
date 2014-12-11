@@ -5,6 +5,7 @@
 @interface WKInterfaceController ()
 
 @property (nonatomic) WKInterfaceController *childController;
+@property (nonatomic) WKInterfaceController *presentedController;
 @property (nonatomic) InterfaceControllerLoader *loader;
 
 @end
@@ -32,7 +33,12 @@
 
 - (void)pushControllerWithName:(NSString *)name context:(id)context
 {
-    self.childController = [self.loader interfaceControllerWithStoryboardName:@"Interface" identifier:name context:nil];
+    self.childController = [self.loader interfaceControllerWithStoryboardName:@"Interface" identifier:name context:context];
+}
+
+- (void)presentControllerWithName:(NSString *)name context:(id)context
+{
+    self.presentedController = [self.loader interfaceControllerWithStoryboardName:@"Interface" identifier:name context:context];
 }
 
 @end

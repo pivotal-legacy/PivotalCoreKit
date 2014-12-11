@@ -1,13 +1,19 @@
-//
-//  CorgisController.m
-//  MySpecialApp
-//
-//  Created by pivotal on 12/11/14.
-//  Copyright (c) 2014 pivotal. All rights reserved.
-//
-
 #import "CorgisController.h"
 
+@interface CorgisController ()
+
+@property (weak, nonatomic) IBOutlet WKInterfaceImage *image;
+
+@end
+
 @implementation CorgisController
+
+-(id)initWithContext:(id)context {
+    self = [super initWithContext:context];
+    if (self) {
+        self.image.image = context;
+    }
+    return self;
+}
 
 @end

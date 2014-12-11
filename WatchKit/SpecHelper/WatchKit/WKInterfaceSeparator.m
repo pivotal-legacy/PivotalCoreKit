@@ -4,9 +4,9 @@
 
 @implementation WKInterfaceSeparator
 
-- (void)setColor:(NSString *)color
+- (void)setColor:(id)color
 {
-    _color = [UIColor colorWithNameOrHexValue:color];
+    _color = [color isKindOfClass:[UIColor class]] ? color : [UIColor colorWithNameOrHexValue:color];
 }
 
 @end

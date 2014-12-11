@@ -34,7 +34,14 @@
         <!--MyFirstCorgiController-->
         <scene sceneID="nKH-Pr-Foq">
             <objects>
-                <controller identifier="MyFirstCorgiController" id="UTG-vB-Nc3" customClass="CorgisController"/>
+                <controller identifier="MyFirstCorgiController" id="UTG-vB-Nc3" customClass="CorgisController">
+                    <items>
+                        <imageView width="100" height="100" alignment="center" image="corgi.jpeg" id="JRf-rk-lH8"/>
+                    </items>
+                    <connections>
+                        <outlet property="image" destination="JRf-rk-lH8" id="DX1-cx-nX5"/>
+                    </connections>
+                </controller>
             </objects>
             <point key="canvasLocation" x="89" y="433"/>
         </scene>

@@ -16,9 +16,9 @@
     return self;
 }
 
-- (void)setTitleColor:(NSString *)color
+- (void)setTitleColor:(id)color
 {
-    _color = [UIColor colorWithNameOrHexValue:color];
+    _color = [color isKindOfClass:[UIColor class]] ? color : [UIColor colorWithNameOrHexValue:color];
 }
 
 @end

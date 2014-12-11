@@ -20,12 +20,34 @@ describe(@"WKInterfaceController", ^{
     });
 
     describe(@"pushing another controller onto itself", ^{
+        __block CorgisController *childController;
         beforeEach(^{
-            [subject pushControllerWithName:@"MyFirstCorgiController" context:nil];
+            [subject pushControllerWithName:@"MyFirstCorgiController" context:[UIImage imageNamed:@"corgi.jpeg"]];
+            childController = (id)subject.childController;
         });
 
         it(@"should have a new child controller with the correct interface controller class", ^{
-            subject.childController should be_instance_of([CorgisController class]);
+            childController should be_instance_of([CorgisController class]);
+        });
+
+        it(@"should receive the context that was passed in", ^{
+            childController.image.image should equal([UIImage imageNamed:@"corgi.jpeg"]);
+        });
+    });
+
+    describe(@"present another controller modally", ^{
+        __block CorgisController *presentedController;
+        beforeEach(^{
+            [subject presentControllerWithName:@"MyFirstCorgiController" context:[UIImage imageNamed:@"corgi.jpeg"]];
+            presentedController = (id)subject.presentedController;
+        });
+
+        it(@"should present a new modal controller with the correct interface controller class", ^{
+            presentedController should be_instance_of([CorgisController class]);
+        });
+
+        it(@"should receive the context that was passed in", ^{
+            presentedController.image.image should equal([UIImage imageNamed:@"corgi.jpeg"]);
         });
     });
 });
