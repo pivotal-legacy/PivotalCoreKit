@@ -1,11 +1,28 @@
 #import "InterfaceControllerLoader.h"
 #import "TestableWKInterfaceController.h"
+#import "TestableWKInterfaceLabel.h"
+#import "WKInterfaceLabel.h"
 #import <objc/runtime.h>
+
+
+@interface InterfaceControllerLoader ()
+
+@property (nonatomic) NSMutableSet *propertiesThatMayOrMayNotBeWeaklyRetainedByTheirInterfaceControllers;
+
+@end
 
 
 @implementation InterfaceControllerLoader
 
-+(id)interfaceControllerWithStoryboardName:(NSString *)storyboardName
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.propertiesThatMayOrMayNotBeWeaklyRetainedByTheirInterfaceControllers = [NSMutableSet set];
+    }
+    return self;
+}
+-(id)interfaceControllerWithStoryboardName:(NSString *)storyboardName
                                   objectID:(NSString *)objectID
                                    context:(id)context
 {
@@ -26,38 +43,41 @@
     
     Class interfaceControllerClass = NSClassFromString(controllerProperties[@"controllerClass"]);
     id interfaceController = [[interfaceControllerClass alloc] initWithContext:context];
-    return interfaceController;
     
-//    NSDictionary *propertyTypes = @{@"label": @"WKInterfaceLabel"};
-//    NSDictionary *properties = dictionary[controllerID][@"items"];
-//
-//    id interfaceController = [[interfaceControllerClass alloc] initWithContext:context];
-//    
-//    for (NSDictionary *propertiesDictionary in properties) {
-//        NSString *propertyKey = propertiesDictionary[@"property"];
-//        NSString *propertyType = propertiesDictionary[@"type"];
-//        NSString *propertyClassName = propertyTypes[propertyType];
-//        Class propertyClass = NSClassFromString(propertyClassName);
-//        
-//        id property = [[propertyClass alloc] init];
-//        
-//        NSMutableDictionary *propertyValues = [propertiesDictionary mutableCopy];
-//        [propertyValues removeObjectForKey:@"property"];
-//        [propertyValues removeObjectForKey:@"type"];
-//        for (NSString *name in propertyValues) {
-//            NSString *value = propertyValues[name];
-//            @try {
-//                [property setValue:value forKey:name];
-//            }
-//            @catch (NSException *exception) {
-//                NSLog(@"Tried to set %@ := %@ on %@", name, value, propertyKey);
-//            }
-//        }
-//        
-//        [interfaceController setValue:property forKey:propertyKey];
-//    }
-//    
-//    return interfaceController;
+    NSDictionary *propertyTypes = @{@"label": @"WKInterfaceLabel",
+                                    @"image": @"WKInterfaceImage"};
+    NSDictionary *properties = dictionary[controllerID][@"items"];
+
+    for (NSDictionary *propertiesDictionary in properties) {
+        NSString *propertyKey = propertiesDictionary[@"property"];
+        NSString *propertyType = propertiesDictionary[@"type"];
+        NSString *propertyClassName = propertyTypes[propertyType];
+        Class propertyClass = NSClassFromString(propertyClassName);
+        
+        id property = [[propertyClass alloc] init];
+        [self.propertiesThatMayOrMayNotBeWeaklyRetainedByTheirInterfaceControllers addObject:property];
+
+        NSMutableDictionary *propertyValues = [propertiesDictionary mutableCopy];
+        [propertyValues removeObjectForKey:@"property"];
+        [propertyValues removeObjectForKey:@"type"];
+        for (NSString *name in propertyValues) {
+            id value = propertyValues[name];
+            @try {
+                if ([propertyType isEqualToString:@"image"] && [name isEqualToString:@"image"]) {
+                    value = [UIImage imageNamed:value];
+                }
+
+                [property setValue:value forKey:name];
+            }
+            @catch (NSException *exception) {
+                NSLog(@"Tried to set %@ := %@ on %@", name, value, propertyKey);
+            }
+        }
+        
+        [interfaceController setValue:property forKey:propertyKey];
+    }
+    
+    return interfaceController;
     return nil;
 }
 

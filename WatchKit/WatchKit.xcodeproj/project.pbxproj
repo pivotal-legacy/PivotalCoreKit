@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE03A0351A391B9600AD4964 /* WKInterfaceImage.m in Sources */ = {isa = PBXBuildFile; fileRef = AE03A0341A391B9600AD4964 /* WKInterfaceImage.m */; };
+		AE03A0391A391C5900AD4964 /* corgi.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = AE03A0381A391C5900AD4964 /* corgi.jpeg */; };
 		AE25D5FE1A38F6C9008A1920 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE25D5FD1A38F6C9008A1920 /* XCTest.framework */; };
 		AE25D6001A38F6C9008A1920 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE25D5FF1A38F6C9008A1920 /* CoreGraphics.framework */; };
 		AE25D6021A38F6C9008A1920 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE25D6011A38F6C9008A1920 /* UIKit.framework */; };
@@ -136,6 +138,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		AE03A0331A391B9600AD4964 /* WKInterfaceImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKInterfaceImage.h; sourceTree = "<group>"; };
+		AE03A0341A391B9600AD4964 /* WKInterfaceImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKInterfaceImage.m; sourceTree = "<group>"; };
+		AE03A0381A391C5900AD4964 /* corgi.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = corgi.jpeg; sourceTree = "<group>"; };
+		AE03A03A1A391CB300AD4964 /* TestableWKInterfaceImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestableWKInterfaceImage.h; sourceTree = "<group>"; };
 		AE25D5D91A38F664008A1920 /* libWatchKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libWatchKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE25D5FB1A38F6C9008A1920 /* Specs.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Specs.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE25D5FD1A38F6C9008A1920 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -293,6 +299,7 @@
 		AE25D65C1A38FF83008A1920 /* Fixtures */ = {
 			isa = PBXGroup;
 			children = (
+				AE03A0381A391C5900AD4964 /* corgi.jpeg */,
 				AE25D65F1A390480008A1920 /* InterfaceController.h */,
 				AE25D6601A390480008A1920 /* InterfaceController.m */,
 				AE25D65D1A38FFA9008A1920 /* Interface.storyboard */,
@@ -310,6 +317,9 @@
 				AE25D66A1A3906A6008A1920 /* WKInterfaceController.m */,
 				AE25D66B1A3906A6008A1920 /* WKInterfaceLabel.h */,
 				AE25D66C1A3906A6008A1920 /* WKInterfaceLabel.m */,
+				AE03A0331A391B9600AD4964 /* WKInterfaceImage.h */,
+				AE03A0341A391B9600AD4964 /* WKInterfaceImage.m */,
+				AE03A03A1A391CB300AD4964 /* TestableWKInterfaceImage.h */,
 			);
 			name = FakeWatchKit;
 			path = WatchKit;
@@ -490,6 +500,7 @@
 			files = (
 				AE25D65E1A38FFA9008A1920 /* Interface.storyboard in Resources */,
 				AE25D6091A38F6C9008A1920 /* Specs-Info.plist in Resources */,
+				AE03A0391A391C5900AD4964 /* corgi.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -517,6 +528,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE25D6551A38FB46008A1920 /* InterfaceControllerLoader.m in Sources */,
+				AE03A0351A391B9600AD4964 /* WKInterfaceImage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -702,6 +714,7 @@
 				AE25D5EF1A38F664008A1920 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AE25D6121A38F6CA008A1920 /* Build configuration list for PBXNativeTarget "Specs" */ = {
 			isa = XCConfigurationList;
@@ -710,6 +723,7 @@
 				AE25D6141A38F6CA008A1920 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

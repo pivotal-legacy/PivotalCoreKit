@@ -4,6 +4,7 @@
 @interface InterfaceController()
 
 @property (weak, nonatomic) IBOutlet WKInterfaceLabel *titleLabel;
+@property (weak, nonatomic) IBOutlet WKInterfaceImage *image;
 
 @end
 
