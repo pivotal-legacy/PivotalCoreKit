@@ -3,6 +3,7 @@
 #import "InterfaceControllerLoader.h"
 #import "TestableWKInterfaceButton.h"
 #import "TestableWKInterfaceDate.h"
+#import "TestableWKInterfaceSwitch.h"
 
 using namespace Cedar::Matchers;
 using namespace Cedar::Doubles;
@@ -83,7 +84,7 @@ describe(@"InterfaceControllerLoader", ^{
                         button.enabled should be_truthy;
                     });
 
-                    it(@"should all the enabled property to be toggled programatically", ^{
+                    it(@"should allow the enabled property to be toggled programatically", ^{
                         [controller didDeactivate];
                         button.enabled should_not be_truthy;
                     });
@@ -101,6 +102,31 @@ describe(@"InterfaceControllerLoader", ^{
 
                     it(@"should display the correct color", ^{
                         date.textColor should equal([UIColor lightGrayColor]);
+                    });
+                });
+
+                describe(@"the switch", ^{
+                    __block id <TestableWKInterfaceSwitch> theSwitch;
+                    beforeEach(^{
+                        theSwitch = controller.theSwitch;
+                    });
+
+                    it(@"should have the correct default enabled property", ^{
+                        theSwitch.enabled should be_truthy;
+                    });
+
+                    it(@"should allow the enabled property to be toggled programatically", ^{
+                        [controller didDeactivate];
+                        theSwitch.enabled should_not be_truthy;
+                    });
+
+                    it(@"should have the correct default on property", ^{
+                        theSwitch.on should be_truthy;
+                    });
+
+                    it(@"should allow the on property to be toggled programatically", ^{
+                        [controller didDeactivate];
+                        theSwitch.on should_not be_truthy;
                     });
                 });
 

@@ -51,6 +51,7 @@
                                     @"image": @"WKInterfaceImage",
                                     @"separator": @"WKInterfaceSeparator",
                                     @"date": @"WKInterfaceDate",
+                                    @"switch": @"WKInterfaceSwitch",
                                     @"button": @"WKInterfaceButton"};
     NSDictionary *properties = dictionary[controllerID][@"items"];
 

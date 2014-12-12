@@ -30,6 +30,7 @@
 		AED570BA1A3A663E004ABADA /* WKInterfaceButtonSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AED570B91A3A663E004ABADA /* WKInterfaceButtonSpec.mm */; };
 		AED570BD1A3A69CF004ABADA /* WKInterfaceObject.m in Sources */ = {isa = PBXBuildFile; fileRef = AED570BC1A3A69CF004ABADA /* WKInterfaceObject.m */; };
 		AED570C11A3A6FF9004ABADA /* WKInterfaceDate.m in Sources */ = {isa = PBXBuildFile; fileRef = AED570C01A3A6FF9004ABADA /* WKInterfaceDate.m */; };
+		AED570C51A3A7D32004ABADA /* WKInterfaceSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = AED570C41A3A7D32004ABADA /* WKInterfaceSwitch.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -190,6 +191,9 @@
 		AED570BE1A3A6F74004ABADA /* TestableWKInterfaceDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestableWKInterfaceDate.h; sourceTree = "<group>"; };
 		AED570BF1A3A6FF9004ABADA /* WKInterfaceDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKInterfaceDate.h; sourceTree = "<group>"; };
 		AED570C01A3A6FF9004ABADA /* WKInterfaceDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKInterfaceDate.m; sourceTree = "<group>"; };
+		AED570C21A3A7D01004ABADA /* TestableWKInterfaceSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestableWKInterfaceSwitch.h; sourceTree = "<group>"; };
+		AED570C31A3A7D32004ABADA /* WKInterfaceSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKInterfaceSwitch.h; sourceTree = "<group>"; };
+		AED570C41A3A7D32004ABADA /* WKInterfaceSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKInterfaceSwitch.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -363,6 +367,7 @@
 				AE03A03A1A391CB300AD4964 /* TestableWKInterfaceImage.h */,
 				AE25D6701A3907BC008A1920 /* TestableWKInterfaceLabel.h */,
 				AE03A03E1A3922E600AD4964 /* TestableWKInterfaceSeparator.h */,
+				AED570C21A3A7D01004ABADA /* TestableWKInterfaceSwitch.h */,
 				AE25D6661A39066B008A1920 /* WatchKit.h */,
 				AE03A3471A3A285300AD4964 /* WKInterfaceButton.h */,
 				AE03A3481A3A285300AD4964 /* WKInterfaceButton.m */,
@@ -378,6 +383,8 @@
 				AED570BC1A3A69CF004ABADA /* WKInterfaceObject.m */,
 				AE03A03B1A39227E00AD4964 /* WKInterfaceSeparator.h */,
 				AE03A03C1A39227E00AD4964 /* WKInterfaceSeparator.m */,
+				AED570C31A3A7D32004ABADA /* WKInterfaceSwitch.h */,
+				AED570C41A3A7D32004ABADA /* WKInterfaceSwitch.m */,
 			);
 			name = FakeWatchKit;
 			path = WatchKit;
@@ -588,6 +595,7 @@
 				AED570BD1A3A69CF004ABADA /* WKInterfaceObject.m in Sources */,
 				AE03A33C1A3A1B2800AD4964 /* WKInterfaceLabel.m in Sources */,
 				AE03A33D1A3A1B2C00AD4964 /* WKInterfaceSeparator.m in Sources */,
+				AED570C51A3A7D32004ABADA /* WKInterfaceSwitch.m in Sources */,
 				AED570C11A3A6FF9004ABADA /* WKInterfaceDate.m in Sources */,
 				AE25D6551A38FB46008A1920 /* InterfaceControllerLoader.m in Sources */,
 				AE03A0351A391B9600AD4964 /* WKInterfaceImage.m in Sources */,

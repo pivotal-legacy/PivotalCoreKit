@@ -8,6 +8,7 @@
 @property (weak, nonatomic) IBOutlet WKInterfaceSeparator *separator;
 @property (weak, nonatomic) IBOutlet WKInterfaceButton *button;
 @property (weak, nonatomic) IBOutlet WKInterfaceDate *date;
+@property (weak, nonatomic) IBOutlet WKInterfaceSwitch *theSwitch;
 @property (nonatomic) NSMutableString* context;
 
 @end
@@ -31,6 +32,8 @@
 
 - (void)didDeactivate {
     self.button.enabled = NO;
+    self.theSwitch.enabled = NO;
+    self.theSwitch.on = NO;
 }
 
 - (IBAction)didTapButton {

@@ -5,3 +5,4 @@
 #import "WKInterfaceSeparator.h"
 #import "WKInterfaceButton.h"
 #import "WKInterfaceDate.h"
+#import "WKInterfaceSwitch.h"
