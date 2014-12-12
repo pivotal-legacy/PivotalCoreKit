@@ -31,6 +31,7 @@
 		AED570BD1A3A69CF004ABADA /* WKInterfaceObject.m in Sources */ = {isa = PBXBuildFile; fileRef = AED570BC1A3A69CF004ABADA /* WKInterfaceObject.m */; };
 		AED570C11A3A6FF9004ABADA /* WKInterfaceDate.m in Sources */ = {isa = PBXBuildFile; fileRef = AED570C01A3A6FF9004ABADA /* WKInterfaceDate.m */; };
 		AED570C51A3A7D32004ABADA /* WKInterfaceSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = AED570C41A3A7D32004ABADA /* WKInterfaceSwitch.m */; };
+		AED570C71A3A8046004ABADA /* WKInterfaceSwitchSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AED570C61A3A8046004ABADA /* WKInterfaceSwitchSpec.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -194,6 +195,7 @@
 		AED570C21A3A7D01004ABADA /* TestableWKInterfaceSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestableWKInterfaceSwitch.h; sourceTree = "<group>"; };
 		AED570C31A3A7D32004ABADA /* WKInterfaceSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKInterfaceSwitch.h; sourceTree = "<group>"; };
 		AED570C41A3A7D32004ABADA /* WKInterfaceSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKInterfaceSwitch.m; sourceTree = "<group>"; };
+		AED570C61A3A8046004ABADA /* WKInterfaceSwitchSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WKInterfaceSwitchSpec.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,6 +236,7 @@
 			children = (
 				AE03A35F1A3A34BD00AD4964 /* WKInterfaceControllerSpec.mm */,
 				AED570B91A3A663E004ABADA /* WKInterfaceButtonSpec.mm */,
+				AED570C61A3A8046004ABADA /* WKInterfaceSwitchSpec.mm */,
 			);
 			path = FakeWatchKit;
 			sourceTree = "<group>";
@@ -607,6 +610,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AED570C71A3A8046004ABADA /* WKInterfaceSwitchSpec.mm in Sources */,
 				AE25D65B1A38FC4E008A1920 /* InterfaceControllerLoaderSpec.mm in Sources */,
 				AE03A3491A3A285300AD4964 /* WKInterfaceButton.m in Sources */,
 				AED5709C1A3A4786004ABADA /* CorgisController.m in Sources */,

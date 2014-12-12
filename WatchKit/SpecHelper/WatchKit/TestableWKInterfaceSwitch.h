@@ -9,5 +9,6 @@
 
 - (BOOL)enabled;
 - (BOOL)on;
+- (void)tap;
 
 @end

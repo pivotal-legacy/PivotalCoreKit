@@ -16,4 +16,8 @@
     return self;
 }
 
+- (void)tap {
+    self.on = !self.on;
+}
+
 @end
