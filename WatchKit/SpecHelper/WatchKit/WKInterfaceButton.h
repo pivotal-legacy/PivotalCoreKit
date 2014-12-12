@@ -1,8 +1,8 @@
-#import <Foundation/Foundation.h>
+#import "WKInterfaceObject.h"
 #import "TestableWKInterfaceButton.h"
 
 
-@interface WKInterfaceButton : NSObject <TestableWKInterfaceButton>
+@interface WKInterfaceButton : WKInterfaceObject <TestableWKInterfaceButton>
 
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic) UIColor *color;

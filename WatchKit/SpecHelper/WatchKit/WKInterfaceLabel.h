@@ -1,8 +1,8 @@
-#import <UIKit/UIKit.h>
+#import "WKInterfaceObject.h"
 #import "TestableWKInterfaceLabel.h"
 
 
-@interface WKInterfaceLabel : NSObject <TestableWKInterfaceLabel>
+@interface WKInterfaceLabel : WKInterfaceObject <TestableWKInterfaceLabel>
 
 @property (copy, nonatomic) NSString *text;
 @property (copy, nonatomic) NSAttributedString *attributedText;

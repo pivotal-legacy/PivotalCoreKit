@@ -3,6 +3,7 @@
 #import "TestableWKInterfaceLabel.h"
 #import "WKInterfaceLabel.h"
 #import <objc/runtime.h>
+#import "WKInterfaceObject.h"
 
 
 @interface InterfaceControllerLoader ()
@@ -58,7 +59,9 @@
         NSString *propertyClassName = propertyTypes[propertyType];
         Class propertyClass = NSClassFromString(propertyClassName);
 
-        id property = [[propertyClass alloc] init];
+        WKInterfaceObject *property = [[propertyClass alloc] init];
+        property.parentController = interfaceController;
+
         [self.propertiesThatMayOrMayNotBeWeaklyRetainedByTheirInterfaceControllers addObject:property];
 
         NSMutableDictionary *propertyValues = [propertiesDictionary mutableCopy];

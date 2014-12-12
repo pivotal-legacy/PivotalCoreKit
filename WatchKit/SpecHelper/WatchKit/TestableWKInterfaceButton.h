@@ -1,5 +1,6 @@
 #import <UIKit/UIKit.h>
 
+
 @protocol TestableWKInterfaceButton <NSObject>
 
 - (void)setTitle:(NSString *)title;
@@ -11,5 +12,7 @@
 - (NSString *)title;
 - (UIColor *)color;
 - (BOOL)enabled;
+- (SEL)action;
+- (void)tap;
 
 @end

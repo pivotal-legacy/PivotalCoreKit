@@ -19,6 +19,9 @@
                         <imageView height="62" alignment="center" image="corgi.jpeg" id="I6V-K6-R7W"/>
                         <button width="1" alignment="left" title="Button" id="pKO-a7-4QJ">
                             <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="didTapButton" destination="AgC-eL-Hgc" id="lBs-es-xnA"/>
+                            </connections>
                         </button>
                     </items>
                     <connections>

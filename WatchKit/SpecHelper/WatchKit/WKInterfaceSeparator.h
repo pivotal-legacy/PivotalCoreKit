@@ -1,7 +1,8 @@
-#import <UIKit/UIKit.h>
+#import "WKInterfaceObject.h"
 #import "TestableWKInterfaceSeparator.h"
 
-@interface WKInterfaceSeparator : NSObject <TestableWKInterfaceSeparator>
+
+@interface WKInterfaceSeparator : WKInterfaceObject <TestableWKInterfaceSeparator>
 
 @property (nonatomic) UIColor *color;
 

@@ -1,7 +1,7 @@
-#import <UIKit/UIKit.h>
+#import "WKInterfaceObject.h"
 
 
-@interface WKInterfaceImage : NSObject
+@interface WKInterfaceImage : WKInterfaceObject
 
 @property (nonatomic) UIImage *image;
 
