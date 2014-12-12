@@ -69,11 +69,11 @@ describe(@"InterfaceControllerLoader", ^{
                 describe(@"the button", ^{
                     __block id <TestableWKInterfaceButton> button;
                     beforeEach(^{
-                        button = controller.button;
+                        button = controller.actionButton;
                     });
 
                     it(@"should have the correct text", ^{
-                        button.title should equal(@"Button");
+                        button.title should equal(@"actionButton");
                     });
 
                     it(@"should have the correct text color", ^{

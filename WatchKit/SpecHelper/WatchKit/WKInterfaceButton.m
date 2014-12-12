@@ -32,10 +32,12 @@
 
 - (void)tap
 {
+    if (self.action) {
 #       pragma clang diagnostic push
 #       pragma clang diagnostic ignored "-Warc-performSelector-leaks"
-    [self.parentController performSelector:NSSelectorFromString(self.action)];
+        [self.parentController performSelector:NSSelectorFromString(self.action)];
 #       pragma clang diagnostic pop
+    }
 }
 
 @end

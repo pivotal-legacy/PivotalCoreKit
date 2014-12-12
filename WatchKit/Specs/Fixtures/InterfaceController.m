@@ -6,9 +6,10 @@
 @property (weak, nonatomic) IBOutlet WKInterfaceLabel *titleLabel;
 @property (weak, nonatomic) IBOutlet WKInterfaceImage *image;
 @property (weak, nonatomic) IBOutlet WKInterfaceSeparator *separator;
-@property (weak, nonatomic) IBOutlet WKInterfaceButton *button;
+@property (weak, nonatomic) IBOutlet WKInterfaceButton *actionButton;
 @property (weak, nonatomic) IBOutlet WKInterfaceDate *date;
 @property (weak, nonatomic) IBOutlet WKInterfaceSwitch *theSwitch;
+@property (weak, nonatomic) IBOutlet WKInterfaceButton *noActionButton;
 @property (nonatomic) NSMutableString* context;
 
 @end
@@ -31,7 +32,7 @@
 }
 
 - (void)didDeactivate {
-    self.button.enabled = NO;
+    self.actionButton.enabled = NO;
     self.theSwitch.enabled = NO;
     self.theSwitch.on = NO;
 }
