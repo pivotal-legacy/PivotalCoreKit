@@ -17,6 +17,9 @@
                             <color key="color" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         </separator>
                         <imageView height="62" alignment="center" image="corgi.jpeg" id="I6V-K6-R7W"/>
+                        <dateLabel alignment="center" format="yy-M-d" id="wIi-bN-AiJ">
+                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        </dateLabel>
                         <button width="1" alignment="left" title="Button" id="pKO-a7-4QJ">
                             <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
@@ -26,6 +29,7 @@
                     </items>
                     <connections>
                         <outlet property="button" destination="pKO-a7-4QJ" id="OaW-v7-Pd0"/>
+                        <outlet property="date" destination="wIi-bN-AiJ" id="dbO-od-wVO"/>
                         <outlet property="image" destination="I6V-K6-R7W" id="2hY-b4-JBi"/>
                         <outlet property="separator" destination="FBI-ul-8F7" id="mOZ-90-hBd"/>
                         <outlet property="titleLabel" destination="fWh-mQ-CyP" id="3Mf-es-9Mx"/>

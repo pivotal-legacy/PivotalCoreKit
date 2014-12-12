@@ -7,6 +7,7 @@
 @property (weak, nonatomic) IBOutlet WKInterfaceImage *image;
 @property (weak, nonatomic) IBOutlet WKInterfaceSeparator *separator;
 @property (weak, nonatomic) IBOutlet WKInterfaceButton *button;
+@property (weak, nonatomic) IBOutlet WKInterfaceDate *date;
 @property (nonatomic) NSMutableString* context;
 
 @end

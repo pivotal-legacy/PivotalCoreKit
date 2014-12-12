@@ -4,3 +4,4 @@
 #import "WKInterfaceImage.h"
 #import "WKInterfaceSeparator.h"
 #import "WKInterfaceButton.h"
+#import "WKInterfaceDate.h"

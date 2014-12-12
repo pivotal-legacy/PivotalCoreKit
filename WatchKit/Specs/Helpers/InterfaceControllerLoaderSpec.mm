@@ -2,6 +2,7 @@
 #import "InterfaceController.h"
 #import "InterfaceControllerLoader.h"
 #import "TestableWKInterfaceButton.h"
+#import "TestableWKInterfaceDate.h"
 
 using namespace Cedar::Matchers;
 using namespace Cedar::Doubles;
@@ -74,7 +75,7 @@ describe(@"InterfaceControllerLoader", ^{
                         button.title should equal(@"Button");
                     });
 
-                    it(@"should have the correct text", ^{
+                    it(@"should have the correct text color", ^{
                         button.color should equal([UIColor lightGrayColor]);
                     });
 
@@ -85,6 +86,21 @@ describe(@"InterfaceControllerLoader", ^{
                     it(@"should all the enabled property to be toggled programatically", ^{
                         [controller didDeactivate];
                         button.enabled should_not be_truthy;
+                    });
+                });
+
+                describe(@"the date", ^{
+                    __block id <TestableWKInterfaceDate> date;
+                    beforeEach(^{
+                        date = controller.date;
+                    });
+
+                    it(@"should display date in the correct format", ^{
+                        date.format should equal(@"yy-M-d");
+                    });
+
+                    it(@"should display the correct color", ^{
+                        date.textColor should equal([UIColor lightGrayColor]);
                     });
                 });
 

@@ -50,6 +50,7 @@
     NSDictionary *propertyTypes = @{@"label": @"WKInterfaceLabel",
                                     @"image": @"WKInterfaceImage",
                                     @"separator": @"WKInterfaceSeparator",
+                                    @"date": @"WKInterfaceDate",
                                     @"button": @"WKInterfaceButton"};
     NSDictionary *properties = dictionary[controllerID][@"items"];
 
