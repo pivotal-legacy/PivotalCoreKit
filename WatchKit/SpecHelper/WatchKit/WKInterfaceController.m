@@ -13,12 +13,9 @@
 
 @implementation WKInterfaceController
 
--(instancetype)initWithContext:(id)context {
-    self = [super init];
-    if (self) {
-        self.loader = [[InterfaceControllerLoader alloc] init];
-    }
-    return self;
+- (void)awakeWithContext:(id)context 
+{
+    self.loader = [[InterfaceControllerLoader alloc] init];
 }
 
 - (void)willActivate
@@ -33,12 +30,16 @@
 
 - (void)pushControllerWithName:(NSString *)name context:(id)context
 {
-    self.childController = [self.loader interfaceControllerWithStoryboardName:@"Interface" identifier:name context:context];
+    self.childController = [self.loader interfaceControllerWithStoryboardName:@"Interface"
+                                                                   identifier:name
+                                                                      context:context];
 }
 
 - (void)presentControllerWithName:(NSString *)name context:(id)context
 {
-    self.presentedController = [self.loader interfaceControllerWithStoryboardName:@"Interface" identifier:name context:context];
+    self.presentedController = [self.loader interfaceControllerWithStoryboardName:@"Interface"
+                                                                       identifier:name
+                                                                          context:context];
 }
 
 @end

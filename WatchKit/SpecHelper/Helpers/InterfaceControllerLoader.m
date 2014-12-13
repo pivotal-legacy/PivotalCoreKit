@@ -45,7 +45,7 @@
 
     Class interfaceControllerClass = NSClassFromString(controllerProperties[@"controllerClass"]);
 
-    id interfaceController = [interfaceControllerClass alloc];
+    id interfaceController = [[interfaceControllerClass alloc] init];
 
     NSDictionary *propertyTypes = @{@"label": @"WKInterfaceLabel",
                                     @"image": @"WKInterfaceImage",
@@ -79,8 +79,8 @@
 
         [interfaceController setValue:property forKey:propertyKey];
     }
-
-    return [interfaceController initWithContext:context];
+    [interfaceController awakeWithContext:context];
+    return interfaceController;
 }
 
 - (SEL)setterNameWithGetterName:(NSString *)getterName

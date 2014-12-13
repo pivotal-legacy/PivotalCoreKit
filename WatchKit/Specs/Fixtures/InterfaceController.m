@@ -19,27 +19,28 @@
 
 @implementation InterfaceController
 
-- (instancetype)initWithContext:(id)context {
-    self = [super initWithContext:context];
-    if (self){
-        self.context = context;
-    }
-    return self;
-}
-
 #pragma mark - WKInterfaceController
 
-- (void)willActivate {
+- (void)awakeWithContext:(id)context
+{
+    [super awakeWithContext:context];
+    self.context = context;
+}
+
+- (void)willActivate
+{
     [self.titleLabel setText:@"My Special Text"];
 }
 
-- (void)didDeactivate {
+- (void)didDeactivate
+{
     self.actionButton.enabled = NO;
     self.theSwitch.enabled = NO;
     self.theSwitch.on = NO;
 }
 
-- (IBAction)didTapButton {
+- (IBAction)didTapButton
+{
     [self.context appendString:@"Tweet."];
 }
 

@@ -3,15 +3,11 @@
 @protocol TestableWKInterfaceDate <NSObject>
 
 - (void)setTextColor:(UIColor *)color;
-
-- (void)setTimeZone:(NSTimeZone *)timeZone;
-- (void)setCalendar:(NSCalendar *)calendar;
-
 - (void)setFormat:(NSString *)format;
 
 @optional
 
-- (NSString *)textColor;
+- (UIColor *)textColor;
 - (NSString *)format;
 
 @end

@@ -6,7 +6,7 @@
 
 @protocol TestableWKInterfaceController <NSObject>
 
-- (id)initWithContext:(id)context;
+- (void)awakeWithContext:(id)context;
 - (void)willActivate;
 - (void)didDeactivate;
 - (void)pushControllerWithName:(NSString *)name context:(id)context;
