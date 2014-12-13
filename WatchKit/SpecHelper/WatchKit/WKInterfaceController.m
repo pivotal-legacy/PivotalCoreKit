@@ -1,10 +1,11 @@
 #import "WKInterfaceController.h"
 #import "InterfaceControllerLoader.h"
+#import "FakeInterfaceController.h"
 
 
 @interface WKInterfaceController ()
 
-@property (nonatomic) WKInterfaceController *childController;
+@property (nonatomic) FakeInterfaceController *childController;
 @property (nonatomic) WKInterfaceController *presentedController;
 @property (nonatomic) InterfaceControllerLoader *loader;
 
@@ -30,9 +31,7 @@
 
 - (void)pushControllerWithName:(NSString *)name context:(id)context
 {
-    self.childController = [self.loader interfaceControllerWithStoryboardName:@"Interface"
-                                                                   identifier:name
-                                                                      context:context];
+    self.childController = [[FakeInterfaceController alloc] initWithName:name context:context];
 }
 
 - (void)presentControllerWithName:(NSString *)name context:(id)context

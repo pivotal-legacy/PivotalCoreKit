@@ -4,6 +4,7 @@
 #import "InterfaceControllerLoader.h"
 #import "WKInterfaceController.h"
 #import "FakeSegue.h"
+#import "FakeInterfaceController.h"
 
 
 using namespace Cedar::Matchers;
@@ -22,18 +23,18 @@ describe(@"WKInterfaceController", ^{
     });
 
     describe(@"pushing another controller onto itself", ^{
-        __block CorgisController *childController;
+        __block FakeInterfaceController *childController;
         beforeEach(^{
             [subject pushControllerWithName:@"MyFirstCorgiController" context:[UIImage imageNamed:@"corgi.jpeg"]];
             childController = (id)subject.childController;
         });
 
         it(@"should have a new child controller with the correct interface controller class", ^{
-            childController should be_instance_of([CorgisController class]);
+            childController.name should equal(@"MyFirstCorgiController");
         });
 
         it(@"should receive the context that was passed in", ^{
-            childController.image.image should equal([UIImage imageNamed:@"corgi.jpeg"]);
+            childController.context should equal([UIImage imageNamed:@"corgi.jpeg"]);
         });
     });
 

@@ -2,6 +2,7 @@
 
 
 @class WKInterfaceController;
+@class FakeInterfaceController;
 
 
 @protocol TestableWKInterfaceController <NSObject>
@@ -14,7 +15,7 @@
 
 @optional
 
-- (WKInterfaceController *)childController;
+- (FakeInterfaceController *)childController;
 - (WKInterfaceController *)presentedController;
 
 @end
