@@ -32,6 +32,7 @@
 		AED570C11A3A6FF9004ABADA /* WKInterfaceDate.m in Sources */ = {isa = PBXBuildFile; fileRef = AED570C01A3A6FF9004ABADA /* WKInterfaceDate.m */; };
 		AED570C51A3A7D32004ABADA /* WKInterfaceSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = AED570C41A3A7D32004ABADA /* WKInterfaceSwitch.m */; };
 		AED570C71A3A8046004ABADA /* WKInterfaceSwitchSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AED570C61A3A8046004ABADA /* WKInterfaceSwitchSpec.mm */; };
+		AED570CA1A3BA613004ABADA /* FakeSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = AED570C91A3BA613004ABADA /* FakeSegue.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -196,6 +197,8 @@
 		AED570C31A3A7D32004ABADA /* WKInterfaceSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKInterfaceSwitch.h; sourceTree = "<group>"; };
 		AED570C41A3A7D32004ABADA /* WKInterfaceSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKInterfaceSwitch.m; sourceTree = "<group>"; };
 		AED570C61A3A8046004ABADA /* WKInterfaceSwitchSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WKInterfaceSwitchSpec.mm; sourceTree = "<group>"; };
+		AED570C81A3BA613004ABADA /* FakeSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeSegue.h; sourceTree = "<group>"; };
+		AED570C91A3BA613004ABADA /* FakeSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FakeSegue.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,6 +230,8 @@
 			children = (
 				AE03A3441A3A217000AD4964 /* UIColor+PCK_StringToColor.h */,
 				AE03A3451A3A217000AD4964 /* UIColor+PCK_StringToColor.m */,
+				AED570C81A3BA613004ABADA /* FakeSegue.h */,
+				AED570C91A3BA613004ABADA /* FakeSegue.m */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -613,6 +618,7 @@
 				AED570C71A3A8046004ABADA /* WKInterfaceSwitchSpec.mm in Sources */,
 				AE25D65B1A38FC4E008A1920 /* InterfaceControllerLoaderSpec.mm in Sources */,
 				AE03A3491A3A285300AD4964 /* WKInterfaceButton.m in Sources */,
+				AED570CA1A3BA613004ABADA /* FakeSegue.m in Sources */,
 				AED5709C1A3A4786004ABADA /* CorgisController.m in Sources */,
 				AE03A3461A3A217000AD4964 /* UIColor+PCK_StringToColor.m in Sources */,
 				AED570BA1A3A663E004ABADA /* WKInterfaceButtonSpec.mm in Sources */,

@@ -28,12 +28,24 @@
                             </connections>
                         </button>
                         <button width="1" alignment="left" title="noActionButton" id="67c-5i-eSq"/>
+                        <button width="1" alignment="left" title="seguePushButton" id="8NN-UE-BFJ">
+                            <connections>
+                                <segue destination="UTG-vB-Nc3" kind="push" id="yHs-ev-TfH"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="segueModalButton" id="2V4-dx-Xtj">
+                            <connections>
+                                <segue destination="6wZ-pP-6PY" kind="modal" id="C4a-10-f5j"/>
+                            </connections>
+                        </button>
                     </items>
                     <connections>
                         <outlet property="actionButton" destination="pKO-a7-4QJ" id="jPy-qS-Kus"/>
                         <outlet property="date" destination="wIi-bN-AiJ" id="dbO-od-wVO"/>
                         <outlet property="image" destination="I6V-K6-R7W" id="2hY-b4-JBi"/>
                         <outlet property="noActionButton" destination="67c-5i-eSq" id="6aV-os-Wz7"/>
+                        <outlet property="segueModalButton" destination="2V4-dx-Xtj" id="GVz-qf-vhk"/>
+                        <outlet property="seguePushButton" destination="8NN-UE-BFJ" id="SIZ-F9-fwn"/>
                         <outlet property="separator" destination="FBI-ul-8F7" id="mOZ-90-hBd"/>
                         <outlet property="theSwitch" destination="H2v-0N-VCa" id="KZp-dE-sns"/>
                         <outlet property="titleLabel" destination="fWh-mQ-CyP" id="3Mf-es-9Mx"/>
@@ -54,7 +66,21 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="89" y="433"/>
+            <point key="canvasLocation" x="338" y="270"/>
+        </scene>
+        <!--MyModalCorgiController-->
+        <scene sceneID="74P-qz-ORB">
+            <objects>
+                <controller identifier="MyModalCorgiController" id="6wZ-pP-6PY" userLabel="MyModalCorgiController" customClass="CorgisController">
+                    <items>
+                        <imageView width="100" height="100" alignment="center" image="corgi.jpeg" id="Ubw-yk-h7a"/>
+                    </items>
+                    <connections>
+                        <outlet property="image" destination="Ubw-yk-h7a" id="sHV-qi-12V"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="89" y="694"/>
         </scene>
     </scenes>
 </document>

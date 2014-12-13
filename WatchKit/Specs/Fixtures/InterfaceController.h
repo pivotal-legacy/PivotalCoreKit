@@ -11,5 +11,7 @@
 @property (weak, nonatomic, readonly) WKInterfaceDate *date;
 @property (weak, nonatomic, readonly) WKInterfaceSwitch *theSwitch;
 @property (weak, nonatomic, readonly) WKInterfaceButton *noActionButton;
+@property (weak, nonatomic, readonly) WKInterfaceButton *seguePushButton;
+@property (weak, nonatomic, readonly) WKInterfaceButton *segueModalButton;
 
 @end

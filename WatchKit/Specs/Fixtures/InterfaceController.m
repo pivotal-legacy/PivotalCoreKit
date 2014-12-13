@@ -10,6 +10,8 @@
 @property (weak, nonatomic) IBOutlet WKInterfaceDate *date;
 @property (weak, nonatomic) IBOutlet WKInterfaceSwitch *theSwitch;
 @property (weak, nonatomic) IBOutlet WKInterfaceButton *noActionButton;
+@property (weak, nonatomic) IBOutlet WKInterfaceButton *seguePushButton;
+@property (weak, nonatomic) IBOutlet WKInterfaceButton *segueModalButton;
 @property (nonatomic) NSMutableString* context;
 
 @end
