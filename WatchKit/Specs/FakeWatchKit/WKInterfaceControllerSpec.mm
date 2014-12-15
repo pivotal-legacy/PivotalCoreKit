@@ -17,7 +17,7 @@ describe(@"WKInterfaceController", ^{
 
     beforeEach(^{
         loader = [[InterfaceControllerLoader alloc] init];
-        subject = [loader interfaceControllerWithStoryboardName:@"Interface" identifier:@"AgC-eL-Hgc" context:@""];
+        subject = [loader interfaceControllerWithStoryboardName:@"Interface" identifier:@"AgC-eL-Hgc" context:nil];
 
     });
 
@@ -55,22 +55,6 @@ describe(@"WKInterfaceController", ^{
 
             it(@"should have the correct segue destination identifier", ^{
                 seguePushButton.segue.destinationIdentifier should equal(@"MyFirstCorgiController");
-            });
-        });
-
-        describe(@"modal action", ^{
-            __block id<TestableWKInterfaceButton> segueModalButton;
-            beforeEach(^{
-                segueModalButton = subject.segueModalButton;
-                segueModalButton.segue should_not be_nil;
-            });
-
-            it(@"should have the correct segue configuration", ^{
-                segueModalButton.segue.type should equal(FakeSegueTypeModal);
-            });
-
-            it(@"should have the correct segue destination identifier", ^{
-                segueModalButton.segue.destinationIdentifier should equal(@"MyModalCorgiController");
             });
         });
 

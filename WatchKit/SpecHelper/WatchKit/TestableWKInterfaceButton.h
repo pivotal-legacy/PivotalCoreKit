@@ -17,7 +17,6 @@
 - (NSString *)title;
 - (UIColor *)color;
 - (BOOL)enabled;
-- (SEL)action;
-- (void)tap;
+- (NSString *)action;
 
 @end
