@@ -41,7 +41,6 @@
 
 - (IBAction)didTapButton
 {
-    [self.context appendString:@"Tweet."];
 }
 
 @end

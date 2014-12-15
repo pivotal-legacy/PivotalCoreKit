@@ -1,7 +1,6 @@
-#import <Foundation/Foundation.h>
-#import <CoreGraphics/CoreGraphics.h>
+#import "MessageCapturer.h"
 #import "TestableWKInterfaceController.h"
 
 
-@interface WKInterfaceController : NSObject <TestableWKInterfaceController>
+@interface WKInterfaceController : MessageCapturer <TestableWKInterfaceController>
 @end

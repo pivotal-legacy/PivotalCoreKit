@@ -52,7 +52,8 @@
                                     @"separator": @"WKInterfaceSeparator",
                                     @"date": @"WKInterfaceDate",
                                     @"switch": @"WKInterfaceSwitch",
-                                    @"button": @"WKInterfaceButton"};
+                                    @"button": @"WKInterfaceButton",
+                                    @"table": @"WKInterfaceTable"};
     NSDictionary *properties = dictionary[controllerID][@"items"];
 
     for (NSDictionary *propertiesDictionary in properties) {
@@ -62,7 +63,6 @@
         Class propertyClass = NSClassFromString(propertyClassName);
 
         WKInterfaceObject *property = [[propertyClass alloc] init];
-        property.parentController = interfaceController;
 
         [self.propertiesThatMayOrMayNotBeWeaklyRetainedByTheirInterfaceControllers addObject:property];
 

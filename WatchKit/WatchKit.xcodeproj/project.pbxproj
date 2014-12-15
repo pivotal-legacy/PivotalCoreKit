@@ -26,6 +26,10 @@
 		AE25D65B1A38FC4E008A1920 /* InterfaceControllerLoaderSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE25D6591A38FC4E008A1920 /* InterfaceControllerLoaderSpec.mm */; };
 		AE25D65E1A38FFA9008A1920 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE25D65D1A38FFA9008A1920 /* Interface.storyboard */; };
 		AE25D6611A390480008A1920 /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE25D6601A390480008A1920 /* InterfaceController.m */; };
+		AEB03EBE1A3F9B3E002404BC /* WKInterfaceTableSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEB03EBD1A3F9B3E002404BC /* WKInterfaceTableSpec.mm */; };
+		AEB03ECE1A3F9B64002404BC /* WKInterfaceTable.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB03ECC1A3F9B5C002404BC /* WKInterfaceTable.m */; };
+		AEB03ED21A3F9FFF002404BC /* CorgiTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB03ED11A3F9FFF002404BC /* CorgiTableController.m */; };
+		AEB03ED51A3FA937002404BC /* MessageCapturer.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB03ED41A3FA937002404BC /* MessageCapturer.m */; };
 		AED5709C1A3A4786004ABADA /* CorgisController.m in Sources */ = {isa = PBXBuildFile; fileRef = AED5709B1A3A4786004ABADA /* CorgisController.m */; };
 		AED570BA1A3A663E004ABADA /* WKInterfaceButtonSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AED570B91A3A663E004ABADA /* WKInterfaceButtonSpec.mm */; };
 		AED570BD1A3A69CF004ABADA /* WKInterfaceObject.m in Sources */ = {isa = PBXBuildFile; fileRef = AED570BC1A3A69CF004ABADA /* WKInterfaceObject.m */; };
@@ -185,6 +189,14 @@
 		AE25D66C1A3906A6008A1920 /* WKInterfaceLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKInterfaceLabel.m; sourceTree = "<group>"; };
 		AE25D66F1A3907BC008A1920 /* TestableWKInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestableWKInterfaceController.h; sourceTree = "<group>"; };
 		AE25D6701A3907BC008A1920 /* TestableWKInterfaceLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestableWKInterfaceLabel.h; sourceTree = "<group>"; };
+		AEB03EBD1A3F9B3E002404BC /* WKInterfaceTableSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WKInterfaceTableSpec.mm; sourceTree = "<group>"; };
+		AEB03ECB1A3F9B5C002404BC /* WKInterfaceTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKInterfaceTable.h; sourceTree = "<group>"; };
+		AEB03ECC1A3F9B5C002404BC /* WKInterfaceTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKInterfaceTable.m; sourceTree = "<group>"; };
+		AEB03ECF1A3F9F24002404BC /* TestableWKInterfaceTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestableWKInterfaceTable.h; sourceTree = "<group>"; };
+		AEB03ED01A3F9FFF002404BC /* CorgiTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CorgiTableController.h; sourceTree = "<group>"; };
+		AEB03ED11A3F9FFF002404BC /* CorgiTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CorgiTableController.m; sourceTree = "<group>"; };
+		AEB03ED31A3FA937002404BC /* MessageCapturer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageCapturer.h; sourceTree = "<group>"; };
+		AEB03ED41A3FA937002404BC /* MessageCapturer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageCapturer.m; sourceTree = "<group>"; };
 		AED5709A1A3A4786004ABADA /* CorgisController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CorgisController.h; sourceTree = "<group>"; };
 		AED5709B1A3A4786004ABADA /* CorgisController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CorgisController.m; sourceTree = "<group>"; };
 		AED570B91A3A663E004ABADA /* WKInterfaceButtonSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WKInterfaceButtonSpec.mm; sourceTree = "<group>"; };
@@ -242,6 +254,7 @@
 				AE03A35F1A3A34BD00AD4964 /* WKInterfaceControllerSpec.mm */,
 				AED570B91A3A663E004ABADA /* WKInterfaceButtonSpec.mm */,
 				AED570C61A3A8046004ABADA /* WKInterfaceSwitchSpec.mm */,
+				AEB03EBD1A3F9B3E002404BC /* WKInterfaceTableSpec.mm */,
 			);
 			path = FakeWatchKit;
 			sourceTree = "<group>";
@@ -362,6 +375,8 @@
 				AE25D65F1A390480008A1920 /* InterfaceController.h */,
 				AE25D6601A390480008A1920 /* InterfaceController.m */,
 				AE25D65D1A38FFA9008A1920 /* Interface.storyboard */,
+				AEB03ED01A3F9FFF002404BC /* CorgiTableController.h */,
+				AEB03ED11A3F9FFF002404BC /* CorgiTableController.m */,
 			);
 			path = Fixtures;
 			sourceTree = "<group>";
@@ -369,6 +384,8 @@
 		AE25D6651A39066B008A1920 /* FakeWatchKit */ = {
 			isa = PBXGroup;
 			children = (
+				AEB03ED31A3FA937002404BC /* MessageCapturer.h */,
+				AEB03ED41A3FA937002404BC /* MessageCapturer.m */,
 				AE03A34A1A3A28BB00AD4964 /* TestableWKInterfaceButton.h */,
 				AE25D66F1A3907BC008A1920 /* TestableWKInterfaceController.h */,
 				AED570BE1A3A6F74004ABADA /* TestableWKInterfaceDate.h */,
@@ -376,6 +393,7 @@
 				AE25D6701A3907BC008A1920 /* TestableWKInterfaceLabel.h */,
 				AE03A03E1A3922E600AD4964 /* TestableWKInterfaceSeparator.h */,
 				AED570C21A3A7D01004ABADA /* TestableWKInterfaceSwitch.h */,
+				AEB03ECF1A3F9F24002404BC /* TestableWKInterfaceTable.h */,
 				AE25D6661A39066B008A1920 /* WatchKit.h */,
 				AE03A3471A3A285300AD4964 /* WKInterfaceButton.h */,
 				AE03A3481A3A285300AD4964 /* WKInterfaceButton.m */,
@@ -393,6 +411,8 @@
 				AE03A03C1A39227E00AD4964 /* WKInterfaceSeparator.m */,
 				AED570C31A3A7D32004ABADA /* WKInterfaceSwitch.h */,
 				AED570C41A3A7D32004ABADA /* WKInterfaceSwitch.m */,
+				AEB03ECB1A3F9B5C002404BC /* WKInterfaceTable.h */,
+				AEB03ECC1A3F9B5C002404BC /* WKInterfaceTable.m */,
 			);
 			name = FakeWatchKit;
 			path = WatchKit;
@@ -600,6 +620,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEB03ECE1A3F9B64002404BC /* WKInterfaceTable.m in Sources */,
 				AED570BD1A3A69CF004ABADA /* WKInterfaceObject.m in Sources */,
 				AE03A33C1A3A1B2800AD4964 /* WKInterfaceLabel.m in Sources */,
 				AE03A33D1A3A1B2C00AD4964 /* WKInterfaceSeparator.m in Sources */,
@@ -608,6 +629,7 @@
 				AE25D6551A38FB46008A1920 /* InterfaceControllerLoader.m in Sources */,
 				AE03A0351A391B9600AD4964 /* WKInterfaceImage.m in Sources */,
 				AE03A33B1A3A1B2100AD4964 /* WKInterfaceController.m in Sources */,
+				AEB03ED51A3FA937002404BC /* MessageCapturer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -620,6 +642,8 @@
 				AE03A3491A3A285300AD4964 /* WKInterfaceButton.m in Sources */,
 				AED570CA1A3BA613004ABADA /* FakeSegue.m in Sources */,
 				AED5709C1A3A4786004ABADA /* CorgisController.m in Sources */,
+				AEB03ED21A3F9FFF002404BC /* CorgiTableController.m in Sources */,
+				AEB03EBE1A3F9B3E002404BC /* WKInterfaceTableSpec.mm in Sources */,
 				AE03A3461A3A217000AD4964 /* UIColor+PCK_StringToColor.m in Sources */,
 				AED570BA1A3A663E004ABADA /* WKInterfaceButtonSpec.mm in Sources */,
 				AE03A3601A3A34BD00AD4964 /* WKInterfaceControllerSpec.mm in Sources */,

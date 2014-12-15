@@ -1,8 +1,5 @@
-#import <UIKit/UIKit.h>
+#import "MessageCapturer.h"
 
 
-@interface WKInterfaceObject : NSObject
-
-@property (nonatomic, weak) id parentController;
-
+@interface WKInterfaceObject : MessageCapturer
 @end

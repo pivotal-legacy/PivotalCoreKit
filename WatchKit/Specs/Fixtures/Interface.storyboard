@@ -82,5 +82,28 @@
             </objects>
             <point key="canvasLocation" x="103" y="693"/>
         </scene>
+        <!--MyCorgiTableController-->
+        <scene sceneID="UkG-WP-fnH">
+            <objects>
+                <controller identifier="MyCorgiTableController" id="GDA-NN-32l" customClass="CorgiTableController">
+                    <items>
+                        <table alignment="left" layout="vertical" id="pvt-QL-VLl">
+                            <items>
+                                <tableRow id="gll-Vl-ekt">
+                                    <group key="rootItem" width="1" alignment="left" id="5C0-Ak-ktL"/>
+                                </tableRow>
+                                <tableRow identifier="specialRowType" id="N2o-t1-yvG">
+                                    <group key="rootItem" width="1" alignment="left" id="cTt-Ls-Dk7"/>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="table" destination="pvt-QL-VLl" id="3pt-9C-38s"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="334" y="691"/>
+        </scene>
     </scenes>
 </document>
