@@ -4,7 +4,6 @@
 #import "InterfaceControllerLoader.h"
 #import "WKInterfaceController.h"
 #import "FakeSegue.h"
-#import "FakeInterfaceController.h"
 
 
 using namespace Cedar::Matchers;
@@ -23,34 +22,22 @@ describe(@"WKInterfaceController", ^{
     });
 
     describe(@"pushing another controller onto itself", ^{
-        __block FakeInterfaceController *childController;
         beforeEach(^{
             [subject pushControllerWithName:@"MyFirstCorgiController" context:[UIImage imageNamed:@"corgi.jpeg"]];
-            childController = (id)subject.childController;
         });
 
-        it(@"should have a new child controller with the correct interface controller class", ^{
-            childController.name should equal(@"MyFirstCorgiController");
-        });
-
-        it(@"should receive the context that was passed in", ^{
-            childController.context should equal([UIImage imageNamed:@"corgi.jpeg"]);
+        it(@"should record the pushControllerWithName:context: message with the correct arguments", ^{
+            subject should have_received(@selector(pushControllerWithName:context:)).with(@"MyFirstCorgiController", [UIImage imageNamed:@"corgi.jpeg"]);
         });
     });
 
     describe(@"present another controller modally", ^{
-        __block CorgisController *presentedController;
         beforeEach(^{
             [subject presentControllerWithName:@"MyFirstCorgiController" context:[UIImage imageNamed:@"corgi.jpeg"]];
-            presentedController = (id)subject.presentedController;
         });
 
-        it(@"should present a new modal controller with the correct interface controller class", ^{
-            presentedController should be_instance_of([CorgisController class]);
-        });
-
-        it(@"should receive the context that was passed in", ^{
-            presentedController.image.image should equal([UIImage imageNamed:@"corgi.jpeg"]);
+        it(@"should record the presentControllerWithName:context: message with the correct arguments", ^{
+            subject should have_received(@selector(presentControllerWithName:context:)).with(@"MyFirstCorgiController", [UIImage imageNamed:@"corgi.jpeg"]);
         });
     });
 

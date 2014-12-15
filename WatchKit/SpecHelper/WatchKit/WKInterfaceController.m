@@ -1,18 +1,25 @@
 #import "WKInterfaceController.h"
 #import "InterfaceControllerLoader.h"
-#import "FakeInterfaceController.h"
 
 
 @interface WKInterfaceController ()
 
-@property (nonatomic) FakeInterfaceController *childController;
-@property (nonatomic) WKInterfaceController *presentedController;
+@property (nonatomic) NSMutableArray *sent_messages;
 @property (nonatomic) InterfaceControllerLoader *loader;
 
 @end
 
 
 @implementation WKInterfaceController
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.sent_messages = [NSMutableArray array];
+    }
+    return self;
+}
 
 - (void)awakeWithContext:(id)context 
 {
@@ -29,16 +36,11 @@
     
 }
 
-- (void)pushControllerWithName:(NSString *)name context:(id)context
-{
-    self.childController = [[FakeInterfaceController alloc] initWithName:name context:context];
-}
+#pragma mark - NSObject
 
-- (void)presentControllerWithName:(NSString *)name context:(id)context
+- (void)forwardInvocation:(NSInvocation *)anInvocation
 {
-    self.presentedController = [self.loader interfaceControllerWithStoryboardName:@"Interface"
-                                                                       identifier:name
-                                                                          context:context];
+    [self.sent_messages addObject:anInvocation];
 }
 
 @end
