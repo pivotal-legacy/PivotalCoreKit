@@ -49,11 +49,14 @@ describe(@"WKInterfaceButton", ^{
     describe(@"encountering an unexpected value when deserializing the segue", ^{
         __block NSDictionary *segueDictionary;
         beforeEach(^{
+            subject = controller.noActionButton;
             segueDictionary = @{@"type": @"something_unexpected"};
         });
 
         it(@"should raise an exception with a helpful message", ^{
-            ^ {[subject setValue:segueDictionary forKey:@"segue"]; } should raise_exception
+            ^ {
+                [subject setValue:segueDictionary forKey:@"segue"];
+            } should raise_exception
                 .with_name(NSInvalidArgumentException)
                 .with_reason(@"We encountered a new segue type, 'something_unexpected', in WatchKit.  This probably means that there is a new version of WatchKit that this library needs to be updated to support.");
         });
