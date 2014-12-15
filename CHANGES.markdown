@@ -1,6 +1,8 @@
 ## HEAD
 
-## 0.1.2 (in progress)
+## 0.2.0 (in progress)
+  * Breaking change: UIKit project targets are reorganized to keep stubs and helpers separate
+  * Introduces more functional programming additions to the Foundation project
 
 ## 0.1.1
   * Fixes to podspec for Cocoapods users
