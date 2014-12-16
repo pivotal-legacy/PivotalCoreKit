@@ -32,7 +32,7 @@ describe(@"UIAlertView (spec extensions)", ^{
                                       otherButtonTitles:@"OK", nil] autorelease];
     });
 
-    describe(@"Getting the current alert view with currentAlertView", ^{
+    describe(@"getting the current alert view with currentAlertView", ^{
         describe(@"when the alert view is not shown", ^{
             beforeEach(^{
                 expect(alertView).to_not(be_visible());
