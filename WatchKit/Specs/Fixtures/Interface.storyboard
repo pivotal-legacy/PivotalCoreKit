@@ -21,6 +21,8 @@
                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         </dateLabel>
                         <switch width="1" alignment="left" value="YES" title="Switch" id="H2v-0N-VCa"/>
+                        <slider width="1" alignment="left" continuous="YES" value="2.7000000000000002" minimum="2" maximum="10" steps="8" minimumImage="minus.png" maximumImage="plus.png" id="7YA-QO-RZk"/>
+                        <slider width="1" alignment="left" enabled="NO" value="0.5" steps="2" id="Us7-wk-RC9"/>
                         <button width="1" alignment="left" title="actionButton" id="pKO-a7-4QJ">
                             <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
@@ -42,6 +44,8 @@
                     <connections>
                         <outlet property="actionButton" destination="pKO-a7-4QJ" id="jPy-qS-Kus"/>
                         <outlet property="date" destination="wIi-bN-AiJ" id="dbO-od-wVO"/>
+                        <outlet property="disabledSlider" destination="Us7-wk-RC9" id="0XK-Gk-gsG"/>
+                        <outlet property="enabledSlider" destination="7YA-QO-RZk" id="ZNc-Ef-wPY"/>
                         <outlet property="image" destination="I6V-K6-R7W" id="2hY-b4-JBi"/>
                         <outlet property="noActionButton" destination="67c-5i-eSq" id="6aV-os-Wz7"/>
                         <outlet property="segueModalButton" destination="2V4-dx-Xtj" id="GVz-qf-vhk"/>
@@ -132,6 +136,20 @@
                 </controller>
             </objects>
             <point key="canvasLocation" x="334" y="691"/>
+        </scene>
+        <!--MySliderController-->
+        <scene sceneID="2Vd-5w-t4g">
+            <objects>
+                <controller identifier="MySliderController" id="fBZ-rV-2cj" customClass="SliderController">
+                    <items>
+                        <slider width="1" alignment="left" value="0.5" steps="2" id="IwH-4H-rQI"/>
+                    </items>
+                    <connections>
+                        <outlet property="slider" destination="IwH-4H-rQI" id="7ii-O4-5H7"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="561" y="691"/>
         </scene>
     </scenes>
 </document>

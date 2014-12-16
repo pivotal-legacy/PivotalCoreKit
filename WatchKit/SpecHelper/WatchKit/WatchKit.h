@@ -7,3 +7,4 @@
 #import "WKInterfaceDate.h"
 #import "WKInterfaceSwitch.h"
 #import "WKInterfaceTable.h"
+#import "WKInterfaceSlider.h"

@@ -4,6 +4,7 @@
 #import "TestableWKInterfaceButton.h"
 #import "TestableWKInterfaceDate.h"
 #import "TestableWKInterfaceSwitch.h"
+#import "TestableWKInterfaceSlider.h"
 
 using namespace Cedar::Matchers;
 using namespace Cedar::Doubles;
@@ -127,6 +128,61 @@ describe(@"InterfaceControllerLoader", ^{
                     it(@"should allow the on property to be toggled programatically", ^{
                         [controller didDeactivate];
                         theSwitch.on should_not be_truthy;
+                    });
+                });
+
+                describe(@"the slider", ^{
+
+                    context(@"when enabled in the storyboard", ^{
+                        __block id <TestableWKInterfaceSlider> enabledSlider;
+
+                        beforeEach(^{
+                            enabledSlider = controller.enabledSlider;
+                        });
+
+                        it(@"should have the correct default enabled property", ^{
+                            enabledSlider.enabled should be_truthy;
+                        });
+
+                        it(@"should have the correct value", ^{
+                            enabledSlider.value should be_close_to(2.7).within(FLT_EPSILON);
+                        });
+
+                        it(@"should have the number of steps", ^{
+                            enabledSlider.numberOfSteps should equal(8);
+                        });
+
+                        it(@"should have the correct minimum", ^{
+                            enabledSlider.minimum should equal(2);
+                        });
+
+                        it(@"should have the correct maximum", ^{
+                            enabledSlider.maximum should equal(10);
+                        });
+
+                        it(@"should have the correct minimum image", ^{
+                            enabledSlider.minimumImage should equal([UIImage imageNamed:@"minus"]);
+                        });
+
+                        it(@"should have the correct maximum image", ^{
+                            enabledSlider.maximumImage should equal([UIImage imageNamed:@"plus"]);
+                        });
+
+                        it(@"should have the correct continuous value", ^{
+                            enabledSlider.continuous should be_truthy;
+                        });
+                    });
+
+                    context(@"when disabled in the storyboard", ^{
+                        __block id <TestableWKInterfaceSlider> disabledSlider;
+
+                        beforeEach(^{
+                            disabledSlider = controller.disabledSlider;
+                        });
+
+                        it(@"should have the correct disabled property", ^{
+                            disabledSlider.enabled should_not be_truthy;
+                        });
                     });
                 });
 

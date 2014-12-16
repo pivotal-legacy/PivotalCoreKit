@@ -13,5 +13,7 @@
 @property (weak, nonatomic, readonly) WKInterfaceButton *noActionButton;
 @property (weak, nonatomic, readonly) WKInterfaceButton *seguePushButton;
 @property (weak, nonatomic, readonly) WKInterfaceButton *segueModalButton;
+@property (weak, nonatomic, readonly) WKInterfaceSlider *enabledSlider;
+@property (weak, nonatomic, readonly) WKInterfaceSlider *disabledSlider;
 
 @end

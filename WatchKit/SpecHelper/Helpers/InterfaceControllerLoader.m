@@ -55,7 +55,8 @@
                                     @"button": @"WKInterfaceButton",
                                     @"map": @"WKInterfaceMap",
                                     @"group": @"WKInterfaceGroup",
-                                    @"table": @"WKInterfaceTable"};
+                                    @"table": @"WKInterfaceTable",
+                                    @"slider": @"WKInterfaceSlider"};
     NSDictionary *properties = dictionary[controllerID][@"items"];
 
     for (NSDictionary *propertiesDictionary in properties) {
