@@ -1,6 +1,6 @@
 ## HEAD
 
-## 0.2.0 (in progress)
+## 0.2.0 
   * Breaking change: UIKit project targets are reorganized to keep stubs and helpers separate
   * Introduces more functional programming additions to the Foundation project
 
