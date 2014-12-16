@@ -110,6 +110,9 @@
 		AEC40CCB174C292600474D2D /* UIWebView+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AEC40CB3174C22BD00474D2D /* UIWebView+Spec.h */; };
 		AEC40CCC174C292600474D2D /* UIKit+PivotalSpecHelperStubs.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AEC40CB9174C230800474D2D /* UIKit+PivotalSpecHelperStubs.h */; };
 		AEC6D7FE16963F3500E10C7B /* UIControlSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEC6D7FD16963F3500E10C7B /* UIControlSpec+Spec.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		AECB46AC1A3FBA9E00398720 /* UIView+StubbedGestureRecognizers.m in Sources */ = {isa = PBXBuildFile; fileRef = AECB46AB1A3FBA9E00398720 /* UIView+StubbedGestureRecognizers.m */; };
+		AECB46B91A3FBB6100398720 /* UIView+StubbedGestureRecognizers.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AECB46AA1A3FBA9E00398720 /* UIView+StubbedGestureRecognizers.h */; };
+		AECB46BA1A3FBB6C00398720 /* UIGestureRecognizer+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = DE99C78703C6C6CA8C0465B3 /* UIGestureRecognizer+Spec.h */; };
 		AED4BE441780C8C800390AFD /* UITabBarControllerSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AED4BE431780C8C800390AFD /* UITabBarControllerSpec+Spec.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		AEDABB6118E9DCC9004E6626 /* UIView+PCKNibHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = AEDABB6018E9DCC9004E6626 /* UIView+PCKNibHelpers.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		AEDABB6318E9DD23004E6626 /* UIView+PCKNibHelpersSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEDABB6218E9DD23004E6626 /* UIView+PCKNibHelpersSpec.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -316,8 +319,10 @@
 				AEC40CC9174C292600474D2D /* UIActionSheet+Spec.h in Copy headers to framework */,
 				AEC40CCA174C292600474D2D /* UIAlertView+Spec.h in Copy headers to framework */,
 				AEE0B69618A3572C0007A9D0 /* UIView+StubbedAnimation.h in Copy headers to framework */,
+				AECB46B91A3FBB6100398720 /* UIView+StubbedGestureRecognizers.h in Copy headers to framework */,
 				AEEECC1A181F3135006B52CD /* UIImagePickerController+Spec.m in Copy headers to framework */,
 				AEC40CCB174C292600474D2D /* UIWebView+Spec.h in Copy headers to framework */,
+				AECB46BA1A3FBB6C00398720 /* UIGestureRecognizer+Spec.h in Copy headers to framework */,
 				AEF5D45D1A030D2E00C4DC3D /* PCKMethodRedirector.h in Copy headers to framework */,
 				AE244D4319077EEB00ED96E9 /* UIActivityViewController+Spec.h in Copy headers to framework */,
 				AEC40CCC174C292600474D2D /* UIKit+PivotalSpecHelperStubs.h in Copy headers to framework */,
@@ -435,6 +440,8 @@
 		AEC40CBE174C24CF00474D2D /* UIAlertViewSpec+Spec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIAlertViewSpec+Spec.mm"; sourceTree = "<group>"; };
 		AEC40CBF174C24CF00474D2D /* UIWebViewSpec+Spec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIWebViewSpec+Spec.mm"; sourceTree = "<group>"; };
 		AEC6D7FD16963F3500E10C7B /* UIControlSpec+Spec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIControlSpec+Spec.mm"; sourceTree = "<group>"; };
+		AECB46AA1A3FBA9E00398720 /* UIView+StubbedGestureRecognizers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+StubbedGestureRecognizers.h"; sourceTree = "<group>"; };
+		AECB46AB1A3FBA9E00398720 /* UIView+StubbedGestureRecognizers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+StubbedGestureRecognizers.m"; sourceTree = "<group>"; };
 		AED4BE431780C8C800390AFD /* UITabBarControllerSpec+Spec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UITabBarControllerSpec+Spec.mm"; sourceTree = "<group>"; };
 		AEDABB5F18E9DCC9004E6626 /* UIView+PCKNibHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+PCKNibHelpers.h"; sourceTree = "<group>"; };
 		AEDABB6018E9DCC9004E6626 /* UIView+PCKNibHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+PCKNibHelpers.m"; sourceTree = "<group>"; };
@@ -778,12 +785,16 @@
 		AEC40C95174C21AC00474D2D /* Stubs */ = {
 			isa = PBXGroup;
 			children = (
+				AECB46AA1A3FBA9E00398720 /* UIView+StubbedGestureRecognizers.h */,
+				AECB46AB1A3FBA9E00398720 /* UIView+StubbedGestureRecognizers.m */,
 				AEC40CAE174C22BD00474D2D /* UIActionSheet+Spec.h */,
 				AEC40CAF174C22BD00474D2D /* UIActionSheet+Spec.m */,
 				8487257119013F5F00288770 /* UIActivityViewController+Spec.h */,
 				8487257219013F5F00288770 /* UIActivityViewController+Spec.m */,
 				AEC40CB0174C22BD00474D2D /* UIAlertView+Spec.h */,
 				AEC40CB1174C22BD00474D2D /* UIAlertView+Spec.m */,
+				DE99C78703C6C6CA8C0465B3 /* UIGestureRecognizer+Spec.h */,
+				DE99CB8E2255BDC5D711130D /* UIGestureRecognizer+Spec.m */,
 				AEEECC16181F3135006B52CD /* UIImagePickerController+Spec.h */,
 				AEEECC17181F3135006B52CD /* UIImagePickerController+Spec.m */,
 				AEBB53BE19F711340032947D /* UINavigationController+Spec.m */,
@@ -794,8 +805,6 @@
 				AEC40CB2174C22BD00474D2D /* UIViewController+Spec.m */,
 				AEC40CB3174C22BD00474D2D /* UIWebView+Spec.h */,
 				AEC40CB4174C22BD00474D2D /* UIWebView+Spec.m */,
-				DE99CB8E2255BDC5D711130D /* UIGestureRecognizer+Spec.m */,
-				DE99C78703C6C6CA8C0465B3 /* UIGestureRecognizer+Spec.h */,
 			);
 			path = Stubs;
 			sourceTree = "<group>";
@@ -1240,6 +1249,7 @@
 				AEB6662D18C6681A00B09C00 /* UIPopoverController+Spec.m in Sources */,
 				AEC40CB5174C22BD00474D2D /* UIActionSheet+Spec.m in Sources */,
 				AEBB53BF19F711340032947D /* UINavigationController+Spec.m in Sources */,
+				AECB46AC1A3FBA9E00398720 /* UIView+StubbedGestureRecognizers.m in Sources */,
 				AEC40CB6174C22BD00474D2D /* UIAlertView+Spec.m in Sources */,
 				AEEECC19181F3135006B52CD /* UIImagePickerController+Spec.m in Sources */,
 				AEC40CB7174C22BD00474D2D /* UIViewController+Spec.m in Sources */,
