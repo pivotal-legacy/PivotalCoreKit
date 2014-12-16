@@ -785,8 +785,6 @@
 		AEC40C95174C21AC00474D2D /* Stubs */ = {
 			isa = PBXGroup;
 			children = (
-				AECB46AA1A3FBA9E00398720 /* UIView+StubbedGestureRecognizers.h */,
-				AECB46AB1A3FBA9E00398720 /* UIView+StubbedGestureRecognizers.m */,
 				AEC40CAE174C22BD00474D2D /* UIActionSheet+Spec.h */,
 				AEC40CAF174C22BD00474D2D /* UIActionSheet+Spec.m */,
 				8487257119013F5F00288770 /* UIActivityViewController+Spec.h */,
@@ -802,6 +800,8 @@
 				AEB6662B18C6681A00B09C00 /* UIPopoverController+Spec.m */,
 				AEE0B69518A3572C0007A9D0 /* UIView+StubbedAnimation.h */,
 				AE89900218071F3A00DDB948 /* UIView+StubbedAnimation.m */,
+				AECB46AA1A3FBA9E00398720 /* UIView+StubbedGestureRecognizers.h */,
+				AECB46AB1A3FBA9E00398720 /* UIView+StubbedGestureRecognizers.m */,
 				AEC40CB2174C22BD00474D2D /* UIViewController+Spec.m */,
 				AEC40CB3174C22BD00474D2D /* UIWebView+Spec.h */,
 				AEC40CB4174C22BD00474D2D /* UIWebView+Spec.m */,
@@ -813,6 +813,7 @@
 			isa = PBXGroup;
 			children = (
 				AEF67CE018CA436600C221D1 /* UIActionSheetSpec+Spec.mm */,
+				8487257F1901402000288770 /* UIActivityViewControllerSpec+Spec.mm */,
 				AEC40CBE174C24CF00474D2D /* UIAlertViewSpec+Spec.mm */,
 				AEEECC32181F33F5006B52CD /* UIImagePickerControllerSpec+Spec.mm */,
 				AEEDC56719FAC2E2004AFFE9 /* UINavigationControllerSpec+Spec.mm */,
@@ -820,7 +821,6 @@
 				AE7B279517CFD67600904F64 /* UIViewControllerSpec+Spec.mm */,
 				AE898FF718071E2B00DDB948 /* UIViewSpec+StubbedAnimations.mm */,
 				AEC40CBF174C24CF00474D2D /* UIWebViewSpec+Spec.mm */,
-				8487257F1901402000288770 /* UIActivityViewControllerSpec+Spec.mm */,
 			);
 			path = Stubs;
 			sourceTree = "<group>";
