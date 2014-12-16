@@ -48,7 +48,7 @@ Pod::Spec.new do |s|
         stub.requires_arc = true
         stub.source_files = ['UIKit/SpecHelper/Stubs/*.{h,m}', 'UIKit/SpecHelper/UIKit+PivotalSpecHelperStubs.h']
         stub.dependency 'PivotalCoreKit/UIKit/SpecHelper/Support'
-        narc_files = ['UIKit/SpecHelper/Stubs/UIGestureRecognizer+Spec.m']
+        narc_files = ['UIKit/SpecHelper/Stubs/UIGestureRecognizer+Spec.*']
         stub.exclude_files = narc_files
         stub.subspec 'Stubs-noarc' do |narc|
           narc.requires_arc = false
