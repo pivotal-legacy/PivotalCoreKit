@@ -53,6 +53,7 @@
                                     @"date": @"WKInterfaceDate",
                                     @"switch": @"WKInterfaceSwitch",
                                     @"button": @"WKInterfaceButton",
+                                    @"map": @"WKInterfaceMap",
                                     @"table": @"WKInterfaceTable"};
     NSDictionary *properties = dictionary[controllerID][@"items"];
 
@@ -60,6 +61,9 @@
         NSString *propertyKey = propertiesDictionary[@"property"];
         NSString *propertyType = propertiesDictionary[@"type"];
         NSString *propertyClassName = propertyTypes[propertyType];
+        if (!propertyClassName) {
+            [NSException raise:NSInvalidArgumentException format:@"No property class found for '%@' type. Did you forget to add it to the propertyTypes dictionary?", propertyType];
+        }
         Class propertyClass = NSClassFromString(propertyClassName);
 
         WKInterfaceObject *property = [[propertyClass alloc] init];

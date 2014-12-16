@@ -82,6 +82,20 @@
             </objects>
             <point key="canvasLocation" x="103" y="693"/>
         </scene>
+        <!--MyMapController-->
+        <scene sceneID="Hv3-sc-fDV">
+            <objects>
+                <controller identifier="MyMapController" id="aQv-gI-Nd9" customClass="MapController">
+                    <items>
+                        <map alignment="left" id="Uhb-uH-WZY"/>
+                    </items>
+                    <connections>
+                        <outlet property="map" destination="Uhb-uH-WZY" id="zNv-J8-sXw"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="334" y="964"/>
+        </scene>
         <!--MyCorgiTableController-->
         <scene sceneID="UkG-WP-fnH">
             <objects>
