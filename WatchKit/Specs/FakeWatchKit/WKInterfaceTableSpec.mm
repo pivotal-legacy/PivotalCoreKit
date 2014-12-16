@@ -1,7 +1,7 @@
 #import "Cedar.h"
-#import "WKInterfaceTable.h"
 #import "InterfaceControllerLoader.h"
 #import "CorgiTableController.h"
+#import "WKInterfaceTable+Spec.h"
 
 
 using namespace Cedar::Matchers;
@@ -11,7 +11,7 @@ using namespace Cedar::Doubles;
 SPEC_BEGIN(WKInterfaceTableSpec)
 
 describe(@"WKInterfaceTable", ^{
-    __block id<TestableWKInterfaceTable> subject;
+    __block WKInterfaceTable *subject;
     __block CorgiTableController *controller;
     __block InterfaceControllerLoader *loader;
 

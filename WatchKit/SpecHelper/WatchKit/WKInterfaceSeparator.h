@@ -1,9 +1,9 @@
 #import "WKInterfaceObject.h"
-#import "TestableWKInterfaceSeparator.h"
 
 
-@interface WKInterfaceSeparator : WKInterfaceObject <TestableWKInterfaceSeparator>
+@interface WKInterfaceSeparator : WKInterfaceObject
 
-@property (nonatomic) UIColor *color;
+-(void)setColor:(UIColor *)color;
+
 
 @end

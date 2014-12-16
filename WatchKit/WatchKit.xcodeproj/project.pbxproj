@@ -167,15 +167,15 @@
 		AE03A0331A391B9600AD4964 /* WKInterfaceImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKInterfaceImage.h; sourceTree = "<group>"; };
 		AE03A0341A391B9600AD4964 /* WKInterfaceImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKInterfaceImage.m; sourceTree = "<group>"; };
 		AE03A0381A391C5900AD4964 /* corgi.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = corgi.jpeg; sourceTree = "<group>"; };
-		AE03A03A1A391CB300AD4964 /* TestableWKInterfaceImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestableWKInterfaceImage.h; sourceTree = "<group>"; };
+		AE03A03A1A391CB300AD4964 /* WKInterfaceImage+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WKInterfaceImage+Spec.h"; sourceTree = "<group>"; };
 		AE03A03B1A39227E00AD4964 /* WKInterfaceSeparator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKInterfaceSeparator.h; sourceTree = "<group>"; };
 		AE03A03C1A39227E00AD4964 /* WKInterfaceSeparator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKInterfaceSeparator.m; sourceTree = "<group>"; };
-		AE03A03E1A3922E600AD4964 /* TestableWKInterfaceSeparator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestableWKInterfaceSeparator.h; sourceTree = "<group>"; };
+		AE03A03E1A3922E600AD4964 /* WKInterfaceSeparator+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WKInterfaceSeparator+Spec.h"; sourceTree = "<group>"; };
 		AE03A3441A3A217000AD4964 /* UIColor+PCK_StringToColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+PCK_StringToColor.h"; sourceTree = "<group>"; };
 		AE03A3451A3A217000AD4964 /* UIColor+PCK_StringToColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+PCK_StringToColor.m"; sourceTree = "<group>"; };
 		AE03A3471A3A285300AD4964 /* WKInterfaceButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKInterfaceButton.h; sourceTree = "<group>"; };
 		AE03A3481A3A285300AD4964 /* WKInterfaceButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKInterfaceButton.m; sourceTree = "<group>"; };
-		AE03A34A1A3A28BB00AD4964 /* TestableWKInterfaceButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestableWKInterfaceButton.h; sourceTree = "<group>"; };
+		AE03A34A1A3A28BB00AD4964 /* WKInterfaceButton+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WKInterfaceButton+Spec.h"; sourceTree = "<group>"; };
 		AE03A35F1A3A34BD00AD4964 /* WKInterfaceControllerSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WKInterfaceControllerSpec.mm; sourceTree = "<group>"; };
 		AE25D5D91A38F664008A1920 /* libWatchKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libWatchKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE25D5FB1A38F6C9008A1920 /* Specs.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Specs.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -198,11 +198,10 @@
 		AE25D66A1A3906A6008A1920 /* WKInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKInterfaceController.m; sourceTree = "<group>"; };
 		AE25D66B1A3906A6008A1920 /* WKInterfaceLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKInterfaceLabel.h; sourceTree = "<group>"; };
 		AE25D66C1A3906A6008A1920 /* WKInterfaceLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKInterfaceLabel.m; sourceTree = "<group>"; };
-		AE25D66F1A3907BC008A1920 /* TestableWKInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestableWKInterfaceController.h; sourceTree = "<group>"; };
-		AE25D6701A3907BC008A1920 /* TestableWKInterfaceLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestableWKInterfaceLabel.h; sourceTree = "<group>"; };
+		AE25D6701A3907BC008A1920 /* WKInterfaceLabel+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WKInterfaceLabel+Spec.h"; sourceTree = "<group>"; };
 		AE85C04C1A3FBAA3009A0E4D /* WKInterfaceMapPinColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WKInterfaceMapPinColor.h; sourceTree = "<group>"; };
 		AE85C0591A3FBDF9009A0E4D /* WKInterfaceGroupSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WKInterfaceGroupSpec.mm; sourceTree = "<group>"; };
-		AE85C05B1A3FBFB2009A0E4D /* TestableWKInterfaceGroup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestableWKInterfaceGroup.h; sourceTree = "<group>"; };
+		AE85C05B1A3FBFB2009A0E4D /* WKInterfaceGroup+Spec.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WKInterfaceGroup+Spec.h"; sourceTree = "<group>"; };
 		AE85C05C1A3FBFE8009A0E4D /* WKInterfaceGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKInterfaceGroup.h; sourceTree = "<group>"; };
 		AE85C05D1A3FBFE8009A0E4D /* WKInterfaceGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKInterfaceGroup.m; sourceTree = "<group>"; };
 		AE85C05F1A3FC03B009A0E4D /* GroupController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupController.h; sourceTree = "<group>"; };
@@ -210,7 +209,7 @@
 		AE85C0621A40A4F4009A0E4D /* SliderController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SliderController.h; sourceTree = "<group>"; };
 		AE85C0631A40A4F4009A0E4D /* SliderController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SliderController.m; sourceTree = "<group>"; };
 		AE85C0651A40A58E009A0E4D /* WKInterfaceSliderSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WKInterfaceSliderSpec.mm; sourceTree = "<group>"; };
-		AE85C0671A40A676009A0E4D /* TestableWKInterfaceSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestableWKInterfaceSlider.h; sourceTree = "<group>"; };
+		AE85C0671A40A676009A0E4D /* WKInterfaceSlider+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WKInterfaceSlider+Spec.h"; sourceTree = "<group>"; };
 		AE85C0681A40A6A5009A0E4D /* WKInterfaceSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKInterfaceSlider.h; sourceTree = "<group>"; };
 		AE85C0691A40A6A5009A0E4D /* WKInterfaceSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKInterfaceSlider.m; sourceTree = "<group>"; };
 		AE85C06F1A40B974009A0E4D /* plus@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plus@2x.png"; sourceTree = "<group>"; };
@@ -218,13 +217,12 @@
 		AEB03EBD1A3F9B3E002404BC /* WKInterfaceTableSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WKInterfaceTableSpec.mm; sourceTree = "<group>"; };
 		AEB03ECB1A3F9B5C002404BC /* WKInterfaceTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKInterfaceTable.h; sourceTree = "<group>"; };
 		AEB03ECC1A3F9B5C002404BC /* WKInterfaceTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKInterfaceTable.m; sourceTree = "<group>"; };
-		AEB03ECF1A3F9F24002404BC /* TestableWKInterfaceTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestableWKInterfaceTable.h; sourceTree = "<group>"; };
+		AEB03ECF1A3F9F24002404BC /* WKInterfaceTable+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WKInterfaceTable+Spec.h"; sourceTree = "<group>"; };
 		AEB03ED01A3F9FFF002404BC /* CorgiTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CorgiTableController.h; sourceTree = "<group>"; };
 		AEB03ED11A3F9FFF002404BC /* CorgiTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CorgiTableController.m; sourceTree = "<group>"; };
 		AEB03ED31A3FA937002404BC /* MessageCapturer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageCapturer.h; sourceTree = "<group>"; };
 		AEB03ED41A3FA937002404BC /* MessageCapturer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageCapturer.m; sourceTree = "<group>"; };
 		AEB03ED61A3FB145002404BC /* WKInterfaceMapSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WKInterfaceMapSpec.mm; sourceTree = "<group>"; };
-		AEB03ED81A3FB2F4002404BC /* TestableWKInterfaceMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestableWKInterfaceMap.h; sourceTree = "<group>"; };
 		AEB03ED91A3FB342002404BC /* WKInterfaceMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKInterfaceMap.h; sourceTree = "<group>"; };
 		AEB03EDA1A3FB342002404BC /* WKInterfaceMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKInterfaceMap.m; sourceTree = "<group>"; };
 		AEB03EDC1A3FB366002404BC /* MapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapController.h; sourceTree = "<group>"; };
@@ -234,10 +232,10 @@
 		AED570B91A3A663E004ABADA /* WKInterfaceButtonSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WKInterfaceButtonSpec.mm; sourceTree = "<group>"; };
 		AED570BB1A3A69CF004ABADA /* WKInterfaceObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKInterfaceObject.h; sourceTree = "<group>"; };
 		AED570BC1A3A69CF004ABADA /* WKInterfaceObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKInterfaceObject.m; sourceTree = "<group>"; };
-		AED570BE1A3A6F74004ABADA /* TestableWKInterfaceDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestableWKInterfaceDate.h; sourceTree = "<group>"; };
+		AED570BE1A3A6F74004ABADA /* WKInterfaceDate+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WKInterfaceDate+Spec.h"; sourceTree = "<group>"; };
 		AED570BF1A3A6FF9004ABADA /* WKInterfaceDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKInterfaceDate.h; sourceTree = "<group>"; };
 		AED570C01A3A6FF9004ABADA /* WKInterfaceDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKInterfaceDate.m; sourceTree = "<group>"; };
-		AED570C21A3A7D01004ABADA /* TestableWKInterfaceSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestableWKInterfaceSwitch.h; sourceTree = "<group>"; };
+		AED570C21A3A7D01004ABADA /* WKInterfaceSwitch+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WKInterfaceSwitch+Spec.h"; sourceTree = "<group>"; };
 		AED570C31A3A7D32004ABADA /* WKInterfaceSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKInterfaceSwitch.h; sourceTree = "<group>"; };
 		AED570C41A3A7D32004ABADA /* WKInterfaceSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKInterfaceSwitch.m; sourceTree = "<group>"; };
 		AED570C61A3A8046004ABADA /* WKInterfaceSwitchSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WKInterfaceSwitchSpec.mm; sourceTree = "<group>"; };
@@ -429,17 +427,15 @@
 			children = (
 				AEB03ED31A3FA937002404BC /* MessageCapturer.h */,
 				AEB03ED41A3FA937002404BC /* MessageCapturer.m */,
-				AE03A34A1A3A28BB00AD4964 /* TestableWKInterfaceButton.h */,
-				AE25D66F1A3907BC008A1920 /* TestableWKInterfaceController.h */,
-				AED570BE1A3A6F74004ABADA /* TestableWKInterfaceDate.h */,
-				AE85C05B1A3FBFB2009A0E4D /* TestableWKInterfaceGroup.h */,
-				AE03A03A1A391CB300AD4964 /* TestableWKInterfaceImage.h */,
-				AE25D6701A3907BC008A1920 /* TestableWKInterfaceLabel.h */,
-				AEB03ED81A3FB2F4002404BC /* TestableWKInterfaceMap.h */,
-				AE03A03E1A3922E600AD4964 /* TestableWKInterfaceSeparator.h */,
-				AE85C0671A40A676009A0E4D /* TestableWKInterfaceSlider.h */,
-				AED570C21A3A7D01004ABADA /* TestableWKInterfaceSwitch.h */,
-				AEB03ECF1A3F9F24002404BC /* TestableWKInterfaceTable.h */,
+				AE03A34A1A3A28BB00AD4964 /* WKInterfaceButton+Spec.h */,
+				AED570BE1A3A6F74004ABADA /* WKInterfaceDate+Spec.h */,
+				AE85C05B1A3FBFB2009A0E4D /* WKInterfaceGroup+Spec.h */,
+				AE03A03A1A391CB300AD4964 /* WKInterfaceImage+Spec.h */,
+				AE25D6701A3907BC008A1920 /* WKInterfaceLabel+Spec.h */,
+				AE03A03E1A3922E600AD4964 /* WKInterfaceSeparator+Spec.h */,
+				AE85C0671A40A676009A0E4D /* WKInterfaceSlider+Spec.h */,
+				AED570C21A3A7D01004ABADA /* WKInterfaceSwitch+Spec.h */,
+				AEB03ECF1A3F9F24002404BC /* WKInterfaceTable+Spec.h */,
 				AE25D6661A39066B008A1920 /* WatchKit.h */,
 				AE03A3471A3A285300AD4964 /* WKInterfaceButton.h */,
 				AE03A3481A3A285300AD4964 /* WKInterfaceButton.m */,

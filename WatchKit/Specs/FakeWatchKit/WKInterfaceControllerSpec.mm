@@ -3,6 +3,7 @@
 #import "InterfaceController.h"
 #import "InterfaceControllerLoader.h"
 #import "WKInterfaceController.h"
+#import "WKInterfaceButton+Spec.h"
 #import "FakeSegue.h"
 
 
@@ -43,7 +44,7 @@ describe(@"WKInterfaceController", ^{
 
     describe(@"triggering an interface object's segue", ^{
         describe(@"push action", ^{
-            __block id<TestableWKInterfaceButton> seguePushButton;
+            __block WKInterfaceButton *seguePushButton;
             beforeEach(^{
                 seguePushButton = subject.seguePushButton;
                 seguePushButton.segue should_not be_nil;
@@ -59,7 +60,7 @@ describe(@"WKInterfaceController", ^{
         });
 
         describe(@"modal action", ^{
-            __block id<TestableWKInterfaceButton> segueModalButton;
+            __block WKInterfaceButton *segueModalButton;
             beforeEach(^{
                 segueModalButton = subject.segueModalButton;
                 segueModalButton.segue should_not be_nil;

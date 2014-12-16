@@ -1,6 +1,25 @@
 #import "WKInterfaceSwitch.h"
 
+
+@interface WKInterfaceObject ()
+
+- (void)setEnabled:(BOOL)enabled NS_REQUIRES_SUPER;
+- (void)setOn:(BOOL)on NS_REQUIRES_SUPER;
+
+@end
+
+
+@interface WKInterfaceSwitch ()
+
+@property (nonatomic) BOOL enabled;
+@property (nonatomic) BOOL on;
+
+@end
+
+
 @implementation WKInterfaceSwitch
+
+
 
 - (instancetype)init
 {
@@ -16,8 +35,16 @@
     return self;
 }
 
-- (void)tap {
-    self.on = !self.on;
+- (void)setEnabled:(BOOL)enabled
+{
+    _enabled = enabled;
+    [super setEnabled:enabled];
+}
+
+- (void)setOn:(BOOL)on
+{
+    _on = on;
+    [super setOn:on];
 }
 
 @end

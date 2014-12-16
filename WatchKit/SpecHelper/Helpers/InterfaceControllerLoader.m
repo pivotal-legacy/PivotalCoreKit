@@ -1,6 +1,5 @@
 #import "InterfaceControllerLoader.h"
-#import "TestableWKInterfaceController.h"
-#import "TestableWKInterfaceLabel.h"
+#import "WKInterfaceLabel+Spec.h"
 #import "WKInterfaceLabel.h"
 #import <objc/runtime.h>
 #import "WKInterfaceObject.h"

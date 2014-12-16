@@ -1,5 +1,5 @@
 #import "Cedar.h"
-#import "WKInterfaceSlider.h"
+#import "WKInterfaceSlider+Spec.h"
 #import "InterfaceControllerLoader.h"
 #import "SliderController.h"
 

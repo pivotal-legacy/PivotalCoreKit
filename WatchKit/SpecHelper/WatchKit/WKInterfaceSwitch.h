@@ -1,9 +1,9 @@
 #import "WKInterfaceObject.h"
-#import "TestableWKInterfaceSwitch.h"
 
-@interface WKInterfaceSwitch : WKInterfaceObject <TestableWKInterfaceSwitch>
 
-@property (nonatomic) BOOL enabled;
-@property (nonatomic) BOOL on;
+@interface WKInterfaceSwitch : WKInterfaceObject
+
+- (void)setEnabled:(BOOL)enabled;
+- (void)setOn:(BOOL)on;
 
 @end

@@ -1,6 +1,11 @@
 #import "WKInterfaceSeparator.h"
 #import "UIColor+PCK_StringToColor.h"
 
+@interface WKInterfaceSeparator ()
+
+@property (nonatomic) UIColor *color;
+
+@end
 
 @implementation WKInterfaceSeparator
 

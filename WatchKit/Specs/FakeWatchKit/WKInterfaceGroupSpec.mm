@@ -1,5 +1,5 @@
 #import "Cedar.h"
-#import "WKInterfaceGroup.h"
+#import "WKInterfaceGroup+Spec.h"
 #import "InterfaceControllerLoader.h"
 #import "GroupController.h"
 
@@ -9,7 +9,7 @@ using namespace Cedar::Doubles;
 SPEC_BEGIN(WKInterfaceGroupSpec)
 
 describe(@"WKInterfaceGroup", ^{
-    __block id<TestableWKInterfaceGroup> subject;
+    __block WKInterfaceGroup *subject;
     __block GroupController *controller;
     __block InterfaceControllerLoader *loader;
 

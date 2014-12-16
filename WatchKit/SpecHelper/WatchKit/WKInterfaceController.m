@@ -1,6 +1,13 @@
 #import "WKInterfaceController.h"
 #import "InterfaceControllerLoader.h"
 
+@interface MessageCapturer ()
+
+- (void)pushControllerWithName:(NSString *)name context:(id)context NS_REQUIRES_SUPER;
+- (void)presentControllerWithName:(NSString *)name context:(id)context NS_REQUIRES_SUPER;
+
+@end
+
 
 @interface WKInterfaceController ()
 
@@ -24,6 +31,16 @@
 - (void)didDeactivate
 {
     
+}
+
+- (void)pushControllerWithName:(NSString *)name context:(id)context
+{
+    [super pushControllerWithName:name context:context];
+}
+
+- (void)presentControllerWithName:(NSString *)name context:(id)context
+{
+    [super presentControllerWithName:name context:context];
 }
 
 @end

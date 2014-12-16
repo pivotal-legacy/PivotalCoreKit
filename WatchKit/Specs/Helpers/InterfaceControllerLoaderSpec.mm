@@ -1,10 +1,15 @@
 #import "Cedar.h"
 #import "InterfaceController.h"
 #import "InterfaceControllerLoader.h"
-#import "TestableWKInterfaceButton.h"
-#import "TestableWKInterfaceDate.h"
-#import "TestableWKInterfaceSwitch.h"
-#import "TestableWKInterfaceSlider.h"
+#import "WKInterfaceButton+Spec.h"
+#import "WKInterfaceDate+Spec.h"
+#import "WKInterfaceGroup+Spec.h"
+#import "WKInterfaceImage+Spec.h"
+#import "WKInterfaceLabel+Spec.h"
+#import "WKInterfaceSeparator+Spec.h"
+#import "WKInterfaceSlider+Spec.h"
+#import "WKInterfaceSwitch+Spec.h"
+
 
 using namespace Cedar::Matchers;
 using namespace Cedar::Doubles;
@@ -50,7 +55,7 @@ describe(@"InterfaceControllerLoader", ^{
 
             describe(@"the interface controller's properties", ^{
                 describe(@"the title label", ^{
-                    __block id <TestableWKInterfaceLabel> titleLabel;
+                    __block WKInterfaceLabel *titleLabel;
                     beforeEach(^{
                         titleLabel = controller.titleLabel;
                     });
@@ -68,7 +73,7 @@ describe(@"InterfaceControllerLoader", ^{
                 });
 
                 describe(@"the button", ^{
-                    __block id <TestableWKInterfaceButton> button;
+                    __block WKInterfaceButton *button;
                     beforeEach(^{
                         button = controller.actionButton;
                     });
@@ -92,7 +97,7 @@ describe(@"InterfaceControllerLoader", ^{
                 });
 
                 describe(@"the date", ^{
-                    __block id <TestableWKInterfaceDate> date;
+                    __block WKInterfaceDate *date;
                     beforeEach(^{
                         date = controller.date;
                     });
@@ -107,7 +112,7 @@ describe(@"InterfaceControllerLoader", ^{
                 });
 
                 describe(@"the switch", ^{
-                    __block id <TestableWKInterfaceSwitch> theSwitch;
+                    __block WKInterfaceSwitch *theSwitch;
                     beforeEach(^{
                         theSwitch = controller.theSwitch;
                     });
@@ -134,7 +139,7 @@ describe(@"InterfaceControllerLoader", ^{
                 describe(@"the slider", ^{
 
                     context(@"when enabled in the storyboard", ^{
-                        __block id <TestableWKInterfaceSlider> enabledSlider;
+                        __block WKInterfaceSlider *enabledSlider;
 
                         beforeEach(^{
                             enabledSlider = controller.enabledSlider;
@@ -174,7 +179,7 @@ describe(@"InterfaceControllerLoader", ^{
                     });
 
                     context(@"when disabled in the storyboard", ^{
-                        __block id <TestableWKInterfaceSlider> disabledSlider;
+                        __block WKInterfaceSlider *disabledSlider;
 
                         beforeEach(^{
                             disabledSlider = controller.disabledSlider;
@@ -188,7 +193,7 @@ describe(@"InterfaceControllerLoader", ^{
 
                 describe(@"the group", ^{
                     context(@"single group", ^{
-                        __block id <TestableWKInterfaceGroup> singleGroup;
+                        __block WKInterfaceGroup *singleGroup;
 
                         beforeEach(^{
                             singleGroup = controller.singleGroup;
@@ -205,13 +210,13 @@ describe(@"InterfaceControllerLoader", ^{
                     });
 
                     context(@"nested group", ^{
-                        __block id <TestableWKInterfaceGroup> nestedGroup;
+                        __block WKInterfaceGroup *nestedGroup;
                         beforeEach(^{
                             nestedGroup = controller.nestedGroup;
                         });
 
                         it(@"should correctly deserialize nested groups", ^{
-                            id <TestableWKInterfaceGroup> innerGroup = nestedGroup.items.firstObject;
+                            WKInterfaceGroup *innerGroup = nestedGroup.items.firstObject;
                             WKInterfaceImage *image = innerGroup.items.firstObject;
                             image.image should equal([UIImage imageNamed:@"corgi.jpeg"]);
                         });

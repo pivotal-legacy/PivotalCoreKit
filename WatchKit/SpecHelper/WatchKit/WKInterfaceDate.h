@@ -1,9 +1,8 @@
 #import "WKInterfaceObject.h"
-#import "TestableWKInterfaceDate.h"
 
-@interface WKInterfaceDate : WKInterfaceObject <TestableWKInterfaceDate>
+@interface WKInterfaceDate : WKInterfaceObject
 
-@property (nonatomic) UIColor *textColor;
-@property (nonatomic, copy) NSString *format;
+- (void)setTextColor:(UIColor *)color;
+- (void)setFormat:(NSString *)format;
 
 @end

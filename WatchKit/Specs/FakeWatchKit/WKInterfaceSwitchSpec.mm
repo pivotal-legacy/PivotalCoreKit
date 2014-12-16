@@ -18,13 +18,16 @@ describe(@"WKInterfaceSwitch", ^{
         subject = controller.theSwitch;
     });
 
-    describe(@"tapping the switch", ^{
-        beforeEach(^{
-            [subject tap];
+    describe(@"setters", ^{
+
+        it(@"should record the fact that setEnabled: was called", ^{
+            [subject setEnabled:YES];
+            subject should have_received(@selector(setEnabled:)).with(YES);
         });
 
-        it(@"should toggle the on property", ^{
-            subject.on should_not be_truthy;
+        it(@"should record the fact that setOn: was called", ^{
+            [subject setOn:YES];
+            subject should have_received(@selector(setOn:)).with(YES);
         });
     });
 });

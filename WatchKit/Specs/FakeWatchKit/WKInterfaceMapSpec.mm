@@ -10,7 +10,7 @@ using namespace Cedar::Doubles;
 SPEC_BEGIN(WKInterfaceMapSpec)
 
 describe(@"WKInterfaceMap", ^{
-    __block id<TestableWKInterfaceMap> subject;
+    __block WKInterfaceMap *subject;
     __block MapController *controller;
     __block InterfaceControllerLoader *loader;
 

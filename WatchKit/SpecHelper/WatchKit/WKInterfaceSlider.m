@@ -5,6 +5,7 @@
 
 - (void)setEnabled:(BOOL)enabled NS_REQUIRES_SUPER;
 - (void)setValue:(float)value NS_REQUIRES_SUPER;
+- (void)setColor:(UIColor *)color NS_REQUIRES_SUPER;
 - (void)setNumberOfSteps:(NSInteger)numberOfSteps NS_REQUIRES_SUPER;
 
 @end
@@ -20,6 +21,7 @@
 @property (nonatomic) UIImage *maximumImage;
 @property (nonatomic) NSInteger steps;
 @property (nonatomic) BOOL continuous;
+
 @end
 
 
@@ -69,6 +71,11 @@
 - (void)setMaximumImage:(NSString *)maximumImage
 {
     _maximumImage = [UIImage imageNamed:maximumImage];
+}
+
+- (void)setColor:(UIColor *)color
+{
+    [super setColor:color];
 }
 
 @end

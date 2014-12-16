@@ -1,11 +1,10 @@
 #import "WKInterfaceObject.h"
-#import "TestableWKInterfaceButton.h"
 
 
-@interface WKInterfaceButton : WKInterfaceObject <TestableWKInterfaceButton>
+@interface WKInterfaceButton : WKInterfaceObject
 
-@property (nonatomic, copy) NSString *title;
-@property (nonatomic) UIColor *color;
-@property (nonatomic) BOOL enabled;
+- (void)setTitle:(NSString *)title;
+- (void)setColor:(UIColor *)color;
+- (void)setEnabled:(BOOL)enabled;
 
 @end

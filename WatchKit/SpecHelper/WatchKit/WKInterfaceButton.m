@@ -6,6 +6,9 @@
 
 @interface WKInterfaceButton ()
 
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic) UIColor *color;
+@property (nonatomic) BOOL enabled;
 @property (nonatomic, copy) NSString *action;
 @property (nonatomic) FakeSegue *segue;
 

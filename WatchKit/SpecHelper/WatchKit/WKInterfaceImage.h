@@ -3,6 +3,6 @@
 
 @interface WKInterfaceImage : WKInterfaceObject
 
-@property (nonatomic) UIImage *image;
+-(void)setImage:(UIImage *)image;
 
 @end

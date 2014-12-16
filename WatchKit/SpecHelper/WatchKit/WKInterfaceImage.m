@@ -1,6 +1,13 @@
 #import "WKInterfaceImage.h"
 
 
+@interface WKInterfaceImage ()
+
+@property (nonatomic) UIImage *image;
+
+@end
+
+
 @implementation WKInterfaceImage
 
 -(void)setImage:(id)image {
