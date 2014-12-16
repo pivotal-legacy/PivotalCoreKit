@@ -82,6 +82,20 @@
             </objects>
             <point key="canvasLocation" x="103" y="693"/>
         </scene>
+        <!--MyGroupController-->
+        <scene sceneID="4Yu-6y-J3d">
+            <objects>
+                <controller identifier="MyGroupController" id="WnQ-74-bdS" customClass="GroupController">
+                    <items>
+                        <group width="1" alignment="left" hasDetent="YES" id="dfA-ut-Cuz"/>
+                    </items>
+                    <connections>
+                        <outlet property="group" destination="dfA-ut-Cuz" id="sol-CR-8Qx"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="103" y="964"/>
+        </scene>
         <!--MyMapController-->
         <scene sceneID="Hv3-sc-fDV">
             <objects>

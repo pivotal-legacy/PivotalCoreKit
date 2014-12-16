@@ -26,6 +26,9 @@
 		AE25D65B1A38FC4E008A1920 /* InterfaceControllerLoaderSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE25D6591A38FC4E008A1920 /* InterfaceControllerLoaderSpec.mm */; };
 		AE25D65E1A38FFA9008A1920 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE25D65D1A38FFA9008A1920 /* Interface.storyboard */; };
 		AE25D6611A390480008A1920 /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE25D6601A390480008A1920 /* InterfaceController.m */; };
+		AE85C05A1A3FBDF9009A0E4D /* WKInterfaceGroupSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE85C0591A3FBDF9009A0E4D /* WKInterfaceGroupSpec.mm */; };
+		AE85C05E1A3FBFE8009A0E4D /* WKInterfaceGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = AE85C05D1A3FBFE8009A0E4D /* WKInterfaceGroup.m */; };
+		AE85C0611A3FC03B009A0E4D /* GroupController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE85C0601A3FC03B009A0E4D /* GroupController.m */; };
 		AEB03EBE1A3F9B3E002404BC /* WKInterfaceTableSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEB03EBD1A3F9B3E002404BC /* WKInterfaceTableSpec.mm */; };
 		AEB03ECE1A3F9B64002404BC /* WKInterfaceTable.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB03ECC1A3F9B5C002404BC /* WKInterfaceTable.m */; };
 		AEB03ED21A3F9FFF002404BC /* CorgiTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB03ED11A3F9FFF002404BC /* CorgiTableController.m */; };
@@ -193,6 +196,12 @@
 		AE25D66F1A3907BC008A1920 /* TestableWKInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestableWKInterfaceController.h; sourceTree = "<group>"; };
 		AE25D6701A3907BC008A1920 /* TestableWKInterfaceLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestableWKInterfaceLabel.h; sourceTree = "<group>"; };
 		AE85C04C1A3FBAA3009A0E4D /* WKInterfaceMapPinColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WKInterfaceMapPinColor.h; sourceTree = "<group>"; };
+		AE85C0591A3FBDF9009A0E4D /* WKInterfaceGroupSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WKInterfaceGroupSpec.mm; sourceTree = "<group>"; };
+		AE85C05B1A3FBFB2009A0E4D /* TestableWKInterfaceGroup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestableWKInterfaceGroup.h; sourceTree = "<group>"; };
+		AE85C05C1A3FBFE8009A0E4D /* WKInterfaceGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKInterfaceGroup.h; sourceTree = "<group>"; };
+		AE85C05D1A3FBFE8009A0E4D /* WKInterfaceGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKInterfaceGroup.m; sourceTree = "<group>"; };
+		AE85C05F1A3FC03B009A0E4D /* GroupController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupController.h; sourceTree = "<group>"; };
+		AE85C0601A3FC03B009A0E4D /* GroupController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupController.m; sourceTree = "<group>"; };
 		AEB03EBD1A3F9B3E002404BC /* WKInterfaceTableSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WKInterfaceTableSpec.mm; sourceTree = "<group>"; };
 		AEB03ECB1A3F9B5C002404BC /* WKInterfaceTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKInterfaceTable.h; sourceTree = "<group>"; };
 		AEB03ECC1A3F9B5C002404BC /* WKInterfaceTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKInterfaceTable.m; sourceTree = "<group>"; };
@@ -266,6 +275,7 @@
 				AED570C61A3A8046004ABADA /* WKInterfaceSwitchSpec.mm */,
 				AEB03EBD1A3F9B3E002404BC /* WKInterfaceTableSpec.mm */,
 				AEB03ED61A3FB145002404BC /* WKInterfaceMapSpec.mm */,
+				AE85C0591A3FBDF9009A0E4D /* WKInterfaceGroupSpec.mm */,
 			);
 			path = FakeWatchKit;
 			sourceTree = "<group>";
@@ -383,11 +393,13 @@
 				AE03A0381A391C5900AD4964 /* corgi.jpeg */,
 				AED5709A1A3A4786004ABADA /* CorgisController.h */,
 				AED5709B1A3A4786004ABADA /* CorgisController.m */,
-				AE25D65F1A390480008A1920 /* InterfaceController.h */,
-				AE25D6601A390480008A1920 /* InterfaceController.m */,
-				AE25D65D1A38FFA9008A1920 /* Interface.storyboard */,
 				AEB03ED01A3F9FFF002404BC /* CorgiTableController.h */,
 				AEB03ED11A3F9FFF002404BC /* CorgiTableController.m */,
+				AE85C05F1A3FC03B009A0E4D /* GroupController.h */,
+				AE85C0601A3FC03B009A0E4D /* GroupController.m */,
+				AE25D65D1A38FFA9008A1920 /* Interface.storyboard */,
+				AE25D65F1A390480008A1920 /* InterfaceController.h */,
+				AE25D6601A390480008A1920 /* InterfaceController.m */,
 				AEB03EDC1A3FB366002404BC /* MapController.h */,
 				AEB03EDD1A3FB366002404BC /* MapController.m */,
 			);
@@ -430,6 +442,9 @@
 				AED570C41A3A7D32004ABADA /* WKInterfaceSwitch.m */,
 				AEB03ECB1A3F9B5C002404BC /* WKInterfaceTable.h */,
 				AEB03ECC1A3F9B5C002404BC /* WKInterfaceTable.m */,
+				AE85C05B1A3FBFB2009A0E4D /* TestableWKInterfaceGroup.h */,
+				AE85C05C1A3FBFE8009A0E4D /* WKInterfaceGroup.h */,
+				AE85C05D1A3FBFE8009A0E4D /* WKInterfaceGroup.m */,
 			);
 			name = FakeWatchKit;
 			path = WatchKit;
@@ -646,6 +661,7 @@
 				AED570C11A3A6FF9004ABADA /* WKInterfaceDate.m in Sources */,
 				AE25D6551A38FB46008A1920 /* InterfaceControllerLoader.m in Sources */,
 				AE03A0351A391B9600AD4964 /* WKInterfaceImage.m in Sources */,
+				AE85C05E1A3FBFE8009A0E4D /* WKInterfaceGroup.m in Sources */,
 				AE03A33B1A3A1B2100AD4964 /* WKInterfaceController.m in Sources */,
 				AEB03ED51A3FA937002404BC /* MessageCapturer.m in Sources */,
 			);
@@ -661,6 +677,8 @@
 				AED570CA1A3BA613004ABADA /* FakeSegue.m in Sources */,
 				AEB03ED71A3FB145002404BC /* WKInterfaceMapSpec.mm in Sources */,
 				AEB03EDE1A3FB366002404BC /* MapController.m in Sources */,
+				AE85C0611A3FC03B009A0E4D /* GroupController.m in Sources */,
+				AE85C05A1A3FBDF9009A0E4D /* WKInterfaceGroupSpec.mm in Sources */,
 				AED5709C1A3A4786004ABADA /* CorgisController.m in Sources */,
 				AEB03ED21A3F9FFF002404BC /* CorgiTableController.m in Sources */,
 				AEB03EBE1A3F9B3E002404BC /* WKInterfaceTableSpec.mm in Sources */,

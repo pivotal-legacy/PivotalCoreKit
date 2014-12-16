@@ -54,6 +54,7 @@
                                     @"switch": @"WKInterfaceSwitch",
                                     @"button": @"WKInterfaceButton",
                                     @"map": @"WKInterfaceMap",
+                                    @"group": @"WKInterfaceGroup",
                                     @"table": @"WKInterfaceTable"};
     NSDictionary *properties = dictionary[controllerID][@"items"];
 
