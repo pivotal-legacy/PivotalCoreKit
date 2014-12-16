@@ -1,5 +1,7 @@
 ## HEAD
 
+## 0.2.2 (in progress)
+
 ## 0.2.1
   * No functional changes - fixes red build due to spec bug
 
