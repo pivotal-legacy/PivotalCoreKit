@@ -1,7 +1,7 @@
 #import "UIView+StubbedGestureRecognizers.h"
 #import "UIGestureRecognizer+Spec.h"
 
-@implementation TouchView
+@implementation UIView (StubbedGestureRecognizers)
 
 #pragma mark - UIGestureRecognizer helpers
 
