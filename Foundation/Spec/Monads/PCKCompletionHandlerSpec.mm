@@ -21,7 +21,9 @@ describe(@"PCKCompletionHandler", ^{
                 if (response) {
                     return [o valueForKey:@"name"];
                 }
-                *pError = [NSError errorWithDomain:NSCocoaErrorDomain code:1 userInfo:nil];
+                if (*pError) {
+                    *pError = [NSError errorWithDomain:NSCocoaErrorDomain code:1 userInfo:nil];
+                }
                 return nil;
             }];
         });

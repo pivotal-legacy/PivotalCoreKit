@@ -21,7 +21,9 @@ describe(@"PCKErrorBlock", ^{
                 if ([o hasSuffix:@"THERE"]) {
                     return o;
                 }
-                *pError = [NSError errorWithDomain:NSCocoaErrorDomain code:1 userInfo:nil];
+                if (*pError) {
+                    *pError = [NSError errorWithDomain:NSCocoaErrorDomain code:1 userInfo:nil];
+                }
                 return nil;
             }];
         });
@@ -52,7 +54,9 @@ describe(@"PCKErrorBlock", ^{
                     if (o) {
                         return [o uppercaseString];
                     }
-                    *pError = [NSError errorWithDomain:NSCocoaErrorDomain code:3 userInfo:nil];
+                    if (*pError) {
+                        *pError = [NSError errorWithDomain:NSCocoaErrorDomain code:1 userInfo:nil];
+                    }
                     return nil;
                 }];
 
