@@ -1,5 +1,6 @@
 #import "CDRSpecHelper.h"
 #import "UIView+Spec.h"
+#import "UIView+StubbedGestureRecognizers.h"
 #import "Target.h"
 #import "UIGestureRecognizer+Spec.h"
 
