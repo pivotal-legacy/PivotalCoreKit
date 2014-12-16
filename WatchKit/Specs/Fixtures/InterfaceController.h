@@ -15,5 +15,7 @@
 @property (weak, nonatomic, readonly) WKInterfaceButton *segueModalButton;
 @property (weak, nonatomic, readonly) WKInterfaceSlider *enabledSlider;
 @property (weak, nonatomic, readonly) WKInterfaceSlider *disabledSlider;
+@property (weak, nonatomic, readonly) WKInterfaceGroup *singleGroup;
+@property (weak, nonatomic, readonly) WKInterfaceGroup *nestedGroup;
 
 @end

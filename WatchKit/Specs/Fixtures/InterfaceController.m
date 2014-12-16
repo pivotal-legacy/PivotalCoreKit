@@ -14,6 +14,8 @@
 @property (weak, nonatomic) IBOutlet WKInterfaceButton *segueModalButton;
 @property (weak, nonatomic) IBOutlet WKInterfaceSlider *enabledSlider;
 @property (weak, nonatomic) IBOutlet WKInterfaceSlider *disabledSlider;
+@property (weak, nonatomic) IBOutlet WKInterfaceGroup *singleGroup;
+@property (weak, nonatomic) IBOutlet WKInterfaceGroup *nestedGroup;
 @property (nonatomic) NSMutableString* context;
 
 @end

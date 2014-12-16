@@ -16,8 +16,7 @@ describe(@"WKInterfaceGroup", ^{
     beforeEach(^{
         loader = [[InterfaceControllerLoader alloc] init];
         controller = [loader interfaceControllerWithStoryboardName:@"Interface"
-                                                        identifier:@"MyGroupController"
-                                                           context:nil];
+                                                        identifier:@"MyGroupController"];
         subject = controller.group;
     });
 

@@ -40,6 +40,21 @@
                                 <segue destination="6wZ-pP-6PY" kind="modal" id="C4a-10-f5j"/>
                             </connections>
                         </button>
+                        <group width="1" alignment="left" spacing="1" hasDetent="YES" id="rIx-V9-bpU" userLabel="singleGroup">
+                            <items>
+                                <imageView width="0.50000000000000011" alignment="left" image="corgi.jpeg" contentMode="scaleAspectFit" id="Cpa-m1-g3h"/>
+                                <imageView width="0.50000000000000011" alignment="right" image="corgi.jpeg" contentMode="scaleAspectFit" id="dWk-p4-GHd"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" hasDetent="YES" id="PWR-Mj-UwS" userLabel="nestedGroup">
+                            <items>
+                                <group width="1" alignment="left" id="n0H-c1-W7R">
+                                    <items>
+                                        <imageView alignment="center" verticalAlignment="center" image="corgi.jpeg" id="eXo-MB-Tpg"/>
+                                    </items>
+                                </group>
+                            </items>
+                        </group>
                     </items>
                     <connections>
                         <outlet property="actionButton" destination="pKO-a7-4QJ" id="jPy-qS-Kus"/>
@@ -47,16 +62,18 @@
                         <outlet property="disabledSlider" destination="Us7-wk-RC9" id="0XK-Gk-gsG"/>
                         <outlet property="enabledSlider" destination="7YA-QO-RZk" id="ZNc-Ef-wPY"/>
                         <outlet property="image" destination="I6V-K6-R7W" id="2hY-b4-JBi"/>
+                        <outlet property="nestedGroup" destination="PWR-Mj-UwS" id="OcQ-cb-dUj"/>
                         <outlet property="noActionButton" destination="67c-5i-eSq" id="6aV-os-Wz7"/>
                         <outlet property="segueModalButton" destination="2V4-dx-Xtj" id="GVz-qf-vhk"/>
                         <outlet property="seguePushButton" destination="8NN-UE-BFJ" id="SIZ-F9-fwn"/>
                         <outlet property="separator" destination="FBI-ul-8F7" id="mOZ-90-hBd"/>
+                        <outlet property="singleGroup" destination="rIx-V9-bpU" id="xKz-ex-jLv"/>
                         <outlet property="theSwitch" destination="H2v-0N-VCa" id="KZp-dE-sns"/>
                         <outlet property="titleLabel" destination="fWh-mQ-CyP" id="3Mf-es-9Mx"/>
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="103" y="154"/>
+            <point key="canvasLocation" x="103" y="153.5"/>
         </scene>
         <!--MyFirstCorgiController-->
         <scene sceneID="nKH-Pr-Foq">

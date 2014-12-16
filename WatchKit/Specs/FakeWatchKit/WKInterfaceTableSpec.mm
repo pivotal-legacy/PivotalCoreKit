@@ -17,7 +17,7 @@ describe(@"WKInterfaceTable", ^{
 
     beforeEach(^{
         loader = [[InterfaceControllerLoader alloc] init];
-        controller = [loader interfaceControllerWithStoryboardName:@"Interface" identifier:@"MyCorgiTableController" context:nil];
+        controller = [loader interfaceControllerWithStoryboardName:@"Interface" identifier:@"MyCorgiTableController"];
         subject = controller.table;
     });
 

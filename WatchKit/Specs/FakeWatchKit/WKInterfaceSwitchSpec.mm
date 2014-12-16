@@ -14,8 +14,7 @@ describe(@"WKInterfaceSwitch", ^{
     beforeEach(^{
         InterfaceControllerLoader *loader = [[InterfaceControllerLoader alloc] init];
         InterfaceController *controller = [loader interfaceControllerWithStoryboardName:@"Interface"
-                                                                             identifier:@"AgC-eL-Hgc"
-                                                                                context:nil];
+                                                                             identifier:@"AgC-eL-Hgc"];
         subject = controller.theSwitch;
     });
 

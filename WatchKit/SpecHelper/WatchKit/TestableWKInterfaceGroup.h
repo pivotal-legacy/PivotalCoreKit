@@ -15,4 +15,6 @@
 - (void)startAnimatingWithImagesInRange:(NSRange)imageRange duration:(NSTimeInterval)duration repeatCount:(NSInteger)repeatCount;
 - (void)stopAnimating;
 
+- (NSArray *)items;
+
 @end

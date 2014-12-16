@@ -17,7 +17,7 @@ describe(@"WKInterfaceController", ^{
 
     beforeEach(^{
         loader = [[InterfaceControllerLoader alloc] init];
-        subject = [loader interfaceControllerWithStoryboardName:@"Interface" identifier:@"AgC-eL-Hgc" context:nil];
+        subject = [loader interfaceControllerWithStoryboardName:@"Interface" identifier:@"AgC-eL-Hgc"];
 
     });
 

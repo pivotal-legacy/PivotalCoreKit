@@ -16,8 +16,7 @@ describe(@"WKInterfaceSlider", ^{
     beforeEach(^{
         loader = [[InterfaceControllerLoader alloc] init];
         controller = [loader interfaceControllerWithStoryboardName:@"Interface"
-                                                        identifier:@"MySliderController"
-                                                           context:nil];
+                                                        identifier:@"MySliderController"];
         subject = controller.slider;
     });
 

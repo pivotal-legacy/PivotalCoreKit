@@ -22,7 +22,7 @@ describe(@"InterfaceControllerLoader", ^{
         
         context(@"when there is no storyboard matching the name", ^{
             it(@"should raise an exception with a helpful message", ^{
-                ^{ [subject interfaceControllerWithStoryboardName:@"NonExistantName" identifier:@"DoesntMatter" context:nil]; } should raise_exception
+                ^{ [subject interfaceControllerWithStoryboardName:@"NonExistantName" identifier:@"DoesntMatter"]; } should raise_exception
                     .with_name(NSInvalidArgumentException)
                     .with_reason(@"No storyboard named 'NonExistantName' exists in the test target.  Did you forget to add it?");
                 
@@ -31,7 +31,7 @@ describe(@"InterfaceControllerLoader", ^{
         
         context(@"when there is no interface controller matching the object id", ^{
             it(@"should raise an exception with a helpful message", ^{
-                ^{ [subject interfaceControllerWithStoryboardName:@"Interface" identifier:@"NonExistantController" context:nil]; } should raise_exception
+                ^{ [subject interfaceControllerWithStoryboardName:@"Interface" identifier:@"NonExistantController"]; } should raise_exception
                     .with_name(NSInvalidArgumentException)
                     .with_reason(@"No interface controller named 'NonExistantController' exists in the storyboard 'Interface'.  Please check the storyboard and try again.");
             });
@@ -41,7 +41,7 @@ describe(@"InterfaceControllerLoader", ^{
             __block InterfaceController *controller;
 
             beforeEach(^{
-                controller = [subject interfaceControllerWithStoryboardName:@"Interface" identifier:@"AgC-eL-Hgc" context:nil];
+                controller = [subject interfaceControllerWithStoryboardName:@"Interface" identifier:@"AgC-eL-Hgc"];
             });
 
             it(@"should return the correct type of interface controller", ^{
@@ -182,6 +182,38 @@ describe(@"InterfaceControllerLoader", ^{
 
                         it(@"should have the correct disabled property", ^{
                             disabledSlider.enabled should_not be_truthy;
+                        });
+                    });
+                });
+
+                describe(@"the group", ^{
+                    context(@"single group", ^{
+                        __block id <TestableWKInterfaceGroup> singleGroup;
+
+                        beforeEach(^{
+                            singleGroup = controller.singleGroup;
+                        });
+
+                        it(@"should have all of the containing interface objects specified in the storyboard", ^{
+                            singleGroup.items.count should equal(2);
+
+                            WKInterfaceImage *firstImage = singleGroup.items[0];
+                            WKInterfaceImage *secondImage = singleGroup.items[1];
+                            firstImage.image should equal([UIImage imageNamed:@"corgi.jpeg"]);
+                            secondImage.image should equal([UIImage imageNamed:@"corgi.jpeg"]);
+                        });
+                    });
+
+                    context(@"nested group", ^{
+                        __block id <TestableWKInterfaceGroup> nestedGroup;
+                        beforeEach(^{
+                            nestedGroup = controller.nestedGroup;
+                        });
+
+                        it(@"should correctly deserialize nested groups", ^{
+                            id <TestableWKInterfaceGroup> innerGroup = nestedGroup.items.firstObject;
+                            WKInterfaceImage *image = innerGroup.items.firstObject;
+                            image.image should equal([UIImage imageNamed:@"corgi.jpeg"]);
                         });
                     });
                 });

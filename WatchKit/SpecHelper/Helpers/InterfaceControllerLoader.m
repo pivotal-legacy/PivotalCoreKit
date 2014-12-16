@@ -26,12 +26,12 @@
 
 -(id)interfaceControllerWithStoryboardName:(NSString *)storyboardName
                                 identifier:(NSString *)objectID
-                                   context:(id)context
 {
     NSBundle *bundle = [NSBundle bundleForClass:[self class]];
     NSString *pathForPlist = [bundle pathForResource:storyboardName ofType:@"plist"];
     if (!pathForPlist) {
-        [NSException raise:NSInvalidArgumentException format:@"No storyboard named '%@' exists in the test target.  Did you forget to add it?", storyboardName];
+        [NSException raise:NSInvalidArgumentException
+                    format:@"No storyboard named '%@' exists in the test target.  Did you forget to add it?", storyboardName];
         return nil;
     }
 
@@ -39,54 +39,60 @@
     NSString* controllerID = dictionary[objectID] ? objectID : [NSString stringWithFormat:@"controller-%@", objectID];
     NSDictionary* controllerProperties = dictionary[controllerID];
     if (!controllerProperties) {
-        [NSException raise:NSInvalidArgumentException format:@"No interface controller named '%@' exists in the storyboard '%@'.  Please check the storyboard and try again.", objectID, storyboardName];
+        [NSException raise:NSInvalidArgumentException
+                    format:@"No interface controller named '%@' exists in the storyboard '%@'.  Please check the storyboard and try again.", objectID, storyboardName];
         return nil;
     }
 
     Class interfaceControllerClass = NSClassFromString(controllerProperties[@"controllerClass"]);
-
     id interfaceController = [[interfaceControllerClass alloc] init];
 
-    NSDictionary *propertyTypes = @{@"label": @"WKInterfaceLabel",
-                                    @"image": @"WKInterfaceImage",
-                                    @"separator": @"WKInterfaceSeparator",
-                                    @"date": @"WKInterfaceDate",
-                                    @"switch": @"WKInterfaceSwitch",
-                                    @"button": @"WKInterfaceButton",
-                                    @"map": @"WKInterfaceMap",
-                                    @"group": @"WKInterfaceGroup",
-                                    @"table": @"WKInterfaceTable",
-                                    @"slider": @"WKInterfaceSlider"};
     NSDictionary *properties = dictionary[controllerID][@"items"];
-
     for (NSDictionary *propertiesDictionary in properties) {
         NSString *propertyKey = propertiesDictionary[@"property"];
-        NSString *propertyType = propertiesDictionary[@"type"];
-        NSString *propertyClassName = propertyTypes[propertyType];
-        if (!propertyClassName) {
-            [NSException raise:NSInvalidArgumentException format:@"No property class found for '%@' type. Did you forget to add it to the propertyTypes dictionary?", propertyType];
-        }
-        Class propertyClass = NSClassFromString(propertyClassName);
+        WKInterfaceObject *interfaceObject = [self interfaceObjectWithProperties:propertiesDictionary];
+        [interfaceController setValue:interfaceObject forKey:propertyKey];
+    }
+    return interfaceController;
+}
 
-        WKInterfaceObject *property = [[propertyClass alloc] init];
+#pragma mark - Private
 
-        [self.propertiesThatMayOrMayNotBeWeaklyRetainedByTheirInterfaceControllers addObject:property];
+-(WKInterfaceObject *)interfaceObjectWithProperties:(NSDictionary *)properties
+{
+    NSString *propertyType = properties[@"type"];
+    NSString *propertyClassName = [NSString stringWithFormat:@"WKInterface%@", [propertyType capitalizedString]];
+    Class propertyClass = NSClassFromString(propertyClassName);
+    if (!propertyClass) {
+        [NSException raise:NSInvalidArgumentException format:@"No property class found for '%@'.", propertyClassName];
+        return nil;
+    }
+    WKInterfaceObject *interfaceObject = [[propertyClass alloc] init];
 
-        NSMutableDictionary *propertyValues = [propertiesDictionary mutableCopy];
-        [propertyValues removeObjectForKey:@"property"];
-        [propertyValues removeObjectForKey:@"type"];
-        for (NSString *name in propertyValues) {
-            NSString *value = propertyValues[name];
-            SEL setterSelector = [self setterNameWithGetterName:name];
-            if ([property respondsToSelector:setterSelector]) {
-                [property setValue:value forKey:name];
+    [self.propertiesThatMayOrMayNotBeWeaklyRetainedByTheirInterfaceControllers addObject:interfaceObject];
+
+    NSMutableDictionary *propertyValues = [properties mutableCopy];
+    [propertyValues removeObjectForKey:@"property"];
+    [propertyValues removeObjectForKey:@"type"];
+    for (NSString *name in propertyValues) {
+        SEL setterSelector = [self setterNameWithGetterName:name];
+        if ([interfaceObject respondsToSelector:setterSelector]) {
+            if ([name isEqualToString:@"items"]) {
+                NSArray *items = propertyValues[name];
+                NSMutableArray *value = [NSMutableArray arrayWithCapacity:items.count];
+                for (NSDictionary *item in items) {
+                    WKInterfaceObject *object = [self interfaceObjectWithProperties:item];
+                    [value addObject:object];
+                }
+                [interfaceObject setValue:value forKey:name];
+            } else {
+                NSString *value = propertyValues[name];
+                [interfaceObject setValue:value forKey:name];
             }
         }
-
-        [interfaceController setValue:property forKey:propertyKey];
     }
-    [interfaceController awakeWithContext:context];
-    return interfaceController;
+
+    return interfaceObject;
 }
 
 - (SEL)setterNameWithGetterName:(NSString *)getterName

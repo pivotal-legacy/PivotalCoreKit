@@ -18,8 +18,7 @@ describe(@"WKInterfaceButton", ^{
     beforeEach(^{
         loader = [[InterfaceControllerLoader alloc] init];
         controller = [loader interfaceControllerWithStoryboardName:@"Interface"
-                                                        identifier:@"AgC-eL-Hgc"
-                                                           context:nil];
+                                                        identifier:@"AgC-eL-Hgc"];
     });
 
     describe(@"with an associated action", ^{

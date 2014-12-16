@@ -16,7 +16,7 @@ describe(@"WKInterfaceMap", ^{
 
     beforeEach(^{
         loader = [[InterfaceControllerLoader alloc] init];
-        controller = [loader interfaceControllerWithStoryboardName:@"Interface" identifier:@"MyMapController" context:nil];
+        controller = [loader interfaceControllerWithStoryboardName:@"Interface" identifier:@"MyMapController"];
         subject = controller.map;
     });
 
