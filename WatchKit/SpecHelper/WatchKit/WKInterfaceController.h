@@ -3,6 +3,31 @@
 
 @class WKInterfaceTable;
 
+typedef NS_ENUM(NSInteger, WKMenuItemIcon)  {
+    WKMenuItemIconAccept,       // checkmark
+    WKMenuItemIconAdd,          // '+'
+    WKMenuItemIconBlock,        // circle w/ slash
+    WKMenuItemIconDecline,      // 'x'
+    WKMenuItemIconInfo,         // 'i'
+    WKMenuItemIconMaybe,        // '?'
+    WKMenuItemIconMore,         // '...'
+    WKMenuItemIconMute,         // speaker w/ slash
+    WKMenuItemIconPause,        // pause button
+    WKMenuItemIconPlay,         // play button
+    WKMenuItemIconRepeat,       // looping arrows
+    WKMenuItemIconResume,       // circular arrow
+    WKMenuItemIconShare,        // share icon
+    WKMenuItemIconShuffle,      // swapped arrows
+    WKMenuItemIconSpeaker,      // speaker icon
+    WKMenuItemIconTrash,        // trash icon
+} NS_ENUM_AVAILABLE_IOS(8_2);
+
+typedef enum WKTextInputMode : NSInteger  {
+    WKTextInputModePlain,
+    WKTextInputModeAllowEmoji,
+    WKTextInputModeAllowAnimatedEmoji,
+}WKTextInputMode;
+
 
 @interface WKInterfaceController : MessageCapturer
 
@@ -31,5 +56,24 @@
 - (void)presentControllerWithName:(NSString *)name context:(id)context;
 - (void)presentControllerWithNames:(NSArray *)names contexts:(NSArray *)contexts;
 - (void)dismissController;
+
+- (void)presentTextInputControllerWithSuggestions:(NSArray *)suggestions
+                                 allowedInputMode:(WKTextInputMode)inputMode
+                                       completion:(void(^)(NSArray *results))completion;
+- (void)dismissTextInputController;
+
+- (id)contextForSegueWithIdentifier:(NSString *)segueIdentifier;
+- (NSArray *)contextsForSegueWithIdentifier:(NSString *)segueIdentifier;
+- (id)contextForSegueWithIdentifier:(NSString *)segueIdentifier inTable:(WKInterfaceTable *)table rowIndex:(NSInteger)rowIndex;
+- (NSArray *)contextsForSegueWithIdentifier:(NSString *)segueIdentifier inTable:(WKInterfaceTable *)table rowIndex:(NSInteger)rowIndex;
+
+- (void)addMenuItemWithImage:(UIImage *)image title:(NSString *)title action:(SEL)action;
+- (void)addMenuItemWithImageNamed:(NSString *)imageName title:(NSString *)title action:(SEL)action;
+- (void)addMenuItemWithItemIcon:(WKMenuItemIcon)itemIcon title:(NSString *)title action:(SEL)action;
+- (void)clearAllMenuItems;
+
+- (void)updateUserActivity:(NSString *)type userInfo:(NSDictionary *)userInfo;
+
+// TODO:+ (BOOL)openParentApplication:(NSDictionary *)userInfo reply:(void(^)(NSDictionary *replyInfo, NSError *error)) reply;
 
 @end

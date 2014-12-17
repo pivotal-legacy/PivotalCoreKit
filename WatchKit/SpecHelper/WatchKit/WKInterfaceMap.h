@@ -1,6 +1,12 @@
 #import <MapKit/MapKit.h>
 #import "WKInterfaceObject.h"
-#import "WKInterfaceMapPinColor.h"
+
+
+typedef enum WKInterfaceMapPinColor : NSInteger {
+    WKInterfaceMapPinColorRed,
+    WKInterfaceMapPinColorGreen,
+    WKInterfaceMapPinColorPurple,
+} WKInterfaceMapPinColor;
 
 
 @interface WKInterfaceMap : WKInterfaceObject

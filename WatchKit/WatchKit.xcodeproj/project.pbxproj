@@ -199,7 +199,6 @@
 		AE25D66B1A3906A6008A1920 /* WKInterfaceLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKInterfaceLabel.h; sourceTree = "<group>"; };
 		AE25D66C1A3906A6008A1920 /* WKInterfaceLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKInterfaceLabel.m; sourceTree = "<group>"; };
 		AE25D6701A3907BC008A1920 /* WKInterfaceLabel+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WKInterfaceLabel+Spec.h"; sourceTree = "<group>"; };
-		AE85C04C1A3FBAA3009A0E4D /* WKInterfaceMapPinColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WKInterfaceMapPinColor.h; sourceTree = "<group>"; };
 		AE85C0591A3FBDF9009A0E4D /* WKInterfaceGroupSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WKInterfaceGroupSpec.mm; sourceTree = "<group>"; };
 		AE85C05B1A3FBFB2009A0E4D /* WKInterfaceGroup+Spec.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WKInterfaceGroup+Spec.h"; sourceTree = "<group>"; };
 		AE85C05C1A3FBFE8009A0E4D /* WKInterfaceGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKInterfaceGroup.h; sourceTree = "<group>"; };
@@ -427,41 +426,40 @@
 			children = (
 				AEB03ED31A3FA937002404BC /* MessageCapturer.h */,
 				AEB03ED41A3FA937002404BC /* MessageCapturer.m */,
-				AE03A34A1A3A28BB00AD4964 /* WKInterfaceButton+Spec.h */,
-				AED570BE1A3A6F74004ABADA /* WKInterfaceDate+Spec.h */,
-				AE85C05B1A3FBFB2009A0E4D /* WKInterfaceGroup+Spec.h */,
-				AE03A03A1A391CB300AD4964 /* WKInterfaceImage+Spec.h */,
-				AE25D6701A3907BC008A1920 /* WKInterfaceLabel+Spec.h */,
-				AE03A03E1A3922E600AD4964 /* WKInterfaceSeparator+Spec.h */,
-				AE85C0671A40A676009A0E4D /* WKInterfaceSlider+Spec.h */,
-				AED570C21A3A7D01004ABADA /* WKInterfaceSwitch+Spec.h */,
-				AEB03ECF1A3F9F24002404BC /* WKInterfaceTable+Spec.h */,
 				AE25D6661A39066B008A1920 /* WatchKit.h */,
 				AE03A3471A3A285300AD4964 /* WKInterfaceButton.h */,
 				AE03A3481A3A285300AD4964 /* WKInterfaceButton.m */,
+				AE03A34A1A3A28BB00AD4964 /* WKInterfaceButton+Spec.h */,
 				AE25D6691A3906A6008A1920 /* WKInterfaceController.h */,
 				AE25D66A1A3906A6008A1920 /* WKInterfaceController.m */,
 				AED570BF1A3A6FF9004ABADA /* WKInterfaceDate.h */,
 				AED570C01A3A6FF9004ABADA /* WKInterfaceDate.m */,
+				AED570BE1A3A6F74004ABADA /* WKInterfaceDate+Spec.h */,
 				AE85C05C1A3FBFE8009A0E4D /* WKInterfaceGroup.h */,
 				AE85C05D1A3FBFE8009A0E4D /* WKInterfaceGroup.m */,
+				AE85C05B1A3FBFB2009A0E4D /* WKInterfaceGroup+Spec.h */,
 				AE03A0331A391B9600AD4964 /* WKInterfaceImage.h */,
 				AE03A0341A391B9600AD4964 /* WKInterfaceImage.m */,
+				AE03A03A1A391CB300AD4964 /* WKInterfaceImage+Spec.h */,
 				AE25D66B1A3906A6008A1920 /* WKInterfaceLabel.h */,
 				AE25D66C1A3906A6008A1920 /* WKInterfaceLabel.m */,
+				AE25D6701A3907BC008A1920 /* WKInterfaceLabel+Spec.h */,
 				AEB03ED91A3FB342002404BC /* WKInterfaceMap.h */,
 				AEB03EDA1A3FB342002404BC /* WKInterfaceMap.m */,
-				AE85C04C1A3FBAA3009A0E4D /* WKInterfaceMapPinColor.h */,
 				AED570BB1A3A69CF004ABADA /* WKInterfaceObject.h */,
 				AED570BC1A3A69CF004ABADA /* WKInterfaceObject.m */,
 				AE03A03B1A39227E00AD4964 /* WKInterfaceSeparator.h */,
 				AE03A03C1A39227E00AD4964 /* WKInterfaceSeparator.m */,
+				AE03A03E1A3922E600AD4964 /* WKInterfaceSeparator+Spec.h */,
 				AE85C0681A40A6A5009A0E4D /* WKInterfaceSlider.h */,
 				AE85C0691A40A6A5009A0E4D /* WKInterfaceSlider.m */,
+				AE85C0671A40A676009A0E4D /* WKInterfaceSlider+Spec.h */,
 				AED570C31A3A7D32004ABADA /* WKInterfaceSwitch.h */,
 				AED570C41A3A7D32004ABADA /* WKInterfaceSwitch.m */,
+				AED570C21A3A7D01004ABADA /* WKInterfaceSwitch+Spec.h */,
 				AEB03ECB1A3F9B5C002404BC /* WKInterfaceTable.h */,
 				AEB03ECC1A3F9B5C002404BC /* WKInterfaceTable.m */,
+				AEB03ECF1A3F9F24002404BC /* WKInterfaceTable+Spec.h */,
 			);
 			name = FakeWatchKit;
 			path = WatchKit;

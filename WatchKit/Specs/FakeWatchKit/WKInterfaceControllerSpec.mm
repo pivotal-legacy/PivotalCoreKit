@@ -117,6 +117,80 @@ describe(@"WKInterfaceController", ^{
 
             subject should have_received(@selector(dismissController));
         });
+
+        it(@"should record the invocations of presentTextInputControllerWithSuggestions:allowedInputMode:completion:", ^{
+            [subject presentTextInputControllerWithSuggestions:@[@2, @3]
+                                              allowedInputMode:WKTextInputModeAllowAnimatedEmoji
+                                                    completion:nil];
+            subject should have_received(@selector(presentTextInputControllerWithSuggestions:allowedInputMode:completion:)).with(@[@2, @3], WKTextInputModeAllowAnimatedEmoji, Arguments::anything);
+        });
+
+        it(@"should record the invocations of dismissTextInputController", ^{
+            [subject dismissTextInputController];
+
+            subject should have_received(@selector(dismissTextInputController));
+        });
+
+        it(@"should record the invocations of contextForSegueWithIdentifier:", ^{
+            [subject contextForSegueWithIdentifier:@"asdf"];
+
+            subject should have_received(@selector(contextForSegueWithIdentifier:)).with(@"asdf");
+        });
+
+        it(@"should record the invocations of contextsForSegueWithIdentifier:", ^{
+            [subject contextsForSegueWithIdentifier:@"asdf"];
+
+            subject should have_received(@selector(contextsForSegueWithIdentifier:)).with(@"asdf");
+        });
+
+        it(@"should record the invocations of contextForSegueWithIdentifier:inTable:rowIndex:", ^{
+            WKInterfaceTable *table = [[WKInterfaceTable alloc] init];
+            [subject contextForSegueWithIdentifier:@"zxcv"
+                                           inTable:table
+                                          rowIndex:3];
+
+            subject should have_received(@selector(contextForSegueWithIdentifier:inTable:rowIndex:)).with(@"zxcv", table, 3);
+        });
+
+        it(@"should record the invocations of contextsForSegueWithIdentifier:inTable:rowIndex:", ^{
+            WKInterfaceTable *table = [[WKInterfaceTable alloc] init];
+            [subject contextsForSegueWithIdentifier:@"zxcv"
+                                           inTable:table
+                                          rowIndex:3];
+
+            subject should have_received(@selector(contextsForSegueWithIdentifier:inTable:rowIndex:)).with(@"zxcv", table, 3);
+        });
+
+        it(@"should record the invocations of addMenuItemWithImage:title:action:", ^{
+            UIImage *image = [[UIImage alloc] init];
+            [subject addMenuItemWithImage:image title:@"asdf" action:@selector(init)];
+
+            subject should have_received(@selector(addMenuItemWithImage:title:action:)).with(image, @"asdf", @selector(init));
+        });
+
+        it(@"should record the invocations of addMenuItemWithImageNamed:title:action:", ^{
+            [subject addMenuItemWithImageNamed:@"corgi.jpeg" title:@"asdf" action:@selector(init)];
+
+            subject should have_received(@selector(addMenuItemWithImageNamed:title:action:)).with(@"corgi.jpeg", @"asdf", @selector(init));
+        });
+
+        it(@"should record the invocations of addMenuItemWithItemIcon:title:action:", ^{
+            [subject addMenuItemWithItemIcon:WKMenuItemIconResume title:@"asdf" action:@selector(init)];
+
+            subject should have_received(@selector(addMenuItemWithItemIcon:title:action:)).with(WKMenuItemIconResume, @"asdf", @selector(init));
+        });
+
+        it(@"should record the invocations of clearAllMenuItems", ^{
+            [subject clearAllMenuItems];
+
+            subject should have_received(@selector(clearAllMenuItems));
+        });
+
+        it(@"should record the invocations of updateUserActivity:userInfo:", ^{
+            [subject updateUserActivity:@"asdf" userInfo:@{@"a": @"b"}];
+
+            subject should have_received(@selector(updateUserActivity:userInfo:)).with(@"asdf", @{@"a": @"b"});
+        });
     });
 
     describe(@"triggering an interface object's segue", ^{

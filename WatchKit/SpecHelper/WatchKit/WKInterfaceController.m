@@ -26,6 +26,23 @@
 
 - (void)dismissController NS_REQUIRES_SUPER;
 
+- (void)presentTextInputControllerWithSuggestions:(NSArray *)suggestions
+                                 allowedInputMode:(WKTextInputMode)inputMode
+                                       completion:(void(^)(NSArray *results))completion NS_REQUIRES_SUPER;
+- (void)dismissTextInputController NS_REQUIRES_SUPER;
+
+- (id)contextForSegueWithIdentifier:(NSString *)segueIdentifier NS_REQUIRES_SUPER;
+- (NSArray *)contextsForSegueWithIdentifier:(NSString *)segueIdentifier NS_REQUIRES_SUPER;
+- (id)contextForSegueWithIdentifier:(NSString *)segueIdentifier inTable:(WKInterfaceTable *)table rowIndex:(NSInteger)rowIndex NS_REQUIRES_SUPER;
+- (NSArray *)contextsForSegueWithIdentifier:(NSString *)segueIdentifier inTable:(WKInterfaceTable *)table rowIndex:(NSInteger)rowIndex NS_REQUIRES_SUPER;
+
+- (void)addMenuItemWithImage:(UIImage *)image title:(NSString *)title action:(SEL)action NS_REQUIRES_SUPER;
+- (void)addMenuItemWithImageNamed:(NSString *)imageName title:(NSString *)title action:(SEL)action NS_REQUIRES_SUPER;
+- (void)addMenuItemWithItemIcon:(WKMenuItemIcon)itemIcon title:(NSString *)title action:(SEL)action NS_REQUIRES_SUPER;
+- (void)clearAllMenuItems NS_REQUIRES_SUPER;
+
+- (void)updateUserActivity:(NSString *)type userInfo:(NSDictionary *)userInfo NS_REQUIRES_SUPER;
+
 @end
 
 
@@ -106,6 +123,67 @@
 - (void)dismissController
 {
     [super dismissController];
+}
+
+- (void)presentTextInputControllerWithSuggestions:(NSArray *)suggestions
+                                 allowedInputMode:(WKTextInputMode)inputMode
+                                       completion:(void(^)(NSArray *results))completion
+{
+    [super presentTextInputControllerWithSuggestions:suggestions allowedInputMode:inputMode completion:completion];
+}
+
+- (void)dismissTextInputController
+{
+    [super dismissTextInputController];
+}
+
+- (id)contextForSegueWithIdentifier:(NSString *)segueIdentifier
+{
+    [super contextForSegueWithIdentifier:segueIdentifier];
+    return nil;
+}
+
+- (NSArray *)contextsForSegueWithIdentifier:(NSString *)segueIdentifier
+{
+    [super contextsForSegueWithIdentifier:segueIdentifier];
+    return nil;
+}
+
+- (id)contextForSegueWithIdentifier:(NSString *)segueIdentifier inTable:(WKInterfaceTable *)table rowIndex:(NSInteger)rowIndex
+{
+    [super contextForSegueWithIdentifier:segueIdentifier inTable:table rowIndex:rowIndex];
+    return nil;
+}
+
+- (NSArray *)contextsForSegueWithIdentifier:(NSString *)segueIdentifier inTable:(WKInterfaceTable *)table rowIndex:(NSInteger)rowIndex
+{
+    [super contextsForSegueWithIdentifier:segueIdentifier inTable:table rowIndex:rowIndex];
+    return nil;
+}
+
+- (void)addMenuItemWithImage:(UIImage *)image title:(NSString *)title action:(SEL)action
+{
+    [super addMenuItemWithImage:image title:title action:action];
+}
+
+- (void)addMenuItemWithImageNamed:(NSString *)imageName title:(NSString *)title action:(SEL)action
+{
+    [super addMenuItemWithImageNamed:imageName title:title action:action];
+}
+
+- (void)addMenuItemWithItemIcon:(WKMenuItemIcon)itemIcon title:(NSString *)title action:(SEL)action
+{
+    [super addMenuItemWithItemIcon:itemIcon title:title action:action];
+}
+
+- (void)clearAllMenuItems
+{
+    [super clearAllMenuItems];
+}
+
+- (void)updateUserActivity:(NSString *)type userInfo:(NSDictionary *)userInfo
+{
+    [super updateUserActivity:type userInfo:userInfo];
 }
 
 @end
