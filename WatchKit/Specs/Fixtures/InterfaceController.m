@@ -33,11 +33,13 @@
 
 - (void)willActivate
 {
+    [super willActivate];
     [self.titleLabel setText:@"My Special Text"];
 }
 
 - (void)didDeactivate
 {
+    [super didDeactivate];
     self.actionButton.enabled = NO;
     self.theSwitch.enabled = NO;
     self.theSwitch.on = NO;
