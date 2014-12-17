@@ -50,7 +50,7 @@
                     format:@"No class named '%@' exists in the current target.  Did you forget to add it to the test target?", controllerClassName];
         return nil;
     }
-    id interfaceController = [[interfaceControllerClass alloc] init];
+    id interfaceController = [interfaceControllerClass alloc];
 
     NSDictionary *properties = dictionary[controllerID][@"items"];
     for (NSDictionary *propertiesDictionary in properties) {
@@ -58,7 +58,8 @@
         WKInterfaceObject *interfaceObject = [self interfaceObjectWithProperties:propertiesDictionary];
         [interfaceController setValue:interfaceObject forKey:propertyKey];
     }
-    return interfaceController;
+
+    return [interfaceController init];
 }
 
 #pragma mark - Private
