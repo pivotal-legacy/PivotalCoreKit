@@ -1,6 +1,14 @@
 #import "WKInterfaceLabel.h"
 #import "UIColor+PCK_StringToColor.h"
 
+@interface WKInterfaceObject ()
+
+- (void)setText:(NSString *)text NS_REQUIRES_SUPER;
+- (void)setTextColor:(UIColor *)textColor NS_REQUIRES_SUPER;
+
+- (void)setAttributedText:(NSAttributedString *)attributedText NS_REQUIRES_SUPER;
+
+@end
 
 @interface WKInterfaceLabel ()
 
@@ -20,6 +28,24 @@
 - (UIColor *)color
 {
     return _textColor;
+}
+
+- (void)setText:(NSString *)text
+{
+    _text = text;
+    [super setText:text];
+}
+
+- (void)setTextColor:(UIColor *)textColor
+{
+    [self setColor:textColor];
+    [super setTextColor:textColor];
+}
+
+- (void)setAttributedText:(NSAttributedString *)attributedText
+{
+    _attributedText = attributedText;
+    [super setAttributedText:attributedText];
 }
 
 @end
