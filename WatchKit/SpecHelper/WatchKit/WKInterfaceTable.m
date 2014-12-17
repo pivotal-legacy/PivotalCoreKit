@@ -17,11 +17,21 @@
 @interface WKInterfaceTable ()
 
 @property (nonatomic) NSDictionary *rows;
+@property (nonatomic) NSMutableDictionary *rowControllers;
 
 @end
 
 
 @implementation WKInterfaceTable
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.rowControllers = [NSMutableDictionary dictionary];
+    }
+    return self;
+}
 
 - (NSInteger)numberOfRows
 {
@@ -51,6 +61,16 @@
 - (void)scrollToRowAtIndex:(NSInteger)index
 {
     [super scrollToRowAtIndex:index];
+}
+
+- (id)rowControllerAtIndex:(NSInteger)index
+{
+    return self.rowControllers[@(index)];
+}
+
+- (void)stubRowController:(id)rowController atIndex:(NSUInteger)index
+{
+    self.rowControllers[@(index)] = rowController;
 }
 
 @end

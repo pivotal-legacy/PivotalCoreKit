@@ -50,6 +50,18 @@ describe(@"WKInterfaceTable", ^{
         });
     });
 
+    describe(@"stubs", ^{
+        it(@"should be able to stub a return value for rowControllerAtIndex:", ^{
+            id rowController0 = [[NSObject alloc] init];
+            id rowController1 = [[NSObject alloc] init];
+            [subject stubRowController:rowController0 atIndex:0];
+            [subject stubRowController:rowController1 atIndex:1];
+
+            [subject rowControllerAtIndex:0] should be_same_instance_as(rowController0);
+            [subject rowControllerAtIndex:1] should be_same_instance_as(rowController1);
+        });
+    });
+
     describe(@"row configuration from storyboard", ^{
 
         it(@"should be able to read the default number of rows set in the storyboard", ^{
