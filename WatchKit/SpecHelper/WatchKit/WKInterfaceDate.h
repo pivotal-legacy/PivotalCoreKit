@@ -3,6 +3,8 @@
 @interface WKInterfaceDate : WKInterfaceObject
 
 - (void)setTextColor:(UIColor *)color;
-- (void)setFormat:(NSString *)format;
+
+- (void)setTimeZone:(NSTimeZone *)timeZone;
+- (void)setCalendar:(NSCalendar *)calendar;
 
 @end
