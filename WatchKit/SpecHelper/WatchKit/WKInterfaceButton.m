@@ -4,6 +4,20 @@
 #import "FakeSegue.h"
 
 
+@interface WKInterfaceObject ()
+
+- (void)setTitle:(NSString *)title NS_REQUIRES_SUPER;
+- (void)setAttributedTitle:(NSAttributedString *)attributedTitle NS_REQUIRES_SUPER;
+
+- (void)setColor:(UIColor *)color NS_REQUIRES_SUPER;
+- (void)setBackgroundImage:(UIImage *)image NS_REQUIRES_SUPER;
+- (void)setBackgroundImageData:(NSData *)imageData NS_REQUIRES_SUPER;
+- (void)setBackgroundImageNamed:(NSString *)imageName NS_REQUIRES_SUPER;
+
+- (void)setEnabled:(BOOL)enabled NS_REQUIRES_SUPER;
+
+@end
+
 @interface WKInterfaceButton ()
 
 @property (nonatomic, copy) NSString *title;
@@ -41,9 +55,47 @@ static NSDictionary *typeStringToEnumType;
     return self;
 }
 
+- (void)setTitle:(NSString *)title
+{
+    _title = title;
+    [super setTitle:title];
+}
+
+- (void)setAttributedTitle:(NSAttributedString *)attributedTitle
+{
+    [super setAttributedTitle:attributedTitle];
+}
+
+- (void)setColor:(UIColor *)color
+{
+    [self setTitleColor:color];
+    [super setColor:color];
+}
+
 - (void)setTitleColor:(id)color
 {
     _color = [color isKindOfClass:[UIColor class]] ? color : [UIColor colorWithNameOrHexValue:color];
+}
+
+- (void)setBackgroundImage:(UIImage *)image
+{
+    [super setBackgroundImage:image];
+}
+
+- (void)setBackgroundImageData:(NSData *)imageData
+{
+    [super setBackgroundImageData:imageData];
+}
+
+- (void)setBackgroundImageNamed:(NSString *)imageName
+{
+    [super setBackgroundImageNamed:imageName];
+}
+
+- (void)setEnabled:(BOOL)enabled
+{
+    _enabled = enabled;
+    [super setEnabled:enabled];
 }
 
 - (void)setSegue:(NSDictionary *)segueDictionary

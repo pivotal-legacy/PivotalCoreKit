@@ -57,6 +57,58 @@ describe(@"WKInterfaceButton", ^{
                 .with_reason(@"We encountered a new segue type, 'something_unexpected', in WatchKit.  This probably means that there is a new version of WatchKit that this library needs to be updated to support.");
         });
     });
+
+    describe(@"setters", ^{
+        beforeEach(^{
+            subject = [[WKInterfaceButton alloc] init];
+        });
+
+        it(@"should record the invocation for setTitle:", ^{
+            [subject setTitle:@"asdf"];
+
+            subject should have_received(@selector(setTitle:)).with(@"asdf");
+        });
+
+        it(@"should record the invocation for setColor:", ^{
+            UIColor *color = [UIColor redColor];
+            [subject setColor:color];
+
+            subject should have_received(@selector(setColor:)).with(color);
+        });
+
+        it(@"should record the invocation for setAttributedTitle:", ^{
+            NSAttributedString *string = [[NSAttributedString alloc] initWithString:@"asdf"];
+            [subject setAttributedTitle:string];
+
+            subject should have_received(@selector(setAttributedTitle:)).with([[NSAttributedString alloc] initWithString:@"asdf"]);
+        });
+
+        it(@"should record the invocation for setBackgroundImage:", ^{
+            UIImage *image = [UIImage imageNamed:@"corgi.jpeg"];
+            [subject setBackgroundImage:image];
+
+            subject should have_received(@selector(setBackgroundImage:)).with(image);
+        });
+
+        it(@"should record the invocation for setBackgroundImageData:", ^{
+            NSData *data = [NSData data];
+            [subject setBackgroundImageData:data];
+
+            subject should have_received(@selector(setBackgroundImageData:)).with(data);
+        });
+
+        it(@"should record the invocation for setBackgroundImageNamed:", ^{
+            [subject setBackgroundImageNamed:@"asdf"];
+
+            subject should have_received(@selector(setBackgroundImageNamed:)).with(@"asdf");
+        });
+
+        it(@"should record the invocation for setEnabled:", ^{
+            [subject setEnabled:YES];
+
+            subject should have_received(@selector(setEnabled:)).with(YES);
+        });
+    });
 });
 
 SPEC_END
