@@ -30,6 +30,7 @@
 		AE5AC1A21A4203B700EB09C3 /* WKInterfaceObjectSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE5AC1A11A4203B700EB09C3 /* WKInterfaceObjectSpec.mm */; };
 		AE5AC1AA1A420D7500EB09C3 /* WKInterfaceLabelSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE5AC1A91A420D7500EB09C3 /* WKInterfaceLabelSpec.mm */; };
 		AE8230EA1A4246F50023411A /* WKInterfaceDateSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE8230E91A4246F50023411A /* WKInterfaceDateSpec.mm */; };
+		AE8230F81A4248710023411A /* WKInterfaceImageSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE8230F71A4248710023411A /* WKInterfaceImageSpec.mm */; };
 		AE85C05A1A3FBDF9009A0E4D /* WKInterfaceGroupSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE85C0591A3FBDF9009A0E4D /* WKInterfaceGroupSpec.mm */; };
 		AE85C05E1A3FBFE8009A0E4D /* WKInterfaceGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = AE85C05D1A3FBFE8009A0E4D /* WKInterfaceGroup.m */; };
 		AE85C0611A3FC03B009A0E4D /* GroupController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE85C0601A3FC03B009A0E4D /* GroupController.m */; };
@@ -207,6 +208,7 @@
 		AE5AC1A11A4203B700EB09C3 /* WKInterfaceObjectSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WKInterfaceObjectSpec.mm; sourceTree = "<group>"; };
 		AE5AC1A91A420D7500EB09C3 /* WKInterfaceLabelSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WKInterfaceLabelSpec.mm; sourceTree = "<group>"; };
 		AE8230E91A4246F50023411A /* WKInterfaceDateSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WKInterfaceDateSpec.mm; sourceTree = "<group>"; };
+		AE8230F71A4248710023411A /* WKInterfaceImageSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WKInterfaceImageSpec.mm; sourceTree = "<group>"; };
 		AE85C0591A3FBDF9009A0E4D /* WKInterfaceGroupSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WKInterfaceGroupSpec.mm; sourceTree = "<group>"; };
 		AE85C05B1A3FBFB2009A0E4D /* WKInterfaceGroup+Spec.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WKInterfaceGroup+Spec.h"; sourceTree = "<group>"; };
 		AE85C05C1A3FBFE8009A0E4D /* WKInterfaceGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKInterfaceGroup.h; sourceTree = "<group>"; };
@@ -277,14 +279,15 @@
 			children = (
 				AED570B91A3A663E004ABADA /* WKInterfaceButtonSpec.mm */,
 				AE03A35F1A3A34BD00AD4964 /* WKInterfaceControllerSpec.mm */,
+				AE8230E91A4246F50023411A /* WKInterfaceDateSpec.mm */,
 				AE85C0591A3FBDF9009A0E4D /* WKInterfaceGroupSpec.mm */,
+				AE8230F71A4248710023411A /* WKInterfaceImageSpec.mm */,
+				AE5AC1A91A420D7500EB09C3 /* WKInterfaceLabelSpec.mm */,
 				AEB03ED61A3FB145002404BC /* WKInterfaceMapSpec.mm */,
 				AE5AC1A11A4203B700EB09C3 /* WKInterfaceObjectSpec.mm */,
 				AE85C0651A40A58E009A0E4D /* WKInterfaceSliderSpec.mm */,
 				AED570C61A3A8046004ABADA /* WKInterfaceSwitchSpec.mm */,
 				AEB03EBD1A3F9B3E002404BC /* WKInterfaceTableSpec.mm */,
-				AE5AC1A91A420D7500EB09C3 /* WKInterfaceLabelSpec.mm */,
-				AE8230E91A4246F50023411A /* WKInterfaceDateSpec.mm */,
 			);
 			path = FakeWatchKit;
 			sourceTree = "<group>";
@@ -709,6 +712,7 @@
 				AED570BA1A3A663E004ABADA /* WKInterfaceButtonSpec.mm in Sources */,
 				AE5AC1AA1A420D7500EB09C3 /* WKInterfaceLabelSpec.mm in Sources */,
 				AE03A3601A3A34BD00AD4964 /* WKInterfaceControllerSpec.mm in Sources */,
+				AE8230F81A4248710023411A /* WKInterfaceImageSpec.mm in Sources */,
 				AE25D6611A390480008A1920 /* InterfaceController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
