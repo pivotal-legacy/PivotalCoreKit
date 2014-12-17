@@ -13,7 +13,6 @@
 		AE03A33C1A3A1B2800AD4964 /* WKInterfaceLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = AE25D66C1A3906A6008A1920 /* WKInterfaceLabel.m */; };
 		AE03A33D1A3A1B2C00AD4964 /* WKInterfaceSeparator.m in Sources */ = {isa = PBXBuildFile; fileRef = AE03A03C1A39227E00AD4964 /* WKInterfaceSeparator.m */; };
 		AE03A3461A3A217000AD4964 /* UIColor+PCK_StringToColor.m in Sources */ = {isa = PBXBuildFile; fileRef = AE03A3451A3A217000AD4964 /* UIColor+PCK_StringToColor.m */; };
-		AE03A3491A3A285300AD4964 /* WKInterfaceButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AE03A3481A3A285300AD4964 /* WKInterfaceButton.m */; };
 		AE03A3601A3A34BD00AD4964 /* WKInterfaceControllerSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE03A35F1A3A34BD00AD4964 /* WKInterfaceControllerSpec.mm */; };
 		AE25D5FE1A38F6C9008A1920 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE25D5FD1A38F6C9008A1920 /* XCTest.framework */; };
 		AE25D6001A38F6C9008A1920 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE25D5FF1A38F6C9008A1920 /* CoreGraphics.framework */; };
@@ -26,6 +25,7 @@
 		AE25D65B1A38FC4E008A1920 /* InterfaceControllerLoaderSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE25D6591A38FC4E008A1920 /* InterfaceControllerLoaderSpec.mm */; };
 		AE25D65E1A38FFA9008A1920 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE25D65D1A38FFA9008A1920 /* Interface.storyboard */; };
 		AE25D6611A390480008A1920 /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE25D6601A390480008A1920 /* InterfaceController.m */; };
+		AE5AC1961A41FDCB00EB09C3 /* WKInterfaceButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AE03A3481A3A285300AD4964 /* WKInterfaceButton.m */; };
 		AE85C05A1A3FBDF9009A0E4D /* WKInterfaceGroupSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE85C0591A3FBDF9009A0E4D /* WKInterfaceGroupSpec.mm */; };
 		AE85C05E1A3FBFE8009A0E4D /* WKInterfaceGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = AE85C05D1A3FBFE8009A0E4D /* WKInterfaceGroup.m */; };
 		AE85C0611A3FC03B009A0E4D /* GroupController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE85C0601A3FC03B009A0E4D /* GroupController.m */; };
@@ -680,6 +680,7 @@
 				AE25D6551A38FB46008A1920 /* InterfaceControllerLoader.m in Sources */,
 				AE03A0351A391B9600AD4964 /* WKInterfaceImage.m in Sources */,
 				AE85C05E1A3FBFE8009A0E4D /* WKInterfaceGroup.m in Sources */,
+				AE5AC1961A41FDCB00EB09C3 /* WKInterfaceButton.m in Sources */,
 				AE03A33B1A3A1B2100AD4964 /* WKInterfaceController.m in Sources */,
 				AEB03ED51A3FA937002404BC /* MessageCapturer.m in Sources */,
 			);
@@ -692,7 +693,6 @@
 				AED570C71A3A8046004ABADA /* WKInterfaceSwitchSpec.mm in Sources */,
 				AE25D65B1A38FC4E008A1920 /* InterfaceControllerLoaderSpec.mm in Sources */,
 				AE85C0661A40A58E009A0E4D /* WKInterfaceSliderSpec.mm in Sources */,
-				AE03A3491A3A285300AD4964 /* WKInterfaceButton.m in Sources */,
 				AED570CA1A3BA613004ABADA /* FakeSegue.m in Sources */,
 				AE85C0641A40A4F4009A0E4D /* SliderController.m in Sources */,
 				AEB03ED71A3FB145002404BC /* WKInterfaceMapSpec.mm in Sources */,
