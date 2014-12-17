@@ -43,7 +43,13 @@
         return nil;
     }
 
-    Class interfaceControllerClass = NSClassFromString(controllerProperties[@"controllerClass"]);
+    NSString *controllerClassName = controllerProperties[@"controllerClass"];
+    Class interfaceControllerClass = NSClassFromString(controllerClassName);
+    if (!interfaceControllerClass) {
+        [NSException raise:NSInvalidArgumentException
+                    format:@"No class named '%@' exists in the current target.  Did you forget to add it to the test target?", controllerClassName];
+        return nil;
+    }
     id interfaceController = [[interfaceControllerClass alloc] init];
 
     NSDictionary *properties = dictionary[controllerID][@"items"];

@@ -34,14 +34,22 @@ describe(@"InterfaceControllerLoader", ^{
             });
         });
         
-        context(@"when there is no interface controller matching the object id", ^{
+        context(@"when there is no interface controller instance in an existing storyboard that matches the object id", ^{
             it(@"should raise an exception with a helpful message", ^{
                 ^{ [subject interfaceControllerWithStoryboardName:@"Interface" identifier:@"NonExistantController"]; } should raise_exception
                     .with_name(NSInvalidArgumentException)
                     .with_reason(@"No interface controller named 'NonExistantController' exists in the storyboard 'Interface'.  Please check the storyboard and try again.");
             });
         });
-        
+
+        context(@"when there is an interface controller instance in an existing storyboard but its class doesn't exist in the current target", ^{
+            it(@"should raise an exception with a helpful message", ^{
+                ^{ [subject interfaceControllerWithStoryboardName:@"Interface" identifier:@"myNonExistantController"]; } should raise_exception
+                .with_name(NSInvalidArgumentException)
+                .with_reason(@"No class named 'NonExistantController' exists in the current target.  Did you forget to add it to the test target?");
+            });
+        });
+
         context(@"when there is an interface controller matching the object id", ^{
             __block InterfaceController *controller;
 

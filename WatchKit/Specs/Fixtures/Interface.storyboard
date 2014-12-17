@@ -131,6 +131,13 @@
             </objects>
             <point key="canvasLocation" x="334" y="964"/>
         </scene>
+        <!--myNonExistantController-->
+        <scene sceneID="d8f-Ka-0Rs">
+            <objects>
+                <controller identifier="myNonExistantController" id="Dyv-cP-rWw" customClass="NonExistantController"/>
+            </objects>
+            <point key="canvasLocation" x="561" y="964"/>
+        </scene>
         <!--MyCorgiTableController-->
         <scene sceneID="UkG-WP-fnH">
             <objects>
