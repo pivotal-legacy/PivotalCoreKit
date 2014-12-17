@@ -27,6 +27,7 @@
 		AE5AC1961A41FDCB00EB09C3 /* WKInterfaceButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AE03A3481A3A285300AD4964 /* WKInterfaceButton.m */; };
 		AE5AC19D1A41FEA400EB09C3 /* FakeSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = AE5AC19A1A41FEA400EB09C3 /* FakeSegue.m */; };
 		AE5AC19E1A41FEA400EB09C3 /* UIColor+PCK_StringToColor.m in Sources */ = {isa = PBXBuildFile; fileRef = AE5AC19C1A41FEA400EB09C3 /* UIColor+PCK_StringToColor.m */; };
+		AE5AC1A21A4203B700EB09C3 /* WKInterfaceObjectSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE5AC1A11A4203B700EB09C3 /* WKInterfaceObjectSpec.mm */; };
 		AE85C05A1A3FBDF9009A0E4D /* WKInterfaceGroupSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE85C0591A3FBDF9009A0E4D /* WKInterfaceGroupSpec.mm */; };
 		AE85C05E1A3FBFE8009A0E4D /* WKInterfaceGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = AE85C05D1A3FBFE8009A0E4D /* WKInterfaceGroup.m */; };
 		AE85C0611A3FC03B009A0E4D /* GroupController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE85C0601A3FC03B009A0E4D /* GroupController.m */; };
@@ -201,6 +202,7 @@
 		AE5AC19A1A41FEA400EB09C3 /* FakeSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FakeSegue.m; sourceTree = "<group>"; };
 		AE5AC19B1A41FEA400EB09C3 /* UIColor+PCK_StringToColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+PCK_StringToColor.h"; sourceTree = "<group>"; };
 		AE5AC19C1A41FEA400EB09C3 /* UIColor+PCK_StringToColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+PCK_StringToColor.m"; sourceTree = "<group>"; };
+		AE5AC1A11A4203B700EB09C3 /* WKInterfaceObjectSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WKInterfaceObjectSpec.mm; sourceTree = "<group>"; };
 		AE85C0591A3FBDF9009A0E4D /* WKInterfaceGroupSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WKInterfaceGroupSpec.mm; sourceTree = "<group>"; };
 		AE85C05B1A3FBFB2009A0E4D /* WKInterfaceGroup+Spec.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WKInterfaceGroup+Spec.h"; sourceTree = "<group>"; };
 		AE85C05C1A3FBFE8009A0E4D /* WKInterfaceGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKInterfaceGroup.h; sourceTree = "<group>"; };
@@ -269,13 +271,14 @@
 		AE03A35E1A3A349A00AD4964 /* FakeWatchKit */ = {
 			isa = PBXGroup;
 			children = (
-				AE03A35F1A3A34BD00AD4964 /* WKInterfaceControllerSpec.mm */,
 				AED570B91A3A663E004ABADA /* WKInterfaceButtonSpec.mm */,
+				AE03A35F1A3A34BD00AD4964 /* WKInterfaceControllerSpec.mm */,
+				AE85C0591A3FBDF9009A0E4D /* WKInterfaceGroupSpec.mm */,
+				AEB03ED61A3FB145002404BC /* WKInterfaceMapSpec.mm */,
+				AE5AC1A11A4203B700EB09C3 /* WKInterfaceObjectSpec.mm */,
+				AE85C0651A40A58E009A0E4D /* WKInterfaceSliderSpec.mm */,
 				AED570C61A3A8046004ABADA /* WKInterfaceSwitchSpec.mm */,
 				AEB03EBD1A3F9B3E002404BC /* WKInterfaceTableSpec.mm */,
-				AEB03ED61A3FB145002404BC /* WKInterfaceMapSpec.mm */,
-				AE85C0591A3FBDF9009A0E4D /* WKInterfaceGroupSpec.mm */,
-				AE85C0651A40A58E009A0E4D /* WKInterfaceSliderSpec.mm */,
 			);
 			path = FakeWatchKit;
 			sourceTree = "<group>";
@@ -686,6 +689,7 @@
 			files = (
 				AED570C71A3A8046004ABADA /* WKInterfaceSwitchSpec.mm in Sources */,
 				AE25D65B1A38FC4E008A1920 /* InterfaceControllerLoaderSpec.mm in Sources */,
+				AE5AC1A21A4203B700EB09C3 /* WKInterfaceObjectSpec.mm in Sources */,
 				AE85C0661A40A58E009A0E4D /* WKInterfaceSliderSpec.mm in Sources */,
 				AE85C0641A40A4F4009A0E4D /* SliderController.m in Sources */,
 				AEB03ED71A3FB145002404BC /* WKInterfaceMapSpec.mm in Sources */,
