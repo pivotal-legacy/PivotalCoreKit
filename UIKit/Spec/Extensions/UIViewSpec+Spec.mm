@@ -55,7 +55,10 @@ describe(@"UIView+Spec", ^{
         });
 
         it(@"should dispatch swipe events when you call -swipe", ^{
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated"
             [view swipe];
+#pragma clang diagnostic pop
 
             target should have_received(@selector(hello));
             otherTarget should_not have_received(@selector(hello));
