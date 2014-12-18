@@ -5,3 +5,4 @@
 #import "UIImagePickerController+Spec.h"
 #import "UIGestureRecognizer+Spec.h"
 #import "UIAlertAction+Spec.h"
+#import "UIAlertController+Spec.h"
