@@ -50,6 +50,8 @@
 		34BDAC7F19A433510085B45A /* UICollectionReusableView+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 34BDAC7519A42C5F0085B45A /* UICollectionReusableView+Spec.h */; };
 		8487257E19013F6400288770 /* UIActivityViewController+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = 8487257219013F5F00288770 /* UIActivityViewController+Spec.m */; };
 		84C62A78190141DD00DF2982 /* UIActivityViewControllerSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8487257F1901402000288770 /* UIActivityViewControllerSpec+Spec.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		AE062BD01A43240500AF8D33 /* UIAlertActionSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE062BCE1A4323CF00AF8D33 /* UIAlertActionSpec+Spec.mm */; };
+		AE062BD11A43241B00AF8D33 /* UIAlertAction+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE062BC01A4323A800AF8D33 /* UIAlertAction+Spec.m */; };
 		AE118AA418D6B57000C90D6B /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE118AA318D6B57000C90D6B /* SenTestingKit.framework */; };
 		AE118AA718D6B57000C90D6B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEBCCBE7168B97DD0056EE83 /* Foundation.framework */; };
 		AE118AC218D6B63900C90D6B /* BundleSpecLoader.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE118AC118D6B63900C90D6B /* BundleSpecLoader.mm */; };
@@ -373,6 +375,9 @@
 		8487257119013F5F00288770 /* UIActivityViewController+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIActivityViewController+Spec.h"; sourceTree = "<group>"; };
 		8487257219013F5F00288770 /* UIActivityViewController+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIActivityViewController+Spec.m"; sourceTree = "<group>"; };
 		8487257F1901402000288770 /* UIActivityViewControllerSpec+Spec.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIActivityViewControllerSpec+Spec.mm"; sourceTree = "<group>"; };
+		AE062BBF1A4323A800AF8D33 /* UIAlertAction+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertAction+Spec.h"; sourceTree = "<group>"; };
+		AE062BC01A4323A800AF8D33 /* UIAlertAction+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertAction+Spec.m"; sourceTree = "<group>"; };
+		AE062BCE1A4323CF00AF8D33 /* UIAlertActionSpec+Spec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIAlertActionSpec+Spec.mm"; sourceTree = "<group>"; };
 		AE118AA218D6B57000C90D6B /* UIKit-StaticLibSpecBundle.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "UIKit-StaticLibSpecBundle.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE118AA318D6B57000C90D6B /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		AE118AC118D6B63900C90D6B /* BundleSpecLoader.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BundleSpecLoader.mm; sourceTree = "<group>"; };
@@ -789,6 +794,8 @@
 				AEC40CAF174C22BD00474D2D /* UIActionSheet+Spec.m */,
 				8487257119013F5F00288770 /* UIActivityViewController+Spec.h */,
 				8487257219013F5F00288770 /* UIActivityViewController+Spec.m */,
+				AE062BBF1A4323A800AF8D33 /* UIAlertAction+Spec.h */,
+				AE062BC01A4323A800AF8D33 /* UIAlertAction+Spec.m */,
 				AEC40CB0174C22BD00474D2D /* UIAlertView+Spec.h */,
 				AEC40CB1174C22BD00474D2D /* UIAlertView+Spec.m */,
 				DE99C78703C6C6CA8C0465B3 /* UIGestureRecognizer+Spec.h */,
@@ -814,6 +821,7 @@
 			children = (
 				AEF67CE018CA436600C221D1 /* UIActionSheetSpec+Spec.mm */,
 				8487257F1901402000288770 /* UIActivityViewControllerSpec+Spec.mm */,
+				AE062BCE1A4323CF00AF8D33 /* UIAlertActionSpec+Spec.mm */,
 				AEC40CBE174C24CF00474D2D /* UIAlertViewSpec+Spec.mm */,
 				AEEECC32181F33F5006B52CD /* UIImagePickerControllerSpec+Spec.mm */,
 				AEEDC56719FAC2E2004AFFE9 /* UINavigationControllerSpec+Spec.mm */,
@@ -1221,6 +1229,8 @@
 				FA91AA9E1867260400925A6B /* NSString+PivotalCoreKit_UIKitSpec.mm in Sources */,
 				AE7B279617CFD67600904F64 /* UIViewControllerSpec+Spec.mm in Sources */,
 				AE95306A1832EE9300C802E9 /* UIViewSpec+Spec.mm in Sources */,
+				AE062BD01A43240500AF8D33 /* UIAlertActionSpec+Spec.mm in Sources */,
+				AE062BD11A43241B00AF8D33 /* UIAlertAction+Spec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
