@@ -90,11 +90,10 @@ describe(@"UIAlertController (spec extensions)", ^{
             context(@"when a action sheet does not have a cancel button", ^{
                 beforeEach(^{
                     addDefaultAction(alertController, handler);
-                    [alertController dismissByTappingCancelButton];
                 });
 
-                it(@"should not tap the last button", ^{
-                    handlerWasExecuted should be_falsy;
+                it(@"should blow up", ^{
+                    ^{ [alertController dismissByTappingCancelButton]; } should raise_exception;
                 });
             });
 
