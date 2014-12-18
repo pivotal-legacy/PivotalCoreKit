@@ -101,6 +101,49 @@ describe(@"UIAlertController (spec extensions)", ^{
             itShouldBehaveLike(@"default cancel behavior");
         });
     });
+
+    describe(@"-dismissByTappingButtonWithTitle:", ^{
+        describe(@"UIAlertControllerStyleAlert", ^{
+            beforeEach(^{
+                alertController = [UIAlertController alertControllerWithTitle:@"Title"
+                                                                      message:@"Message"
+                                                               preferredStyle:UIAlertControllerStyleAlert];
+            });
+
+            context(@"when there is a button with a title", ^{
+                beforeEach(^{
+                    addCancelAction(alertController, nil);
+                    addDefaultAction(alertController, handler);
+                    [alertController dismissByTappingButtonWithTitle:@"Default"];
+                });
+
+                it(@"should tap the button", ^{
+                    handlerWasExecuted should be_truthy;
+                });
+            });
+
+            context(@"when there is not a button with a title", ^{
+                beforeEach(^{
+                    addDefaultAction(alertController, nil);
+                    addDefaultAction(alertController, handler);
+                });
+
+                it(@"should raise an exception stating a button with that title does not exist", ^{
+                    ^{ [alertController dismissByTappingButtonWithTitle:@"Non-existant"]; } should raise_exception;
+                });
+            });
+
+            context(@"when the button does not have an action", ^{
+                beforeEach(^{
+                    addDefaultAction(alertController, nil);
+                });
+
+                it(@"should not blow up", ^{
+                    ^{ [alertController dismissByTappingButtonWithTitle:@"Default"]; } should_not raise_exception;
+                });
+            });
+        });
+    });
 });
 
 SPEC_END
