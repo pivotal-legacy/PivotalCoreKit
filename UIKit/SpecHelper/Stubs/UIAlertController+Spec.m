@@ -26,6 +26,7 @@
 
     UIAlertAction *cancelAction = [[self.actions filteredArrayUsingPredicate:cancelPredicate] lastObject];
     if (self.preferredStyle == UIAlertControllerStyleActionSheet) {
+        NSAssert(cancelAction, @"UIAlertController does not have a cancel button");
         return cancelAction;
     } else {
         return cancelAction ? cancelAction : self.actions.lastObject;
