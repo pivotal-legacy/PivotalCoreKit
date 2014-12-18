@@ -4,3 +4,4 @@
 #import "UITabBarController+Spec.h"
 #import "UIImagePickerController+Spec.h"
 #import "UIGestureRecognizer+Spec.h"
+#import "UIAlertAction+Spec.h"
