@@ -3,7 +3,8 @@
 @interface UIView (StubbedGestureRecognizers)
 
 - (void)tap;
-- (void)swipe;
+/*! @abstract Use swipeInDirection: instead. */
+- (void)swipe DEPRECATED_ATTRIBUTE;
 - (void)swipeInDirection:(UISwipeGestureRecognizerDirection)swipeDirection;
 - (void)pinch;
 
