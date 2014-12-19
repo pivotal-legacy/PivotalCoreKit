@@ -24,6 +24,8 @@
 		AE25D65B1A38FC4E008A1920 /* InterfaceControllerLoaderSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE25D6591A38FC4E008A1920 /* InterfaceControllerLoaderSpec.mm */; };
 		AE25D65E1A38FFA9008A1920 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE25D65D1A38FFA9008A1920 /* Interface.storyboard */; };
 		AE25D6611A390480008A1920 /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE25D6601A390480008A1920 /* InterfaceController.m */; };
+		AE55BD5E1A4499BB00278DAF /* WKInterfaceTimerSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE55BD5D1A4499BB00278DAF /* WKInterfaceTimerSpec.mm */; };
+		AE55BD6D1A449BA200278DAF /* WKInterfaceTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = AE55BD6C1A449BA200278DAF /* WKInterfaceTimer.m */; };
 		AE5AC1961A41FDCB00EB09C3 /* WKInterfaceButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AE03A3481A3A285300AD4964 /* WKInterfaceButton.m */; };
 		AE5AC19D1A41FEA400EB09C3 /* FakeSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = AE5AC19A1A41FEA400EB09C3 /* FakeSegue.m */; };
 		AE5AC19E1A41FEA400EB09C3 /* UIColor+PCK_StringToColor.m in Sources */ = {isa = PBXBuildFile; fileRef = AE5AC19C1A41FEA400EB09C3 /* UIColor+PCK_StringToColor.m */; };
@@ -201,6 +203,10 @@
 		AE25D66B1A3906A6008A1920 /* WKInterfaceLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKInterfaceLabel.h; sourceTree = "<group>"; };
 		AE25D66C1A3906A6008A1920 /* WKInterfaceLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKInterfaceLabel.m; sourceTree = "<group>"; };
 		AE25D6701A3907BC008A1920 /* WKInterfaceLabel+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WKInterfaceLabel+Spec.h"; sourceTree = "<group>"; };
+		AE55BD5D1A4499BB00278DAF /* WKInterfaceTimerSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WKInterfaceTimerSpec.mm; sourceTree = "<group>"; };
+		AE55BD6B1A449BA200278DAF /* WKInterfaceTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKInterfaceTimer.h; sourceTree = "<group>"; };
+		AE55BD6C1A449BA200278DAF /* WKInterfaceTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKInterfaceTimer.m; sourceTree = "<group>"; };
+		AE55BD6E1A449ED400278DAF /* WKInterfaceTimer+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WKInterfaceTimer+Spec.h"; sourceTree = "<group>"; };
 		AE5AC1991A41FEA400EB09C3 /* FakeSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeSegue.h; sourceTree = "<group>"; };
 		AE5AC19A1A41FEA400EB09C3 /* FakeSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FakeSegue.m; sourceTree = "<group>"; };
 		AE5AC19B1A41FEA400EB09C3 /* UIColor+PCK_StringToColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+PCK_StringToColor.h"; sourceTree = "<group>"; };
@@ -288,6 +294,7 @@
 				AE85C0651A40A58E009A0E4D /* WKInterfaceSliderSpec.mm */,
 				AED570C61A3A8046004ABADA /* WKInterfaceSwitchSpec.mm */,
 				AEB03EBD1A3F9B3E002404BC /* WKInterfaceTableSpec.mm */,
+				AE55BD5D1A4499BB00278DAF /* WKInterfaceTimerSpec.mm */,
 			);
 			path = FakeWatchKit;
 			sourceTree = "<group>";
@@ -464,6 +471,9 @@
 				AEB03ECB1A3F9B5C002404BC /* WKInterfaceTable.h */,
 				AEB03ECC1A3F9B5C002404BC /* WKInterfaceTable.m */,
 				AEB03ECF1A3F9F24002404BC /* WKInterfaceTable+Spec.h */,
+				AE55BD6B1A449BA200278DAF /* WKInterfaceTimer.h */,
+				AE55BD6C1A449BA200278DAF /* WKInterfaceTimer.m */,
+				AE55BD6E1A449ED400278DAF /* WKInterfaceTimer+Spec.h */,
 			);
 			name = FakeWatchKit;
 			path = WatchKit;
@@ -689,6 +699,7 @@
 				AE5AC1961A41FDCB00EB09C3 /* WKInterfaceButton.m in Sources */,
 				AE03A33B1A3A1B2100AD4964 /* WKInterfaceController.m in Sources */,
 				AEB03ED51A3FA937002404BC /* MessageCapturer.m in Sources */,
+				AE55BD6D1A449BA200278DAF /* WKInterfaceTimer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -698,6 +709,7 @@
 			files = (
 				AED570C71A3A8046004ABADA /* WKInterfaceSwitchSpec.mm in Sources */,
 				AE25D65B1A38FC4E008A1920 /* InterfaceControllerLoaderSpec.mm in Sources */,
+				AE55BD5E1A4499BB00278DAF /* WKInterfaceTimerSpec.mm in Sources */,
 				AE8230EA1A4246F50023411A /* WKInterfaceDateSpec.mm in Sources */,
 				AE5AC1A21A4203B700EB09C3 /* WKInterfaceObjectSpec.mm in Sources */,
 				AE85C0661A40A58E009A0E4D /* WKInterfaceSliderSpec.mm in Sources */,

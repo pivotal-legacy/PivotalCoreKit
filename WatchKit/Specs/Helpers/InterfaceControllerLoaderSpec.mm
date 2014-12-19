@@ -9,6 +9,7 @@
 #import "WKInterfaceSeparator+Spec.h"
 #import "WKInterfaceSlider+Spec.h"
 #import "WKInterfaceSwitch+Spec.h"
+#import "WKInterfaceTimer+Spec.h"
 
 
 using namespace Cedar::Matchers;
@@ -228,6 +229,23 @@ describe(@"InterfaceControllerLoader", ^{
                             WKInterfaceImage *image = innerGroup.items.firstObject;
                             image.image should equal([UIImage imageNamed:@"corgi.jpeg"]);
                         });
+                    });
+                });
+
+                describe(@"the timer", ^{
+                    __block WKInterfaceTimer *timer;
+                    beforeEach(^{
+                        timer = controller.timer;
+                    });
+
+                    it(@"should correctly set the format string with a bitmask", ^{
+                        TimerFormatOptions options;
+                        options = TimerFormatOptionsYears | TimerFormatOptionsMonths | TimerFormatOptionsWeeks | TimerFormatOptionsDays | TimerFormatOptionsHours | TimerFormatOptionsMinutes | TimerFormatOptionsSeconds;
+                        timer.units should equal(options);
+                    });
+
+                    it(@"should have the correct enabled property", ^{
+                        timer.enabled should be_truthy;
                     });
                 });
 

@@ -9,3 +9,4 @@
 #import "WKInterfaceTable.h"
 #import "WKInterfaceSlider.h"
 #import "WKInterfaceGroup.h"
+#import "WKInterfaceTimer.h"

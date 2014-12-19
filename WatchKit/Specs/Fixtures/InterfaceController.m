@@ -1,6 +1,5 @@
 #import "InterfaceController.h"
 
-
 @interface InterfaceController()
 
 @property (weak, nonatomic) IBOutlet WKInterfaceLabel *titleLabel;
@@ -16,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet WKInterfaceSlider *disabledSlider;
 @property (weak, nonatomic) IBOutlet WKInterfaceGroup *singleGroup;
 @property (weak, nonatomic) IBOutlet WKInterfaceGroup *nestedGroup;
+@property (weak, nonatomic) IBOutlet WKInterfaceTimer *timer;
 @property (nonatomic) NSMutableString* context;
 
 @end
