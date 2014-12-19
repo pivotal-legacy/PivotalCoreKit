@@ -1,6 +1,7 @@
 CONFIGURATION = "Release"
 BUILD_SDK_VERSION = ENV['BUILD_SDK_VERSION'] || "8.1"
 SIMULATOR_VERSION = ENV['SIMULATOR_VERSION'] || "8.1"
+ARCHS = ENV['ARCHS'] || "i386"
 BUILD_DIR = File.join(File.dirname(__FILE__), "build")
 
 # Xcode 4.3 stores its /Developer inside /Applications/Xcode.app, Xcode 4.2 stored it in /Developer
@@ -67,7 +68,7 @@ namespace :foundation do
       end
 
       task :ios do
-        system_or_exit(%Q[xcodebuild -project #{project_name}.xcodeproj -target Foundation+PivotalCore-StaticLib -configuration #{CONFIGURATION} ARCHS=i386 -sdk iphonesimulator build SYMROOT=#{BUILD_DIR}], {}, output_file("foundation:build:core:ios"))
+        system_or_exit(%Q[xcodebuild -project #{project_name}.xcodeproj -target Foundation+PivotalCore-StaticLib -configuration #{CONFIGURATION} ARCHS=#{ARCHS} -sdk iphonesimulator build SYMROOT=#{BUILD_DIR}], {}, output_file("foundation:build:core:ios"))
       end
     end
 
@@ -79,7 +80,7 @@ namespace :foundation do
       end
 
       task :ios do
-        system_or_exit(%Q[xcodebuild -project #{project_name}.xcodeproj -target Foundation+PivotalSpecHelper-StaticLib -configuration #{CONFIGURATION} ARCHS=i386 -sdk iphonesimulator build SYMROOT=#{BUILD_DIR}], {}, output_file("foundation:build:spec_helper:ios"))
+        system_or_exit(%Q[xcodebuild -project #{project_name}.xcodeproj -target Foundation+PivotalSpecHelper-StaticLib -configuration #{CONFIGURATION} ARCHS=#{ARCHS} -sdk iphonesimulator build SYMROOT=#{BUILD_DIR}], {}, output_file("foundation:build:spec_helper:ios"))
       end
     end
     task :spec_helper => ["spec_helper:osx", "spec_helper:ios"]
@@ -109,7 +110,7 @@ namespace :foundation do
 
     require 'tmpdir'
     task :ios do
-      system_or_exit(%Q[xcodebuild -project #{project_name}.xcodeproj -target Foundation-StaticLibSpec -configuration #{CONFIGURATION} ARCHS=i386 -sdk iphonesimulator build SYMROOT=#{BUILD_DIR}], {}, output_file("foundation:spec:ios"))
+      system_or_exit(%Q[xcodebuild -project #{project_name}.xcodeproj -target Foundation-StaticLibSpec -configuration #{CONFIGURATION} ARCHS=#{ARCHS} -sdk iphonesimulator build SYMROOT=#{BUILD_DIR}], {}, output_file("foundation:spec:ios"))
 
       `osascript -e 'tell application "iPhone Simulator" to quit'`
       system_or_exit(
@@ -138,7 +139,7 @@ namespace :uikit do
   namespace :build do
     namespace :core do
       task :ios do
-        system_or_exit(%Q[xcodebuild -project #{project_name}.xcodeproj -target UIKit+PivotalCore-StaticLib -configuration #{CONFIGURATION} ARCHS=i386 -sdk iphonesimulator build SYMROOT=#{BUILD_DIR}], {}, output_file("uikit:build:core:ios"))
+        system_or_exit(%Q[xcodebuild -project #{project_name}.xcodeproj -target UIKit+PivotalCore-StaticLib -configuration #{CONFIGURATION} ARCHS=#{ARCHS} -sdk iphonesimulator build SYMROOT=#{BUILD_DIR}], {}, output_file("uikit:build:core:ios"))
       end
     end
 
@@ -146,11 +147,11 @@ namespace :uikit do
 
     namespace :spec_helper do
       task :ios do
-        system_or_exit(%Q[xcodebuild -project #{project_name}.xcodeproj -target UIKit+PivotalSpecHelper-StaticLib -configuration #{CONFIGURATION} ARCHS=i386 -sdk iphonesimulator build SYMROOT=#{BUILD_DIR}], {}, output_file("uikit:build:spec_helper:ios"))
+        system_or_exit(%Q[xcodebuild -project #{project_name}.xcodeproj -target UIKit+PivotalSpecHelper-StaticLib -configuration #{CONFIGURATION} ARCHS=#{ARCHS} -sdk iphonesimulator build SYMROOT=#{BUILD_DIR}], {}, output_file("uikit:build:spec_helper:ios"))
       end
 
       task :ios_stubs do
-        system_or_exit(%Q[xcodebuild -project #{project_name}.xcodeproj -target UIKit+PivotalSpecHelperStubs-StaticLib -configuration #{CONFIGURATION} ARCHS=i386 -sdk iphonesimulator build SYMROOT=#{BUILD_DIR}], {}, output_file("uikit:build:spec_helper:ios_stubs"))
+        system_or_exit(%Q[xcodebuild -project #{project_name}.xcodeproj -target UIKit+PivotalSpecHelperStubs-StaticLib -configuration #{CONFIGURATION} ARCHS=#{ARCHS} -sdk iphonesimulator build SYMROOT=#{BUILD_DIR}], {}, output_file("uikit:build:spec_helper:ios_stubs"))
       end
     end
 
@@ -203,7 +204,7 @@ namespace :core_location do
       end
 
       task :ios do
-        system_or_exit(%Q[xcodebuild -project #{project_name}.xcodeproj -target CoreLocation+PivotalSpecHelper-StaticLib -configuration #{CONFIGURATION} ARCHS=i386 -sdk iphonesimulator build SYMROOT=#{BUILD_DIR}], {}, output_file("core_location:build:spec_helper:ios"))
+        system_or_exit(%Q[xcodebuild -project #{project_name}.xcodeproj -target CoreLocation+PivotalSpecHelper-StaticLib -configuration #{CONFIGURATION} ARCHS=#{ARCHS} -sdk iphonesimulator build SYMROOT=#{BUILD_DIR}], {}, output_file("core_location:build:spec_helper:ios"))
       end
     end
 
