@@ -13,6 +13,10 @@ static char PRESENTED_CONTROLLER_KEY;
 #pragma mark - Modals
 
 - (void)presentViewController:(UIViewController *)modalViewController animated:(BOOL)animated completion:(void(^)(void))onComplete {
+    if (!modalViewController) {
+        NSString *errorReason = [NSString stringWithFormat:@"Application tried to present a nil modal view controller on target %@", self];
+        [[NSException exceptionWithName:NSInvalidArgumentException reason:errorReason userInfo:nil] raise];
+    }
     if (self.modalViewController) {
         NSString *errorReason = [NSString stringWithFormat:@"Presenting modal view controller (%@) with other modal (%@) previously active", modalViewController, self.modalViewController];
         [[NSException exceptionWithName:NSInternalInconsistencyException reason:errorReason userInfo:nil] raise];
