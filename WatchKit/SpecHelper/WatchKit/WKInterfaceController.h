@@ -1,5 +1,9 @@
 #import "MessageCapturer.h"
 
+typedef NS_ENUM(NSInteger, WKUserNotificationInterfaceType)  {
+    WKUserNotificationInterfaceTypeDefault,
+    WKUserNotificationInterfaceTypeCustom,
+} NS_ENUM_AVAILABLE_IOS(8_2);
 
 @class WKInterfaceTable;
 
@@ -75,5 +79,15 @@ typedef enum WKTextInputMode : NSInteger  {
 - (void)updateUserActivity:(NSString *)type userInfo:(NSDictionary *)userInfo;
 
 // TODO:+ (BOOL)openParentApplication:(NSDictionary *)userInfo reply:(void(^)(NSDictionary *replyInfo, NSError *error)) reply;
+
+@end
+
+@interface WKUserNotificationInterfaceController : WKInterfaceController
+
+//- (instancetype)init;
+- (void)didReceiveRemoteNotification:(NSDictionary *)remoteNotification
+                      withCompletion:(void(^)(WKUserNotificationInterfaceType interface)) completionHandler;
+- (void)didReceiveLocalNotification:(UILocalNotification *)localNotification
+                     withCompletion:(void(^)(WKUserNotificationInterfaceType interface)) completionHandler;
 
 @end

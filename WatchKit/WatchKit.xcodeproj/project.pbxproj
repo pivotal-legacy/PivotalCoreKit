@@ -26,6 +26,7 @@
 		AE25D6611A390480008A1920 /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE25D6601A390480008A1920 /* InterfaceController.m */; };
 		AE55BD5E1A4499BB00278DAF /* WKInterfaceTimerSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE55BD5D1A4499BB00278DAF /* WKInterfaceTimerSpec.mm */; };
 		AE55BD6D1A449BA200278DAF /* WKInterfaceTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = AE55BD6C1A449BA200278DAF /* WKInterfaceTimer.m */; };
+		AE55BD721A44B40E00278DAF /* WKUserNotificationInterfaceControllerSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE55BD711A44B40E00278DAF /* WKUserNotificationInterfaceControllerSpec.mm */; };
 		AE5AC1961A41FDCB00EB09C3 /* WKInterfaceButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AE03A3481A3A285300AD4964 /* WKInterfaceButton.m */; };
 		AE5AC19D1A41FEA400EB09C3 /* FakeSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = AE5AC19A1A41FEA400EB09C3 /* FakeSegue.m */; };
 		AE5AC19E1A41FEA400EB09C3 /* UIColor+PCK_StringToColor.m in Sources */ = {isa = PBXBuildFile; fileRef = AE5AC19C1A41FEA400EB09C3 /* UIColor+PCK_StringToColor.m */; };
@@ -207,6 +208,8 @@
 		AE55BD6B1A449BA200278DAF /* WKInterfaceTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKInterfaceTimer.h; sourceTree = "<group>"; };
 		AE55BD6C1A449BA200278DAF /* WKInterfaceTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKInterfaceTimer.m; sourceTree = "<group>"; };
 		AE55BD6E1A449ED400278DAF /* WKInterfaceTimer+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WKInterfaceTimer+Spec.h"; sourceTree = "<group>"; };
+		AE55BD711A44B40E00278DAF /* WKUserNotificationInterfaceControllerSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WKUserNotificationInterfaceControllerSpec.mm; sourceTree = "<group>"; };
+		AE55BD731A44B87900278DAF /* WKUserNotificationInterfaceController+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WKUserNotificationInterfaceController+Spec.h"; sourceTree = "<group>"; };
 		AE5AC1991A41FEA400EB09C3 /* FakeSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeSegue.h; sourceTree = "<group>"; };
 		AE5AC19A1A41FEA400EB09C3 /* FakeSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FakeSegue.m; sourceTree = "<group>"; };
 		AE5AC19B1A41FEA400EB09C3 /* UIColor+PCK_StringToColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+PCK_StringToColor.h"; sourceTree = "<group>"; };
@@ -295,6 +298,7 @@
 				AED570C61A3A8046004ABADA /* WKInterfaceSwitchSpec.mm */,
 				AEB03EBD1A3F9B3E002404BC /* WKInterfaceTableSpec.mm */,
 				AE55BD5D1A4499BB00278DAF /* WKInterfaceTimerSpec.mm */,
+				AE55BD711A44B40E00278DAF /* WKUserNotificationInterfaceControllerSpec.mm */,
 			);
 			path = FakeWatchKit;
 			sourceTree = "<group>";
@@ -474,6 +478,7 @@
 				AE55BD6B1A449BA200278DAF /* WKInterfaceTimer.h */,
 				AE55BD6C1A449BA200278DAF /* WKInterfaceTimer.m */,
 				AE55BD6E1A449ED400278DAF /* WKInterfaceTimer+Spec.h */,
+				AE55BD731A44B87900278DAF /* WKUserNotificationInterfaceController+Spec.h */,
 			);
 			name = FakeWatchKit;
 			path = WatchKit;
@@ -723,6 +728,7 @@
 				AEB03EBE1A3F9B3E002404BC /* WKInterfaceTableSpec.mm in Sources */,
 				AED570BA1A3A663E004ABADA /* WKInterfaceButtonSpec.mm in Sources */,
 				AE5AC1AA1A420D7500EB09C3 /* WKInterfaceLabelSpec.mm in Sources */,
+				AE55BD721A44B40E00278DAF /* WKUserNotificationInterfaceControllerSpec.mm in Sources */,
 				AE03A3601A3A34BD00AD4964 /* WKInterfaceControllerSpec.mm in Sources */,
 				AE8230F81A4248710023411A /* WKInterfaceImageSpec.mm in Sources */,
 				AE25D6611A390480008A1920 /* InterfaceController.m in Sources */,

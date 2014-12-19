@@ -1,6 +1,7 @@
 #import "WKInterfaceController.h"
 #import "InterfaceControllerLoader.h"
 
+
 @interface MessageCapturer ()
 
 - (void)awakeWithContext:(id)context NS_REQUIRES_SUPER;
@@ -42,6 +43,11 @@
 - (void)clearAllMenuItems NS_REQUIRES_SUPER;
 
 - (void)updateUserActivity:(NSString *)type userInfo:(NSDictionary *)userInfo NS_REQUIRES_SUPER;
+
+- (void)didReceiveRemoteNotification:(NSDictionary *)remoteNotification
+                      withCompletion:(void(^)(WKUserNotificationInterfaceType interface)) completionHandler NS_REQUIRES_SUPER;
+- (void)didReceiveLocalNotification:(UILocalNotification *)localNotification
+                     withCompletion:(void(^)(WKUserNotificationInterfaceType interface)) completionHandler NS_REQUIRES_SUPER;
 
 @end
 
@@ -188,3 +194,26 @@
 
 @end
 
+
+@interface WKUserNotificationInterfaceController ()
+@property (nonatomic, copy) void (^lastCompletionBlock)(WKUserNotificationInterfaceType);
+@end
+
+
+@implementation WKUserNotificationInterfaceController
+
+- (void)didReceiveRemoteNotification:(NSDictionary *)remoteNotification
+                      withCompletion:(void(^)(WKUserNotificationInterfaceType interface)) completionHandler
+{
+    self.lastCompletionBlock = completionHandler;
+    [super didReceiveRemoteNotification:remoteNotification withCompletion:completionHandler];
+}
+
+- (void)didReceiveLocalNotification:(UILocalNotification *)localNotification
+                      withCompletion:(void(^)(WKUserNotificationInterfaceType interface)) completionHandler
+{
+    self.lastCompletionBlock = completionHandler;
+    [super didReceiveLocalNotification:localNotification withCompletion:completionHandler];
+}
+
+@end
