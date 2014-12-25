@@ -56,7 +56,9 @@
     for (NSDictionary *propertiesDictionary in properties) {
         NSString *propertyKey = propertiesDictionary[@"property"];
         WKInterfaceObject *interfaceObject = [self interfaceObjectWithProperties:propertiesDictionary];
-        [interfaceController setValue:interfaceObject forKey:propertyKey];
+        if (propertyKey) {
+            [interfaceController setValue:interfaceObject forKey:propertyKey];
+        }
     }
 
     return [interfaceController init];

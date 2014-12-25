@@ -258,6 +258,13 @@ describe(@"InterfaceControllerLoader", ^{
                 });
             });
         });
+
+        context(@"when there is an interface objects associated with the controller that does not have a corresponding outlet", ^{
+
+            it(@"should not throw a runtime exception, because it doesn't throw one in production", ^{
+                ^{[subject interfaceControllerWithStoryboardName:@"Interface" identifier:@"AgC-eL-Hgc"]; } should_not raise_exception;
+            });
+        });
     });
 });
 

@@ -43,6 +43,7 @@
                                 <segue destination="6wZ-pP-6PY" kind="modal" id="C4a-10-f5j"/>
                             </connections>
                         </button>
+                        <label alignment="center" text="no outlet label" textAlignment="center" id="Naz-8T-C1w"/>
                         <group width="1" alignment="left" spacing="1" hasDetent="YES" id="rIx-V9-bpU" userLabel="singleGroup">
                             <items>
                                 <imageView width="0.50000000000000011" alignment="left" image="corgi.jpeg" contentMode="scaleAspectFit" id="Cpa-m1-g3h"/>
