@@ -1,5 +1,5 @@
 #import "Cedar.h"
-#import "InterfaceControllerLoader.h"
+#import "PCKInterfaceControllerLoader.h"
 #import "CorgiTableController.h"
 #import "WKInterfaceTable+Spec.h"
 
@@ -13,11 +13,14 @@ SPEC_BEGIN(WKInterfaceTableSpec)
 describe(@"WKInterfaceTable", ^{
     __block WKInterfaceTable *subject;
     __block CorgiTableController *controller;
-    __block InterfaceControllerLoader *loader;
+    __block PCKInterfaceControllerLoader *loader;
 
     beforeEach(^{
-        loader = [[InterfaceControllerLoader alloc] init];
-        controller = [loader interfaceControllerWithStoryboardName:@"Interface" identifier:@"MyCorgiTableController"];
+        NSBundle *testBundle = [NSBundle bundleForClass:[self class]];
+        loader = [[PCKInterfaceControllerLoader alloc] init];
+        controller = [loader interfaceControllerWithStoryboardName:@"Interface"
+                                                        identifier:@"MyCorgiTableController"
+                                                            bundle:testBundle];
         subject = controller.table;
     });
 

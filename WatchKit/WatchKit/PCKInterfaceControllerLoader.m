@@ -1,18 +1,18 @@
-#import "InterfaceControllerLoader.h"
+#import "PCKInterfaceControllerLoader.h"
 #import "WKInterfaceLabel+Spec.h"
 #import "WKInterfaceLabel.h"
 #import <objc/runtime.h>
 #import "WKInterfaceObject.h"
 
 
-@interface InterfaceControllerLoader ()
+@interface PCKInterfaceControllerLoader ()
 
 @property (nonatomic) NSMutableSet *propertiesThatMayOrMayNotBeWeaklyRetainedByTheirInterfaceControllers;
 
 @end
 
 
-@implementation InterfaceControllerLoader
+@implementation PCKInterfaceControllerLoader
 
 - (instancetype)init
 {
@@ -25,8 +25,8 @@
 
 -(id)interfaceControllerWithStoryboardName:(NSString *)storyboardName
                                 identifier:(NSString *)objectID
+                                    bundle:(NSBundle *)bundle
 {
-    NSBundle *bundle = [NSBundle bundleForClass:[self class]];
     NSString *pathForPlist = [bundle pathForResource:storyboardName ofType:@"plist"];
     if (!pathForPlist) {
         [NSException raise:NSInvalidArgumentException

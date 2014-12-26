@@ -1,7 +1,7 @@
 #import "WKInterfaceButton.h"
 #import "WKInterfaceController.h"
 #import "UIColor+PCK_StringToColor.h"
-#import "FakeSegue.h"
+#import "PCKFakeSegue.h"
 
 
 @interface WKInterfaceObject ()
@@ -24,7 +24,7 @@
 @property (nonatomic) UIColor *color;
 @property (nonatomic) BOOL enabled;
 @property (nonatomic, copy) NSString *action;
-@property (nonatomic) FakeSegue *segue;
+@property (nonatomic) PCKFakeSegue *segue;
 
 @end
 
@@ -37,8 +37,8 @@ static NSDictionary *typeStringToEnumType;
 + (void)initialize
 {
     typeStringToEnumType = @{
-                             @"push": @(FakeSegueTypePush),
-                             @"present": @(FakeSegueTypeModal)
+                             @"push": @(PCKFakeSegueTypePush),
+                             @"present": @(PCKFakeSegueTypeModal)
                              };
 }
 
@@ -104,8 +104,8 @@ static NSDictionary *typeStringToEnumType;
     NSString *typeString = segueDictionary[@"type"];
     NSNumber *enumType = typeStringToEnumType[segueDictionary[@"type"]];
     if (enumType) {
-        FakeSegueType type = [enumType unsignedIntegerValue];
-        _segue = [[FakeSegue alloc] initWithDestinationIdentifier:destinationIdentifier type:type];
+        PCKFakeSegueType type = [enumType unsignedIntegerValue];
+        _segue = [[PCKFakeSegue alloc] initWithDestinationIdentifier:destinationIdentifier type:type];
     }
     else {
         [NSException raise:NSInvalidArgumentException

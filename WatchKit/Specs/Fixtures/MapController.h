@@ -1,4 +1,4 @@
-#import "WKInterfaceController.h"
+#import <WatchKit/WatchKit.h>
 
 
 @class WKInterfaceMap;

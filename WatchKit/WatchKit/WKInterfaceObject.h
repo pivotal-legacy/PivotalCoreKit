@@ -1,7 +1,7 @@
-#import "MessageCapturer.h"
+#import "PCKMessageCapturer.h"
 
 
-@interface WKInterfaceObject : MessageCapturer
+@interface WKInterfaceObject : PCKMessageCapturer
 
 - (void)setHidden:(BOOL)hidden;
 - (void)setAlpha:(CGFloat)alpha;

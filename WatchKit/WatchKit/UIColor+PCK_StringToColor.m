@@ -23,12 +23,12 @@
 
     if ([colorNameArray containsObject:nameOrHexValue]) {
         NSString* colorString = [NSString stringWithFormat:@"%@Color", nameOrHexValue];
-        __autoreleasing id boo = nil;
+        __autoreleasing id color = nil;
 #       pragma clang diagnostic push
 #       pragma clang diagnostic ignored "-Warc-performSelector-leaks"
-        boo = [[UIColor class] performSelector:NSSelectorFromString(colorString)];
+        color = [[UIColor class] performSelector:NSSelectorFromString(colorString)];
 #       pragma clang diagnostic pop
-        return boo;
+        return color;
     }
     else {
         unsigned rgbValue = 0;

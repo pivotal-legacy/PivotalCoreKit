@@ -1,14 +1,14 @@
-#import "MessageCapturer.h"
+#import "PCKMessageCapturer.h"
 
 
-@interface MessageCapturer ()
+@interface PCKMessageCapturer ()
 
 @property (nonatomic) NSMutableArray *sent_messages;
 
 @end
 
 
-@implementation MessageCapturer
+@implementation PCKMessageCapturer
 
 #pragma mark - NSObject
 

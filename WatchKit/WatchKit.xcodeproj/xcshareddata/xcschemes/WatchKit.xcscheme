@@ -14,8 +14,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AE25D5D81A38F664008A1920"
-               BuildableName = "libWatchKit.a"
+               BlueprintIdentifier = "B83C31C01A4CD8A40021F1A4"
+               BuildableName = "WatchKit.framework"
                BlueprintName = "WatchKit"
                ReferencedContainer = "container:WatchKit.xcodeproj">
             </BuildableReference>
@@ -42,8 +42,8 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AE25D5D81A38F664008A1920"
-            BuildableName = "libWatchKit.a"
+            BlueprintIdentifier = "B83C31C01A4CD8A40021F1A4"
+            BuildableName = "WatchKit.framework"
             BlueprintName = "WatchKit"
             ReferencedContainer = "container:WatchKit.xcodeproj">
          </BuildableReference>
@@ -61,8 +61,8 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AE25D5D81A38F664008A1920"
-            BuildableName = "libWatchKit.a"
+            BlueprintIdentifier = "B83C31C01A4CD8A40021F1A4"
+            BuildableName = "WatchKit.framework"
             BlueprintName = "WatchKit"
             ReferencedContainer = "container:WatchKit.xcodeproj">
          </BuildableReference>
@@ -79,8 +79,8 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AE25D5D81A38F664008A1920"
-            BuildableName = "libWatchKit.a"
+            BlueprintIdentifier = "B83C31C01A4CD8A40021F1A4"
+            BuildableName = "WatchKit.framework"
             BlueprintName = "WatchKit"
             ReferencedContainer = "container:WatchKit.xcodeproj">
          </BuildableReference>

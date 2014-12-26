@@ -1,6 +1,6 @@
 #import "Cedar.h"
 #import "WKInterfaceMap.h"
-#import "InterfaceControllerLoader.h"
+#import "PCKInterfaceControllerLoader.h"
 #import "MapController.h"
 
 
@@ -12,11 +12,14 @@ SPEC_BEGIN(WKInterfaceMapSpec)
 describe(@"WKInterfaceMap", ^{
     __block WKInterfaceMap *subject;
     __block MapController *controller;
-    __block InterfaceControllerLoader *loader;
+    __block PCKInterfaceControllerLoader *loader;
 
     beforeEach(^{
-        loader = [[InterfaceControllerLoader alloc] init];
-        controller = [loader interfaceControllerWithStoryboardName:@"Interface" identifier:@"MyMapController"];
+        NSBundle *testBundle = [NSBundle bundleForClass:[self class]];
+        loader = [[PCKInterfaceControllerLoader alloc] init];
+        controller = [loader interfaceControllerWithStoryboardName:@"Interface"
+                                                        identifier:@"MyMapController"
+                                                            bundle:testBundle];
         subject = controller.map;
     });
 

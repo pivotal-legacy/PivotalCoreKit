@@ -1,6 +1,6 @@
 #import "Cedar.h"
 #import "InterfaceController.h"
-#import "InterfaceControllerLoader.h"
+#import "PCKInterfaceControllerLoader.h"
 #import "WKInterfaceButton+Spec.h"
 
 
@@ -13,12 +13,14 @@ SPEC_BEGIN(WKInterfaceButtonSpec)
 describe(@"WKInterfaceButton", ^{
     __block WKInterfaceButton *subject;
     __block InterfaceController *controller;
-    __block InterfaceControllerLoader *loader;
+    __block PCKInterfaceControllerLoader *loader;
 
     beforeEach(^{
-        loader = [[InterfaceControllerLoader alloc] init];
+        NSBundle *testBundle = [NSBundle bundleForClass:[self class]];
+        loader = [[PCKInterfaceControllerLoader alloc] init];
         controller = [loader interfaceControllerWithStoryboardName:@"Interface"
-                                                        identifier:@"AgC-eL-Hgc"];
+                                                        identifier:@"AgC-eL-Hgc"
+                                                            bundle:testBundle];
     });
 
     describe(@"with an associated action", ^{

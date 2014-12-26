@@ -1,22 +1,23 @@
 #import "Cedar.h"
 #import "WKInterfaceSlider+Spec.h"
-#import "InterfaceControllerLoader.h"
+#import "PCKInterfaceControllerLoader.h"
 #import "SliderController.h"
 
 using namespace Cedar::Matchers;
 using namespace Cedar::Doubles;
-
 
 SPEC_BEGIN(WKInterfaceSliderSpec)
 
 describe(@"WKInterfaceSlider", ^{
     __block WKInterfaceSlider *subject;
     __block SliderController *controller;
-    __block InterfaceControllerLoader *loader;
+    __block PCKInterfaceControllerLoader *loader;
     beforeEach(^{
-        loader = [[InterfaceControllerLoader alloc] init];
+        NSBundle *testBundle = [NSBundle bundleForClass:[self class]];
+        loader = [[PCKInterfaceControllerLoader alloc] init];
         controller = [loader interfaceControllerWithStoryboardName:@"Interface"
-                                                        identifier:@"MySliderController"];
+                                                        identifier:@"MySliderController"
+                                                            bundle:testBundle];
         subject = controller.slider;
     });
 

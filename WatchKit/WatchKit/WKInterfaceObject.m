@@ -1,6 +1,6 @@
 #import "WKInterfaceObject.h"
 
-@interface MessageCapturer ()
+@interface PCKMessageCapturer ()
 
 - (void)setHidden:(BOOL)hidden NS_REQUIRES_SUPER;
 - (void)setAlpha:(CGFloat)alpha NS_REQUIRES_SUPER;

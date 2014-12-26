@@ -1,10 +1,10 @@
 #import "Cedar.h"
 #import "CorgisController.h"
 #import "InterfaceController.h"
-#import "InterfaceControllerLoader.h"
+#import "PCKInterfaceControllerLoader.h"
 #import "WKInterfaceController.h"
 #import "WKInterfaceButton+Spec.h"
-#import "FakeSegue.h"
+#import "PCKFakeSegue.h"
 
 
 using namespace Cedar::Matchers;
@@ -14,12 +14,14 @@ SPEC_BEGIN(WKInterfaceControllerSpec)
 
 describe(@"WKInterfaceController", ^{
     __block InterfaceController *subject;
-    __block InterfaceControllerLoader *loader;
+    __block PCKInterfaceControllerLoader *loader;
 
     beforeEach(^{
-        loader = [[InterfaceControllerLoader alloc] init];
-        subject = [loader interfaceControllerWithStoryboardName:@"Interface" identifier:@"AgC-eL-Hgc"];
-
+        NSBundle *testBundle = [NSBundle bundleForClass:[self class]];
+        loader = [[PCKInterfaceControllerLoader alloc] init];
+        subject = [loader interfaceControllerWithStoryboardName:@"Interface"
+                                                     identifier:@"AgC-eL-Hgc"
+                                                         bundle:testBundle];
     });
 
     describe(@"public methods", ^{
@@ -202,7 +204,7 @@ describe(@"WKInterfaceController", ^{
             });
 
             it(@"should have the correct segue configuration", ^{
-                seguePushButton.segue.type should equal(FakeSegueTypePush);
+                seguePushButton.segue.type should equal(PCKFakeSegueTypePush);
             });
 
             it(@"should have the correct segue destination identifier", ^{
@@ -218,7 +220,7 @@ describe(@"WKInterfaceController", ^{
             });
 
             it(@"should have the correct segue configuration", ^{
-                segueModalButton.segue.type should equal(FakeSegueTypeModal);
+                segueModalButton.segue.type should equal(PCKFakeSegueTypeModal);
             });
 
             it(@"should have the correct segue destination identifier", ^{

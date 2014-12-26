@@ -1,6 +1,6 @@
 #import "Cedar.h"
 #import "WKInterfaceGroup+Spec.h"
-#import "InterfaceControllerLoader.h"
+#import "PCKInterfaceControllerLoader.h"
 #import "GroupController.h"
 
 using namespace Cedar::Matchers;
@@ -11,12 +11,14 @@ SPEC_BEGIN(WKInterfaceGroupSpec)
 describe(@"WKInterfaceGroup", ^{
     __block WKInterfaceGroup *subject;
     __block GroupController *controller;
-    __block InterfaceControllerLoader *loader;
+    __block PCKInterfaceControllerLoader *loader;
 
     beforeEach(^{
-        loader = [[InterfaceControllerLoader alloc] init];
+        NSBundle *testBundle = [NSBundle bundleForClass:[self class]];
+        loader = [[PCKInterfaceControllerLoader alloc] init];
         controller = [loader interfaceControllerWithStoryboardName:@"Interface"
-                                                        identifier:@"MyGroupController"];
+                                                        identifier:@"MyGroupController"
+                                                            bundle:testBundle];
         subject = controller.group;
     });
 

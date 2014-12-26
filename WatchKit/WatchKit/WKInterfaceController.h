@@ -1,4 +1,4 @@
-#import "MessageCapturer.h"
+#import "PCKMessageCapturer.h"
 
 typedef NS_ENUM(NSInteger, WKUserNotificationInterfaceType)  {
     WKUserNotificationInterfaceTypeDefault,
@@ -33,7 +33,7 @@ typedef enum WKTextInputMode : NSInteger  {
 }WKTextInputMode;
 
 
-@interface WKInterfaceController : MessageCapturer
+@interface WKInterfaceController : PCKMessageCapturer
 
 - (void)awakeWithContext:(id)context;
 

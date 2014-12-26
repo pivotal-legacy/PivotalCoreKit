@@ -1,5 +1,4 @@
-#import "WKInterfaceController.h"
-#import "WKInterfaceSlider.h"
+#import <WatchKit/WatchKit.h>
 
 
 @interface SliderController : WKInterfaceController

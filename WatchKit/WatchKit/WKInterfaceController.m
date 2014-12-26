@@ -1,8 +1,8 @@
 #import "WKInterfaceController.h"
-#import "InterfaceControllerLoader.h"
+#import "PCKInterfaceControllerLoader.h"
 
 
-@interface MessageCapturer ()
+@interface PCKMessageCapturer ()
 
 - (void)awakeWithContext:(id)context NS_REQUIRES_SUPER;
 - (void)willActivate NS_REQUIRES_SUPER;

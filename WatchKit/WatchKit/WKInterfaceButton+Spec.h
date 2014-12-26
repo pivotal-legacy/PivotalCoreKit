@@ -1,7 +1,7 @@
 #import "WKInterfaceButton.h"
 
 
-@class FakeSegue;
+@class PCKFakeSegue;
 
 
 @interface WKInterfaceButton (Spec)
@@ -10,6 +10,6 @@
 - (UIColor *)color;
 - (BOOL)enabled;
 - (NSString *)action;
-- (FakeSegue *)segue;
+- (PCKFakeSegue *)segue;
 
 @end

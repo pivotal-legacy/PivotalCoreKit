@@ -1,7 +1,7 @@
 #import <UIKit/UIKit.h>
 
 
-@interface MessageCapturer : NSObject
+@interface PCKMessageCapturer : NSObject
 
 - (NSArray *)sent_messages;
 

@@ -1,18 +1,18 @@
-#import "FakeSegue.h"
+#import "PCKFakeSegue.h"
 
 
-@interface FakeSegue ()
+@interface PCKFakeSegue ()
 
 @property (nonatomic, copy) NSString *destinationIdentifier;
-@property (nonatomic) FakeSegueType type;
+@property (nonatomic) PCKFakeSegueType type;
 
 @end
 
 
-@implementation FakeSegue
+@implementation PCKFakeSegue
 
 - (instancetype)initWithDestinationIdentifier:(NSString *)destinationIdentifier
-                                         type:(FakeSegueType)type
+                                         type:(PCKFakeSegueType)type
 {
     self = [super init];
     if (self) {
