@@ -254,8 +254,8 @@ describe(@"PCKInterfaceControllerLoader", ^{
                     });
                     
                     it(@"should correctly set the format string with a bitmask", ^{
-                        TimerFormatOptions options;
-                        options = TimerFormatOptionsYears | TimerFormatOptionsMonths | TimerFormatOptionsWeeks | TimerFormatOptionsDays | TimerFormatOptionsHours | TimerFormatOptionsMinutes | TimerFormatOptionsSeconds;
+                        PCKTimerFormatOptions options;
+                        options = PCKTimerFormatOptionsYears | PCKTimerFormatOptionsMonths | PCKTimerFormatOptionsWeeks | PCKTimerFormatOptionsDays | PCKTimerFormatOptionsHours | PCKTimerFormatOptionsMinutes | PCKTimerFormatOptionsSeconds;
                         timer.units should equal(options);
                     });
                     

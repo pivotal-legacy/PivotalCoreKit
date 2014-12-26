@@ -1,14 +1,14 @@
 #import "WKInterfaceTimer.h"
 
 
-typedef NS_OPTIONS(NSUInteger, TimerFormatOptions) {
-    TimerFormatOptionsYears = 1 << 2,
-    TimerFormatOptionsMonths = 1 << 3,
-    TimerFormatOptionsWeeks = 1 << 12,
-    TimerFormatOptionsDays = 1 << 4,
-    TimerFormatOptionsHours = 1 << 5,
-    TimerFormatOptionsMinutes = 1 << 6,
-    TimerFormatOptionsSeconds = 1 << 7,
+typedef NS_OPTIONS(NSUInteger, PCKTimerFormatOptions) {
+    PCKTimerFormatOptionsYears = 1 << 2,
+    PCKTimerFormatOptionsMonths = 1 << 3,
+    PCKTimerFormatOptionsWeeks = 1 << 12,
+    PCKTimerFormatOptionsDays = 1 << 4,
+    PCKTimerFormatOptionsHours = 1 << 5,
+    PCKTimerFormatOptionsMinutes = 1 << 6,
+    PCKTimerFormatOptionsSeconds = 1 << 7,
 };
 
 
