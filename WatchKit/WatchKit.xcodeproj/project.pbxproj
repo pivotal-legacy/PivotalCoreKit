@@ -432,15 +432,14 @@
 		B83C31C21A4CD8A40021F1A4 /* WatchKit */ = {
 			isa = PBXGroup;
 			children = (
-				B83C323A1A4CE0FC0021F1A4 /* UIColor+PCK_StringToColor.h */,
-				B83C323B1A4CE0FC0021F1A4 /* UIColor+PCK_StringToColor.m */,
 				B83C322C1A4CDA380021F1A4 /* PCKFakeSegue.h */,
 				B83C322D1A4CDA380021F1A4 /* PCKFakeSegue.m */,
 				B83C322E1A4CDA380021F1A4 /* PCKInterfaceControllerLoader.h */,
 				B83C322F1A4CDA380021F1A4 /* PCKInterfaceControllerLoader.m */,
 				B83C31DC1A4CD9BF0021F1A4 /* PCKMessageCapturer.h */,
 				B83C31DD1A4CD9BF0021F1A4 /* PCKMessageCapturer.m */,
-				B83C31C31A4CD8A40021F1A4 /* Supporting Files */,
+				B83C323A1A4CE0FC0021F1A4 /* UIColor+PCK_StringToColor.h */,
+				B83C323B1A4CE0FC0021F1A4 /* UIColor+PCK_StringToColor.m */,
 				B83C31DE1A4CD9BF0021F1A4 /* WatchKit.h */,
 				B83C31DF1A4CD9BF0021F1A4 /* WKInterfaceButton.h */,
 				B83C31E01A4CD9BF0021F1A4 /* WKInterfaceButton.m */,
@@ -479,6 +478,7 @@
 				B83C32011A4CD9BF0021F1A4 /* WKInterfaceTimer.m */,
 				B83C32021A4CD9BF0021F1A4 /* WKInterfaceTimer+Spec.h */,
 				B83C32031A4CD9BF0021F1A4 /* WKUserNotificationInterfaceController+Spec.h */,
+				B83C31C31A4CD8A40021F1A4 /* Supporting Files */,
 			);
 			path = WatchKit;
 			sourceTree = "<group>";
