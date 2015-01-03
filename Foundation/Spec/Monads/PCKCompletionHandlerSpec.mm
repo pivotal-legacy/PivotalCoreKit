@@ -45,6 +45,12 @@ describe(@"PCKCompletionHandler", ^{
             error.code should equal(2);
         });
 
+        it(@"does not invoke the block when called with failure ignoring errors", ^{
+            [[PCKCompletionHandler completionHandlerWithBlock:^id(id o, NSURLResponse *response, NSError **pError) {
+                return @2;
+            }] callWith:@1 response:nil error:[NSError errorWithDomain:NSCocoaErrorDomain code:2 userInfo:nil] outError:NULL] should equal(@1);
+        });
+
         describe(@"composing and invoking functions", ^{
             __block PCKCompletionHandler *composed;
             beforeEach(^{
