@@ -31,11 +31,14 @@
 {
     NSParameterAssert(completionHandler);
     return [PCKCompletionHandler completionHandlerWithBlock:^id(id o, NSURLResponse *response, NSError **pError) {
-        id result = [completionHandler callWith:o response:response error:nil outError:pError];
-        if (result) {
+        NSError *error = nil;
+        id result = [completionHandler callWith:o response:response error:nil outError:&error];
+        if (!error) {
             return [self callWith:result response:response error:nil outError:pError];
+        } else if (pError) {
+            *pError = error;
         }
-        return nil;
+        return result;
     }];
 }
 
@@ -49,8 +52,8 @@
     if (error) {
         if (outError) {
             *outError = error;
-            return nil;
         }
+        return value;
     }
     return _block(value, response, outError);
 }

@@ -33,11 +33,14 @@
 {
     NSParameterAssert(errorBlock);
     return [PCKErrorBlock errorWithBlock:^id(id success, NSError **errorPtr) {
-        id result = [errorBlock callWithSuccess:success error:errorPtr];
-        if (result) {
+        NSError *error = nil;
+        id result = [errorBlock callWithSuccess:success error:&error];
+        if (!error) {
             return [self callWithSuccess:result error:errorPtr];
+        } else if (errorPtr) {
+            *errorPtr = error;
         }
-        return nil;
+        return result;
     }];
 }
 
