@@ -254,9 +254,10 @@ describe(@"PCKInterfaceControllerLoader", ^{
                     });
                     
                     it(@"should correctly set the format string with a bitmask", ^{
-                        PCKTimerFormatOptions options;
-                        options = PCKTimerFormatOptionsYears | PCKTimerFormatOptionsMonths | PCKTimerFormatOptionsWeeks | PCKTimerFormatOptionsDays | PCKTimerFormatOptionsHours | PCKTimerFormatOptionsMinutes | PCKTimerFormatOptionsSeconds;
-                        timer.units should equal(options);
+                        NSCalendarUnit units;
+                        units = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitWeekOfMonth | NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond;
+
+                        timer.units should equal(units);
                     });
                     
                     it(@"should have the correct enabled property", ^{

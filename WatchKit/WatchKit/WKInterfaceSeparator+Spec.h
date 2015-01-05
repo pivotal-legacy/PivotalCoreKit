@@ -1,7 +1,8 @@
 #import "WKInterfaceSeparator.h"
 
+
 @interface WKInterfaceSeparator (Spec)
 
--(UIColor *)color;
+- (UIColor *)color;
 
 @end

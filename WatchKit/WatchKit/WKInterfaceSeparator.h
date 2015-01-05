@@ -3,7 +3,6 @@
 
 @interface WKInterfaceSeparator : WKInterfaceObject
 
--(void)setColor:(UIColor *)color;
-
+- (void)setColor:(UIColor *)color;
 
 @end
