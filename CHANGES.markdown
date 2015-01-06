@@ -2,6 +2,8 @@
 
 ## 0.2.2 (in progress)
 
+  * Adds support for testing wiring of WatchKit apps in Cedar/XCTest/etc.
+
 ## 0.2.1
   * No functional changes - fixes red build due to spec bug
 
