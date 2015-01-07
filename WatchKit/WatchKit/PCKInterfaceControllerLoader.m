@@ -64,6 +64,41 @@
     return [interfaceController init];
 }
 
+-(id)notificationInterfaceControllerWithStoryboardName:(NSString *)storyboardName
+                                                  type:(PCKNotificationInterfaceControllerType)type
+                                                bundle:(NSBundle *)bundle
+{
+    storyboardName = [storyboardName stringByAppendingString:@"-notification"];
+    NSString *pathForPlist = [bundle pathForResource:storyboardName ofType:@"plist"];
+    NSDictionary *serializedNotificationControllerStoryboard = [NSDictionary dictionaryWithContentsOfFile:pathForPlist];
+
+    if (type == PCKNotificationInterfaceControllerTypeDynamic) {
+        NSDictionary *controllerProperties = serializedNotificationControllerStoryboard[@"categories"][@"default"][@"dynamic"];
+        
+        NSString *controllerClassName = controllerProperties[@"controllerClass"];
+        Class interfaceControllerClass = NSClassFromString(controllerClassName);
+        if (!interfaceControllerClass) {
+            [NSException raise:NSInvalidArgumentException
+                        format:@"No class named '%@' exists in the current target.  Did you forget to add it to the test target?", controllerClassName];
+            return nil;
+        }
+        id interfaceController = [interfaceControllerClass alloc];
+
+        NSDictionary *properties = controllerProperties[@"items"];
+        for (NSDictionary *propertiesDictionary in properties) {
+            NSString *propertyKey = propertiesDictionary[@"property"];
+            WKInterfaceObject *interfaceObject = [self interfaceObjectWithProperties:propertiesDictionary];
+            if (propertyKey) {
+                [interfaceController setValue:interfaceObject forKey:propertyKey];
+            }
+        }
+
+        return [interfaceController init];
+    }
+
+    return nil;
+}
+
 #pragma mark - Private
 
 -(WKInterfaceObject *)interfaceObjectWithProperties:(NSDictionary *)properties

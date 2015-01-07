@@ -44,13 +44,13 @@
                             </connections>
                         </button>
                         <label alignment="center" text="no outlet label" textAlignment="center" id="Naz-8T-C1w"/>
-                        <group width="1" alignment="left" spacing="1" hasDetent="YES" id="rIx-V9-bpU" userLabel="singleGroup">
+                        <group width="1" alignment="left" spacing="1" id="rIx-V9-bpU" userLabel="singleGroup">
                             <items>
                                 <imageView width="0.50000000000000011" alignment="left" image="corgi.jpeg" contentMode="scaleAspectFit" id="Cpa-m1-g3h"/>
                                 <imageView width="0.50000000000000011" alignment="right" image="corgi.jpeg" contentMode="scaleAspectFit" id="dWk-p4-GHd"/>
                             </items>
                         </group>
-                        <group width="1" alignment="left" hasDetent="YES" id="PWR-Mj-UwS" userLabel="nestedGroup">
+                        <group width="1" alignment="left" id="PWR-Mj-UwS" userLabel="nestedGroup">
                             <items>
                                 <group width="1" alignment="left" id="n0H-c1-W7R">
                                     <items>
@@ -78,7 +78,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="103" y="153"/>
+            <point key="canvasLocation" x="-130" y="106"/>
         </scene>
         <!--MyFirstCorgiController-->
         <scene sceneID="nKH-Pr-Foq">
@@ -92,7 +92,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="361" y="269"/>
+            <point key="canvasLocation" x="118" y="-134"/>
         </scene>
         <!--MyModalCorgiController-->
         <scene sceneID="74P-qz-ORB">
@@ -106,21 +106,21 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="103" y="693"/>
+            <point key="canvasLocation" x="334" y="-55"/>
         </scene>
         <!--MyGroupController-->
         <scene sceneID="4Yu-6y-J3d">
             <objects>
                 <controller identifier="MyGroupController" id="WnQ-74-bdS" customClass="GroupController">
                     <items>
-                        <group width="1" alignment="left" hasDetent="YES" id="dfA-ut-Cuz"/>
+                        <group width="1" alignment="left" id="dfA-ut-Cuz"/>
                     </items>
                     <connections>
                         <outlet property="group" destination="dfA-ut-Cuz" id="sol-CR-8Qx"/>
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="103" y="964"/>
+            <point key="canvasLocation" x="118" y="428"/>
         </scene>
         <!--MyMapController-->
         <scene sceneID="Hv3-sc-fDV">
@@ -134,21 +134,21 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="334" y="964"/>
+            <point key="canvasLocation" x="421" y="211"/>
         </scene>
         <!--myNonExistantController-->
         <scene sceneID="d8f-Ka-0Rs">
             <objects>
                 <controller identifier="myNonExistantController" id="Dyv-cP-rWw" customClass="NonExistantController"/>
             </objects>
-            <point key="canvasLocation" x="561" y="964"/>
+            <point key="canvasLocation" x="270" y="428"/>
         </scene>
         <!--MyCorgiTableController-->
         <scene sceneID="UkG-WP-fnH">
             <objects>
                 <controller identifier="MyCorgiTableController" id="GDA-NN-32l" customClass="CorgiTableController">
                     <items>
-                        <table alignment="left" layout="vertical" id="pvt-QL-VLl">
+                        <table alignment="left" id="pvt-QL-VLl">
                             <items>
                                 <tableRow id="gll-Vl-ekt">
                                     <group key="rootItem" width="1" alignment="left" id="5C0-Ak-ktL"/>
@@ -164,7 +164,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="334" y="691"/>
+            <point key="canvasLocation" x="118" y="211"/>
         </scene>
         <!--MySliderController-->
         <scene sceneID="2Vd-5w-t4g">
@@ -178,7 +178,50 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="561" y="691"/>
+            <point key="canvasLocation" x="270" y="211"/>
+        </scene>
+        <!--Glance Interface Controller-->
+        <scene sceneID="BOz-TT-tkC">
+            <objects>
+                <glanceController spacing="0.0" id="0uZ-2p-rRc" customClass="GlanceController">
+                    <items>
+                        <group alignment="left" id="t8f-Gd-c4y"/>
+                        <group alignment="left" id="uCw-4Q-Ouw"/>
+                    </items>
+                    <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="14"/>
+                </glanceController>
+            </objects>
+            <point key="canvasLocation" x="-141" y="729"/>
+        </scene>
+        <!--corgi.jpeg-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController backgroundImage="corgi.jpeg" contentMode="scaleAspectFill" id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="XkS-y5-khE"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="XkS-y5-khE" id="49B-RR-99y"/>
+                        <segue destination="gdX-wl-uQE" kind="relationship" relationship="dynamicNotificationInterface" id="fKh-qV-3T2"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="-141" y="975"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="KIl-fV-djm">
+            <objects>
+                <controller id="gdX-wl-uQE" customClass="NotificationController">
+                    <items>
+                        <label width="134" height="54" alignment="center" text="Fancy Alert" textAlignment="center" id="4Qf-Wq-C7T"/>
+                    </items>
+                    <connections>
+                        <outlet property="alertLabel" destination="4Qf-Wq-C7T" id="0Yd-uY-BVY"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="103" y="975"/>
         </scene>
     </scenes>
 </document>

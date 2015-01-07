@@ -1,5 +1,6 @@
 #import "Cedar.h"
 #import "InterfaceController.h"
+#import "NotificationController.h"
 #import "PCKInterfaceControllerLoader.h"
 #import "WKInterfaceButton+Spec.h"
 #import "WKInterfaceDate+Spec.h"
@@ -14,6 +15,7 @@
 
 using namespace Cedar::Matchers;
 using namespace Cedar::Doubles;
+
 
 SPEC_BEGIN(PCKInterfaceControllerLoaderSpec)
 
@@ -283,6 +285,20 @@ describe(@"PCKInterfaceControllerLoader", ^{
                                                           bundle:testBundle]; }
                 should_not raise_exception;
             });
+        });
+    });
+
+    describe(@"providing an instance of a WKUserNotificationInterfaceController subclass that lives in a storyboard's plist", ^{
+        __block NotificationController *notificationController;
+
+        beforeEach(^{
+            notificationController = [subject notificationInterfaceControllerWithStoryboardName:@"Interface"
+                                                                                           type:PCKNotificationInterfaceControllerTypeDynamic
+                                                                                         bundle:testBundle];
+        });
+
+        it(@"should do stuff", ^{
+            notificationController.alertLabel should have_received(@selector(setText:)).with(@"Fancy Alert");
         });
     });
 });

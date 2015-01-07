@@ -22,6 +22,7 @@
 		AEB03ED21A3F9FFF002404BC /* CorgiTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB03ED11A3F9FFF002404BC /* CorgiTableController.m */; };
 		AEB03EDE1A3FB366002404BC /* MapController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB03EDD1A3FB366002404BC /* MapController.m */; };
 		AED5709C1A3A4786004ABADA /* CorgisController.m in Sources */ = {isa = PBXBuildFile; fileRef = AED5709B1A3A4786004ABADA /* CorgisController.m */; };
+		B83AC2291A5DF12400A35BD6 /* NotificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B83AC2281A5DF12400A35BD6 /* NotificationController.m */; };
 		B83C32041A4CD9BF0021F1A4 /* PCKMessageCapturer.h in Headers */ = {isa = PBXBuildFile; fileRef = B83C31DC1A4CD9BF0021F1A4 /* PCKMessageCapturer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B83C32051A4CD9BF0021F1A4 /* PCKMessageCapturer.m in Sources */ = {isa = PBXBuildFile; fileRef = B83C31DD1A4CD9BF0021F1A4 /* PCKMessageCapturer.m */; };
 		B83C32061A4CD9BF0021F1A4 /* WatchKit.h in Headers */ = {isa = PBXBuildFile; fileRef = B83C31DE1A4CD9BF0021F1A4 /* WatchKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -214,6 +215,8 @@
 		AEB03EDD1A3FB366002404BC /* MapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapController.m; sourceTree = "<group>"; };
 		AED5709A1A3A4786004ABADA /* CorgisController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CorgisController.h; sourceTree = "<group>"; };
 		AED5709B1A3A4786004ABADA /* CorgisController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CorgisController.m; sourceTree = "<group>"; };
+		B83AC2271A5DF12400A35BD6 /* NotificationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationController.h; sourceTree = "<group>"; };
+		B83AC2281A5DF12400A35BD6 /* NotificationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationController.m; sourceTree = "<group>"; };
 		B83C31C11A4CD8A40021F1A4 /* WatchKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WatchKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B83C31C41A4CD8A40021F1A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B83C31DC1A4CD9BF0021F1A4 /* PCKMessageCapturer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCKMessageCapturer.h; sourceTree = "<group>"; };
@@ -410,8 +413,6 @@
 			isa = PBXGroup;
 			children = (
 				AE03A0381A391C5900AD4964 /* corgi.jpeg */,
-				AE85C06F1A40B974009A0E4D /* plus@2x.png */,
-				AE85C0711A40B990009A0E4D /* minus@2x.png */,
 				AED5709A1A3A4786004ABADA /* CorgisController.h */,
 				AED5709B1A3A4786004ABADA /* CorgisController.m */,
 				AEB03ED01A3F9FFF002404BC /* CorgiTableController.h */,
@@ -423,6 +424,10 @@
 				AE25D6601A390480008A1920 /* InterfaceController.m */,
 				AEB03EDC1A3FB366002404BC /* MapController.h */,
 				AEB03EDD1A3FB366002404BC /* MapController.m */,
+				AE85C0711A40B990009A0E4D /* minus@2x.png */,
+				B83AC2271A5DF12400A35BD6 /* NotificationController.h */,
+				B83AC2281A5DF12400A35BD6 /* NotificationController.m */,
+				AE85C06F1A40B974009A0E4D /* plus@2x.png */,
 				AE85C0621A40A4F4009A0E4D /* SliderController.h */,
 				AE85C0631A40A4F4009A0E4D /* SliderController.m */,
 			);
@@ -744,6 +749,7 @@
 			files = (
 				B83C32521A4CE18C0021F1A4 /* WKInterfaceLabelSpec.mm in Sources */,
 				B83C32551A4CE18C0021F1A4 /* WKInterfaceSliderSpec.mm in Sources */,
+				B83AC2291A5DF12400A35BD6 /* NotificationController.m in Sources */,
 				B83C32581A4CE18C0021F1A4 /* WKInterfaceTimerSpec.mm in Sources */,
 				AE85C0641A40A4F4009A0E4D /* SliderController.m in Sources */,
 				B83C32541A4CE18C0021F1A4 /* WKInterfaceObjectSpec.mm in Sources */,
@@ -1004,6 +1010,7 @@
 				B83C31D61A4CD8A40021F1A4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
