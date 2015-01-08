@@ -292,9 +292,8 @@ describe(@"PCKInterfaceControllerLoader", ^{
         __block NotificationController *notificationController;
 
         beforeEach(^{
-            notificationController = [subject notificationInterfaceControllerWithStoryboardName:@"Interface"
-                                                                                           type:PCKNotificationInterfaceControllerTypeDynamic
-                                                                                         bundle:testBundle];
+            notificationController = [subject dynamicNotificationInterfaceControllerWithStoryboardName:@"Interface"
+                                                                                                bundle:testBundle];
         });
 
         it(@"should do stuff", ^{
