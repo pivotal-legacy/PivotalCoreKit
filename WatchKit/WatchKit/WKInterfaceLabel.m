@@ -32,6 +32,13 @@
 
 - (void)setText:(NSString *)text
 {
+    if ([text isKindOfClass:[NSDictionary class]]) {
+        NSDictionary *textDictionary = (id)text;
+        NSString *fallBackString = textDictionary[@"fallbackString"];
+        if (fallBackString) {
+            text = fallBackString;
+        }
+    }
     _text = text;
     [super setText:text];
 }

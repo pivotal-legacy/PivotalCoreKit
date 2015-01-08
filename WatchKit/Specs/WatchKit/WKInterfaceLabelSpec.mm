@@ -1,8 +1,11 @@
 #import "Cedar.h"
 #import "WKInterfaceLabel.h"
+#import "WKInterfaceLabel+Spec.h"
+
 
 using namespace Cedar::Matchers;
 using namespace Cedar::Doubles;
+
 
 SPEC_BEGIN(WKInterfaceLabelSpec)
 
@@ -14,9 +17,25 @@ describe(@"WKInterfaceLabel", ^{
     });
 
     describe(@"setters", ^{
-        it(@"should record the invocation for setText:", ^{
+        it(@"should record the invocation for setText: when called with a string", ^{
             [subject setText:@"qwer"];
             subject should have_received(@selector(setText:)).with(@"qwer");
+        });
+
+        it(@"should record the invocation for setText: when called with a dictionary", ^{
+            NSDictionary *textDictionary = @{@"fallbackString": @"Welcome Title",
+                                             @"localizationKey": @"wla-Mc-WlR.text",
+                                             };
+            [subject setText:(id)textDictionary];
+            subject should have_received(@selector(setText:)).with(@"Welcome Title");
+        });
+
+        it(@"should set the text property for setText: when called with a dictionary", ^{
+            NSDictionary *textDictionary = @{@"fallbackString": @"Welcome Title",
+                                             @"localizationKey": @"wla-Mc-WlR.text",
+                                             };
+            [subject setText:(id)textDictionary];
+            subject.text should equal(@"Welcome Title");
         });
 
         it(@"should record the invocation for setTextColor:", ^{
