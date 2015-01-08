@@ -3,23 +3,7 @@
 #import <WatchKit/WKInterfaceController.h>
 
 
-@interface PCKDynamicWatchKitObjectProvider ()
-
-@property (nonatomic) NSMutableSet *propertiesThatMayOrMayNotBeWeaklyRetainedByTheirInterfaceControllers;
-
-@end
-
-
 @implementation PCKDynamicWatchKitObjectProvider
-
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-        self.propertiesThatMayOrMayNotBeWeaklyRetainedByTheirInterfaceControllers = [NSMutableSet set];
-    }
-    return self;
-}
 
 - (id)interfaceControllerWithProperties:(NSDictionary *)controllerProperties
 {
@@ -53,9 +37,7 @@
         return nil;
     }
     WKInterfaceObject *interfaceObject = [[propertyClass alloc] init];
-    
-    [self.propertiesThatMayOrMayNotBeWeaklyRetainedByTheirInterfaceControllers addObject:interfaceObject];
-    
+
     NSMutableDictionary *propertyValues = [properties mutableCopy];
     [propertyValues removeObjectForKey:@"property"];
     [propertyValues removeObjectForKey:@"type"];
@@ -85,8 +67,6 @@
 
     return interfaceObject;
 }
-
-#pragma mark - Private
 
 - (SEL)setterNameWithGetterName:(NSString *)getterName
 {
