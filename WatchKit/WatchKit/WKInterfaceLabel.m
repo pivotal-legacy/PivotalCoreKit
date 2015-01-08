@@ -1,6 +1,7 @@
 #import "WKInterfaceLabel.h"
 #import "UIColor+PCK_StringToColor.h"
 
+
 @interface WKInterfaceObject ()
 
 - (void)setText:(NSString *)text NS_REQUIRES_SUPER;
@@ -9,6 +10,7 @@
 - (void)setAttributedText:(NSAttributedString *)attributedText NS_REQUIRES_SUPER;
 
 @end
+
 
 @interface WKInterfaceLabel ()
 
