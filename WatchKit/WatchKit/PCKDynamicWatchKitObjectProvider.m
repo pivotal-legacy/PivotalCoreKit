@@ -1,5 +1,6 @@
 #import "PCKDynamicWatchKitObjectProvider.h"
 #import <WatchKit/WKInterfaceObject.h>
+#import <WatchKit/WKInterfaceController.h>
 
 
 @interface PCKDynamicWatchKitObjectProvider ()
@@ -28,21 +29,21 @@
         [NSException raise:NSInvalidArgumentException
                     format:@"No class named '%@' exists in the current target.  Did you forget to add it to the test target?", controllerClassName];
     }
-    id interfaceController = [interfaceControllerClass alloc];
+    id interfaceController = [[interfaceControllerClass alloc] init];
     
-    NSDictionary *properties = controllerProperties[@"items"];
-    for (NSDictionary *propertiesDictionary in properties) {
-        NSString *propertyKey = propertiesDictionary[@"property"];
-        WKInterfaceObject *interfaceObject = [self interfaceObjectWithProperties:propertiesDictionary];
-        if (propertyKey) {
-            [interfaceController setValue:interfaceObject forKey:propertyKey];
-        }
+    NSDictionary *rootItems = controllerProperties[@"items"];
+    for (NSDictionary *itemDictionary in rootItems) {
+        [self interfaceObjectWithItemDictionary:itemDictionary
+                            interfaceController:interfaceController];
     }
-    
-    return [interfaceController init];
+
+    return interfaceController;
 }
 
-- (WKInterfaceObject *)interfaceObjectWithProperties:(NSDictionary *)properties
+#pragma mark - Private
+
+- (WKInterfaceObject *)interfaceObjectWithItemDictionary:(NSDictionary *)properties
+                                     interfaceController:(WKInterfaceController *)interfaceController
 {
     NSString *propertyType = properties[@"type"];
     NSString *propertyClassName = [NSString stringWithFormat:@"WKInterface%@", [propertyType capitalizedString]];
@@ -65,7 +66,8 @@
                 NSArray *items = propertyValues[name];
                 NSMutableArray *value = [NSMutableArray arrayWithCapacity:items.count];
                 for (NSDictionary *item in items) {
-                    WKInterfaceObject *object = [self interfaceObjectWithProperties:item];
+                    WKInterfaceObject *object = [self interfaceObjectWithItemDictionary:item
+                                                                    interfaceController:interfaceController];
                     [value addObject:object];
                 }
                 [interfaceObject setValue:value forKey:name];
@@ -75,7 +77,12 @@
             }
         }
     }
-    
+
+    NSString *propertyKey = properties[@"property"];
+    if (propertyKey) {
+        [interfaceController setValue:interfaceObject forKey:propertyKey];
+    }
+
     return interfaceObject;
 }
 

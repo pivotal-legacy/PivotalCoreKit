@@ -7,6 +7,5 @@
 @interface PCKDynamicWatchKitObjectProvider : NSObject
 
 - (id)interfaceControllerWithProperties:(NSDictionary *)controllerProperties;
-- (WKInterfaceObject *)interfaceObjectWithProperties:(NSDictionary *)properties;
 
 @end
