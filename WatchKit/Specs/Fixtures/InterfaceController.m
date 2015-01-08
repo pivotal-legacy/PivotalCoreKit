@@ -16,7 +16,8 @@
 @property (weak, nonatomic) IBOutlet WKInterfaceGroup *singleGroup;
 @property (weak, nonatomic) IBOutlet WKInterfaceGroup *nestedGroup;
 @property (weak, nonatomic) IBOutlet WKInterfaceTimer *timer;
-@property (nonatomic) NSMutableString* context;
+@property (weak, nonatomic) IBOutlet WKInterfaceImage *corgiImageInSingleGroup;
+@property (nonatomic) id context;
 
 @end
 

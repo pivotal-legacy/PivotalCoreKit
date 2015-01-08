@@ -18,5 +18,6 @@
 @property (weak, nonatomic, readonly) WKInterfaceGroup *singleGroup;
 @property (weak, nonatomic, readonly) WKInterfaceGroup *nestedGroup;
 @property (weak, nonatomic, readonly) WKInterfaceTimer *timer;
+@property (weak, nonatomic, readonly) WKInterfaceImage *corgiImageInSingleGroup;
 
 @end

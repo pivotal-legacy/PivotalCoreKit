@@ -233,6 +233,10 @@ describe(@"PCKInterfaceControllerLoader", ^{
                             firstImage.image should equal([UIImage imageNamed:@"corgi.jpeg"]);
                             secondImage.image should equal([UIImage imageNamed:@"corgi.jpeg"]);
                         });
+                        
+                        it(@"should set properties inside of groups correctly", ^{
+                            singleGroup.items[1] should be_same_instance_as(controller.corgiImageInSingleGroup);
+                        });
                     });
                     
                     context(@"nested group", ^{

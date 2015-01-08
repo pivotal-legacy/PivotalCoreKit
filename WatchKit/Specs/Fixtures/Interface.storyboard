@@ -62,6 +62,7 @@
                     </items>
                     <connections>
                         <outlet property="actionButton" destination="pKO-a7-4QJ" id="jPy-qS-Kus"/>
+                        <outlet property="corgiImageInSingleGroup" destination="dWk-p4-GHd" id="l05-vT-Bql"/>
                         <outlet property="date" destination="wIi-bN-AiJ" id="dbO-od-wVO"/>
                         <outlet property="disabledSlider" destination="Us7-wk-RC9" id="0XK-Gk-gsG"/>
                         <outlet property="enabledSlider" destination="7YA-QO-RZk" id="ZNc-Ef-wPY"/>
