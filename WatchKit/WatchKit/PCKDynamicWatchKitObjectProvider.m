@@ -3,7 +3,23 @@
 #import <WatchKit/WKInterfaceController.h>
 
 
+@interface PCKDynamicWatchKitObjectProvider ()
+
+@property (nonatomic) NSMutableSet *propertiesThatMayOrMayNotBeWeaklyRetainedByTheirInterfaceControllers;
+
+@end
+
+
 @implementation PCKDynamicWatchKitObjectProvider
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.propertiesThatMayOrMayNotBeWeaklyRetainedByTheirInterfaceControllers = [NSMutableSet set];
+    }
+    return self;
+}
 
 - (id)interfaceControllerWithProperties:(NSDictionary *)controllerProperties
 {
@@ -13,7 +29,7 @@
         [NSException raise:NSInvalidArgumentException
                     format:@"No class named '%@' exists in the current target.  Did you forget to add it to the test target?", controllerClassName];
     }
-    id interfaceController = [[interfaceControllerClass alloc] init];
+    id interfaceController = [interfaceControllerClass alloc];
     
     NSDictionary *rootItems = controllerProperties[@"items"];
     for (NSDictionary *itemDictionary in rootItems) {
@@ -21,7 +37,7 @@
                             interfaceController:interfaceController];
     }
 
-    return interfaceController;
+    return [interfaceController init];
 }
 
 #pragma mark - Private
@@ -41,6 +57,7 @@
     NSMutableDictionary *propertyValues = [properties mutableCopy];
     [propertyValues removeObjectForKey:@"property"];
     [propertyValues removeObjectForKey:@"type"];
+
     for (NSString *name in propertyValues) {
         SEL setterSelector = [self setterNameWithGetterName:name];
         if ([interfaceObject respondsToSelector:setterSelector]) {

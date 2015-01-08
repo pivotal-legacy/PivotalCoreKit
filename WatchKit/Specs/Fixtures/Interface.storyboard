@@ -13,6 +13,7 @@
                         <label alignment="center" text="Some text" textAlignment="center" id="fWh-mQ-CyP">
                             <color key="textColor" red="1" green="0.48994428449999999" blue="0.21377069379999999" alpha="1" colorSpace="calibratedRGB"/>
                         </label>
+                        <label alignment="left" text="programmatic label" id="lNC-MD-Hs5"/>
                         <separator alignment="center" id="FBI-ul-8F7">
                             <color key="color" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         </separator>
@@ -69,6 +70,7 @@
                         <outlet property="image" destination="I6V-K6-R7W" id="2hY-b4-JBi"/>
                         <outlet property="nestedGroup" destination="PWR-Mj-UwS" id="OcQ-cb-dUj"/>
                         <outlet property="noActionButton" destination="67c-5i-eSq" id="6aV-os-Wz7"/>
+                        <outlet property="programmaticLabel" destination="lNC-MD-Hs5" id="nqk-ZC-xTd"/>
                         <outlet property="segueModalButton" destination="2V4-dx-Xtj" id="GVz-qf-vhk"/>
                         <outlet property="seguePushButton" destination="8NN-UE-BFJ" id="SIZ-F9-fwn"/>
                         <outlet property="separator" destination="FBI-ul-8F7" id="mOZ-90-hBd"/>

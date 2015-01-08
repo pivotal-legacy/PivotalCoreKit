@@ -26,6 +26,10 @@ describe(@"WKInterfaceController", ^{
 
     describe(@"public methods", ^{
 
+        it(@"should be able to set properties in its own implementation of init", ^{
+            subject.programmaticLabel should have_received(@selector(setText:)).with(@"My Initial Title");
+        });
+
         it(@"should record the invocations of awakeWithContext:", ^{
             [subject awakeWithContext:@1];
 

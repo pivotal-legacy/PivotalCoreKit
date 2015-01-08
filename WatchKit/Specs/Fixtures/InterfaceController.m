@@ -3,6 +3,7 @@
 @interface InterfaceController()
 
 @property (weak, nonatomic) IBOutlet WKInterfaceLabel *titleLabel;
+@property (weak, nonatomic) IBOutlet WKInterfaceLabel *programmaticLabel;
 @property (weak, nonatomic) IBOutlet WKInterfaceImage *image;
 @property (weak, nonatomic) IBOutlet WKInterfaceSeparator *separator;
 @property (weak, nonatomic) IBOutlet WKInterfaceButton *actionButton;
@@ -23,6 +24,15 @@
 
 
 @implementation InterfaceController
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        [self.programmaticLabel setText:@"My Initial Title"];
+    }
+    return self;
+}
 
 #pragma mark - WKInterfaceController
 
