@@ -188,13 +188,25 @@
             <objects>
                 <glanceController spacing="0.0" id="0uZ-2p-rRc" customClass="GlanceController">
                     <items>
-                        <group alignment="left" id="t8f-Gd-c4y"/>
-                        <group alignment="left" id="uCw-4Q-Ouw"/>
+                        <group alignment="left" id="t8f-Gd-c4y">
+                            <items>
+                                <label alignment="center" verticalAlignment="center" text="My Special Title" id="EN5-uD-s18"/>
+                            </items>
+                        </group>
+                        <group alignment="left" id="uCw-4Q-Ouw">
+                            <items>
+                                <label alignment="center" verticalAlignment="center" text="My Special Description" id="MMt-E0-kJt"/>
+                            </items>
+                        </group>
                     </items>
                     <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="14"/>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="MMt-E0-kJt" id="2KF-mM-ihj"/>
+                        <outlet property="titleLabel" destination="EN5-uD-s18" id="QN7-PK-tA7"/>
+                    </connections>
                 </glanceController>
             </objects>
-            <point key="canvasLocation" x="-141" y="729"/>
+            <point key="canvasLocation" x="-101" y="706"/>
         </scene>
         <!--corgi.jpeg-->
         <scene sceneID="AEw-b0-oYE">

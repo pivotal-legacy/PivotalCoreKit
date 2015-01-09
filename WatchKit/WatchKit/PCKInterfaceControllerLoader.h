@@ -10,4 +10,8 @@
 - (id)dynamicNotificationInterfaceControllerWithStoryboardName:(NSString *)storyboardName
                                                         bundle:(NSBundle *)bundle;
 
+- (id)glanceInterfaceControllerWithStoryboardName:(NSString *)storyboardName
+                                       identifier:(NSString *)objectID
+                                           bundle:(NSBundle *)bundle;
+
 @end

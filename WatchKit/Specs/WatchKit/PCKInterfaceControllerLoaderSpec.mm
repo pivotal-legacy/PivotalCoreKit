@@ -1,6 +1,7 @@
 #import "Cedar.h"
 #import "InterfaceController.h"
 #import "NotificationController.h"
+#import "GlanceController.h"
 #import "PCKInterfaceControllerLoader.h"
 #import "WKInterfaceButton+Spec.h"
 #import "WKInterfaceDate+Spec.h"
@@ -295,13 +296,75 @@ describe(@"PCKInterfaceControllerLoader", ^{
     describe(@"providing an instance of a WKUserNotificationInterfaceController subclass that lives in a storyboard's plist", ^{
         __block NotificationController *notificationController;
 
-        beforeEach(^{
-            notificationController = [subject dynamicNotificationInterfaceControllerWithStoryboardName:@"Interface"
-                                                                                                bundle:testBundle];
+        context(@"when there is no storyboard matching the name", ^{
+            it(@"should raise an exception with a helpful message", ^{
+
+                ^{
+                    [subject dynamicNotificationInterfaceControllerWithStoryboardName:@"NonExistantName"
+                                                                               bundle:testBundle]; }
+                should raise_exception
+                .with_name(NSInvalidArgumentException)
+                .with_reason(@"No storyboard named 'NonExistantName' exists in the test target.  Did you forget to add it?");
+
+            });
         });
 
-        it(@"should do stuff", ^{
-            notificationController.alertLabel should have_received(@selector(setText:)).with(@"Fancy Alert");
+        context(@"when there is a notification scene", ^{
+            beforeEach(^{
+                notificationController = [subject dynamicNotificationInterfaceControllerWithStoryboardName:@"Interface"
+                                                                                                    bundle:testBundle];
+            });
+
+            it(@"should have its properties populated appropriately", ^{
+                notificationController.alertLabel should have_received(@selector(setText:)).with(@"Fancy Alert");
+            });
+        });
+
+
+    });
+
+    describe(@"providing an isntance of a glance controller that lives in a storyboard's plist", ^{
+        __block GlanceController *glanceController;
+
+        context(@"when there is no storyboard matching the name", ^{
+            it(@"should raise an exception with a helpful message", ^{
+
+                ^{
+                    [subject glanceInterfaceControllerWithStoryboardName:@"NonExistantName"
+                                                              identifier:@"0uZ-2p-rRc"
+                                                                  bundle:testBundle]; }
+                should raise_exception
+                    .with_name(NSInvalidArgumentException)
+                    .with_reason(@"No storyboard named 'NonExistantName' exists in the test target.  Did you forget to add it?");
+
+            });
+        });
+
+        context(@"when there is a storyboard but the identifier is bad", ^{
+            it(@"should raise an exception with a helpful message", ^{
+
+                ^{
+                    [subject glanceInterfaceControllerWithStoryboardName:@"Interface"
+                                                              identifier:@"NonExistantController"
+                                                                  bundle:testBundle]; }
+                should raise_exception
+                    .with_name(NSInvalidArgumentException)
+                    .with_reason(@"No interface controller named 'NonExistantController' exists in the storyboard 'Interface'.  Please check the storyboard and try again.");
+
+            });
+        });
+
+        context(@"when there is a glance scene", ^{
+            beforeEach(^{
+                glanceController = [subject glanceInterfaceControllerWithStoryboardName:@"Interface"
+                                                                             identifier:@"0uZ-2p-rRc"
+                                                                                 bundle:testBundle];
+            });
+
+            it(@"should have its properties populated appropriately", ^{
+                glanceController.titleLabel should have_received(@selector(setText:)).with(@"My Special Title");
+                glanceController.descriptionLabel should have_received(@selector(setText:)).with(@"My Special Description");
+            });
         });
     });
 });
