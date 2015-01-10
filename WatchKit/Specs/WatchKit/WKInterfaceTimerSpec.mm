@@ -1,8 +1,10 @@
 #import "Cedar.h"
-#import "WKInterfaceTimer.h"
+#import <WatchKit/WatchKit.h>
+
 
 using namespace Cedar::Matchers;
 using namespace Cedar::Doubles;
+
 
 SPEC_BEGIN(WKInterfaceTimerSpec)
 

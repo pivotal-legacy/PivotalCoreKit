@@ -1,11 +1,10 @@
 #import "Cedar.h"
-#import "WKInterfaceMap.h"
-#import "PCKInterfaceControllerLoader.h"
 #import "MapController.h"
 
 
 using namespace Cedar::Matchers;
 using namespace Cedar::Doubles;
+
 
 SPEC_BEGIN(WKInterfaceMapSpec)
 

@@ -1,5 +1,5 @@
 #import "Cedar.h"
-#import "WKUserNotificationInterfaceController+Spec.h"
+#import <WatchKit/WatchKit.h>
 
 
 using namespace Cedar::Matchers;

@@ -1,7 +1,5 @@
 #import "Cedar.h"
 #import "InterfaceController.h"
-#import "PCKInterfaceControllerLoader.h"
-#import "WKInterfaceButton+Spec.h"
 
 
 using namespace Cedar::Matchers;

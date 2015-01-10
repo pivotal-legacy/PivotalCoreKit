@@ -1,10 +1,10 @@
 #import "Cedar.h"
-#import "WKInterfaceSlider+Spec.h"
-#import "PCKInterfaceControllerLoader.h"
 #import "SliderController.h"
+
 
 using namespace Cedar::Matchers;
 using namespace Cedar::Doubles;
+
 
 SPEC_BEGIN(WKInterfaceSliderSpec)
 

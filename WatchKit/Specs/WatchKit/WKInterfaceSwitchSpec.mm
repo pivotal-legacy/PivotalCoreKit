@@ -1,11 +1,10 @@
 #import "Cedar.h"
-#import "WKInterfaceSwitch.h"
 #import "InterfaceController.h"
-#import "PCKInterfaceControllerLoader.h"
 
 
 using namespace Cedar::Matchers;
 using namespace Cedar::Doubles;
+
 
 SPEC_BEGIN(WKInterfaceSwitchSpec)
 

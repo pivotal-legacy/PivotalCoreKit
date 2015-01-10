@@ -1,6 +1,5 @@
 #import "Cedar.h"
-#import "WKInterfaceLabel.h"
-#import "WKInterfaceLabel+Spec.h"
+#import <WatchKit/WatchKit.h>
 
 
 using namespace Cedar::Matchers;

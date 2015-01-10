@@ -1,7 +1,5 @@
 #import "Cedar.h"
-#import "PCKInterfaceControllerLoader.h"
 #import "CorgiTableController.h"
-#import "WKInterfaceTable+Spec.h"
 
 
 using namespace Cedar::Matchers;

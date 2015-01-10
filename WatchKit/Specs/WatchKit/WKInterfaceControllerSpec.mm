@@ -2,13 +2,11 @@
 #import "CorgisController.h"
 #import "InterfaceController.h"
 #import "PCKInterfaceControllerLoader.h"
-#import "WKInterfaceController.h"
-#import "WKInterfaceButton+Spec.h"
-#import "PCKFakeSegue.h"
 
 
 using namespace Cedar::Matchers;
 using namespace Cedar::Doubles;
+
 
 SPEC_BEGIN(WKInterfaceControllerSpec)
 
