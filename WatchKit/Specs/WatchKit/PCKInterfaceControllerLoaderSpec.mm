@@ -2,16 +2,6 @@
 #import "InterfaceController.h"
 #import "NotificationController.h"
 #import "GlanceController.h"
-#import "PCKInterfaceControllerLoader.h"
-#import "WKInterfaceButton+Spec.h"
-#import "WKInterfaceDate+Spec.h"
-#import "WKInterfaceGroup+Spec.h"
-#import "WKInterfaceImage+Spec.h"
-#import "WKInterfaceLabel+Spec.h"
-#import "WKInterfaceSeparator+Spec.h"
-#import "WKInterfaceSlider+Spec.h"
-#import "WKInterfaceSwitch+Spec.h"
-#import "WKInterfaceTimer+Spec.h"
 
 
 using namespace Cedar::Matchers;
