@@ -257,6 +257,33 @@ end
 
 task :core_location => ["core_location:build", "core_location:spec"]
 
+namespace :watchkit do
+  project_name = "WatchKit/WatchKit"
+  
+  namespace :build do
+    task :ios do
+      system_or_exit(
+      %Q[xcodebuild -project #{project_name}.xcodeproj -scheme WatchKit -sdk iphonesimulator -configuration #{CONFIGURATION} build]
+      )
+    end
+  end
+  
+  namespace :spec do
+    require 'tmpdir'
+    task :ios do
+      `osascript -e 'tell application "iPhone Simulator" to quit'`
+      system_or_exit(
+      %Q[xcodebuild -project #{project_name}.xcodeproj -scheme WatchKit -sdk iphonesimulator build test]
+      )
+      `osascript -e 'tell application "iPhone Simulator" to quit'`
+    end
+  end
+  task :spec => ["spec:ios"]
+  task :build => ["build:ios"]
+end
+
+task :watchkit => ["watchkit:build", "watchkit:spec"]
+
 namespace :all do
   task :build => ["foundation:build", "uikit:build", "core_location:build"]
   task :spec => ["foundation:spec", "uikit:spec", "core_location:spec"]
