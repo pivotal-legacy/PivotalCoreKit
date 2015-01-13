@@ -78,7 +78,7 @@ def build_target(target, project: project, output_file: output_file)
 end
 
 task :default => [:trim_whitespace, "all:spec"]
-task :cruise => ["all:clean", "all:build", "all:spec"]
+task :travis => ["foundation:clean", "uikit:clean", "core_location:clean", "foundation:spec", "uikit:spec", "core_location:spec"]
 
 task :trim_whitespace do
   system_or_exit(%Q[git status --short | awk '{if ($1 != "D" && $1 != "R") print $2}' | grep -e '.*\.[mh]$' | xargs sed -i '' -e 's/	/    /g;s/ *$//g;'])
@@ -257,8 +257,34 @@ end
 
 task :core_location => ["core_location:build", "core_location:spec"]
 
+namespace :watchkit do
+  project_name = "WatchKit/WatchKit"
+
+  namespace :build do
+    task :ios do
+      system_or_exit(%Q[xcodebuild -project #{project_name}.xcodeproj -scheme WatchKit -sdk iphonesimulator -configuration #{CONFIGURATION} build], {}, output_file("watchkit:build:ios"))
+    end
+  end
+
+  namespace :spec do
+    require 'tmpdir'
+    task :ios do
+      `osascript -e 'tell application "iPhone Simulator" to quit'`
+      system_or_exit(%Q[xcodebuild -project #{project_name}.xcodeproj -scheme WatchKit -sdk iphonesimulator build test], {}, output_file("watchkit:spec:ios"))
+      `osascript -e 'tell application "iPhone Simulator" to quit'`
+    end
+  end
+  task :spec => ["spec:ios"]
+  task :build => ["build:ios"]
+  task :clean do
+    system_or_exit(%Q[xcodebuild -project #{project_name}.xcodeproj -alltargets -configuration #{CONFIGURATION} clean SYMROOT=#{BUILD_DIR}], {}, output_file("watchkit:clean"))
+  end
+end
+
+task :watchkit => ["watchkit:build", "watchkit:spec"]
+
 namespace :all do
-  task :build => ["foundation:build", "uikit:build", "core_location:build"]
-  task :spec => ["foundation:spec", "uikit:spec", "core_location:spec"]
+  task :build => ["foundation:build", "uikit:build", "core_location:build", "watchkit:build"]
+  task :spec => ["foundation:spec", "uikit:spec", "core_location:spec", "watchkit:spec"]
   task :clean => ["foundation:clean", "uikit:clean", "core_location:clean"]
 end

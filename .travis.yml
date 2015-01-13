@@ -8,4 +8,5 @@ env:
     - BUILD_SDK_VERSION="8.1" SIMULATOR_VERSIONS="8.1,7.1" SIMULATOR_DEVICES="iPhone 5,iPhone 5s"
     - BUILD_SDK_VERSION="7.1" SIMULATOR_VERSIONS="8.1,7.1" SIMULATOR_DEVICES="iPhone 5,iPhone 5s"
 
-script: rake
+script: rake travis
+
