@@ -148,11 +148,7 @@ namespace :foundation do
   task :build => ["foundation:build:core", "foundation:build:spec_helper"]
   task :spec => ["foundation:spec:osx", "foundation:spec:ios"]
   task :clean do
-<<<<<<< HEAD
     system_or_exit(%Q[xcodebuild -project #{project}.xcodeproj -alltargets -configuration #{CONFIGURATION} clean SYMROOT=#{BUILD_DIR}], {}, output_file("foundation:clean"))
-=======
-    system_or_exit(%Q[xcodebuild -project #{project_name}.xcodeproj -alltargets -configuration #{CONFIGURATION} clean SYMROOT=#{BUILD_DIR}], {}, output_file("foundation:clean"))
->>>>>>> Updates Rakefile for WatchKit test helpers
   end
 end
 
@@ -263,13 +259,13 @@ task :core_location => ["core_location:build", "core_location:spec"]
 
 namespace :watchkit do
   project_name = "WatchKit/WatchKit"
-  
+
   namespace :build do
     task :ios do
       system_or_exit(%Q[xcodebuild -project #{project_name}.xcodeproj -scheme WatchKit -sdk iphonesimulator -configuration #{CONFIGURATION} build], {}, output_file("watchkit:build:ios"))
     end
   end
-  
+
   namespace :spec do
     require 'tmpdir'
     task :ios do
@@ -280,6 +276,9 @@ namespace :watchkit do
   end
   task :spec => ["spec:ios"]
   task :build => ["build:ios"]
+  task :clean do
+    system_or_exit(%Q[xcodebuild -project #{project_name}.xcodeproj -alltargets -configuration #{CONFIGURATION} clean SYMROOT=#{BUILD_DIR}], {}, output_file("watchkit:clean"))
+  end
 end
 
 task :watchkit => ["watchkit:build", "watchkit:spec"]
