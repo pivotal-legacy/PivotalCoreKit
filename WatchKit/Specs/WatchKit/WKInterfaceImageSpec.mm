@@ -55,6 +55,12 @@ describe(@"WKInterfaceImage", ^{
 
             subject should have_received(@selector(stopAnimating));
         });
+
+        it(@"should record the invocation for setTintColor:", ^{
+            [subject setTintColor:[UIColor clearColor]];
+
+            subject should have_received(@selector(setTintColor:)).with([UIColor clearColor]);
+        });
     });
 });
 
