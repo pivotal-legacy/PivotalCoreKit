@@ -109,7 +109,7 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'WatchKit' do |watchkit|
-    location.subspec 'WatchKit' do |h|
+    watchkit.subspec 'WatchKit' do |h|
       h.subspec 'Base' do |base|
         base.source_files = 'WatchKit/WatchKit/*.{h,m}'
       end
