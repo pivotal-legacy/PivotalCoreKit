@@ -3,7 +3,7 @@
 typedef NS_ENUM(NSInteger, WKUserNotificationInterfaceType)  {
     WKUserNotificationInterfaceTypeDefault,
     WKUserNotificationInterfaceTypeCustom,
-} NS_ENUM_AVAILABLE_IOS(8_2);
+};
 
 @class WKInterfaceTable;
 
@@ -24,7 +24,7 @@ typedef NS_ENUM(NSInteger, WKMenuItemIcon)  {
     WKMenuItemIconShuffle,      // swapped arrows
     WKMenuItemIconSpeaker,      // speaker icon
     WKMenuItemIconTrash,        // trash icon
-} NS_ENUM_AVAILABLE_IOS(8_2);
+};
 
 typedef enum WKTextInputMode : NSInteger  {
     WKTextInputModePlain,

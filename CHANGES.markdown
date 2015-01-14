@@ -1,6 +1,6 @@
 ## HEAD
 
-## 0.2.2 (in progress)
+## 0.2.2
 
   * Adds support for testing wiring of WatchKit apps in Cedar/XCTest/etc.
 
