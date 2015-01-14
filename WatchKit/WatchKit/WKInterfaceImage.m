@@ -7,6 +7,8 @@
 - (void)setImageData:(NSData *)imageData NS_REQUIRES_SUPER;
 - (void)setImageNamed:(NSString *)imageName NS_REQUIRES_SUPER;
 
+- (void)setTintColor:(UIColor *)tintColor NS_REQUIRES_SUPER;
+
 - (void)startAnimating NS_REQUIRES_SUPER;
 - (void)startAnimatingWithImagesInRange:(NSRange)imageRange
                                duration:(NSTimeInterval)duration
@@ -56,6 +58,9 @@
     [super stopAnimating];
 }
 
-
+- (void)setTintColor:(UIColor *)tintColor
+{
+    [super setTintColor:tintColor];
+}
 
 @end

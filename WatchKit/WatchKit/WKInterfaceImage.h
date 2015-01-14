@@ -7,6 +7,8 @@
 - (void)setImageData:(NSData *)imageData;
 - (void)setImageNamed:(NSString *)imageName;
 
+- (void)setTintColor:(UIColor *)tintColor;
+
 - (void)startAnimating;
 
 - (void)startAnimatingWithImagesInRange:(NSRange)imageRange
