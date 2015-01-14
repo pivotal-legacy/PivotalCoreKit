@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
   s.summary  = 'Shared library and test code for iOS projects.'
   s.homepage = 'https://github.com/pivotal/PivotalCoreKit'
   s.author   = { 'Pivotal Labs' => 'http://pivotallabs.com' }
-  s.source   = { :git => 'https://github.com/pivotal/PivotalCoreKit.git', :tag => '0.2.2' }
+  s.source   = { :git => 'https://github.com/pivotal/PivotalCoreKit.git', :tag => 'v0.2.2' }
   s.platform = :ios, '6.0'
   s.requires_arc = false
 
