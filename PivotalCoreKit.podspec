@@ -109,10 +109,8 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'WatchKit' do |watchkit|
-    watchkit.subspec 'WatchKit' do |h|
-      h.subspec 'Base' do |base|
-        base.source_files = 'WatchKit/WatchKit/*.{h,m}'
-      end
+    watchkit.subspec 'WatchKit' do |child_watchkit|
+      child_watchkit.source_files = 'WatchKit/WatchKit/*.{h,m}'
     end
   end
 end
