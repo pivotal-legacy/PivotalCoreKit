@@ -1,6 +1,6 @@
 #import "PCKDynamicWatchKitObjectProvider.h"
-#import <WatchKit/WKInterfaceObject.h>
-#import <WatchKit/WKInterfaceController.h>
+#import "WKInterfaceObject.h"
+#import "WKInterfaceController.h"
 
 
 @interface PCKDynamicWatchKitObjectProvider ()
