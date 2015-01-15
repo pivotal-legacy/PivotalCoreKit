@@ -1,6 +1,6 @@
 #import <UIKit/UIKit.h>
 
-#ifdef __IPHONE_8_0
+#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_8_0
 @interface UIAlertController (Spec)
 
 - (void)dismissByTappingCancelButton;

@@ -2,6 +2,8 @@
 #import "PCKMethodRedirector.h"
 #import <objc/objc-runtime.h>
 
+#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_8_0
+
 static char * kHandlerKey;
 
 @interface UIAlertAction (SpecPrivate)
@@ -28,3 +30,4 @@ static char * kHandlerKey;
 }
 
 @end
+#endif

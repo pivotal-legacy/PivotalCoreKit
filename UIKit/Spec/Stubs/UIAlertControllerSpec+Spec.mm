@@ -8,7 +8,7 @@ using namespace Cedar::Doubles;
 
 SPEC_BEGIN(UIAlertControllerSpec)
 
-#ifdef __IPHONE_8_0
+#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_8_0
 if (NSClassFromString(@"UIAlertController")) {
     describe(@"UIAlertController (spec extensions)", ^{
         __block UIAlertController *alertController;
