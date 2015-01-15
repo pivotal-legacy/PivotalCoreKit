@@ -1,6 +1,8 @@
 #import "UIAlertController+Spec.h"
 #import "UIAlertAction+Spec.h"
 
+#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_8_0
+
 @implementation UIAlertController (Spec)
 
 - (void)dismissByTappingCancelButton {
@@ -41,3 +43,5 @@
 }
 
 @end
+
+#endif

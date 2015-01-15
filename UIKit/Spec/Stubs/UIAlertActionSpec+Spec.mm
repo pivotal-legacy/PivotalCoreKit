@@ -6,7 +6,8 @@ using namespace Cedar::Doubles;
 
 SPEC_BEGIN(UIAlertAction_SpecSpec)
 
-#ifdef __IPHONE_8_0
+#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_8_0
+
 if (NSClassFromString(@"UIAlertAction")) {
     describe(@"UIAlertAction (spec extensions)", ^{
         __block UIAlertAction *action;
