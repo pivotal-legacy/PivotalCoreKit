@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AE03A0391A391C5900AD4964 /* corgi.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = AE03A0381A391C5900AD4964 /* corgi.jpeg */; };
+		AE0FDC801A6ECB71006C781D /* CustomCategoryNotificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0FDC7F1A6ECB71006C781D /* CustomCategoryNotificationController.m */; };
 		AE25D5FE1A38F6C9008A1920 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE25D5FD1A38F6C9008A1920 /* XCTest.framework */; };
 		AE25D6001A38F6C9008A1920 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE25D5FF1A38F6C9008A1920 /* CoreGraphics.framework */; };
 		AE25D6021A38F6C9008A1920 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE25D6011A38F6C9008A1920 /* UIKit.framework */; };
@@ -194,6 +195,8 @@
 
 /* Begin PBXFileReference section */
 		AE03A0381A391C5900AD4964 /* corgi.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = corgi.jpeg; sourceTree = "<group>"; };
+		AE0FDC7E1A6ECB71006C781D /* CustomCategoryNotificationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCategoryNotificationController.h; sourceTree = "<group>"; };
+		AE0FDC7F1A6ECB71006C781D /* CustomCategoryNotificationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCategoryNotificationController.m; sourceTree = "<group>"; };
 		AE25D5FB1A38F6C9008A1920 /* Specs.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Specs.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE25D5FD1A38F6C9008A1920 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		AE25D5FF1A38F6C9008A1920 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = /System/Library/Frameworks/CoreGraphics.framework; sourceTree = "<absolute>"; };
@@ -424,6 +427,10 @@
 				AED5709B1A3A4786004ABADA /* CorgisController.m */,
 				AEB03ED01A3F9FFF002404BC /* CorgiTableController.h */,
 				AEB03ED11A3F9FFF002404BC /* CorgiTableController.m */,
+				AE0FDC7E1A6ECB71006C781D /* CustomCategoryNotificationController.h */,
+				AE0FDC7F1A6ECB71006C781D /* CustomCategoryNotificationController.m */,
+				AEAA43D11A5F4CBE0034358B /* GlanceController.h */,
+				AEAA43D21A5F4CBE0034358B /* GlanceController.m */,
 				AE85C05F1A3FC03B009A0E4D /* GroupController.h */,
 				AE85C0601A3FC03B009A0E4D /* GroupController.m */,
 				AE25D65D1A38FFA9008A1920 /* Interface.storyboard */,
@@ -437,8 +444,6 @@
 				AE85C06F1A40B974009A0E4D /* plus@2x.png */,
 				AE85C0621A40A4F4009A0E4D /* SliderController.h */,
 				AE85C0631A40A4F4009A0E4D /* SliderController.m */,
-				AEAA43D11A5F4CBE0034358B /* GlanceController.h */,
-				AEAA43D21A5F4CBE0034358B /* GlanceController.m */,
 			);
 			path = Fixtures;
 			sourceTree = "<group>";
@@ -765,6 +770,7 @@
 				B83C32581A4CE18C0021F1A4 /* WKInterfaceTimerSpec.mm in Sources */,
 				AE85C0641A40A4F4009A0E4D /* SliderController.m in Sources */,
 				AEAA43D31A5F4CBE0034358B /* GlanceController.m in Sources */,
+				AE0FDC801A6ECB71006C781D /* CustomCategoryNotificationController.m in Sources */,
 				B83C32541A4CE18C0021F1A4 /* WKInterfaceObjectSpec.mm in Sources */,
 				AEB03EDE1A3FB366002404BC /* MapController.m in Sources */,
 				B83C324E1A4CE18C0021F1A4 /* WKInterfaceControllerSpec.mm in Sources */,
