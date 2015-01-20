@@ -2,7 +2,7 @@
 #import "InterfaceController.h"
 #import "NotificationController.h"
 #import "GlanceController.h"
-
+#import "CustomCategoryNotificationController.h"
 
 using namespace Cedar::Matchers;
 using namespace Cedar::Doubles;
@@ -13,17 +13,17 @@ SPEC_BEGIN(PCKInterfaceControllerLoaderSpec)
 describe(@"PCKInterfaceControllerLoader", ^{
     __block PCKInterfaceControllerLoader *subject;
     __block NSBundle *testBundle;
-    
+
     beforeEach(^{
         testBundle = [NSBundle bundleForClass:[self class]];
         subject = [[PCKInterfaceControllerLoader alloc] init];
     });
-    
+
     describe(@"providing an instance of a WKInterfaceController subclass that lives in a storyboard's plist, inside the test bundle", ^{
-        
+
         context(@"when there is no storyboard matching the name", ^{
             it(@"should raise an exception with a helpful message", ^{
-                
+
                 ^{
                     [subject interfaceControllerWithStoryboardName:@"NonExistantName"
                                                         identifier:@"DoesntMatter"
@@ -283,7 +283,7 @@ describe(@"PCKInterfaceControllerLoader", ^{
         });
     });
 
-    describe(@"providing an instance of a WKUserNotificationInterfaceController subclass that lives in a storyboard's plist", ^{
+    describe(@"providing an instance of a WKUserNotificationInterfaceController subclass configured as the default notification interface that lives in a storyboard's plist", ^{
         __block NotificationController *notificationController;
 
         context(@"when there is no storyboard matching the name", ^{
@@ -291,7 +291,38 @@ describe(@"PCKInterfaceControllerLoader", ^{
 
                 ^{
                     [subject dynamicNotificationInterfaceControllerWithStoryboardName:@"NonExistantName"
-                                                                               bundle:testBundle]; }
+                                                                               bundle:testBundle
+                                                                 notificationCategory:nil]; }
+                should raise_exception
+                .with_name(NSInvalidArgumentException)
+                .with_reason(@"No storyboard named 'NonExistantName' exists in the test target.  Did you forget to add it?");
+            });
+        });
+
+        context(@"when there is a notification scene", ^{
+            beforeEach(^{
+                notificationController = [subject dynamicNotificationInterfaceControllerWithStoryboardName:@"Interface"
+                                                                                                    bundle:testBundle
+                                                                                      notificationCategory:nil];
+            });
+
+            it(@"should have its properties populated appropriately", ^{
+                notificationController.alertLabel should have_received(@selector(setText:)).with(@"Fancy Alert");
+            });
+        });
+    });
+
+    describe(@"providing an instance of a WKUserNotificationInterfaceController subclass configured as the notification interface for a specific notification category that lives in a storyboard's plist", ^{
+
+        __block CustomCategoryNotificationController *customCategoryNotificationController;
+
+        context(@"when there is no storyboard matching the name", ^{
+            it(@"should raise an exception with a helpful message", ^{
+
+                ^{
+                    [subject dynamicNotificationInterfaceControllerWithStoryboardName:@"NonExistantName"
+                                                                               bundle:testBundle
+                                                                 notificationCategory:nil]; }
                 should raise_exception
                 .with_name(NSInvalidArgumentException)
                 .with_reason(@"No storyboard named 'NonExistantName' exists in the test target.  Did you forget to add it?");
@@ -301,16 +332,19 @@ describe(@"PCKInterfaceControllerLoader", ^{
 
         context(@"when there is a notification scene", ^{
             beforeEach(^{
-                notificationController = [subject dynamicNotificationInterfaceControllerWithStoryboardName:@"Interface"
-                                                                                                    bundle:testBundle];
+                customCategoryNotificationController = [subject dynamicNotificationInterfaceControllerWithStoryboardName:@"Interface"
+                                                                                                                  bundle:testBundle
+                                                                                                    notificationCategory:@"com.pivotal.core.watch"];
+            });
+
+            it(@"should instantiate the custom controller", ^{
+                customCategoryNotificationController should be_instance_of([CustomCategoryNotificationController class]);
             });
 
             it(@"should have its properties populated appropriately", ^{
-                notificationController.alertLabel should have_received(@selector(setText:)).with(@"Fancy Alert");
+                customCategoryNotificationController.alertLabel should have_received(@selector(setText:)).with(@"Category Alert");
             });
         });
-
-
     });
 
     describe(@"providing an isntance of a glance controller that lives in a storyboard's plist", ^{
