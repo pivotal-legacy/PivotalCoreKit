@@ -84,6 +84,11 @@ Here is a (hopefully exhaustive but inevitably out of date) list of PivotalCoreK
 * CoreLocation (iOS only)
   * SpecHelper
     * Simulate Geocoding success or failure
+* WatchKit (iOS only)
+  * WatchKit
+    * An interface-identical stand-in framework for Apple's entire WatchKit framework 
+    * Used to write tests for your WatchKit apps (currently impossible if using Apple's framework classes directly)
+
 
 PivotalCoreKit is test-driven and includes Specs in each project.
 
