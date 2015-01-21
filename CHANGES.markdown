@@ -1,5 +1,9 @@
 ## HEAD
 
+## 0.2.4 (in progress)
+
+  * Adds instructions for releasing new versions of PivotalCoreKit
+
 ## 0.2.3
 
   * Update WatchKit framework for Xcode 6.2 beta 4 
