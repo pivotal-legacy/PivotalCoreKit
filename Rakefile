@@ -57,6 +57,7 @@ def build_and_test_scheme(scheme)
 
   devices.each do |device|
     versions.each do |version|
+      `osascript -e 'tell application "iPhone Simulator" to quit'`
       system_or_exit(
         %Q[xcodebuild -workspace PivotalCoreKit.xcworkspace \
           -scheme #{scheme} \
@@ -64,6 +65,7 @@ def build_and_test_scheme(scheme)
           -destination platform='iOS Simulator',name='#{device},OS=#{version}' \
           test]
       )
+      `osascript -e 'tell application "iPhone Simulator" to quit'`
     end
   end
 end
