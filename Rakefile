@@ -264,7 +264,7 @@ namespace :watchkit do
 
   namespace :build do
     task :ios do
-      system_or_exit(%Q[xcodebuild -project #{project_name}.xcodeproj -scheme WatchKit -sdk iphonesimulator -configuration #{CONFIGURATION} build], {}, output_file("watchkit:build:ios"))
+      system_or_exit(%Q[xcodebuild -project #{project_name}.xcodeproj -scheme WatchKit -sdk iphonesimulator8.2 -configuration #{CONFIGURATION} build], {}, output_file("watchkit:build:ios"))
     end
   end
 
@@ -272,14 +272,14 @@ namespace :watchkit do
     require 'tmpdir'
     task :ios do
       `osascript -e 'tell application "iPhone Simulator" to quit'`
-      system_or_exit(%Q[xcodebuild -project #{project_name}.xcodeproj -scheme WatchKit -sdk iphonesimulator build test], {}, output_file("watchkit:spec:ios"))
+      system_or_exit(%Q[xcodebuild -project #{project_name}.xcodeproj -scheme WatchKit -sdk iphonesimulator8.2 -destination platform='iOS Simulator',name='iPhone 5s,OS=8.2' build test], {}, output_file("watchkit:spec:ios"))
       `osascript -e 'tell application "iPhone Simulator" to quit'`
     end
   end
   task :spec => ["spec:ios"]
   task :build => ["build:ios"]
   task :clean do
-    system_or_exit(%Q[xcodebuild -project #{project_name}.xcodeproj -alltargets -configuration #{CONFIGURATION} clean SYMROOT=#{BUILD_DIR}], {}, output_file("watchkit:clean"))
+    system_or_exit(%Q[xcodebuild -project #{project_name}.xcodeproj -alltargets -configuration #{CONFIGURATION} -destination platform='iOS Simulator',name='iPhone 5s,OS=8.2' clean SYMROOT=#{BUILD_DIR}], {}, output_file("watchkit:clean"))
   end
 end
 
