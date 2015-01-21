@@ -1,5 +1,10 @@
 ## HEAD
 
+## 0.2.3
+
+  * Update WatchKit framework for Xcode 6.2 beta 4 
+  * Add support for testing UIAlertController
+
 ## 0.2.2
 
   * Adds support for testing wiring of WatchKit apps in Cedar/XCTest/etc.
