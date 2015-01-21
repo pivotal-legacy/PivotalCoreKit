@@ -8,8 +8,8 @@
                                      bundle:(NSBundle *)bundle;
 
 - (id)dynamicNotificationInterfaceControllerWithStoryboardName:(NSString *)storyboardName
-                                                        bundle:(NSBundle *)bundle
-                                          notificationCategory:(NSString *)notificationCategory;
+                                          notificationCategory:(NSString *)notificationCategoryOrNil
+                                                        bundle:(NSBundle *)bundle;
 
 - (id)glanceInterfaceControllerWithStoryboardName:(NSString *)storyboardName
                                        identifier:(NSString *)objectID

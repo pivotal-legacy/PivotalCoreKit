@@ -291,8 +291,8 @@ describe(@"PCKInterfaceControllerLoader", ^{
 
                 ^{
                     [subject dynamicNotificationInterfaceControllerWithStoryboardName:@"NonExistantName"
-                                                                               bundle:testBundle
-                                                                 notificationCategory:nil]; }
+                                                                 notificationCategory:nil
+                                                                               bundle:testBundle]; }
                 should raise_exception
                 .with_name(NSInvalidArgumentException)
                 .with_reason(@"No storyboard named 'NonExistantName' exists in the test target.  Did you forget to add it?");
@@ -302,8 +302,8 @@ describe(@"PCKInterfaceControllerLoader", ^{
         context(@"when there is a notification scene", ^{
             beforeEach(^{
                 notificationController = [subject dynamicNotificationInterfaceControllerWithStoryboardName:@"Interface"
-                                                                                                    bundle:testBundle
-                                                                                      notificationCategory:nil];
+                                                                                      notificationCategory:nil
+                                                                                                    bundle:testBundle];
             });
 
             it(@"should have its properties populated appropriately", ^{
@@ -318,11 +318,10 @@ describe(@"PCKInterfaceControllerLoader", ^{
 
         context(@"when there is no storyboard matching the name", ^{
             it(@"should raise an exception with a helpful message", ^{
-
                 ^{
                     [subject dynamicNotificationInterfaceControllerWithStoryboardName:@"NonExistantName"
-                                                                               bundle:testBundle
-                                                                 notificationCategory:nil]; }
+                                                                 notificationCategory:nil
+                                                                               bundle:testBundle]; }
                 should raise_exception
                 .with_name(NSInvalidArgumentException)
                 .with_reason(@"No storyboard named 'NonExistantName' exists in the test target.  Did you forget to add it?");
@@ -333,8 +332,8 @@ describe(@"PCKInterfaceControllerLoader", ^{
         context(@"when there is a notification scene", ^{
             beforeEach(^{
                 customCategoryNotificationController = [subject dynamicNotificationInterfaceControllerWithStoryboardName:@"Interface"
-                                                                                                                  bundle:testBundle
-                                                                                                    notificationCategory:@"com.pivotal.core.watch"];
+                                                                                                    notificationCategory:@"com.pivotal.core.watch"
+                                                                                                                  bundle:testBundle];
             });
 
             it(@"should instantiate the custom controller", ^{

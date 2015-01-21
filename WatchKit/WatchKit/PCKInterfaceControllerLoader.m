@@ -32,8 +32,8 @@
 }
 
 - (id)dynamicNotificationInterfaceControllerWithStoryboardName:(NSString *)storyboardName
+                                          notificationCategory:(NSString *)notificationCategoryOrNil
                                                         bundle:(NSBundle *)bundle
-                                          notificationCategory:(NSString *)notificationCategory
 {
     NSString *processedStoryboardName = [storyboardName stringByAppendingString:@"-notification"];
     NSString *pathForPlist = [bundle pathForResource:processedStoryboardName ofType:@"plist"];
@@ -46,7 +46,7 @@
 
     NSDictionary *serializedNotificationControllerStoryboard = [NSDictionary dictionaryWithContentsOfFile:pathForPlist];
 
-    NSString *categoryKey = notificationCategory ? notificationCategory : @"default";
+    NSString *categoryKey = notificationCategoryOrNil ? notificationCategoryOrNil : @"default";
     NSDictionary *controllerProperties = serializedNotificationControllerStoryboard[@"categories"][categoryKey][@"dynamic"];
     PCKDynamicWatchKitObjectProvider *provider = [[PCKDynamicWatchKitObjectProvider alloc] init];
 
