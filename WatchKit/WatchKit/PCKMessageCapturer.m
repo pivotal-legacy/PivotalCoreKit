@@ -23,6 +23,7 @@
 
 - (void)forwardInvocation:(NSInvocation *)anInvocation
 {
+    [anInvocation retainArguments];
     [_sent_messages addObject:anInvocation];
 }
 

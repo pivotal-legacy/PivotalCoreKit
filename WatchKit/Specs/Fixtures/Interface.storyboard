@@ -153,7 +153,7 @@
                     <items>
                         <table alignment="left" id="pvt-QL-VLl">
                             <items>
-                                <tableRow id="gll-Vl-ekt">
+                                <tableRow identifier="mySpecialRow" id="gll-Vl-ekt">
                                     <group key="rootItem" width="1" alignment="left" id="5C0-Ak-ktL"/>
                                 </tableRow>
                                 <tableRow identifier="specialRowType" id="N2o-t1-yvG">
@@ -224,6 +224,23 @@
             </objects>
             <point key="canvasLocation" x="-141" y="975"/>
         </scene>
+        <!--Static Custom Category Notificaiton Controller-->
+        <scene sceneID="ipe-TL-10Q">
+            <objects>
+                <notificationController id="4dq-ES-tTS" userLabel="Static Custom Category Notificaiton Controller">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="gth-Xy-UKJ"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="com.pivotal.core.watch" offsetNotificationContent="NO" id="xZt-uM-zwi"/>
+                    <color key="backgroundColor" red="0.0" green="0.39051094890510951" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="gth-Xy-UKJ" id="TeN-wW-GCP"/>
+                        <segue destination="1AB-mn-kEw" kind="relationship" relationship="dynamicNotificationInterface" id="WIg-Dl-M4J"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="-141" y="1199"/>
+        </scene>
         <!--Notification Controller-->
         <scene sceneID="KIl-fV-djm">
             <objects>
@@ -237,6 +254,20 @@
                 </controller>
             </objects>
             <point key="canvasLocation" x="103" y="975"/>
+        </scene>
+        <!--Dynamic Custom Notification Category Controller-->
+        <scene sceneID="czZ-Yx-jMA">
+            <objects>
+                <controller id="1AB-mn-kEw" userLabel="Dynamic Custom Notification Category Controller" customClass="CustomCategoryNotificationController">
+                    <items>
+                        <label width="134" height="54" alignment="center" verticalAlignment="center" text="Category Alert" textAlignment="center" id="CbI-jE-Vdc"/>
+                    </items>
+                    <connections>
+                        <outlet property="alertLabel" destination="CbI-jE-Vdc" id="Tvf-nz-hvI"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="104" y="1197"/>
         </scene>
     </scenes>
 </document>
