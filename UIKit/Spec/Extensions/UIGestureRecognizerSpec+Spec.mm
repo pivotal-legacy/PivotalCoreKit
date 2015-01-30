@@ -58,6 +58,38 @@ describe(@"UIGestureRecognizerSpec", ^{
             });
         });
 
+        describe(@"managing state", ^{
+            __block UIGestureRecognizerState capturedState;
+
+            beforeEach(^{
+                target stub_method(@selector(ciao:)).and_do_block(^(UIGestureRecognizer *gestureRecognizer) {
+                    capturedState = gestureRecognizer.state;
+                });
+                [recognizer addTarget:target action:@selector(ciao:)];
+            });
+
+            context(@"before the recognizer has recognized a gesture", ^{
+                it(@"should have the UIGestureRecognizerStatePossible state", ^{
+                    recognizer.state should equal(UIGestureRecognizerStatePossible);
+                });
+            });
+
+            context(@"once the recoginzer has recognized a gesture, while the actions are being performed", ^{
+                it(@"should have the UIGestureRecognizerStateRecognized state", ^{
+                    [recognizer recognize];
+                    capturedState should equal(UIGestureRecognizerStateRecognized);
+                    capturedState should equal(UIGestureRecognizerStateEnded);
+                });
+            });
+
+            context(@"once the recognizer has completed recognizing a gesture", ^{
+                it(@"should reset the state to UIGestureRecognizerStatePossible", ^{
+                    [recognizer recognize];
+                    recognizer.state should equal(UIGestureRecognizerStatePossible);
+                });
+            });
+        });
+
         describe(@"when additional targets are set", ^{
             __block Target *newTarget;
             beforeEach(^{

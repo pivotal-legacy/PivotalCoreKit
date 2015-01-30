@@ -12,6 +12,8 @@
 - (void)addSnoopedTarget:(id)target action:(SEL)action;
 - (void)removeUnswizzledTarget:(id)target action:(SEL)action;
 - (void)removeSnoopedTarget:(id)target action:(SEL)action;
+- (UIGestureRecognizerState)snoopedState;
+- (UIGestureRecognizerState)unswizzledState;
 - (instancetype)initWithoutSwizzledTarget:(id)target action:(SEL)action;
 - (instancetype)initWithSwizzledTarget:(id)target action:(SEL)action;
 
@@ -43,6 +45,11 @@
                                  forClass:[UIGestureRecognizer class]
                                        to:@selector(initWithSwizzledTarget:action:)
                             andRenameItTo:@selector(initWithoutSwizzledTarget:action:)];
+
+    [PCKMethodRedirector redirectSelector:@selector(state)
+                                 forClass:[UIGestureRecognizer class]
+                                       to:@selector(snoopedState)
+                            andRenameItTo:@selector(unswizzledState)];
 }
 
 + (instancetype)targetActionPairWithTarget:(id)target action:(SEL)action {
@@ -60,6 +67,7 @@
 
 - (instancetype)initWithSwizzledTarget:(id)target action:(SEL)action {
     if (self = [self initWithoutSwizzledTarget:target action:action]) {
+        [self setSnoopedState:UIGestureRecognizerStatePossible];
         if (target && action) {
             [self addSnoopedTarget:target action:action];
         }
@@ -77,9 +85,11 @@
         [[NSException exceptionWithName:@"Unrecognizable" reason:@"Can't recognize when recognizer is disabled" userInfo:nil] raise];
     }
 
+    [self setSnoopedState:UIGestureRecognizerStateEnded];
     [self.targetsAndActions enumerateObjectsUsingBlock:^(PCKGestureRecognizerTargetActionPair *targetActionPair, NSUInteger index, BOOL *stop) {
         [targetActionPair.target performSelector:targetActionPair.action withObject:self];
     }];
+    [self setSnoopedState:UIGestureRecognizerStatePossible];
 }
 
 + (void)whitelistClassForGestureSnooping:(Class)klass {}
@@ -106,6 +116,7 @@
 #pragma mark - Targets and Actions
 
 static char TARGETS_AND_ACTIONS_KEY;
+static char GESTURE_RECOGNIZER_STATE_KEY;
 
 - (NSMutableArray *)targetsAndActions {
     NSMutableArray *targetsAndActions = objc_getAssociatedObject(self, &TARGETS_AND_ACTIONS_KEY);
@@ -118,6 +129,14 @@ static char TARGETS_AND_ACTIONS_KEY;
 
 - (void)setTargetsAndActions:(NSMutableArray *)targetsAndActions {
     objc_setAssociatedObject(self, &TARGETS_AND_ACTIONS_KEY, targetsAndActions, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (UIGestureRecognizerState)snoopedState {
+    return (UIGestureRecognizerState)[(NSNumber *)objc_getAssociatedObject(self, &GESTURE_RECOGNIZER_STATE_KEY) integerValue];
+}
+
+- (void)setSnoopedState:(UIGestureRecognizerState)newState {
+    objc_setAssociatedObject(self, &GESTURE_RECOGNIZER_STATE_KEY, @(newState), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 @end
