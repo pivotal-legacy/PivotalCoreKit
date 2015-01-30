@@ -87,18 +87,6 @@ describe(@"UIGestureRecognizerSpec", ^{
                 newTarget should have_received(@selector(ciao:)).with(recognizer);
             });
         });
-
-        describe(@"removing targets", ^{
-            beforeEach(^{
-                [recognizer removeTarget:target action:@selector(hello)];
-            });
-
-            it(@"should not call the action on the removed target", ^{
-                [recognizer recognize];
-                target should_not have_received(@selector(hello));
-            });
-        });
-
     });
 
     context(@"for a gesture recognizer created in code", ^{
@@ -108,6 +96,78 @@ describe(@"UIGestureRecognizerSpec", ^{
         });
 
         itShouldBehaveLike(@"triggering a gesture recognizer");
+
+        describe(@"removing targets", ^{
+            __block Target *secondTarget;
+
+            beforeEach(^{
+                secondTarget = [[[Target alloc] init] autorelease];
+                spy_on(secondTarget);
+                [recognizer addTarget:target action:@selector(secondAction)];
+                [recognizer addTarget:secondTarget action:@selector(hello)];
+            });
+
+            context(@"when the target and action are both explicitly specified", ^{
+                beforeEach(^{
+                    [recognizer removeTarget:target action:@selector(hello)];
+                    [recognizer recognize];
+                });
+
+                it(@"should not call the action on the removed target", ^{
+                    target should_not have_received(@selector(hello));
+                });
+
+                it(@"should call the remaining action on the target", ^{
+                    target should have_received(@selector(secondAction));
+                });
+
+                it(@"should call the action on the remaining targets", ^{
+                    secondTarget should have_received(@selector(hello));
+                });
+            });
+
+            context(@"when the target is nil and the action is explicitly specified", ^{
+                beforeEach(^{
+                    [recognizer removeTarget:nil action:@selector(hello)];
+                    [recognizer recognize];
+                });
+
+                it(@"should not call the actions on any targets", ^{
+                    target should_not have_received(@selector(hello));
+                    target should_not have_received(@selector(secondAction));
+                    secondTarget should_not have_received(@selector(hello));
+                });
+            });
+
+            context(@"when the target is explicitly specified and the action is NULL", ^{
+                beforeEach(^{
+                    [recognizer removeTarget:target action:NULL];
+                    [recognizer recognize];
+                });
+
+                it(@"should not call the actions on target", ^{
+                    target should_not have_received(@selector(hello));
+                    target should_not have_received(@selector(secondAction));
+                });
+
+                it(@"should call the action on secondTarget", ^{
+                    secondTarget should have_received(@selector(hello));
+                });
+            });
+
+            context(@"when the target is nil and the action is NULL", ^{
+                beforeEach(^{
+                    [recognizer removeTarget:nil action:NULL];
+                    [recognizer recognize];
+                });
+
+                it(@"should not call the actions on any targets", ^{
+                    target should_not have_received(@selector(hello));
+                    target should_not have_received(@selector(secondAction));
+                    secondTarget should_not have_received(@selector(hello));
+                });
+            });
+        });
 
         describe(@"when initialized without a target or action", ^{
             it(@"should not raise", ^{
@@ -133,6 +193,47 @@ describe(@"UIGestureRecognizerSpec", ^{
         });
 
         itShouldBehaveLike(@"triggering a gesture recognizer");
+
+        describe(@"removing targets", ^{
+            sharedExamplesFor(@"not calling the action on the target", ^(NSDictionary *sharedContext) {
+                it(@"should not call the action on the removed target", ^{
+                    [recognizer recognize];
+                    target should_not have_received(@selector(hello));
+                });
+            });
+
+            context(@"when the target and action are both explicitly specified", ^{
+                beforeEach(^{
+                    [recognizer removeTarget:target action:@selector(hello)];
+                });
+
+                itShouldBehaveLike(@"not calling the action on the target");
+            });
+
+            context(@"when the target is nil and the action is explicitly specified", ^{
+                beforeEach(^{
+                    [recognizer removeTarget:nil action:@selector(hello)];
+                });
+
+                itShouldBehaveLike(@"not calling the action on the target");
+            });
+
+            context(@"when the target is explicitly specified and the action is NULL", ^{
+                beforeEach(^{
+                    [recognizer removeTarget:target action:NULL];
+                });
+
+                itShouldBehaveLike(@"not calling the action on the target");
+            });
+
+            context(@"when the target is nil and the action is NULL", ^{
+                beforeEach(^{
+                    [recognizer removeTarget:nil action:NULL];
+                });
+
+                itShouldBehaveLike(@"not calling the action on the target");
+            });
+        });
     });
 
     context(@"for a segue-triggering gesture recognizer created in a storyboard", ^{
