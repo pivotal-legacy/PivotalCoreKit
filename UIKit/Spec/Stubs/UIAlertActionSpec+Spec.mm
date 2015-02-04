@@ -6,6 +6,8 @@ using namespace Cedar::Doubles;
 
 SPEC_BEGIN(UIAlertAction_SpecSpec)
 
+if (NSClassFromString(@"UIAlertAction")) {
+
 describe(@"UIAlertAction (spec extensions)", ^{
     __block UIAlertAction *action;
     __block BOOL handled;
@@ -24,5 +26,7 @@ describe(@"UIAlertAction (spec extensions)", ^{
         handled should be_truthy;
     });
 });
+
+}
 
 SPEC_END

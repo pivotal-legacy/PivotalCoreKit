@@ -8,6 +8,8 @@ using namespace Cedar::Doubles;
 
 SPEC_BEGIN(UIAlertControllerSpec)
 
+if (NSClassFromString(@"UIAlertController")) {
+
 describe(@"UIAlertController (spec extensions)", ^{
     __block UIAlertController *alertController;
     __block BOOL handlerWasExecuted;
@@ -136,14 +138,15 @@ describe(@"UIAlertController (spec extensions)", ^{
                 beforeEach(^{
                     addDefaultAction(alertController, nil);
                 });
-
+                
                 it(@"should not blow up", ^{
                     ^{ [alertController dismissByTappingButtonWithTitle:@"Default"]; } should_not raise_exception;
                 });
             });
         });
     });
-
 });
+    
+}
 
 SPEC_END
