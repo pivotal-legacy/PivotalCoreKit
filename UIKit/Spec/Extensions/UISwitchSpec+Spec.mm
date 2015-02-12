@@ -166,6 +166,23 @@ describe(@"UISwitch+Spec", ^{
                         target should_not have_received(@selector(ciao:));
                     });
                 });
+
+                describe(@"observing the switch's value changing", ^{
+                    __block BOOL observedValue;
+
+                    beforeEach(^{
+                        target stub_method(@selector(ciao:)).and_do_block(^(UISwitch *theSwitch){
+                            observedValue = theSwitch.on;
+                        });
+
+                        [uiswitch addTarget:target action:@selector(ciao:) forControlEvents:UIControlEventValueChanged];
+                        [uiswitch toggleToOn:YES];
+                    });
+
+                    it(@"should observe the control value changing to YES", ^{
+                        observedValue should be_truthy;
+                    });
+                });
             });
         });
 
