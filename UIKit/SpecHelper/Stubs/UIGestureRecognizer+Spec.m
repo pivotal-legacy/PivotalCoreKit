@@ -95,12 +95,16 @@
 
     NSMutableArray *targetsAndActions = [self targetsAndActions];
     __block id unretainedTarget = target;
-    NSPredicate *targetAndActionPredicate = [NSPredicate predicateWithBlock:^BOOL(PCKGestureRecognizerTargetActionPair *targetActionPair, NSDictionary *bindings) {
-        return unretainedTarget == targetActionPair.target && action == targetActionPair.action;
-    }];
 
-    NSArray *matchingTargetsAndActions = [targetsAndActions filteredArrayUsingPredicate:targetAndActionPredicate];
-    [targetsAndActions removeObjectsInArray:matchingTargetsAndActions];
+    if (target) {
+        NSPredicate *targetAndActionPredicate = [NSPredicate predicateWithBlock:^BOOL(PCKGestureRecognizerTargetActionPair *targetActionPair, NSDictionary *bindings) {
+            return unretainedTarget == targetActionPair.target && (action == NULL || action == targetActionPair.action);
+        }];
+        NSArray *matchingTargetsAndActions = [targetsAndActions filteredArrayUsingPredicate:targetAndActionPredicate];
+        [targetsAndActions removeObjectsInArray:matchingTargetsAndActions];
+    } else {
+        [targetsAndActions removeAllObjects];
+    }
 }
 
 #pragma mark - Targets and Actions
