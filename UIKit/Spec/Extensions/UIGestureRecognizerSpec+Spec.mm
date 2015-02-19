@@ -45,6 +45,16 @@ describe(@"UIGestureRecognizerSpec", ^{
                 });
             });
 
+            describe(@"when the gesture recognizer is not added to a view", ^{
+                beforeEach(^{
+                    [view removeGestureRecognizer:recognizer];
+                });
+
+                it(@"raises an exception", ^{
+                    ^{ [recognizer recognize]; } should raise_exception.with_reason(@"Can't recognize when not in a view");
+                });
+            });
+
             describe(@"when the gesture recognizer is disabled", ^{
                 beforeEach(^{
                     recognizer.enabled = NO;
@@ -204,6 +214,7 @@ describe(@"UIGestureRecognizerSpec", ^{
         describe(@"when initialized without a target or action", ^{
             it(@"should not raise", ^{
                 UITapGestureRecognizer *recognizer = [[[UITapGestureRecognizer alloc] initWithTarget:nil action:nil] autorelease];
+                [view addGestureRecognizer:recognizer];
                 ^{
                     [recognizer recognize];
                 } should_not raise_exception;
