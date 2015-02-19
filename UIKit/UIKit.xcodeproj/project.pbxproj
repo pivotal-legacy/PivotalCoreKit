@@ -49,6 +49,8 @@
 		34BDAC7E19A4329C0085B45A /* PCKPrototypeCellInstantiatingDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3490AFEA19A3C0A800DAA8E3 /* PCKPrototypeCellInstantiatingDataSource.m */; };
 		34BDAC7F19A433510085B45A /* UICollectionReusableView+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 34BDAC7519A42C5F0085B45A /* UICollectionReusableView+Spec.h */; };
 		8487257E19013F6400288770 /* UIActivityViewController+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = 8487257219013F5F00288770 /* UIActivityViewController+Spec.m */; };
+		8490A16D1A7D0FDB001835AB /* UISegmentedControlSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8490A16B1A7D0FCC001835AB /* UISegmentedControlSpec+Spec.mm */; };
+		8490A1711A7D1339001835AB /* UISegmentedControl+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = 8490A16F1A7D1323001835AB /* UISegmentedControl+Spec.m */; };
 		84C62A78190141DD00DF2982 /* UIActivityViewControllerSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8487257F1901402000288770 /* UIActivityViewControllerSpec+Spec.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		AE062BD01A43240500AF8D33 /* UIAlertActionSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE062BCE1A4323CF00AF8D33 /* UIAlertActionSpec+Spec.mm */; };
 		AE062BD11A43241B00AF8D33 /* UIAlertAction+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE062BC01A4323A800AF8D33 /* UIAlertAction+Spec.m */; };
@@ -379,6 +381,9 @@
 		8487257119013F5F00288770 /* UIActivityViewController+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIActivityViewController+Spec.h"; sourceTree = "<group>"; };
 		8487257219013F5F00288770 /* UIActivityViewController+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIActivityViewController+Spec.m"; sourceTree = "<group>"; };
 		8487257F1901402000288770 /* UIActivityViewControllerSpec+Spec.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIActivityViewControllerSpec+Spec.mm"; sourceTree = "<group>"; };
+		8490A16B1A7D0FCC001835AB /* UISegmentedControlSpec+Spec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UISegmentedControlSpec+Spec.mm"; sourceTree = "<group>"; };
+		8490A16E1A7D1323001835AB /* UISegmentedControl+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UISegmentedControl+Spec.h"; sourceTree = "<group>"; };
+		8490A16F1A7D1323001835AB /* UISegmentedControl+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UISegmentedControl+Spec.m"; sourceTree = "<group>"; };
 		AE062BBF1A4323A800AF8D33 /* UIAlertAction+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertAction+Spec.h"; sourceTree = "<group>"; };
 		AE062BC01A4323A800AF8D33 /* UIAlertAction+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertAction+Spec.m"; sourceTree = "<group>"; };
 		AE062BCE1A4323CF00AF8D33 /* UIAlertActionSpec+Spec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIAlertActionSpec+Spec.mm"; sourceTree = "<group>"; };
@@ -744,12 +749,20 @@
 			children = (
 				B8C62E6B16BC03420009CDAD /* UIBarButtonItem+Spec.h */,
 				B8C62E6C16BC03420009CDAD /* UIBarButtonItem+Spec.m */,
+				34BDAC7519A42C5F0085B45A /* UICollectionReusableView+Spec.h */,
+				34BDAC7619A42C5F0085B45A /* UICollectionReusableView+Spec.m */,
+				FA07586818120D19001817BF /* UICollectionViewCell+Spec.h */,
+				FA07586918120D19001817BF /* UICollectionViewCell+Spec.m */,
 				AEBCCC75168B9B5F0056EE83 /* UIControl+Spec.h */,
 				AEBCCC76168B9B5F0056EE83 /* UIControl+Spec.m */,
 				AEBCCC77168B9B5F0056EE83 /* UIImage+Spec.h */,
 				AEBCCC78168B9B5F0056EE83 /* UIImage+Spec.m */,
+				8490A16E1A7D1323001835AB /* UISegmentedControl+Spec.h */,
+				8490A16F1A7D1323001835AB /* UISegmentedControl+Spec.m */,
 				22601B4D16BA202A00A807CB /* UISlider+Spec.h */,
 				22601B4E16BA202A00A807CB /* UISlider+Spec.m */,
+				FAF932CB192703280076C733 /* UISwitch+Spec.h */,
+				FAF932CC192703280076C733 /* UISwitch+Spec.m */,
 				AE86BD40179C7C910057DEAE /* UITabBarController+Spec.h */,
 				AE86BD41179C7C910057DEAE /* UITabBarController+Spec.m */,
 				AEBCCC79168B9B5F0056EE83 /* UITableViewCell+Spec.h */,
@@ -758,12 +771,6 @@
 				AEBCCC7C168B9B5F0056EE83 /* UIView+Spec.m */,
 				AE53E2EA18075A810037C32E /* UIWindow+Spec.h */,
 				AE53E2EB18075A810037C32E /* UIWindow+Spec.m */,
-				FA07586818120D19001817BF /* UICollectionViewCell+Spec.h */,
-				FA07586918120D19001817BF /* UICollectionViewCell+Spec.m */,
-				FAF932CB192703280076C733 /* UISwitch+Spec.h */,
-				FAF932CC192703280076C733 /* UISwitch+Spec.m */,
-				34BDAC7519A42C5F0085B45A /* UICollectionReusableView+Spec.h */,
-				34BDAC7619A42C5F0085B45A /* UICollectionReusableView+Spec.m */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -775,21 +782,22 @@
 				FA91AA9D1867260400925A6B /* NSString+PivotalCoreKit_UIKitSpec.mm */,
 				AEBCCC92168B9C530056EE83 /* UIBarButtonItem+ButtonSpec.mm */,
 				B8C62E6E16BC04230009CDAD /* UIBarButtonItemSpec+Spec.mm */,
-				FA07586618120BB1001817BF /* UICollectionViewCellSpec+Spec.mm */,
 				34BDAC7819A42C990085B45A /* UICollectionReusableViewSpec+Spec.mm */,
+				FA07586618120BB1001817BF /* UICollectionViewCellSpec+Spec.mm */,
 				AEC6D7FD16963F3500E10C7B /* UIControlSpec+Spec.mm */,
 				AEF775BB18316DE4000AF17B /* UIGestureRecognizerSpec+Spec.mm */,
 				AEBCCC93168B9C530056EE83 /* UIImage+PivotalCoreSpec.mm */,
 				AEBCCC94168B9C530056EE83 /* UIImageSpec+Spec.mm */,
 				FA1A5178186290E600C22BA8 /* UIImageView+PivotalCoreSpec.mm */,
+				8490A16B1A7D0FCC001835AB /* UISegmentedControlSpec+Spec.mm */,
 				22601B5816BA209F00A807CB /* UISliderSpec+Spec.mm */,
+				FAF932D9192703AA0076C733 /* UISwitchSpec+Spec.mm */,
 				AED4BE431780C8C800390AFD /* UITabBarControllerSpec+Spec.mm */,
 				AE1FBEA217D15A4100B0F03B /* UITableViewCellSpec+Spec.mm */,
 				AEDABB6218E9DD23004E6626 /* UIView+PCKNibHelpersSpec.mm */,
 				AEBCCC95168B9C530056EE83 /* UIView+PivotalCoreSpec.mm */,
 				AE9530691832EE9300C802E9 /* UIViewSpec+Spec.mm */,
 				AE53E2F518075B080037C32E /* UIWindowSpec+Spec.mm */,
-				FAF932D9192703AA0076C733 /* UISwitchSpec+Spec.mm */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1205,6 +1213,7 @@
 				AEEDC56819FAC2E2004AFFE9 /* UINavigationControllerSpec+Spec.mm in Sources */,
 				AEBCCC99168B9C530056EE83 /* UIBarButtonItem+ButtonSpec.mm in Sources */,
 				AEF775BC18316DE4000AF17B /* UIGestureRecognizerSpec+Spec.mm in Sources */,
+				8490A16D1A7D0FDB001835AB /* UISegmentedControlSpec+Spec.mm in Sources */,
 				FA91AA92186725CC00925A6B /* NSString+PivotalCoreKit_UIKit.m in Sources */,
 				AE1FBEA317D15A4100B0F03B /* UITableViewCellSpec+Spec.mm in Sources */,
 				FA91AAA2186737B700925A6B /* NSAttributedString+PivotalCoreKit_UIKit.m in Sources */,
@@ -1250,6 +1259,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				34BDAC7E19A4329C0085B45A /* PCKPrototypeCellInstantiatingDataSource.m in Sources */,
+				8490A1711A7D1339001835AB /* UISegmentedControl+Spec.m in Sources */,
 				AEF0A40418296C690070D98B /* UICollectionViewCell+Spec.m in Sources */,
 				FAF932D8192703490076C733 /* UISwitch+Spec.m in Sources */,
 				AEBCCC8A168B9B8B0056EE83 /* UIControl+Spec.m in Sources */,
