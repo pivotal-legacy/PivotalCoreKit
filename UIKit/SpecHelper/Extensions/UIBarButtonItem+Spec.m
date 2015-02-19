@@ -1,6 +1,5 @@
 #import "UIBarButtonItem+Spec.h"
 #import "UIControl+Spec.h"
-#import <objc/message.h>
 
 
 @implementation UIBarButtonItem (Spec)
@@ -15,9 +14,7 @@
         UIButton *button = (UIButton *)self.customView;
         [button tap];
     } else {
-        id target = self.target;
-        SEL action = self.action;
-        objc_msgSend(target, action, nil);
+        [self.target performSelector:self.action];
     }
 }
 
