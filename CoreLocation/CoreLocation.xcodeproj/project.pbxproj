@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8493636C1A9585E2005613BA /* CLLocationManagerSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 849363601A9585D2005613BA /* CLLocationManagerSpec+Spec.mm */; };
+		849363731A9588AD005613BA /* CLLocationManagerSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 849363601A9585D2005613BA /* CLLocationManagerSpec+Spec.mm */; };
+		849363C01A9758D5005613BA /* CLLocationManager+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = 8493636E1A958640005613BA /* CLLocationManager+Spec.m */; };
+		849363C11A9758EE005613BA /* CLLocationManager+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = 8493636E1A958640005613BA /* CLLocationManager+Spec.m */; };
 		AE118AE718D6BC2F00C90D6B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE3848DD168CD86000C99B55 /* CoreGraphics.framework */; };
 		AE118AE818D6BC2F00C90D6B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE3848D9168CD86000C99B55 /* UIKit.framework */; };
 		AE118AE918D6BC2F00C90D6B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE3848DB168CD86000C99B55 /* Foundation.framework */; };
@@ -180,6 +184,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		849363601A9585D2005613BA /* CLLocationManagerSpec+Spec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "CLLocationManagerSpec+Spec.mm"; sourceTree = "<group>"; };
+		8493636D1A958640005613BA /* CLLocationManager+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLLocationManager+Spec.h"; sourceTree = "<group>"; };
+		8493636E1A958640005613BA /* CLLocationManager+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CLLocationManager+Spec.m"; sourceTree = "<group>"; };
 		AE118AE418D6BC2F00C90D6B /* CoreLocation-StaticLibSpecBundle.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CoreLocation-StaticLibSpecBundle.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE118AE518D6BC2F00C90D6B /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		AE118AEC18D6BC2F00C90D6B /* CoreLocation-StaticLibSpecBundle-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CoreLocation-StaticLibSpecBundle-Info.plist"; sourceTree = "<group>"; };
@@ -342,6 +349,8 @@
 			children = (
 				AE38494D168CD9B600C99B55 /* CLGeocoder+Spec.h */,
 				AE38494E168CD9B600C99B55 /* CLGeocoder+Spec.m */,
+				8493636D1A958640005613BA /* CLLocationManager+Spec.h */,
+				8493636E1A958640005613BA /* CLLocationManager+Spec.m */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -360,6 +369,7 @@
 			isa = PBXGroup;
 			children = (
 				AEC81173168D14FF00523186 /* CLGeocoderSpec+Spec.mm */,
+				849363601A9585D2005613BA /* CLLocationManagerSpec+Spec.mm */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -669,6 +679,7 @@
 			files = (
 				AE384961168D032300C99B55 /* main.m in Sources */,
 				AE49474D168D15C9006F3B70 /* CLGeocoderSpec+Spec.mm in Sources */,
+				8493636C1A9585E2005613BA /* CLLocationManagerSpec+Spec.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -676,6 +687,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				849363C01A9758D5005613BA /* CLLocationManager+Spec.m in Sources */,
 				AE384952168CD9B600C99B55 /* CLGeocoder+Spec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -684,6 +696,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				849363731A9588AD005613BA /* CLLocationManagerSpec+Spec.mm in Sources */,
 				AE384960168D030800C99B55 /* main.m in Sources */,
 				AE494744168D15C8006F3B70 /* CLGeocoderSpec+Spec.mm in Sources */,
 			);
@@ -693,6 +706,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				849363C11A9758EE005613BA /* CLLocationManager+Spec.m in Sources */,
 				AE38499B168D056600C99B55 /* CLGeocoder+Spec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

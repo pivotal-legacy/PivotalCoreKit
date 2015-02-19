@@ -3,6 +3,7 @@
 ## 0.2.4 (in progress)
 
   * Adds instructions for releasing new versions of PivotalCoreKit
+  * Adds a stub for setting [CLLocationManager +authorizationStatus]
 
 ## 0.2.3
 
