@@ -78,6 +78,9 @@
 
 #pragma mark - Public interface
 - (void)recognize {
+    if (self.view == nil) {
+        [[NSException exceptionWithName:@"Unrecognizable" reason:@"Can't recognize when not in a view" userInfo:nil] raise];
+    }
     if (self.view.hidden) {
         [[NSException exceptionWithName:@"Unrecognizable" reason:@"Can't recognize when in a hidden view" userInfo:nil] raise];
     }
