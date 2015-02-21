@@ -13,9 +13,9 @@
     [self runAssertions];
 
     if (self.on != on) {
+        self.on = on;
         [self sendActionsForControlEvents:UIControlEventValueChanged];
     }
-    self.on = on;
 }
 
 #pragma mark - Private
