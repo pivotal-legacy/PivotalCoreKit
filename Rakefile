@@ -80,11 +80,58 @@ def build_target(target, project: project, output_file: output_file)
 end
 
 task :default => [:trim_whitespace, "all:spec"]
-task :travis => ["foundation:clean", "uikit:clean", "core_location:clean", "foundation:spec", "uikit:spec", "core_location:spec"]
+task :travis => ["support:clean", "foundation:clean", "uikit:clean", "core_location:clean", "support:spec", "foundation:spec", "uikit:spec", "core_location:spec"]
 
 task :trim_whitespace do
   system_or_exit(%Q[git status --short | awk '{if ($1 != "D" && $1 != "R") print $2}' | grep -e '.*\.[mh]$' | xargs sed -i '' -e 's/	/    /g;s/ *$//g;'])
 end
+
+namespace :support do
+  project = "Support/Support"
+
+  namespace :build do
+    namespace :core do
+      task :osx do
+        output_file = output_file("support:build:core:osx")
+        build_target("Support+PivotalCore", project: project, output_file: output_file)
+      end
+
+      task :ios do
+        output_file = output_file("support:build:core:ios")
+        build_target("Support+PivotalCore-StaticLib", project: project, output_file: output_file)
+      end
+    end
+
+    task :core => ["core:osx", "core:ios"]
+  end
+
+  namespace :spec do
+    task :osx => ["build:core:osx"] do
+      output_file = output_file("support:spec:osx")
+      build_target("SupportSpec", project: project, output_file: output_file)
+
+      build_dir = build_dir("")
+      env_vars = {
+        "CEDAR_REPORTER_CLASS" => "CDRColorizedReporter",
+        "CFFIXED_USER_HOME" => Dir.tmpdir,
+        "DYLD_FRAMEWORK_PATH" => build_dir
+      }
+      system_or_exit("cd #{build_dir}; ./SupportSpec", env_vars)
+    end
+
+    task :ios do
+      build_and_test_scheme("Support-StaticLibSpec")
+    end
+  end
+
+  task :build => ["support:build:core"]
+  task :spec => ["support:spec:osx", "support:spec:ios"]
+  task :clean do
+    system_or_exit(%Q[xcodebuild -project #{project}.xcodeproj -alltargets -configuration #{CONFIGURATION} clean SYMROOT=#{BUILD_DIR}], {}, output_file("support:clean"))
+  end
+end
+
+task :support => ["support:build", "support:spec"]
 
 namespace :foundation do
   project = "Foundation/Foundation"
@@ -286,7 +333,7 @@ end
 task :watchkit => ["watchkit:build", "watchkit:spec"]
 
 namespace :all do
-  task :build => ["foundation:build", "uikit:build", "core_location:build", "watchkit:build"]
-  task :spec => ["foundation:spec", "uikit:spec", "core_location:spec", "watchkit:spec"]
-  task :clean => ["foundation:clean", "uikit:clean", "core_location:clean"]
+  task :build => ["support:build", "foundation:build", "uikit:build", "core_location:build", "watchkit:build"]
+  task :spec => ["support:spec", "foundation:spec", "uikit:spec", "core_location:spec", "watchkit:spec"]
+  task :clean => ["support:clean", "foundation:clean", "uikit:clean", "core_location:clean"]
 end

@@ -21,6 +21,8 @@
 		AEBDFB941A9BE31600267CEB /* Cedar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEBDFB781A9BE26E00267CEB /* Cedar.framework */; };
 		AEBDFB981A9BE71E00267CEB /* PCKMethodRedirectorSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEBDFB971A9BE71E00267CEB /* PCKMethodRedirectorSpec.mm */; };
 		AEBDFB991A9BE71E00267CEB /* PCKMethodRedirectorSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEBDFB971A9BE71E00267CEB /* PCKMethodRedirectorSpec.mm */; };
+		AEC0682C1A9D42C900246582 /* BundleSpecLoader.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEC068061A9D37C500246582 /* BundleSpecLoader.mm */; };
+		AEC0682D1A9D455200246582 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE9B6DE91A9D2DC6000ACF58 /* SenTestingKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,6 +32,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = AE234D7D1A9CD14200742B72;
 			remoteInfo = "Support+PivotalCore";
+		};
+		AE9B6DE71A9D2DB7000ACF58 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEB92C7E1A9BB782001BEC93 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AEBDFB311A9BDF7C00267CEB;
+			remoteInfo = "Support-StaticLibSpec";
 		};
 		AEBDFB771A9BE26E00267CEB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -164,6 +173,9 @@
 		AE234D7E1A9CD14200742B72 /* Support+PivotalCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Support+PivotalCore.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE234D811A9CD14200742B72 /* Support+PivotalCore-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Support+PivotalCore-Info.plist"; sourceTree = "<group>"; };
 		AE560F071A9CEA4400D7F256 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.1.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		AE9B6DD01A9D2D9B000ACF58 /* Support-StaticLibSpecBundle.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Support-StaticLibSpecBundle.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE9B6DD31A9D2D9B000ACF58 /* Support-StaticLibSpecBundle-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Support-StaticLibSpecBundle-Info.plist"; sourceTree = "<group>"; };
+		AE9B6DE91A9D2DC6000ACF58 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		AEB92C861A9BB782001BEC93 /* libSupport+PivotalCore-StaticLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libSupport+PivotalCore-StaticLib.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEB92C891A9BB782001BEC93 /* Support+PivotalCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Support+PivotalCore.h"; sourceTree = "<group>"; };
 		AEB92CA01A9BB821001BEC93 /* PCKMethodRedirector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCKMethodRedirector.h; sourceTree = "<group>"; };
@@ -176,6 +188,9 @@
 		AEBDFB671A9BE26E00267CEB /* Cedar.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Cedar.xcodeproj; path = ../Externals/Cedar/Cedar.xcodeproj; sourceTree = "<group>"; };
 		AEBDFB951A9BE5CC00267CEB /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		AEBDFB971A9BE71E00267CEB /* PCKMethodRedirectorSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PCKMethodRedirectorSpec.mm; sourceTree = "<group>"; };
+		AEC068061A9D37C500246582 /* BundleSpecLoader.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BundleSpecLoader.mm; sourceTree = "<group>"; };
+		AEC068241A9D3A0500246582 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.1.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		AEC068261A9D3A0A00246582 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +198,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE9B6DCD1A9D2D9A000ACF58 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AEC0682D1A9D455200246582 /* SenTestingKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,6 +257,7 @@
 				AEBDFB321A9BDF7C00267CEB /* Support-StaticLibSpec.app */,
 				AEBDFB5C1A9BDFB900267CEB /* SupportSpec */,
 				AE234D7E1A9CD14200742B72 /* Support+PivotalCore.framework */,
+				AE9B6DD01A9D2D9B000ACF58 /* Support-StaticLibSpecBundle.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -244,6 +268,7 @@
 				AEB92CA01A9BB821001BEC93 /* PCKMethodRedirector.h */,
 				AEB92CA11A9BB821001BEC93 /* PCKMethodRedirector.m */,
 				AE234D811A9CD14200742B72 /* Support+PivotalCore-Info.plist */,
+				AE9B6DD31A9D2D9B000ACF58 /* Support-StaticLibSpecBundle-Info.plist */,
 				AEB92C891A9BB782001BEC93 /* Support+PivotalCore.h */,
 			);
 			path = Core;
@@ -270,6 +295,7 @@
 		AEBDFB641A9BDFF800267CEB /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				AEC068061A9D37C500246582 /* BundleSpecLoader.mm */,
 				AEBDFB361A9BDF7D00267CEB /* main.m */,
 				AEBDFB351A9BDF7D00267CEB /* Info.plist */,
 			);
@@ -306,6 +332,9 @@
 		AEBDFBB51A9CC05F00267CEB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AEC068261A9D3A0A00246582 /* Foundation.framework */,
+				AEC068241A9D3A0500246582 /* CoreGraphics.framework */,
+				AE9B6DE91A9D2DC6000ACF58 /* SenTestingKit.framework */,
 				AE560F071A9CEA4400D7F256 /* UIKit.framework */,
 				AEBDFB951A9BE5CC00267CEB /* libxml2.dylib */,
 			);
@@ -343,6 +372,25 @@
 			productName = "Support+PivotalCore";
 			productReference = AE234D7E1A9CD14200742B72 /* Support+PivotalCore.framework */;
 			productType = "com.apple.product-type.framework";
+		};
+		AE9B6DCF1A9D2D9A000ACF58 /* Support-StaticLibSpecBundle */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AE9B6DE61A9D2D9B000ACF58 /* Build configuration list for PBXNativeTarget "Support-StaticLibSpecBundle" */;
+			buildPhases = (
+				AE9B6DCC1A9D2D9A000ACF58 /* Sources */,
+				AE9B6DCD1A9D2D9A000ACF58 /* Frameworks */,
+				AE9B6DCE1A9D2D9A000ACF58 /* Resources */,
+				AEC0680A1A9D383500246582 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AE9B6DE81A9D2DB7000ACF58 /* PBXTargetDependency */,
+			);
+			name = "Support-StaticLibSpecBundle";
+			productName = "Support+PivotalCoreSpec";
+			productReference = AE9B6DD01A9D2D9B000ACF58 /* Support-StaticLibSpecBundle.octest */;
+			productType = "com.apple.product-type.bundle.ocunit-test";
 		};
 		AEB92C851A9BB782001BEC93 /* Support+PivotalCore-StaticLib */ = {
 			isa = PBXNativeTarget;
@@ -411,6 +459,10 @@
 					AE234D7D1A9CD14200742B72 = {
 						CreatedOnToolsVersion = 6.2;
 					};
+					AE9B6DCF1A9D2D9A000ACF58 = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = AEBDFB311A9BDF7C00267CEB;
+					};
 					AEB92C851A9BB782001BEC93 = {
 						CreatedOnToolsVersion = 6.1.1;
 					};
@@ -445,6 +497,7 @@
 				AEB92C851A9BB782001BEC93 /* Support+PivotalCore-StaticLib */,
 				AEBDFB5B1A9BDFB900267CEB /* SupportSpec */,
 				AEBDFB311A9BDF7C00267CEB /* Support-StaticLibSpec */,
+				AE9B6DCF1A9D2D9A000ACF58 /* Support-StaticLibSpecBundle */,
 			);
 		};
 /* End PBXProject section */
@@ -544,6 +597,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AE9B6DCE1A9D2D9A000ACF58 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AEBDFB301A9BDF7C00267CEB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -553,12 +613,36 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		AEC0680A1A9D383500246582 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		AE234D791A9CD14200742B72 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				AE234DA81A9CD2AB00742B72 /* PCKMethodRedirector.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE9B6DCC1A9D2D9A000ACF58 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AEC0682C1A9D42C900246582 /* BundleSpecLoader.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -595,6 +679,11 @@
 			isa = PBXTargetDependency;
 			target = AE234D7D1A9CD14200742B72 /* Support+PivotalCore */;
 			targetProxy = AE234DA91A9CD2C200742B72 /* PBXContainerItemProxy */;
+		};
+		AE9B6DE81A9D2DB7000ACF58 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AEBDFB311A9BDF7C00267CEB /* Support-StaticLibSpec */;
+			targetProxy = AE9B6DE71A9D2DB7000ACF58 /* PBXContainerItemProxy */;
 		};
 		AEBDFB901A9BE30400267CEB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -669,6 +758,80 @@
 				SKIP_INSTALL = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		AE9B6DD91A9D2D9B000ACF58 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Support-StaticLibSpec.app/Support-StaticLibSpec";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_MODULES = YES;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(PROJECT_DIR)/../Externals/Cedar/**",
+				);
+				INFOPLIST_FILE = "Core/Support-StaticLibSpecBundle-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+					"-lstdc++",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		AE9B6DDA1A9D2D9B000ACF58 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Support-StaticLibSpec.app/Support-StaticLibSpec";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_MODULES = YES;
+				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(PROJECT_DIR)/../Externals/Cedar/**",
+				);
+				INFOPLIST_FILE = "Core/Support-StaticLibSpecBundle-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+					"-lstdc++",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
 		};
@@ -778,6 +941,7 @@
 					"$(SRCROOT)/../Externals/Cedar/**",
 				);
 				INFOPLIST_FILE = Spec/iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../Frameworks";
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -785,6 +949,7 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -800,6 +965,7 @@
 					"$(SRCROOT)/../Externals/Cedar/**",
 				);
 				INFOPLIST_FILE = Spec/iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../Frameworks";
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -807,6 +973,7 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -849,6 +1016,15 @@
 			buildConfigurations = (
 				AE234D971A9CD14200742B72 /* Debug */,
 				AE234D981A9CD14200742B72 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AE9B6DE61A9D2D9B000ACF58 /* Build configuration list for PBXNativeTarget "Support-StaticLibSpecBundle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE9B6DD91A9D2D9B000ACF58 /* Debug */,
+				AE9B6DDA1A9D2D9B000ACF58 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

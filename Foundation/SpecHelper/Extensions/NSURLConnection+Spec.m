@@ -3,7 +3,7 @@
 #import "objc/runtime.h"
 #import "NSURLConnection+Spec.h"
 #import "PSHKFakeHTTPURLResponse.h"
-#import "NSObject+MethodRedirection.h"
+#import "PCKMethodRedirector.h"
 #import "PCKConnectionDelegateWrapper.h"
 #import "PCKConnectionBlockDelegate.h"
 #import "PSHKFakeOperationQueue.h"
@@ -39,19 +39,20 @@ static PSHKFakeOperationQueue *connectionsQueue__;
     connectionsQueue__ = [[PSHKFakeOperationQueue alloc] init];
     [connectionsQueue__ setRunSynchronously:YES];
 
-    if ([[NSURLConnection class] respondsToSelector:@selector(redirectSelector:to:andRenameItTo:)]) {
-        [NSURLConnection redirectSelector:@selector(initWithRequest:delegate:startImmediately:)
+    [PCKMethodRedirector redirectSelector:@selector(initWithRequest:delegate:startImmediately:)
+                                 forClass:self
                                        to:@selector(pckInitWithRequest:delegate:startImmediately:)
                             andRenameItTo:@selector(originalInitWithRequest:delegate:startImmediately:)];
 
-        [NSURLConnection redirectSelector:@selector(start)
+    [PCKMethodRedirector redirectSelector:@selector(start)
+                                 forClass:self
                                        to:@selector(pckStart)
                             andRenameItTo:@selector(originalStart)];
 
-        [NSURLConnection redirectSelector:@selector(cancel)
+    [PCKMethodRedirector redirectSelector:@selector(cancel)
+                                 forClass:self
                                        to:@selector(pckCancel)
                             andRenameItTo:@selector(originalCancel)];
-    }
 }
 
 + (NSArray *)connections {

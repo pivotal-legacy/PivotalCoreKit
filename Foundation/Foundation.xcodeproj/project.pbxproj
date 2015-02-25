@@ -52,13 +52,18 @@
 		AE0CFF611770C81900E6A958 /* NSDictionarySpec+QueryStringSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE0CFF5F1770C80F00E6A958 /* NSDictionarySpec+QueryStringSpec.mm */; };
 		AE0CFF7C1770DB0100E6A958 /* NSURLSpec+QueryComponents.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE0CFF711770DAE300E6A958 /* NSURLSpec+QueryComponents.mm */; };
 		AE0CFF7D1770DB0100E6A958 /* NSURLSpec+QueryComponents.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE0CFF711770DAE300E6A958 /* NSURLSpec+QueryComponents.mm */; };
-		AE118A9B18D6B3CA00C90D6B /* BundleSpecLoader.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE118A9818D6B3CA00C90D6B /* BundleSpecLoader.mm */; };
+		AE234DB61A9CD46500742B72 /* Support+PivotalCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE234DAE1A9CD38600742B72 /* Support+PivotalCore.framework */; };
+		AE234DB91A9CD47200742B72 /* libSupport+PivotalCore-StaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AEBDFBBD1A9CC07B00267CEB /* libSupport+PivotalCore-StaticLib.a */; };
+		AE234DBC1A9CD4A100742B72 /* Support+PivotalCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE234DAE1A9CD38600742B72 /* Support+PivotalCore.framework */; };
+		AE234DC21A9CD4DD00742B72 /* Support+PivotalCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE234DAE1A9CD38600742B72 /* Support+PivotalCore.framework */; };
 		AE2A04B318D3E6AA00D4FD96 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE384883168BBB9000C99B55 /* CoreGraphics.framework */; };
 		AE2A04B518D3E6AA00D4FD96 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE24D5AF138170CD00E4420A /* Foundation.framework */; };
 		AE2A04D018D402F400D4FD96 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE2A04CF18D402F400D4FD96 /* UIKit.framework */; };
 		AE2A04D518D4037800D4FD96 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE2A04D418D4037800D4FD96 /* SenTestingKit.framework */; };
 		AE2A04DB18D409A200D4FD96 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE2A04CF18D402F400D4FD96 /* UIKit.framework */; };
 		AE416AAB174D48220014A083 /* libFakeHTTP.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AEE971CD1708EB410094B5A2 /* libFakeHTTP.a */; };
+		AE560F101A9D000800D7F256 /* libFoundation+PivotalCore-StaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AEA96C54168B636E00861DF1 /* libFoundation+PivotalCore-StaticLib.a */; };
+		AE560F131A9D009A00D7F256 /* Foundation+PivotalCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEA96B49168B506500861DF1 /* Foundation+PivotalCore.framework */; };
 		AE6898DC16BC3AF700F3F6BC /* NSArray+PivotalCore.h in Headers */ = {isa = PBXBuildFile; fileRef = AE6898DA16BC3AF700F3F6BC /* NSArray+PivotalCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE6898DD16BC3AF700F3F6BC /* NSArray+PivotalCore.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6898DB16BC3AF700F3F6BC /* NSArray+PivotalCore.m */; };
 		AE6898DE16BC3AF700F3F6BC /* NSArray+PivotalCore.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6898DB16BC3AF700F3F6BC /* NSArray+PivotalCore.m */; };
@@ -75,10 +80,7 @@
 		AE9F8EFA17C9B3680094079B /* PSHKObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = DE99C52A2D323A2A8E4F3EBF /* PSHKObserver.m */; };
 		AEA96B7A168B50D900861DF1 /* NSData+PivotalCore.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96B5E168B50D900861DF1 /* NSData+PivotalCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AEA96B7B168B50D900861DF1 /* NSData+PivotalCore.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA96B5F168B50D900861DF1 /* NSData+PivotalCore.m */; };
-		AEA96B7C168B50D900861DF1 /* NSObject+MethodDecoration.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96B60168B50D900861DF1 /* NSObject+MethodDecoration.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AEA96B7D168B50D900861DF1 /* NSObject+MethodDecoration.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA96B61168B50D900861DF1 /* NSObject+MethodDecoration.m */; };
-		AEA96B7E168B50D900861DF1 /* NSObject+MethodRedirection.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96B62168B50D900861DF1 /* NSObject+MethodRedirection.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AEA96B7F168B50D900861DF1 /* NSObject+MethodRedirection.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA96B63168B50D900861DF1 /* NSObject+MethodRedirection.m */; };
 		AEA96B80168B50D900861DF1 /* NSString+PivotalCore.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96B64168B50D900861DF1 /* NSString+PivotalCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AEA96B81168B50D900861DF1 /* NSString+PivotalCore.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA96B65168B50D900861DF1 /* NSString+PivotalCore.m */; };
 		AEA96B82168B50D900861DF1 /* NSURLConnectionDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96B67168B50D900861DF1 /* NSURLConnectionDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -113,7 +115,6 @@
 		AEA96BCC168B544D00861DF1 /* PSHKFixtures.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA96BC0168B544D00861DF1 /* PSHKFixtures.m */; };
 		AEA96BEF168B56BF00861DF1 /* NSDataSpec+PivotalCore.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEA96BE1168B56BF00861DF1 /* NSDataSpec+PivotalCore.mm */; };
 		AEA96BF0168B56BF00861DF1 /* NSObjectSpec+MethodDecoration.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEA96BE2168B56BF00861DF1 /* NSObjectSpec+MethodDecoration.mm */; };
-		AEA96BF1168B56BF00861DF1 /* NSObjectSpec+MethodRedirection.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEA96BE3168B56BF00861DF1 /* NSObjectSpec+MethodRedirection.mm */; };
 		AEA96BF2168B56BF00861DF1 /* NSStringSpec+PivotalCore.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEA96BE4168B56BF00861DF1 /* NSStringSpec+PivotalCore.mm */; };
 		AEA96BF3168B56BF00861DF1 /* NSURLConnectionSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEA96BE5168B56BF00861DF1 /* NSURLConnectionSpec+Spec.mm */; };
 		AEA96BF4168B56BF00861DF1 /* PCKHTTPConnectionDelegateSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEA96BE7168B56BF00861DF1 /* PCKHTTPConnectionDelegateSpec.mm */; };
@@ -122,7 +123,6 @@
 		AEA96BF7168B56BF00861DF1 /* PCKHTTPInterfaceSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEA96BEA168B56BF00861DF1 /* PCKHTTPInterfaceSpec.mm */; };
 		AEA96BF9168B56BF00861DF1 /* PCKResponseParserSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEA96BED168B56BF00861DF1 /* PCKResponseParserSpec.mm */; };
 		AEA96BFA168B56BF00861DF1 /* PCKXMLParserSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEA96BEE168B56BF00861DF1 /* PCKXMLParserSpec.mm */; };
-		AEA96BFE168B56FA00861DF1 /* Foundation+PivotalCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEA96B49168B506500861DF1 /* Foundation+PivotalCore.framework */; };
 		AEA96C03168B570B00861DF1 /* Foundation+PivotalSpecHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEA96B9E168B541900861DF1 /* Foundation+PivotalSpecHelper.framework */; };
 		AEA96C08168B58AA00861DF1 /* FakeConnectionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA96C07168B58AA00861DF1 /* FakeConnectionDelegate.m */; };
 		AEA96C39168B602700861DF1 /* FixturesHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA96C38168B602700861DF1 /* FixturesHelper.m */; };
@@ -131,7 +131,6 @@
 		AEA96C77168B640B00861DF1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE24D5AF138170CD00E4420A /* Foundation.framework */; };
 		AEA96C9A168B659500861DF1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA96C98168B658A00861DF1 /* main.m */; };
 		AEA96C9D168B663B00861DF1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA96C9B168B65CC00861DF1 /* main.m */; };
-		AEA96C9F168B674300861DF1 /* libFoundation+PivotalCore-StaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AEA96C54168B636E00861DF1 /* libFoundation+PivotalCore-StaticLib.a */; };
 		AEA96CA0168B674800861DF1 /* libFoundation+PivotalSpecHelper-StaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AEA96C64168B63BD00861DF1 /* libFoundation+PivotalSpecHelper-StaticLib.a */; };
 		AEA96CA1168B67E800861DF1 /* NSURLConnection+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA96BB4168B544D00861DF1 /* NSURLConnection+Spec.m */; };
 		AEA96CA2168B67E800861DF1 /* NSURLRequest+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA96BB6168B544D00861DF1 /* NSURLRequest+Spec.m */; };
@@ -140,7 +139,6 @@
 		AEA96CA6168B67E800861DF1 /* PSHKFixtures.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA96BC0168B544D00861DF1 /* PSHKFixtures.m */; };
 		AEA96CA7168B67FB00861DF1 /* NSData+PivotalCore.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA96B5F168B50D900861DF1 /* NSData+PivotalCore.m */; };
 		AEA96CA8168B67FB00861DF1 /* NSObject+MethodDecoration.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA96B61168B50D900861DF1 /* NSObject+MethodDecoration.m */; };
-		AEA96CA9168B67FB00861DF1 /* NSObject+MethodRedirection.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA96B63168B50D900861DF1 /* NSObject+MethodRedirection.m */; };
 		AEA96CAA168B67FB00861DF1 /* NSString+PivotalCore.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA96B65168B50D900861DF1 /* NSString+PivotalCore.m */; };
 		AEA96CAB168B67FB00861DF1 /* PCKHTTPConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA96B69168B50D900861DF1 /* PCKHTTPConnection.m */; };
 		AEA96CAC168B67FB00861DF1 /* PCKHTTPConnectionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA96B6B168B50D900861DF1 /* PCKHTTPConnectionDelegate.m */; };
@@ -151,7 +149,6 @@
 		AEA96CB1168B67FB00861DF1 /* PCKXMLParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA96B78168B50D900861DF1 /* PCKXMLParserDelegate.m */; };
 		AEA96CB2168B688700861DF1 /* NSDataSpec+PivotalCore.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEA96BE1168B56BF00861DF1 /* NSDataSpec+PivotalCore.mm */; };
 		AEA96CB3168B688700861DF1 /* NSObjectSpec+MethodDecoration.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEA96BE2168B56BF00861DF1 /* NSObjectSpec+MethodDecoration.mm */; };
-		AEA96CB4168B688700861DF1 /* NSObjectSpec+MethodRedirection.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEA96BE3168B56BF00861DF1 /* NSObjectSpec+MethodRedirection.mm */; };
 		AEA96CB5168B688700861DF1 /* NSStringSpec+PivotalCore.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEA96BE4168B56BF00861DF1 /* NSStringSpec+PivotalCore.mm */; };
 		AEA96CB6168B688700861DF1 /* NSURLConnectionSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEA96BE5168B56BF00861DF1 /* NSURLConnectionSpec+Spec.mm */; };
 		AEA96CB7168B688700861DF1 /* PCKHTTPConnectionDelegateSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEA96BE7168B56BF00861DF1 /* PCKHTTPConnectionDelegateSpec.mm */; };
@@ -172,6 +169,7 @@
 		AEBCCB6D168B7E7C0056EE83 /* Cedar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEBCCB59168B7E380056EE83 /* Cedar.framework */; };
 		AEBCCB6E168B7E930056EE83 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE24D5AF138170CD00E4420A /* Foundation.framework */; };
 		AEBCCB71168B909D0056EE83 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AE88B00711DE6D1200B65DD3 /* libxml2.dylib */; };
+		AEC0680D1A9D393700246582 /* BundleSpecLoader.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE118A9818D6B3CA00C90D6B /* BundleSpecLoader.mm */; };
 		AEE971D41708EB760094B5A2 /* libFakeHTTP-OSX.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AEE971D11708EB410094B5A2 /* libFakeHTTP-OSX.a */; };
 		AEEECC40181F3693006B52CD /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEEECC3F181F3693006B52CD /* Default-568h@2x.png */; };
 		AEF6F87816EBF0CF0004F077 /* PSHKFakeOperationQueueSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEF6F87616EBF0CF0004F077 /* PSHKFakeOperationQueueSpec.mm */; };
@@ -201,12 +199,61 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		AE234DAD1A9CD38600742B72 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEBDFBB61A9CC07B00267CEB /* Support.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AE234D7E1A9CD14200742B72;
+			remoteInfo = "Support+PivotalCore";
+		};
+		AE234DB41A9CD46100742B72 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEBDFBB61A9CC07B00267CEB /* Support.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = AE234D7D1A9CD14200742B72;
+			remoteInfo = "Support+PivotalCore";
+		};
+		AE234DB71A9CD46D00742B72 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEBDFBB61A9CC07B00267CEB /* Support.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = AEB92C851A9BB782001BEC93;
+			remoteInfo = "Support+PivotalCore-StaticLib";
+		};
+		AE234DBA1A9CD49D00742B72 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEBDFBB61A9CC07B00267CEB /* Support.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = AE234D7D1A9CD14200742B72;
+			remoteInfo = "Support+PivotalCore";
+		};
+		AE234DC01A9CD4D300742B72 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEBDFBB61A9CC07B00267CEB /* Support.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = AE234D7D1A9CD14200742B72;
+			remoteInfo = "Support+PivotalCore";
+		};
 		AE416AA9174D481C0014A083 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AEE971BF1708EB400094B5A2 /* FakeHTTP.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = E1C4E7C5161E24B20005AF7B;
 			remoteInfo = FakeHTTP;
+		};
+		AE560F0E1A9CFFF400D7F256 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AEA96C53168B636E00861DF1;
+			remoteInfo = "Foundation+PivotalCore-StaticLib";
+		};
+		AE560F111A9D009500D7F256 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AEA96B48168B506500861DF1;
+			remoteInfo = "Foundation+PivotalCore";
 		};
 		AE9EF7761A018F510006C572 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -215,26 +262,12 @@
 			remoteGlobalIDString = AEA96C73168B640B00861DF1;
 			remoteInfo = "Foundation-StaticLibSpec";
 		};
-		AEA96BFF168B570000861DF1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = AEA96B48168B506500861DF1;
-			remoteInfo = "Foundation+PivotalCore";
-		};
 		AEA96C01168B570800861DF1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = AEA96B9D168B541900861DF1;
 			remoteInfo = "Foundation+PivotalSpecHelper";
-		};
-		AEA96C90168B642100861DF1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = AEA96C53168B636E00861DF1;
-			remoteInfo = "Foundation+PivotalCore-StaticLib";
 		};
 		AEA96C92168B642600861DF1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -306,6 +339,34 @@
 			remoteGlobalIDString = AEEE222811DC2B0600029872;
 			remoteInfo = "Cedar-StaticLib";
 		};
+		AEBDFBBC1A9CC07B00267CEB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEBDFBB61A9CC07B00267CEB /* Support.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AEB92C861A9BB782001BEC93;
+			remoteInfo = "Support+PivotalCore-StaticLib";
+		};
+		AEBDFBBE1A9CC07B00267CEB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEBDFBB61A9CC07B00267CEB /* Support.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AEBDFB321A9BDF7C00267CEB;
+			remoteInfo = "Support-StaticLibSpec";
+		};
+		AEBDFBC01A9CC07B00267CEB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEBDFBB61A9CC07B00267CEB /* Support.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AEBDFB5C1A9BDFB900267CEB;
+			remoteInfo = SupportSpec;
+		};
+		AEC0681D1A9D393700246582 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEBDFBB61A9CC07B00267CEB /* Support.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AE9B6DD01A9D2D9B000ACF58;
+			remoteInfo = "Support-StaticLibSpecBundle";
+		};
 		AED5717B18C54AE1004AD37D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AEBCCB45168B7E370056EE83 /* Cedar.xcodeproj */;
@@ -372,6 +433,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		AE7ACF391A9CCDAB00CABEFE /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AEA96BD1168B561500861DF1 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -463,8 +534,6 @@
 		AEA96B5F168B50D900861DF1 /* NSData+PivotalCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+PivotalCore.m"; sourceTree = "<group>"; };
 		AEA96B60168B50D900861DF1 /* NSObject+MethodDecoration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MethodDecoration.h"; sourceTree = "<group>"; };
 		AEA96B61168B50D900861DF1 /* NSObject+MethodDecoration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MethodDecoration.m"; sourceTree = "<group>"; };
-		AEA96B62168B50D900861DF1 /* NSObject+MethodRedirection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MethodRedirection.h"; sourceTree = "<group>"; };
-		AEA96B63168B50D900861DF1 /* NSObject+MethodRedirection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MethodRedirection.m"; sourceTree = "<group>"; };
 		AEA96B64168B50D900861DF1 /* NSString+PivotalCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+PivotalCore.h"; sourceTree = "<group>"; };
 		AEA96B65168B50D900861DF1 /* NSString+PivotalCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+PivotalCore.m"; sourceTree = "<group>"; };
 		AEA96B67168B50D900861DF1 /* NSURLConnectionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSURLConnectionDelegate.h; sourceTree = "<group>"; };
@@ -502,7 +571,6 @@
 		AEA96BD3168B561500861DF1 /* FoundationSpec */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = FoundationSpec; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEA96BE1168B56BF00861DF1 /* NSDataSpec+PivotalCore.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSDataSpec+PivotalCore.mm"; sourceTree = "<group>"; };
 		AEA96BE2168B56BF00861DF1 /* NSObjectSpec+MethodDecoration.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSObjectSpec+MethodDecoration.mm"; sourceTree = "<group>"; };
-		AEA96BE3168B56BF00861DF1 /* NSObjectSpec+MethodRedirection.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSObjectSpec+MethodRedirection.mm"; sourceTree = "<group>"; };
 		AEA96BE4168B56BF00861DF1 /* NSStringSpec+PivotalCore.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSStringSpec+PivotalCore.mm"; sourceTree = "<group>"; };
 		AEA96BE5168B56BF00861DF1 /* NSURLConnectionSpec+Spec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSURLConnectionSpec+Spec.mm"; sourceTree = "<group>"; };
 		AEA96BE7168B56BF00861DF1 /* PCKHTTPConnectionDelegateSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PCKHTTPConnectionDelegateSpec.mm; sourceTree = "<group>"; };
@@ -526,6 +594,8 @@
 		AEB2B8DC18F703C800E26FAD /* PSHKFakeOperationQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSHKFakeOperationQueue.h; sourceTree = "<group>"; };
 		AEB2B8DD18F703C800E26FAD /* PSHKFakeOperationQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSHKFakeOperationQueue.m; sourceTree = "<group>"; };
 		AEBCCB45168B7E370056EE83 /* Cedar.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Cedar.xcodeproj; path = Cedar/Cedar.xcodeproj; sourceTree = "<group>"; };
+		AEBDFB9A1A9BE80D00267CEB /* libSupport+PivotalCore-StaticLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libSupport+PivotalCore-StaticLib.a"; path = "../Support/build/Debug-iphoneos/libSupport+PivotalCore-StaticLib.a"; sourceTree = "<group>"; };
+		AEBDFBB61A9CC07B00267CEB /* Support.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Support.xcodeproj; path = ../Support/Support.xcodeproj; sourceTree = "<group>"; };
 		AEE971BF1708EB400094B5A2 /* FakeHTTP.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FakeHTTP.xcodeproj; path = FakeHTTP/FakeHTTP.xcodeproj; sourceTree = "<group>"; };
 		AEEECC3F181F3693006B52CD /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		AEF6F87616EBF0CF0004F077 /* PSHKFakeOperationQueueSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PSHKFakeOperationQueueSpec.mm; sourceTree = "<group>"; };
@@ -557,6 +627,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE234DB61A9CD46500742B72 /* Support+PivotalCore.framework in Frameworks */,
 				AEBCCB3A168B7C5E0056EE83 /* Foundation.framework in Frameworks */,
 				AEA96B98168B520E00861DF1 /* libxml2.dylib in Frameworks */,
 			);
@@ -566,6 +637,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE234DBC1A9CD4A100742B72 /* Support+PivotalCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -574,10 +646,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				AEE971D41708EB760094B5A2 /* libFakeHTTP-OSX.a in Frameworks */,
+				AEA96C03168B570B00861DF1 /* Foundation+PivotalSpecHelper.framework in Frameworks */,
+				AE560F131A9D009A00D7F256 /* Foundation+PivotalCore.framework in Frameworks */,
+				AE234DC21A9CD4DD00742B72 /* Support+PivotalCore.framework in Frameworks */,
 				AEBCCB6E168B7E930056EE83 /* Foundation.framework in Frameworks */,
 				AEBCCB6D168B7E7C0056EE83 /* Cedar.framework in Frameworks */,
-				AEA96C03168B570B00861DF1 /* Foundation+PivotalSpecHelper.framework in Frameworks */,
-				AEA96BFE168B56FA00861DF1 /* Foundation+PivotalCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -585,6 +658,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE234DB91A9CD47200742B72 /* libSupport+PivotalCore-StaticLib.a in Frameworks */,
 				AEA96C55168B636E00861DF1 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -593,6 +667,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE560F101A9D000800D7F256 /* libFoundation+PivotalCore-StaticLib.a in Frameworks */,
 				AEA96C65168B63BD00861DF1 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -601,12 +676,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE416AAB174D48220014A083 /* libFakeHTTP.a in Frameworks */,
-				AEBCCB6C168B7E6F0056EE83 /* libCedar-StaticLib.a in Frameworks */,
 				AEA96CA0168B674800861DF1 /* libFoundation+PivotalSpecHelper-StaticLib.a in Frameworks */,
-				AEA96C9F168B674300861DF1 /* libFoundation+PivotalCore-StaticLib.a in Frameworks */,
-				AE2A04DB18D409A200D4FD96 /* UIKit.framework in Frameworks */,
+				AEBCCB6C168B7E6F0056EE83 /* libCedar-StaticLib.a in Frameworks */,
+				AE416AAB174D48220014A083 /* libFakeHTTP.a in Frameworks */,
 				AEA96C77168B640B00861DF1 /* Foundation.framework in Frameworks */,
+				AE2A04DB18D409A200D4FD96 /* UIKit.framework in Frameworks */,
 				AEBCCB71168B909D0056EE83 /* libxml2.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -645,6 +719,7 @@
 		0867D69AFE84028FC02AAC07 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AEBDFB9A1A9BE80D00267CEB /* libSupport+PivotalCore-StaticLib.a */,
 				AE2A04D418D4037800D4FD96 /* SenTestingKit.framework */,
 				AE2A04D118D4030100D4FD96 /* XCTest.framework */,
 				AE2A04CF18D402F400D4FD96 /* UIKit.framework */,
@@ -739,8 +814,6 @@
 				AEA96B5F168B50D900861DF1 /* NSData+PivotalCore.m */,
 				AEA96B60168B50D900861DF1 /* NSObject+MethodDecoration.h */,
 				AEA96B61168B50D900861DF1 /* NSObject+MethodDecoration.m */,
-				AEA96B62168B50D900861DF1 /* NSObject+MethodRedirection.h */,
-				AEA96B63168B50D900861DF1 /* NSObject+MethodRedirection.m */,
 				AEA96B64168B50D900861DF1 /* NSString+PivotalCore.h */,
 				AEA96B65168B50D900861DF1 /* NSString+PivotalCore.m */,
 				AE6898DA16BC3AF700F3F6BC /* NSArray+PivotalCore.h */,
@@ -828,7 +901,6 @@
 				AEA96BE1168B56BF00861DF1 /* NSDataSpec+PivotalCore.mm */,
 				AE0CFF5F1770C80F00E6A958 /* NSDictionarySpec+QueryStringSpec.mm */,
 				AEA96BE2168B56BF00861DF1 /* NSObjectSpec+MethodDecoration.mm */,
-				AEA96BE3168B56BF00861DF1 /* NSObjectSpec+MethodRedirection.mm */,
 				AEA96BE4168B56BF00861DF1 /* NSStringSpec+PivotalCore.mm */,
 				AEA96BE5168B56BF00861DF1 /* NSURLConnectionSpec+Spec.mm */,
 				AE0CFF711770DAE300E6A958 /* NSURLSpec+QueryComponents.mm */,
@@ -912,6 +984,7 @@
 			children = (
 				AEBCCB45168B7E370056EE83 /* Cedar.xcodeproj */,
 				AEE971BF1708EB400094B5A2 /* FakeHTTP.xcodeproj */,
+				AEBDFBB61A9CC07B00267CEB /* Support.xcodeproj */,
 			);
 			name = Externals;
 			path = ../Externals;
@@ -932,6 +1005,18 @@
 				AEEB50D01A0189070014BB6A /* Cedar OS X Host App.app */,
 				AEEB50D21A0189070014BB6A /* Cedar OS X Host AppTests.xctest */,
 				AEEB50D41A0189070014BB6A /* Cedar OS X Failing Test Bundle.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AEBDFBB71A9CC07B00267CEB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AE234DAE1A9CD38600742B72 /* Support+PivotalCore.framework */,
+				AEBDFBBD1A9CC07B00267CEB /* libSupport+PivotalCore-StaticLib.a */,
+				AEBDFBC11A9CC07B00267CEB /* SupportSpec */,
+				AEBDFBBF1A9CC07B00267CEB /* Support-StaticLibSpec.app */,
+				AEC0681E1A9D393700246582 /* Support-StaticLibSpecBundle.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -976,8 +1061,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				AEA96B7A168B50D900861DF1 /* NSData+PivotalCore.h in Headers */,
-				AEA96B7C168B50D900861DF1 /* NSObject+MethodDecoration.h in Headers */,
-				AEA96B7E168B50D900861DF1 /* NSObject+MethodRedirection.h in Headers */,
 				AEA96B80168B50D900861DF1 /* NSString+PivotalCore.h in Headers */,
 				AEA96B82168B50D900861DF1 /* NSURLConnectionDelegate.h in Headers */,
 				AEA96B83168B50D900861DF1 /* PCKHTTPConnection.h in Headers */,
@@ -1054,6 +1137,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				AE234DB51A9CD46100742B72 /* PBXTargetDependency */,
 			);
 			name = "Foundation+PivotalCore";
 			productName = "Foundation+PivotalCore";
@@ -1072,6 +1156,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				AE234DBB1A9CD49D00742B72 /* PBXTargetDependency */,
 			);
 			name = "Foundation+PivotalSpecHelper";
 			productName = "Foundation+PivotalSpecHelper";
@@ -1090,9 +1175,10 @@
 			);
 			dependencies = (
 				AEE971D31708EB720094B5A2 /* PBXTargetDependency */,
-				AEBCCB69168B7E620056EE83 /* PBXTargetDependency */,
 				AEA96C02168B570800861DF1 /* PBXTargetDependency */,
-				AEA96C00168B570000861DF1 /* PBXTargetDependency */,
+				AE560F121A9D009500D7F256 /* PBXTargetDependency */,
+				AE234DC11A9CD4D300742B72 /* PBXTargetDependency */,
+				AEBCCB69168B7E620056EE83 /* PBXTargetDependency */,
 			);
 			name = FoundationSpec;
 			productName = FoundationSpec;
@@ -1110,6 +1196,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				AE234DB81A9CD46D00742B72 /* PBXTargetDependency */,
 			);
 			name = "Foundation+PivotalCore-StaticLib";
 			productName = "Foundation+PivotalCore-StaticLib";
@@ -1127,6 +1214,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				AE560F0F1A9CFFF400D7F256 /* PBXTargetDependency */,
 			);
 			name = "Foundation+PivotalSpecHelper-StaticLib";
 			productName = "Foundation+PivotalSpecHelper-StaticLib";
@@ -1140,6 +1228,7 @@
 				AEA96C70168B640B00861DF1 /* Sources */,
 				AEA96C71168B640B00861DF1 /* Frameworks */,
 				AEA96C72168B640B00861DF1 /* Resources */,
+				AE7ACF391A9CCDAB00CABEFE /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1147,7 +1236,6 @@
 				AE416AAA174D481C0014A083 /* PBXTargetDependency */,
 				AEBCCB6B168B7E680056EE83 /* PBXTargetDependency */,
 				AEA96C93168B642600861DF1 /* PBXTargetDependency */,
-				AEA96C91168B642100861DF1 /* PBXTargetDependency */,
 			);
 			name = "Foundation-StaticLibSpec";
 			productName = "Foundation+PivotalCore-StaticLibSpec";
@@ -1186,6 +1274,10 @@
 					ProductGroup = AEE971C01708EB400094B5A2 /* Products */;
 					ProjectRef = AEE971BF1708EB400094B5A2 /* FakeHTTP.xcodeproj */;
 				},
+				{
+					ProductGroup = AEBDFBB71A9CC07B00267CEB /* Products */;
+					ProjectRef = AEBDFBB61A9CC07B00267CEB /* Support.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -1202,6 +1294,13 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		AE234DAE1A9CD38600742B72 /* Support+PivotalCore.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = "Support+PivotalCore.framework";
+			remoteRef = AE234DAD1A9CD38600742B72 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		AEBCCB59168B7E380056EE83 /* Cedar.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -1249,6 +1348,34 @@
 			fileType = wrapper.cfbundle;
 			path = "Cedar iOS SenTestingKit Tests.octest";
 			remoteRef = AEBCCB64168B7E380056EE83 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AEBDFBBD1A9CC07B00267CEB /* libSupport+PivotalCore-StaticLib.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libSupport+PivotalCore-StaticLib.a";
+			remoteRef = AEBDFBBC1A9CC07B00267CEB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AEBDFBBF1A9CC07B00267CEB /* Support-StaticLibSpec.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "Support-StaticLibSpec.app";
+			remoteRef = AEBDFBBE1A9CC07B00267CEB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AEBDFBC11A9CC07B00267CEB /* SupportSpec */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = SupportSpec;
+			remoteRef = AEBDFBC01A9CC07B00267CEB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AEC0681E1A9D393700246582 /* Support-StaticLibSpecBundle.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Support-StaticLibSpecBundle.xctest";
+			remoteRef = AEC0681D1A9D393700246582 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		AED5717C18C54AE1004AD37D /* Cedar iOS FrameworkSpecs.app */ = {
@@ -1390,7 +1517,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE118A9B18D6B3CA00C90D6B /* BundleSpecLoader.mm in Sources */,
+				AEC0680D1A9D393700246582 /* BundleSpecLoader.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1398,9 +1525,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AEA96B7B168B50D900861DF1 /* NSData+PivotalCore.m in Sources */,
 				AEA96B7D168B50D900861DF1 /* NSObject+MethodDecoration.m in Sources */,
-				AEA96B7F168B50D900861DF1 /* NSObject+MethodRedirection.m in Sources */,
+				AEA96B7B168B50D900861DF1 /* NSData+PivotalCore.m in Sources */,
 				AE7A67C718E5C077004A35BE /* NSURL+QueryComponents.m in Sources */,
 				AEA96B81168B50D900861DF1 /* NSString+PivotalCore.m in Sources */,
 				AEA96B84168B50D900861DF1 /* PCKHTTPConnection.m in Sources */,
@@ -1440,7 +1566,6 @@
 			files = (
 				AEA96BEF168B56BF00861DF1 /* NSDataSpec+PivotalCore.mm in Sources */,
 				AEA96BF0168B56BF00861DF1 /* NSObjectSpec+MethodDecoration.mm in Sources */,
-				AEA96BF1168B56BF00861DF1 /* NSObjectSpec+MethodRedirection.mm in Sources */,
 				AEA96BF2168B56BF00861DF1 /* NSStringSpec+PivotalCore.mm in Sources */,
 				AEA96BF3168B56BF00861DF1 /* NSURLConnectionSpec+Spec.mm in Sources */,
 				AEA96BF4168B56BF00861DF1 /* PCKHTTPConnectionDelegateSpec.mm in Sources */,
@@ -1475,7 +1600,6 @@
 			files = (
 				AEA96CA7168B67FB00861DF1 /* NSData+PivotalCore.m in Sources */,
 				AEA96CA8168B67FB00861DF1 /* NSObject+MethodDecoration.m in Sources */,
-				AEA96CA9168B67FB00861DF1 /* NSObject+MethodRedirection.m in Sources */,
 				AE7A67C618E5C077004A35BE /* NSURL+QueryComponents.m in Sources */,
 				AEA96CAA168B67FB00861DF1 /* NSString+PivotalCore.m in Sources */,
 				AEA96CAB168B67FB00861DF1 /* PCKHTTPConnection.m in Sources */,
@@ -1516,7 +1640,6 @@
 				AEA96C9D168B663B00861DF1 /* main.m in Sources */,
 				AEA96CB2168B688700861DF1 /* NSDataSpec+PivotalCore.mm in Sources */,
 				AEA96CB3168B688700861DF1 /* NSObjectSpec+MethodDecoration.mm in Sources */,
-				AEA96CB4168B688700861DF1 /* NSObjectSpec+MethodRedirection.mm in Sources */,
 				AEA96CB5168B688700861DF1 /* NSStringSpec+PivotalCore.mm in Sources */,
 				AEA96CB6168B688700861DF1 /* NSURLConnectionSpec+Spec.mm in Sources */,
 				AEA96CB7168B688700861DF1 /* PCKHTTPConnectionDelegateSpec.mm in Sources */,
@@ -1547,30 +1670,50 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		AE234DB51A9CD46100742B72 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Support+PivotalCore";
+			targetProxy = AE234DB41A9CD46100742B72 /* PBXContainerItemProxy */;
+		};
+		AE234DB81A9CD46D00742B72 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Support+PivotalCore-StaticLib";
+			targetProxy = AE234DB71A9CD46D00742B72 /* PBXContainerItemProxy */;
+		};
+		AE234DBB1A9CD49D00742B72 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Support+PivotalCore";
+			targetProxy = AE234DBA1A9CD49D00742B72 /* PBXContainerItemProxy */;
+		};
+		AE234DC11A9CD4D300742B72 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Support+PivotalCore";
+			targetProxy = AE234DC01A9CD4D300742B72 /* PBXContainerItemProxy */;
+		};
 		AE416AAA174D481C0014A083 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = FakeHTTP;
 			targetProxy = AE416AA9174D481C0014A083 /* PBXContainerItemProxy */;
+		};
+		AE560F0F1A9CFFF400D7F256 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AEA96C53168B636E00861DF1 /* Foundation+PivotalCore-StaticLib */;
+			targetProxy = AE560F0E1A9CFFF400D7F256 /* PBXContainerItemProxy */;
+		};
+		AE560F121A9D009500D7F256 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AEA96B48168B506500861DF1 /* Foundation+PivotalCore */;
+			targetProxy = AE560F111A9D009500D7F256 /* PBXContainerItemProxy */;
 		};
 		AE9EF7771A018F510006C572 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = AEA96C73168B640B00861DF1 /* Foundation-StaticLibSpec */;
 			targetProxy = AE9EF7761A018F510006C572 /* PBXContainerItemProxy */;
 		};
-		AEA96C00168B570000861DF1 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = AEA96B48168B506500861DF1 /* Foundation+PivotalCore */;
-			targetProxy = AEA96BFF168B570000861DF1 /* PBXContainerItemProxy */;
-		};
 		AEA96C02168B570800861DF1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = AEA96B9D168B541900861DF1 /* Foundation+PivotalSpecHelper */;
 			targetProxy = AEA96C01168B570800861DF1 /* PBXContainerItemProxy */;
-		};
-		AEA96C91168B642100861DF1 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = AEA96C53168B636E00861DF1 /* Foundation+PivotalCore-StaticLib */;
-			targetProxy = AEA96C90168B642100861DF1 /* PBXContainerItemProxy */;
 		};
 		AEA96C93168B642600861DF1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1768,6 +1911,7 @@
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "Core/Foundation+PivotalCore-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../Support/Core";
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Debug;
@@ -1790,6 +1934,7 @@
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "Core/Foundation+PivotalCore-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../Support/Core";
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Release;
@@ -1818,6 +1963,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				INFOPLIST_FILE = "SpecHelper/Foundation+PivotalSpecHelper-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../Support/Core";
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Debug;
@@ -1841,6 +1987,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				INFOPLIST_FILE = "SpecHelper/Foundation+PivotalSpecHelper-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../Support/Core";
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Release;
@@ -1861,7 +2008,10 @@
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../Externals/FakeHTTP/FakeHTTP/**";
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/../Externals/FakeHTTP/FakeHTTP/**",
+					"$(SRCROOT)/../Support/Core",
+				);
 				MACOSX_DEPLOYMENT_TARGET = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -1879,7 +2029,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../Externals/FakeHTTP/FakeHTTP/**";
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/../Externals/FakeHTTP/FakeHTTP/**",
+					"$(SRCROOT)/../Support/Core",
+				);
 				MACOSX_DEPLOYMENT_TARGET = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -1909,6 +2062,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../Support/Core";
 				VALID_ARCHS = "$(inherited) x86_64 i386";
 			};
 			name = Debug;
@@ -1931,6 +2085,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../Support/Core";
 				VALIDATE_PRODUCT = YES;
 				VALID_ARCHS = "$(inherited) x86_64 i386";
 			};
@@ -1959,6 +2114,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../Support/Core";
 				VALID_ARCHS = "$(inherited) i386 x86_64";
 			};
 			name = Debug;
@@ -1981,6 +2137,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../Support/Core";
 				VALIDATE_PRODUCT = YES;
 				VALID_ARCHS = "$(inherited) i386 x86_64";
 			};
@@ -1995,7 +2152,6 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -2011,6 +2167,8 @@
 				);
 				INFOPLIST_FILE = "Spec/iOS/Foundation+PivotalCore-StaticLibSpec-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
@@ -2018,6 +2176,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../Support/Core";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -2031,7 +2190,6 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
@@ -2041,6 +2199,8 @@
 				);
 				INFOPLIST_FILE = "Spec/iOS/Foundation+PivotalCore-StaticLibSpec-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -2049,6 +2209,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../Support/Core";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};
