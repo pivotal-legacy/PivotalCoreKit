@@ -14,23 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AEB92C851A9BB782001BEC93"
-               BuildableName = "libSupport+PivotalCore-StaticLib.a"
-               BlueprintName = "Support+PivotalCore-StaticLib"
-               ReferencedContainer = "container:Support.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AEB92C901A9BB782001BEC93"
-               BuildableName = "Support+Pivotal-StaticLibSpec.xctest"
-               BlueprintName = "Support+Pivotal-StaticLibSpec"
+               BlueprintIdentifier = "AEBDFB5B1A9BDFB900267CEB"
+               BuildableName = "SupportSpec"
+               BlueprintName = "SupportSpec"
                ReferencedContainer = "container:Support.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -42,23 +28,13 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AEB92C901A9BB782001BEC93"
-               BuildableName = "Support+Pivotal-StaticLibSpec.xctest"
-               BlueprintName = "Support+Pivotal-StaticLibSpec"
-               ReferencedContainer = "container:Support.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AEB92C851A9BB782001BEC93"
-            BuildableName = "libSupport+PivotalCore-StaticLib.a"
-            BlueprintName = "Support+PivotalCore-StaticLib"
+            BlueprintIdentifier = "AEBDFB5B1A9BDFB900267CEB"
+            BuildableName = "SupportSpec"
+            BlueprintName = "SupportSpec"
             ReferencedContainer = "container:Support.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -72,15 +48,16 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AEB92C851A9BB782001BEC93"
-            BuildableName = "libSupport+PivotalCore-StaticLib.a"
-            BlueprintName = "Support+PivotalCore-StaticLib"
+            BlueprintIdentifier = "AEBDFB5B1A9BDFB900267CEB"
+            BuildableName = "SupportSpec"
+            BlueprintName = "SupportSpec"
             ReferencedContainer = "container:Support.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -90,15 +67,16 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AEB92C851A9BB782001BEC93"
-            BuildableName = "libSupport+PivotalCore-StaticLib.a"
-            BlueprintName = "Support+PivotalCore-StaticLib"
+            BlueprintIdentifier = "AEBDFB5B1A9BDFB900267CEB"
+            BuildableName = "SupportSpec"
+            BlueprintName = "SupportSpec"
             ReferencedContainer = "container:Support.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

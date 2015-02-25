@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AEB92C851A9BB782001BEC93"
-               BuildableName = "libSupport+PivotalCore-StaticLib.a"
-               BlueprintName = "Support+PivotalCore-StaticLib"
+               BlueprintIdentifier = "AEBDFB311A9BDF7C00267CEB"
+               BuildableName = "Support-StaticLibSpec.app"
+               BlueprintName = "Support-StaticLibSpec"
                ReferencedContainer = "container:Support.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -28,9 +28,23 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AEB92C901A9BB782001BEC93"
-               BuildableName = "Support+Pivotal-StaticLibSpec.xctest"
-               BlueprintName = "Support+Pivotal-StaticLibSpec"
+               BlueprintIdentifier = "AEBDFB491A9BDF7D00267CEB"
+               BuildableName = "Support-StaticLibSpecTests.xctest"
+               BlueprintName = "Support-StaticLibSpecTests"
+               ReferencedContainer = "container:Support.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "AE234D871A9CD14200742B72"
+               BuildableName = "Support+PivotalCoreTests.xctest"
+               BlueprintName = "Support+PivotalCoreTests"
                ReferencedContainer = "container:Support.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -46,9 +60,19 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AEB92C901A9BB782001BEC93"
-               BuildableName = "Support+Pivotal-StaticLibSpec.xctest"
-               BlueprintName = "Support+Pivotal-StaticLibSpec"
+               BlueprintIdentifier = "AEBDFB491A9BDF7D00267CEB"
+               BuildableName = "Support-StaticLibSpecTests.xctest"
+               BlueprintName = "Support-StaticLibSpecTests"
+               ReferencedContainer = "container:Support.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "AE234D871A9CD14200742B72"
+               BuildableName = "Support+PivotalCoreTests.xctest"
+               BlueprintName = "Support+PivotalCoreTests"
                ReferencedContainer = "container:Support.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -56,9 +80,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AEB92C851A9BB782001BEC93"
-            BuildableName = "libSupport+PivotalCore-StaticLib.a"
-            BlueprintName = "Support+PivotalCore-StaticLib"
+            BlueprintIdentifier = "AEBDFB311A9BDF7C00267CEB"
+            BuildableName = "Support-StaticLibSpec.app"
+            BlueprintName = "Support-StaticLibSpec"
             ReferencedContainer = "container:Support.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -72,15 +96,16 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AEB92C851A9BB782001BEC93"
-            BuildableName = "libSupport+PivotalCore-StaticLib.a"
-            BlueprintName = "Support+PivotalCore-StaticLib"
+            BlueprintIdentifier = "AEBDFB311A9BDF7C00267CEB"
+            BuildableName = "Support-StaticLibSpec.app"
+            BlueprintName = "Support-StaticLibSpec"
             ReferencedContainer = "container:Support.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -90,15 +115,16 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AEB92C851A9BB782001BEC93"
-            BuildableName = "libSupport+PivotalCore-StaticLib.a"
-            BlueprintName = "Support+PivotalCore-StaticLib"
+            BlueprintIdentifier = "AEBDFB311A9BDF7C00267CEB"
+            BuildableName = "Support-StaticLibSpec.app"
+            BlueprintName = "Support-StaticLibSpec"
             ReferencedContainer = "container:Support.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
