@@ -70,10 +70,12 @@ describe(@"UIGestureRecognizerSpec", ^{
 
         describe(@"managing state", ^{
             __block UIGestureRecognizerState capturedState;
+            __block UIGestureRecognizerState capturedStateUsingKVC;
 
             beforeEach(^{
                 target stub_method(@selector(ciao:)).and_do_block(^(UIGestureRecognizer *gestureRecognizer) {
                     capturedState = gestureRecognizer.state;
+                    capturedStateUsingKVC = (UIGestureRecognizerState)[[gestureRecognizer valueForKey:@"state"] integerValue];
                 });
                 [recognizer addTarget:target action:@selector(ciao:)];
             });
@@ -85,17 +87,31 @@ describe(@"UIGestureRecognizerSpec", ^{
             });
 
             context(@"once the recoginzer has recognized a gesture, while the actions are being performed", ^{
-                it(@"should have the UIGestureRecognizerStateRecognized state", ^{
+                beforeEach(^{
                     [recognizer recognize];
+                });
+
+                it(@"should have the UIGestureRecognizerStateRecognized state", ^{
                     capturedState should equal(UIGestureRecognizerStateRecognized);
                     capturedState should equal(UIGestureRecognizerStateEnded);
+                });
+
+                it(@"should consistently report its state", ^{
+                    capturedState should equal(capturedStateUsingKVC);
                 });
             });
 
             context(@"once the recognizer has completed recognizing a gesture", ^{
-                it(@"should reset the state to UIGestureRecognizerStatePossible", ^{
+                beforeEach(^{
                     [recognizer recognize];
+                });
+
+                it(@"should reset the state to UIGestureRecognizerStatePossible", ^{
                     recognizer.state should equal(UIGestureRecognizerStatePossible);
+                });
+
+                it(@"should report the correct state using valueForKey:", ^{
+                    [[recognizer valueForKey:@"state"] integerValue] should equal(UIGestureRecognizerStatePossible);
                 });
             });
         });
