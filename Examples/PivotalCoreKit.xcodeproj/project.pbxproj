@@ -18,7 +18,6 @@
 		84E176651AA1117400C236B2 /* CoreLocationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E176641AA1117400C236B2 /* CoreLocationTests.m */; };
 		84E1766D1AA113C400C236B2 /* UIKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E1766C1AA113C400C236B2 /* UIKitTests.m */; };
 		84E176701AA113F500C236B2 /* UIKitCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E1766F1AA113F500C236B2 /* UIKitCore.m */; };
-		C9C4D94F4D186C25DFFB6062 /* libPods-Spec.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D708E5FBA77A13C8C6F78C1F /* libPods-Spec.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,7 +71,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9C4D94F4D186C25DFFB6062 /* libPods-Spec.a in Frameworks */,
 				829C6B754C564908D45B96D8 /* libPods-Tests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
