@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "84E1762F1AA1080200C236B2"
-               BuildableName = "App.app"
-               BlueprintName = "App"
-               ReferencedContainer = "container:PivotalCoreKit.xcodeproj">
+               BuildableName = "PCKiOSExample.app"
+               BlueprintName = "PCKiOSExample"
+               ReferencedContainer = "container:PCKiOSExample.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -31,7 +31,7 @@
                BlueprintIdentifier = "84E176481AA1080300C236B2"
                BuildableName = "Tests.xctest"
                BlueprintName = "Tests"
-               ReferencedContainer = "container:PivotalCoreKit.xcodeproj">
+               ReferencedContainer = "container:PCKiOSExample.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -49,7 +49,7 @@
                BlueprintIdentifier = "84E176481AA1080300C236B2"
                BuildableName = "Tests.xctest"
                BlueprintName = "Tests"
-               ReferencedContainer = "container:PivotalCoreKit.xcodeproj">
+               ReferencedContainer = "container:PCKiOSExample.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -57,9 +57,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "84E1762F1AA1080200C236B2"
-            BuildableName = "App.app"
-            BlueprintName = "App"
-            ReferencedContainer = "container:PivotalCoreKit.xcodeproj">
+            BuildableName = "PCKiOSExample.app"
+            BlueprintName = "PCKiOSExample"
+            ReferencedContainer = "container:PCKiOSExample.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -72,14 +72,13 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "84E1762F1AA1080200C236B2"
-            BuildableName = "App.app"
-            BlueprintName = "App"
-            ReferencedContainer = "container:PivotalCoreKit.xcodeproj">
+            BuildableName = "PCKiOSExample.app"
+            BlueprintName = "PCKiOSExample"
+            ReferencedContainer = "container:PCKiOSExample.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -91,14 +90,13 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "84E1762F1AA1080200C236B2"
-            BuildableName = "App.app"
-            BlueprintName = "App"
-            ReferencedContainer = "container:PivotalCoreKit.xcodeproj">
+            BuildableName = "PCKiOSExample.app"
+            BlueprintName = "PCKiOSExample"
+            ReferencedContainer = "container:PCKiOSExample.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
