@@ -1,13 +1,16 @@
 ## HEAD
 
-## 0.2.4 (in progress)
+## 0.3.0
 
   * Adds instructions for releasing new versions of PivotalCoreKit
   * Adds a stub for setting [CLLocationManager +authorizationStatus]
+  * Includes improvements to the UIGestureRecognizer stub
+  * Improves UIBarButtonItem, UISwitch and UISegmentedControl test helpers
+  * Drops build-time support for iOS 7
 
 ## 0.2.3
 
-  * Update WatchKit framework for Xcode 6.2 beta 4 
+  * Update WatchKit framework for Xcode 6.2 beta 4
   * Add support for testing UIAlertController
 
 ## 0.2.2
@@ -17,7 +20,7 @@
 ## 0.2.1
   * No functional changes - fixes red build due to spec bug
 
-## 0.2.0 
+## 0.2.0
   * Breaking change: UIKit project targets are reorganized to keep stubs and helpers separate
   * Introduces more functional programming additions to the Foundation project
 
