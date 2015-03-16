@@ -1,5 +1,10 @@
 ## HEAD
 
+## 0.3.1 (in progress)
+ 
+  * Further improvements to UIGestureRecognizer spec helper stub
+  * 
+
 ## 0.3.0
 
   * Adds instructions for releasing new versions of PivotalCoreKit
