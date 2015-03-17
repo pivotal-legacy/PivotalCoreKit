@@ -16,9 +16,20 @@ describe(@"WKInterfaceLabel", ^{
     });
 
     describe(@"setters", ^{
+
         it(@"should record the invocation for setText: when called with a string", ^{
             [subject setText:@"qwer"];
             subject should have_received(@selector(setText:)).with(@"qwer");
+        });
+
+        it(@"should be able to assert the arguments to setText: without using the `have_received` matcher", ^{
+            [subject setText:@"no special matchers needed!"];
+
+            NSArray *labelMessages = [subject sent_messages];
+            NSInvocation *firstLabelMessage = [labelMessages firstObject];
+            __autoreleasing NSString *firstLabelMessageText;
+            [firstLabelMessage getArgument:&firstLabelMessageText atIndex:2];
+            firstLabelMessageText should equal(@"no special matchers needed!");
         });
 
         it(@"should record the invocation for setText: when called with a dictionary", ^{
