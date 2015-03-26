@@ -3,6 +3,19 @@
 #import "PrototypeCellObjects.h"
 
 
+@interface BasicSpecTableViewCell : UITableViewCell
+@property (nonatomic, assign) NSInteger numberOfSelectedYesCalls;
+@end
+
+@implementation BasicSpecTableViewCell
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+    [super setSelected:selected animated:animated];
+    if (selected) {
+        ++self.numberOfSelectedYesCalls;
+    }
+}
+@end
+
 @interface SpecTableViewController : UITableViewController
 @property (nonatomic) BOOL shouldHightlightRows;
 @property (nonatomic, retain) NSIndexPath *lastSelectedIndexPath;
@@ -12,7 +25,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
+    [self.tableView registerClass:[BasicSpecTableViewCell class] forCellReuseIdentifier:@"Cell"];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -45,7 +58,7 @@ SPEC_BEGIN(UITableViewCell_SpecSpec)
 
 describe(@"UITableViewCell+Spec", ^{
     __block SpecTableViewController *controller;
-    __block UITableViewCell *cell;
+    __block BasicSpecTableViewCell *cell;
 
     beforeEach(^{
         controller = [[[SpecTableViewController alloc] initWithStyle:UITableViewStylePlain] autorelease];
@@ -64,6 +77,10 @@ describe(@"UITableViewCell+Spec", ^{
 
             it(@"should result in the cell being selected", ^{
                 [controller.tableView indexPathForSelectedRow] should equal([controller.tableView indexPathForCell:cell]);
+            });
+
+            it(@"should call -setSelected:animated: twice on the cell because that's what a real UITableView does when a user taps a cell", ^{
+                cell.numberOfSelectedYesCalls should equal(2);
             });
 
             it(@"should highlight the cell", ^{
