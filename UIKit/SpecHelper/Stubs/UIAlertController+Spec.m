@@ -9,6 +9,7 @@
     if (cancelAction.handler) {
         cancelAction.handler(cancelAction);
     }
+    [self.presentingViewController dismissViewControllerAnimated:NO completion:nil];
 }
 
 - (void)dismissByTappingButtonWithTitle:(NSString *)title {
@@ -16,6 +17,7 @@
     if (action.handler) {
         action.handler(action);
     }
+    [self.presentingViewController dismissViewControllerAnimated:NO completion:nil];
 }
 
 #pragma mark - Private

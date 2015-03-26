@@ -14,6 +14,7 @@ describe(@"UIAlertController (spec extensions)", ^{
     __block UIAlertController *alertController;
     __block BOOL handlerWasExecuted;
     __block PCKAlertActionHandler handler;
+    __block UIViewController *presentingController;
 
     void (^addCancelAction)(UIAlertController *, PCKAlertActionHandler) = ^(UIAlertController *controller, PCKAlertActionHandler handler){
         [controller addAction:[UIAlertAction actionWithTitle:@"Cancel"
@@ -28,6 +29,7 @@ describe(@"UIAlertController (spec extensions)", ^{
     };
 
     beforeEach(^{
+        presentingController = [UIViewController new];
         handlerWasExecuted = NO;
         handler = ^(UIAlertAction *) { handlerWasExecuted = YES; };
     });
@@ -66,6 +68,7 @@ describe(@"UIAlertController (spec extensions)", ^{
                                                                       message:@"Message"
                                                                preferredStyle:UIAlertControllerStyleAlert];
                 addDefaultAction(alertController, nil);
+                [presentingController presentViewController:alertController animated:NO completion:nil];
             });
 
             context(@"without containing a UIAlertActionStyleCancel button", ^{
@@ -77,6 +80,10 @@ describe(@"UIAlertController (spec extensions)", ^{
                 it(@"should tap the last button", ^{
                     handlerWasExecuted should be_truthy;
                 });
+
+                it(@"should dismiss the alert controller", ^{
+                    presentingController.presentedViewController should be_nil;
+                });
             });
 
             itShouldBehaveLike(@"default cancel behavior");
@@ -87,6 +94,7 @@ describe(@"UIAlertController (spec extensions)", ^{
                 alertController = [UIAlertController alertControllerWithTitle:@"Title"
                                                                       message:@"Message"
                                                                preferredStyle:UIAlertControllerStyleActionSheet];
+                [presentingController presentViewController:alertController animated:NO completion:nil];
             });
 
             context(@"when a action sheet does not have a cancel button", ^{
@@ -109,6 +117,7 @@ describe(@"UIAlertController (spec extensions)", ^{
                 alertController = [UIAlertController alertControllerWithTitle:@"Title"
                                                                       message:@"Message"
                                                                preferredStyle:UIAlertControllerStyleAlert];
+                [presentingController presentViewController:alertController animated:NO completion:nil];
             });
 
             context(@"when there is a button with a title", ^{
@@ -120,6 +129,10 @@ describe(@"UIAlertController (spec extensions)", ^{
 
                 it(@"should tap the button", ^{
                     handlerWasExecuted should be_truthy;
+                });
+
+                it(@"should dismiss the alert controller", ^{
+                    presentingController.presentedViewController should be_nil;
                 });
             });
 
@@ -138,7 +151,7 @@ describe(@"UIAlertController (spec extensions)", ^{
                 beforeEach(^{
                     addDefaultAction(alertController, nil);
                 });
-                
+
                 it(@"should not blow up", ^{
                     ^{ [alertController dismissByTappingButtonWithTitle:@"Default"]; } should_not raise_exception;
                 });
@@ -146,7 +159,7 @@ describe(@"UIAlertController (spec extensions)", ^{
         });
     });
 });
-    
+
 }
 
 SPEC_END
