@@ -45,25 +45,38 @@ describe(@"PSHKFakeOperationQueue", ^{
     });
 
     describe(@"when set to run synchronously", ^{
+        __block BOOL blockInvoked;
+        __block dispatch_semaphore_t semaphore;
+        __block NSBlockOperation *blockOperation;
+
         beforeEach(^{
             fakeQueue.runSynchronously = YES;
-        });
 
-        it(@"should run operations immediately when added", ^{
-            dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
-            __block BOOL blockInvoked = NO;
+            semaphore = dispatch_semaphore_create(0);
+            blockInvoked = NO;
 
-            NSBlockOperation *blockOperation = [NSBlockOperation blockOperationWithBlock:^{
+            blockOperation = [NSBlockOperation blockOperationWithBlock:^{
                 blockInvoked = YES;
                 dispatch_semaphore_signal(semaphore);
             }];
+        });
 
+        afterEach(^{
+            dispatch_release(semaphore);
+        });
+
+        it(@"should run an operation immediately when added", ^{
             [fakeQueue addOperation:blockOperation];
             dispatch_semaphore_wait(semaphore, 0.0001);
 
             blockInvoked should be_truthy;
+        });
 
-            dispatch_release(semaphore);
+        it(@"should run all operations immediately when several are added", ^{
+            [fakeQueue addOperations:@[blockOperation] waitUntilFinished:NO];
+            dispatch_semaphore_wait(semaphore, 0.0001);
+
+            blockInvoked should be_truthy;
         });
     });
 
@@ -131,6 +144,25 @@ describe(@"PSHKFakeOperationQueue", ^{
             it(@"should raise an exception", ^{
                 ^{ [fakeQueue runNextOperation]; } should raise_exception;
             });
+        });
+    });
+
+    describe(@"-cancelAllOperations", ^{
+        __block NSOperation *operation;
+
+        beforeEach(^{
+            operation = [[[NSOperation alloc] init] autorelease];
+            [fakeQueue addOperation:operation];
+
+            [fakeQueue cancelAllOperations];
+        });
+
+        it(@"should cancel each operation", ^{
+            operation.cancelled should be_truthy;
+        });
+
+        it(@"should no longer have any queued operations", ^{
+            fakeQueue.operationCount should equal(0);
         });
     });
 });

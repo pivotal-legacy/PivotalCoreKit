@@ -36,8 +36,8 @@
         if (![operation isKindOfClass:[NSOperation class]]) {
             operation = [NSBlockOperation blockOperationWithBlock:[[operation copy] autorelease]];
         }
-
-        if (wait) {
+        
+        if (wait || self.runSynchronously) {
             [self performOperationAndWait:operation];
         } else {
             [self.mutableOperations addObject:operation];
@@ -78,6 +78,14 @@
         ((void (^)())operation)();
     }
     [self.mutableOperations removeObject:operation];
+}
+
+- (void)cancelAllOperations {
+    for (NSOperation *op in self.mutableOperations) {
+        [op cancel];
+    }
+
+    [self.mutableOperations removeAllObjects];
 }
 
 @end
