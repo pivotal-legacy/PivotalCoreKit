@@ -37,16 +37,10 @@
             operation = [NSBlockOperation blockOperationWithBlock:[[operation copy] autorelease]];
         }
         
-        if (wait) {
+        if (wait || self.runSynchronously) {
             [self performOperationAndWait:operation];
         } else {
             [self.mutableOperations addObject:operation];
-        }
-    }
-    
-    if (self.runSynchronously) {
-        for (NSOperation *operation in self.operations) {
-            [self performOperationAndWait:operation];
         }
     }
 }
