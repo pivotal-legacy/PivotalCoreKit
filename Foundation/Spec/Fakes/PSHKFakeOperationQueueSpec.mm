@@ -146,6 +146,25 @@ describe(@"PSHKFakeOperationQueue", ^{
             });
         });
     });
+
+    describe(@"-cancelAllOperations", ^{
+        __block NSOperation *operation;
+
+        beforeEach(^{
+            operation = [[[NSOperation alloc] init] autorelease];
+            [fakeQueue addOperation:operation];
+
+            [fakeQueue cancelAllOperations];
+        });
+
+        it(@"should cancel each operation", ^{
+            operation.cancelled should be_truthy;
+        });
+
+        it(@"should no longer have any queued operations", ^{
+            fakeQueue.operationCount should equal(0);
+        });
+    });
 });
 
 SPEC_END

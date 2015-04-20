@@ -81,9 +81,11 @@
 }
 
 - (void)cancelAllOperations {
-    for (NSOperation *op in self.operations) {
+    for (NSOperation *op in self.mutableOperations) {
         [op cancel];
     }
+
+    [self.mutableOperations removeAllObjects];
 }
 
 @end
