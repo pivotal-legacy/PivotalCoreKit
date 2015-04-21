@@ -54,7 +54,7 @@ typedef enum WKTextInputMode : NSInteger  {
 - (void)popController;
 - (void)popToRootController;
 
-// TODO: + (void)reloadRootControllersWithNames:(NSArray *)names contexts:(NSArray *)contexts;
++ (void)reloadRootControllersWithNames:(NSArray *)names contexts:(NSArray *)contexts;
 - (void)becomeCurrentPage;
 
 - (void)presentControllerWithName:(NSString *)name context:(id)context;
@@ -78,7 +78,7 @@ typedef enum WKTextInputMode : NSInteger  {
 
 - (void)updateUserActivity:(NSString *)type userInfo:(NSDictionary *)userInfo;
 
-// TODO:+ (BOOL)openParentApplication:(NSDictionary *)userInfo reply:(void(^)(NSDictionary *replyInfo, NSError *error)) reply;
++ (BOOL)openParentApplication:(NSDictionary *)userInfo reply:(void(^)(NSDictionary *replyInfo, NSError *error)) reply;
 
 @end
 

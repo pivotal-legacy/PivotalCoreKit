@@ -2,7 +2,7 @@
 #import "CorgisController.h"
 #import "InterfaceController.h"
 #import "PCKInterfaceControllerLoader.h"
-
+#import "NSInvocation+InvocationMatching.h"
 
 using namespace Cedar::Matchers;
 using namespace Cedar::Doubles;
@@ -194,6 +194,50 @@ describe(@"WKInterfaceController", ^{
             [subject updateUserActivity:@"asdf" userInfo:@{@"a": @"b"}];
 
             subject should have_received(@selector(updateUserActivity:userInfo:)).with(@"asdf", @{@"a": @"b"});
+        });
+    });
+
+    describe(@"class methods", ^{
+
+        context(@"openParentApplication:reply:", ^{
+            typedef void (^ReplyBlock)(NSDictionary *, NSError *);
+            __block NSDictionary *userInfo;
+            __block ReplyBlock reply;
+
+            beforeEach(^{
+                userInfo = @{ @"user" : @"info" };
+                reply = ^void(NSDictionary *replyInfo, NSError *error) { };
+            });
+
+            it(@"should have recorded invocations", ^{
+                [subject.class openParentApplication:userInfo
+                                               reply:reply];
+                NSInvocation *invocation = [[PCKMessageCapturer sent_class_messages] firstObject];
+                [invocation matchesTarget:subject.class
+                                 selector:@selector(openParentApplication:reply:)
+                                arguments:@[userInfo, reply]] should be_truthy;
+
+            });
+        });
+
+        context(@"reloadRootControllersWithNames:contexts:", ^{
+            __block NSArray *names;
+            __block NSArray *contexts;
+
+            beforeEach(^{
+                names = @[@"name-one", @"name-two", @"name-three"];
+                contexts = @[@"context-one", @"context-two"];
+            });
+
+            it(@"should have recorded invocations", ^{
+                [subject.class reloadRootControllersWithNames:names
+                                                     contexts:contexts];
+
+                NSInvocation *invocation = [[PCKMessageCapturer sent_class_messages] firstObject];
+                [invocation matchesTarget:subject.class
+                                 selector:@selector(reloadRootControllersWithNames:contexts:)
+                                arguments:@[names, contexts]] should be_truthy;
+            });
         });
     });
 

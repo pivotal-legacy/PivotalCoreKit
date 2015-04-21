@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		267B25B21AD86BDB00440CD2 /* NSInvocation+InvocationMatching.h in Headers */ = {isa = PBXBuildFile; fileRef = 267B25B01AD86BDB00440CD2 /* NSInvocation+InvocationMatching.h */; };
+		267B25B31AD86BDB00440CD2 /* NSInvocation+InvocationMatching.m in Sources */ = {isa = PBXBuildFile; fileRef = 267B25B11AD86BDB00440CD2 /* NSInvocation+InvocationMatching.m */; };
 		AE03A0391A391C5900AD4964 /* corgi.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = AE03A0381A391C5900AD4964 /* corgi.jpeg */; };
 		AE0FDC801A6ECB71006C781D /* CustomCategoryNotificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0FDC7F1A6ECB71006C781D /* CustomCategoryNotificationController.m */; };
 		AE25D5FE1A38F6C9008A1920 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE25D5FD1A38F6C9008A1920 /* XCTest.framework */; };
@@ -194,6 +196,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		267B25B01AD86BDB00440CD2 /* NSInvocation+InvocationMatching.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSInvocation+InvocationMatching.h"; sourceTree = "<group>"; };
+		267B25B11AD86BDB00440CD2 /* NSInvocation+InvocationMatching.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSInvocation+InvocationMatching.m"; sourceTree = "<group>"; };
 		AE03A0381A391C5900AD4964 /* corgi.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = corgi.jpeg; sourceTree = "<group>"; };
 		AE0FDC7E1A6ECB71006C781D /* CustomCategoryNotificationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCategoryNotificationController.h; sourceTree = "<group>"; };
 		AE0FDC7F1A6ECB71006C781D /* CustomCategoryNotificationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCategoryNotificationController.m; sourceTree = "<group>"; };
@@ -451,6 +455,8 @@
 		B83C31C21A4CD8A40021F1A4 /* WatchKit */ = {
 			isa = PBXGroup;
 			children = (
+				267B25B01AD86BDB00440CD2 /* NSInvocation+InvocationMatching.h */,
+				267B25B11AD86BDB00440CD2 /* NSInvocation+InvocationMatching.m */,
 				B83AC22B1A5E191C00A35BD6 /* PCKDynamicWatchKitObjectProvider.h */,
 				B83AC22C1A5E191C00A35BD6 /* PCKDynamicWatchKitObjectProvider.m */,
 				B83C322C1A4CDA380021F1A4 /* PCKFakeSegue.h */,
@@ -545,6 +551,7 @@
 				B83C32211A4CD9BF0021F1A4 /* WKInterfaceSlider+Spec.h in Headers */,
 				B83C321F1A4CD9BF0021F1A4 /* WKInterfaceSlider.h in Headers */,
 				B83C32171A4CD9BF0021F1A4 /* WKInterfaceLabel+Spec.h in Headers */,
+				267B25B21AD86BDB00440CD2 /* NSInvocation+InvocationMatching.h in Headers */,
 				B83C32181A4CD9BF0021F1A4 /* WKInterfaceMap.h in Headers */,
 				B83C320E1A4CD9BF0021F1A4 /* WKInterfaceDate+Spec.h in Headers */,
 				B83C32221A4CD9BF0021F1A4 /* WKInterfaceSwitch.h in Headers */,
@@ -808,6 +815,7 @@
 				B83C320D1A4CD9BF0021F1A4 /* WKInterfaceDate.m in Sources */,
 				B83C32101A4CD9BF0021F1A4 /* WKInterfaceGroup.m in Sources */,
 				B83C32231A4CD9BF0021F1A4 /* WKInterfaceSwitch.m in Sources */,
+				267B25B31AD86BDB00440CD2 /* NSInvocation+InvocationMatching.m in Sources */,
 				B83C32191A4CD9BF0021F1A4 /* WKInterfaceMap.m in Sources */,
 				B83C32131A4CD9BF0021F1A4 /* WKInterfaceImage.m in Sources */,
 				B83C32081A4CD9BF0021F1A4 /* WKInterfaceButton.m in Sources */,
