@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		267B25B21AD86BDB00440CD2 /* NSInvocation+InvocationMatching.h in Headers */ = {isa = PBXBuildFile; fileRef = 267B25B01AD86BDB00440CD2 /* NSInvocation+InvocationMatching.h */; };
 		267B25B31AD86BDB00440CD2 /* NSInvocation+InvocationMatching.m in Sources */ = {isa = PBXBuildFile; fileRef = 267B25B11AD86BDB00440CD2 /* NSInvocation+InvocationMatching.m */; };
+		2681A5B11AE0906600B0B753 /* WKInterfaceDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 2681A5AF1AE0906600B0B753 /* WKInterfaceDevice.m */; };
+		2681A5B21AE0906600B0B753 /* WKInterfaceDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = 2681A5B01AE0906600B0B753 /* WKInterfaceDevice.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2681A5D31AE0991C00B0B753 /* WKInterfaceDeviceSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2681A5D21AE0991C00B0B753 /* WKInterfaceDeviceSpec.mm */; };
 		AE03A0391A391C5900AD4964 /* corgi.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = AE03A0381A391C5900AD4964 /* corgi.jpeg */; };
 		AE0FDC801A6ECB71006C781D /* CustomCategoryNotificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0FDC7F1A6ECB71006C781D /* CustomCategoryNotificationController.m */; };
 		AE25D5FE1A38F6C9008A1920 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE25D5FD1A38F6C9008A1920 /* XCTest.framework */; };
@@ -198,6 +201,9 @@
 /* Begin PBXFileReference section */
 		267B25B01AD86BDB00440CD2 /* NSInvocation+InvocationMatching.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSInvocation+InvocationMatching.h"; sourceTree = "<group>"; };
 		267B25B11AD86BDB00440CD2 /* NSInvocation+InvocationMatching.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSInvocation+InvocationMatching.m"; sourceTree = "<group>"; };
+		2681A5AF1AE0906600B0B753 /* WKInterfaceDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKInterfaceDevice.m; sourceTree = "<group>"; };
+		2681A5B01AE0906600B0B753 /* WKInterfaceDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKInterfaceDevice.h; sourceTree = "<group>"; };
+		2681A5D21AE0991C00B0B753 /* WKInterfaceDeviceSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = WKInterfaceDeviceSpec.mm; path = Specs/WatchKit/WKInterfaceDeviceSpec.mm; sourceTree = SOURCE_ROOT; };
 		AE03A0381A391C5900AD4964 /* corgi.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = corgi.jpeg; sourceTree = "<group>"; };
 		AE0FDC7E1A6ECB71006C781D /* CustomCategoryNotificationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCategoryNotificationController.h; sourceTree = "<group>"; };
 		AE0FDC7F1A6ECB71006C781D /* CustomCategoryNotificationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCategoryNotificationController.m; sourceTree = "<group>"; };
@@ -328,6 +334,7 @@
 				B83C323F1A4CE18C0021F1A4 /* WKInterfaceButtonSpec.mm */,
 				B83C32401A4CE18C0021F1A4 /* WKInterfaceControllerSpec.mm */,
 				B83C32411A4CE18C0021F1A4 /* WKInterfaceDateSpec.mm */,
+				2681A5D21AE0991C00B0B753 /* WKInterfaceDeviceSpec.mm */,
 				B83C32421A4CE18C0021F1A4 /* WKInterfaceGroupSpec.mm */,
 				B83C32431A4CE18C0021F1A4 /* WKInterfaceImageSpec.mm */,
 				B83C32441A4CE18C0021F1A4 /* WKInterfaceLabelSpec.mm */,
@@ -477,6 +484,8 @@
 				B83C31E41A4CD9BF0021F1A4 /* WKInterfaceDate.h */,
 				B83C31E51A4CD9BF0021F1A4 /* WKInterfaceDate.m */,
 				B83C31E61A4CD9BF0021F1A4 /* WKInterfaceDate+Spec.h */,
+				2681A5B01AE0906600B0B753 /* WKInterfaceDevice.h */,
+				2681A5AF1AE0906600B0B753 /* WKInterfaceDevice.m */,
 				B83C31E71A4CD9BF0021F1A4 /* WKInterfaceGroup.h */,
 				B83C31E81A4CD9BF0021F1A4 /* WKInterfaceGroup.m */,
 				B83C31E91A4CD9BF0021F1A4 /* WKInterfaceGroup+Spec.h */,
@@ -551,6 +560,7 @@
 				B83C32211A4CD9BF0021F1A4 /* WKInterfaceSlider+Spec.h in Headers */,
 				B83C321F1A4CD9BF0021F1A4 /* WKInterfaceSlider.h in Headers */,
 				B83C32171A4CD9BF0021F1A4 /* WKInterfaceLabel+Spec.h in Headers */,
+				2681A5B21AE0906600B0B753 /* WKInterfaceDevice.h in Headers */,
 				267B25B21AD86BDB00440CD2 /* NSInvocation+InvocationMatching.h in Headers */,
 				B83C32181A4CD9BF0021F1A4 /* WKInterfaceMap.h in Headers */,
 				B83C320E1A4CD9BF0021F1A4 /* WKInterfaceDate+Spec.h in Headers */,
@@ -785,6 +795,7 @@
 				B83C32571A4CE18C0021F1A4 /* WKInterfaceTableSpec.mm in Sources */,
 				B83C32531A4CE18C0021F1A4 /* WKInterfaceMapSpec.mm in Sources */,
 				B83C32511A4CE18C0021F1A4 /* WKInterfaceImageSpec.mm in Sources */,
+				2681A5D31AE0991C00B0B753 /* WKInterfaceDeviceSpec.mm in Sources */,
 				AE85C0611A3FC03B009A0E4D /* GroupController.m in Sources */,
 				B83C324C1A4CE18C0021F1A4 /* PCKInterfaceControllerLoaderSpec.mm in Sources */,
 				AED5709C1A3A4786004ABADA /* CorgisController.m in Sources */,
@@ -818,6 +829,7 @@
 				267B25B31AD86BDB00440CD2 /* NSInvocation+InvocationMatching.m in Sources */,
 				B83C32191A4CD9BF0021F1A4 /* WKInterfaceMap.m in Sources */,
 				B83C32131A4CD9BF0021F1A4 /* WKInterfaceImage.m in Sources */,
+				2681A5B11AE0906600B0B753 /* WKInterfaceDevice.m in Sources */,
 				B83C32081A4CD9BF0021F1A4 /* WKInterfaceButton.m in Sources */,
 				B83C320B1A4CD9BF0021F1A4 /* WKInterfaceController.m in Sources */,
 			);
