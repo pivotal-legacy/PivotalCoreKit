@@ -49,6 +49,9 @@
 - (void)didReceiveLocalNotification:(UILocalNotification *)localNotification
                      withCompletion:(void(^)(WKUserNotificationInterfaceType interface)) completionHandler NS_REQUIRES_SUPER;
 
++ (BOOL)openParentApplication:(NSDictionary *)userInfo reply:(void(^)(NSDictionary *replyInfo, NSError *error)) reply NS_REQUIRES_SUPER;
++ (void)reloadRootControllersWithNames:(NSArray *)names contexts:(NSArray *)contexts NS_REQUIRES_SUPER;
+
 @end
 
 
@@ -190,6 +193,16 @@
 - (void)updateUserActivity:(NSString *)type userInfo:(NSDictionary *)userInfo
 {
     [super updateUserActivity:type userInfo:userInfo];
+}
+
++ (BOOL)openParentApplication:(NSDictionary *)userInfo reply:(void(^)(NSDictionary *replyInfo, NSError *error)) reply
+{
+    return [super openParentApplication:userInfo reply:reply];
+}
+
++ (void)reloadRootControllersWithNames:(NSArray *)names contexts:(NSArray *)contexts
+{
+    [super reloadRootControllersWithNames:names contexts:contexts];
 }
 
 @end

@@ -5,6 +5,7 @@
 #import "WKInterfaceSeparator.h"
 #import "WKInterfaceButton.h"
 #import "WKInterfaceDate.h"
+#import "WKInterfaceDevice.h"
 #import "WKInterfaceSwitch.h"
 #import "WKInterfaceTable.h"
 #import "WKInterfaceSlider.h"
