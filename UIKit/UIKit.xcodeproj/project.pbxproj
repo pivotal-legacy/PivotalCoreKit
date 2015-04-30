@@ -80,6 +80,9 @@
 		AE61C1401A40B98E00C97245 /* UIAlertController+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE61C1311A40B95E00C97245 /* UIAlertController+Spec.m */; };
 		AE7B279617CFD67600904F64 /* UIViewControllerSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE7B279517CFD67600904F64 /* UIViewControllerSpec+Spec.mm */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		AE7CE69319FACA8B007B008F /* NavigationStackExample.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE7CE69219FACA84007B008F /* NavigationStackExample.storyboard */; };
+		AE7E72141AF2AE08000E48EE /* UIApplicationSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE7E72061AF2ADFF000E48EE /* UIApplicationSpec+Spec.mm */; };
+		AE7E72181AF2AEE4000E48EE /* UIApplication+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AE7E72151AF2AE9A000E48EE /* UIApplication+Spec.h */; };
+		AE7E72191AF2AF0D000E48EE /* UIApplication+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7E72161AF2AE9A000E48EE /* UIApplication+Spec.m */; };
 		AE86BD42179C7C910057DEAE /* UITabBarController+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AE86BD40179C7C910057DEAE /* UITabBarController+Spec.h */; };
 		AE86BD43179C7C910057DEAE /* UITabBarController+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE86BD41179C7C910057DEAE /* UITabBarController+Spec.m */; };
 		AE86BD4E179C7DAD0057DEAE /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE86BD4D179C7DAD0057DEAE /* Default-568h@2x.png */; };
@@ -329,6 +332,7 @@
 				AECB46B91A3FBB6100398720 /* UIView+StubbedGestureRecognizers.h in Copy headers to framework */,
 				AEEECC1A181F3135006B52CD /* UIImagePickerController+Spec.m in Copy headers to framework */,
 				AEC40CCB174C292600474D2D /* UIWebView+Spec.h in Copy headers to framework */,
+				AE7E72181AF2AEE4000E48EE /* UIApplication+Spec.h in Copy headers to framework */,
 				AECB46BA1A3FBB6C00398720 /* UIGestureRecognizer+Spec.h in Copy headers to framework */,
 				AEF5D45D1A030D2E00C4DC3D /* PCKMethodRedirector.h in Copy headers to framework */,
 				AE61C13F1A40B98900C97245 /* UIAlertController+Spec.h in Copy headers to framework */,
@@ -407,6 +411,9 @@
 		AE61C1311A40B95E00C97245 /* UIAlertController+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+Spec.m"; sourceTree = "<group>"; };
 		AE7B279517CFD67600904F64 /* UIViewControllerSpec+Spec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIViewControllerSpec+Spec.mm"; sourceTree = "<group>"; };
 		AE7CE69219FACA84007B008F /* NavigationStackExample.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NavigationStackExample.storyboard; sourceTree = "<group>"; };
+		AE7E72061AF2ADFF000E48EE /* UIApplicationSpec+Spec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIApplicationSpec+Spec.mm"; sourceTree = "<group>"; };
+		AE7E72151AF2AE9A000E48EE /* UIApplication+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+Spec.h"; sourceTree = "<group>"; };
+		AE7E72161AF2AE9A000E48EE /* UIApplication+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+Spec.m"; sourceTree = "<group>"; };
 		AE86BD40179C7C910057DEAE /* UITabBarController+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBarController+Spec.h"; sourceTree = "<group>"; };
 		AE86BD41179C7C910057DEAE /* UITabBarController+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBarController+Spec.m"; sourceTree = "<group>"; };
 		AE86BD4D179C7DAD0057DEAE /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -829,6 +836,8 @@
 				AEC40CB2174C22BD00474D2D /* UIViewController+Spec.m */,
 				AEC40CB3174C22BD00474D2D /* UIWebView+Spec.h */,
 				AEC40CB4174C22BD00474D2D /* UIWebView+Spec.m */,
+				AE7E72151AF2AE9A000E48EE /* UIApplication+Spec.h */,
+				AE7E72161AF2AE9A000E48EE /* UIApplication+Spec.m */,
 			);
 			path = Stubs;
 			sourceTree = "<group>";
@@ -841,6 +850,7 @@
 				AE062BCE1A4323CF00AF8D33 /* UIAlertActionSpec+Spec.mm */,
 				AE61C11F1A40B59000C97245 /* UIAlertControllerSpec+Spec.mm */,
 				AEC40CBE174C24CF00474D2D /* UIAlertViewSpec+Spec.mm */,
+				AE7E72061AF2ADFF000E48EE /* UIApplicationSpec+Spec.mm */,
 				AEEECC32181F33F5006B52CD /* UIImagePickerControllerSpec+Spec.mm */,
 				AEEDC56719FAC2E2004AFFE9 /* UINavigationControllerSpec+Spec.mm */,
 				AEB6663C18C6685F00B09C00 /* UIPopoverControllerSpec+Spec.mm */,
@@ -1248,6 +1258,7 @@
 				FA1A5179186290E600C22BA8 /* UIImageView+PivotalCoreSpec.mm in Sources */,
 				FA91AA9E1867260400925A6B /* NSString+PivotalCoreKit_UIKitSpec.mm in Sources */,
 				AE7B279617CFD67600904F64 /* UIViewControllerSpec+Spec.mm in Sources */,
+				AE7E72141AF2AE08000E48EE /* UIApplicationSpec+Spec.mm in Sources */,
 				AE95306A1832EE9300C802E9 /* UIViewSpec+Spec.mm in Sources */,
 				AE062BD01A43240500AF8D33 /* UIAlertActionSpec+Spec.mm in Sources */,
 				AE062BD11A43241B00AF8D33 /* UIAlertAction+Spec.m in Sources */,
@@ -1278,6 +1289,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AEB6662D18C6681A00B09C00 /* UIPopoverController+Spec.m in Sources */,
+				AE7E72191AF2AF0D000E48EE /* UIApplication+Spec.m in Sources */,
 				AEC40CB5174C22BD00474D2D /* UIActionSheet+Spec.m in Sources */,
 				AEBB53BF19F711340032947D /* UINavigationController+Spec.m in Sources */,
 				AECB46AC1A3FBA9E00398720 /* UIView+StubbedGestureRecognizers.m in Sources */,
