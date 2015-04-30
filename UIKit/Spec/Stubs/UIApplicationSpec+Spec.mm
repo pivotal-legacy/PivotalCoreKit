@@ -14,9 +14,21 @@ describe(@"UIApplication (spec extensions)", ^{
     });
 
     describe(@"- openURL:", ^{
-        it(@"should record the last URL", ^{
+        beforeEach(^{
             [[UIApplication sharedApplication] openURL:url];
+        });
+
+        it(@"should record the last URL", ^{
             [UIApplication lastOpenedURL] should equal(url);
+        });
+
+        describe(@"when -reset is called", ^{
+            beforeEach(^{
+                [UIApplication reset];
+            });
+            it(@"should no longer keeps track of opened URLs", ^{
+                [UIApplication lastOpenedURL] should be_nil;
+            });
         });
     });
 });
