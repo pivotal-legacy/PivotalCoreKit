@@ -1,6 +1,8 @@
 #import "UIImagePickerController+Spec.h"
+#import <objc/runtime.h>
 
 static BOOL isCameraAvailable__, isPhotoLibraryAvailable__, isSavedPhotosAlbumAvailable__;
+static const NSNumber *cameraDevice__;
 
 @implementation UIImagePickerController (Spec)
 
@@ -26,6 +28,16 @@ static BOOL isCameraAvailable__, isPhotoLibraryAvailable__, isSavedPhotosAlbumAv
 
 + (void)setSavedPhotosAlbumAvailable:(BOOL)available {
     isSavedPhotosAlbumAvailable__ = available;
+}
+
+- (void)setCameraDevice:(UIImagePickerControllerCameraDevice)cameraDevice
+{
+    objc_setAssociatedObject(self, &cameraDevice__, [NSNumber numberWithInteger:cameraDevice],  OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (UIImagePickerControllerCameraDevice)cameraDevice
+{
+    return (UIImagePickerControllerCameraDevice)[objc_getAssociatedObject(self, &cameraDevice__) integerValue];
 }
 
 #pragma mark - Overrides
