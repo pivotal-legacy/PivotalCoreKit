@@ -77,6 +77,23 @@ describe(@"UIImagePickerController (spec extensions)", ^{
                 });
             });
         });
+
+        describe(@"setting the camera device", ^{
+            __block UIImagePickerController *subject;
+            beforeEach(^{
+                subject = [[UIImagePickerController alloc] init];
+            });
+
+            it(@"should allow you to set it to the front camera", ^{
+                [subject setCameraDevice:UIImagePickerControllerCameraDeviceFront];
+                [subject cameraDevice] should equal(UIImagePickerControllerCameraDeviceFront);
+            });
+
+            it(@"should allow you to set it to the rear camera", ^{
+                [subject setCameraDevice:UIImagePickerControllerCameraDeviceRear];
+                [subject cameraDevice] should equal(UIImagePickerControllerCameraDeviceRear);
+            });
+        });
     });
 });
 

@@ -30,13 +30,11 @@ static const NSNumber *cameraDevice__;
     isSavedPhotosAlbumAvailable__ = available;
 }
 
-- (void)setCameraDevice:(UIImagePickerControllerCameraDevice)cameraDevice
-{
+- (void)setCameraDevice:(UIImagePickerControllerCameraDevice)cameraDevice {
     objc_setAssociatedObject(self, &cameraDevice__, [NSNumber numberWithInteger:cameraDevice],  OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (UIImagePickerControllerCameraDevice)cameraDevice
-{
+- (UIImagePickerControllerCameraDevice)cameraDevice {
     return (UIImagePickerControllerCameraDevice)[objc_getAssociatedObject(self, &cameraDevice__) integerValue];
 }
 
