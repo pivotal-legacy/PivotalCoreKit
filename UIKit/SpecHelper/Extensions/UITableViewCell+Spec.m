@@ -12,6 +12,7 @@
 - (BOOL)highlightRowAtIndexPath:(id)arg1 animated:(BOOL)arg2 scrollPosition:(int)arg3;
 - (void)unhighlightRowAtIndexPath:(id)arg1 animated:(BOOL)arg2;
 - (void)_selectRowAtIndexPath:(id)arg1 animated:(BOOL)arg2 scrollPosition:(int)arg3 notifyDelegate:(BOOL)arg4;
+- (void)_selectAllSelectedRows;
 - (void)_deselectRowAtIndexPath:(id)arg1 animated:(BOOL)arg2 notifyDelegate:(BOOL)arg3;
 @end
 
@@ -46,6 +47,7 @@
             [tableView _deselectRowAtIndexPath:indexPath animated:NO notifyDelegate:YES];
         } else {
             [tableView _selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionMiddle notifyDelegate:YES];
+            [tableView _selectAllSelectedRows];
         }
     }
 }
