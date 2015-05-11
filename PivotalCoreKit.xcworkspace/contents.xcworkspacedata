@@ -14,6 +14,9 @@
       location = "group:WatchKit/WatchKit.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:Support/Support.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:CHANGES.markdown">
    </FileRef>
    <FileRef

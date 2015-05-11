@@ -15,4 +15,11 @@
     class_replaceMethod(klass, originalSelector, method_getImplementation(newMethod), method_getTypeEncoding(newMethod));
 }
 
++ (void)redirectClassSelector:(SEL)originalSelector forClass:(Class)klass to:(SEL)newSelector andRenameItTo:(SEL)renamedSelector {
+    [self redirectSelector:originalSelector
+                  forClass:objc_getMetaClass(class_getName(klass))
+                        to:newSelector
+             andRenameItTo:renamedSelector];
+}
+
 @end

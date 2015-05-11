@@ -5,22 +5,16 @@
 #import <Cedar/CDRSpecHelper.h>
 #endif
 
-#import "NSObject+MethodRedirection.h"
-
-using namespace Cedar::Matchers;
+#import "PCKMethodRedirector.h"
 
 @interface Redirectable : NSObject
-
 + (int)embiggen:(int)number;
 - (NSString *)cheekify:(NSString *)string;
-
 @end
 
 @interface Redirectable (redirected_methods)
-
 + (int)embiggen_original:(int)number;
 - (NSString *)cheekify_original:(NSString *)string;
-
 @end
 
 @implementation Redirectable
@@ -41,33 +35,41 @@ using namespace Cedar::Matchers;
     return [NSString stringWithFormat:@"No, really, %@", [self cheekify_original:string]];
 }
 
-- (NSString *)stodgify:(NSString *)string
-{
+- (NSString *)stodgify:(NSString *)string {
     return [NSString stringWithFormat:@"%@ is so stodgy", string];
 }
 
 @end
 
-SPEC_BEGIN(NSObject_MethodRedirectionSpec)
+using namespace Cedar::Matchers;
+using namespace Cedar::Doubles;
 
-describe(@"NSObject_MethodRedirection", ^{
+SPEC_BEGIN(PCKMethodRedirectorSpec)
+
+describe(@"PCKMethodRedirector", ^{
     __block Redirectable *redirectable;
 
     beforeEach(^{
-        redirectable = [[[Redirectable alloc] init] autorelease];
+        redirectable = [[Redirectable alloc] init];
     });
 
     describe(@"redirecting instance methods", ^{
         it(@"should redirect calls to the original selector to the new implementation, and expose the original implementation via a renamed selector", ^{
             [redirectable cheekify:@"Herman"] should equal(@"Herman is so cheeky");
 
-            [Redirectable redirectSelector:@selector(cheekify:) to:@selector(cheekify_new:) andRenameItTo:@selector(cheekify_original:)];
+            [PCKMethodRedirector redirectSelector:@selector(cheekify:)
+                                         forClass:redirectable.class
+                                               to:@selector(cheekify_new:)
+                                    andRenameItTo:@selector(cheekify_original:)];
 
             [redirectable cheekify:@"Herman"] should equal(@"No, really, Herman is so cheeky");
         });
 
         it(@"should do nothing when the new selector name (i.e. the argumen to andRenameItTo:) already exists", ^{
-            [Redirectable redirectSelector:@selector(cheekify:) to:@selector(cheekify_new:) andRenameItTo:@selector(stodgify:)];
+            [PCKMethodRedirector redirectSelector:@selector(cheekify:)
+                                         forClass:redirectable.class
+                                               to:@selector(cheekify_new:)
+                                    andRenameItTo:@selector(stodgify:)];
 
             [redirectable stodgify:@"Herman"] should equal(@"Herman is so stodgy");
             [redirectable cheekify:@"Herman"] should equal(@"No, really, Herman is so cheeky");
@@ -78,7 +80,10 @@ describe(@"NSObject_MethodRedirection", ^{
         it(@"should redirect calls to the original selector to the new implementation, and expose the original implementation via a renamed selector", ^{
             [Redirectable embiggen:1] should equal(2);
 
-            [Redirectable redirectClassSelector:@selector(embiggen:) to:@selector(embiggen_new:) andRenameItTo:@selector(embiggen_original:)];
+            [PCKMethodRedirector redirectClassSelector:@selector(embiggen:)
+                                              forClass:redirectable.class
+                                                    to:@selector(embiggen_new:)
+                                         andRenameItTo:@selector(embiggen_original:)];
 
             [Redirectable embiggen:1] should equal(3);
         });

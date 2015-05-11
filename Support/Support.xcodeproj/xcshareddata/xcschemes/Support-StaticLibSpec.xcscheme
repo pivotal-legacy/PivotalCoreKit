@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AE3848D4168CD86000C99B55"
-               BuildableName = "CoreLocation-StaticLibSpec.app"
-               BlueprintName = "CoreLocation-StaticLibSpec"
-               ReferencedContainer = "container:CoreLocation.xcodeproj">
+               BlueprintIdentifier = "AEBDFB311A9BDF7C00267CEB"
+               BuildableName = "Support-StaticLibSpec.app"
+               BlueprintName = "Support-StaticLibSpec"
+               ReferencedContainer = "container:Support.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -25,36 +25,29 @@
    <TestAction
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "NO"
+      shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
       <Testables>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AE118AE318D6BC2F00C90D6B"
-               BuildableName = "CoreLocation-StaticLibSpecBundle.octest"
-               BlueprintName = "CoreLocation-StaticLibSpecBundle"
-               ReferencedContainer = "container:CoreLocation.xcodeproj">
+               BlueprintIdentifier = "AE9B6DCF1A9D2D9A000ACF58"
+               BuildableName = "Support-StaticLibSpecBundle.octest"
+               BlueprintName = "Support-StaticLibSpecBundle"
+               ReferencedContainer = "container:Support.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AE3848D4168CD86000C99B55"
-            BuildableName = "CoreLocation-StaticLibSpec.app"
-            BlueprintName = "CoreLocation-StaticLibSpec"
-            ReferencedContainer = "container:CoreLocation.xcodeproj">
+            BlueprintIdentifier = "AEBDFB311A9BDF7C00267CEB"
+            BuildableName = "Support-StaticLibSpec.app"
+            BlueprintName = "Support-StaticLibSpec"
+            ReferencedContainer = "container:Support.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
-      <EnvironmentVariables>
-         <EnvironmentVariable
-            key = "CEDAR_REPORTER_CLASS"
-            value = "CDROTestReporter"
-            isEnabled = "NO">
-         </EnvironmentVariable>
-      </EnvironmentVariables>
    </TestAction>
    <LaunchAction
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
@@ -69,10 +62,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AE3848D4168CD86000C99B55"
-            BuildableName = "CoreLocation-StaticLibSpec.app"
-            BlueprintName = "CoreLocation-StaticLibSpec"
-            ReferencedContainer = "container:CoreLocation.xcodeproj">
+            BlueprintIdentifier = "AEBDFB311A9BDF7C00267CEB"
+            BuildableName = "Support-StaticLibSpec.app"
+            BlueprintName = "Support-StaticLibSpec"
+            ReferencedContainer = "container:Support.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -88,10 +81,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AE3848D4168CD86000C99B55"
-            BuildableName = "CoreLocation-StaticLibSpec.app"
-            BlueprintName = "CoreLocation-StaticLibSpec"
-            ReferencedContainer = "container:CoreLocation.xcodeproj">
+            BlueprintIdentifier = "AEBDFB311A9BDF7C00267CEB"
+            BuildableName = "Support-StaticLibSpec.app"
+            BlueprintName = "Support-StaticLibSpec"
+            ReferencedContainer = "container:Support.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

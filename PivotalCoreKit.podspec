@@ -23,11 +23,19 @@ Pod::Spec.new do |s|
     dev.dependency 'PivotalCoreKit/CoreLocation/SpecHelper'
   end
 
+  s.subspec 'Support' do |support|
+    support.subspec 'Core' do |support_core|
+      support_core.source_files = 'Support/Core/**/*.{h,m}'
+      support_core.requires_arc = true
+    end
+  end
+
   s.subspec 'UIKit' do |ui|
     ui.subspec 'Core' do |uicore|
       uicore.source_files = 'UIKit/Core/**/*.{h,m}'
       arc_files = 'UIKit/Core/Extensions/UIView+PCKNibHelpers.{h,m}'
       uicore.exclude_files = arc_files
+      uicore.dependency 'PivotalCoreKit/Support/Core'
       uicore.subspec 'Core-arc' do |core_arc|
         core_arc.requires_arc = true
         core_arc.source_files = arc_files
@@ -36,8 +44,7 @@ Pod::Spec.new do |s|
 
     ui.subspec 'SpecHelper' do |spec|
       spec.subspec 'Extensions' do |ext|
-        ext.source_files = ['UIKit/SpecHelper/Extensions/*.{h,m}', 'UIKit/SpecHelper/UIKit+PivotalSpecHelper.h']
-        ext.dependency 'PivotalCoreKit/UIKit/SpecHelper/Support'
+        ext.source_files = ['UIKit/SpecHelper/Extensions/*.{h,m}', 'UIKit/SpecHelper/Support/*.{h,m}', 'UIKit/SpecHelper/UIKit+PivotalSpecHelper.h']
       end
 
       spec.subspec 'Matchers' do |match|
@@ -47,17 +54,12 @@ Pod::Spec.new do |s|
       spec.subspec 'Stubs' do |stub|
         stub.requires_arc = true
         stub.source_files = ['UIKit/SpecHelper/Stubs/*.{h,m}', 'UIKit/SpecHelper/UIKit+PivotalSpecHelperStubs.h']
-        stub.dependency 'PivotalCoreKit/UIKit/SpecHelper/Support'
         narc_files = ['UIKit/SpecHelper/Stubs/UIGestureRecognizer+Spec.*']
         stub.exclude_files = narc_files
         stub.subspec 'Stubs-noarc' do |narc|
           narc.requires_arc = false
           narc.source_files = narc_files
         end
-      end
-
-      spec.subspec 'Support' do |helper|
-        helper.source_files = ['UIKit/SpecHelper/Support/*.{h,m}']
       end
     end
   end
@@ -70,6 +72,7 @@ Pod::Spec.new do |s|
       c.source_files = 'Foundation/Core/**/*.{h,m}'
       c.libraries    = 'xml2'
       c.xcconfig     = {'HEADER_SEARCH_PATHS' => '$(SDKROOT)/usr/include/libxml2' }
+      c.dependency 'PivotalCoreKit/Support/Core'
     end
 
     f.subspec 'SpecHelper' do |spec_helper|
@@ -97,6 +100,8 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'CoreLocation' do |location|
+    location.dependency 'PivotalCoreKit/Support/Core'
+
     location.subspec 'SpecHelper' do |h|
       h.subspec 'Base' do |base|
         base.source_files = 'CoreLocation/SpecHelper/*.{h,m}'

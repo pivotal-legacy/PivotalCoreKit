@@ -1,5 +1,5 @@
 #import "NSUUID+Spec.h"
-#import "NSObject+MethodRedirection.h"
+#import "PCKMethodRedirector.h"
 
 @interface NSUUID (Spec_Private)
 +(NSUUID *)UUIDWithoutLogging;
@@ -17,9 +17,10 @@ static NSMutableArray *uuids;
 }
 
 +(void)load {
-    [NSUUID redirectClassSelector:@selector(UUID)
-                              to:@selector(UUIDWithLogging)
-                    andRenameItTo:@selector(UUIDWithoutLogging)];
+    [PCKMethodRedirector redirectClassSelector:@selector(UUID)
+                                      forClass:self
+                                            to:@selector(UUIDWithLogging)
+                                 andRenameItTo:@selector(UUIDWithoutLogging)];
 
     uuids = [[NSMutableArray alloc] init];
 }

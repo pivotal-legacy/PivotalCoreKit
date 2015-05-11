@@ -1,0 +1,1071 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AE234DA81A9CD2AB00742B72 /* PCKMethodRedirector.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB92CA11A9BB821001BEC93 /* PCKMethodRedirector.m */; };
+		AE234DAB1A9CD2CE00742B72 /* Support+PivotalCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE234D7E1A9CD14200742B72 /* Support+PivotalCore.framework */; };
+		AE560EFB1A9CE9DF00D7F256 /* PCKMethodRedirector.h in Headers */ = {isa = PBXBuildFile; fileRef = AEB92CA01A9BB821001BEC93 /* PCKMethodRedirector.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE560F081A9CEA4400D7F256 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE560F071A9CEA4400D7F256 /* UIKit.framework */; };
+		AE560F0A1A9CEAD600D7F256 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE560F071A9CEA4400D7F256 /* UIKit.framework */; };
+		AE7ACEC21A9CC52100CABEFE /* libSupport+PivotalCore-StaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AEB92C861A9BB782001BEC93 /* libSupport+PivotalCore-StaticLib.a */; };
+		AEB92C8A1A9BB782001BEC93 /* Support+PivotalCore.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = AEB92C891A9BB782001BEC93 /* Support+PivotalCore.h */; };
+		AEB92CA21A9BB821001BEC93 /* PCKMethodRedirector.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB92CA11A9BB821001BEC93 /* PCKMethodRedirector.m */; };
+		AEBDFB371A9BDF7D00267CEB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBDFB361A9BDF7D00267CEB /* main.m */; };
+		AEBDFB5F1A9BDFB900267CEB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBDFB5E1A9BDFB900267CEB /* main.m */; };
+		AEBDFB911A9BE30B00267CEB /* libCedar-StaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AEBDFB7E1A9BE26E00267CEB /* libCedar-StaticLib.a */; };
+		AEBDFB941A9BE31600267CEB /* Cedar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEBDFB781A9BE26E00267CEB /* Cedar.framework */; };
+		AEBDFB981A9BE71E00267CEB /* PCKMethodRedirectorSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEBDFB971A9BE71E00267CEB /* PCKMethodRedirectorSpec.mm */; };
+		AEBDFB991A9BE71E00267CEB /* PCKMethodRedirectorSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEBDFB971A9BE71E00267CEB /* PCKMethodRedirectorSpec.mm */; };
+		AEC0682C1A9D42C900246582 /* BundleSpecLoader.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEC068061A9D37C500246582 /* BundleSpecLoader.mm */; };
+		AEC0682D1A9D455200246582 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE9B6DE91A9D2DC6000ACF58 /* SenTestingKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AE234DA91A9CD2C200742B72 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEB92C7E1A9BB782001BEC93 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AE234D7D1A9CD14200742B72;
+			remoteInfo = "Support+PivotalCore";
+		};
+		AE9B6DE71A9D2DB7000ACF58 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEB92C7E1A9BB782001BEC93 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AEBDFB311A9BDF7C00267CEB;
+			remoteInfo = "Support-StaticLibSpec";
+		};
+		AEBDFB771A9BE26E00267CEB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEBDFB671A9BE26E00267CEB /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AEEE1FB611DC271300029872;
+			remoteInfo = Cedar;
+		};
+		AEBDFB791A9BE26E00267CEB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEBDFB671A9BE26E00267CEB /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AEEE218611DC28E200029872;
+			remoteInfo = "Cedar OS X Specs";
+		};
+		AEBDFB7B1A9BE26E00267CEB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEBDFB671A9BE26E00267CEB /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 96A07F0813F276640021974D;
+			remoteInfo = "Cedar OS X FocusedSpecs";
+		};
+		AEBDFB7D1A9BE26E00267CEB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEBDFB671A9BE26E00267CEB /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AEEE222911DC2B0600029872;
+			remoteInfo = "Cedar-StaticLib";
+		};
+		AEBDFB7F1A9BE26E00267CEB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEBDFB671A9BE26E00267CEB /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AEEE227611DC2CF900029872;
+			remoteInfo = "Cedar iOS Specs";
+		};
+		AEBDFB811A9BE26E00267CEB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEBDFB671A9BE26E00267CEB /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AE02E7E4184EABCD00414F19;
+			remoteInfo = "Cedar iOS FrameworkSpecs";
+		};
+		AEBDFB831A9BE26E00267CEB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEBDFB671A9BE26E00267CEB /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 96B5F9F6144A81A7000A6A5D;
+			remoteInfo = "Cedar iOS Host App";
+		};
+		AEBDFB851A9BE26E00267CEB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEBDFB671A9BE26E00267CEB /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 96B5FA11144A81A8000A6A5D;
+			remoteInfo = "Cedar iOS SenTestingKit Tests";
+		};
+		AEBDFB871A9BE26E00267CEB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEBDFB671A9BE26E00267CEB /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1F45A3DD180E4796003C1E36;
+			remoteInfo = "Cedar iOS XCTest Tests";
+		};
+		AEBDFB891A9BE26E00267CEB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEBDFB671A9BE26E00267CEB /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AE248F9819DCD52500092C14;
+			remoteInfo = "Cedar OS X Host App";
+		};
+		AEBDFB8B1A9BE26E00267CEB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEBDFB671A9BE26E00267CEB /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AE248FAA19DCD52500092C14;
+			remoteInfo = "Cedar OS X Host AppTests";
+		};
+		AEBDFB8D1A9BE26E00267CEB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEBDFB671A9BE26E00267CEB /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AEB8818719DCD62D00F081BA;
+			remoteInfo = "Cedar OS X Failing Test Bundle";
+		};
+		AEBDFB8F1A9BE30400267CEB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEBDFB671A9BE26E00267CEB /* Cedar.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = AEEE222811DC2B0600029872;
+			remoteInfo = "Cedar-StaticLib";
+		};
+		AEBDFB921A9BE31200267CEB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEBDFB671A9BE26E00267CEB /* Cedar.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = AEEE1FB511DC271300029872;
+			remoteInfo = Cedar;
+		};
+		AEBDFBC71A9CC40F00267CEB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEB92C7E1A9BB782001BEC93 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AEB92C851A9BB782001BEC93;
+			remoteInfo = "Support+PivotalCore-StaticLib";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		AEB92C841A9BB782001BEC93 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				AEB92C8A1A9BB782001BEC93 /* Support+PivotalCore.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AEBDFB5A1A9BDFB900267CEB /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		AE234D7E1A9CD14200742B72 /* Support+PivotalCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Support+PivotalCore.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE234D811A9CD14200742B72 /* Support+PivotalCore-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Support+PivotalCore-Info.plist"; sourceTree = "<group>"; };
+		AE560F071A9CEA4400D7F256 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.1.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		AE9B6DD01A9D2D9B000ACF58 /* Support-StaticLibSpecBundle.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Support-StaticLibSpecBundle.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE9B6DD31A9D2D9B000ACF58 /* Support-StaticLibSpecBundle-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Support-StaticLibSpecBundle-Info.plist"; sourceTree = "<group>"; };
+		AE9B6DE91A9D2DC6000ACF58 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		AEB92C861A9BB782001BEC93 /* libSupport+PivotalCore-StaticLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libSupport+PivotalCore-StaticLib.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEB92C891A9BB782001BEC93 /* Support+PivotalCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Support+PivotalCore.h"; sourceTree = "<group>"; };
+		AEB92CA01A9BB821001BEC93 /* PCKMethodRedirector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCKMethodRedirector.h; sourceTree = "<group>"; };
+		AEB92CA11A9BB821001BEC93 /* PCKMethodRedirector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCKMethodRedirector.m; sourceTree = "<group>"; };
+		AEBDFB321A9BDF7C00267CEB /* Support-StaticLibSpec.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Support-StaticLibSpec.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEBDFB351A9BDF7D00267CEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AEBDFB361A9BDF7D00267CEB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AEBDFB5C1A9BDFB900267CEB /* SupportSpec */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SupportSpec; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEBDFB5E1A9BDFB900267CEB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AEBDFB671A9BE26E00267CEB /* Cedar.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Cedar.xcodeproj; path = ../Externals/Cedar/Cedar.xcodeproj; sourceTree = "<group>"; };
+		AEBDFB951A9BE5CC00267CEB /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		AEBDFB971A9BE71E00267CEB /* PCKMethodRedirectorSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PCKMethodRedirectorSpec.mm; sourceTree = "<group>"; };
+		AEC068061A9D37C500246582 /* BundleSpecLoader.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BundleSpecLoader.mm; sourceTree = "<group>"; };
+		AEC068241A9D3A0500246582 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.1.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		AEC068261A9D3A0A00246582 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AE234D7A1A9CD14200742B72 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE9B6DCD1A9D2D9A000ACF58 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AEC0682D1A9D455200246582 /* SenTestingKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AEB92C831A9BB782001BEC93 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE560F081A9CEA4400D7F256 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AEBDFB2F1A9BDF7C00267CEB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE7ACEC21A9CC52100CABEFE /* libSupport+PivotalCore-StaticLib.a in Frameworks */,
+				AEBDFB911A9BE30B00267CEB /* libCedar-StaticLib.a in Frameworks */,
+				AE560F0A1A9CEAD600D7F256 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AEBDFB591A9BDFB900267CEB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE234DAB1A9CD2CE00742B72 /* Support+PivotalCore.framework in Frameworks */,
+				AEBDFB941A9BE31600267CEB /* Cedar.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AEB92C7D1A9BB782001BEC93 = {
+			isa = PBXGroup;
+			children = (
+				AEB92C881A9BB782001BEC93 /* Core */,
+				AEBDFB5D1A9BDFB900267CEB /* Spec */,
+				AEBDFB651A9BE20D00267CEB /* Externals */,
+				AEBDFBB51A9CC05F00267CEB /* Frameworks */,
+				AEB92C871A9BB782001BEC93 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AEB92C871A9BB782001BEC93 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AEB92C861A9BB782001BEC93 /* libSupport+PivotalCore-StaticLib.a */,
+				AEBDFB321A9BDF7C00267CEB /* Support-StaticLibSpec.app */,
+				AEBDFB5C1A9BDFB900267CEB /* SupportSpec */,
+				AE234D7E1A9CD14200742B72 /* Support+PivotalCore.framework */,
+				AE9B6DD01A9D2D9B000ACF58 /* Support-StaticLibSpecBundle.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AEB92C881A9BB782001BEC93 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				AEB92CA01A9BB821001BEC93 /* PCKMethodRedirector.h */,
+				AEB92CA11A9BB821001BEC93 /* PCKMethodRedirector.m */,
+				AE234D811A9CD14200742B72 /* Support+PivotalCore-Info.plist */,
+				AE9B6DD31A9D2D9B000ACF58 /* Support-StaticLibSpecBundle-Info.plist */,
+				AEB92C891A9BB782001BEC93 /* Support+PivotalCore.h */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		AEBDFB5D1A9BDFB900267CEB /* Spec */ = {
+			isa = PBXGroup;
+			children = (
+				AEBDFB641A9BDFF800267CEB /* iOS */,
+				AEBDFB631A9BDFEE00267CEB /* OSX */,
+				AEBDFB971A9BE71E00267CEB /* PCKMethodRedirectorSpec.mm */,
+			);
+			path = Spec;
+			sourceTree = "<group>";
+		};
+		AEBDFB631A9BDFEE00267CEB /* OSX */ = {
+			isa = PBXGroup;
+			children = (
+				AEBDFB5E1A9BDFB900267CEB /* main.m */,
+			);
+			path = OSX;
+			sourceTree = "<group>";
+		};
+		AEBDFB641A9BDFF800267CEB /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				AEC068061A9D37C500246582 /* BundleSpecLoader.mm */,
+				AEBDFB361A9BDF7D00267CEB /* main.m */,
+				AEBDFB351A9BDF7D00267CEB /* Info.plist */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		AEBDFB651A9BE20D00267CEB /* Externals */ = {
+			isa = PBXGroup;
+			children = (
+				AEBDFB671A9BE26E00267CEB /* Cedar.xcodeproj */,
+			);
+			name = Externals;
+			sourceTree = "<group>";
+		};
+		AEBDFB681A9BE26E00267CEB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AEBDFB781A9BE26E00267CEB /* Cedar.framework */,
+				AEBDFB7A1A9BE26E00267CEB /* Cedar OS X Specs */,
+				AEBDFB7C1A9BE26E00267CEB /* Cedar OS X FocusedSpecs */,
+				AEBDFB7E1A9BE26E00267CEB /* libCedar-StaticLib.a */,
+				AEBDFB801A9BE26E00267CEB /* Cedar iOS Specs.app */,
+				AEBDFB821A9BE26E00267CEB /* Cedar iOS FrameworkSpecs.app */,
+				AEBDFB841A9BE26E00267CEB /* Cedar iOS Host App.app */,
+				AEBDFB861A9BE26E00267CEB /* Cedar iOS SenTestingKit Tests.octest */,
+				AEBDFB881A9BE26E00267CEB /* XCUnitAppTests.xctest */,
+				AEBDFB8A1A9BE26E00267CEB /* Cedar OS X Host App.app */,
+				AEBDFB8C1A9BE26E00267CEB /* Cedar OS X Host AppTests.xctest */,
+				AEBDFB8E1A9BE26E00267CEB /* Cedar OS X Failing Test Bundle.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AEBDFBB51A9CC05F00267CEB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AEC068261A9D3A0A00246582 /* Foundation.framework */,
+				AEC068241A9D3A0500246582 /* CoreGraphics.framework */,
+				AE9B6DE91A9D2DC6000ACF58 /* SenTestingKit.framework */,
+				AE560F071A9CEA4400D7F256 /* UIKit.framework */,
+				AEBDFB951A9BE5CC00267CEB /* libxml2.dylib */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		AE234D7B1A9CD14200742B72 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE560EFB1A9CE9DF00D7F256 /* PCKMethodRedirector.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		AE234D7D1A9CD14200742B72 /* Support+PivotalCore */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AE234DA61A9CD14200742B72 /* Build configuration list for PBXNativeTarget "Support+PivotalCore" */;
+			buildPhases = (
+				AE234D791A9CD14200742B72 /* Sources */,
+				AE234D7A1A9CD14200742B72 /* Frameworks */,
+				AE234D7B1A9CD14200742B72 /* Headers */,
+				AE234D7C1A9CD14200742B72 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Support+PivotalCore";
+			productName = "Support+PivotalCore";
+			productReference = AE234D7E1A9CD14200742B72 /* Support+PivotalCore.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		AE9B6DCF1A9D2D9A000ACF58 /* Support-StaticLibSpecBundle */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AE9B6DE61A9D2D9B000ACF58 /* Build configuration list for PBXNativeTarget "Support-StaticLibSpecBundle" */;
+			buildPhases = (
+				AE9B6DCC1A9D2D9A000ACF58 /* Sources */,
+				AE9B6DCD1A9D2D9A000ACF58 /* Frameworks */,
+				AE9B6DCE1A9D2D9A000ACF58 /* Resources */,
+				AEC0680A1A9D383500246582 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AE9B6DE81A9D2DB7000ACF58 /* PBXTargetDependency */,
+			);
+			name = "Support-StaticLibSpecBundle";
+			productName = "Support+PivotalCoreSpec";
+			productReference = AE9B6DD01A9D2D9B000ACF58 /* Support-StaticLibSpecBundle.octest */;
+			productType = "com.apple.product-type.bundle.ocunit-test";
+		};
+		AEB92C851A9BB782001BEC93 /* Support+PivotalCore-StaticLib */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AEB92C9A1A9BB782001BEC93 /* Build configuration list for PBXNativeTarget "Support+PivotalCore-StaticLib" */;
+			buildPhases = (
+				AEB92C821A9BB782001BEC93 /* Sources */,
+				AEB92C831A9BB782001BEC93 /* Frameworks */,
+				AEB92C841A9BB782001BEC93 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Support+PivotalCore-StaticLib";
+			productName = Support;
+			productReference = AEB92C861A9BB782001BEC93 /* libSupport+PivotalCore-StaticLib.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		AEBDFB311A9BDF7C00267CEB /* Support-StaticLibSpec */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AEBDFB521A9BDF7D00267CEB /* Build configuration list for PBXNativeTarget "Support-StaticLibSpec" */;
+			buildPhases = (
+				AEBDFB2E1A9BDF7C00267CEB /* Sources */,
+				AEBDFB2F1A9BDF7C00267CEB /* Frameworks */,
+				AEBDFB301A9BDF7C00267CEB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AEBDFBC81A9CC40F00267CEB /* PBXTargetDependency */,
+				AEBDFB901A9BE30400267CEB /* PBXTargetDependency */,
+			);
+			name = "Support-StaticLibSpec";
+			productName = "Support-StaticLibSpec";
+			productReference = AEBDFB321A9BDF7C00267CEB /* Support-StaticLibSpec.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AEBDFB5B1A9BDFB900267CEB /* SupportSpec */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AEBDFB601A9BDFB900267CEB /* Build configuration list for PBXNativeTarget "SupportSpec" */;
+			buildPhases = (
+				AEBDFB581A9BDFB900267CEB /* Sources */,
+				AEBDFB591A9BDFB900267CEB /* Frameworks */,
+				AEBDFB5A1A9BDFB900267CEB /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AE234DAA1A9CD2C200742B72 /* PBXTargetDependency */,
+				AEBDFB931A9BE31200267CEB /* PBXTargetDependency */,
+			);
+			name = SupportSpec;
+			productName = SupportSpec;
+			productReference = AEBDFB5C1A9BDFB900267CEB /* SupportSpec */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AEB92C7E1A9BB782001BEC93 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = Pivotal;
+				TargetAttributes = {
+					AE234D7D1A9CD14200742B72 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					AE9B6DCF1A9D2D9A000ACF58 = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = AEBDFB311A9BDF7C00267CEB;
+					};
+					AEB92C851A9BB782001BEC93 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					AEBDFB311A9BDF7C00267CEB = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					AEBDFB5B1A9BDFB900267CEB = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+				};
+			};
+			buildConfigurationList = AEB92C811A9BB782001BEC93 /* Build configuration list for PBXProject "Support" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AEB92C7D1A9BB782001BEC93;
+			productRefGroup = AEB92C871A9BB782001BEC93 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = AEBDFB681A9BE26E00267CEB /* Products */;
+					ProjectRef = AEBDFB671A9BE26E00267CEB /* Cedar.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				AE234D7D1A9CD14200742B72 /* Support+PivotalCore */,
+				AEB92C851A9BB782001BEC93 /* Support+PivotalCore-StaticLib */,
+				AEBDFB5B1A9BDFB900267CEB /* SupportSpec */,
+				AEBDFB311A9BDF7C00267CEB /* Support-StaticLibSpec */,
+				AE9B6DCF1A9D2D9A000ACF58 /* Support-StaticLibSpecBundle */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		AEBDFB781A9BE26E00267CEB /* Cedar.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Cedar.framework;
+			remoteRef = AEBDFB771A9BE26E00267CEB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AEBDFB7A1A9BE26E00267CEB /* Cedar OS X Specs */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = "Cedar OS X Specs";
+			remoteRef = AEBDFB791A9BE26E00267CEB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AEBDFB7C1A9BE26E00267CEB /* Cedar OS X FocusedSpecs */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = "Cedar OS X FocusedSpecs";
+			remoteRef = AEBDFB7B1A9BE26E00267CEB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AEBDFB7E1A9BE26E00267CEB /* libCedar-StaticLib.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libCedar-StaticLib.a";
+			remoteRef = AEBDFB7D1A9BE26E00267CEB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AEBDFB801A9BE26E00267CEB /* Cedar iOS Specs.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "Cedar iOS Specs.app";
+			remoteRef = AEBDFB7F1A9BE26E00267CEB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AEBDFB821A9BE26E00267CEB /* Cedar iOS FrameworkSpecs.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "Cedar iOS FrameworkSpecs.app";
+			remoteRef = AEBDFB811A9BE26E00267CEB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AEBDFB841A9BE26E00267CEB /* Cedar iOS Host App.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "Cedar iOS Host App.app";
+			remoteRef = AEBDFB831A9BE26E00267CEB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AEBDFB861A9BE26E00267CEB /* Cedar iOS SenTestingKit Tests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Cedar iOS SenTestingKit Tests.octest";
+			remoteRef = AEBDFB851A9BE26E00267CEB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AEBDFB881A9BE26E00267CEB /* XCUnitAppTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = XCUnitAppTests.xctest;
+			remoteRef = AEBDFB871A9BE26E00267CEB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AEBDFB8A1A9BE26E00267CEB /* Cedar OS X Host App.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "Cedar OS X Host App.app";
+			remoteRef = AEBDFB891A9BE26E00267CEB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AEBDFB8C1A9BE26E00267CEB /* Cedar OS X Host AppTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Cedar OS X Host AppTests.xctest";
+			remoteRef = AEBDFB8B1A9BE26E00267CEB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AEBDFB8E1A9BE26E00267CEB /* Cedar OS X Failing Test Bundle.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Cedar OS X Failing Test Bundle.octest";
+			remoteRef = AEBDFB8D1A9BE26E00267CEB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AE234D7C1A9CD14200742B72 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE9B6DCE1A9D2D9A000ACF58 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AEBDFB301A9BDF7C00267CEB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		AEC0680A1A9D383500246582 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AE234D791A9CD14200742B72 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE234DA81A9CD2AB00742B72 /* PCKMethodRedirector.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE9B6DCC1A9D2D9A000ACF58 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AEC0682C1A9D42C900246582 /* BundleSpecLoader.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AEB92C821A9BB782001BEC93 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AEB92CA21A9BB821001BEC93 /* PCKMethodRedirector.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AEBDFB2E1A9BDF7C00267CEB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AEBDFB371A9BDF7D00267CEB /* main.m in Sources */,
+				AEBDFB981A9BE71E00267CEB /* PCKMethodRedirectorSpec.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AEBDFB581A9BDFB900267CEB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AEBDFB5F1A9BDFB900267CEB /* main.m in Sources */,
+				AEBDFB991A9BE71E00267CEB /* PCKMethodRedirectorSpec.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AE234DAA1A9CD2C200742B72 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AE234D7D1A9CD14200742B72 /* Support+PivotalCore */;
+			targetProxy = AE234DA91A9CD2C200742B72 /* PBXContainerItemProxy */;
+		};
+		AE9B6DE81A9D2DB7000ACF58 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AEBDFB311A9BDF7C00267CEB /* Support-StaticLibSpec */;
+			targetProxy = AE9B6DE71A9D2DB7000ACF58 /* PBXContainerItemProxy */;
+		};
+		AEBDFB901A9BE30400267CEB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Cedar-StaticLib";
+			targetProxy = AEBDFB8F1A9BE30400267CEB /* PBXContainerItemProxy */;
+		};
+		AEBDFB931A9BE31200267CEB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Cedar;
+			targetProxy = AEBDFB921A9BE31200267CEB /* PBXContainerItemProxy */;
+		};
+		AEBDFBC81A9CC40F00267CEB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AEB92C851A9BB782001BEC93 /* Support+PivotalCore-StaticLib */;
+			targetProxy = AEBDFBC71A9CC40F00267CEB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		AE234D971A9CD14200742B72 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_MODULES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INFOPLIST_FILE = "Core/Support+PivotalCore-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		AE234D981A9CD14200742B72 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_MODULES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				INFOPLIST_FILE = "Core/Support+PivotalCore-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		AE9B6DD91A9D2D9B000ACF58 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Support-StaticLibSpec.app/Support-StaticLibSpec";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_MODULES = YES;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(PROJECT_DIR)/../Externals/Cedar/**",
+				);
+				INFOPLIST_FILE = "Core/Support-StaticLibSpecBundle-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+					"-lstdc++",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		AE9B6DDA1A9D2D9B000ACF58 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Support-StaticLibSpec.app/Support-StaticLibSpec";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_MODULES = YES;
+				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(PROJECT_DIR)/../Externals/Cedar/**",
+				);
+				INFOPLIST_FILE = "Core/Support-StaticLibSpecBundle-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+					"-lstdc++",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+		AEB92C981A9BB782001BEC93 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = "";
+			};
+			name = Debug;
+		};
+		AEB92C991A9BB782001BEC93 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = "";
+			};
+			name = Release;
+		};
+		AEB92C9B1A9BB782001BEC93 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		AEB92C9C1A9BB782001BEC93 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		AEBDFB531A9BDF7D00267CEB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/../Externals/Cedar/**",
+				);
+				INFOPLIST_FILE = Spec/iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../Frameworks";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AEBDFB541A9BDF7D00267CEB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/../Externals/Cedar/**",
+				);
+				INFOPLIST_FILE = Spec/iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../Frameworks";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		AEBDFB611A9BDFB900267CEB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		AEBDFB621A9BDFB900267CEB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AE234DA61A9CD14200742B72 /* Build configuration list for PBXNativeTarget "Support+PivotalCore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE234D971A9CD14200742B72 /* Debug */,
+				AE234D981A9CD14200742B72 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AE9B6DE61A9D2D9B000ACF58 /* Build configuration list for PBXNativeTarget "Support-StaticLibSpecBundle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE9B6DD91A9D2D9B000ACF58 /* Debug */,
+				AE9B6DDA1A9D2D9B000ACF58 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AEB92C811A9BB782001BEC93 /* Build configuration list for PBXProject "Support" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AEB92C981A9BB782001BEC93 /* Debug */,
+				AEB92C991A9BB782001BEC93 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AEB92C9A1A9BB782001BEC93 /* Build configuration list for PBXNativeTarget "Support+PivotalCore-StaticLib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AEB92C9B1A9BB782001BEC93 /* Debug */,
+				AEB92C9C1A9BB782001BEC93 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AEBDFB521A9BDF7D00267CEB /* Build configuration list for PBXNativeTarget "Support-StaticLibSpec" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AEBDFB531A9BDF7D00267CEB /* Debug */,
+				AEBDFB541A9BDF7D00267CEB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AEBDFB601A9BDFB900267CEB /* Build configuration list for PBXNativeTarget "SupportSpec" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AEBDFB611A9BDFB900267CEB /* Debug */,
+				AEBDFB621A9BDFB900267CEB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AEB92C7E1A9BB782001BEC93 /* Project object */;
+}

@@ -72,7 +72,6 @@
 		AE3847B7168BA3B500C99B55 /* UIBarButtonItem+Button.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBCCBCE168B96C80056EE83 /* UIBarButtonItem+Button.m */; };
 		AE3847B8168BA3B500C99B55 /* UIImage+PivotalCore.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBCCBD0168B96C80056EE83 /* UIImage+PivotalCore.m */; };
 		AE3847B9168BA3B500C99B55 /* UIView+PivotalCore.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBCCBD2168B96C80056EE83 /* UIView+PivotalCore.m */; };
-		AE3B43901A30D95200265154 /* PCKMethodRedirector.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF5D45C1A030D2E00C4DC3D /* PCKMethodRedirector.m */; };
 		AE53E2EC18075A810037C32E /* UIWindow+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE53E2EB18075A810037C32E /* UIWindow+Spec.m */; };
 		AE53E2F618075B080037C32E /* UIWindowSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE53E2F518075B080037C32E /* UIWindowSpec+Spec.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		AE61C1211A40B5BE00C97245 /* UIAlertControllerSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE61C11F1A40B59000C97245 /* UIAlertControllerSpec+Spec.mm */; };
@@ -89,6 +88,7 @@
 		AE898FF818071E2B00DDB948 /* UIViewSpec+StubbedAnimations.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE898FF718071E2B00DDB948 /* UIViewSpec+StubbedAnimations.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		AE89900318071F3A00DDB948 /* UIView+StubbedAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = AE89900218071F3A00DDB948 /* UIView+StubbedAnimation.m */; };
 		AE95306A1832EE9300C802E9 /* UIViewSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE9530691832EE9300C802E9 /* UIViewSpec+Spec.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		AE9A5C8A1A9BD23600A46C69 /* libSupport+PivotalCore-StaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE9A5C891A9BD23600A46C69 /* libSupport+PivotalCore-StaticLib.a */; };
 		AEB315B518BF841400018EDD /* UITableViewCell.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEB315AB18BF830C00018EDD /* UITableViewCell.storyboard */; };
 		AEB6662C18C6681A00B09C00 /* UIPopoverController+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AEB6662A18C6681A00B09C00 /* UIPopoverController+Spec.h */; };
 		AEB6662D18C6681A00B09C00 /* UIPopoverController+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB6662B18C6681A00B09C00 /* UIPopoverController+Spec.m */; };
@@ -142,7 +142,6 @@
 		AEEECC33181F33F5006B52CD /* UIImagePickerControllerSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEEECC32181F33F5006B52CD /* UIImagePickerControllerSpec+Spec.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		AEF0A40418296C690070D98B /* UICollectionViewCell+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = FA07586918120D19001817BF /* UICollectionViewCell+Spec.m */; };
 		AEF0A40518296CDF0070D98B /* UICollectionViewCell+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = FA07586818120D19001817BF /* UICollectionViewCell+Spec.h */; };
-		AEF5D45D1A030D2E00C4DC3D /* PCKMethodRedirector.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AEF5D45B1A030D2E00C4DC3D /* PCKMethodRedirector.h */; };
 		AEF67CE218CA436600C221D1 /* UIActionSheetSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEF67CE018CA436600C221D1 /* UIActionSheetSpec+Spec.mm */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		AEF775BC18316DE4000AF17B /* UIGestureRecognizerSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEF775BB18316DE4000AF17B /* UIGestureRecognizerSpec+Spec.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		B866FC1A16B4957500317E32 /* UIControl+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AEBCCC75168B9B5F0056EE83 /* UIControl+Spec.h */; };
@@ -171,6 +170,41 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		AE234DE11A9CD8AE00742B72 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE234DCE1A9CD8AE00742B72 /* Support.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AE234D7E1A9CD14200742B72;
+			remoteInfo = "Support+PivotalCore";
+		};
+		AE234DE31A9CD8AE00742B72 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE234DCE1A9CD8AE00742B72 /* Support.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AEB92C861A9BB782001BEC93;
+			remoteInfo = "Support+PivotalCore-StaticLib";
+		};
+		AE234DE51A9CD8AE00742B72 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE234DCE1A9CD8AE00742B72 /* Support.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AEBDFB5C1A9BDFB900267CEB;
+			remoteInfo = SupportSpec;
+		};
+		AE234DE71A9CD8AE00742B72 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE234DCE1A9CD8AE00742B72 /* Support.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AEBDFB321A9BDF7C00267CEB;
+			remoteInfo = "Support-StaticLibSpec";
+		};
+		AE234DE91A9CD8BE00742B72 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE234DCE1A9CD8AE00742B72 /* Support.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = AEB92C851A9BB782001BEC93;
+			remoteInfo = "Support+PivotalCore-StaticLib";
+		};
 		AE3847B1168BA27D00C99B55 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AEBCCBA7168B95A00056EE83 /* Project object */;
@@ -334,7 +368,6 @@
 				AEC40CCB174C292600474D2D /* UIWebView+Spec.h in Copy headers to framework */,
 				AE7E72181AF2AEE4000E48EE /* UIApplication+Spec.h in Copy headers to framework */,
 				AECB46BA1A3FBB6C00398720 /* UIGestureRecognizer+Spec.h in Copy headers to framework */,
-				AEF5D45D1A030D2E00C4DC3D /* PCKMethodRedirector.h in Copy headers to framework */,
 				AE61C13F1A40B98900C97245 /* UIAlertController+Spec.h in Copy headers to framework */,
 				AE244D4319077EEB00ED96E9 /* UIActivityViewController+Spec.h in Copy headers to framework */,
 				AEC40CCC174C292600474D2D /* UIKit+PivotalSpecHelperStubs.h in Copy headers to framework */,
@@ -397,6 +430,7 @@
 		AE118AD918D6BB6700C90D6B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AE118ADB18D6BB6D00C90D6B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		AE1FBEA217D15A4100B0F03B /* UITableViewCellSpec+Spec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UITableViewCellSpec+Spec.mm"; sourceTree = "<group>"; };
+		AE234DCE1A9CD8AE00742B72 /* Support.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Support.xcodeproj; path = ../Support/Support.xcodeproj; sourceTree = "<group>"; };
 		AE3847A4168B9DF700C99B55 /* UIKitMatchers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIKitMatchers.h; sourceTree = "<group>"; };
 		AE3847A6168BA0B300C99B55 /* AWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWebViewController.h; sourceTree = "<group>"; };
 		AE3847A7168BA0B300C99B55 /* AWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWebViewController.m; sourceTree = "<group>"; };
@@ -420,6 +454,7 @@
 		AE898FF718071E2B00DDB948 /* UIViewSpec+StubbedAnimations.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIViewSpec+StubbedAnimations.mm"; sourceTree = "<group>"; };
 		AE89900218071F3A00DDB948 /* UIView+StubbedAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+StubbedAnimation.m"; sourceTree = "<group>"; };
 		AE9530691832EE9300C802E9 /* UIViewSpec+Spec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIViewSpec+Spec.mm"; sourceTree = "<group>"; };
+		AE9A5C891A9BD23600A46C69 /* libSupport+PivotalCore-StaticLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libSupport+PivotalCore-StaticLib.a"; path = "../Support/build/Debug-iphoneos/libSupport+PivotalCore-StaticLib.a"; sourceTree = "<group>"; };
 		AEB315AB18BF830C00018EDD /* UITableViewCell.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UITableViewCell.storyboard; sourceTree = "<group>"; };
 		AEB6662A18C6681A00B09C00 /* UIPopoverController+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIPopoverController+Spec.h"; sourceTree = "<group>"; };
 		AEB6662B18C6681A00B09C00 /* UIPopoverController+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIPopoverController+Spec.m"; sourceTree = "<group>"; };
@@ -487,8 +522,6 @@
 		AEEECC16181F3135006B52CD /* UIImagePickerController+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImagePickerController+Spec.h"; sourceTree = "<group>"; };
 		AEEECC17181F3135006B52CD /* UIImagePickerController+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImagePickerController+Spec.m"; sourceTree = "<group>"; };
 		AEEECC32181F33F5006B52CD /* UIImagePickerControllerSpec+Spec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIImagePickerControllerSpec+Spec.mm"; sourceTree = "<group>"; };
-		AEF5D45B1A030D2E00C4DC3D /* PCKMethodRedirector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCKMethodRedirector.h; sourceTree = "<group>"; };
-		AEF5D45C1A030D2E00C4DC3D /* PCKMethodRedirector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCKMethodRedirector.m; sourceTree = "<group>"; };
 		AEF67CE018CA436600C221D1 /* UIActionSheetSpec+Spec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIActionSheetSpec+Spec.mm"; sourceTree = "<group>"; };
 		AEF775BB18316DE4000AF17B /* UIGestureRecognizerSpec+Spec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIGestureRecognizerSpec+Spec.mm"; sourceTree = "<group>"; };
 		B86B686A1A132EF700F283F7 /* __PCKSilenceLinkerWarnings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = __PCKSilenceLinkerWarnings.m; sourceTree = "<group>"; };
@@ -563,6 +596,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AEC40C8A174C203700474D2D /* Foundation.framework in Frameworks */,
+				AE9A5C8A1A9BD23600A46C69 /* libSupport+PivotalCore-StaticLib.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -574,10 +608,19 @@
 			children = (
 				3490AFE919A3C0A800DAA8E3 /* PCKPrototypeCellInstantiatingDataSource.h */,
 				3490AFEA19A3C0A800DAA8E3 /* PCKPrototypeCellInstantiatingDataSource.m */,
-				AEF5D45B1A030D2E00C4DC3D /* PCKMethodRedirector.h */,
-				AEF5D45C1A030D2E00C4DC3D /* PCKMethodRedirector.m */,
 			);
 			path = Support;
+			sourceTree = "<group>";
+		};
+		AE234DCF1A9CD8AE00742B72 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AE234DE21A9CD8AE00742B72 /* Support+PivotalCore.framework */,
+				AE234DE41A9CD8AE00742B72 /* libSupport+PivotalCore-StaticLib.a */,
+				AE234DE61A9CD8AE00742B72 /* SupportSpec */,
+				AE234DE81A9CD8AE00742B72 /* Support-StaticLibSpec.app */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		AE3847A3168B9DC600C99B55 /* Matchers */ = {
@@ -713,6 +756,7 @@
 		AEBCCBE6168B97DD0056EE83 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AE9A5C891A9BD23600A46C69 /* libSupport+PivotalCore-StaticLib.a */,
 				AE118ADB18D6BB6D00C90D6B /* CoreGraphics.framework */,
 				AE118AD918D6BB6700C90D6B /* UIKit.framework */,
 				AEBCCBE7168B97DD0056EE83 /* Foundation.framework */,
@@ -727,6 +771,7 @@
 			isa = PBXGroup;
 			children = (
 				AEBCCBF4168B98100056EE83 /* Cedar.xcodeproj */,
+				AE234DCE1A9CD8AE00742B72 /* Support.xcodeproj */,
 			);
 			name = Externals;
 			path = ../Externals;
@@ -957,6 +1002,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				AE234DEA1A9CD8BE00742B72 /* PBXTargetDependency */,
 			);
 			name = "UIKit+PivotalSpecHelperStubs-StaticLib";
 			productName = "UIKit+PivotalSpecHelperStubs-StaticLib";
@@ -987,6 +1033,10 @@
 					ProductGroup = AEBCCBF5168B98100056EE83 /* Products */;
 					ProjectRef = AEBCCBF4168B98100056EE83 /* Cedar.xcodeproj */;
 				},
+				{
+					ProductGroup = AE234DCF1A9CD8AE00742B72 /* Products */;
+					ProjectRef = AE234DCE1A9CD8AE00742B72 /* Support.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -1002,6 +1052,34 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		AE234DE21A9CD8AE00742B72 /* Support+PivotalCore.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = "Support+PivotalCore.framework";
+			remoteRef = AE234DE11A9CD8AE00742B72 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AE234DE41A9CD8AE00742B72 /* libSupport+PivotalCore-StaticLib.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libSupport+PivotalCore-StaticLib.a";
+			remoteRef = AE234DE31A9CD8AE00742B72 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AE234DE61A9CD8AE00742B72 /* SupportSpec */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = SupportSpec;
+			remoteRef = AE234DE51A9CD8AE00742B72 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AE234DE81A9CD8AE00742B72 /* Support-StaticLibSpec.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "Support-StaticLibSpec.app";
+			remoteRef = AE234DE71A9CD8AE00742B72 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		AEBCCC01168B98110056EE83 /* Cedar.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -1299,7 +1377,6 @@
 				AE89900318071F3A00DDB948 /* UIView+StubbedAnimation.m in Sources */,
 				AEC40CB8174C22BD00474D2D /* UIWebView+Spec.m in Sources */,
 				8487257E19013F6400288770 /* UIActivityViewController+Spec.m in Sources */,
-				AE3B43901A30D95200265154 /* PCKMethodRedirector.m in Sources */,
 				AE61C1401A40B98E00C97245 /* UIAlertController+Spec.m in Sources */,
 				AE86BD43179C7C910057DEAE /* UITabBarController+Spec.m in Sources */,
 				DE99CA8267EEACF8EE9A941F /* UIGestureRecognizer+Spec.m in Sources */,
@@ -1309,6 +1386,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		AE234DEA1A9CD8BE00742B72 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Support+PivotalCore-StaticLib";
+			targetProxy = AE234DE91A9CD8BE00742B72 /* PBXContainerItemProxy */;
+		};
 		AE3847B2168BA27D00C99B55 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = AEBCCC63168B9AF10056EE83 /* UIKit+PivotalSpecHelper-StaticLib */;
@@ -1449,6 +1531,10 @@
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1475,6 +1561,10 @@
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				SDKROOT = iphoneos;
@@ -1531,6 +1621,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../Support/Core";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1557,6 +1648,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../Support/Core";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};
@@ -1603,6 +1695,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../Support/Core";
 			};
 			name = Debug;
 		};
@@ -1620,6 +1713,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../Support/Core";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

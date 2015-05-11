@@ -16,6 +16,8 @@
 		AE118AE918D6BC2F00C90D6B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE3848DB168CD86000C99B55 /* Foundation.framework */; };
 		AE118B0418D6BD3300C90D6B /* BundleSpecLoader.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE118B0218D6BCE700C90D6B /* BundleSpecLoader.mm */; };
 		AE118B0618D6BE3E00C90D6B /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE118B0518D6BE3E00C90D6B /* SenTestingKit.framework */; };
+		AE234DFC1A9CDCB000742B72 /* Support+PivotalCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE234DF31A9CD8D800742B72 /* Support+PivotalCore.framework */; };
+		AE234DFF1A9CDCB800742B72 /* libSupport+PivotalCore-StaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE234DF51A9CD8D800742B72 /* libSupport+PivotalCore-StaticLib.a */; };
 		AE3848DA168CD86000C99B55 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE3848D9168CD86000C99B55 /* UIKit.framework */; };
 		AE3848DC168CD86000C99B55 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE3848DB168CD86000C99B55 /* Foundation.framework */; };
 		AE3848DE168CD86000C99B55 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE3848DD168CD86000C99B55 /* CoreGraphics.framework */; };
@@ -41,6 +43,48 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		AE234DF21A9CD8D800742B72 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE234DEB1A9CD8D800742B72 /* Support.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AE234D7E1A9CD14200742B72;
+			remoteInfo = "Support+PivotalCore";
+		};
+		AE234DF41A9CD8D800742B72 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE234DEB1A9CD8D800742B72 /* Support.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AEB92C861A9BB782001BEC93;
+			remoteInfo = "Support+PivotalCore-StaticLib";
+		};
+		AE234DF61A9CD8D800742B72 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE234DEB1A9CD8D800742B72 /* Support.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AEBDFB5C1A9BDFB900267CEB;
+			remoteInfo = SupportSpec;
+		};
+		AE234DF81A9CD8D800742B72 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE234DEB1A9CD8D800742B72 /* Support.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AEBDFB321A9BDF7C00267CEB;
+			remoteInfo = "Support-StaticLibSpec";
+		};
+		AE234DFA1A9CDCA900742B72 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE234DEB1A9CD8D800742B72 /* Support.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = AE234D7D1A9CD14200742B72;
+			remoteInfo = "Support+PivotalCore";
+		};
+		AE234DFD1A9CDCB500742B72 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE234DEB1A9CD8D800742B72 /* Support.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = AEB92C851A9BB782001BEC93;
+			remoteInfo = "Support+PivotalCore-StaticLib";
+		};
 		AE384932168CD8FC00C99B55 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AE384926168CD8FB00C99B55 /* Cedar.xcodeproj */;
@@ -111,7 +155,7 @@
 			remoteGlobalIDString = AEEE222811DC2B0600029872;
 			remoteInfo = "Cedar-StaticLib";
 		};
-		AE38499C168D058A00C99B55 /* PBXContainerItemProxy */ = {
+		AE560EE81A9CDFD700D7F256 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AE3848CC168CD86000C99B55 /* Project object */;
 			proxyType = 1;
@@ -192,6 +236,7 @@
 		AE118AEC18D6BC2F00C90D6B /* CoreLocation-StaticLibSpecBundle-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CoreLocation-StaticLibSpecBundle-Info.plist"; sourceTree = "<group>"; };
 		AE118B0218D6BCE700C90D6B /* BundleSpecLoader.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BundleSpecLoader.mm; sourceTree = "<group>"; };
 		AE118B0518D6BE3E00C90D6B /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		AE234DEB1A9CD8D800742B72 /* Support.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Support.xcodeproj; path = ../Support/Support.xcodeproj; sourceTree = "<group>"; };
 		AE3848D5168CD86000C99B55 /* CoreLocation-StaticLibSpec.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CoreLocation-StaticLibSpec.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE3848D9168CD86000C99B55 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AE3848DB168CD86000C99B55 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -230,11 +275,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE38499E168D058F00C99B55 /* libCoreLocation+PivotalSpecHelper-StaticLib.a in Frameworks */,
-				AE384971168D04F300C99B55 /* CoreLocation.framework in Frameworks */,
 				AE384963168D045400C99B55 /* libCedar-StaticLib.a in Frameworks */,
-				AE3848DA168CD86000C99B55 /* UIKit.framework in Frameworks */,
-				AE3848DC168CD86000C99B55 /* Foundation.framework in Frameworks */,
 				AE3848DE168CD86000C99B55 /* CoreGraphics.framework in Frameworks */,
+				AE384971168D04F300C99B55 /* CoreLocation.framework in Frameworks */,
+				AE3848DC168CD86000C99B55 /* Foundation.framework in Frameworks */,
+				AE3848DA168CD86000C99B55 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +287,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE234DFC1A9CDCB000742B72 /* Support+PivotalCore.framework in Frameworks */,
 				AE384954168CDA1500C99B55 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -250,10 +296,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE384962168D033C00C99B55 /* CoreLocation.framework in Frameworks */,
 				AE384948168CD9AA00C99B55 /* CoreLocation+PivotalSpecHelper.framework in Frameworks */,
-				AE384944168CD91E00C99B55 /* Cedar.framework in Frameworks */,
 				AE38491A168CD8D800C99B55 /* Foundation.framework in Frameworks */,
+				AE384944168CD91E00C99B55 /* Cedar.framework in Frameworks */,
+				AE384962168D033C00C99B55 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +307,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE234DFF1A9CDCB800742B72 /* libSupport+PivotalCore-StaticLib.a in Frameworks */,
 				AE38499A168D055A00C99B55 /* CoreLocation.framework in Frameworks */,
 				AE38498F168D053300C99B55 /* Foundation.framework in Frameworks */,
 			);
@@ -269,6 +316,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AE234DEC1A9CD8D800742B72 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AE234DF31A9CD8D800742B72 /* Support+PivotalCore.framework */,
+				AE234DF51A9CD8D800742B72 /* libSupport+PivotalCore-StaticLib.a */,
+				AE234DF71A9CD8D800742B72 /* SupportSpec */,
+				AE234DF91A9CD8D800742B72 /* Support-StaticLibSpec.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		AE3848CA168CD86000C99B55 = {
 			isa = PBXGroup;
 			children = (
@@ -311,6 +369,7 @@
 			isa = PBXGroup;
 			children = (
 				AE384926168CD8FB00C99B55 /* Cedar.xcodeproj */,
+				AE234DEB1A9CD8D800742B72 /* Support.xcodeproj */,
 			);
 			name = Externals;
 			sourceTree = "<group>";
@@ -438,7 +497,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				AE38499D168D058A00C99B55 /* PBXTargetDependency */,
+				AE560EE91A9CDFD700D7F256 /* PBXTargetDependency */,
 				AE384965168D046400C99B55 /* PBXTargetDependency */,
 			);
 			name = "CoreLocation-StaticLibSpec";
@@ -458,6 +517,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				AE234DFB1A9CDCA900742B72 /* PBXTargetDependency */,
 			);
 			name = "CoreLocation+PivotalSpecHelper";
 			productName = "CoreLocation+PivotalCore";
@@ -494,6 +554,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				AE234DFE1A9CDCB500742B72 /* PBXTargetDependency */,
 			);
 			name = "CoreLocation+PivotalSpecHelper-StaticLib";
 			productName = "CoreLocation+PivotalSpecHelper-StaticLib";
@@ -524,12 +585,16 @@
 					ProductGroup = AE384927168CD8FB00C99B55 /* Products */;
 					ProjectRef = AE384926168CD8FB00C99B55 /* Cedar.xcodeproj */;
 				},
+				{
+					ProductGroup = AE234DEC1A9CD8D800742B72 /* Products */;
+					ProjectRef = AE234DEB1A9CD8D800742B72 /* Support.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
 				AE3848FF168CD8C800C99B55 /* CoreLocation+PivotalSpecHelper */,
-				AE384917168CD8D800C99B55 /* CoreLocationSpec */,
 				AE38498D168D053300C99B55 /* CoreLocation+PivotalSpecHelper-StaticLib */,
+				AE384917168CD8D800C99B55 /* CoreLocationSpec */,
 				AE3848D4168CD86000C99B55 /* CoreLocation-StaticLibSpec */,
 				AE118AE318D6BC2F00C90D6B /* CoreLocation-StaticLibSpecBundle */,
 			);
@@ -537,6 +602,34 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		AE234DF31A9CD8D800742B72 /* Support+PivotalCore.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = "Support+PivotalCore.framework";
+			remoteRef = AE234DF21A9CD8D800742B72 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AE234DF51A9CD8D800742B72 /* libSupport+PivotalCore-StaticLib.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libSupport+PivotalCore-StaticLib.a";
+			remoteRef = AE234DF41A9CD8D800742B72 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AE234DF71A9CD8D800742B72 /* SupportSpec */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = SupportSpec;
+			remoteRef = AE234DF61A9CD8D800742B72 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AE234DF91A9CD8D800742B72 /* Support-StaticLibSpec.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "Support-StaticLibSpec.app";
+			remoteRef = AE234DF81A9CD8D800742B72 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		AE384933168CD8FC00C99B55 /* Cedar.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -714,6 +807,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		AE234DFB1A9CDCA900742B72 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Support+PivotalCore";
+			targetProxy = AE234DFA1A9CDCA900742B72 /* PBXContainerItemProxy */;
+		};
+		AE234DFE1A9CDCB500742B72 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Support+PivotalCore-StaticLib";
+			targetProxy = AE234DFD1A9CDCB500742B72 /* PBXContainerItemProxy */;
+		};
 		AE384943168CD90C00C99B55 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Cedar;
@@ -729,10 +832,10 @@
 			name = "Cedar-StaticLib";
 			targetProxy = AE384964168D046400C99B55 /* PBXContainerItemProxy */;
 		};
-		AE38499D168D058A00C99B55 /* PBXTargetDependency */ = {
+		AE560EE91A9CDFD700D7F256 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = AE38498D168D053300C99B55 /* CoreLocation+PivotalSpecHelper-StaticLib */;
-			targetProxy = AE38499C168D058A00C99B55 /* PBXContainerItemProxy */;
+			targetProxy = AE560EE81A9CDFD700D7F256 /* PBXContainerItemProxy */;
 		};
 		AECAF9021A0190BB002B4FD8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -922,6 +1025,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../Support/Core";
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Debug;
@@ -945,6 +1049,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../Support/Core";
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Release;
@@ -952,6 +1057,10 @@
 		AE384923168CD8D800C99B55 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_DIR)/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks",
+				);
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -965,6 +1074,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_DIR)/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks",
+				);
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -983,6 +1096,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../Support/Core";
 			};
 			name = Debug;
 		};
@@ -995,6 +1109,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../Support/Core";
 			};
 			name = Release;
 		};
