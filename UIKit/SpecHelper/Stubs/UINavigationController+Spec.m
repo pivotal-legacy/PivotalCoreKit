@@ -20,7 +20,7 @@
 
 @implementation UINavigationControllerStubbing
 
-+ (void)initialize {
++ (void)load {
     [PCKMethodRedirector redirectSelector:@selector(pushViewController:animated:)
                                  forClass:[UINavigationController class]
                                        to:@selector(pushViewController:ignoringAnimated:)
