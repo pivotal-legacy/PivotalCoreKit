@@ -3,7 +3,10 @@
 ## 0.3.1 (in progress)
  
   * Further improvements to UIGestureRecognizer spec helper stub
-  * 
+  * Improvements to PCK's fake operation queue.
+  * Adds support for inspecting the urls opened with UIApplication
+  * Adds support for inspecting the `-cameraDevice` set on a UIImagePickerController
+  * UINavigationController stubs are now properly loaded.
 
 ## 0.3.0
 
