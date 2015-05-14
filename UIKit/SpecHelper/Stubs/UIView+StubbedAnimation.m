@@ -1,69 +1,98 @@
 #import "UIView+StubbedAnimation.h"
 
-static NSTimeInterval lastAnimationDuration__ = 0;
-static NSTimeInterval lastAnimationDelay__ = 0;
-static UIViewAnimationOptions lastAnimationOptions__ = 0;
-static CGFloat lastAnimationSpringWithDamping__ = 0;
-static CGFloat lastAnimationInitialSpringVelocity__ = 0;
+static BOOL shouldImmediatelyExecuteAnimationBlocks__ = YES;
+static NSMutableArray *animations__;
 
 @implementation UIView (StubbedAnimation)
 
 + (NSTimeInterval)lastAnimationDuration {
-    return lastAnimationDuration__;
+    return [(PCKViewAnimation*)[animations__ lastObject] duration];
 }
 
 + (NSTimeInterval)lastAnimationDelay {
-    return lastAnimationDelay__;
+    return [[animations__ lastObject] delay];
 }
 
 + (UIViewAnimationOptions)lastAnimationOptions {
-    return lastAnimationOptions__;
+    return [(PCKViewAnimation*)[animations__ lastObject] options];
 }
 
 + (CGFloat)lastAnimationSpringWithDamping {
-    return lastAnimationSpringWithDamping__;
+    return [[animations__ lastObject] springWithDamping];
 }
 
 + (CGFloat)lastAnimationInitialSpringVelocity {
-    return lastAnimationInitialSpringVelocity__;
+    return [[animations__ lastObject] initialSpringVelocity];
+}
+
++ (void)pauseAnimations {
+    shouldImmediatelyExecuteAnimationBlocks__ = NO;
+}
+
++ (NSArray *)animations {
+    return animations__;
+}
+
++ (PCKViewAnimation *)lastAnimation {
+    return [animations__ lastObject];
 }
 
 #pragma mark - Overrides
 
 + (void)animateWithDuration:(NSTimeInterval)duration animations:(void (^)(void))animations completion:(void (^)(BOOL))completion {
-    lastAnimationDuration__ = duration;
-    if (animations) {
-        animations();
-    }
-    if (completion) {
-        completion(YES);
-    }
+    [self animateWithDuration:duration delay:0 usingSpringWithDamping:0 initialSpringVelocity:0 options:0 animations:animations completion:completion];
 }
 
 + (void)animateWithDuration:(NSTimeInterval)duration animations:(void (^)(void))animations {
-    [self animateWithDuration:duration animations:animations completion:nil];
+    [self animateWithDuration:duration delay:0 usingSpringWithDamping:0 initialSpringVelocity:0 options:0 animations:animations completion:nil];
 }
 
 + (void)animateWithDuration:(NSTimeInterval)duration delay:(NSTimeInterval)delay options:(UIViewAnimationOptions)options animations:(void (^)(void))animations completion:(void (^)(BOOL))completion {
-    lastAnimationDelay__ = delay;
-    lastAnimationOptions__ = options;
-    [self animateWithDuration:duration animations:animations completion:completion];
+    [self animateWithDuration:duration delay:delay usingSpringWithDamping:0 initialSpringVelocity:0 options:options animations:animations completion:completion];
 }
 
 + (void)animateWithDuration:(NSTimeInterval)duration delay:(NSTimeInterval)delay usingSpringWithDamping:(CGFloat)dampingRatio initialSpringVelocity:(CGFloat)velocity options:(UIViewAnimationOptions)options animations:(void (^)(void))animations completion:(void (^)(BOOL))completion {
-    lastAnimationSpringWithDamping__ = dampingRatio;
-    lastAnimationInitialSpringVelocity__ = velocity;
-    [self animateWithDuration:duration delay:delay options:options animations:animations completion:completion];
+
+    PCKViewAnimation *animation = [[PCKViewAnimation alloc] init];
+    animation.duration = duration;
+    animation.delay = delay;
+    animation.springWithDamping = dampingRatio;
+    animation.initialSpringVelocity = velocity;
+    animation.options = options;
+    animation.animationBlock = animations;
+    animation.completionBlock = completion;
+    [animations__ addObject:animation];
+
+    if (shouldImmediatelyExecuteAnimationBlocks__) {
+        [animation animate];
+        [animation complete];
+    }
 }
 
 #pragma mark - CedarHooks
 
 + (void)beforeEach {
-    lastAnimationDuration__ = 0;
-    lastAnimationDelay__ = 0;
-    lastAnimationOptions__ = 0;
-    lastAnimationSpringWithDamping__ = 0;
-    lastAnimationInitialSpringVelocity__ = 0;
+    shouldImmediatelyExecuteAnimationBlocks__ = YES;
+    animations__ = [NSMutableArray array];
 }
 
 @end
+
+@implementation PCKViewAnimation
+
+- (void)animate {
+    self.animationBlock();
+}
+
+- (void)complete {
+    if (self.completionBlock) {
+        self.completionBlock(YES);
+    }
+}
+
+- (void)cancel {
+    self.completionBlock(NO);
+}
+
+@end
+
