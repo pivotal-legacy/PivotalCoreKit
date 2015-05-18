@@ -104,6 +104,15 @@ namespace :foundation do
 
     task :core => ["core:osx", "core:ios"]
 
+    namespace :framework do
+      task :ios do
+        output_file = output_file("foundation:build:framework:ios")
+        build_target("Foundation+PivotalCore-iOS", project: project, output_file: output_file)
+      end
+    end
+
+    task :framework => ["framework:ios"]
+
     namespace :spec_helper do
       task :osx do
         output_file = output_file("foundation:build:spec_helper:osx")
@@ -191,7 +200,7 @@ namespace :uikit do
 
       task :ios_stubs do
         output_file = output_file("uikit:build:spec_helper_framework:ios_stubs")
-        build_project("UIKit+PivotalSpecHelperStubs-iOS", project: project, output_file: output_file)
+        build_target("UIKit+PivotalSpecHelperStubs-iOS", project: project, output_file: output_file)
       end
     end
 

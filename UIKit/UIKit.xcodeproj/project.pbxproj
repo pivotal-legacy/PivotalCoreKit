@@ -52,6 +52,9 @@
 		8490A16D1A7D0FDB001835AB /* UISegmentedControlSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8490A16B1A7D0FCC001835AB /* UISegmentedControlSpec+Spec.mm */; };
 		8490A1711A7D1339001835AB /* UISegmentedControl+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = 8490A16F1A7D1323001835AB /* UISegmentedControl+Spec.m */; };
 		84C62A78190141DD00DF2982 /* UIActivityViewControllerSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8487257F1901402000288770 /* UIActivityViewControllerSpec+Spec.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		AE03FC941B0A89BA00013784 /* UITabBarController+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE86BD41179C7C910057DEAE /* UITabBarController+Spec.m */; };
+		AE03FC951B0A89C100013784 /* UITabBarController+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AE86BD40179C7C910057DEAE /* UITabBarController+Spec.h */; };
+		AE03FC9A1B0A8AC500013784 /* UISwitch+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = FAF932CB192703280076C733 /* UISwitch+Spec.h */; };
 		AE062BD01A43240500AF8D33 /* UIAlertActionSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE062BCE1A4323CF00AF8D33 /* UIAlertActionSpec+Spec.mm */; };
 		AE062BD11A43241B00AF8D33 /* UIAlertAction+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE062BC01A4323A800AF8D33 /* UIAlertAction+Spec.m */; };
 		AE118AA418D6B57000C90D6B /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE118AA318D6B57000C90D6B /* SenTestingKit.framework */; };
@@ -83,8 +86,6 @@
 		AE7E72141AF2AE08000E48EE /* UIApplicationSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE7E72061AF2ADFF000E48EE /* UIApplicationSpec+Spec.mm */; };
 		AE7E72181AF2AEE4000E48EE /* UIApplication+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AE7E72151AF2AE9A000E48EE /* UIApplication+Spec.h */; };
 		AE7E72191AF2AF0D000E48EE /* UIApplication+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7E72161AF2AE9A000E48EE /* UIApplication+Spec.m */; };
-		AE86BD42179C7C910057DEAE /* UITabBarController+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AE86BD40179C7C910057DEAE /* UITabBarController+Spec.h */; };
-		AE86BD43179C7C910057DEAE /* UITabBarController+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE86BD41179C7C910057DEAE /* UITabBarController+Spec.m */; };
 		AE86BD4E179C7DAD0057DEAE /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE86BD4D179C7DAD0057DEAE /* Default-568h@2x.png */; };
 		AE898FF818071E2B00DDB948 /* UIViewSpec+StubbedAnimations.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE898FF718071E2B00DDB948 /* UIViewSpec+StubbedAnimations.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		AE89900318071F3A00DDB948 /* UIView+StubbedAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = AE89900218071F3A00DDB948 /* UIView+StubbedAnimation.m */; };
@@ -339,7 +340,6 @@
 				AE244D4319077EEB00ED96E9 /* UIActivityViewController+Spec.h in Copy headers to framework */,
 				AEC40CCC174C292600474D2D /* UIKit+PivotalSpecHelperStubs.h in Copy headers to framework */,
 				AEB6662C18C6681A00B09C00 /* UIPopoverController+Spec.h in Copy headers to framework */,
-				AE86BD42179C7C910057DEAE /* UITabBarController+Spec.h in Copy headers to framework */,
 				AEEECC18181F3135006B52CD /* UIImagePickerController+Spec.h in Copy headers to framework */,
 			);
 			name = "Copy headers to framework";
@@ -358,7 +358,9 @@
 				B866FC1C16B4957500317E32 /* UITableViewCell+Spec.h in Copy headers to framework */,
 				B866FC1D16B4957500317E32 /* UIView+Spec.h in Copy headers to framework */,
 				B866FC1F16B4957500317E32 /* UIKitMatchers.h in Copy headers to framework */,
+				AE03FC9A1B0A8AC500013784 /* UISwitch+Spec.h in Copy headers to framework */,
 				22601B5B16BA263A00A807CB /* UIKit+PivotalSpecHelper.h in Copy headers to framework */,
+				AE03FC951B0A89C100013784 /* UITabBarController+Spec.h in Copy headers to framework */,
 				AEF0A40518296CDF0070D98B /* UICollectionViewCell+Spec.h in Copy headers to framework */,
 				22601B5C16BA274B00A807CB /* UISlider+Spec.h in Copy headers to framework */,
 			);
@@ -1274,6 +1276,7 @@
 				AEF0A40418296C690070D98B /* UICollectionViewCell+Spec.m in Sources */,
 				FAF932D8192703490076C733 /* UISwitch+Spec.m in Sources */,
 				AEBCCC8A168B9B8B0056EE83 /* UIControl+Spec.m in Sources */,
+				AE03FC941B0A89BA00013784 /* UITabBarController+Spec.m in Sources */,
 				AEBCCC8B168B9B8B0056EE83 /* UIImage+Spec.m in Sources */,
 				AEBCCC8C168B9B8B0056EE83 /* UITableViewCell+Spec.m in Sources */,
 				AE53E2EC18075A810037C32E /* UIWindow+Spec.m in Sources */,
@@ -1301,7 +1304,6 @@
 				8487257E19013F6400288770 /* UIActivityViewController+Spec.m in Sources */,
 				AE3B43901A30D95200265154 /* PCKMethodRedirector.m in Sources */,
 				AE61C1401A40B98E00C97245 /* UIAlertController+Spec.m in Sources */,
-				AE86BD43179C7C910057DEAE /* UITabBarController+Spec.m in Sources */,
 				DE99CA8267EEACF8EE9A941F /* UIGestureRecognizer+Spec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
