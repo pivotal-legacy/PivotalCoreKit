@@ -79,9 +79,13 @@ def build_target(target, project: project, output_file: output_file)
   system_or_exit(command, {}, output_file)
 end
 
+desc "Trim edited files and run all specs"
 task :default => [:trim_whitespace, "all:spec"]
+
+desc "Do what travis will do"
 task :travis => ["foundation:clean", "uikit:clean", "core_location:clean", "foundation:spec", "uikit:spec", "core_location:spec"]
 
+desc "Trim whitespace in recently edited files"
 task :trim_whitespace do
   system_or_exit(%Q[git status --short | awk '{if ($1 != "D" && $1 != "R") print $2}' | grep -e '.*\.[mh]$' | xargs sed -i '' -e 's/	/    /g;s/ *$//g;'])
 end
@@ -91,11 +95,13 @@ namespace :foundation do
 
   namespace :build do
     namespace :core do
+      desc "Build Foundation+PivotalCore framework for OS X"
       task :osx do
         output_file = output_file("foundation:build:core:osx")
         build_target("Foundation+PivotalCore", project: project, output_file: output_file)
       end
 
+      desc "Build Foundation+PivotalCore-StaticLib for iOS"
       task :ios do
         output_file = output_file("foundation:build:core:ios")
         build_target("Foundation+PivotalCore-StaticLib", project: project, output_file: output_file)
@@ -105,6 +111,7 @@ namespace :foundation do
     task :core => ["core:osx", "core:ios"]
 
     namespace :framework do
+      desc "Build Foundation+PivotalCore-iOS universal static framework"
       task :ios do
         output_file = output_file("foundation:build:framework:ios")
         build_target("Foundation+PivotalCore-iOS", project: project, output_file: output_file)
@@ -114,11 +121,13 @@ namespace :foundation do
     task :framework => ["framework:ios"]
 
     namespace :spec_helper do
+      desc "Build Foundation+PivotalSpecHelper framework for OS X"
       task :osx do
         output_file = output_file("foundation:build:spec_helper:osx")
         build_target("Foundation+PivotalSpecHelper", project: project, output_file: output_file)
       end
 
+      desc "Build Foundation+PivotalSpecHelper-StaticLib for iOS"
       task :ios do
         output_file = output_file("foundation:build:spec_helper:ios")
         build_target("Foundation+PivotalSpecHelper-StaticLib", project: project, output_file: output_file)
@@ -128,6 +137,7 @@ namespace :foundation do
     task :spec_helper => ["spec_helper:osx", "spec_helper:ios"]
 
     namespace :spec_helper_framework do
+      desc "Build Foundation+PivotalSpecHelper-iOS universal static framework"
       task :ios do
         output_file = output_file("foundation:build:spec_helper_framework:ios")
         build_target("Foundation+PivotalSpecHelper-iOS", project: project, output_file: output_file)
@@ -138,6 +148,7 @@ namespace :foundation do
   end
 
   namespace :spec do
+    desc "Build and run all OS X specs"
     task :osx => ["build:core:osx", "build:spec_helper:osx"] do
       output_file = output_file("foundation:spec:osx")
       build_target("FoundationSpec", project: project, output_file: output_file)
@@ -151,6 +162,7 @@ namespace :foundation do
       system_or_exit("cd #{build_dir}; ./FoundationSpec", env_vars)
     end
 
+    desc "Build and run all Foundation specs on iOS"
     task :ios do
       build_and_test_scheme("Foundation-StaticLibSpec")
     end
@@ -170,6 +182,7 @@ namespace :uikit do
 
   namespace :build do
     namespace :core do
+      desc "Build UIKit+PivotalCore-StaticLib"
       task :ios do
         output_file = output_file("uikit:build:core:ios")
         build_target("UIKit+PivotalCore-StaticLib", project: project, output_file: output_file)
@@ -179,11 +192,13 @@ namespace :uikit do
     task :core => ["core:ios"]
 
     namespace :spec_helper do
+      desc "Build UIKit+PivotalSpecHelper-StaticLib"
       task :ios do
         output_file = output_file("uikit:build:spec_helper:ios")
         build_target("UIKit+PivotalSpecHelper-StaticLib", project: project, output_file: output_file)
       end
 
+      desc "Build UIKit+PivotalSpecHelperStubs-StaticLib"
       task :ios_stubs do
         output_file = output_file("uikit:build:spec_helper:ios_stubs")
         build_target("UIKit+PivotalSpecHelperStubs-StaticLib", project: project, output_file: output_file)
@@ -193,11 +208,13 @@ namespace :uikit do
     task :spec_helper => ["spec_helper:ios", "spec_helper:ios_stubs"]
 
     namespace :spec_helper_framework do
+      desc "Build UIKit+PivotalSpecHelper-iOS universal static framework"
       task :ios do
         output_file = output_file("uikit:build:spec_helper_framework:ios")
         build_target("UIKit+PivotalSpecHelper-iOS", project: project, output_file: output_file)
       end
 
+      desc "Build UIKit+PivotalSpecHelperStubs-iOS universal static framework"
       task :ios_stubs do
         output_file = output_file("uikit:build:spec_helper_framework:ios_stubs")
         build_target("UIKit+PivotalSpecHelperStubs-iOS", project: project, output_file: output_file)
@@ -208,6 +225,7 @@ namespace :uikit do
   end
 
   namespace :spec do
+    desc "Build and run all UIKit specs"
     task :ios do
       build_and_test_scheme("UIKit-StaticLibSpec")
     end
@@ -227,11 +245,13 @@ namespace :core_location do
 
   namespace :build do
     namespace :spec_helper do
+      desc "Build CoreLocation+PivotalSpecHelper framework for OS X"
       task :osx do
         output_file = output_file("core_location:build:spec_helper:osx")
         build_target("CoreLocation+PivotalSpecHelper", project: project, output_file: output_file)
       end
 
+      desc "Build CoreLocation+PivotalSpecHelper-StaticLib for iOS"
       task :ios do
         output_file = output_file("core_location:build:spec_helper:ios")
         build_target("CoreLocation+PivotalSpecHelper-StaticLib", project: project, output_file: output_file)
@@ -242,6 +262,7 @@ namespace :core_location do
   end
 
   namespace :spec do
+    desc "Build and run CoreLocation specs on OS X"
     task :osx => ["build:spec_helper:osx"] do
       output_file = output_file("core_location:spec:osx")
       build_target("CoreLocationSpec", project: project, output_file: output_file)
@@ -254,6 +275,7 @@ namespace :core_location do
       system_or_exit("cd #{build_dir}; ./CoreLocationSpec", env_vars)
     end
 
+    desc "Build and run CoreLocation specs on iOS"
     task :ios do
       build_and_test_scheme("CoreLocation-StaticLibSpec")
     end
@@ -272,16 +294,18 @@ namespace :watchkit do
   project_name = "WatchKit/WatchKit"
 
   namespace :build do
+    desc "Build Fake WatchKit dynamic framework for iOS"
     task :ios do
-      system_or_exit(%Q[xcodebuild -project #{project_name}.xcodeproj -scheme WatchKit -sdk iphonesimulator8.2 -configuration #{CONFIGURATION} build], {}, output_file("watchkit:build:ios"))
+      system_or_exit(%Q[xcodebuild -project #{project_name}.xcodeproj -scheme WatchKit -sdk iphonesimulator -configuration #{CONFIGURATION} build], {}, output_file("watchkit:build:ios"))
     end
   end
 
   namespace :spec do
     require 'tmpdir'
+    desc "Build and run fake WatchKit specs on iOS"
     task :ios do
       `osascript -e 'tell application "iPhone Simulator" to quit'`
-      system_or_exit(%Q[xcodebuild -project #{project_name}.xcodeproj -scheme WatchKit -sdk iphonesimulator8.2 -destination platform='iOS Simulator',name='iPhone 5s,OS=8.2' build test], {}, output_file("watchkit:spec:ios"))
+      system_or_exit(%Q[xcodebuild -project #{project_name}.xcodeproj -scheme WatchKit -sdk iphonesimulator -destination platform='iOS Simulator',name='iPhone 5s,OS=8.2' build test], {}, output_file("watchkit:spec:ios"))
       `osascript -e 'tell application "iPhone Simulator" to quit'`
     end
   end
@@ -295,7 +319,10 @@ end
 task :watchkit => ["watchkit:build", "watchkit:spec"]
 
 namespace :all do
+  desc "Build everything"
   task :build => ["foundation:build", "uikit:build", "core_location:build", "watchkit:build"]
+  desc "Run all specs"
   task :spec => ["foundation:spec", "uikit:spec", "core_location:spec", "watchkit:spec"]
+  desc "Clean all targets"
   task :clean => ["foundation:clean", "uikit:clean", "core_location:clean"]
 end
