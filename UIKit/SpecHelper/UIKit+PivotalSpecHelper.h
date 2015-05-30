@@ -8,3 +8,4 @@
 #import "UICollectionViewCell+Spec.h"
 #import "UICollectionReusableView+Spec.h"
 #import "UISwitch+Spec.h"
+#import "UIWindow+Spec.h"

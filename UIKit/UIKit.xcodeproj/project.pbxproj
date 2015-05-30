@@ -83,11 +83,14 @@
 		AE61C1211A40B5BE00C97245 /* UIAlertControllerSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE61C11F1A40B59000C97245 /* UIAlertControllerSpec+Spec.mm */; };
 		AE61C13F1A40B98900C97245 /* UIAlertController+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AE61C1301A40B95E00C97245 /* UIAlertController+Spec.h */; };
 		AE61C1401A40B98E00C97245 /* UIAlertController+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE61C1311A40B95E00C97245 /* UIAlertController+Spec.m */; };
+		AE6EDFF31B1A263D00A2BA07 /* UISegmentedControl+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 8490A16E1A7D1323001835AB /* UISegmentedControl+Spec.h */; };
+		AE6EE0001B1A265000A2BA07 /* UIWindow+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AE53E2EA18075A810037C32E /* UIWindow+Spec.h */; };
 		AE7B279617CFD67600904F64 /* UIViewControllerSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE7B279517CFD67600904F64 /* UIViewControllerSpec+Spec.mm */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		AE7CE69319FACA8B007B008F /* NavigationStackExample.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE7CE69219FACA84007B008F /* NavigationStackExample.storyboard */; };
 		AE7E72141AF2AE08000E48EE /* UIApplicationSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE7E72061AF2ADFF000E48EE /* UIApplicationSpec+Spec.mm */; };
 		AE7E72181AF2AEE4000E48EE /* UIApplication+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AE7E72151AF2AE9A000E48EE /* UIApplication+Spec.h */; };
 		AE7E72191AF2AF0D000E48EE /* UIApplication+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7E72161AF2AE9A000E48EE /* UIApplication+Spec.m */; };
+		AE82D6F21B1A2760005E740C /* PCKPrototypeCellInstantiatingDataSource.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 3490AFE919A3C0A800DAA8E3 /* PCKPrototypeCellInstantiatingDataSource.h */; };
 		AE86BD4E179C7DAD0057DEAE /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE86BD4D179C7DAD0057DEAE /* Default-568h@2x.png */; };
 		AE898FF818071E2B00DDB948 /* UIViewSpec+StubbedAnimations.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE898FF718071E2B00DDB948 /* UIViewSpec+StubbedAnimations.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		AE89900318071F3A00DDB948 /* UIView+StubbedAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = AE89900218071F3A00DDB948 /* UIView+StubbedAnimation.m */; };
@@ -362,9 +365,12 @@
 				B866FC1C16B4957500317E32 /* UITableViewCell+Spec.h in Copy headers to framework */,
 				B866FC1D16B4957500317E32 /* UIView+Spec.h in Copy headers to framework */,
 				B866FC1F16B4957500317E32 /* UIKitMatchers.h in Copy headers to framework */,
+				AE6EE0001B1A265000A2BA07 /* UIWindow+Spec.h in Copy headers to framework */,
+				AE6EDFF31B1A263D00A2BA07 /* UISegmentedControl+Spec.h in Copy headers to framework */,
 				AE03FC9A1B0A8AC500013784 /* UISwitch+Spec.h in Copy headers to framework */,
 				22601B5B16BA263A00A807CB /* UIKit+PivotalSpecHelper.h in Copy headers to framework */,
 				AE03FC951B0A89C100013784 /* UITabBarController+Spec.h in Copy headers to framework */,
+				AE82D6F21B1A2760005E740C /* PCKPrototypeCellInstantiatingDataSource.h in Copy headers to framework */,
 				AEF0A40518296CDF0070D98B /* UICollectionViewCell+Spec.h in Copy headers to framework */,
 				22601B5C16BA274B00A807CB /* UISlider+Spec.h in Copy headers to framework */,
 			);
