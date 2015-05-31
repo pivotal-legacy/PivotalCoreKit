@@ -52,6 +52,9 @@
 		8490A16D1A7D0FDB001835AB /* UISegmentedControlSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8490A16B1A7D0FCC001835AB /* UISegmentedControlSpec+Spec.mm */; };
 		8490A1711A7D1339001835AB /* UISegmentedControl+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = 8490A16F1A7D1323001835AB /* UISegmentedControl+Spec.m */; };
 		84C62A78190141DD00DF2982 /* UIActivityViewControllerSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8487257F1901402000288770 /* UIActivityViewControllerSpec+Spec.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		89F516A01B1B7B3F0005AB04 /* UITableViewRowAction+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 89F5169E1B1B7B3F0005AB04 /* UITableViewRowAction+Spec.h */; };
+		89F516A11B1B7B3F0005AB04 /* UITableViewRowAction+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = 89F5169F1B1B7B3F0005AB04 /* UITableViewRowAction+Spec.m */; };
+		89F516A41B1B7D090005AB04 /* UITableViewRowActionSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 89F516A31B1B7D090005AB04 /* UITableViewRowActionSpec+Spec.mm */; };
 		AE03FC941B0A89BA00013784 /* UITabBarController+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE86BD41179C7C910057DEAE /* UITabBarController+Spec.m */; };
 		AE03FC951B0A89C100013784 /* UITabBarController+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AE86BD40179C7C910057DEAE /* UITabBarController+Spec.h */; };
 		AE03FC9A1B0A8AC500013784 /* UISwitch+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = FAF932CB192703280076C733 /* UISwitch+Spec.h */; };
@@ -139,7 +142,6 @@
 		AEEDC56819FAC2E2004AFFE9 /* UINavigationControllerSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEEDC56719FAC2E2004AFFE9 /* UINavigationControllerSpec+Spec.mm */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		AEEECC18181F3135006B52CD /* UIImagePickerController+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AEEECC16181F3135006B52CD /* UIImagePickerController+Spec.h */; };
 		AEEECC19181F3135006B52CD /* UIImagePickerController+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AEEECC17181F3135006B52CD /* UIImagePickerController+Spec.m */; };
-		AEEECC1A181F3135006B52CD /* UIImagePickerController+Spec.m in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AEEECC17181F3135006B52CD /* UIImagePickerController+Spec.m */; };
 		AEEECC33181F33F5006B52CD /* UIImagePickerControllerSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEEECC32181F33F5006B52CD /* UIImagePickerControllerSpec+Spec.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		AEF0A40418296C690070D98B /* UICollectionViewCell+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = FA07586918120D19001817BF /* UICollectionViewCell+Spec.m */; };
 		AEF0A40518296CDF0070D98B /* UICollectionViewCell+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = FA07586818120D19001817BF /* UICollectionViewCell+Spec.h */; };
@@ -331,11 +333,11 @@
 				AEC40CCA174C292600474D2D /* UIAlertView+Spec.h in Copy headers to framework */,
 				AEE0B69618A3572C0007A9D0 /* UIView+StubbedAnimation.h in Copy headers to framework */,
 				AECB46B91A3FBB6100398720 /* UIView+StubbedGestureRecognizers.h in Copy headers to framework */,
-				AEEECC1A181F3135006B52CD /* UIImagePickerController+Spec.m in Copy headers to framework */,
 				AEC40CCB174C292600474D2D /* UIWebView+Spec.h in Copy headers to framework */,
 				AE7E72181AF2AEE4000E48EE /* UIApplication+Spec.h in Copy headers to framework */,
 				AECB46BA1A3FBB6C00398720 /* UIGestureRecognizer+Spec.h in Copy headers to framework */,
 				AEF5D45D1A030D2E00C4DC3D /* PCKMethodRedirector.h in Copy headers to framework */,
+				89F516A01B1B7B3F0005AB04 /* UITableViewRowAction+Spec.h in Copy headers to framework */,
 				AE61C13F1A40B98900C97245 /* UIAlertController+Spec.h in Copy headers to framework */,
 				AE244D4319077EEB00ED96E9 /* UIActivityViewController+Spec.h in Copy headers to framework */,
 				AEC40CCC174C292600474D2D /* UIKit+PivotalSpecHelperStubs.h in Copy headers to framework */,
@@ -390,6 +392,9 @@
 		8490A16B1A7D0FCC001835AB /* UISegmentedControlSpec+Spec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UISegmentedControlSpec+Spec.mm"; sourceTree = "<group>"; };
 		8490A16E1A7D1323001835AB /* UISegmentedControl+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UISegmentedControl+Spec.h"; sourceTree = "<group>"; };
 		8490A16F1A7D1323001835AB /* UISegmentedControl+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UISegmentedControl+Spec.m"; sourceTree = "<group>"; };
+		89F5169E1B1B7B3F0005AB04 /* UITableViewRowAction+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewRowAction+Spec.h"; sourceTree = "<group>"; };
+		89F5169F1B1B7B3F0005AB04 /* UITableViewRowAction+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewRowAction+Spec.m"; sourceTree = "<group>"; };
+		89F516A31B1B7D090005AB04 /* UITableViewRowActionSpec+Spec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UITableViewRowActionSpec+Spec.mm"; sourceTree = "<group>"; };
 		AE062BBF1A4323A800AF8D33 /* UIAlertAction+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertAction+Spec.h"; sourceTree = "<group>"; };
 		AE062BC01A4323A800AF8D33 /* UIAlertAction+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertAction+Spec.m"; sourceTree = "<group>"; };
 		AE062BCE1A4323CF00AF8D33 /* UIAlertActionSpec+Spec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIAlertActionSpec+Spec.mm"; sourceTree = "<group>"; };
@@ -831,6 +836,8 @@
 				AEBB53BE19F711340032947D /* UINavigationController+Spec.m */,
 				AEB6662A18C6681A00B09C00 /* UIPopoverController+Spec.h */,
 				AEB6662B18C6681A00B09C00 /* UIPopoverController+Spec.m */,
+				89F5169E1B1B7B3F0005AB04 /* UITableViewRowAction+Spec.h */,
+				89F5169F1B1B7B3F0005AB04 /* UITableViewRowAction+Spec.m */,
 				AEE0B69518A3572C0007A9D0 /* UIView+StubbedAnimation.h */,
 				AE89900218071F3A00DDB948 /* UIView+StubbedAnimation.m */,
 				AECB46AA1A3FBA9E00398720 /* UIView+StubbedGestureRecognizers.h */,
@@ -856,6 +863,7 @@
 				AEEECC32181F33F5006B52CD /* UIImagePickerControllerSpec+Spec.mm */,
 				AEEDC56719FAC2E2004AFFE9 /* UINavigationControllerSpec+Spec.mm */,
 				AEB6663C18C6685F00B09C00 /* UIPopoverControllerSpec+Spec.mm */,
+				89F516A31B1B7D090005AB04 /* UITableViewRowActionSpec+Spec.mm */,
 				AE7B279517CFD67600904F64 /* UIViewControllerSpec+Spec.mm */,
 				AE898FF718071E2B00DDB948 /* UIViewSpec+StubbedAnimations.mm */,
 				AEC40CBF174C24CF00474D2D /* UIWebViewSpec+Spec.mm */,
@@ -1225,6 +1233,7 @@
 				AEEDC56819FAC2E2004AFFE9 /* UINavigationControllerSpec+Spec.mm in Sources */,
 				AEBCCC99168B9C530056EE83 /* UIBarButtonItem+ButtonSpec.mm in Sources */,
 				AEF775BC18316DE4000AF17B /* UIGestureRecognizerSpec+Spec.mm in Sources */,
+				89F516A41B1B7D090005AB04 /* UITableViewRowActionSpec+Spec.mm in Sources */,
 				8490A16D1A7D0FDB001835AB /* UISegmentedControlSpec+Spec.mm in Sources */,
 				FA91AA92186725CC00925A6B /* NSString+PivotalCoreKit_UIKit.m in Sources */,
 				AE1FBEA317D15A4100B0F03B /* UITableViewCellSpec+Spec.mm in Sources */,
@@ -1300,6 +1309,7 @@
 				AEEECC19181F3135006B52CD /* UIImagePickerController+Spec.m in Sources */,
 				AEC40CB7174C22BD00474D2D /* UIViewController+Spec.m in Sources */,
 				AE89900318071F3A00DDB948 /* UIView+StubbedAnimation.m in Sources */,
+				89F516A11B1B7B3F0005AB04 /* UITableViewRowAction+Spec.m in Sources */,
 				AEC40CB8174C22BD00474D2D /* UIWebView+Spec.m in Sources */,
 				8487257E19013F6400288770 /* UIActivityViewController+Spec.m in Sources */,
 				AE3B43901A30D95200265154 /* PCKMethodRedirector.m in Sources */,
