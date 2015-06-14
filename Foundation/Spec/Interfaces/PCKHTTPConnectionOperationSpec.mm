@@ -83,12 +83,15 @@ describe(@"PCKHTTPConnectionOperation", ^{
 
     describe(@"forwardInvocation:", ^{
         it(@"should forward any selector the delegate responds to to the delegate", ^{
+            NSURLConnection *connection = fake_for([NSURLConnection class]);
+            NSURLRequest *request = fake_for([NSURLRequest class]);
+
             expect([delegate respondsToSelector:@selector(connection:needNewBodyStream:)]).to(be_truthy());
 
             spy_on(delegate);
-            [operation connection:nil needNewBodyStream:nil];
+            [operation connection:connection needNewBodyStream:request];
 
-            delegate should have_received("connection:needNewBodyStream:");
+            delegate should have_received("connection:needNewBodyStream:").with(connection).and_with(request);
         });
     });
 

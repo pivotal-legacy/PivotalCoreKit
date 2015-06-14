@@ -22,7 +22,7 @@
     }
 }
 
-- (NSString *)stringByAddingPercentEscapesUsingEncoding:(NSStringEncoding)encoding includeAll:(BOOL)includeAll {
+- (NSString *)stringByAddingPercentEscapesUsingEncoding:(NSStringEncoding)encoding includeAll:(BOOL)includeAll DEPRECATED_ATTRIBUTE {
     if (!includeAll) {
         return [self stringByAddingPercentEscapesUsingEncoding:encoding];
     }

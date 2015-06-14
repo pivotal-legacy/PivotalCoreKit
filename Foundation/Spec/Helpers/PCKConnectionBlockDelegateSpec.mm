@@ -13,6 +13,7 @@ using namespace Cedar::Doubles;
 SPEC_BEGIN(PCKConnectionBlockDelegateSpec)
 
 describe(@"PCKConnectionBlockDelegate", ^{
+    __block NSURLConnection *connection;
     __block PCKConnectionBlockDelegate *delegate;
     __block NSURLResponse *receivedResponse;
     __block NSData *receivedData;
@@ -25,6 +26,8 @@ describe(@"PCKConnectionBlockDelegate", ^{
         receivedData = nil;
         receivedError = nil;
 
+        connection = fake_for([NSURLConnection class]);
+
         delegate = [PCKConnectionBlockDelegate delegateWithBlock:^(NSURLResponse *response, NSData *data, NSError *error) {
             receivedResponse = response;
             receivedData = data;
@@ -33,14 +36,14 @@ describe(@"PCKConnectionBlockDelegate", ^{
 
         sentResponse = [[[NSURLResponse alloc] init] autorelease];
 
-        [delegate connection:nil didReceiveResponse:sentResponse];
-        [delegate connection:nil didReceiveData:[@"Hello" dataUsingEncoding:NSUTF8StringEncoding]];
-        [delegate connection:nil didReceiveData:[@" World" dataUsingEncoding:NSUTF8StringEncoding]];
+        [delegate connection:connection didReceiveResponse:sentResponse];
+        [delegate connection:connection didReceiveData:[@"Hello" dataUsingEncoding:NSUTF8StringEncoding]];
+        [delegate connection:connection didReceiveData:[@" World" dataUsingEncoding:NSUTF8StringEncoding]];
     });
 
     context(@"when the request completes successfully", ^{
         it(@"should call the block, passing in the response, the data, and no error", ^{
-            [delegate connectionDidFinishLoading:nil];
+            [delegate connectionDidFinishLoading:connection];
             receivedResponse should equal(sentResponse);
             NSString *receivedString = [[[NSString alloc] initWithData:receivedData encoding:NSUTF8StringEncoding] autorelease];
             receivedString should equal(@"Hello World");
@@ -51,7 +54,7 @@ describe(@"PCKConnectionBlockDelegate", ^{
     context(@"when the request fails", ^{
         it(@"should call the block, passingin the response, nil for the data, and the passed in error", ^{
             NSError *error = [[[NSError alloc] init] autorelease];
-            [delegate connection:nil didFailWithError:error];
+            [delegate connection:connection didFailWithError:error];
             receivedResponse should equal(sentResponse);
             receivedData should be_nil;
             receivedError should equal(error);

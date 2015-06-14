@@ -44,7 +44,8 @@ describe(@"PCKHTTPConnectionDelegate", ^{
 
             spy_on(originalDelegate);
             NSURLConnection<CedarDouble> *connection = fake_for([NSURLConnection class]);
-            [delegate connection:connection needNewBodyStream:nil];
+            NSURLRequest<CedarDouble> *request = fake_for([NSURLRequest class]);
+            [delegate connection:connection needNewBodyStream:request];
 
             originalDelegate should have_received("connection:needNewBodyStream:");
         });

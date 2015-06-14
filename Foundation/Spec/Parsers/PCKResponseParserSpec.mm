@@ -20,12 +20,14 @@ describe(@"PCKResponseParser", ^{
     __block PCKResponseParser *responseParser;
     __block id<PCKParser, CedarDouble> parser;
     __block id<PCKParserDelegate, CedarDouble> successParserDelegate, errorParserDelegate;
+    __block NSURLConnection *connection;
     __block id<NSURLConnectionDelegate, CedarDouble> connectionDelegate;
 
     beforeEach(^{
         parser = nice_fake_for(@protocol(PCKParser));
         successParserDelegate = nice_fake_for(@protocol(PCKParserDelegate));
         errorParserDelegate = nice_fake_for(@protocol(PCKParserDelegate));
+        connection = nice_fake_for([NSURLConnection class]);
         connectionDelegate = nice_fake_for(@protocol(NSURLConnectionDataDelegate));
 
         responseParser = [[[PCKResponseParser alloc] initWithParser:parser
@@ -42,9 +44,9 @@ describe(@"PCKResponseParser", ^{
         beforeEach(^{
             response = [[[PSHKFakeHTTPURLResponse alloc] initWithStatusCode:200 andHeaders:[NSDictionary dictionary] andBody:nil] autorelease];
 
-            [responseParser connection:nil didReceiveResponse:response];
-            [responseParser connection:nil didReceiveData:data];
-            [responseParser connectionDidFinishLoading:nil];
+            [responseParser connection:connection didReceiveResponse:response];
+            [responseParser connection:connection didReceiveData:data];
+            [responseParser connectionDidFinishLoading:connection];
         });
 
         it(@"should set the parser delegate to the success parser delegate", ^{
@@ -56,9 +58,9 @@ describe(@"PCKResponseParser", ^{
         });
 
         it(@"should notify the connection delegate", ^{
-            connectionDelegate should have_received("connection:didReceiveResponse:").with(Arguments::anything).and_with(response);
+            connectionDelegate should have_received("connection:didReceiveResponse:").with(connection).and_with(response);
             connectionDelegate should_not have_received("connection:didReceiveData:");
-            connectionDelegate should have_received("connectionDidFinishLoading:");
+            connectionDelegate should have_received("connectionDidFinishLoading:").with(connection);
         });
     });
 
@@ -69,9 +71,9 @@ describe(@"PCKResponseParser", ^{
         beforeEach(^{
             response = [[[PSHKFakeHTTPURLResponse alloc] initWithStatusCode:400 andHeaders:[NSDictionary dictionary] andBody:nil] autorelease];
 
-            [responseParser connection:nil didReceiveResponse:response];
-            [responseParser connection:nil didReceiveData:data];
-            [responseParser connectionDidFinishLoading:nil];
+            [responseParser connection:connection didReceiveResponse:response];
+            [responseParser connection:connection didReceiveData:data];
+            [responseParser connectionDidFinishLoading:connection];
         });
 
         it(@"should set the parser delegate to the error parser delegate", ^{
@@ -83,9 +85,9 @@ describe(@"PCKResponseParser", ^{
         });
 
         it(@"should notify the connection delegate", ^{
-            connectionDelegate should have_received("connection:didReceiveResponse:").with(Arguments::anything).and_with(response);
+            connectionDelegate should have_received("connection:didReceiveResponse:").with(connection).and_with(response);
             connectionDelegate should_not have_received("connection:didReceiveData:");
-            connectionDelegate should have_received("connectionDidFinishLoading:");
+            connectionDelegate should have_received("connectionDidFinishLoading:").with(connection);
         });
     });
 
@@ -94,11 +96,11 @@ describe(@"PCKResponseParser", ^{
 
         beforeEach(^{
             error = [NSError errorWithDomain:@"An error" code:7 userInfo:nil];
-            [responseParser connection:nil didFailWithError:error];
+            [responseParser connection:connection didFailWithError:error];
         });
 
         it(@"should notify the connection delegate", ^{
-            connectionDelegate should have_received("connection:didFailWithError:").with(Arguments::anything).and_with(error);
+            connectionDelegate should have_received("connection:didFailWithError:").with(connection).and_with(error);
         });
 
         it(@"should not send data to the parser", ^{

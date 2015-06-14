@@ -2,6 +2,10 @@
 #import "NSString+PivotalCore.h"
 
 @implementation NSDictionary (QueryString)
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+
 + (NSDictionary *)dictionaryFromQueryString:(NSString *)queryString {
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     [[queryString componentsSeparatedByString:@"&"] enumerateObjectsUsingBlock:^(NSString *entry, NSUInteger idx, BOOL * stop) {
@@ -24,5 +28,9 @@
                           ];
         [parts addObject: part];
     }
-    return [parts componentsJoinedByString: @"&"];}
+    return [parts componentsJoinedByString: @"&"];
+}
+
+#pragma clang diagnostic pop
+
 @end

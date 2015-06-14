@@ -17,6 +17,6 @@
  post at http://simonwoodside.com/weblog/2009/4/22/how_to_really_url_encode/ for
  details.
  */
-- (NSString *)stringByAddingPercentEscapesUsingEncoding:(NSStringEncoding)encoding includeAll:(BOOL)includeAll;
+- (NSString *)stringByAddingPercentEscapesUsingEncoding:(NSStringEncoding)encoding includeAll:(BOOL)includeAll DEPRECATED_ATTRIBUTE;
 
 @end

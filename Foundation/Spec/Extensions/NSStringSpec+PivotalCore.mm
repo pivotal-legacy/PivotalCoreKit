@@ -11,6 +11,9 @@ using namespace Cedar::Matchers;
 
 SPEC_BEGIN(NSString_PivotalCore)
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+
 describe(@"Pivotal Core extensions to NSString", ^{
     describe(@"stringByCamelizing", ^{
         it(@"should camelize a underscored string", ^{
@@ -19,8 +22,6 @@ describe(@"Pivotal Core extensions to NSString", ^{
         });
     });
 
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wdeprecated-declarations"
     describe(@"-initWithBase64EncodedData:", ^{
         it(@"continues to base64 encode data", ^{
             const char bytes[] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't'};
@@ -31,8 +32,6 @@ describe(@"Pivotal Core extensions to NSString", ^{
             string should equal(@"YWJjZGVmZ2hpamtsbW5vcHFyc3Q=");
         });
     });
-#pragma clang diagnostic pop
-
 
     static const NSString *ALL_INVALID_URL_CHARACTERS[] = {
         @" ", @"\"", @"#", @"$", @"%", @"&", @"+", @",",
@@ -133,5 +132,7 @@ describe(@"Pivotal Core extensions to NSString", ^{
         });
     });
 });
+
+#pragma clang diagnostic pop
 
 SPEC_END
