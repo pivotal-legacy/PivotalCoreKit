@@ -104,10 +104,10 @@
 		AE7A67C518E5C073004A35BE /* NSURL+QueryComponents.h in Headers */ = {isa = PBXBuildFile; fileRef = AE0CFF53176FE22200E6A958 /* NSURL+QueryComponents.h */; };
 		AE7A67C618E5C077004A35BE /* NSURL+QueryComponents.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0CFF54176FE22200E6A958 /* NSURL+QueryComponents.m */; };
 		AE7A67C718E5C077004A35BE /* NSURL+QueryComponents.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0CFF54176FE22200E6A958 /* NSURL+QueryComponents.m */; };
+		AE8D47981B3CB94C007C489A /* NSUUID+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE969360182D9A1900E7306C /* NSUUID+Spec.m */; };
+		AE8D47A51B3CB94C007C489A /* NSUUID+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE969360182D9A1900E7306C /* NSUUID+Spec.m */; };
 		AE969353182D97A900E7306C /* NSUUIDSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE96934E182D97A900E7306C /* NSUUIDSpec+Spec.mm */; };
 		AE969354182D97A900E7306C /* NSUUIDSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE96934E182D97A900E7306C /* NSUUIDSpec+Spec.mm */; };
-		AE969361182D9A1900E7306C /* NSUUID+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE969360182D9A1900E7306C /* NSUUID+Spec.m */; };
-		AE969362182D9A1900E7306C /* NSUUID+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE969360182D9A1900E7306C /* NSUUID+Spec.m */; };
 		AE9F8EF917C9B3670094079B /* PSHKObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = DE99C52A2D323A2A8E4F3EBF /* PSHKObserver.m */; };
 		AE9F8EFA17C9B3680094079B /* PSHKObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = DE99C52A2D323A2A8E4F3EBF /* PSHKObserver.m */; };
 		AEA96B7A168B50D900861DF1 /* NSData+PivotalCore.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96B5E168B50D900861DF1 /* NSData+PivotalCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -1525,6 +1525,7 @@
 			files = (
 				AEA96BC2168B544D00861DF1 /* NSURLConnection+Spec.m in Sources */,
 				AEA96BC4168B544D00861DF1 /* NSURLRequest+Spec.m in Sources */,
+				AE8D47981B3CB94C007C489A /* NSUUID+Spec.m in Sources */,
 				AEB2B8DF18F703C800E26FAD /* PSHKFakeOperationQueue.m in Sources */,
 				AEA96BC8168B544D00861DF1 /* PSHKFakeHTTPURLResponse.m in Sources */,
 				AEA96BCA168B544D00861DF1 /* PSHKFakeResponses.m in Sources */,
@@ -1552,7 +1553,6 @@
 				AEA96BFA168B56BF00861DF1 /* PCKXMLParserSpec.mm in Sources */,
 				AEA96C08168B58AA00861DF1 /* FakeConnectionDelegate.m in Sources */,
 				AEA96C39168B602700861DF1 /* FixturesHelper.m in Sources */,
-				AE969361182D9A1900E7306C /* NSUUID+Spec.m in Sources */,
 				AEA96C9A168B659500861DF1 /* main.m in Sources */,
 				34681C1D18FD9873009D38AC /* NSDictionarySpec+TypesafeExtraction.mm in Sources */,
 				AE6898E716BC3B7A00F3F6BC /* NSArraySpec+PivotalCore.mm in Sources */,
@@ -1600,6 +1600,7 @@
 			files = (
 				AEA96CA1168B67E800861DF1 /* NSURLConnection+Spec.m in Sources */,
 				AEA96CA2168B67E800861DF1 /* NSURLRequest+Spec.m in Sources */,
+				AE8D47A51B3CB94C007C489A /* NSUUID+Spec.m in Sources */,
 				AEB2B8E018F703C800E26FAD /* PSHKFakeOperationQueue.m in Sources */,
 				AEA96CA4168B67E800861DF1 /* PSHKFakeHTTPURLResponse.m in Sources */,
 				AEA96CA5168B67E800861DF1 /* PSHKFakeResponses.m in Sources */,
@@ -1627,7 +1628,6 @@
 				AEA96CBB168B688700861DF1 /* PCKResponseParserSpec.mm in Sources */,
 				AEA96CBC168B688700861DF1 /* PCKXMLParserSpec.mm in Sources */,
 				AEA96CBD168B688700861DF1 /* FixturesHelper.m in Sources */,
-				AE969362182D9A1900E7306C /* NSUUID+Spec.m in Sources */,
 				AEA96CBE168B688700861DF1 /* FakeConnectionDelegate.m in Sources */,
 				34681C1E18FD9873009D38AC /* NSDictionarySpec+TypesafeExtraction.mm in Sources */,
 				AE6898E816BC3D0500F3F6BC /* NSArraySpec+PivotalCore.mm in Sources */,
