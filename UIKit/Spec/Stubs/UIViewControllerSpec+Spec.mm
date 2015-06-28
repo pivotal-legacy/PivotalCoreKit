@@ -16,14 +16,6 @@ describe(@"UIViewController (spec extensions)", ^{
         modalController = [[UINavigationController alloc] initWithRootViewController:childController];
     });
 
-    describe(@"attempting to present nil", ^{
-        it(@"should raise an exception", ^{
-            ^{
-                [controller presentViewController:nil animated:YES completion:nil];
-            } should raise_exception;
-        });
-    });
-
     describe(@"presenting modal view controllers", ^{
         __block BOOL completeBlockWasCalled;
         beforeEach(^{

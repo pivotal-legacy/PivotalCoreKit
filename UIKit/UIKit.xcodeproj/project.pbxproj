@@ -48,7 +48,6 @@
 		34BDAC7D19A42E470085B45A /* UICollectionReusableView+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = 34BDAC7619A42C5F0085B45A /* UICollectionReusableView+Spec.m */; };
 		34BDAC7E19A4329C0085B45A /* PCKPrototypeCellInstantiatingDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3490AFEA19A3C0A800DAA8E3 /* PCKPrototypeCellInstantiatingDataSource.m */; };
 		34BDAC7F19A433510085B45A /* UICollectionReusableView+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 34BDAC7519A42C5F0085B45A /* UICollectionReusableView+Spec.h */; };
-		8487257E19013F6400288770 /* UIActivityViewController+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = 8487257219013F5F00288770 /* UIActivityViewController+Spec.m */; };
 		8490A16D1A7D0FDB001835AB /* UISegmentedControlSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8490A16B1A7D0FCC001835AB /* UISegmentedControlSpec+Spec.mm */; };
 		8490A1711A7D1339001835AB /* UISegmentedControl+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = 8490A16F1A7D1323001835AB /* UISegmentedControl+Spec.m */; };
 		84C62A78190141DD00DF2982 /* UIActivityViewControllerSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8487257F1901402000288770 /* UIActivityViewControllerSpec+Spec.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -395,7 +394,6 @@
 		34BDAC7A19A42D1E0085B45A /* PrototypeCellObjects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrototypeCellObjects.h; sourceTree = "<group>"; };
 		34BDAC7B19A42D1E0085B45A /* PrototypeCellObjects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrototypeCellObjects.m; sourceTree = "<group>"; };
 		8487257119013F5F00288770 /* UIActivityViewController+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIActivityViewController+Spec.h"; sourceTree = "<group>"; };
-		8487257219013F5F00288770 /* UIActivityViewController+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIActivityViewController+Spec.m"; sourceTree = "<group>"; };
 		8487257F1901402000288770 /* UIActivityViewControllerSpec+Spec.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIActivityViewControllerSpec+Spec.mm"; sourceTree = "<group>"; };
 		8490A16B1A7D0FCC001835AB /* UISegmentedControlSpec+Spec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UISegmentedControlSpec+Spec.mm"; sourceTree = "<group>"; };
 		8490A16E1A7D1323001835AB /* UISegmentedControl+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UISegmentedControl+Spec.h"; sourceTree = "<group>"; };
@@ -830,7 +828,6 @@
 				AEC40CAE174C22BD00474D2D /* UIActionSheet+Spec.h */,
 				AEC40CAF174C22BD00474D2D /* UIActionSheet+Spec.m */,
 				8487257119013F5F00288770 /* UIActivityViewController+Spec.h */,
-				8487257219013F5F00288770 /* UIActivityViewController+Spec.m */,
 				AE062BBF1A4323A800AF8D33 /* UIAlertAction+Spec.h */,
 				AE062BC01A4323A800AF8D33 /* UIAlertAction+Spec.m */,
 				AE61C1301A40B95E00C97245 /* UIAlertController+Spec.h */,
@@ -1319,7 +1316,6 @@
 				AE89900318071F3A00DDB948 /* UIView+StubbedAnimation.m in Sources */,
 				89F516A11B1B7B3F0005AB04 /* UITableViewRowAction+Spec.m in Sources */,
 				AEC40CB8174C22BD00474D2D /* UIWebView+Spec.m in Sources */,
-				8487257E19013F6400288770 /* UIActivityViewController+Spec.m in Sources */,
 				AE3B43901A30D95200265154 /* PCKMethodRedirector.m in Sources */,
 				AE61C1401A40B98E00C97245 /* UIAlertController+Spec.m in Sources */,
 				DE99CA8267EEACF8EE9A941F /* UIGestureRecognizer+Spec.m in Sources */,

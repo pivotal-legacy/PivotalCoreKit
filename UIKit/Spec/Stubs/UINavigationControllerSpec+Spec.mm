@@ -18,14 +18,16 @@ using namespace Cedar::Doubles;
 
 
 /*!
- * The test which uses this fails on iOS 8.1 / 64-bit.  This check could be smarter.
+ * The test which uses this fails on iOS 8.x / 64-bit.
  *
- * Radar filed.
+ * Radar filed & confirmed fixed in iOS 9+.
  */
 bool hasAssertBug() {
     bool has = false;
+#ifndef __IPHONE_9_0
 #if __LP64__
     has = true;
+#endif
 #endif
     return has;
 };
