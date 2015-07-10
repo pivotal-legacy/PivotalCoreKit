@@ -57,6 +57,7 @@
 		AE03FC941B0A89BA00013784 /* UITabBarController+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE86BD41179C7C910057DEAE /* UITabBarController+Spec.m */; };
 		AE03FC951B0A89C100013784 /* UITabBarController+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AE86BD40179C7C910057DEAE /* UITabBarController+Spec.h */; };
 		AE03FC9A1B0A8AC500013784 /* UISwitch+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = FAF932CB192703280076C733 /* UISwitch+Spec.h */; };
+		AE04B1E71B50821B00248694 /* UIViewController+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = DE99C6A16495A2EF63F66D48 /* UIViewController+Spec.h */; };
 		AE062BD01A43240500AF8D33 /* UIAlertActionSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE062BCE1A4323CF00AF8D33 /* UIAlertActionSpec+Spec.mm */; };
 		AE118AA418D6B57000C90D6B /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE118AA318D6B57000C90D6B /* SenTestingKit.framework */; };
 		AE118AA718D6B57000C90D6B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEBCCBE7168B97DD0056EE83 /* Foundation.framework */; };
@@ -332,6 +333,7 @@
 			dstPath = "${BUILD_DIR}/${CONFIGURATION}-iphoneuniversal/${PRODUCT_NAME}.framework/Headers";
 			dstSubfolderSpec = 0;
 			files = (
+				AE04B1E71B50821B00248694 /* UIViewController+Spec.h in Copy headers to framework */,
 				AEC40CC9174C292600474D2D /* UIActionSheet+Spec.h in Copy headers to framework */,
 				AEC40CCA174C292600474D2D /* UIAlertView+Spec.h in Copy headers to framework */,
 				AEE0B69618A3572C0007A9D0 /* UIView+StubbedAnimation.h in Copy headers to framework */,
@@ -510,6 +512,7 @@
 		B8C62E6E16BC04230009CDAD /* UIBarButtonItemSpec+Spec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIBarButtonItemSpec+Spec.mm"; sourceTree = "<group>"; };
 		B8C62E7016BC04940009CDAD /* Target.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Target.h; sourceTree = "<group>"; };
 		B8C62E7116BC04940009CDAD /* Target.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Target.m; sourceTree = "<group>"; };
+		DE99C6A16495A2EF63F66D48 /* UIViewController+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Spec.h"; sourceTree = "<group>"; };
 		DE99C78703C6C6CA8C0465B3 /* UIGestureRecognizer+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIGestureRecognizer+Spec.h"; sourceTree = "<group>"; };
 		DE99CB8E2255BDC5D711130D /* UIGestureRecognizer+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIGestureRecognizer+Spec.m"; sourceTree = "<group>"; };
 		FA07586618120BB1001817BF /* UICollectionViewCellSpec+Spec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UICollectionViewCellSpec+Spec.mm"; sourceTree = "<group>"; };
@@ -847,6 +850,7 @@
 				AE89900218071F3A00DDB948 /* UIView+StubbedAnimation.m */,
 				AECB46AA1A3FBA9E00398720 /* UIView+StubbedGestureRecognizers.h */,
 				AECB46AB1A3FBA9E00398720 /* UIView+StubbedGestureRecognizers.m */,
+				DE99C6A16495A2EF63F66D48 /* UIViewController+Spec.h */,
 				AEC40CB2174C22BD00474D2D /* UIViewController+Spec.m */,
 				AEC40CB3174C22BD00474D2D /* UIWebView+Spec.h */,
 				AEC40CB4174C22BD00474D2D /* UIWebView+Spec.m */,
