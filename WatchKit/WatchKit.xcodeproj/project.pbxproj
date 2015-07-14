@@ -14,6 +14,7 @@
 		2681A5D31AE0991C00B0B753 /* WKInterfaceDeviceSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2681A5D21AE0991C00B0B753 /* WKInterfaceDeviceSpec.mm */; };
 		AE03A0391A391C5900AD4964 /* corgi.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = AE03A0381A391C5900AD4964 /* corgi.jpeg */; };
 		AE0FDC801A6ECB71006C781D /* CustomCategoryNotificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0FDC7F1A6ECB71006C781D /* CustomCategoryNotificationController.m */; };
+		AE120D211B55865B00BAD2BC /* Rootless.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE120D201B55865B00BAD2BC /* Rootless.storyboard */; };
 		AE25D5FE1A38F6C9008A1920 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE25D5FD1A38F6C9008A1920 /* XCTest.framework */; };
 		AE25D6001A38F6C9008A1920 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE25D5FF1A38F6C9008A1920 /* CoreGraphics.framework */; };
 		AE25D6021A38F6C9008A1920 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE25D6011A38F6C9008A1920 /* UIKit.framework */; };
@@ -207,6 +208,7 @@
 		AE03A0381A391C5900AD4964 /* corgi.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = corgi.jpeg; sourceTree = "<group>"; };
 		AE0FDC7E1A6ECB71006C781D /* CustomCategoryNotificationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCategoryNotificationController.h; sourceTree = "<group>"; };
 		AE0FDC7F1A6ECB71006C781D /* CustomCategoryNotificationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCategoryNotificationController.m; sourceTree = "<group>"; };
+		AE120D201B55865B00BAD2BC /* Rootless.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Rootless.storyboard; sourceTree = "<group>"; };
 		AE25D5FB1A38F6C9008A1920 /* Specs.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Specs.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE25D5FD1A38F6C9008A1920 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		AE25D5FF1A38F6C9008A1920 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = /System/Library/Frameworks/CoreGraphics.framework; sourceTree = "<absolute>"; };
@@ -453,6 +455,7 @@
 				B83AC2271A5DF12400A35BD6 /* NotificationController.h */,
 				B83AC2281A5DF12400A35BD6 /* NotificationController.m */,
 				AE85C06F1A40B974009A0E4D /* plus@2x.png */,
+				AE120D201B55865B00BAD2BC /* Rootless.storyboard */,
 				AE85C0621A40A4F4009A0E4D /* SliderController.h */,
 				AE85C0631A40A4F4009A0E4D /* SliderController.m */,
 			);
@@ -748,6 +751,7 @@
 				B83C32371A4CDDE40021F1A4 /* Interface.storyboard in Resources */,
 				AE25D6091A38F6C9008A1920 /* Specs-Info.plist in Resources */,
 				AE03A0391A391C5900AD4964 /* corgi.jpeg in Resources */,
+				AE120D211B55865B00BAD2BC /* Rootless.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

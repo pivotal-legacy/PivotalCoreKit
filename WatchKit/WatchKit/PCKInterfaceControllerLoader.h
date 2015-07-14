@@ -7,6 +7,8 @@
                                  identifier:(NSString *)objectID
                                      bundle:(NSBundle *)bundle;
 
+- (id)rootInterfaceControllerForStoryboardNamed:(NSString *)storyboardName inBundle:(NSBundle *)bundle;
+
 - (id)dynamicNotificationInterfaceControllerWithStoryboardName:(NSString *)storyboardName
                                           notificationCategory:(NSString *)notificationCategoryOrNil
                                                         bundle:(NSBundle *)bundle;
