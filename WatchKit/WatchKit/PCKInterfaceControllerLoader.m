@@ -1,11 +1,28 @@
 #import "PCKInterfaceControllerLoader.h"
-#import "PCKDynamicWatchKitObjectProvider.h"
+#import "PCKWKInterfaceControllerProvider.h"
 #import "WKInterfaceLabel+Spec.h"
 #import "WKInterfaceLabel.h"
 #import "WKInterfaceObject.h"
 
 
+@interface PCKInterfaceControllerLoader ()
+
+@property (nonatomic) PCKWKInterfaceControllerProvider *controllerProvider;
+
+@end
+
+
 @implementation PCKInterfaceControllerLoader
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.controllerProvider = [[PCKWKInterfaceControllerProvider alloc] init];
+    }
+
+    return self;
+}
 
 - (id)interfaceControllerWithStoryboardName:(NSString *)storyboardName
                                  identifier:(NSString *)objectID
@@ -26,9 +43,8 @@
                     format:@"No interface controller named '%@' exists in the storyboard '%@'.  Please check the storyboard and try again.", objectID, storyboardName];
         return nil;
     }
-    
-    PCKDynamicWatchKitObjectProvider *provider = [[PCKDynamicWatchKitObjectProvider alloc] init];
-    return [provider interfaceControllerWithProperties:controllerProperties];
+
+    return [self.controllerProvider interfaceControllerWithProperties:controllerProperties];
 }
 
 - (id)dynamicNotificationInterfaceControllerWithStoryboardName:(NSString *)storyboardName
@@ -48,9 +64,8 @@
 
     NSString *categoryKey = notificationCategoryOrNil ? notificationCategoryOrNil : @"default";
     NSDictionary *controllerProperties = serializedNotificationControllerStoryboard[@"categories"][categoryKey][@"dynamic"];
-    PCKDynamicWatchKitObjectProvider *provider = [[PCKDynamicWatchKitObjectProvider alloc] init];
 
-    return [provider interfaceControllerWithProperties:controllerProperties];
+    return [self.controllerProvider interfaceControllerWithProperties:controllerProperties];
 }
 
 - (id)glanceInterfaceControllerWithStoryboardName:(NSString *)storyboardName
@@ -75,8 +90,7 @@
         return nil;
     }
 
-    PCKDynamicWatchKitObjectProvider *provider = [[PCKDynamicWatchKitObjectProvider alloc] init];
-    return [provider interfaceControllerWithProperties:controllerProperties];
+    return [self.controllerProvider interfaceControllerWithProperties:controllerProperties];
 }
 
 @end

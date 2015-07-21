@@ -31,8 +31,8 @@
 		AEB03EDE1A3FB366002404BC /* MapController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB03EDD1A3FB366002404BC /* MapController.m */; };
 		AED5709C1A3A4786004ABADA /* CorgisController.m in Sources */ = {isa = PBXBuildFile; fileRef = AED5709B1A3A4786004ABADA /* CorgisController.m */; };
 		B83AC2291A5DF12400A35BD6 /* NotificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B83AC2281A5DF12400A35BD6 /* NotificationController.m */; };
-		B83AC22D1A5E191C00A35BD6 /* PCKDynamicWatchKitObjectProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = B83AC22B1A5E191C00A35BD6 /* PCKDynamicWatchKitObjectProvider.h */; };
-		B83AC22E1A5E191C00A35BD6 /* PCKDynamicWatchKitObjectProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = B83AC22C1A5E191C00A35BD6 /* PCKDynamicWatchKitObjectProvider.m */; };
+		B83AC22D1A5E191C00A35BD6 /* PCKWKInterfaceControllerProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = B83AC22B1A5E191C00A35BD6 /* PCKWKInterfaceControllerProvider.h */; };
+		B83AC22E1A5E191C00A35BD6 /* PCKWKInterfaceControllerProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = B83AC22C1A5E191C00A35BD6 /* PCKWKInterfaceControllerProvider.m */; };
 		B83C32041A4CD9BF0021F1A4 /* PCKMessageCapturer.h in Headers */ = {isa = PBXBuildFile; fileRef = B83C31DC1A4CD9BF0021F1A4 /* PCKMessageCapturer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B83C32051A4CD9BF0021F1A4 /* PCKMessageCapturer.m in Sources */ = {isa = PBXBuildFile; fileRef = B83C31DD1A4CD9BF0021F1A4 /* PCKMessageCapturer.m */; };
 		B83C32061A4CD9BF0021F1A4 /* WatchKit.h in Headers */ = {isa = PBXBuildFile; fileRef = B83C31DE1A4CD9BF0021F1A4 /* WatchKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -96,6 +96,8 @@
 		B83C32571A4CE18C0021F1A4 /* WKInterfaceTableSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = B83C32491A4CE18C0021F1A4 /* WKInterfaceTableSpec.mm */; };
 		B83C32581A4CE18C0021F1A4 /* WKInterfaceTimerSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = B83C324A1A4CE18C0021F1A4 /* WKInterfaceTimerSpec.mm */; };
 		B83C32591A4CE18C0021F1A4 /* WKUserNotificationInterfaceControllerSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = B83C324B1A4CE18C0021F1A4 /* WKUserNotificationInterfaceControllerSpec.mm */; };
+		DE99C6D4F9825F352B9C1FF6 /* PCKWKInterfaceObjectProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = DE99C8C67949C094218A82C2 /* PCKWKInterfaceObjectProvider.m */; };
+		DE99CEA2B9FF35CB4525BCCB /* PCKWKInterfaceObjectProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = DE99C21473753B19AF90BB5F /* PCKWKInterfaceObjectProvider.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -237,8 +239,8 @@
 		AED5709B1A3A4786004ABADA /* CorgisController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CorgisController.m; sourceTree = "<group>"; };
 		B83AC2271A5DF12400A35BD6 /* NotificationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationController.h; sourceTree = "<group>"; };
 		B83AC2281A5DF12400A35BD6 /* NotificationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationController.m; sourceTree = "<group>"; };
-		B83AC22B1A5E191C00A35BD6 /* PCKDynamicWatchKitObjectProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCKDynamicWatchKitObjectProvider.h; sourceTree = "<group>"; };
-		B83AC22C1A5E191C00A35BD6 /* PCKDynamicWatchKitObjectProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCKDynamicWatchKitObjectProvider.m; sourceTree = "<group>"; };
+		B83AC22B1A5E191C00A35BD6 /* PCKWKInterfaceControllerProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCKWKInterfaceControllerProvider.h; sourceTree = "<group>"; };
+		B83AC22C1A5E191C00A35BD6 /* PCKWKInterfaceControllerProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCKWKInterfaceControllerProvider.m; sourceTree = "<group>"; };
 		B83C31C11A4CD8A40021F1A4 /* WatchKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WatchKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B83C31C41A4CD8A40021F1A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B83C31DC1A4CD9BF0021F1A4 /* PCKMessageCapturer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCKMessageCapturer.h; sourceTree = "<group>"; };
@@ -302,6 +304,8 @@
 		B83C32491A4CE18C0021F1A4 /* WKInterfaceTableSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = WKInterfaceTableSpec.mm; path = Specs/WatchKit/WKInterfaceTableSpec.mm; sourceTree = SOURCE_ROOT; };
 		B83C324A1A4CE18C0021F1A4 /* WKInterfaceTimerSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = WKInterfaceTimerSpec.mm; path = Specs/WatchKit/WKInterfaceTimerSpec.mm; sourceTree = SOURCE_ROOT; };
 		B83C324B1A4CE18C0021F1A4 /* WKUserNotificationInterfaceControllerSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = WKUserNotificationInterfaceControllerSpec.mm; path = Specs/WatchKit/WKUserNotificationInterfaceControllerSpec.mm; sourceTree = SOURCE_ROOT; };
+		DE99C21473753B19AF90BB5F /* PCKWKInterfaceObjectProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCKWKInterfaceObjectProvider.h; sourceTree = "<group>"; };
+		DE99C8C67949C094218A82C2 /* PCKWKInterfaceObjectProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCKWKInterfaceObjectProvider.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -466,8 +470,8 @@
 			children = (
 				267B25B01AD86BDB00440CD2 /* NSInvocation+InvocationMatching.h */,
 				267B25B11AD86BDB00440CD2 /* NSInvocation+InvocationMatching.m */,
-				B83AC22B1A5E191C00A35BD6 /* PCKDynamicWatchKitObjectProvider.h */,
-				B83AC22C1A5E191C00A35BD6 /* PCKDynamicWatchKitObjectProvider.m */,
+				B83AC22B1A5E191C00A35BD6 /* PCKWKInterfaceControllerProvider.h */,
+				B83AC22C1A5E191C00A35BD6 /* PCKWKInterfaceControllerProvider.m */,
 				B83C322C1A4CDA380021F1A4 /* PCKFakeSegue.h */,
 				B83C322D1A4CDA380021F1A4 /* PCKFakeSegue.m */,
 				B83C322E1A4CDA380021F1A4 /* PCKInterfaceControllerLoader.h */,
@@ -517,6 +521,8 @@
 				B83C32011A4CD9BF0021F1A4 /* WKInterfaceTimer.m */,
 				B83C32021A4CD9BF0021F1A4 /* WKInterfaceTimer+Spec.h */,
 				B83C32031A4CD9BF0021F1A4 /* WKUserNotificationInterfaceController+Spec.h */,
+				DE99C8C67949C094218A82C2 /* PCKWKInterfaceObjectProvider.m */,
+				DE99C21473753B19AF90BB5F /* PCKWKInterfaceObjectProvider.h */,
 			);
 			path = WatchKit;
 			sourceTree = "<group>";
@@ -551,7 +557,7 @@
 				B83C320C1A4CD9BF0021F1A4 /* WKInterfaceDate.h in Headers */,
 				B83C32041A4CD9BF0021F1A4 /* PCKMessageCapturer.h in Headers */,
 				B83C322B1A4CD9BF0021F1A4 /* WKUserNotificationInterfaceController+Spec.h in Headers */,
-				B83AC22D1A5E191C00A35BD6 /* PCKDynamicWatchKitObjectProvider.h in Headers */,
+				B83AC22D1A5E191C00A35BD6 /* PCKWKInterfaceControllerProvider.h in Headers */,
 				B83C32151A4CD9BF0021F1A4 /* WKInterfaceLabel.h in Headers */,
 				B83C32281A4CD9BF0021F1A4 /* WKInterfaceTimer.h in Headers */,
 				B83C32241A4CD9BF0021F1A4 /* WKInterfaceSwitch+Spec.h in Headers */,
@@ -569,6 +575,7 @@
 				B83C320E1A4CD9BF0021F1A4 /* WKInterfaceDate+Spec.h in Headers */,
 				B83C32221A4CD9BF0021F1A4 /* WKInterfaceSwitch.h in Headers */,
 				B83C32091A4CD9BF0021F1A4 /* WKInterfaceButton+Spec.h in Headers */,
+				DE99CEA2B9FF35CB4525BCCB /* PCKWKInterfaceObjectProvider.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -818,7 +825,7 @@
 				B83C32201A4CD9BF0021F1A4 /* WKInterfaceSlider.m in Sources */,
 				B83C321B1A4CD9BF0021F1A4 /* WKInterfaceObject.m in Sources */,
 				B83C32331A4CDA380021F1A4 /* PCKInterfaceControllerLoader.m in Sources */,
-				B83AC22E1A5E191C00A35BD6 /* PCKDynamicWatchKitObjectProvider.m in Sources */,
+				B83AC22E1A5E191C00A35BD6 /* PCKWKInterfaceControllerProvider.m in Sources */,
 				B83C321D1A4CD9BF0021F1A4 /* WKInterfaceSeparator.m in Sources */,
 				B83C32311A4CDA380021F1A4 /* PCKFakeSegue.m in Sources */,
 				B83C32291A4CD9BF0021F1A4 /* WKInterfaceTimer.m in Sources */,
@@ -836,6 +843,7 @@
 				2681A5B11AE0906600B0B753 /* WKInterfaceDevice.m in Sources */,
 				B83C32081A4CD9BF0021F1A4 /* WKInterfaceButton.m in Sources */,
 				B83C320B1A4CD9BF0021F1A4 /* WKInterfaceController.m in Sources */,
+				DE99C6D4F9825F352B9C1FF6 /* PCKWKInterfaceObjectProvider.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
