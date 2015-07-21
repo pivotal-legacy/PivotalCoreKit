@@ -10,7 +10,7 @@ using namespace Cedar::Doubles;
 
 SPEC_BEGIN(PCKInterfaceControllerLoaderSpec)
 
-fdescribe(@"PCKInterfaceControllerLoader", ^{
+describe(@"PCKInterfaceControllerLoader", ^{
     __block PCKInterfaceControllerLoader *subject;
     __block NSBundle *testBundle;
 
