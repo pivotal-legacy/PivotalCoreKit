@@ -2,6 +2,7 @@
 #import "WKInterfaceController.h"
 #import "UIColor+PCK_StringToColor.h"
 #import "PCKFakeSegue.h"
+#import "WKInterfaceGroup.h"
 
 
 @interface WKInterfaceObject ()
@@ -25,6 +26,7 @@
 @property (nonatomic) BOOL enabled;
 @property (nonatomic, copy) NSString *action;
 @property (nonatomic) PCKFakeSegue *segue;
+@property (nonatomic) WKInterfaceGroup *content;
 
 @end
 

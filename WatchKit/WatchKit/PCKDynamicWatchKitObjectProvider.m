@@ -1,6 +1,8 @@
 #import "PCKDynamicWatchKitObjectProvider.h"
 #import "WKInterfaceObject.h"
 #import "WKInterfaceController.h"
+#import "WKInterfaceGroup.h"
+#import "WKInterfaceButton.h"
 
 
 @interface PCKDynamicWatchKitObjectProvider ()
@@ -70,7 +72,14 @@
                     [value addObject:object];
                 }
                 [interfaceObject setValue:value forKey:name];
-            } else {
+            }
+            else if ([name isEqualToString:@"content"]) {
+                NSDictionary *groupProperties = propertyValues[name];
+                WKInterfaceGroup *group = (WKInterfaceGroup *)[self interfaceObjectWithItemDictionary:groupProperties
+                                                                                  interfaceController:interfaceController];
+                [interfaceObject setValue:group forKey:name];
+            }
+            else {
                 NSString *value = propertyValues[name];
                 [interfaceObject setValue:value forKey:name];
             }

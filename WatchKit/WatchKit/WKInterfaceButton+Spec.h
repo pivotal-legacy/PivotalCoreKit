@@ -2,6 +2,7 @@
 
 
 @class PCKFakeSegue;
+@class WKInterfaceGroup;
 
 
 @interface WKInterfaceButton (Spec)
@@ -11,5 +12,6 @@
 - (BOOL)enabled;
 - (NSString *)action;
 - (PCKFakeSegue *)segue;
+- (WKInterfaceGroup *)content;
 
 @end

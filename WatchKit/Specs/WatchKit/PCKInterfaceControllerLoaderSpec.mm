@@ -10,7 +10,7 @@ using namespace Cedar::Doubles;
 
 SPEC_BEGIN(PCKInterfaceControllerLoaderSpec)
 
-describe(@"PCKInterfaceControllerLoader", ^{
+fdescribe(@"PCKInterfaceControllerLoader", ^{
     __block PCKInterfaceControllerLoader *subject;
     __block NSBundle *testBundle;
 
@@ -89,7 +89,7 @@ describe(@"PCKInterfaceControllerLoader", ^{
                     });
                 });
                 
-                describe(@"the button", ^{
+                describe(@"a button with text content", ^{
                     __block WKInterfaceButton *button;
                     beforeEach(^{
                         button = controller.actionButton;
@@ -107,9 +107,31 @@ describe(@"PCKInterfaceControllerLoader", ^{
                         button.enabled should be_truthy;
                     });
                     
+                    it(@"should not have a content property", ^{
+                        button.content should be_nil;
+                    });
+                    
                     it(@"should allow the enabled property to be toggled programatically", ^{
                         [controller didDeactivate];
                         button.enabled should_not be_truthy;
+                    });
+                });
+                
+                describe(@"a button with group content", ^{
+                    __block WKInterfaceButton *button;
+                    beforeEach(^{
+                        button = controller.groupButton;
+                    });
+                    
+                    describe(@"its group", ^{
+                        __block WKInterfaceGroup *group;
+                        beforeEach(^{
+                            group = button.content;
+                        });
+                        
+                        it(@"should have the correct number of items", ^{
+                            group.items.count should equal(2);
+                        });
                     });
                 });
                 
