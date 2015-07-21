@@ -31,7 +31,7 @@
     }
     id interfaceController = [interfaceControllerClass alloc];
     
-    NSDictionary *rootItems = controllerProperties[@"items"];
+    NSArray *rootItems = controllerProperties[@"items"];
     for (NSDictionary *itemDictionary in rootItems) {
         [self interfaceObjectWithItemDictionary:itemDictionary
                             interfaceController:interfaceController];
