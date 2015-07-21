@@ -29,6 +29,14 @@ describe(@"WKInterfaceButton", ^{
         it(@"should be configured with the specified task in the button's action", ^{
             subject.action should equal(@"didTapButton");
         });
+
+        it(@"should be able to run the associated action", ^{
+            controller.tapCount should equal(0);
+
+            [subject triggerNonSegueAction];
+
+            controller.tapCount should equal(1);
+        });
     });
 
 

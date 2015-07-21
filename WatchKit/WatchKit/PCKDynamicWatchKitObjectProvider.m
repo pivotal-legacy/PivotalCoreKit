@@ -3,6 +3,7 @@
 #import "WKInterfaceController.h"
 #import "WKInterfaceGroup.h"
 #import "WKInterfaceButton.h"
+#import "WKInterfaceButton+Spec.h"
 
 
 @interface PCKDynamicWatchKitObjectProvider ()
@@ -89,6 +90,11 @@
     NSString *propertyKey = properties[@"property"];
     if (propertyKey) {
         [interfaceController setValue:interfaceObject forKey:propertyKey];
+    }
+
+    if ([interfaceObject isKindOfClass:[WKInterfaceButton class]]) {
+        WKInterfaceButton *button = (WKInterfaceButton *)interfaceObject;
+        button.controller = interfaceController;
     }
 
     return interfaceObject;

@@ -22,4 +22,6 @@
 @property (weak, nonatomic, readonly) WKInterfaceTimer *timer;
 @property (weak, nonatomic, readonly) WKInterfaceImage *corgiImageInSingleGroup;
 
+@property (nonatomic, readonly) NSUInteger tapCount;
+
 @end

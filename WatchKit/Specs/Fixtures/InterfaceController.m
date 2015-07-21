@@ -21,6 +21,8 @@
 @property (weak, nonatomic) IBOutlet WKInterfaceImage *corgiImageInSingleGroup;
 @property (nonatomic) id context;
 
+@property (nonatomic) NSUInteger tapCount;
+
 @end
 
 
@@ -59,6 +61,7 @@
 
 - (IBAction)didTapButton
 {
+    self.tapCount += 1;
 }
 
 @end

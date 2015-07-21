@@ -3,9 +3,12 @@
 
 @class PCKFakeSegue;
 @class WKInterfaceGroup;
+@class WKInterfaceController;
 
 
 @interface WKInterfaceButton (Spec)
+
+@property (nonatomic, weak) WKInterfaceController *controller;
 
 - (NSString *)title;
 - (UIColor *)color;
@@ -13,5 +16,7 @@
 - (NSString *)action;
 - (PCKFakeSegue *)segue;
 - (WKInterfaceGroup *)content;
+
+- (void)triggerNonSegueAction;
 
 @end

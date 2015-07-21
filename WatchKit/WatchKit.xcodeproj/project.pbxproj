@@ -21,6 +21,7 @@
 		AE25D6091A38F6C9008A1920 /* Specs-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE25D6081A38F6C9008A1920 /* Specs-Info.plist */; };
 		AE25D6411A38F79E008A1920 /* libCedar-StaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE25D62E1A38F77D008A1920 /* libCedar-StaticLib.a */; };
 		AE25D6611A390480008A1920 /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE25D6601A390480008A1920 /* InterfaceController.m */; };
+		AE25F4841B5EBCB2009B599E /* WKInterfaceButton+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE25F4831B5EBCB2009B599E /* WKInterfaceButton+Spec.m */; };
 		AE85C0611A3FC03B009A0E4D /* GroupController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE85C0601A3FC03B009A0E4D /* GroupController.m */; };
 		AE85C0641A40A4F4009A0E4D /* SliderController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE85C0631A40A4F4009A0E4D /* SliderController.m */; };
 		AE85C0701A40B974009A0E4D /* plus@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE85C06F1A40B974009A0E4D /* plus@2x.png */; };
@@ -219,6 +220,7 @@
 		AE25D65D1A38FFA9008A1920 /* Interface.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Interface.storyboard; sourceTree = "<group>"; };
 		AE25D65F1A390480008A1920 /* InterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterfaceController.h; sourceTree = "<group>"; };
 		AE25D6601A390480008A1920 /* InterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterfaceController.m; sourceTree = "<group>"; };
+		AE25F4831B5EBCB2009B599E /* WKInterfaceButton+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WKInterfaceButton+Spec.m"; sourceTree = "<group>"; };
 		AE85C05F1A3FC03B009A0E4D /* GroupController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupController.h; sourceTree = "<group>"; };
 		AE85C0601A3FC03B009A0E4D /* GroupController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupController.m; sourceTree = "<group>"; };
 		AE85C0621A40A4F4009A0E4D /* SliderController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SliderController.h; sourceTree = "<group>"; };
@@ -523,6 +525,7 @@
 			isa = PBXGroup;
 			children = (
 				B83C31C41A4CD8A40021F1A4 /* Info.plist */,
+				AE25F4831B5EBCB2009B599E /* WKInterfaceButton+Spec.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -825,6 +828,7 @@
 				B83C323D1A4CE0FC0021F1A4 /* UIColor+PCK_StringToColor.m in Sources */,
 				B83C320D1A4CD9BF0021F1A4 /* WKInterfaceDate.m in Sources */,
 				B83C32101A4CD9BF0021F1A4 /* WKInterfaceGroup.m in Sources */,
+				AE25F4841B5EBCB2009B599E /* WKInterfaceButton+Spec.m in Sources */,
 				B83C32231A4CD9BF0021F1A4 /* WKInterfaceSwitch.m in Sources */,
 				267B25B31AD86BDB00440CD2 /* NSInvocation+InvocationMatching.m in Sources */,
 				B83C32191A4CD9BF0021F1A4 /* WKInterfaceMap.m in Sources */,
