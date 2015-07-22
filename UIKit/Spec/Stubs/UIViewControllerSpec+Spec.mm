@@ -1,8 +1,11 @@
 #import <UIKit/UIKit.h>
 #import <Cedar-iOS.h>
+#import "UIViewController+Spec.h"
+
 
 using namespace Cedar::Matchers;
 using namespace Cedar::Doubles;
+
 
 SPEC_BEGIN(UIViewControllerSpecExtensionsSpec)
 
@@ -17,30 +20,13 @@ describe(@"UIViewController (spec extensions)", ^{
     });
 
     describe(@"presenting modal view controllers", ^{
-        __block BOOL completeBlockWasCalled;
-        beforeEach(^{
-            completeBlockWasCalled = NO;
-            [controller presentViewController:modalController animated:YES completion:^{
-                completeBlockWasCalled = YES;
-            }];
-        });
 
-        it(@"should invoke the complete block", ^{
-            completeBlockWasCalled should be_truthy;
-        });
+        context(@"when pck_useSpecStubs:YES was called (it should have been called during +load)", ^{
+            __block BOOL completeBlockWasCalled;
 
-        it(@"should set the presentedViewController as the modal controller", ^{
-            controller.presentedViewController should be_same_instance_as(modalController);
-        });
-
-        it(@"should set the presentingViewController on the modal controller", ^{
-            modalController.presentingViewController should be_same_instance_as(controller);
-        });
-
-        describe(@"dismissing the modal using a child view controller", ^{
             beforeEach(^{
                 completeBlockWasCalled = NO;
-                [childController dismissViewControllerAnimated:YES completion:^{
+                [controller presentViewController:modalController animated:YES completion:^{
                     completeBlockWasCalled = YES;
                 }];
             });
@@ -49,64 +35,128 @@ describe(@"UIViewController (spec extensions)", ^{
                 completeBlockWasCalled should be_truthy;
             });
 
-            it(@"should remove the presented view controller", ^{
-                controller.presentedViewController should be_nil;
+            it(@"should set the presentedViewController as the modal controller", ^{
+                controller.presentedViewController should be_same_instance_as(modalController);
             });
 
-            it(@"should remove the presenting view controller", ^{
-                modalController.presentingViewController should be_nil;
+            it(@"should set the presentingViewController on the modal controller", ^{
+                modalController.presentingViewController should be_same_instance_as(controller);
+            });
+
+            describe(@"dismissing the modal using a child view controller", ^{
+                beforeEach(^{
+                    completeBlockWasCalled = NO;
+                    [childController dismissViewControllerAnimated:YES completion:^{
+                        completeBlockWasCalled = YES;
+                    }];
+                });
+
+                it(@"should invoke the complete block", ^{
+                    completeBlockWasCalled should be_truthy;
+                });
+
+                it(@"should remove the presented view controller", ^{
+                    controller.presentedViewController should be_nil;
+                });
+
+                it(@"should remove the presenting view controller", ^{
+                    modalController.presentingViewController should be_nil;
+                });
+            });
+
+            describe(@"dismissing the modal using the parent view controller", ^{
+                beforeEach(^{
+                    completeBlockWasCalled = NO;
+                    [controller dismissViewControllerAnimated:YES completion:^{
+                        completeBlockWasCalled = YES;
+                    }];
+                });
+
+                it(@"should invoke the complete block", ^{
+                    completeBlockWasCalled should be_truthy;
+                });
+
+                it(@"should remove the presented view controller", ^{
+                    controller.presentedViewController should be_nil;
+                });
+
+                it(@"should remove the presenting view controller", ^{
+                    modalController.presentingViewController should be_nil;
+                });
+            });
+
+            describe(@"dismissing the modal using the modal view controller", ^{
+                beforeEach(^{
+                    completeBlockWasCalled = NO;
+                    [modalController dismissViewControllerAnimated:YES completion:^{
+                        completeBlockWasCalled = YES;
+                    }];
+                });
+
+                it(@"should invoke the complete block", ^{
+                    completeBlockWasCalled should be_truthy;
+                });
+
+                it(@"should remove the presented view controller", ^{
+                    controller.presentedViewController should be_nil;
+                });
+
+                it(@"should remove the presenting view controller", ^{
+                    modalController.presentingViewController should be_nil;
+                });
+            });
+            
+            describe(@"presenting another modal controller", ^{
+                it(@"should raise an exception", ^{
+                    ^{
+                        UIViewController *viewController = [[UIViewController alloc] init];
+                        [controller presentViewController:viewController animated:YES completion:nil];
+                    } should raise_exception;
+                });
             });
         });
 
-        describe(@"dismissing the modal using the parent view controller", ^{
+        context(@"when pck_useSpecStubs:NO was called", ^{
+            __block UIWindow *window;
+
             beforeEach(^{
-                completeBlockWasCalled = NO;
-                [controller dismissViewControllerAnimated:YES completion:^{
-                    completeBlockWasCalled = YES;
-                }];
+                window = [[UIWindow alloc] init];
+                window.rootViewController = controller;
+                [window makeKeyAndVisible];
             });
 
-            it(@"should invoke the complete block", ^{
-                completeBlockWasCalled should be_truthy;
-            });
+            it(@"should use the default UIKit version of presentViewController:animated:completion: "
+               @"(which does not set the presentedViewController property synchronously)", ^{
+                   [UIViewController pck_useSpecStubs:NO];
 
-            it(@"should remove the presented view controller", ^{
-                controller.presentedViewController should be_nil;
-            });
+                   __block BOOL completionBlockCalled = NO;
+                   [controller presentViewController:modalController
+                                            animated:YES
+                                          completion:^{
+                                              completionBlockCalled = YES;
+                                          }];
+                   completionBlockCalled should_not be_truthy;
 
-            it(@"should remove the presenting view controller", ^{
-                modalController.presentingViewController should be_nil;
-            });
-        });
+                   [UIViewController pck_useSpecStubs:YES];
+               });
 
-        describe(@"dismissing the modal using the modal view controller", ^{
-            beforeEach(^{
-                completeBlockWasCalled = NO;
-                [modalController dismissViewControllerAnimated:YES completion:^{
-                    completeBlockWasCalled = YES;
-                }];
-            });
 
-            it(@"should invoke the complete block", ^{
-                completeBlockWasCalled should be_truthy;
-            });
+            it(@"should use the default UIKit version of presentViewController:animated:completion: "
+               @"(which does not unset the presentedViewController property synchronously)", ^{
+                   [controller presentViewController:modalController animated:YES completion:nil];
+                   controller.presentedViewController should be_same_instance_as(modalController);
 
-            it(@"should remove the presented view controller", ^{
-                controller.presentedViewController should be_nil;
-            });
+                   [UIViewController pck_useSpecStubs:NO];
 
-            it(@"should remove the presenting view controller", ^{
-                modalController.presentingViewController should be_nil;
-            });
-        });
+                   __block BOOL completionBlockCalled = NO;
+                   [controller dismissViewControllerAnimated:YES completion:^{
+                       completionBlockCalled = YES;
+                   }];
 
-        describe(@"presenting another modal controller", ^{
-            it(@"should raise an exception", ^{
-                ^{
-                    UIViewController *viewController = [[UIViewController alloc] init];
-                    [controller presentViewController:viewController animated:YES completion:nil];
-                } should raise_exception;
-            });
+                   completionBlockCalled should_not be_truthy;
+
+                   [UIViewController pck_useSpecStubs:YES];
+               });
         });
     });
 

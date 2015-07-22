@@ -122,6 +122,7 @@ static char PRESENTED_CONTROLLER_KEY;
 }
 
 #pragma mark - Animation
+
 - (void)pck_animateWithDuration:(NSTimeInterval)duration animations:(void (^)(void))animations completion:(void (^)(BOOL finished))completion {
     animations();
     completion(YES);
