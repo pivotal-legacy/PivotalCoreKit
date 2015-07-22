@@ -43,6 +43,4 @@
     return [interfaceController init];
 }
 
-#pragma mark - Private
-
 @end
