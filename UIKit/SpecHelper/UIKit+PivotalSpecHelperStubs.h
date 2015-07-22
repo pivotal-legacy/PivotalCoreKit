@@ -5,3 +5,4 @@
 #import "UIGestureRecognizer+Spec.h"
 #import "UIAlertAction+Spec.h"
 #import "UIAlertController+Spec.h"
+#import "UIViewController+Spec.h"
