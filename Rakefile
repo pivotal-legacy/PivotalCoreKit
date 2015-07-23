@@ -70,13 +70,23 @@ def build_and_test_scheme(scheme)
   end
 end
 
-def build_target(target, project: project, output_file: output_file)
-  command = %Q[xcodebuild -project #{project}.xcodeproj \
-                          -target #{target} \
-                          -configuration #{CONFIGURATION} \
-                          build \
-                          SYMROOT=#{BUILD_DIR}]
-  system_or_exit(command, {}, output_file)
+def build_target(target, project: project, output_file: output_file, sdk: sdk)
+   command = ["xcodebuild",
+   "-project",
+   "#{project}.xcodeproj",
+   "-target",
+   "#{target}",
+   "-configuration",
+   "#{CONFIGURATION}",
+   "build",
+   "SYMROOT=#{BUILD_DIR}",
+  ]
+
+  if sdk then
+    command = command << "-sdk" << sdk
+  end
+
+  system_or_exit(command.join(" "), {}, output_file)
 end
 
 desc "Trim edited files and run all specs"
@@ -292,11 +302,13 @@ task :core_location => ["core_location:build", "core_location:spec"]
 
 namespace :watchkit do
   project = "WatchKit/WatchKit"
+  target = "WatchKit"
 
   namespace :build do
     desc "Build Fake WatchKit dynamic framework for iOS"
     task :ios do
-      system_or_exit(%Q[xcodebuild -project #{project}.xcodeproj -scheme WatchKit -sdk iphonesimulator -configuration #{CONFIGURATION} build], {}, output_file("watchkit:build:ios"))
+      build_output_filename = output_file("watchkit:build:ios")
+      build_target(target, project: project, sdk: 'iphonesimulator', output_file: build_output_filename)
     end
   end
 
