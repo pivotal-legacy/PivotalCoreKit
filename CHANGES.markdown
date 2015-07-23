@@ -1,12 +1,15 @@
 ## HEAD
 
 ## 0.3.1 (in progress)
- 
+
   * Further improvements to UIGestureRecognizer spec helper stub
   * Improvements to PCK's fake operation queue.
   * Adds support for inspecting the urls opened with UIApplication
   * Adds support for inspecting the `-cameraDevice` set on a UIImagePickerController
   * UINavigationController stubs are now properly loaded.
+  * Adds a `triggerNonSegueAction` category on WKInterfaceButton to help test non-segue actions in WatchKit
+  * Adds support for testing the configuration of WKInterfaceButtons with content type group in WatchKit
+  * Adds ability to toggle UIViewController spec stubs
 
 ## 0.3.0
 
