@@ -1,6 +1,6 @@
 CONFIGURATION = "Release"
 BUILD_SDK_VERSION = ENV['BUILD_SDK_VERSION'] || ""
-SIMULATOR_VERSIONS = ENV['SIMULATOR_VERSIONS'] || "8.2"
+SIMULATOR_VERSIONS = ENV['SIMULATOR_VERSIONS'] || "8.4"
 SIMULATOR_DEVICES = ENV['SIMULATOR_DEVICES'] || "iPhone 5s"
 BUILD_DIR = File.join(File.dirname(__FILE__), "build")
 
@@ -291,28 +291,26 @@ end
 task :core_location => ["core_location:build", "core_location:spec"]
 
 namespace :watchkit do
-  project_name = "WatchKit/WatchKit"
+  project = "WatchKit/WatchKit"
 
   namespace :build do
     desc "Build Fake WatchKit dynamic framework for iOS"
     task :ios do
-      system_or_exit(%Q[xcodebuild -project #{project_name}.xcodeproj -scheme WatchKit -sdk iphonesimulator -configuration #{CONFIGURATION} build], {}, output_file("watchkit:build:ios"))
+      system_or_exit(%Q[xcodebuild -project #{project}.xcodeproj -scheme WatchKit -sdk iphonesimulator -configuration #{CONFIGURATION} build], {}, output_file("watchkit:build:ios"))
     end
   end
 
   namespace :spec do
-    require 'tmpdir'
-    desc "Build and run fake WatchKit specs on iOS"
+    desc "Build and run WatchKit specs on iOS"
     task :ios do
-      `osascript -e 'tell application "iPhone Simulator" to quit'`
-      system_or_exit(%Q[xcodebuild -project #{project_name}.xcodeproj -scheme WatchKit -sdk iphonesimulator -destination platform='iOS Simulator',name='iPhone 5s,OS=8.2' build test], {}, output_file("watchkit:spec:ios"))
-      `osascript -e 'tell application "iPhone Simulator" to quit'`
+      build_and_test_scheme("WatchKit")
     end
   end
+
   task :spec => ["spec:ios"]
   task :build => ["build:ios"]
   task :clean do
-    system_or_exit(%Q[xcodebuild -project #{project_name}.xcodeproj -alltargets -configuration #{CONFIGURATION} -destination platform='iOS Simulator',name='iPhone 5s,OS=8.2' clean SYMROOT=#{BUILD_DIR}], {}, output_file("watchkit:clean"))
+    system_or_exit(%Q[xcodebuild -project #{project}.xcodeproj -alltargets -configuration #{CONFIGURATION} clean SYMROOT=#{BUILD_DIR}], {}, output_file("watchkit:clean"))
   end
 end
 
@@ -324,5 +322,5 @@ namespace :all do
   desc "Run all specs"
   task :spec => ["foundation:spec", "uikit:spec", "core_location:spec", "watchkit:spec"]
   desc "Clean all targets"
-  task :clean => ["foundation:clean", "uikit:clean", "core_location:clean"]
+  task :clean => ["foundation:clean", "uikit:clean", "core_location:clean", "watchkit:clean"]
 end
