@@ -1,4 +1,5 @@
 #import "UIActionSheet+Spec.h"
+#import "UIActivityViewController+Spec.h"
 #import "UIAlertView+Spec.h"
 #import "UIWebView+Spec.h"
 #import "UIImagePickerController+Spec.h"

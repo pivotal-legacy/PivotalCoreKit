@@ -1,5 +1,5 @@
 #import "CDRSpecHelper.h"
-#import "UIActivityViewController+Spec.h"
+#import "UIKit+PivotalSpecHelperStubs.h"
 
 @interface CustomActivity : UIActivity
 @end
@@ -17,6 +17,7 @@ SPEC_BEGIN(UIActivityViewControllerSpecExtensionsSpec)
 
 describe(@"UIActivityViewController (spec extensions)", ^{
     __block UIActivityViewController *activityViewController;
+
 
     beforeEach(^{
         NSArray *activityItems = @[ @"activity item 1", [NSURL URLWithString:@"github.com/pivotal/PivotalCoreKit"] ];
