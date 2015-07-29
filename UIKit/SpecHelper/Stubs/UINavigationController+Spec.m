@@ -12,6 +12,8 @@
 - (NSArray *)popToViewController:(UIViewController *)viewController ignoringAnimated:(BOOL)animated;
 - (NSArray *)originalPopToRootViewControllerAnimated:(BOOL)animated;
 - (NSArray *)popToRootViewControllerIgnoringAnimated:(BOOL)animated;
+- (void)setViewControllers:(NSArray *)viewControllers ignoringAnimated:(BOOL)animated;
+- (void)originalSetViewControllers:(NSArray *)viewControllers animated:(BOOL)animated;
 
 @end
 
@@ -40,6 +42,11 @@
                                  forClass:[UINavigationController class]
                                        to:@selector(popToRootViewControllerIgnoringAnimated:)
                             andRenameItTo:@selector(originalPopToRootViewControllerAnimated:)];
+
+    [PCKMethodRedirector redirectSelector:@selector(setViewControllers:animated:)
+                                 forClass:[UINavigationController class]
+                                       to:@selector(setViewControllers:ignoringAnimated:)
+                            andRenameItTo:@selector(originalSetViewControllers:animated:)];
 }
 
 @end
@@ -63,6 +70,10 @@
 
 - (NSArray *)popToRootViewControllerIgnoringAnimated:(BOOL)animated {
     return [self originalPopToRootViewControllerAnimated:NO];
+}
+
+- (void)setViewControllers:(NSArray *)viewControllers ignoringAnimated:(BOOL)animated {
+    [self originalSetViewControllers:viewControllers animated:NO];
 }
 
 #pragma clang diagnostic push

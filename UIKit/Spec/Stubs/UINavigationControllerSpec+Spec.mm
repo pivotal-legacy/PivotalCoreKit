@@ -130,6 +130,16 @@ describe(@"UINavigationController (spec extensions)", ^{
             navigationController.topViewController should be_same_instance_as(pushedViewController);
             navigationController.visibleViewController should be_same_instance_as(presentedViewController);
         });
+
+        it(@"should allow setting the view controllers it presents with animation", ^{
+            UIViewController *firstViewController = [[UIViewController alloc] init];
+            UIViewController *secondViewController = [[UIViewController alloc] init];
+            UIViewController *thirdViewController = [[UIViewController alloc] init];
+            NSArray *viewControllers = @[firstViewController, secondViewController, thirdViewController];
+
+            [navigationController setViewControllers:viewControllers animated:YES];
+            navigationController.viewControllers should equal(viewControllers);
+        });
     });
 
     __block UIWindow *window;
