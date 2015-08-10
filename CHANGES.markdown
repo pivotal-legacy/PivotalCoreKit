@@ -10,6 +10,7 @@
   * Adds a `triggerNonSegueAction` category on WKInterfaceButton to help test non-segue actions in WatchKit
   * Adds support for testing the configuration of WKInterfaceButtons with content type group in WatchKit
   * Adds ability to toggle UIViewController spec stubs
+  * Fixed compilation errors with Xcode 7 / iOS 9
 
 ## 0.3.0
 
