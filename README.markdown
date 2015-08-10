@@ -171,7 +171,7 @@ install the correct portions of the PivotalCoreKit library, and create a new Xco
 * Add the PivotalCoreKit project(s) (Foundation.xcodeproj, UIKit.xcodeproj, or CoreLocation.xcodeproj) you need into your project for the appropriate target
 * In your application's Project Settings, under Build Phases, add the desired StaticLib to "Target Dependencies"
 * Add the corresponding binary to the Link Binary With Libraries section
-* Add libxml2.2.dylib to the Link Binary With Libraries section
+* If you are using PivotalCoreKit+Foundation, add libxml2.2.dylib to the Link Binary With Libraries section
 * Switch to Build Settings and update your Header Search Paths to include the path to folder containing the added subproject. Make it recursive.
  * e.g. "$(SRCROOT)/Externals/PivotalCoreKit/path/to/specific/projectfolder/".
 
