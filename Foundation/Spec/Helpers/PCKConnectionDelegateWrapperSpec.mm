@@ -37,7 +37,7 @@ describe(@"PCKConnectionDelegateWrapper", ^{
 
     context(@"when receiving a message that the delegate responds to", ^{
         it(@"should forward that message to the delegate, passing along the original connection", ^{
-            NSURLResponse *response = [[[NSURLResponse alloc] init] autorelease];
+            NSURLResponse *response = [[NSURLResponse alloc] init];
             [delegateWrapper connection:proxyConnection
                      didReceiveResponse:response];
             delegate should have_received(@selector(connection:didReceiveResponse:)).with(connection).and_with(response);
@@ -60,15 +60,15 @@ describe(@"PCKConnectionDelegateWrapper", ^{
             it(@"should tell the delegate and call the completion callback", ^{
                 [delegateWrapper connectionDidFinishLoading:proxyConnection];
                 delegate should have_received(@selector(connectionDidFinishLoading:)).with(connection);
-                NSString *receivedString = [[[NSString alloc] initWithData:receivedData
-                                                                  encoding:NSUTF8StringEncoding] autorelease];
+                NSString *receivedString = [[NSString alloc] initWithData:receivedData
+                                                                  encoding:NSUTF8StringEncoding];
                 receivedString should equal(@"Hello World");
             });
         });
 
         context(@"and the connection fails", ^{
             it(@"should tell the delegate and call the completion callback, passing nil in", ^{
-                NSError *error = [[[NSError alloc] init] autorelease];
+                NSError *error = [[NSError alloc] init];
                 [delegateWrapper connection:proxyConnection didFailWithError:error];
                 delegate should have_received(@selector(connection:didFailWithError:)).with(connection).and_with(error);
 
@@ -79,16 +79,16 @@ describe(@"PCKConnectionDelegateWrapper", ^{
 
     context(@"mini-integration test: when the proxy connection receives a response", ^{
         it(@"should forward the relevant messages to the underlying delegate and call the block appropriately", ^{
-            PSHKFakeHTTPURLResponse *response = [[[PSHKFakeHTTPURLResponse alloc] initWithStatusCode:200
+            PSHKFakeHTTPURLResponse *response = [[PSHKFakeHTTPURLResponse alloc] initWithStatusCode:200
                                                                                           andHeaders:nil
-                                                                                             andBody:@"RSVP"] autorelease];
+                                                                                             andBody:@"RSVP"];
             [proxyConnection receiveResponse:response];
             delegate should have_received(@selector(connection:didReceiveResponse:)).with(connection).and_with(response);
             delegate should have_received(@selector(connection:didReceiveData:)).with(connection).and_with(response.bodyData);
             delegate should have_received(@selector(connectionDidFinishLoading:)).with(connection);
 
-            NSString *receivedString = [[[NSString alloc] initWithData:receivedData
-                                                              encoding:NSUTF8StringEncoding] autorelease];
+            NSString *receivedString = [[NSString alloc] initWithData:receivedData
+                                                              encoding:NSUTF8StringEncoding];
             receivedString should equal(@"RSVP");
         });
     });

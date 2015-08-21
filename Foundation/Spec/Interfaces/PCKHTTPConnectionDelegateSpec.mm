@@ -18,8 +18,8 @@ describe(@"PCKHTTPConnectionDelegate", ^{
     __block PCKHTTPConnectionDelegate *delegate;
 
     beforeEach(^{
-        originalDelegate = [[[FakeConnectionDelegate alloc] init] autorelease];
-        delegate = [[[PCKHTTPConnectionDelegate alloc] initWithInterface:nil delegate:originalDelegate] autorelease];
+        originalDelegate = [[FakeConnectionDelegate alloc] init];
+        delegate = [[PCKHTTPConnectionDelegate alloc] initWithInterface:nil delegate:originalDelegate];
     });
 
     describe(@"respondsToSelector:", ^{

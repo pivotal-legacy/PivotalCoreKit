@@ -25,7 +25,7 @@ describe(@"decorateMethod:with:", ^{
     __block NSObject *object;
 
     beforeEach(^{
-        object = [[[NSObject alloc] init] autorelease];
+        object = [[NSObject alloc] init];
     });
 
     it(@"should decorate the method", ^{

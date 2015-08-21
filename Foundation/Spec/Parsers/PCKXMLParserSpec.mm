@@ -32,11 +32,6 @@ describe(@"PCKXMLParser and PCKXMLParserDelegate", ^{
         parser = [[PCKXMLParser alloc] initWithDelegate:delegate];
     });
 
-    afterEach(^{
-        [parser release];
-        [delegate release];
-    });
-
     describe(@"parse", ^{
         __block NSData *data;
 
@@ -118,15 +113,10 @@ describe(@"PCKXMLParser and PCKXMLParserDelegate", ^{
                         if (inWibbleElement) {
                             NSString *charsObject = [[NSString alloc] initWithCString:chars encoding:NSUTF8StringEncoding];
                             [wibbleContent appendString:charsObject];
-                            [charsObject release];
                         }
                     };
 
                     [parser parseChunk:data];
-                });
-
-                afterEach(^{
-                    [wibbleContent release];
                 });
 
                 it(@"should parse the wibble content", ^{

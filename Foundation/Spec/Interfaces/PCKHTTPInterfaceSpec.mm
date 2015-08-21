@@ -61,10 +61,6 @@ describe(@"PCKHTTPInterface", ^{
         delegate = nice_fake_for(@protocol(NSURLConnectionDataDelegate));
     });
 
-    afterEach(^{
-        [interface release];
-    });
-
     describe(@"makeConnectionWithDelegate:", ^{
         beforeEach(^{
             [interface makeConnectionWithDelegate:delegate];
@@ -132,7 +128,7 @@ describe(@"PCKHTTPInterface", ^{
             });
 
             it(@"should remove the connection from the active connections", ^{
-                [[[connection retain] autorelease] cancel];
+                [connection cancel];
                 expect(interface.activeConnections).to_not(contain(connection));
             });
 

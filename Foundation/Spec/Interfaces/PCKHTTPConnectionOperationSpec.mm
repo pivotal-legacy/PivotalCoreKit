@@ -11,6 +11,7 @@
 #import "PCKHTTPInterface.h"
 #import "FakeConnectionDelegate.h"
 #import "PSHKObserver.h"
+#import "PSHKWeakObjectWrapper.h"
 
 SPEC_BEGIN(PCKHTTPConnectionOperationSpec)
 
@@ -24,23 +25,15 @@ describe(@"PCKHTTPConnectionOperation", ^{
     beforeEach(^{
         PCKHTTPInterface<CedarDouble> *interface = nice_fake_for([PCKHTTPInterface class]);
         NSURLRequest<CedarDouble> *request = fake_for([NSURLRequest class]);
-        delegate = [[[FakeConnectionDelegate alloc] init] autorelease];
+        delegate = [[FakeConnectionDelegate alloc] init];
         operation = [[PCKHTTPConnectionOperation alloc] initWithHTTPInterface:interface forRequest:request andDelegate:delegate];
     });
 
     afterEach(^{
-        [operation release];
+        operation = nil;
     });
 
     describe(@"initialization", ^{
-        it(@"should not have an unexpectedly high retainCount", ^{
-            expect(operation.retainCount).to(equal(1));
-        });
-
-        it(@"should retain its delegate", ^{
-            expect([delegate retainCount]).to(equal(2));
-        });
-
         it(@"should not create a connection", ^{
             expect([NSURLConnection connections]).to(be_empty());
         });
@@ -56,8 +49,18 @@ describe(@"PCKHTTPConnectionOperation", ^{
 
     describe(@"deallocation", ^{
         it(@"should release its delegate", ^{
-            [operation release]; operation = nil;
-            expect([delegate retainCount]).to(equal(1));
+            PSHKWeakObjectWrapper *wrapper = [[PSHKWeakObjectWrapper alloc] init];
+            @autoreleasepool {
+                PCKHTTPInterface<CedarDouble> *interface = nice_fake_for([PCKHTTPInterface class]);
+                NSURLRequest<CedarDouble> *request = fake_for([NSURLRequest class]);
+                FakeConnectionDelegate *aDelegate = [[FakeConnectionDelegate alloc] init];;
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wunused-variable"
+                PCKHTTPConnectionOperation *anOperation = [[PCKHTTPConnectionOperation alloc] initWithHTTPInterface:interface forRequest:request andDelegate:delegate];
+#pragma clang diagnostic pop
+                wrapper.target = aDelegate;
+            }
+            wrapper.target should be_nil;
         });
     });
 

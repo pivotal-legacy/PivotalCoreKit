@@ -2,7 +2,7 @@
 
 @interface PSHKObserver : NSObject
 
-@property (nonatomic, retain, readonly) id mostRecentValue;
+@property (nonatomic, readonly) id mostRecentValue;
 
 + (id)observerForObject:(id)object keyPath:(NSString *)keyPath;
 - (id)initWithObject:(id)object keyPath:(NSString *)keyPath;

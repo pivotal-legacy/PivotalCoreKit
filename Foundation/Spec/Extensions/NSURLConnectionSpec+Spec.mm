@@ -46,7 +46,7 @@ describe(@"NSURLConnection (spec extensions)", ^{
         // id<NSURLDownloadDelegate> while the type of the NSURLConnection delegate argument is id.  The
         // compiler sees these as ambiguous methods with different arguments, so emits a warning.  Explicitly
         // cast the result of the alloc to NSURLConnection * to quiet the compiler.
-        connection = [[(NSURLConnection *)[NSURLConnection alloc] initWithRequest:request delegate:delegate] autorelease];
+        connection = [(NSURLConnection *)[NSURLConnection alloc] initWithRequest:request delegate:delegate];
     });
 
     describe(@"+resetAll", ^{
@@ -61,34 +61,6 @@ describe(@"NSURLConnection (spec extensions)", ^{
         it(@"should record the existence of the object in the global list of connections", ^{
             expect([NSURLConnection connections]).to(contain(connection));
         });
-
-        it(@"should retain the request", ^{
-            expect(request.retainCount).to(equal(2));
-        });
-
-        describe(@"when the delegate is self", ^{
-            beforeEach(^{
-                connection = [[[SelfReferentialConnection alloc] initWithRequest:request delegate:nil startImmediately:YES] autorelease];
-            });
-
-            it(@"should not retain the delegate", ^{
-                // One retain for alloc, one retain for the connections array.
-                expect(connection.retainCount).to(equal(2));
-            });
-        });
-
-        describe(@"when the delegate is not self", ^{
-            __block ConnectionDelegate *delegate;
-
-            beforeEach(^{
-                delegate = [[[ConnectionDelegate alloc] init] autorelease];
-                connection = [[(NSURLConnection *)[NSURLConnection alloc] initWithRequest:request delegate:delegate] autorelease];
-            });
-
-            it(@"should retain the delegate", ^{
-                expect([delegate retainCount]).to(equal(2));
-            });
-        });
     });
 
     describe(@"on destruction", ^{
@@ -97,28 +69,17 @@ describe(@"NSURLConnection (spec extensions)", ^{
             delegate = nice_fake_for(@protocol(NSURLConnectionDataDelegate));
 
             connection = [[NSURLConnection alloc] initWithRequest:request delegate:delegate];
-            [connection release]; connection = nil;
+             connection = nil;
             [NSURLConnection resetAll];
-        });
-
-        it(@"should release the request", ^{
-            expect(request.retainCount).to(equal(1));
         });
 
         describe(@"when the delegate is self", ^{
             beforeEach(^{
                 connection = [[SelfReferentialConnection alloc] initWithRequest:request delegate:nil startImmediately:YES];
-                [NSURLConnection resetAll];
             });
 
             it(@"should not explode", ^{
-                [connection release]; connection = nil;
-            });
-        });
-
-        describe(@"when the delegate is not self", ^{
-            it(@"should release the delegate", ^{
-                expect([delegate retainCount]).to(equal(1));
+                ^ {[NSURLConnection resetAll]; } should_not raise_exception;
             });
         });
     });
@@ -151,11 +112,11 @@ describe(@"NSURLConnection (spec extensions)", ^{
         });
 
         it(@"should receive responses", ^{
-            PSHKFakeHTTPURLResponse *response = [[[PSHKFakeHTTPURLResponse alloc] initWithStatusCode:200 andHeaders:@{@"Content-Type": @"application/json"} andBody:@"Response"] autorelease];
+            PSHKFakeHTTPURLResponse *response = [[PSHKFakeHTTPURLResponse alloc] initWithStatusCode:200 andHeaders:@{@"Content-Type": @"application/json"} andBody:@"Response"];
 
             [connection receiveResponse:response];
 
-            NSString *receivedString = [[[NSString alloc] initWithData:receivedData encoding:NSUTF8StringEncoding] autorelease];
+            NSString *receivedString = [[NSString alloc] initWithData:receivedData encoding:NSUTF8StringEncoding];
             receivedString should equal(@"Response");
             receivedResponse.statusCode should equal(200);
             [receivedResponse MIMEType] should equal(@"application/json");
@@ -163,7 +124,7 @@ describe(@"NSURLConnection (spec extensions)", ^{
 
         it(@"should receive failures", ^{
             NSData *data = [@"Fail" dataUsingEncoding:NSUTF8StringEncoding];
-            NSError *error = [[[NSError alloc] init] autorelease];
+            NSError *error = [[NSError alloc] init];
 
             [connection failWithError:error data:data];
 
@@ -184,9 +145,9 @@ describe(@"NSURLConnection (spec extensions)", ^{
         __block PSHKFakeHTTPURLResponse *response;
 
         beforeEach(^{
-            response = [[[PSHKFakeHTTPURLResponse alloc] initWithStatusCode:200
+            response = [[PSHKFakeHTTPURLResponse alloc] initWithStatusCode:200
                                                                  andHeaders:[NSDictionary dictionary]
-                                                                    andBody:@"foo"] autorelease];
+                                                                    andBody:@"foo"];
         });
 
         it(@"should send the response to the delegate", ^{
@@ -204,7 +165,7 @@ describe(@"NSURLConnection (spec extensions)", ^{
             spy_on(delegate);
 
             delegate stub_method("connection:didReceiveResponse:").and_do(^(NSInvocation * inv) {
-                NSURLConnection * theConnection;
+                __unsafe_unretained NSURLConnection * theConnection;
                 [inv getArgument:&theConnection atIndex:2];
                 [theConnection cancel];
             });
@@ -217,7 +178,7 @@ describe(@"NSURLConnection (spec extensions)", ^{
 
     describe(@"receive succesful response", ^{
         it(@"should send a succesful response (along with the data) to the delegate", ^{
-            ConnectionDelegate *delegate = [[[ConnectionDelegate alloc] init] autorelease];
+            ConnectionDelegate *delegate = [[ConnectionDelegate alloc] init];
             connection = [NSURLConnection connectionWithRequest:request delegate:delegate];
             [connection receiveSuccesfulResponseWithBody:@"The Internet"];
             delegate.dataAsString should equal(@"The Internet");
@@ -284,7 +245,7 @@ describe(@"NSURLConnection (spec extensions)", ^{
         __block NSData *thirdData;
 
         beforeEach(^{
-            fakeOperationQueue = [[[FakeOperationQueue alloc] init] autorelease];
+            fakeOperationQueue = [[FakeOperationQueue alloc] init];
             [(FakeOperationQueue *)fakeOperationQueue setRunSynchronously:YES];
 
             [NSURLConnection resetAll];
@@ -294,9 +255,9 @@ describe(@"NSURLConnection (spec extensions)", ^{
             NSURLRequest *secondRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://pivotallabs.com"]];
             NSURLRequest *thirdRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://apple.com"]];
 
-            FakeHTTPURLResponse *firstResponse = [[[FakeHTTPURLResponse alloc] initWithStatusCode:200 headers:@{} body:[@"I'm Feeling Lucky" dataUsingEncoding:NSUTF8StringEncoding]] autorelease];
-            FakeHTTPURLResponse *secondResponse = [[[FakeHTTPURLResponse alloc] initWithStatusCode:200 headers:@{} body:[@"Pivotal Labs" dataUsingEncoding:NSUTF8StringEncoding]] autorelease];
-            FakeHTTPURLResponse *thirdResponse = [[[FakeHTTPURLResponse alloc] initWithStatusCode:200 headers:@{} body:[@"Apple Inc." dataUsingEncoding:NSUTF8StringEncoding]] autorelease];
+            FakeHTTPURLResponse *firstResponse = [[FakeHTTPURLResponse alloc] initWithStatusCode:200 headers:@{} body:[@"I'm Feeling Lucky" dataUsingEncoding:NSUTF8StringEncoding]];
+            FakeHTTPURLResponse *secondResponse = [[FakeHTTPURLResponse alloc] initWithStatusCode:200 headers:@{} body:[@"Pivotal Labs" dataUsingEncoding:NSUTF8StringEncoding]];
+            FakeHTTPURLResponse *thirdResponse = [[FakeHTTPURLResponse alloc] initWithStatusCode:200 headers:@{} body:[@"Apple Inc." dataUsingEncoding:NSUTF8StringEncoding]];
 
             [FakeHTTP registerURL:firstRequest.URL withResponse:firstResponse];
             [FakeHTTP registerURL:secondRequest.URL withResponse:secondResponse];
@@ -318,9 +279,9 @@ describe(@"NSURLConnection (spec extensions)", ^{
         it(@"should fetch all pending connections, including any new connections that generated as a result", ^{
             [NSURLConnection fetchAllPendingConnectionsSynchronouslyWithTimeout:2];
 
-            [[[NSString alloc] initWithData:firstData encoding:NSUTF8StringEncoding] autorelease] should contain(@"I'm Feeling Lucky");
-            [[[NSString alloc] initWithData:secondData encoding:NSUTF8StringEncoding] autorelease] should contain(@"Pivotal Labs");
-            [[[NSString alloc] initWithData:thirdData encoding:NSUTF8StringEncoding] autorelease] should contain(@"Apple Inc.");
+            [[NSString alloc] initWithData:firstData encoding:NSUTF8StringEncoding] should contain(@"I'm Feeling Lucky");
+            [[NSString alloc] initWithData:secondData encoding:NSUTF8StringEncoding] should contain(@"Pivotal Labs");
+            [[NSString alloc] initWithData:thirdData encoding:NSUTF8StringEncoding] should contain(@"Apple Inc.");
         });
     });
 
@@ -339,9 +300,9 @@ describe(@"NSURLConnection (spec extensions)", ^{
             request = [NSURLRequest requestWithURL:URL];
 
             NSData *bodyData = [@"I'm Feeling Lucky" dataUsingEncoding:NSUTF8StringEncoding];
-            FakeHTTPURLResponse *response = [[[FakeHTTPURLResponse alloc] initWithStatusCode:200
+            FakeHTTPURLResponse *response = [[FakeHTTPURLResponse alloc] initWithStatusCode:200
                                                                                      headers:@{}
-                                                                                        body:bodyData] autorelease];
+                                                                                        body:bodyData];
             [FakeHTTP registerURL:URL withResponse:response];
         });
 
@@ -349,7 +310,7 @@ describe(@"NSURLConnection (spec extensions)", ^{
             __block ConnectionDelegate *delegate;
 
             beforeEach(^{
-                delegate = [[[ConnectionDelegate alloc] init] autorelease];
+                delegate = [[ConnectionDelegate alloc] init];
                 connection = [NSURLConnection connectionWithRequest:request delegate:delegate];
             });
 
@@ -361,7 +322,7 @@ describe(@"NSURLConnection (spec extensions)", ^{
 
                 delegate.dataAsString should contain(expectedString);
                 [[NSURLConnection connections] count] should equal(0);
-                NSString *returnedDataAsString = [[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] autorelease];
+                NSString *returnedDataAsString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
                 returnedDataAsString should contain(expectedString);
             });
 
@@ -402,7 +363,7 @@ describe(@"NSURLConnection (spec extensions)", ^{
             __block NSError *receivedError;
 
             beforeEach(^{
-                fakeOperationQueue = [[[FakeOperationQueue alloc] init] autorelease];
+                fakeOperationQueue = [[FakeOperationQueue alloc] init];
                 [(FakeOperationQueue *)fakeOperationQueue setRunSynchronously:YES];
 
                 receivedData = nil;
@@ -429,7 +390,7 @@ describe(@"NSURLConnection (spec extensions)", ^{
                 receivedData should equal(data);
 
                 [[NSURLConnection connections] count] should equal(0);
-                NSString *returnedDataAsString = [[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] autorelease];
+                NSString *returnedDataAsString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
                 returnedDataAsString should contain(expectedString);
             });
 

@@ -28,7 +28,7 @@ describe(@"PCKCompletionHandler", ^{
 
         it(@"can be called with success", ^{
             NSError *error = nil;
-            NSHTTPURLResponse *response = [[[NSHTTPURLResponse alloc] initWithURL:[NSURL URLWithString:@"."] statusCode:200 HTTPVersion:nil headerFields:nil] autorelease];
+            NSHTTPURLResponse *response = [[NSHTTPURLResponse alloc] initWithURL:[NSURL URLWithString:@"."] statusCode:200 HTTPVersion:nil headerFields:nil];
             [subject callWith:@{@"name" : @"test"} response:response error:nil outError:&error] should equal(@"test");
             error should be_nil;
         });
@@ -63,7 +63,7 @@ describe(@"PCKCompletionHandler", ^{
 
             it(@"chains the calls, shortcutting on error", ^{
                 NSError *error = nil;
-                NSHTTPURLResponse *response = [[[NSHTTPURLResponse alloc] initWithURL:[NSURL URLWithString:@"."] statusCode:200 HTTPVersion:nil headerFields:nil] autorelease];
+                NSHTTPURLResponse *response = [[NSHTTPURLResponse alloc] initWithURL:[NSURL URLWithString:@"."] statusCode:200 HTTPVersion:nil headerFields:nil];
                 [composed callWith:[@"{\"name\":\"test\"}" dataUsingEncoding:NSUTF8StringEncoding] response:response error:nil outError:&error] should equal(@"test");
                 error should be_nil;
 

@@ -16,13 +16,13 @@ describe(@"PSHKFakeOperationQueue", ^{
     __block PSHKFakeOperationQueue *fakeQueue;
 
     beforeEach(^{
-        fakeQueue = [[[PSHKFakeOperationQueue alloc] init] autorelease];
+        fakeQueue = [[PSHKFakeOperationQueue alloc] init];
     });
 
     describe(@"when an operation is added", ^{
         __block NSOperation *operation;
         beforeEach(^{
-            operation = [[[NSOperation alloc] init] autorelease];
+            operation = [[NSOperation alloc] init];
             [fakeQueue addOperation:operation];
         });
 
@@ -61,10 +61,6 @@ describe(@"PSHKFakeOperationQueue", ^{
             }];
         });
 
-        afterEach(^{
-            dispatch_release(semaphore);
-        });
-
         it(@"should run an operation immediately when added", ^{
             [fakeQueue addOperation:blockOperation];
             dispatch_semaphore_wait(semaphore, 0.0001);
@@ -84,7 +80,7 @@ describe(@"PSHKFakeOperationQueue", ^{
         __block NSArray *operations;
         __block NSString *message;
         beforeEach(^{
-            operations = @[[[[NSOperation alloc] init] autorelease],[[^{ message = @"Hi Mom"; } copy] autorelease]];
+            operations = @[[[NSOperation alloc] init],[^{ message = @"Hi Mom"; } copy]];
         });
 
         context(@"when told not to waitUntilFinished", ^{
@@ -151,7 +147,7 @@ describe(@"PSHKFakeOperationQueue", ^{
         __block NSOperation *operation;
 
         beforeEach(^{
-            operation = [[[NSOperation alloc] init] autorelease];
+            operation = [[NSOperation alloc] init];
             [fakeQueue addOperation:operation];
 
             [fakeQueue cancelAllOperations];

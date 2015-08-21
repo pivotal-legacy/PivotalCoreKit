@@ -10,17 +10,10 @@
     return self;
 }
 
-- (void)dealloc
-{
-    self.data = nil;
-    self.error = nil;
-    self.response = nil;
-    [super dealloc];
-}
 
 - (NSString *)dataAsString
 {
-    return [[[NSString alloc] initWithData:self.data encoding:NSUTF8StringEncoding] autorelease];
+    return [[NSString alloc] initWithData:self.data encoding:NSUTF8StringEncoding];
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response

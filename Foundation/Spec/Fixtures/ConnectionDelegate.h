@@ -2,10 +2,10 @@
 
 @interface ConnectionDelegate : NSObject <NSURLConnectionDataDelegate>
 
-@property (nonatomic, retain) NSURLResponse *response;
-@property (nonatomic, retain) NSMutableData *data;
-@property (nonatomic, retain) NSError *error;
-@property (nonatomic, assign) BOOL cancelRequestWhenResponseIsReceived;
+@property (nonatomic) NSURLResponse *response;
+@property (nonatomic) NSMutableData *data;
+@property (nonatomic) NSError *error;
+@property (nonatomic) BOOL cancelRequestWhenResponseIsReceived;
 
 - (NSString *)dataAsString;
 

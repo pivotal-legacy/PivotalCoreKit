@@ -54,7 +54,7 @@ describe(@"NSObject_MethodRedirection", ^{
     __block Redirectable *redirectable;
 
     beforeEach(^{
-        redirectable = [[[Redirectable alloc] init] autorelease];
+        redirectable = [[Redirectable alloc] init];
     });
 
     describe(@"redirecting instance methods", ^{

@@ -30,11 +30,10 @@ describe(@"PCKResponseParser", ^{
         connection = nice_fake_for([NSURLConnection class]);
         connectionDelegate = nice_fake_for(@protocol(NSURLConnectionDataDelegate));
 
-        responseParser = [[[PCKResponseParser alloc] initWithParser:parser
+        responseParser = [[PCKResponseParser alloc] initWithParser:parser
                                               successParserDelegate:successParserDelegate
                                                 errorParserDelegate:errorParserDelegate
-                                                 connectionDelegate:connectionDelegate]
-                          autorelease];
+                                                 connectionDelegate:connectionDelegate];
     });
 
     describe(@"on success response", ^{
@@ -42,7 +41,7 @@ describe(@"PCKResponseParser", ^{
         __block NSURLResponse *response;
 
         beforeEach(^{
-            response = [[[PSHKFakeHTTPURLResponse alloc] initWithStatusCode:200 andHeaders:[NSDictionary dictionary] andBody:nil] autorelease];
+            response = [[PSHKFakeHTTPURLResponse alloc] initWithStatusCode:200 andHeaders:[NSDictionary dictionary] andBody:nil];
 
             [responseParser connection:connection didReceiveResponse:response];
             [responseParser connection:connection didReceiveData:data];
@@ -69,7 +68,7 @@ describe(@"PCKResponseParser", ^{
         __block NSURLResponse *response;
 
         beforeEach(^{
-            response = [[[PSHKFakeHTTPURLResponse alloc] initWithStatusCode:400 andHeaders:[NSDictionary dictionary] andBody:nil] autorelease];
+            response = [[PSHKFakeHTTPURLResponse alloc] initWithStatusCode:400 andHeaders:[NSDictionary dictionary] andBody:nil];
 
             [responseParser connection:connection didReceiveResponse:response];
             [responseParser connection:connection didReceiveData:data];

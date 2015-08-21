@@ -34,7 +34,7 @@ describe(@"PCKConnectionBlockDelegate", ^{
             receivedError = error;
         }];
 
-        sentResponse = [[[NSURLResponse alloc] init] autorelease];
+        sentResponse = [[NSURLResponse alloc] init];
 
         [delegate connection:connection didReceiveResponse:sentResponse];
         [delegate connection:connection didReceiveData:[@"Hello" dataUsingEncoding:NSUTF8StringEncoding]];
@@ -45,7 +45,7 @@ describe(@"PCKConnectionBlockDelegate", ^{
         it(@"should call the block, passing in the response, the data, and no error", ^{
             [delegate connectionDidFinishLoading:connection];
             receivedResponse should equal(sentResponse);
-            NSString *receivedString = [[[NSString alloc] initWithData:receivedData encoding:NSUTF8StringEncoding] autorelease];
+            NSString *receivedString = [[NSString alloc] initWithData:receivedData encoding:NSUTF8StringEncoding];
             receivedString should equal(@"Hello World");
             receivedError should be_nil;
         });
@@ -53,7 +53,7 @@ describe(@"PCKConnectionBlockDelegate", ^{
 
     context(@"when the request fails", ^{
         it(@"should call the block, passingin the response, nil for the data, and the passed in error", ^{
-            NSError *error = [[[NSError alloc] init] autorelease];
+            NSError *error = [[NSError alloc] init];
             [delegate connection:connection didFailWithError:error];
             receivedResponse should equal(sentResponse);
             receivedData should be_nil;

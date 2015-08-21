@@ -104,6 +104,8 @@
 		AE7A67C518E5C073004A35BE /* NSURL+QueryComponents.h in Headers */ = {isa = PBXBuildFile; fileRef = AE0CFF53176FE22200E6A958 /* NSURL+QueryComponents.h */; };
 		AE7A67C618E5C077004A35BE /* NSURL+QueryComponents.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0CFF54176FE22200E6A958 /* NSURL+QueryComponents.m */; };
 		AE7A67C718E5C077004A35BE /* NSURL+QueryComponents.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0CFF54176FE22200E6A958 /* NSURL+QueryComponents.m */; };
+		AE83D3681B87E604001990B1 /* PSHKWeakObjectWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = AE83D3671B87E604001990B1 /* PSHKWeakObjectWrapper.m */; };
+		AE83D3691B87EEA6001990B1 /* PSHKWeakObjectWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = AE83D3671B87E604001990B1 /* PSHKWeakObjectWrapper.m */; };
 		AE8D47981B3CB94C007C489A /* NSUUID+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE969360182D9A1900E7306C /* NSUUID+Spec.m */; };
 		AE8D47A51B3CB94C007C489A /* NSUUID+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE969360182D9A1900E7306C /* NSUUID+Spec.m */; };
 		AE969353182D97A900E7306C /* NSUUIDSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE96934E182D97A900E7306C /* NSUUIDSpec+Spec.mm */; };
@@ -525,6 +527,8 @@
 		AE6898DA16BC3AF700F3F6BC /* NSArray+PivotalCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+PivotalCore.h"; sourceTree = "<group>"; };
 		AE6898DB16BC3AF700F3F6BC /* NSArray+PivotalCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+PivotalCore.m"; sourceTree = "<group>"; };
 		AE6898E616BC3B7A00F3F6BC /* NSArraySpec+PivotalCore.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSArraySpec+PivotalCore.mm"; sourceTree = "<group>"; };
+		AE83D3661B87E604001990B1 /* PSHKWeakObjectWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSHKWeakObjectWrapper.h; sourceTree = "<group>"; };
+		AE83D3671B87E604001990B1 /* PSHKWeakObjectWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSHKWeakObjectWrapper.m; sourceTree = "<group>"; };
 		AE88B00711DE6D1200B65DD3 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		AE96934E182D97A900E7306C /* NSUUIDSpec+Spec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSUUIDSpec+Spec.mm"; sourceTree = "<group>"; };
 		AE96935F182D9A1900E7306C /* NSUUID+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUUID+Spec.h"; sourceTree = "<group>"; };
@@ -1031,10 +1035,12 @@
 		E3F9C80F16F50ED300347B30 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				E3F9C81316F50EFC00347B30 /* PCKConnectionBlockDelegateSpec.mm */,
+				E3F9C81016F50EED00347B30 /* PCKConnectionDelegateWrapperSpec.mm */,
 				DE99CE4876A23C42A61ED94A /* PSHKObserver.h */,
 				DE99C52A2D323A2A8E4F3EBF /* PSHKObserver.m */,
-				E3F9C81016F50EED00347B30 /* PCKConnectionDelegateWrapperSpec.mm */,
-				E3F9C81316F50EFC00347B30 /* PCKConnectionBlockDelegateSpec.mm */,
+				AE83D3661B87E604001990B1 /* PSHKWeakObjectWrapper.h */,
+				AE83D3671B87E604001990B1 /* PSHKWeakObjectWrapper.m */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -1547,6 +1553,7 @@
 				AEA96BF4168B56BF00861DF1 /* PCKHTTPConnectionDelegateSpec.mm in Sources */,
 				AEA96BF5168B56BF00861DF1 /* PCKHTTPConnectionOperationSpec.mm in Sources */,
 				AEA96BF6168B56BF00861DF1 /* PCKHTTPConnectionSpec.mm in Sources */,
+				AE83D3691B87EEA6001990B1 /* PSHKWeakObjectWrapper.m in Sources */,
 				AE969353182D97A900E7306C /* NSUUIDSpec+Spec.mm in Sources */,
 				AEA96BF7168B56BF00861DF1 /* PCKHTTPInterfaceSpec.mm in Sources */,
 				AEA96BF9168B56BF00861DF1 /* PCKResponseParserSpec.mm in Sources */,
@@ -1622,6 +1629,7 @@
 				AEA96CB6168B688700861DF1 /* NSURLConnectionSpec+Spec.mm in Sources */,
 				AEA96CB7168B688700861DF1 /* PCKHTTPConnectionDelegateSpec.mm in Sources */,
 				AEA96CB8168B688700861DF1 /* PCKHTTPConnectionOperationSpec.mm in Sources */,
+				AE83D3681B87E604001990B1 /* PSHKWeakObjectWrapper.m in Sources */,
 				AE969354182D97A900E7306C /* NSUUIDSpec+Spec.mm in Sources */,
 				AEA96CB9168B688700861DF1 /* PCKHTTPConnectionSpec.mm in Sources */,
 				AEA96CBA168B688700861DF1 /* PCKHTTPInterfaceSpec.mm in Sources */,
@@ -1803,8 +1811,8 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"$(PROJECT_DIR)/../Externals/Cedar/**",
-					"$(PROJECT_DIR)/../Externals/FakeHTTP/FakeHTTP/**",
+					"\"$(PROJECT_DIR)/../Externals/Cedar/Source/Headers\"/**",
+					"\"$(PROJECT_DIR)/../Externals/FakeHTTP/FakeHTTP\"/**",
 				);
 				INFOPLIST_FILE = "Spec/iOS/Foundation-StaticLibSpecBundle-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
@@ -1845,8 +1853,8 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"$(PROJECT_DIR)/../Externals/Cedar/**",
-					"$(PROJECT_DIR)/../Externals/FakeHTTP/FakeHTTP/**",
+					"\"$(PROJECT_DIR)/../Externals/Cedar/Source/Headers\"/**",
+					"\"$(PROJECT_DIR)/../Externals/FakeHTTP/FakeHTTP\"/**",
 				);
 				INFOPLIST_FILE = "Spec/iOS/Foundation-StaticLibSpecBundle-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
@@ -1967,6 +1975,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
@@ -1989,6 +1998,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = YES;
@@ -2109,6 +2119,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -2124,8 +2135,8 @@
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				HEADER_SEARCH_PATHS = (
-					"$SRCROOT/../Externals/Cedar/**",
-					"$(PROJECT_DIR)/../Externals/FakeHTTP/FakeHTTP/**",
+					"\"$SRCROOT/../Externals/Cedar/Source/Headers\"/**",
+					"\"$(PROJECT_DIR)/../Externals/FakeHTTP/FakeHTTP\"/**",
 				);
 				INFOPLIST_FILE = "Spec/iOS/Foundation+PivotalCore-StaticLibSpec-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
@@ -2145,6 +2156,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -2154,8 +2166,8 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				HEADER_SEARCH_PATHS = (
-					"$SRCROOT/../Externals/Cedar/**",
-					"$(PROJECT_DIR)/../Externals/FakeHTTP/FakeHTTP/**",
+					"\"$SRCROOT/../Externals/Cedar/Source/Headers\"/**",
+					"\"$(PROJECT_DIR)/../Externals/FakeHTTP/FakeHTTP\"/**",
 				);
 				INFOPLIST_FILE = "Spec/iOS/Foundation+PivotalCore-StaticLibSpec-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;

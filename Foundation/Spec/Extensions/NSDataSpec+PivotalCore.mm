@@ -16,7 +16,7 @@ describe(@"Pivotal Core extensions to NSData ", ^{
         __block NSData *newData;
         __block NSString *string;
 
-        subjectAction(^{ newData = [[[NSData alloc] initWithSHA1HashOfString:string] autorelease]; });
+        subjectAction(^{ newData = [[NSData alloc] initWithSHA1HashOfString:string]; });
 
         describe(@"with an empty string", ^{
             beforeEach(^{

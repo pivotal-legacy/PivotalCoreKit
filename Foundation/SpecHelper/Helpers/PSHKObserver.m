@@ -4,14 +4,14 @@ static char PSHKObserverContextKey;
 
 @interface PSHKObserver ()
 
-@property (nonatomic, retain, readwrite) id mostRecentValue;
+@property (nonatomic) id mostRecentValue;
 
 @end
 
 @implementation PSHKObserver
 
 + (id)observerForObject:(id)object keyPath:(NSString *)keyPath {
-    return [[[self alloc] initWithObject:object keyPath:keyPath] autorelease];
+    return [[self alloc] initWithObject:object keyPath:keyPath];
 }
 
 - (id)initWithObject:(id)object keyPath:(NSString *)keyPath {
@@ -30,10 +30,6 @@ static char PSHKObserverContextKey;
     return nil;
 }
 
-- (void)dealloc {
-    self.mostRecentValue = nil;
-    [super dealloc];
-}
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     if (&PSHKObserverContextKey != context) {

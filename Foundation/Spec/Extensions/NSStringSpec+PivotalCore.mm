@@ -27,7 +27,7 @@ describe(@"Pivotal Core extensions to NSString", ^{
             const char bytes[] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't'};
 
             NSData *data = [NSData dataWithBytes:bytes length:sizeof(bytes)];
-            NSString *string = [[[NSString alloc] initWithBase64EncodedData:data] autorelease];
+            NSString *string = [[NSString alloc] initWithBase64EncodedData:data];
 
             string should equal(@"YWJjZGVmZ2hpamtsbW5vcHFyc3Q=");
         });

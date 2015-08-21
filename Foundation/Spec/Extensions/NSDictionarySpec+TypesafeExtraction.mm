@@ -84,7 +84,7 @@ describe(@"NSDictionarySpec_TypesafeExtraction", ^{
                 [dict dateObjectForKey:@"date"] should be_same_instance_as(date);
             });
             it(@"should return date objects from strings that the formatter can parse", ^{
-                NSDateFormatter *formatter = [[[NSDateFormatter alloc] init] autorelease];
+                NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
                 [formatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
                 [formatter setDateFormat:@"MM/dd/yyyy"];
                 [dict dateObjectForKey:@"date_string" formatter:formatter] should equal([NSDate dateWithTimeIntervalSince1970:0]);
