@@ -5,19 +5,21 @@
 @implementation UIAlertController (Spec)
 
 - (void)dismissByTappingCancelButton {
-    UIAlertAction *cancelAction = [self cancelAction];
-    if (cancelAction.handler) {
-        cancelAction.handler(cancelAction);
-    }
-    [self.presentingViewController dismissViewControllerAnimated:NO completion:nil];
+    [self.presentingViewController dismissViewControllerAnimated:NO completion:^{
+        UIAlertAction *cancelAction = [self cancelAction];
+        if (cancelAction.handler) {
+            cancelAction.handler(cancelAction);
+        }
+    }];
 }
 
 - (void)dismissByTappingButtonWithTitle:(NSString *)title {
-    UIAlertAction *action = [self actionWithButtonTitle:title];
-    if (action.handler) {
-        action.handler(action);
-    }
-    [self.presentingViewController dismissViewControllerAnimated:NO completion:nil];
+    [self.presentingViewController dismissViewControllerAnimated:NO completion:^{
+        UIAlertAction *action = [self actionWithButtonTitle:title];
+        if (action.handler) {
+            action.handler(action);
+        }
+    }];
 }
 
 #pragma mark - Private

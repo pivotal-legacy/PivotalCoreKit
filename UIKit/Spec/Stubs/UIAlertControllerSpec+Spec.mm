@@ -13,6 +13,7 @@ if (NSClassFromString(@"UIAlertController")) {
 describe(@"UIAlertController (spec extensions)", ^{
     __block UIAlertController *alertController;
     __block BOOL handlerWasExecuted;
+    __block BOOL presentedControllerWasDismissedBeforeActionHandlerCall;
     __block PCKAlertActionHandler handler;
     __block UIViewController *presentingController;
 
@@ -31,7 +32,10 @@ describe(@"UIAlertController (spec extensions)", ^{
     beforeEach(^{
         presentingController = [UIViewController new];
         handlerWasExecuted = NO;
-        handler = ^(UIAlertAction *) { handlerWasExecuted = YES; };
+        handler = ^(UIAlertAction *) {
+            handlerWasExecuted = YES;
+            presentedControllerWasDismissedBeforeActionHandlerCall = presentingController.presentedViewController == nil;
+        };
     });
 
     describe(@"-dismissByTappingCancelButton", ^{
@@ -45,8 +49,12 @@ describe(@"UIAlertController (spec extensions)", ^{
                         [alertController dismissByTappingCancelButton];
                     });
 
-                    it(@"should tap the cancel button regardless of where it is", ^{
+                    it(@"should call the handler for the cancel button", ^{
                         handlerWasExecuted should be_truthy;
+                    });
+
+                    it(@"should dismiss the controller before the action handler is executed", ^{
+                        presentedControllerWasDismissedBeforeActionHandlerCall should be_truthy;
                     });
                 });
 
@@ -77,8 +85,12 @@ describe(@"UIAlertController (spec extensions)", ^{
                     [alertController dismissByTappingCancelButton];
                 });
 
-                it(@"should tap the last button", ^{
+                it(@"should call the handler of the last added action", ^{
                     handlerWasExecuted should be_truthy;
+                });
+
+                it(@"should dismiss the controller before the action handler is executed", ^{
+                    presentedControllerWasDismissedBeforeActionHandlerCall should be_truthy;
                 });
 
                 it(@"should dismiss the alert controller", ^{
@@ -127,8 +139,12 @@ describe(@"UIAlertController (spec extensions)", ^{
                     [alertController dismissByTappingButtonWithTitle:@"Default"];
                 });
 
-                it(@"should tap the button", ^{
+                it(@"should call the handler for the action with the same title", ^{
                     handlerWasExecuted should be_truthy;
+                });
+
+                it(@"should dismiss the controller before the action handler is executed", ^{
+                    presentedControllerWasDismissedBeforeActionHandlerCall should be_truthy;
                 });
 
                 it(@"should dismiss the alert controller", ^{
