@@ -21,8 +21,8 @@ describe(@"UIActivityViewController (spec extensions)", ^{
 
     beforeEach(^{
         NSArray *activityItems = @[ @"activity item 1", [NSURL URLWithString:@"github.com/pivotal/PivotalCoreKit"] ];
-        CustomActivity *activity = [[[CustomActivity alloc] init] autorelease];
-        activityViewController = [[[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:@[ activity ]] autorelease];
+        CustomActivity *activity = [[CustomActivity alloc] init];
+        activityViewController = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:@[ activity ]];
     });
 
     describe(@"-activityItems", ^{

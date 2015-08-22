@@ -14,7 +14,7 @@ describe(@"UIControlSpec", ^{
     __block Target *target;
 
     beforeEach(^{
-        target = [[[Target alloc] init] autorelease];
+        target = [[Target alloc] init];
         spy_on(target);
 
         button = [UIButton buttonWithType:UIButtonTypeCustom];

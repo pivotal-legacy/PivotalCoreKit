@@ -2,9 +2,9 @@
 #import "Cedar.h"
 
 int main(int argc, char *argv[]) {
-    NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
-
-    int retVal = UIApplicationMain(argc, argv, nil, @"CedarApplicationDelegate");
-    [pool release];
+    int retVal;
+    @autoreleasepool {
+        retVal = UIApplicationMain(argc, argv, nil, @"CedarApplicationDelegate");
+    }
     return retVal;
 }

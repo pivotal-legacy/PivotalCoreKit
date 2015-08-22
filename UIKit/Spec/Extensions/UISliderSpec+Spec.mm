@@ -13,7 +13,7 @@ describe(@"UISlider+Spec", ^{
     beforeEach(^{
         target = [NSMutableArray array];
         spy_on(target);
-        slider = [[[UISlider alloc] init] autorelease];
+        slider = [[UISlider alloc] init];
         [slider addTarget:target action:@selector(removeAllObjects) forControlEvents:UIControlEventValueChanged];
     });
 

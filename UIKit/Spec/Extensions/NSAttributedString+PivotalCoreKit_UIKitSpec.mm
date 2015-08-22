@@ -10,7 +10,7 @@ describe(@"NSAttributedString_PivotalCoreKit_UIKit", ^{
     __block NSAttributedString *attributedString;
 
     beforeEach(^{
-        attributedString = [[[NSAttributedString alloc] initWithString:@"" attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:17.0f]}] autorelease];
+        attributedString = [[NSAttributedString alloc] initWithString:@"" attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:17.0f]}];
     });
 
     describe(@"heightWithWidth:", ^{
@@ -31,7 +31,7 @@ describe(@"NSAttributedString_PivotalCoreKit_UIKit", ^{
 
         context(@"short string", ^{
             beforeEach(^{
-                attributedString = [[[NSAttributedString alloc] initWithString:@"short string" attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:17.0f]}] autorelease];
+                attributedString = [[NSAttributedString alloc] initWithString:@"short string" attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:17.0f]}];
             });
 
             it(@"should return the correct height", ^{
@@ -41,7 +41,7 @@ describe(@"NSAttributedString_PivotalCoreKit_UIKit", ^{
 
         context(@"long string", ^{
             beforeEach(^{
-                attributedString = [[[NSAttributedString alloc] initWithString:@"really a very a long, probably unnecessarily long, string that undoubtedly will require several lines to render within the given height" attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:17.0]}] autorelease];
+                attributedString = [[NSAttributedString alloc] initWithString:@"really a very a long, probably unnecessarily long, string that undoubtedly will require several lines to render within the given height" attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:17.0]}];
             });
 
             it(@"should return the correct height", ^{

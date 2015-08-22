@@ -39,8 +39,8 @@ describe(@"UICollectionViewCell+Spec", ^{
         delegate stub_method(@selector(collectionView:shouldSelectItemAtIndexPath:)).and_return(YES);
         delegate stub_method(@selector(collectionView:didSelectItemAtIndexPath:));
 
-        UICollectionViewFlowLayout *layout = [[[UICollectionViewFlowLayout alloc] init] autorelease];
-        controller = [[[SpecCollectionViewController alloc] initWithCollectionViewLayout:layout] autorelease];
+        UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+        controller = [[SpecCollectionViewController alloc] initWithCollectionViewLayout:layout];
         controller.collectionView.delegate = delegate;
         controller.view should_not be_nil;
         [controller.view layoutIfNeeded];

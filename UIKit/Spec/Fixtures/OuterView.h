@@ -4,9 +4,9 @@
 
 @interface OuterView : UIView
 
-@property (retain, nonatomic) IBOutlet InnerView *innerView;
-@property (retain, nonatomic) IBOutlet UIView *subview;
-@property (retain, nonatomic) IBOutlet NSLayoutConstraint *horizontalSpace;
-@property (retain, nonatomic) IBOutlet NSLayoutConstraint *verticalSpace;
+@property (weak, nonatomic) IBOutlet InnerView *innerView;
+@property (weak, nonatomic) IBOutlet UIView *subview;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *horizontalSpace;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *verticalSpace;
 
 @end

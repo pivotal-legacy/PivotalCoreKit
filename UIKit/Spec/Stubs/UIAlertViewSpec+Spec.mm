@@ -25,11 +25,11 @@ describe(@"UIAlertView (spec extensions)", ^{
 
     beforeEach(^{
         delegate = nice_fake_for(@protocol(UIAlertViewDelegate));
-        alertView = [[[UIAlertView alloc] initWithTitle:@"Title"
-                                                message:@"Message"
-                                               delegate:delegate
-                                      cancelButtonTitle:@"Cancel"
-                                      otherButtonTitles:@"OK", nil] autorelease];
+        alertView = [[UIAlertView alloc] initWithTitle:@"Title"
+                                               message:@"Message"
+                                              delegate:delegate
+                                     cancelButtonTitle:@"Cancel"
+                                     otherButtonTitles:@"OK", nil];
     });
 
     describe(@"getting the current alert view with currentAlertView", ^{
@@ -48,11 +48,11 @@ describe(@"UIAlertView (spec extensions)", ^{
 
             beforeEach(^{
                 [alertView show];
-                otherAlertView = [[[UIAlertView alloc] initWithTitle:@"Another title"
-                                                             message:@"Oy vey"
-                                                            delegate:delegate
-                                                   cancelButtonTitle:@"Cancel"
-                                                   otherButtonTitles:nil] autorelease];
+                otherAlertView = [[UIAlertView alloc] initWithTitle:@"Another title"
+                                                            message:@"Oy vey"
+                                                           delegate:delegate
+                                                  cancelButtonTitle:@"Cancel"
+                                                  otherButtonTitles:nil];
                 [otherAlertView show];
 
                 UIAlertView *aThirdAlertView = [[UIAlertView alloc] initWithTitle:@"I'm going away soon"

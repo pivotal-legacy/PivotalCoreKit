@@ -48,7 +48,7 @@ describe(@"UITableViewCell+Spec", ^{
     __block UITableViewCell *cell;
 
     beforeEach(^{
-        controller = [[[SpecTableViewController alloc] initWithStyle:UITableViewStylePlain] autorelease];
+        controller = [[SpecTableViewController alloc] initWithStyle:UITableViewStylePlain];
         controller.shouldHightlightRows = YES;
         controller.view should_not be_nil;
         [controller.view layoutIfNeeded];

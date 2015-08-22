@@ -12,12 +12,12 @@ describe(@"UIBarButtonItemSpec_Spec", ^{
     __block Target *target;
 
     beforeEach(^{
-        target = [[Target new] autorelease];
+        target = [[Target alloc] init];
         spy_on(target);
 
-        barButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
+        barButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
                                                                        target:target
-                                                                       action:@selector(hello)] autorelease];
+                                                                       action:@selector(hello)];
     });
 
     it(@"can be 'tapped' programmatically", ^{
@@ -31,9 +31,9 @@ describe(@"UIBarButtonItemSpec_Spec", ^{
     });
 
     it(@"should pass itself as sender if the action selector takes an argument", ^{
-        barButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
+        barButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
                                                                        target:target
-                                                                       action:@selector(ciao:)] autorelease];
+                                                                       action:@selector(ciao:)];
         [barButtonItem tap];
         target should have_received(@selector(ciao:)).with(barButtonItem);
     });
@@ -43,7 +43,7 @@ describe(@"UIBarButtonItemSpec_Spec", ^{
         [button addTarget:target
                    action:@selector(hello)
          forControlEvents:UIControlEventTouchUpInside];
-        barButtonItem = [[[UIBarButtonItem alloc] initWithCustomView:button] autorelease];
+        barButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
         [barButtonItem tap];
 
         target should have_received(@selector(hello));

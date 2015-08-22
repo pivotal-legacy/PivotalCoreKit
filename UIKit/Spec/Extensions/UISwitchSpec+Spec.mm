@@ -12,10 +12,10 @@ describe(@"UISwitch+Spec", ^{
     __block Target *target;
 
     beforeEach(^{
-        target = [[[Target alloc] init] autorelease];
+        target = [[Target alloc] init];
         spy_on(target);
 
-        uiswitch = [[[UISwitch alloc] init] autorelease];
+        uiswitch = [[UISwitch alloc] init];
         [uiswitch addTarget:target action:@selector(ciao:) forControlEvents:UIControlEventValueChanged];
     });
 

@@ -14,20 +14,20 @@ describe(@"UIView+Spec", ^{
     __block Target *target, *otherTarget;
 
     beforeEach(^{
-        view = [[[UIView alloc] init] autorelease];
-        target = [[[Target alloc] init] autorelease];
+        view = [[UIView alloc] init];
+        target = [[Target alloc] init];
         spy_on(target);
 
-        otherTarget = [[[Target alloc] init] autorelease];
+        otherTarget = [[Target alloc] init];
         spy_on(otherTarget);
     });
 
     describe(@"tapping on the view", ^{
         beforeEach(^{
-            UITapGestureRecognizer *tapRecognizer = [[[UITapGestureRecognizer alloc] init] autorelease];
+            UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] init];
             [tapRecognizer addTarget:target action:@selector(hello)];
 
-            UISwipeGestureRecognizer *swipeRecognizer = [[[UISwipeGestureRecognizer alloc] init] autorelease];
+            UISwipeGestureRecognizer *swipeRecognizer = [[UISwipeGestureRecognizer alloc] init];
             [swipeRecognizer addTarget:otherTarget action:@selector(hello)];
 
             [view addGestureRecognizer:tapRecognizer];
@@ -44,10 +44,10 @@ describe(@"UIView+Spec", ^{
 
     describe(@"swiping the view", ^{
         beforeEach(^{
-            UISwipeGestureRecognizer *swipeRecognizer = [[[UISwipeGestureRecognizer alloc] init] autorelease];
+            UISwipeGestureRecognizer *swipeRecognizer = [[UISwipeGestureRecognizer alloc] init];
             [swipeRecognizer addTarget:target action:@selector(hello)];
 
-            UITapGestureRecognizer *tapRecognizer = [[[UITapGestureRecognizer alloc] init] autorelease];
+            UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] init];
             [tapRecognizer addTarget:otherTarget action:@selector(hello)];
 
             [view addGestureRecognizer:tapRecognizer];
@@ -74,22 +74,22 @@ describe(@"UIView+Spec", ^{
             rightTarget = nice_fake_for([Target class]);
             downTarget = nice_fake_for([Target class]);
 
-            UISwipeGestureRecognizer *upSwipeRecognizer = [[[UISwipeGestureRecognizer alloc] init] autorelease];
+            UISwipeGestureRecognizer *upSwipeRecognizer = [[UISwipeGestureRecognizer alloc] init];
             upSwipeRecognizer.direction = UISwipeGestureRecognizerDirectionUp;
 
             [upSwipeRecognizer addTarget:upTarget action:@selector(hello)];
 
-            UISwipeGestureRecognizer *leftSwipeRecognizer = [[[UISwipeGestureRecognizer alloc] init] autorelease];
+            UISwipeGestureRecognizer *leftSwipeRecognizer = [[UISwipeGestureRecognizer alloc] init];
             leftSwipeRecognizer.direction = UISwipeGestureRecognizerDirectionLeft;
 
             [leftSwipeRecognizer addTarget:leftTarget action:@selector(hello)];
 
-            UISwipeGestureRecognizer *rightSwipeRecognizer = [[[UISwipeGestureRecognizer alloc] init] autorelease];
+            UISwipeGestureRecognizer *rightSwipeRecognizer = [[UISwipeGestureRecognizer alloc] init];
             rightSwipeRecognizer.direction = UISwipeGestureRecognizerDirectionRight;
 
             [rightSwipeRecognizer addTarget:rightTarget action:@selector(hello)];
 
-            UISwipeGestureRecognizer *downSwipeRecognizer = [[[UISwipeGestureRecognizer alloc] init] autorelease];
+            UISwipeGestureRecognizer *downSwipeRecognizer = [[UISwipeGestureRecognizer alloc] init];
             downSwipeRecognizer.direction = UISwipeGestureRecognizerDirectionDown;
 
             [downSwipeRecognizer addTarget:downTarget action:@selector(hello)];
@@ -135,10 +135,10 @@ describe(@"UIView+Spec", ^{
 
     describe(@"pinching the view", ^{
         beforeEach(^{
-            UIPinchGestureRecognizer *pinchRecognizer = [[[UIPinchGestureRecognizer alloc] init] autorelease];
+            UIPinchGestureRecognizer *pinchRecognizer = [[UIPinchGestureRecognizer alloc] init];
             [pinchRecognizer addTarget:target action:@selector(hello)];
 
-            UITapGestureRecognizer *tapRecognizer = [[[UITapGestureRecognizer alloc] init] autorelease];
+            UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] init];
             [tapRecognizer addTarget:otherTarget action:@selector(hello)];
 
             [view addGestureRecognizer:tapRecognizer];
@@ -159,9 +159,9 @@ describe(@"UIView+Spec", ^{
         __block UIView *subview2;
 
         beforeEach(^{
-            view = [[[UIView alloc] init] autorelease];
-            subview1 = [[[UIView alloc] init] autorelease];
-            subview2 = [[[UIView alloc] init] autorelease];
+            view = [[UIView alloc] init];
+            subview1 = [[UIView alloc] init];
+            subview2 = [[UIView alloc] init];
 
             [subview1 setAccessibilityIdentifier:@"I, Robot"];
             [subview2 setAccessibilityIdentifier:@"Foundation"];
@@ -184,10 +184,10 @@ describe(@"UIView+Spec", ^{
         __block UILabel *subsubview;
 
         beforeEach(^{
-            view = [[[UIView alloc] init] autorelease];
-            subview1 = [[[UIView alloc] init] autorelease];
-            subview2 = [[[UILabel alloc] init] autorelease];
-            subsubview = [[[UILabel alloc] init] autorelease];
+            view = [[UIView alloc] init];
+            subview1 = [[UIView alloc] init];
+            subview2 = [[UILabel alloc] init];
+            subsubview = [[UILabel alloc] init];
 
             [view addSubview:subview1];
             [view addSubview:subview2];

@@ -20,8 +20,8 @@ describe(@"UIGestureRecognizerSpec", ^{
     __block UIView *view;
 
     beforeEach(^{
-        view = [[[UIView alloc] init] autorelease];
-        target = [[[Target alloc] init] autorelease];
+        view = [[UIView alloc] init];
+        target = [[Target alloc] init];
         spy_on(target);
     });
 
@@ -119,7 +119,7 @@ describe(@"UIGestureRecognizerSpec", ^{
         describe(@"when additional targets are set", ^{
             __block Target *newTarget;
             beforeEach(^{
-                newTarget = [[[Target alloc] init] autorelease];
+                newTarget = [[Target alloc] init];
                 spy_on(newTarget);
                 [recognizer addTarget:newTarget action:@selector(goodbye)];
             });
@@ -134,7 +134,7 @@ describe(@"UIGestureRecognizerSpec", ^{
         describe(@"when a target that takes the recognizer as an argument is set", ^{
             __block Target *newTarget;
             beforeEach(^{
-                newTarget = [[[Target alloc] init] autorelease];
+                newTarget = [[Target alloc] init];
                 spy_on(newTarget);
                 [recognizer addTarget:newTarget action:@selector(ciao:)];
             });
@@ -149,7 +149,7 @@ describe(@"UIGestureRecognizerSpec", ^{
 
     context(@"for a gesture recognizer created in code", ^{
         beforeEach(^{
-            recognizer = [[[UITapGestureRecognizer alloc] initWithTarget:target action:@selector(hello)] autorelease];
+            recognizer = [[UITapGestureRecognizer alloc] initWithTarget:target action:@selector(hello)];
             [view addGestureRecognizer:recognizer];
         });
 
@@ -157,7 +157,7 @@ describe(@"UIGestureRecognizerSpec", ^{
 
         describe(@"when initialized without a target or action", ^{
             it(@"should not raise", ^{
-                UITapGestureRecognizer *recognizer = [[[UITapGestureRecognizer alloc] initWithTarget:nil action:nil] autorelease];
+                UITapGestureRecognizer *recognizer = [[UITapGestureRecognizer alloc] initWithTarget:nil action:nil];
                 [view addGestureRecognizer:recognizer];
                 ^{
                     [recognizer recognize];

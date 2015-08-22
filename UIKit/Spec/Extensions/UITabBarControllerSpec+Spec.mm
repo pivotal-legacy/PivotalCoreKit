@@ -11,13 +11,13 @@ describe(@"UITabBarController_Spec", ^{
     __block id<UITabBarControllerDelegate, CedarDouble> delegate;
     __block UIViewController *viewController0, *viewController1;
     beforeEach(^{
-        controller = [[[UITabBarController alloc] init] autorelease];
+        controller = [[UITabBarController alloc] init];
 
         delegate = fake_for(@protocol(UITabBarControllerDelegate));
         controller.delegate = delegate;
 
-        viewController0 = [[[UIViewController alloc] init] autorelease];
-        viewController1 = [[[UIViewController alloc] init] autorelease];
+        viewController0 = [[UIViewController alloc] init];
+        viewController1 = [[UIViewController alloc] init];
         controller.viewControllers = @[viewController0, viewController1];
     });
 

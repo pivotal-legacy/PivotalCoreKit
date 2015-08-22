@@ -30,7 +30,7 @@ describe(@"UIWebView (spec extensions)", ^{
 
     beforeEach(^{
         delegate = nice_fake_for(@protocol(UIWebViewDelegate));
-        webView = [[[UIWebView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)] autorelease];
+        webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
         webView.delegate = delegate;
 
         url = [NSURL URLWithString:requestString];
@@ -108,9 +108,9 @@ describe(@"UIWebView (spec extensions)", ^{
 
         beforeEach(^{
             NSMutableDictionary *context = [SpecHelper specHelper].sharedExampleContext;
-            executeOperation = [[^{
+            executeOperation = [^{
                 [webView loadRequest:request];
-            } copy] autorelease];
+            } copy];
             [context setObject:executeOperation forKey:@"executeOperation"];
 
             UIWebViewNavigationType navigationType = UIWebViewNavigationTypeOther;
@@ -126,9 +126,9 @@ describe(@"UIWebView (spec extensions)", ^{
 
         beforeEach(^{
             NSMutableDictionary *context = [SpecHelper specHelper].sharedExampleContext;
-            executeOperation = [[^{
+            executeOperation = [^{
                 [webView sendClickRequest:request];
-            } copy] autorelease];
+            } copy];
             [context setObject:executeOperation forKey:@"executeOperation"];
 
             UIWebViewNavigationType navigationType = UIWebViewNavigationTypeLinkClicked;
@@ -301,7 +301,7 @@ describe(@"UIWebView (spec extensions)", ^{
 
     describe(@"when loaded from a XIB", ^{
         beforeEach(^{
-            AWebViewController *controller = [[[AWebViewController alloc] initWithNibName:@"AWebViewController" bundle:nil] autorelease];
+            AWebViewController *controller = [[AWebViewController alloc] initWithNibName:@"AWebViewController" bundle:nil];
             // Load the view.
             expect(controller.view).to_not(be_nil());
             webView = controller.webView;
@@ -313,9 +313,9 @@ describe(@"UIWebView (spec extensions)", ^{
 
             beforeEach(^{
                 NSMutableDictionary *context = [SpecHelper specHelper].sharedExampleContext;
-                executeOperation = [[^{
+                executeOperation = [^{
                     [webView loadRequest:request];
-                } copy] autorelease];
+                } copy];
                 [context setObject:executeOperation forKey:@"executeOperation"];
 
                 UIWebViewNavigationType navigationType = UIWebViewNavigationTypeOther;

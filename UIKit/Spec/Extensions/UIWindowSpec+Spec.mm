@@ -12,12 +12,12 @@ describe(@"UIWindow_Spec", ^{
         __block UITextField *firstResponderGrandchild;
 
         beforeEach(^{
-            window = [[[UIWindow alloc] init] autorelease];
-            UITextField *child1 = [[[UITextField alloc] init] autorelease];
-            UITextField *child2 = [[[UITextField alloc] init] autorelease];
-            UITextField *grandchild1 = [[[UITextField alloc] init] autorelease];
-            UITextField *grandchild2 = [[[UITextField alloc] init] autorelease];
-            firstResponderGrandchild = [[[UITextField alloc] init] autorelease];
+            window = [[UIWindow alloc] init];
+            UITextField *child1 = [[UITextField alloc] init];
+            UITextField *child2 = [[UITextField alloc] init];
+            UITextField *grandchild1 = [[UITextField alloc] init];
+            UITextField *grandchild2 = [[UITextField alloc] init];
+            firstResponderGrandchild = [[UITextField alloc] init];
 
             [window addSubview:child1];
             [window addSubview:child2];

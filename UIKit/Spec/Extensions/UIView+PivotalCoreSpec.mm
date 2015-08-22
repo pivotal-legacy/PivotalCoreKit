@@ -11,7 +11,7 @@ describe(@"UIView_PivotalCore", ^{
     __block CGRect oldFrame;
 
     beforeEach(^{
-        view = [[[UIView alloc] initWithFrame:CGRectMake(50, 10, 200, 100)] autorelease];
+        view = [[UIView alloc] initWithFrame:CGRectMake(50, 10, 200, 100)];
         oldFrame = view.frame;
     });
 

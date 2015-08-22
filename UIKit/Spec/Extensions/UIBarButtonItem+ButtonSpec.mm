@@ -10,7 +10,7 @@ describe(@"UIBarButtonItem_Button", ^{
     __block UIBarButtonItem *barButtonItem;
 
     beforeEach(^{
-        button = [[[UIButton alloc] init] autorelease];
+        button = [[UIButton alloc] init];
         barButtonItem = [UIBarButtonItem barButtonItemUsingButton:button];
     });
 
@@ -23,7 +23,7 @@ describe(@"UIBarButtonItem_Button", ^{
     });
 
     it(@"should return nil for button if the bar button item is created in another way", ^{
-        barButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:nil] autorelease];
+        barButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:nil];
         barButtonItem.button should be_nil();
     });
 });
