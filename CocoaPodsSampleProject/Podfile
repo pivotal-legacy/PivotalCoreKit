@@ -1,0 +1,7 @@
+target 'CocoaPodsSampleProject' do
+  pod 'PivotalCoreKit', path: "../"
+end
+
+target 'CocoaPodsSampleProjectTests' do
+  pod 'Cedar'
+end
