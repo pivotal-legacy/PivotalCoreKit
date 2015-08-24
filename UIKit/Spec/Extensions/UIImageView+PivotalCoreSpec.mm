@@ -11,7 +11,11 @@ describe(@"UIImageView_PivotalCore", ^{
     __block UIImageView *returnedImageView;
 
     beforeEach(^{
-        imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Default-568h"]];
+        UIImage *image = [UIImage imageNamed:@"Default-568h"];
+        if(!image) {
+            fail(@"Image matching name: Default-568h is not found in the application bundle.");
+        }
+        imageView = [[UIImageView alloc] initWithImage:image];
         returnedImageView = [UIImageView imageViewWithImageNamed:@"Default-568h"];
     });
 
