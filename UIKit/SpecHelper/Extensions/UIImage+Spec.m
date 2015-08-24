@@ -3,13 +3,14 @@
 @implementation UIImage (Spec)
 
 - (BOOL)isEqualToByBytes:(UIImage *)otherImage {
-    NSData *imagePixelsData = (NSData *)CGDataProviderCopyData(CGImageGetDataProvider(self.CGImage));
-    NSData *otherImagePixelsData = (NSData *)CGDataProviderCopyData(CGImageGetDataProvider(otherImage.CGImage));
+    CFDataRef imagePixelsData = CGDataProviderCopyData(CGImageGetDataProvider(self.CGImage));
+    CFDataRef otherImagePixelsData = CGDataProviderCopyData(CGImageGetDataProvider(otherImage.CGImage));
     
-    BOOL comparison = [imagePixelsData isEqualToData:otherImagePixelsData];
+    BOOL comparison = CFEqual(imagePixelsData, otherImagePixelsData);
     
-    CGDataProviderRelease((CGDataProviderRef)imagePixelsData);
-    CGDataProviderRelease((CGDataProviderRef)otherImagePixelsData);
+    CFRelease(imagePixelsData);
+    CFRelease(otherImagePixelsData);
+    
     return comparison;
 }
 
