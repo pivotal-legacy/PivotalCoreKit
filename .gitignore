@@ -4,4 +4,6 @@ xcuserdata
 */*.xcodeproj/*.xcworkspace*
 build
 .DS_Store
-
+CocoaPodsSampleProject/Pods/
+CocoaPodsSampleProject/build
+CocoaPodsSampleProject/CocoaPodsSampleProject.xcworkspace/
