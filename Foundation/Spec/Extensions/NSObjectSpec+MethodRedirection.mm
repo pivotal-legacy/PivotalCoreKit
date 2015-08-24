@@ -20,6 +20,7 @@ using namespace Cedar::Matchers;
 
 + (int)embiggen_original:(int)number;
 - (NSString *)cheekify_original:(NSString *)string;
+- (NSString *)cheekify_other:(NSString *)string;
 
 @end
 
@@ -64,13 +65,15 @@ describe(@"NSObject_MethodRedirection", ^{
             [Redirectable redirectSelector:@selector(cheekify:) to:@selector(cheekify_new:) andRenameItTo:@selector(cheekify_original:)];
 
             [redirectable cheekify:@"Herman"] should equal(@"No, really, Herman is so cheeky");
+            
+            [Redirectable redirectSelector:@selector(cheekify:) to:@selector(cheekify_original:) andRenameItTo:@selector(cheekify_other:)];
         });
 
         it(@"should do nothing when the new selector name (i.e. the argumen to andRenameItTo:) already exists", ^{
             [Redirectable redirectSelector:@selector(cheekify:) to:@selector(cheekify_new:) andRenameItTo:@selector(stodgify:)];
 
             [redirectable stodgify:@"Herman"] should equal(@"Herman is so stodgy");
-            [redirectable cheekify:@"Herman"] should equal(@"No, really, Herman is so cheeky");
+            [redirectable cheekify:@"Herman"] should equal(@"Herman is so cheeky");
         });
     });
 
