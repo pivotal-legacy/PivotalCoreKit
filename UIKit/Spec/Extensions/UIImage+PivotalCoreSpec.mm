@@ -12,7 +12,11 @@ describe(@"UIImage_PivotalCore", ^{
     __block NSData *imageData;
 
     beforeEach(^{
-        imageData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"pivotallabs-logo" ofType:@"png"]];
+        NSBundle *testBundle = [NSBundle bundleForClass:[self class]];
+        imageData = [NSData dataWithContentsOfFile:[testBundle pathForResource:@"pivotallabs-logo" ofType:@"png"]];
+        if(!imageData) {
+            fail(@"Image fixture: pivotallabs-logo.png is not in the Copy Resources build phase of the test target.");
+        }
         originalImage = [UIImage imageWithData:imageData scale:1.0];
         original2xImage = [UIImage imageWithData:imageData scale:2.0];
         originalImage.size should equal(CGSizeMake(223, 81));
