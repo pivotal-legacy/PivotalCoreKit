@@ -16,4 +16,6 @@
                             repeatCount:(NSInteger)repeatCount;
 - (void)stopAnimating;
 
+- (BOOL)isHidden;
+
 @end

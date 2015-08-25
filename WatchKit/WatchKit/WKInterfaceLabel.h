@@ -7,5 +7,6 @@
 - (void)setTextColor:(UIColor *)textColor;
 
 - (void)setAttributedText:(NSAttributedString *)attributedText;
+- (BOOL)isHidden;
 
 @end
