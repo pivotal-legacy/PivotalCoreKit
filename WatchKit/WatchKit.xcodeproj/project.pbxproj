@@ -341,6 +341,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2221676E1B8CF93200A1C8AE /* watchos2 */ = {
+			isa = PBXGroup;
+			children = (
+				222167651B8CE49700A1C8AE /* WKDefines.h */,
+				222167671B8CE4F600A1C8AE /* WKExtension.h */,
+				222167681B8CE4F600A1C8AE /* WKExtension.m */,
+			);
+			name = watchos2;
+			sourceTree = "<group>";
+		};
 		AE03A35E1A3A349A00AD4964 /* WatchKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -477,6 +487,7 @@
 		B83C31C21A4CD8A40021F1A4 /* WatchKit */ = {
 			isa = PBXGroup;
 			children = (
+				2221676E1B8CF93200A1C8AE /* watchos2 */,
 				267B25B01AD86BDB00440CD2 /* NSInvocation+InvocationMatching.h */,
 				267B25B11AD86BDB00440CD2 /* NSInvocation+InvocationMatching.m */,
 				B83AC22B1A5E191C00A35BD6 /* PCKWKInterfaceControllerProvider.h */,
@@ -532,9 +543,6 @@
 				B83C32031A4CD9BF0021F1A4 /* WKUserNotificationInterfaceController+Spec.h */,
 				DE99C8C67949C094218A82C2 /* PCKWKInterfaceObjectProvider.m */,
 				DE99C21473753B19AF90BB5F /* PCKWKInterfaceObjectProvider.h */,
-				222167651B8CE49700A1C8AE /* WKDefines.h */,
-				222167671B8CE4F600A1C8AE /* WKExtension.h */,
-				222167681B8CE4F600A1C8AE /* WKExtension.m */,
 			);
 			path = WatchKit;
 			sourceTree = "<group>";
