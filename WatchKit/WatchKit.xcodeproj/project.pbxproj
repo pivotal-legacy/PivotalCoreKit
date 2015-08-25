@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		222167661B8CE49E00A1C8AE /* WKDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 222167651B8CE49700A1C8AE /* WKDefines.h */; };
+		222167691B8CE4F600A1C8AE /* WKExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = 222167671B8CE4F600A1C8AE /* WKExtension.h */; };
+		2221676A1B8CE4F600A1C8AE /* WKExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 222167681B8CE4F600A1C8AE /* WKExtension.m */; };
 		267B25B21AD86BDB00440CD2 /* NSInvocation+InvocationMatching.h in Headers */ = {isa = PBXBuildFile; fileRef = 267B25B01AD86BDB00440CD2 /* NSInvocation+InvocationMatching.h */; };
 		267B25B31AD86BDB00440CD2 /* NSInvocation+InvocationMatching.m in Sources */ = {isa = PBXBuildFile; fileRef = 267B25B11AD86BDB00440CD2 /* NSInvocation+InvocationMatching.m */; };
 		2681A5B11AE0906600B0B753 /* WKInterfaceDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 2681A5AF1AE0906600B0B753 /* WKInterfaceDevice.m */; };
@@ -203,6 +206,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		222167651B8CE49700A1C8AE /* WKDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WKDefines.h; sourceTree = "<group>"; };
+		222167671B8CE4F600A1C8AE /* WKExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKExtension.h; sourceTree = "<group>"; };
+		222167681B8CE4F600A1C8AE /* WKExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKExtension.m; sourceTree = "<group>"; };
 		267B25B01AD86BDB00440CD2 /* NSInvocation+InvocationMatching.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSInvocation+InvocationMatching.h"; sourceTree = "<group>"; };
 		267B25B11AD86BDB00440CD2 /* NSInvocation+InvocationMatching.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSInvocation+InvocationMatching.m"; sourceTree = "<group>"; };
 		2681A5AF1AE0906600B0B753 /* WKInterfaceDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKInterfaceDevice.m; sourceTree = "<group>"; };
@@ -526,6 +532,9 @@
 				B83C32031A4CD9BF0021F1A4 /* WKUserNotificationInterfaceController+Spec.h */,
 				DE99C8C67949C094218A82C2 /* PCKWKInterfaceObjectProvider.m */,
 				DE99C21473753B19AF90BB5F /* PCKWKInterfaceObjectProvider.h */,
+				222167651B8CE49700A1C8AE /* WKDefines.h */,
+				222167671B8CE4F600A1C8AE /* WKExtension.h */,
+				222167681B8CE4F600A1C8AE /* WKExtension.m */,
 			);
 			path = WatchKit;
 			sourceTree = "<group>";
@@ -547,8 +556,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B83C32271A4CD9BF0021F1A4 /* WKInterfaceTable+Spec.h in Headers */,
+				222167661B8CE49E00A1C8AE /* WKDefines.h in Headers */,
 				B83C32321A4CDA380021F1A4 /* PCKInterfaceControllerLoader.h in Headers */,
 				B83C323C1A4CE0FC0021F1A4 /* UIColor+PCK_StringToColor.h in Headers */,
+				222167691B8CE4F600A1C8AE /* WKExtension.h in Headers */,
 				B83C321C1A4CD9BF0021F1A4 /* WKInterfaceSeparator.h in Headers */,
 				B83C32251A4CD9BF0021F1A4 /* WKInterfaceTable.h in Headers */,
 				B83C320F1A4CD9BF0021F1A4 /* WKInterfaceGroup.h in Headers */,
@@ -833,6 +844,7 @@
 				B83C321D1A4CD9BF0021F1A4 /* WKInterfaceSeparator.m in Sources */,
 				B83C32311A4CDA380021F1A4 /* PCKFakeSegue.m in Sources */,
 				B83C32291A4CD9BF0021F1A4 /* WKInterfaceTimer.m in Sources */,
+				2221676A1B8CE4F600A1C8AE /* WKExtension.m in Sources */,
 				B83C32261A4CD9BF0021F1A4 /* WKInterfaceTable.m in Sources */,
 				B83C32161A4CD9BF0021F1A4 /* WKInterfaceLabel.m in Sources */,
 				B83C32051A4CD9BF0021F1A4 /* PCKMessageCapturer.m in Sources */,
