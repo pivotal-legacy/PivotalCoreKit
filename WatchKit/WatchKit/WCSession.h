@@ -10,7 +10,15 @@ NS_ASSUME_NONNULL_BEGIN
 NS_CLASS_AVAILABLE_IOS(9_0)
 @interface WCSession : PCKMessageCapturer
 
++ (BOOL)isSupported;
+
 + (WCSession *)defaultSession;
+
+/** A delegate must exist before the session will allow sends. */
+@property (nonatomic, weak, nullable) id <WCSessionDelegate> delegate;
+
+/** The default session must be activated on startup before the session will begin receiving delegate callbacks. Calling activate without a delegate set is undefined. */
+- (void)activateSession;
 
 @end
 /** ----------------------------- WCSessionDelegate -----------------------------
