@@ -7,9 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		222167661B8CE49E00A1C8AE /* WKDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 222167651B8CE49700A1C8AE /* WKDefines.h */; };
-		222167691B8CE4F600A1C8AE /* WKExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = 222167671B8CE4F600A1C8AE /* WKExtension.h */; };
+		222167661B8CE49E00A1C8AE /* WKDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 222167651B8CE49700A1C8AE /* WKDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		222167691B8CE4F600A1C8AE /* WKExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = 222167671B8CE4F600A1C8AE /* WKExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2221676A1B8CE4F600A1C8AE /* WKExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 222167681B8CE4F600A1C8AE /* WKExtension.m */; };
+		222167771B8CFC1400A1C8AE /* WatchConnectivity.h in Headers */ = {isa = PBXBuildFile; fileRef = 222167761B8CFC1400A1C8AE /* WatchConnectivity.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2221677A1B8CFCB600A1C8AE /* WCDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 222167781B8CFC2800A1C8AE /* WCDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2221677B1B8CFCB800A1C8AE /* WCError.h in Headers */ = {isa = PBXBuildFile; fileRef = 222167791B8CFC8900A1C8AE /* WCError.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2221677D1B8CFD2100A1C8AE /* WCSession.h in Headers */ = {isa = PBXBuildFile; fileRef = 2221677C1B8CFD0B00A1C8AE /* WCSession.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2221677F1B8CFDDD00A1C8AE /* WCSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 2221677E1B8CFDDD00A1C8AE /* WCSession.m */; };
+		222167821B8CFED300A1C8AE /* WCSessionFile.h in Headers */ = {isa = PBXBuildFile; fileRef = 222167801B8CFED300A1C8AE /* WCSessionFile.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		222167831B8CFED300A1C8AE /* WCSessionFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 222167811B8CFED300A1C8AE /* WCSessionFile.m */; };
+		222167861B8D018B00A1C8AE /* WCSessionUserInfoTransfer.h in Headers */ = {isa = PBXBuildFile; fileRef = 222167841B8D018B00A1C8AE /* WCSessionUserInfoTransfer.h */; };
+		222167871B8D018B00A1C8AE /* WCSessionUserInfoTransfer.m in Sources */ = {isa = PBXBuildFile; fileRef = 222167851B8D018B00A1C8AE /* WCSessionUserInfoTransfer.m */; };
 		267B25B21AD86BDB00440CD2 /* NSInvocation+InvocationMatching.h in Headers */ = {isa = PBXBuildFile; fileRef = 267B25B01AD86BDB00440CD2 /* NSInvocation+InvocationMatching.h */; };
 		267B25B31AD86BDB00440CD2 /* NSInvocation+InvocationMatching.m in Sources */ = {isa = PBXBuildFile; fileRef = 267B25B11AD86BDB00440CD2 /* NSInvocation+InvocationMatching.m */; };
 		2681A5B11AE0906600B0B753 /* WKInterfaceDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 2681A5AF1AE0906600B0B753 /* WKInterfaceDevice.m */; };
@@ -209,6 +218,15 @@
 		222167651B8CE49700A1C8AE /* WKDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WKDefines.h; sourceTree = "<group>"; };
 		222167671B8CE4F600A1C8AE /* WKExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKExtension.h; sourceTree = "<group>"; };
 		222167681B8CE4F600A1C8AE /* WKExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKExtension.m; sourceTree = "<group>"; };
+		222167761B8CFC1400A1C8AE /* WatchConnectivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WatchConnectivity.h; sourceTree = "<group>"; };
+		222167781B8CFC2800A1C8AE /* WCDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WCDefines.h; sourceTree = "<group>"; };
+		222167791B8CFC8900A1C8AE /* WCError.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WCError.h; sourceTree = "<group>"; };
+		2221677C1B8CFD0B00A1C8AE /* WCSession.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WCSession.h; sourceTree = "<group>"; };
+		2221677E1B8CFDDD00A1C8AE /* WCSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCSession.m; sourceTree = "<group>"; };
+		222167801B8CFED300A1C8AE /* WCSessionFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCSessionFile.h; sourceTree = "<group>"; };
+		222167811B8CFED300A1C8AE /* WCSessionFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCSessionFile.m; sourceTree = "<group>"; };
+		222167841B8D018B00A1C8AE /* WCSessionUserInfoTransfer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCSessionUserInfoTransfer.h; sourceTree = "<group>"; };
+		222167851B8D018B00A1C8AE /* WCSessionUserInfoTransfer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCSessionUserInfoTransfer.m; sourceTree = "<group>"; };
 		267B25B01AD86BDB00440CD2 /* NSInvocation+InvocationMatching.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSInvocation+InvocationMatching.h"; sourceTree = "<group>"; };
 		267B25B11AD86BDB00440CD2 /* NSInvocation+InvocationMatching.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSInvocation+InvocationMatching.m"; sourceTree = "<group>"; };
 		2681A5AF1AE0906600B0B753 /* WKInterfaceDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKInterfaceDevice.m; sourceTree = "<group>"; };
@@ -351,6 +369,22 @@
 			name = watchos2;
 			sourceTree = "<group>";
 		};
+		222167751B8CFBF100A1C8AE /* Watch Connectivity */ = {
+			isa = PBXGroup;
+			children = (
+				222167761B8CFC1400A1C8AE /* WatchConnectivity.h */,
+				222167781B8CFC2800A1C8AE /* WCDefines.h */,
+				222167791B8CFC8900A1C8AE /* WCError.h */,
+				2221677C1B8CFD0B00A1C8AE /* WCSession.h */,
+				2221677E1B8CFDDD00A1C8AE /* WCSession.m */,
+				222167801B8CFED300A1C8AE /* WCSessionFile.h */,
+				222167811B8CFED300A1C8AE /* WCSessionFile.m */,
+				222167841B8D018B00A1C8AE /* WCSessionUserInfoTransfer.h */,
+				222167851B8D018B00A1C8AE /* WCSessionUserInfoTransfer.m */,
+			);
+			name = "Watch Connectivity";
+			sourceTree = "<group>";
+		};
 		AE03A35E1A3A349A00AD4964 /* WatchKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -487,6 +521,7 @@
 		B83C31C21A4CD8A40021F1A4 /* WatchKit */ = {
 			isa = PBXGroup;
 			children = (
+				222167751B8CFBF100A1C8AE /* Watch Connectivity */,
 				2221676E1B8CF93200A1C8AE /* watchos2 */,
 				267B25B01AD86BDB00440CD2 /* NSInvocation+InvocationMatching.h */,
 				267B25B11AD86BDB00440CD2 /* NSInvocation+InvocationMatching.m */,
@@ -567,11 +602,14 @@
 				222167661B8CE49E00A1C8AE /* WKDefines.h in Headers */,
 				B83C32321A4CDA380021F1A4 /* PCKInterfaceControllerLoader.h in Headers */,
 				B83C323C1A4CE0FC0021F1A4 /* UIColor+PCK_StringToColor.h in Headers */,
+				2221677D1B8CFD2100A1C8AE /* WCSession.h in Headers */,
 				222167691B8CE4F600A1C8AE /* WKExtension.h in Headers */,
 				B83C321C1A4CD9BF0021F1A4 /* WKInterfaceSeparator.h in Headers */,
+				2221677A1B8CFCB600A1C8AE /* WCDefines.h in Headers */,
 				B83C32251A4CD9BF0021F1A4 /* WKInterfaceTable.h in Headers */,
 				B83C320F1A4CD9BF0021F1A4 /* WKInterfaceGroup.h in Headers */,
 				B83C32111A4CD9BF0021F1A4 /* WKInterfaceGroup+Spec.h in Headers */,
+				222167821B8CFED300A1C8AE /* WCSessionFile.h in Headers */,
 				B83C32121A4CD9BF0021F1A4 /* WKInterfaceImage.h in Headers */,
 				B83C321E1A4CD9BF0021F1A4 /* WKInterfaceSeparator+Spec.h in Headers */,
 				B83C32071A4CD9BF0021F1A4 /* WKInterfaceButton.h in Headers */,
@@ -581,6 +619,7 @@
 				B83C322B1A4CD9BF0021F1A4 /* WKUserNotificationInterfaceController+Spec.h in Headers */,
 				B83AC22D1A5E191C00A35BD6 /* PCKWKInterfaceControllerProvider.h in Headers */,
 				B83C32151A4CD9BF0021F1A4 /* WKInterfaceLabel.h in Headers */,
+				2221677B1B8CFCB800A1C8AE /* WCError.h in Headers */,
 				B83C32281A4CD9BF0021F1A4 /* WKInterfaceTimer.h in Headers */,
 				B83C32241A4CD9BF0021F1A4 /* WKInterfaceSwitch+Spec.h in Headers */,
 				B83C32141A4CD9BF0021F1A4 /* WKInterfaceImage+Spec.h in Headers */,
@@ -589,7 +628,9 @@
 				B83C32301A4CDA380021F1A4 /* PCKFakeSegue.h in Headers */,
 				B83C322A1A4CD9BF0021F1A4 /* WKInterfaceTimer+Spec.h in Headers */,
 				B83C32211A4CD9BF0021F1A4 /* WKInterfaceSlider+Spec.h in Headers */,
+				222167861B8D018B00A1C8AE /* WCSessionUserInfoTransfer.h in Headers */,
 				B83C321F1A4CD9BF0021F1A4 /* WKInterfaceSlider.h in Headers */,
+				222167771B8CFC1400A1C8AE /* WatchConnectivity.h in Headers */,
 				B83C32171A4CD9BF0021F1A4 /* WKInterfaceLabel+Spec.h in Headers */,
 				2681A5B21AE0906600B0B753 /* WKInterfaceDevice.h in Headers */,
 				267B25B21AD86BDB00440CD2 /* NSInvocation+InvocationMatching.h in Headers */,
@@ -849,12 +890,15 @@
 				B83C321B1A4CD9BF0021F1A4 /* WKInterfaceObject.m in Sources */,
 				B83C32331A4CDA380021F1A4 /* PCKInterfaceControllerLoader.m in Sources */,
 				B83AC22E1A5E191C00A35BD6 /* PCKWKInterfaceControllerProvider.m in Sources */,
+				2221677F1B8CFDDD00A1C8AE /* WCSession.m in Sources */,
 				B83C321D1A4CD9BF0021F1A4 /* WKInterfaceSeparator.m in Sources */,
 				B83C32311A4CDA380021F1A4 /* PCKFakeSegue.m in Sources */,
 				B83C32291A4CD9BF0021F1A4 /* WKInterfaceTimer.m in Sources */,
+				222167871B8D018B00A1C8AE /* WCSessionUserInfoTransfer.m in Sources */,
 				2221676A1B8CE4F600A1C8AE /* WKExtension.m in Sources */,
 				B83C32261A4CD9BF0021F1A4 /* WKInterfaceTable.m in Sources */,
 				B83C32161A4CD9BF0021F1A4 /* WKInterfaceLabel.m in Sources */,
+				222167831B8CFED300A1C8AE /* WCSessionFile.m in Sources */,
 				B83C32051A4CD9BF0021F1A4 /* PCKMessageCapturer.m in Sources */,
 				B83C323D1A4CE0FC0021F1A4 /* UIColor+PCK_StringToColor.m in Sources */,
 				B83C320D1A4CD9BF0021F1A4 /* WKInterfaceDate.m in Sources */,
