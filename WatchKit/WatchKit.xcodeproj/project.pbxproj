@@ -17,7 +17,7 @@
 		2221677F1B8CFDDD00A1C8AE /* WCSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 2221677E1B8CFDDD00A1C8AE /* WCSession.m */; };
 		222167821B8CFED300A1C8AE /* WCSessionFile.h in Headers */ = {isa = PBXBuildFile; fileRef = 222167801B8CFED300A1C8AE /* WCSessionFile.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		222167831B8CFED300A1C8AE /* WCSessionFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 222167811B8CFED300A1C8AE /* WCSessionFile.m */; };
-		222167861B8D018B00A1C8AE /* WCSessionUserInfoTransfer.h in Headers */ = {isa = PBXBuildFile; fileRef = 222167841B8D018B00A1C8AE /* WCSessionUserInfoTransfer.h */; };
+		222167861B8D018B00A1C8AE /* WCSessionUserInfoTransfer.h in Headers */ = {isa = PBXBuildFile; fileRef = 222167841B8D018B00A1C8AE /* WCSessionUserInfoTransfer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		222167871B8D018B00A1C8AE /* WCSessionUserInfoTransfer.m in Sources */ = {isa = PBXBuildFile; fileRef = 222167851B8D018B00A1C8AE /* WCSessionUserInfoTransfer.m */; };
 		267B25B21AD86BDB00440CD2 /* NSInvocation+InvocationMatching.h in Headers */ = {isa = PBXBuildFile; fileRef = 267B25B01AD86BDB00440CD2 /* NSInvocation+InvocationMatching.h */; };
 		267B25B31AD86BDB00440CD2 /* NSInvocation+InvocationMatching.m in Sources */ = {isa = PBXBuildFile; fileRef = 267B25B11AD86BDB00440CD2 /* NSInvocation+InvocationMatching.m */; };
