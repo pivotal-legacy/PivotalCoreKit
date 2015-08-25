@@ -1,4 +1,4 @@
-#import <WatchKit/WCDefines.h>
+#import "WCDefines.h"
 #import "PCKMessageCapturer.h"
 
 NS_ASSUME_NONNULL_BEGIN
