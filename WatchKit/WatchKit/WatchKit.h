@@ -12,6 +12,7 @@
 #import "WKInterfaceGroup.h"
 #import "WKInterfaceTimer.h"
 #import "WKInterfaceMap.h"
+#import "WKExtension.h"
 
 
 #import "WKInterfaceButton+Spec.h"
