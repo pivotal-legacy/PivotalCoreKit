@@ -109,6 +109,7 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'WatchKit' do |watchkit|
+    s.subspec requires_arc = true
     watchkit.subspec 'WatchKit' do |child_watchkit|
       child_watchkit.source_files = 'WatchKit/WatchKit/*.{h,m}'
     end
