@@ -1,18 +1,22 @@
 #import "WKExtension.h"
 
+@interface PCKMessageCapturer ()
+- (void)openSystemURL:(NSURL *)URL NS_REQUIRES_SUPER;
+@end
+
 @implementation WKExtension
 
 static WKExtension *sharedExtension;
 
 + (WKExtension *)sharedExtension {
-    if (!_sharedExtension){
-        _sharedExtension = [[WKExtension alloc] init];
+    if (!sharedExtension){
+        sharedExtension = [[WKExtension alloc] init];
     }
-    return _sharedExtension;
+    return sharedExtension;
 }
 
 + (void)afterEach {
-    _sharedExtension = nil;
+    sharedExtension = nil;
 }
 
 - (void)openSystemURL:(NSURL *)url {

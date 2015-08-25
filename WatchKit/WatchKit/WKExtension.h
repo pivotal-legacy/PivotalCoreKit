@@ -3,6 +3,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class WKInterfaceController;
 @protocol WKExtensionDelegate;
 
 @interface WKExtension : PCKMessageCapturer
