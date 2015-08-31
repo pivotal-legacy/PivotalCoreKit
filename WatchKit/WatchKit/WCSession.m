@@ -4,6 +4,7 @@
 
 -(void)activateSession NS_REQUIRES_SUPER;
 +(BOOL)isSupported NS_REQUIRES_SUPER;
+- (BOOL)updateApplicationContext:(NSDictionary<NSString *, id> *)applicationContext error:(NSError **)error NS_REQUIRES_SUPER;
 
 @end
 
@@ -28,6 +29,10 @@ static WCSession *defaultSession;
 
 +(BOOL)isSupported{
    return [super isSupported];
+}
+
+- (BOOL)updateApplicationContext:(NSDictionary<NSString *, id> *)applicationContext error:(NSError **)error {
+    return [super updateApplicationContext:applicationContext error:error];
 }
 
 @end
