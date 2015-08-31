@@ -5,6 +5,7 @@
 -(void)activateSession NS_REQUIRES_SUPER;
 +(BOOL)isSupported NS_REQUIRES_SUPER;
 - (BOOL)updateApplicationContext:(NSDictionary<NSString *, id> *)applicationContext error:(NSError **)error NS_REQUIRES_SUPER;
+-(void)sendMessage:(NSDictionary<NSString *,id> *)message replyHandler:(void (^)(NSDictionary<NSString *,id> * _Nonnull))replyHandler errorHandler:(void (^)(NSError * _Nonnull))errorHandler NS_REQUIRES_SUPER;
 
 @end
 
@@ -33,6 +34,10 @@ static WCSession *defaultSession;
 
 - (BOOL)updateApplicationContext:(NSDictionary<NSString *, id> *)applicationContext error:(NSError **)error {
     return [super updateApplicationContext:applicationContext error:error];
+}
+
+-(void)sendMessage:(NSDictionary<NSString *,id> *)message replyHandler:(void (^)(NSDictionary<NSString *,id> * _Nonnull))replyHandler errorHandler:(void (^)(NSError * _Nonnull))errorHandler{
+    [super sendMessage:message replyHandler:replyHandler errorHandler:errorHandler];
 }
 
 @end
