@@ -21,6 +21,7 @@
 @interface WKInterfaceGroup ()
 
 @property (nonatomic) NSArray *items;
+@property (nonatomic) BOOL hidden;
 
 @end
 
@@ -78,6 +79,17 @@
 - (void)stopAnimating
 {
     [super stopAnimating];
+}
+
+-(void)setHidden:(BOOL)hidden
+{
+    _hidden = hidden;
+    [super setHidden:hidden];
+}
+
+-(BOOL)isHidden
+{
+    return _hidden;
 }
 
 @end
