@@ -20,6 +20,8 @@ NS_CLASS_AVAILABLE_IOS(9_0)
 /** The default session must be activated on startup before the session will begin receiving delegate callbacks. Calling activate without a delegate set is undefined. */
 - (void)activateSession;
 
+- (BOOL)updateApplicationContext:(NSDictionary<NSString *, id> *)applicationContext error:(NSError **)error;
+
 @end
 /** ----------------------------- WCSessionDelegate -----------------------------
  *  The session calls the delegate methods when content is received and session
