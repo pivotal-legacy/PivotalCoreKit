@@ -20,58 +20,7 @@ NS_CLASS_AVAILABLE_IOS(9_0)
 /** The default session must be activated on startup before the session will begin receiving delegate callbacks. Calling activate without a delegate set is undefined. */
 - (void)activateSession;
 
-- (BOOL)updateApplicationContext:(NSDictionary<NSString *, id> *)applicationContext error:(NSError **)error;
-
-@end
-/** ----------------------------- WCSessionDelegate -----------------------------
- *  The session calls the delegate methods when content is received and session
- *  state changes. All delegate methods will be called on the same queue. The
- *  delegate queue is a non-main serial queue. It is the client's responsibility
- *  to dispatch to another queue if neccessary.
- */
-@protocol WCSessionDelegate <NSObject>
-@optional
-
-/** ------------------------- iOS App State For Watch ------------------------ */
-
-/** Called when any of the Watch state properties change */
-- (void)sessionWatchStateDidChange:(WCSession *)session __WATCHOS_UNAVAILABLE;
-
-/** ------------------------- Interactive Messaging ------------------------- */
-
-// ************* WATCH_OS_2 START *********
-/** The counterpart app must be reachable for a send message to succeed. */
-@property (nonatomic, readonly, getter=isReachable) BOOL reachable;
-
-@property (nonatomic, readonly) BOOL iOSDeviceNeedsUnlockAfterRebootForReachability __IOS_UNAVAILABLE __WATCHOS_AVAILABLE(2_0);
-
-/** Clients can use this method to send messages to the counterpart app. Clients wishing to receive a reply to a particular message should pass in a replyHandler block. If the message cannot be sent or if the reply could not be received, the errorHandler block will be invoked with an error. If both a replyHandler and an errorHandler are specified, then exactly one of them will be invoked. Messages can only be sent while the sending app is running. If the sending app exits before the message is dispatched the send will fail. If the counterpart app is not running the counterpart app will be launched upon receiving the message (iOS counterpart app only). The message dictionary can only accept the property list types. */
-- (void)sendMessage:(NSDictionary<NSString *, id> *)message replyHandler:(nullable void (^)(NSDictionary<NSString *, id> *replyMessage))replyHandler errorHandler:(nullable void (^)(NSError *error))errorHandler;
-
-/** Clients can use this method to send message data. All the policies of send message apply to send message data. Send message data is meant for clients that have an existing transfer format and do not need the convenience of the send message dictionary. */
-- (void)sendMessageData:(NSData *)data replyHandler:(nullable void (^)(NSData *replyMessageData))replyHandler errorHandler:(nullable void (^)(NSError *error))errorHandler;
-
-// ********** WATCH_OS_2 END ***********
-
-/** Called when the reachable state of the counterpart app changes. The receiver should check the reachable property on receiving this delegate callback. */
-- (void)sessionReachabilityDidChange:(WCSession *)session;
-
-/** Called on the delegate of the receiver. Will be called on startup if the incoming message caused the receiver to launch. */
-- (void)session:(WCSession *)session didReceiveMessage:(NSDictionary<NSString *, id> *)message;
-
-/** Called on the delegate of the receiver when the sender sends a message that expects a reply. Will be called on startup if the incoming message caused the receiver to launch. */
-- (void)session:(WCSession *)session didReceiveMessage:(NSDictionary<NSString *, id> *)message replyHandler:(void(^)(NSDictionary<NSString *, id> *replyMessage))replyHandler;
-
-/** Called on the delegate of the receiver. Will be called on startup if the incoming message data caused the receiver to launch. */
-- (void)session:(WCSession *)session didReceiveMessageData:(NSData *)messageData;
-
-/** Called on the delegate of the receiver when the sender sends message data that expects a reply. Will be called on startup if the incoming message data caused the receiver to launch. */
-- (void)session:(WCSession *)session didReceiveMessageData:(NSData *)messageData replyHandler:(void(^)(NSData *replyMessageData))replyHandler;
-
-
 /** -------------------------- Background Transfers ------------------------- */
-
-// ************* WATCH_OS_2 START *********
 
 @property (nonatomic, readonly, copy) NSDictionary<NSString *, id> *applicationContext;
 - (BOOL)updateApplicationContext:(NSDictionary<NSString *, id> *)applicationContext error:(NSError **)error;
@@ -96,8 +45,52 @@ NS_CLASS_AVAILABLE_IOS(9_0)
 /** Returns an array of file transfers that are still transferring (i.e. have not been cancelled, failed, or been received by the counterpart app). */
 @property (nonatomic, readonly, copy) NSArray<WCSessionFileTransfer *> *outstandingFileTransfers;
 
-// ********** WATCH_OS_2 END ***********
+/** ------------------------- Interactive Messaging ------------------------- */
 
+/** The counterpart app must be reachable for a send message to succeed. */
+@property (nonatomic, readonly, getter=isReachable) BOOL reachable;
+
+@property (nonatomic, readonly) BOOL iOSDeviceNeedsUnlockAfterRebootForReachability __IOS_UNAVAILABLE __WATCHOS_AVAILABLE(2_0);
+
+/** Clients can use this method to send messages to the counterpart app. Clients wishing to receive a reply to a particular message should pass in a replyHandler block. If the message cannot be sent or if the reply could not be received, the errorHandler block will be invoked with an error. If both a replyHandler and an errorHandler are specified, then exactly one of them will be invoked. Messages can only be sent while the sending app is running. If the sending app exits before the message is dispatched the send will fail. If the counterpart app is not running the counterpart app will be launched upon receiving the message (iOS counterpart app only). The message dictionary can only accept the property list types. */
+- (void)sendMessage:(NSDictionary<NSString *, id> *)message replyHandler:(nullable void (^)(NSDictionary<NSString *, id> *replyMessage))replyHandler errorHandler:(nullable void (^)(NSError *error))errorHandler;
+
+/** Clients can use this method to send message data. All the policies of send message apply to send message data. Send message data is meant for clients that have an existing transfer format and do not need the convenience of the send message dictionary. */
+- (void)sendMessageData:(NSData *)data replyHandler:(nullable void (^)(NSData *replyMessageData))replyHandler errorHandler:(nullable void (^)(NSError *error))errorHandler;
+
+@end
+/** ----------------------------- WCSessionDelegate -----------------------------
+ *  The session calls the delegate methods when content is received and session
+ *  state changes. All delegate methods will be called on the same queue. The
+ *  delegate queue is a non-main serial queue. It is the client's responsibility
+ *  to dispatch to another queue if neccessary.
+ */
+@protocol WCSessionDelegate <NSObject>
+@optional
+
+/** ------------------------- iOS App State For Watch ------------------------ */
+
+/** Called when any of the Watch state properties change */
+- (void)sessionWatchStateDidChange:(WCSession *)session __WATCHOS_UNAVAILABLE;
+
+/** ------------------------- Interactive Messaging ------------------------- */
+
+/** Called when the reachable state of the counterpart app changes. The receiver should check the reachable property on receiving this delegate callback. */
+- (void)sessionReachabilityDidChange:(WCSession *)session;
+
+/** Called on the delegate of the receiver. Will be called on startup if the incoming message caused the receiver to launch. */
+- (void)session:(WCSession *)session didReceiveMessage:(NSDictionary<NSString *, id> *)message;
+
+/** Called on the delegate of the receiver when the sender sends a message that expects a reply. Will be called on startup if the incoming message caused the receiver to launch. */
+- (void)session:(WCSession *)session didReceiveMessage:(NSDictionary<NSString *, id> *)message replyHandler:(void(^)(NSDictionary<NSString *, id> *replyMessage))replyHandler;
+
+/** Called on the delegate of the receiver. Will be called on startup if the incoming message data caused the receiver to launch. */
+- (void)session:(WCSession *)session didReceiveMessageData:(NSData *)messageData;
+
+/** Called on the delegate of the receiver when the sender sends message data that expects a reply. Will be called on startup if the incoming message data caused the receiver to launch. */
+- (void)session:(WCSession *)session didReceiveMessageData:(NSData *)messageData replyHandler:(void(^)(NSData *replyMessageData))replyHandler;
+
+/** -------------------------- Background Transfers ------------------------- */
 
 /** Called on the delegate of the receiver. Will be called on startup if an applicationContext is available. */
 - (void)session:(WCSession *)session didReceiveApplicationContext:(NSDictionary<NSString *, id> *)applicationContext;
