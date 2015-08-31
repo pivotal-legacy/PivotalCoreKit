@@ -359,32 +359,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2221676E1B8CF93200A1C8AE /* watchos2 */ = {
-			isa = PBXGroup;
-			children = (
-				222167651B8CE49700A1C8AE /* WKDefines.h */,
-				222167671B8CE4F600A1C8AE /* WKExtension.h */,
-				222167681B8CE4F600A1C8AE /* WKExtension.m */,
-			);
-			name = watchos2;
-			sourceTree = "<group>";
-		};
-		222167751B8CFBF100A1C8AE /* Watch Connectivity */ = {
-			isa = PBXGroup;
-			children = (
-				222167761B8CFC1400A1C8AE /* WatchConnectivity.h */,
-				222167781B8CFC2800A1C8AE /* WCDefines.h */,
-				222167791B8CFC8900A1C8AE /* WCError.h */,
-				2221677C1B8CFD0B00A1C8AE /* WCSession.h */,
-				2221677E1B8CFDDD00A1C8AE /* WCSession.m */,
-				222167801B8CFED300A1C8AE /* WCSessionFile.h */,
-				222167811B8CFED300A1C8AE /* WCSessionFile.m */,
-				222167841B8D018B00A1C8AE /* WCSessionUserInfoTransfer.h */,
-				222167851B8D018B00A1C8AE /* WCSessionUserInfoTransfer.m */,
-			);
-			name = "Watch Connectivity";
-			sourceTree = "<group>";
-		};
 		AE03A35E1A3A349A00AD4964 /* WatchKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -521,8 +495,18 @@
 		B83C31C21A4CD8A40021F1A4 /* WatchKit */ = {
 			isa = PBXGroup;
 			children = (
-				222167751B8CFBF100A1C8AE /* Watch Connectivity */,
-				2221676E1B8CF93200A1C8AE /* watchos2 */,
+				222167651B8CE49700A1C8AE /* WKDefines.h */,
+				222167671B8CE4F600A1C8AE /* WKExtension.h */,
+				222167681B8CE4F600A1C8AE /* WKExtension.m */,
+				222167761B8CFC1400A1C8AE /* WatchConnectivity.h */,
+				222167781B8CFC2800A1C8AE /* WCDefines.h */,
+				222167791B8CFC8900A1C8AE /* WCError.h */,
+				2221677C1B8CFD0B00A1C8AE /* WCSession.h */,
+				2221677E1B8CFDDD00A1C8AE /* WCSession.m */,
+				222167801B8CFED300A1C8AE /* WCSessionFile.h */,
+				222167811B8CFED300A1C8AE /* WCSessionFile.m */,
+				222167841B8D018B00A1C8AE /* WCSessionUserInfoTransfer.h */,
+				222167851B8D018B00A1C8AE /* WCSessionUserInfoTransfer.m */,
 				267B25B01AD86BDB00440CD2 /* NSInvocation+InvocationMatching.h */,
 				267B25B11AD86BDB00440CD2 /* NSInvocation+InvocationMatching.m */,
 				B83AC22B1A5E191C00A35BD6 /* PCKWKInterfaceControllerProvider.h */,
