@@ -592,7 +592,6 @@
 				AE25D5F31A38F6C9008A1920 /* Sources */,
 				AE25D5F41A38F6C9008A1920 /* Frameworks */,
 				AE25D5F51A38F6C9008A1920 /* Resources */,
-				AE25D5F91A38F6C9008A1920 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -774,22 +773,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		AE25D5F91A38F6C9008A1920 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n            \"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n            ";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		AE25D5F31A38F6C9008A1920 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -967,7 +950,6 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "\"$PROJECT_DIR/SpecHelper/\" \"$PROJECT_DIR/../Externals/Cedar/Source/Headers/\"/**";
-				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
 		};
@@ -991,7 +973,6 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "\"$PROJECT_DIR/SpecHelper/\" \"$PROJECT_DIR/../Externals/Cedar/Source/Headers/\"/**";
-				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
 		};
