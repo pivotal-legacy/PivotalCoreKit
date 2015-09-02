@@ -102,6 +102,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		34456A161B98EC05008A16A2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE25D6171A38F77D008A1920 /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AE4864F81B067620005DB302;
+			remoteInfo = "Cedar-iOS-Framework";
+		};
+		34456A181B98EC05008A16A2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE25D6171A38F77D008A1920 /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AE03FBE91B06C33B00013784;
+			remoteInfo = "Cedar-iOS-Framework Specs";
+		};
+		34456A1C1B98EC21008A16A2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE25D5D11A38F664008A1920 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 344569F81B98EC04008A16A2;
+			remoteInfo = " WatchKit App";
+		};
 		AE25D6271A38F77D008A1920 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AE25D6171A38F77D008A1920 /* Cedar.xcodeproj */;
@@ -150,13 +171,6 @@
 			proxyType = 2;
 			remoteGlobalIDString = 96B5F9F6144A81A7000A6A5D;
 			remoteInfo = "Cedar iOS Host App";
-		};
-		AE25D6351A38F77D008A1920 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AE25D6171A38F77D008A1920 /* Cedar.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 96B5FA11144A81A8000A6A5D;
-			remoteInfo = "Cedar iOS SenTestingKit Tests";
 		};
 		AE25D6371A38F77D008A1920 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -426,14 +440,15 @@
 				AE25D62A1A38F77D008A1920 /* Cedar OS X Specs */,
 				AE25D62C1A38F77D008A1920 /* Cedar OS X FocusedSpecs */,
 				AE25D62E1A38F77D008A1920 /* libCedar-StaticLib.a */,
-				AE25D6301A38F77D008A1920 /* Cedar iOS Specs.app */,
-				AE25D6321A38F77D008A1920 /* Cedar iOS FrameworkSpecs.app */,
+				AE25D6301A38F77D008A1920 /* Cedar-StaticLib Specs.app */,
+				AE25D6321A38F77D008A1920 /* Cedar-iOS StaticFrameworkSpecs.app */,
 				AE25D6341A38F77D008A1920 /* Cedar iOS Host App.app */,
-				AE25D6361A38F77D008A1920 /* Cedar iOS SenTestingKit Tests.octest */,
 				AE25D6381A38F77D008A1920 /* XCUnitAppTests.xctest */,
 				AE25D63A1A38F77D008A1920 /* Cedar OS X Host App.app */,
 				AE25D63C1A38F77D008A1920 /* Cedar OS X Host AppTests.xctest */,
 				AE25D63E1A38F77D008A1920 /* Cedar OS X Failing Test Bundle.octest */,
+				34456A171B98EC05008A16A2 /* Cedar.framework */,
+				34456A191B98EC05008A16A2 /* Cedar-iOS-Framework Specs.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -692,17 +707,17 @@
 			remoteRef = AE25D62D1A38F77D008A1920 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		AE25D6301A38F77D008A1920 /* Cedar iOS Specs.app */ = {
+		AE25D6301A38F77D008A1920 /* Cedar-StaticLib Specs.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
-			path = "Cedar iOS Specs.app";
+			path = "Cedar-StaticLib Specs.app";
 			remoteRef = AE25D62F1A38F77D008A1920 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		AE25D6321A38F77D008A1920 /* Cedar iOS FrameworkSpecs.app */ = {
+		AE25D6321A38F77D008A1920 /* Cedar-iOS StaticFrameworkSpecs.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
-			path = "Cedar iOS FrameworkSpecs.app";
+			path = "Cedar-iOS StaticFrameworkSpecs.app";
 			remoteRef = AE25D6311A38F77D008A1920 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
@@ -711,13 +726,6 @@
 			fileType = wrapper.application;
 			path = "Cedar iOS Host App.app";
 			remoteRef = AE25D6331A38F77D008A1920 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		AE25D6361A38F77D008A1920 /* Cedar iOS SenTestingKit Tests.octest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "Cedar iOS SenTestingKit Tests.octest";
-			remoteRef = AE25D6351A38F77D008A1920 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		AE25D6381A38F77D008A1920 /* XCUnitAppTests.xctest */ = {
