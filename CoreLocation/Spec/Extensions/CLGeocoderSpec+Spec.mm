@@ -32,7 +32,7 @@ describe(@"CLGeocoder Spec extension", ^{
 
     describe(@"reverseGeocodeLocation:completionHandler:", ^{
         beforeEach(^{
-            [geocoder reverseGeocodeLocation:location completionHandler:nil];
+            [geocoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error){}];
         });
 
         it(@"should start geocoding", ^{
@@ -46,7 +46,7 @@ describe(@"CLGeocoder Spec extension", ^{
 
     describe(@"geocodeAddressString:inRegion:completionHandler:", ^{
         beforeEach(^{
-            [geocoder geocodeAddressString:addressString inRegion:nil completionHandler:nil];
+            [geocoder geocodeAddressString:addressString inRegion:nil completionHandler:^(NSArray *placemarks, NSError *error){}];
         });
 
         it(@"should start geocoding", ^{
@@ -60,7 +60,7 @@ describe(@"CLGeocoder Spec extension", ^{
 
     describe(@"cancelGeocode", ^{
         beforeEach(^{
-            [geocoder geocodeAddressString:addressString inRegion:nil completionHandler:nil];
+            [geocoder geocodeAddressString:addressString inRegion:nil completionHandler:^(NSArray *placemarks, NSError *error){}];
             [geocoder cancelGeocode];
         });
 
