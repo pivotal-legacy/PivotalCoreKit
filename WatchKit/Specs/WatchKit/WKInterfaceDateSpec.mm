@@ -30,7 +30,7 @@ describe(@"WKInterfaceDate", ^{
         });
 
         it(@"should record the invocation for setCalendar:", ^{
-            NSCalendar *calendar = [[NSCalendar alloc] init];
+            NSCalendar *calendar = [NSCalendar new];
             [subject setCalendar:calendar];
 
             subject should have_received(@selector(setCalendar:)).with(calendar);

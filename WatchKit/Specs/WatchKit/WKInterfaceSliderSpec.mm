@@ -1,6 +1,6 @@
 #import "Cedar.h"
 #import "SliderController.h"
-
+#import "NSBundle+BuildHelper.h"
 
 using namespace Cedar::Matchers;
 using namespace Cedar::Doubles;
@@ -13,11 +13,10 @@ describe(@"WKInterfaceSlider", ^{
     __block SliderController *controller;
     __block PCKInterfaceControllerLoader *loader;
     beforeEach(^{
-        NSBundle *testBundle = [NSBundle bundleForClass:[self class]];
         loader = [[PCKInterfaceControllerLoader alloc] init];
         controller = [loader interfaceControllerWithStoryboardName:@"Interface"
                                                         identifier:@"MySliderController"
-                                                            bundle:testBundle];
+                                                            bundle:[NSBundle buildHelperBundle]];
         subject = controller.slider;
     });
 

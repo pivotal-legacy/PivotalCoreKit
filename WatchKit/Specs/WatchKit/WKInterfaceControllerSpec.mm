@@ -3,6 +3,7 @@
 #import "InterfaceController.h"
 #import "PCKInterfaceControllerLoader.h"
 #import "NSInvocation+InvocationMatching.h"
+#import "NSBundle+BuildHelper.h"
 
 using namespace Cedar::Matchers;
 using namespace Cedar::Doubles;
@@ -15,11 +16,10 @@ describe(@"WKInterfaceController", ^{
     __block PCKInterfaceControllerLoader *loader;
 
     beforeEach(^{
-        NSBundle *testBundle = [NSBundle bundleForClass:[self class]];
         loader = [[PCKInterfaceControllerLoader alloc] init];
         subject = [loader interfaceControllerWithStoryboardName:@"Interface"
                                                      identifier:@"AgC-eL-Hgc"
-                                                         bundle:testBundle];
+                                                         bundle:[NSBundle buildHelperBundle]];
     });
 
     describe(@"public methods", ^{

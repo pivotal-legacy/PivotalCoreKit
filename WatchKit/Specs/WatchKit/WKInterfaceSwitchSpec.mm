@@ -1,6 +1,6 @@
 #import "Cedar.h"
 #import "InterfaceController.h"
-
+#import "NSBundle+BuildHelper.h"
 
 using namespace Cedar::Matchers;
 using namespace Cedar::Doubles;
@@ -12,11 +12,10 @@ describe(@"WKInterfaceSwitch", ^{
     __block WKInterfaceSwitch *subject;
 
     beforeEach(^{
-        NSBundle *testBundle = [NSBundle bundleForClass:[self class]];
         PCKInterfaceControllerLoader *loader = [[PCKInterfaceControllerLoader alloc] init];
         InterfaceController *controller = [loader interfaceControllerWithStoryboardName:@"Interface"
                                                                              identifier:@"AgC-eL-Hgc"
-                                                                                 bundle:testBundle];
+                                                                                 bundle:[NSBundle buildHelperBundle]];
         subject = controller.theSwitch;
     });
 

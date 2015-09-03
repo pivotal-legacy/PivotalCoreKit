@@ -12,14 +12,15 @@
 		2681A5B11AE0906600B0B753 /* WKInterfaceDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 2681A5AF1AE0906600B0B753 /* WKInterfaceDevice.m */; };
 		2681A5B21AE0906600B0B753 /* WKInterfaceDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = 2681A5B01AE0906600B0B753 /* WKInterfaceDevice.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2681A5D31AE0991C00B0B753 /* WKInterfaceDeviceSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2681A5D21AE0991C00B0B753 /* WKInterfaceDeviceSpec.mm */; };
+		34456A201B98ED0A008A16A2 /* SpecBuildHelper.app in Resources */ = {isa = PBXBuildFile; fileRef = 344569F91B98EC04008A16A2 /* SpecBuildHelper.app */; };
+		34456A241B98F3B4008A16A2 /* NSBundle+BuildHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 34456A231B98F3B4008A16A2 /* NSBundle+BuildHelper.m */; };
+		34456A251B98FDD0008A16A2 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE25D65D1A38FFA9008A1920 /* Interface.storyboard */; };
 		AE03A0391A391C5900AD4964 /* corgi.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = AE03A0381A391C5900AD4964 /* corgi.jpeg */; };
 		AE0FDC801A6ECB71006C781D /* CustomCategoryNotificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0FDC7F1A6ECB71006C781D /* CustomCategoryNotificationController.m */; };
-		AE120D211B55865B00BAD2BC /* Rootless.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE120D201B55865B00BAD2BC /* Rootless.storyboard */; };
 		AE25D5FE1A38F6C9008A1920 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE25D5FD1A38F6C9008A1920 /* XCTest.framework */; };
 		AE25D6001A38F6C9008A1920 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE25D5FF1A38F6C9008A1920 /* CoreGraphics.framework */; };
 		AE25D6021A38F6C9008A1920 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE25D6011A38F6C9008A1920 /* UIKit.framework */; };
 		AE25D6041A38F6C9008A1920 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE25D6031A38F6C9008A1920 /* Foundation.framework */; };
-		AE25D6091A38F6C9008A1920 /* Specs-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE25D6081A38F6C9008A1920 /* Specs-Info.plist */; };
 		AE25D6411A38F79E008A1920 /* libCedar-StaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE25D62E1A38F77D008A1920 /* libCedar-StaticLib.a */; };
 		AE25D6611A390480008A1920 /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE25D6601A390480008A1920 /* InterfaceController.m */; };
 		AE25F4841B5EBCB2009B599E /* WKInterfaceButton+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE25F4831B5EBCB2009B599E /* WKInterfaceButton+Spec.m */; };
@@ -80,7 +81,6 @@
 		B83C32331A4CDA380021F1A4 /* PCKInterfaceControllerLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = B83C322F1A4CDA380021F1A4 /* PCKInterfaceControllerLoader.m */; };
 		B83C32351A4CDCDE0021F1A4 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B83C32341A4CDCDE0021F1A4 /* CoreLocation.framework */; };
 		B83C32361A4CDD670021F1A4 /* WatchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B83C31C11A4CD8A40021F1A4 /* WatchKit.framework */; };
-		B83C32371A4CDDE40021F1A4 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE25D65D1A38FFA9008A1920 /* Interface.storyboard */; };
 		B83C323C1A4CE0FC0021F1A4 /* UIColor+PCK_StringToColor.h in Headers */ = {isa = PBXBuildFile; fileRef = B83C323A1A4CE0FC0021F1A4 /* UIColor+PCK_StringToColor.h */; };
 		B83C323D1A4CE0FC0021F1A4 /* UIColor+PCK_StringToColor.m in Sources */ = {isa = PBXBuildFile; fileRef = B83C323B1A4CE0FC0021F1A4 /* UIColor+PCK_StringToColor.m */; };
 		B83C324C1A4CE18C0021F1A4 /* PCKInterfaceControllerLoaderSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = B83C323E1A4CE18C0021F1A4 /* PCKInterfaceControllerLoaderSpec.mm */; };
@@ -222,17 +222,18 @@
 		2681A5AF1AE0906600B0B753 /* WKInterfaceDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKInterfaceDevice.m; sourceTree = "<group>"; };
 		2681A5B01AE0906600B0B753 /* WKInterfaceDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKInterfaceDevice.h; sourceTree = "<group>"; };
 		2681A5D21AE0991C00B0B753 /* WKInterfaceDeviceSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = WKInterfaceDeviceSpec.mm; path = Specs/WatchKit/WKInterfaceDeviceSpec.mm; sourceTree = SOURCE_ROOT; };
+		344569F91B98EC04008A16A2 /* SpecBuildHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpecBuildHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		34456A221B98F3B4008A16A2 /* NSBundle+BuildHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+BuildHelper.h"; sourceTree = "<group>"; };
+		34456A231B98F3B4008A16A2 /* NSBundle+BuildHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+BuildHelper.m"; sourceTree = "<group>"; };
 		AE03A0381A391C5900AD4964 /* corgi.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = corgi.jpeg; sourceTree = "<group>"; };
 		AE0FDC7E1A6ECB71006C781D /* CustomCategoryNotificationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCategoryNotificationController.h; sourceTree = "<group>"; };
 		AE0FDC7F1A6ECB71006C781D /* CustomCategoryNotificationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCategoryNotificationController.m; sourceTree = "<group>"; };
-		AE120D201B55865B00BAD2BC /* Rootless.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Rootless.storyboard; sourceTree = "<group>"; };
 		AE25D5FB1A38F6C9008A1920 /* Specs.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Specs.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE25D5FD1A38F6C9008A1920 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		AE25D5FF1A38F6C9008A1920 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = /System/Library/Frameworks/CoreGraphics.framework; sourceTree = "<absolute>"; };
 		AE25D6011A38F6C9008A1920 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		AE25D6031A38F6C9008A1920 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		AE25D6071A38F6C9008A1920 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AE25D6081A38F6C9008A1920 /* Specs-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Specs-Info.plist"; sourceTree = "<group>"; };
 		AE25D60C1A38F6C9008A1920 /* Rakefile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Rakefile; sourceTree = "<group>"; };
 		AE25D6171A38F77D008A1920 /* Cedar.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Cedar.xcodeproj; path = Cedar/Cedar.xcodeproj; sourceTree = "<group>"; };
 		AE25D65D1A38FFA9008A1920 /* Interface.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Interface.storyboard; sourceTree = "<group>"; };
@@ -349,6 +350,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		34456A211B98F378008A16A2 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				34456A221B98F3B4008A16A2 /* NSBundle+BuildHelper.h */,
+				34456A231B98F3B4008A16A2 /* NSBundle+BuildHelper.m */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		AE03A35E1A3A349A00AD4964 /* WatchKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -388,6 +398,7 @@
 			children = (
 				AE25D5FB1A38F6C9008A1920 /* Specs.xctest */,
 				B83C31C11A4CD8A40021F1A4 /* WatchKit.framework */,
+				344569F91B98EC04008A16A2 /* SpecBuildHelper.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -409,6 +420,7 @@
 			children = (
 				AE03A35E1A3A349A00AD4964 /* WatchKit */,
 				AE25D65C1A38FF83008A1920 /* Fixtures */,
+				34456A211B98F378008A16A2 /* Helpers */,
 				AE25D6061A38F6C9008A1920 /* Supporting Files */,
 			);
 			path = Specs;
@@ -417,7 +429,6 @@
 		AE25D6061A38F6C9008A1920 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				AE25D6081A38F6C9008A1920 /* Specs-Info.plist */,
 				AE25D60C1A38F6C9008A1920 /* Rakefile */,
 				AE25D6071A38F6C9008A1920 /* Info.plist */,
 			);
@@ -476,7 +487,6 @@
 				B83AC2271A5DF12400A35BD6 /* NotificationController.h */,
 				B83AC2281A5DF12400A35BD6 /* NotificationController.m */,
 				AE85C06F1A40B974009A0E4D /* plus@2x.png */,
-				AE120D201B55865B00BAD2BC /* Rootless.storyboard */,
 				AE85C0621A40A4F4009A0E4D /* SliderController.h */,
 				AE85C0631A40A4F4009A0E4D /* SliderController.m */,
 			);
@@ -600,6 +610,21 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		344569F81B98EC04008A16A2 /* SpecBuildHelper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 34456A1A1B98EC05008A16A2 /* Build configuration list for PBXNativeTarget "SpecBuildHelper" */;
+			buildPhases = (
+				344569F71B98EC04008A16A2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SpecBuildHelper;
+			productName = " WatchKit App";
+			productReference = 344569F91B98EC04008A16A2 /* SpecBuildHelper.app */;
+			productType = "com.apple.product-type.application.watchapp";
+		};
 		AE25D5FA1A38F6C9008A1920 /* Specs */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = AE25D6121A38F6CA008A1920 /* Build configuration list for PBXNativeTarget "Specs" */;
@@ -611,6 +636,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				34456A1D1B98EC21008A16A2 /* PBXTargetDependency */,
 				B83C31DB1A4CD8F70021F1A4 /* PBXTargetDependency */,
 				AE25D6401A38F794008A1920 /* PBXTargetDependency */,
 			);
@@ -646,6 +672,9 @@
 				LastUpgradeCheck = 0620;
 				ORGANIZATIONNAME = Pivotal;
 				TargetAttributes = {
+					344569F81B98EC04008A16A2 = {
+						CreatedOnToolsVersion = 6.3.1;
+					};
 					AE25D5FA1A38F6C9008A1920 = {
 						CreatedOnToolsVersion = 6.2;
 					};
@@ -660,6 +689,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = AE25D5D01A38F664008A1920;
 			productRefGroup = AE25D5DA1A38F664008A1920 /* Products */;
@@ -674,11 +704,26 @@
 			targets = (
 				B83C31C01A4CD8A40021F1A4 /* WatchKit */,
 				AE25D5FA1A38F6C9008A1920 /* Specs */,
+				344569F81B98EC04008A16A2 /* SpecBuildHelper */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		34456A171B98EC05008A16A2 /* Cedar.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Cedar.framework;
+			remoteRef = 34456A161B98EC05008A16A2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		34456A191B98EC05008A16A2 /* Cedar-iOS-Framework Specs.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "Cedar-iOS-Framework Specs.app";
+			remoteRef = 34456A181B98EC05008A16A2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		AE25D6281A38F77D008A1920 /* Cedar.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -759,16 +804,22 @@
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
+		344569F71B98EC04008A16A2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34456A251B98FDD0008A16A2 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AE25D5F51A38F6C9008A1920 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34456A201B98ED0A008A16A2 /* SpecBuildHelper.app in Resources */,
 				AE85C0701A40B974009A0E4D /* plus@2x.png in Resources */,
 				AE85C0721A40B990009A0E4D /* minus@2x.png in Resources */,
-				B83C32371A4CDDE40021F1A4 /* Interface.storyboard in Resources */,
-				AE25D6091A38F6C9008A1920 /* Specs-Info.plist in Resources */,
 				AE03A0391A391C5900AD4964 /* corgi.jpeg in Resources */,
-				AE120D211B55865B00BAD2BC /* Rootless.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -794,6 +845,7 @@
 				AEAA43D31A5F4CBE0034358B /* GlanceController.m in Sources */,
 				AE0FDC801A6ECB71006C781D /* CustomCategoryNotificationController.m in Sources */,
 				B83C32541A4CE18C0021F1A4 /* WKInterfaceObjectSpec.mm in Sources */,
+				34456A241B98F3B4008A16A2 /* NSBundle+BuildHelper.m in Sources */,
 				AEB03EDE1A3FB366002404BC /* MapController.m in Sources */,
 				B83C324E1A4CE18C0021F1A4 /* WKInterfaceControllerSpec.mm in Sources */,
 				B83C324D1A4CE18C0021F1A4 /* WKInterfaceButtonSpec.mm in Sources */,
@@ -845,6 +897,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		34456A1D1B98EC21008A16A2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 344569F81B98EC04008A16A2 /* SpecBuildHelper */;
+			targetProxy = 34456A1C1B98EC21008A16A2 /* PBXContainerItemProxy */;
+		};
 		AE25D6401A38F794008A1920 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Cedar-StaticLib";
@@ -858,6 +915,41 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		34456A071B98EC05008A16A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IBSC_MODULE = "___ASSOCIATEDTARGET_bundleNameAsIdentifier____WatchKit_Extension";
+				INFOPLIST_FILE = "Specs/SpecBuildHelper-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Debug;
+		};
+		34456A081B98EC05008A16A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				IBSC_MODULE = "___ASSOCIATEDTARGET_bundleNameAsIdentifier____WatchKit_Extension";
+				INFOPLIST_FILE = "Specs/SpecBuildHelper-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Release;
+		};
 		AE25D5EB1A38F664008A1920 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1032,6 +1124,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		34456A1A1B98EC05008A16A2 /* Build configuration list for PBXNativeTarget "SpecBuildHelper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				34456A071B98EC05008A16A2 /* Debug */,
+				34456A081B98EC05008A16A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		AE25D5D41A38F664008A1920 /* Build configuration list for PBXProject "WatchKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
