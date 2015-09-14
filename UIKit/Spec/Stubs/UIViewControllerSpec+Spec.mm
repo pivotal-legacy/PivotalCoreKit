@@ -200,6 +200,32 @@ describe(@"UIViewController (spec extensions)", ^{
         });
 #pragma clang diagnostic pop
     });
+
+    describe(@"transitioning between child view controllers", ^{
+        __block UIViewController *parentController;
+        __block UIViewController *oldChildController;
+        __block UIViewController *newChildController;
+        beforeEach(^{
+            parentController = [[UIViewController alloc] init];
+            oldChildController = [[UIViewController alloc] init];
+            newChildController = [[UIViewController alloc] init];
+
+            [parentController addChildViewController:oldChildController];
+            [parentController.view addSubview:oldChildController.view];
+            [oldChildController didMoveToParentViewController:parentController];
+
+            [parentController transitionFromViewController:oldChildController
+                                          toViewController:newChildController
+                                                  duration:0
+                                                   options:UIViewAnimationOptionCurveEaseInOut
+                                                animations:nil
+                                                completion:nil];
+        });
+
+        it(@"should make the new child controller's view to the parent's view's subviews", ^{
+            parentController.view.subviews should contain(newChildController.view);
+        });
+    });
 });
 
 SPEC_END

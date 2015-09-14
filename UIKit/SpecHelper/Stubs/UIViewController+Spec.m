@@ -129,8 +129,16 @@ static char PRESENTED_CONTROLLER_KEY;
 }
 
 - (void)pck_transitionFromViewController:(UIViewController *)fromViewController toViewController:(UIViewController *)toViewController duration:(NSTimeInterval)duration options:(UIViewAnimationOptions)options animations:(void (^)(void))animations completion:(void (^)(BOOL))completion {
-    animations();
-    completion(YES);
+
+    [[self view] addSubview:toViewController.view];
+
+    if (animations) {
+        animations();
+    }
+
+    if (completion) {
+        completion(YES);
+    }
 }
 
 @end
