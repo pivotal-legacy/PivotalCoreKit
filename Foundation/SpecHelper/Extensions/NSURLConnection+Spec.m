@@ -8,6 +8,27 @@
 #import "PCKConnectionBlockDelegate.h"
 #import "PSHKFakeOperationQueue.h"
 
+#pragma mark - DefaultAuthenticationChallengeSender
+
+@interface DefaultAuthenticationChallengeSender : NSObject<NSURLAuthenticationChallengeSender>
+@end
+static DefaultAuthenticationChallengeSender* defaultSender__;
+
+@implementation DefaultAuthenticationChallengeSender
++ (DefaultAuthenticationChallengeSender*)sender {
+  if(!defaultSender__) {
+    defaultSender__ = [[DefaultAuthenticationChallengeSender alloc] init];
+  }
+  
+  return defaultSender__;
+}
+
+- (void)useCredential:(NSURLCredential *)credential forAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge {}
+- (void)continueWithoutCredentialForAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge {}
+- (void)cancelAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge {}
+@end
+
+#pragma mark - NSURLConnection+Spec
 
 static char ASSOCIATED_REQUEST_KEY;
 static char ASSOCIATED_DELEGATE_KEY;
@@ -253,12 +274,13 @@ static PSHKFakeOperationQueue *connectionsQueue__;
                                                                                   realm:nil
                                                                    authenticationMethod:nil]
                                              autorelease];
+  
     NSURLAuthenticationChallenge *challenge = [[[NSURLAuthenticationChallenge alloc] initWithProtectionSpace:protectionSpace
                                                                                           proposedCredential:credential
                                                                                         previousFailureCount:1
                                                                                              failureResponse:nil
                                                                                                        error:nil
-                                                                                                      sender:nil]
+                                                                                                      sender:[DefaultAuthenticationChallengeSender sender]]
                                                autorelease];
 
     [[self delegate] connection:self didReceiveAuthenticationChallenge:challenge];
