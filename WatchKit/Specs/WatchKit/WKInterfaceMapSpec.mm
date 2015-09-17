@@ -1,5 +1,5 @@
 #import "Cedar.h"
-#import "MapController.h"
+#import "ZebraMapController.h"
 
 
 using namespace Cedar::Matchers;
@@ -10,7 +10,7 @@ SPEC_BEGIN(WKInterfaceMapSpec)
 
 describe(@"WKInterfaceMap", ^{
     __block WKInterfaceMap *subject;
-    __block MapController *controller;
+    __block ZebraMapController *controller;
     __block PCKInterfaceControllerLoader *loader;
 
     beforeEach(^{
@@ -19,7 +19,7 @@ describe(@"WKInterfaceMap", ^{
         controller = [loader interfaceControllerWithStoryboardName:@"Interface"
                                                         identifier:@"MyMapController"
                                                             bundle:testBundle];
-        subject = controller.map;
+        subject = controller.zebraMap;
     });
 
     describe(@"setters", ^{
