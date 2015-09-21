@@ -9,6 +9,10 @@
 #import "PSHKFakeOperationQueue.h"
 
 
+@interface FakeChallengeSender : NSObject <NSURLAuthenticationChallengeSender>
+@end
+
+
 static char ASSOCIATED_REQUEST_KEY;
 static char ASSOCIATED_DELEGATE_KEY;
 static char REQUEST_IS_LIVE_KEY;
@@ -253,15 +257,36 @@ static PSHKFakeOperationQueue *connectionsQueue__;
                                                                                   realm:nil
                                                                    authenticationMethod:nil]
                                              autorelease];
+    FakeChallengeSender *sender = [[[FakeChallengeSender alloc] init] autorelease];
     NSURLAuthenticationChallenge *challenge = [[[NSURLAuthenticationChallenge alloc] initWithProtectionSpace:protectionSpace
                                                                                           proposedCredential:credential
                                                                                         previousFailureCount:1
                                                                                              failureResponse:nil
                                                                                                        error:nil
-                                                                                                      sender:nil]
+                                                                                                      sender:sender]
                                                autorelease];
 
     [[self delegate] connection:self didReceiveAuthenticationChallenge:challenge];
+}
+
+@end
+
+
+@implementation FakeChallengeSender
+
+- (void)useCredential:(NSURLCredential *)credential forAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge
+{
+
+}
+
+- (void)continueWithoutCredentialForAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge
+{
+
+}
+
+- (void)cancelAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge
+{
+
 }
 
 @end
