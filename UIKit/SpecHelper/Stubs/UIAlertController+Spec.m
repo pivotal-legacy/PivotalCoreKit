@@ -48,4 +48,12 @@
     return self.actions[buttonIndex];
 }
 
+- (void)_uninstallSelectGestureRecognizer {
+    // UIAlertController's implementation of this method is called from -dealloc and calls -view.
+    // Since the view is generally not previously loaded when used while PCK is loaded, this means
+    // that the view is loaded for the first time while UIAlertController is deallocating, which
+    // is not allowed and prints scary console messages under iOS 9. Overriding this method here
+    // prevents the view from being loaded in this situation.
+}
+
 @end

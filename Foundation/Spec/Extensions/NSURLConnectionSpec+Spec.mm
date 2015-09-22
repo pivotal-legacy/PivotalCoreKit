@@ -124,7 +124,7 @@ describe(@"NSURLConnection (spec extensions)", ^{
 
         it(@"should receive failures", ^{
             NSData *data = [@"Fail" dataUsingEncoding:NSUTF8StringEncoding];
-            NSError *error = [[NSError alloc] init];
+            NSError *error = [NSError errorWithDomain:@"" code:0 userInfo:nil];
 
             [connection failWithError:error data:data];
 
