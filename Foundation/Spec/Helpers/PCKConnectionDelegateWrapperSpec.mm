@@ -68,7 +68,7 @@ describe(@"PCKConnectionDelegateWrapper", ^{
 
         context(@"and the connection fails", ^{
             it(@"should tell the delegate and call the completion callback, passing nil in", ^{
-                NSError *error = [[NSError alloc] init];
+                NSError *error = [NSError errorWithDomain:@"" code:0 userInfo:nil];
                 [delegateWrapper connection:proxyConnection didFailWithError:error];
                 delegate should have_received(@selector(connection:didFailWithError:)).with(connection).and_with(error);
 

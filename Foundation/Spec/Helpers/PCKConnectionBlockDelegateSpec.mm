@@ -53,7 +53,7 @@ describe(@"PCKConnectionBlockDelegate", ^{
 
     context(@"when the request fails", ^{
         it(@"should call the block, passingin the response, nil for the data, and the passed in error", ^{
-            NSError *error = [[NSError alloc] init];
+            NSError *error = [NSError errorWithDomain:@"" code:0 userInfo:nil];
             [delegate connection:connection didFailWithError:error];
             receivedResponse should equal(sentResponse);
             receivedData should be_nil;

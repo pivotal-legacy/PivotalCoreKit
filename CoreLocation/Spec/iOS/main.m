@@ -1,9 +1,8 @@
 #import <UIKit/UIKit.h>
-#import "Cedar.h"
 
-int main(int argc, char *argv[])
-{
+int main(int argc, char *argv[]) {
     @autoreleasepool {
-        return UIApplicationMain(argc, argv, nil, @"CedarApplicationDelegate");
+        NSString *appDelegateName = NSClassFromString(@"XCTestCase") ? nil : @"CedarApplicationDelegate";
+        return UIApplicationMain(argc, argv, nil, appDelegateName);
     }
 }

@@ -21,7 +21,6 @@
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="Esl-ah-oDv" appends="YES" id="L0X-Sb-C0m"/>
                             <outletCollection property="gestureRecognizers" destination="1Vv-wd-Tsy" appends="YES" id="PQR-aY-XMj"/>
-                            <outletCollection property="gestureRecognizers" destination="1Vv-wd-Tsy" appends="YES" id="cMn-s9-adi"/>
                         </connections>
                     </view>
                     <connections>

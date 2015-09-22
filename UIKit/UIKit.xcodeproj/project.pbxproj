@@ -41,6 +41,7 @@
 		22601B5B16BA263A00A807CB /* UIKit+PivotalSpecHelper.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 22601B5A16BA263A00A807CB /* UIKit+PivotalSpecHelper.h */; };
 		22601B5C16BA274B00A807CB /* UISlider+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 22601B4D16BA202A00A807CB /* UISlider+Spec.h */; };
 		346281C618D7AC1300E9C952 /* UIGestureRecognizer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 346281C518D7AC1300E9C952 /* UIGestureRecognizer.storyboard */; };
+		3466C09E1B97A44500CBAB59 /* BundleSpecLoader.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE118AC118D6B63900C90D6B /* BundleSpecLoader.mm */; settings = {ASSET_TAGS = (); }; };
 		3490AFED19A3CF4700DAA8E3 /* TableViewPrototypeCells.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3490AFEC19A3CF4000DAA8E3 /* TableViewPrototypeCells.storyboard */; };
 		34BDAC6A19A3FCD90085B45A /* CollectionViewPrototypeCells.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34BDAC6919A3FCD90085B45A /* CollectionViewPrototypeCells.storyboard */; };
 		34BDAC7919A42C990085B45A /* UICollectionReusableViewSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34BDAC7819A42C990085B45A /* UICollectionReusableViewSpec+Spec.mm */; };
@@ -59,13 +60,8 @@
 		AE03FC9A1B0A8AC500013784 /* UISwitch+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = FAF932CB192703280076C733 /* UISwitch+Spec.h */; };
 		AE04B1E71B50821B00248694 /* UIViewController+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = DE99C6A16495A2EF63F66D48 /* UIViewController+Spec.h */; };
 		AE062BD01A43240500AF8D33 /* UIAlertActionSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE062BCE1A4323CF00AF8D33 /* UIAlertActionSpec+Spec.mm */; };
-		AE118AA418D6B57000C90D6B /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE118AA318D6B57000C90D6B /* SenTestingKit.framework */; };
-		AE118AA718D6B57000C90D6B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEBCCBE7168B97DD0056EE83 /* Foundation.framework */; };
-		AE118AC218D6B63900C90D6B /* BundleSpecLoader.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE118AC118D6B63900C90D6B /* BundleSpecLoader.mm */; };
 		AE118ADA18D6BB6700C90D6B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE118AD918D6BB6700C90D6B /* UIKit.framework */; };
 		AE118ADC18D6BB6D00C90D6B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE118ADB18D6BB6D00C90D6B /* CoreGraphics.framework */; };
-		AE118ADD18D6BB7E00C90D6B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE118ADB18D6BB6D00C90D6B /* CoreGraphics.framework */; };
-		AE118ADE18D6BB8300C90D6B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE118AD918D6BB6700C90D6B /* UIKit.framework */; };
 		AE1FBEA317D15A4100B0F03B /* UITableViewCellSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE1FBEA217D15A4100B0F03B /* UITableViewCellSpec+Spec.mm */; };
 		AE244D4319077EEB00ED96E9 /* UIActivityViewController+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 8487257119013F5F00288770 /* UIActivityViewController+Spec.h */; };
 		AE3847AD168BA0E300C99B55 /* AWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3847A7168BA0B300C99B55 /* AWebViewController.m */; };
@@ -178,6 +174,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		3466C0991B97A3C500CBAB59 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEBCCBA7168B95A00056EE83 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AEBCCC33168B99ED0056EE83;
+			remoteInfo = "UIKit-StaticLibSpec";
+		};
 		AE3847B1168BA27D00C99B55 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AEBCCBA7168B95A00056EE83 /* Project object */;
@@ -283,13 +286,6 @@
 			remoteGlobalIDString = AEB8818719DCD62D00F081BA;
 			remoteInfo = "Cedar OS X Failing Test Bundle";
 		};
-		AEF6633B1A12E167003AFD0D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AEBCCBA7168B95A00056EE83 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = AEBCCC33168B99ED0056EE83;
-			remoteInfo = "UIKit-StaticLibSpec";
-		};
 		FA1A5176186290C900C22BA8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AEBCCBF4168B98100056EE83 /* Cedar.xcodeproj */;
@@ -386,6 +382,7 @@
 		22601B5816BA209F00A807CB /* UISliderSpec+Spec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UISliderSpec+Spec.mm"; sourceTree = "<group>"; };
 		22601B5A16BA263A00A807CB /* UIKit+PivotalSpecHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIKit+PivotalSpecHelper.h"; sourceTree = "<group>"; };
 		346281C518D7AC1300E9C952 /* UIGestureRecognizer.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UIGestureRecognizer.storyboard; sourceTree = "<group>"; };
+		3466C0941B97A3C500CBAB59 /* UIKit-StaticLibSpecBundle.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "UIKit-StaticLibSpecBundle.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3490AFE919A3C0A800DAA8E3 /* PCKPrototypeCellInstantiatingDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCKPrototypeCellInstantiatingDataSource.h; sourceTree = "<group>"; };
 		3490AFEA19A3C0A800DAA8E3 /* PCKPrototypeCellInstantiatingDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCKPrototypeCellInstantiatingDataSource.m; sourceTree = "<group>"; };
 		3490AFEC19A3CF4000DAA8E3 /* TableViewPrototypeCells.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TableViewPrototypeCells.storyboard; sourceTree = "<group>"; };
@@ -406,7 +403,6 @@
 		AE062BBF1A4323A800AF8D33 /* UIAlertAction+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertAction+Spec.h"; sourceTree = "<group>"; };
 		AE062BC01A4323A800AF8D33 /* UIAlertAction+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertAction+Spec.m"; sourceTree = "<group>"; };
 		AE062BCE1A4323CF00AF8D33 /* UIAlertActionSpec+Spec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIAlertActionSpec+Spec.mm"; sourceTree = "<group>"; };
-		AE118AA218D6B57000C90D6B /* UIKit-StaticLibSpecBundle.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "UIKit-StaticLibSpecBundle.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE118AA318D6B57000C90D6B /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		AE118AC118D6B63900C90D6B /* BundleSpecLoader.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BundleSpecLoader.mm; sourceTree = "<group>"; };
 		AE118AD918D6BB6700C90D6B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -533,14 +529,10 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		AE118A9E18D6B57000C90D6B /* Frameworks */ = {
+		3466C0911B97A3C500CBAB59 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE118ADE18D6BB8300C90D6B /* UIKit.framework in Frameworks */,
-				AE118ADD18D6BB7E00C90D6B /* CoreGraphics.framework in Frameworks */,
-				AE118AA418D6B57000C90D6B /* SenTestingKit.framework in Frameworks */,
-				AE118AA718D6B57000C90D6B /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -664,7 +656,7 @@
 				AEBCCC34168B99ED0056EE83 /* UIKit-StaticLibSpec.app */,
 				AEBCCC64168B9AF10056EE83 /* libUIKit+PivotalSpecHelper-StaticLib.a */,
 				AEC40C89174C203700474D2D /* libUIKit+PivotalSpecHelperStubs-StaticLib.a */,
-				AE118AA218D6B57000C90D6B /* UIKit-StaticLibSpecBundle.octest */,
+				3466C0941B97A3C500CBAB59 /* UIKit-StaticLibSpecBundle.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -891,24 +883,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		AE118AA118D6B57000C90D6B /* UIKit-StaticLibSpecBundle */ = {
+		3466C0931B97A3C500CBAB59 /* UIKit-StaticLibSpecBundle */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AE118AC018D6B57000C90D6B /* Build configuration list for PBXNativeTarget "UIKit-StaticLibSpecBundle" */;
+			buildConfigurationList = 3466C09B1B97A3C500CBAB59 /* Build configuration list for PBXNativeTarget "UIKit-StaticLibSpecBundle" */;
 			buildPhases = (
-				AE118A9D18D6B57000C90D6B /* Sources */,
-				AE118A9E18D6B57000C90D6B /* Frameworks */,
-				AE118A9F18D6B57000C90D6B /* Resources */,
-				AE118AA018D6B57000C90D6B /* ShellScript */,
+				3466C0901B97A3C500CBAB59 /* Sources */,
+				3466C0911B97A3C500CBAB59 /* Frameworks */,
+				3466C0921B97A3C500CBAB59 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				AEF6633C1A12E167003AFD0D /* PBXTargetDependency */,
+				3466C09A1B97A3C500CBAB59 /* PBXTargetDependency */,
 			);
 			name = "UIKit-StaticLibSpecBundle";
 			productName = "UIKit-StaticLibSpecBundle";
-			productReference = AE118AA218D6B57000C90D6B /* UIKit-StaticLibSpecBundle.octest */;
-			productType = "com.apple.product-type.bundle.ocunit-test";
+			productReference = 3466C0941B97A3C500CBAB59 /* UIKit-StaticLibSpecBundle.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		AEBCCC23168B999F0056EE83 /* UIKit+PivotalCore-StaticLib */ = {
 			isa = PBXNativeTarget;
@@ -990,6 +981,12 @@
 			attributes = {
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Pivotal Labs";
+				TargetAttributes = {
+					3466C0931B97A3C500CBAB59 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = AEBCCC33168B99ED0056EE83;
+					};
+				};
 			};
 			buildConfigurationList = AEBCCBAA168B95A00056EE83 /* Build configuration list for PBXProject "UIKit" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1015,7 +1012,7 @@
 				AEBCCC33168B99ED0056EE83 /* UIKit-StaticLibSpec */,
 				B866FC0716B48C8200317E32 /* UIKit+PivotalSpecHelper-iOS */,
 				AEC40CC2174C283400474D2D /* UIKit+PivotalSpecHelperStubs-iOS */,
-				AE118AA118D6B57000C90D6B /* UIKit-StaticLibSpecBundle */,
+				3466C0931B97A3C500CBAB59 /* UIKit-StaticLibSpecBundle */,
 			);
 		};
 /* End PBXProject section */
@@ -1108,7 +1105,7 @@
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
-		AE118A9F18D6B57000C90D6B /* Resources */ = {
+		3466C0921B97A3C500CBAB59 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1138,19 +1135,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		AE118AA018D6B57000C90D6B /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
-		};
 		AEC40CC6174C286500474D2D /* Build architecture-specific static libs */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1210,11 +1194,11 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		AE118A9D18D6B57000C90D6B /* Sources */ = {
+		3466C0901B97A3C500CBAB59 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE118AC218D6B63900C90D6B /* BundleSpecLoader.mm in Sources */,
+				3466C09E1B97A44500CBAB59 /* BundleSpecLoader.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1329,6 +1313,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		3466C09A1B97A3C500CBAB59 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AEBCCC33168B99ED0056EE83 /* UIKit-StaticLibSpec */;
+			targetProxy = 3466C0991B97A3C500CBAB59 /* PBXContainerItemProxy */;
+		};
 		AE3847B2168BA27D00C99B55 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = AEBCCC63168B9AF10056EE83 /* UIKit+PivotalSpecHelper-StaticLib */;
@@ -1349,18 +1338,13 @@
 			target = AEC40C88174C203700474D2D /* UIKit+PivotalSpecHelperStubs-StaticLib */;
 			targetProxy = AEC40CBA174C23DF00474D2D /* PBXContainerItemProxy */;
 		};
-		AEF6633C1A12E167003AFD0D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = AEBCCC33168B99ED0056EE83 /* UIKit-StaticLibSpec */;
-			targetProxy = AEF6633B1A12E167003AFD0D /* PBXContainerItemProxy */;
-		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		AE118AB418D6B57000C90D6B /* Debug */ = {
+		3466C09C1B97A3C500CBAB59 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/UIKit-StaticLibSpec.app/UIKit-StaticLibSpec";
+				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -1370,42 +1354,29 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"$(PROJECT_DIR)/../Externals/Cedar/**",
-				);
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-all_load",
-					"-lstdc++",
-				);
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../Externals/Cedar/**";
+				INFOPLIST_FILE = "Spec/UIKit-StaticLibSpecBundle-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pivotallabs.PivotalCoreKit.UIKit-StaticLibSpecBundle";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UIKit-StaticLibSpec.app/UIKit-StaticLibSpec";
 			};
 			name = Debug;
 		};
-		AE118AB518D6B57000C90D6B /* Release */ = {
+		3466C09D1B97A3C500CBAB59 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/UIKit-StaticLibSpec.app/UIKit-StaticLibSpec";
+				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -1415,33 +1386,23 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				COPY_PHASE_STRIP = NO;
 				ENABLE_NS_ASSERTIONS = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"$(PROJECT_DIR)/../Externals/Cedar/**",
-				);
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-all_load",
-					"-lstdc++",
-				);
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../Externals/Cedar/**";
+				INFOPLIST_FILE = "Spec/UIKit-StaticLibSpecBundle-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pivotallabs.PivotalCoreKit.UIKit-StaticLibSpecBundle";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UIKit-StaticLibSpec.app/UIKit-StaticLibSpec";
 				VALIDATE_PRODUCT = YES;
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
 		};
@@ -1675,14 +1636,13 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		AE118AC018D6B57000C90D6B /* Build configuration list for PBXNativeTarget "UIKit-StaticLibSpecBundle" */ = {
+		3466C09B1B97A3C500CBAB59 /* Build configuration list for PBXNativeTarget "UIKit-StaticLibSpecBundle" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				AE118AB418D6B57000C90D6B /* Debug */,
-				AE118AB518D6B57000C90D6B /* Release */,
+				3466C09C1B97A3C500CBAB59 /* Debug */,
+				3466C09D1B97A3C500CBAB59 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 		AEBCCBAA168B95A00056EE83 /* Build configuration list for PBXProject "UIKit" */ = {
 			isa = XCConfigurationList;

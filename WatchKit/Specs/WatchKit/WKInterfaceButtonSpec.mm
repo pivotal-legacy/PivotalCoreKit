@@ -1,6 +1,6 @@
 #import "Cedar.h"
 #import "InterfaceController.h"
-
+#import "NSBundle+BuildHelper.h"
 
 using namespace Cedar::Matchers;
 using namespace Cedar::Doubles;
@@ -14,11 +14,10 @@ describe(@"WKInterfaceButton", ^{
     __block PCKInterfaceControllerLoader *loader;
 
     beforeEach(^{
-        NSBundle *testBundle = [NSBundle bundleForClass:[self class]];
         loader = [[PCKInterfaceControllerLoader alloc] init];
         controller = [loader interfaceControllerWithStoryboardName:@"Interface"
                                                         identifier:@"AgC-eL-Hgc"
-                                                            bundle:testBundle];
+                                                            bundle:[NSBundle buildHelperBundle]];
     });
 
     describe(@"with an associated action", ^{

@@ -4,6 +4,7 @@
 #import "GlanceController.h"
 #import "CustomCategoryNotificationController.h"
 #import "PCKInterfaceControllerLoader.h"
+#import "NSBundle+BuildHelper.h"
 
 using namespace Cedar::Matchers;
 using namespace Cedar::Doubles;
@@ -13,10 +14,10 @@ SPEC_BEGIN(PCKInterfaceControllerLoaderSpec)
 
 describe(@"PCKInterfaceControllerLoader", ^{
     __block PCKInterfaceControllerLoader *subject;
-    __block NSBundle *testBundle;
+    __block NSBundle *buildHelperBundle;
 
     beforeEach(^{
-        testBundle = [NSBundle bundleForClass:[self class]];
+        buildHelperBundle = [NSBundle buildHelperBundle];
         subject = [[PCKInterfaceControllerLoader alloc] init];
     });
 
@@ -25,28 +26,11 @@ describe(@"PCKInterfaceControllerLoader", ^{
             it(@"should raise an exception with a helpful message", ^{
                 ^{
                     [subject rootInterfaceControllerForStoryboardNamed:@"NonExistentName"
-                                                              inBundle:testBundle];
+                                                              inBundle:buildHelperBundle];
                 }
                 should raise_exception
                     .with_name(NSInvalidArgumentException)
                     .with_reason(@"No storyboard named 'NonExistentName' exists in the test target.  Did you forget to add it?");
-            });
-        });
-
-        context(@"when there is no initial controller in the storyboard matching the name", ^{
-            it(@"should raise an exception with a helpful message", ^{
-                NSException *theException;
-                @try {
-                    [subject rootInterfaceControllerForStoryboardNamed:@"Rootless"
-                                                              inBundle:testBundle];
-                }
-                @catch (NSException *exception) {
-                    theException = exception;
-                }
-                @finally {
-                    theException.name should equal(NSInvalidArgumentException);
-                    theException.reason should equal(@"No root controller found for storyboard named 'Rootless'.  Did you forget to set it in interface builder?");
-                }
             });
         });
 
@@ -57,7 +41,7 @@ describe(@"PCKInterfaceControllerLoader", ^{
                     NSException *theException;
                     @try {
                         [subject rootInterfaceControllerForStoryboardNamed:@"StoryboardWithInvalidRootController"
-                                                                  inBundle:testBundle];
+                                                                  inBundle:buildHelperBundle];
                     }
                     @catch (NSException *exception) {
                         theException = exception;
@@ -73,7 +57,7 @@ describe(@"PCKInterfaceControllerLoader", ^{
                 it(@"should not throw a runtime exception, because it doesn't throw one in production", ^{
                     ^{
                         [subject rootInterfaceControllerForStoryboardNamed:@"StoryboardWithRootControllerWithInvalidAssociatedObjects"
-                                                                  inBundle:testBundle]; }
+                                                                  inBundle:buildHelperBundle]; }
                     should_not raise_exception;
                 });
             });
@@ -84,7 +68,7 @@ describe(@"PCKInterfaceControllerLoader", ^{
 
             beforeEach(^{
                 controller = [subject rootInterfaceControllerForStoryboardNamed:@"Interface"
-                                                                       inBundle:testBundle];
+                                                                       inBundle:buildHelperBundle];
             });
 
             it(@"should return the correct type of interface controller", ^{
@@ -302,7 +286,7 @@ describe(@"PCKInterfaceControllerLoader", ^{
                 ^{
                     [subject interfaceControllerWithStoryboardName:@"NonExistantName"
                                                         identifier:@"DoesntMatter"
-                                                            bundle:testBundle]; }
+                                                            bundle:buildHelperBundle]; }
                 should raise_exception
                 .with_name(NSInvalidArgumentException)
                 .with_reason(@"No storyboard named 'NonExistantName' exists in the test target.  Did you forget to add it?");
@@ -314,7 +298,7 @@ describe(@"PCKInterfaceControllerLoader", ^{
             it(@"should raise an exception with a helpful message", ^{
                 ^{ [subject interfaceControllerWithStoryboardName:@"Interface"
                                                        identifier:@"NonExistantController"
-                                                           bundle:testBundle]; }
+                                                           bundle:buildHelperBundle]; }
                 should raise_exception
                 .with_name(NSInvalidArgumentException)
                 .with_reason(@"No interface controller named 'NonExistantController' exists in the storyboard 'Interface'.  Please check the storyboard and try again.");
@@ -325,7 +309,7 @@ describe(@"PCKInterfaceControllerLoader", ^{
             it(@"should raise an exception with a helpful message", ^{
                 ^{ [subject interfaceControllerWithStoryboardName:@"Interface"
                                                        identifier:@"myNonExistantController"
-                                                           bundle:testBundle]; }
+                                                           bundle:buildHelperBundle]; }
                 should raise_exception
                 .with_name(NSInvalidArgumentException)
                 .with_reason(@"No class named 'NonExistantController' exists in the current target.  Did you forget to add it to the test target?");
@@ -338,7 +322,7 @@ describe(@"PCKInterfaceControllerLoader", ^{
             beforeEach(^{
                 controller = [subject interfaceControllerWithStoryboardName:@"Interface"
                                                                  identifier:@"AgC-eL-Hgc"
-                                                                     bundle:testBundle];
+                                                                     bundle:buildHelperBundle];
             });
 
             it(@"should return the correct type of interface controller", ^{
@@ -572,7 +556,7 @@ describe(@"PCKInterfaceControllerLoader", ^{
             it(@"should not throw a runtime exception, because it doesn't throw one in production", ^{
                 ^{[subject interfaceControllerWithStoryboardName:@"Interface"
                                                       identifier:@"AgC-eL-Hgc"
-                                                          bundle:testBundle]; }
+                                                          bundle:buildHelperBundle]; }
                 should_not raise_exception;
             });
         });
@@ -587,7 +571,7 @@ describe(@"PCKInterfaceControllerLoader", ^{
                 ^{
                     [subject dynamicNotificationInterfaceControllerWithStoryboardName:@"NonExistantName"
                                                                  notificationCategory:nil
-                                                                               bundle:testBundle]; }
+                                                                               bundle:buildHelperBundle]; }
                 should raise_exception
                 .with_name(NSInvalidArgumentException)
                 .with_reason(@"No storyboard named 'NonExistantName' exists in the test target.  Did you forget to add it?");
@@ -598,7 +582,7 @@ describe(@"PCKInterfaceControllerLoader", ^{
             beforeEach(^{
                 notificationController = [subject dynamicNotificationInterfaceControllerWithStoryboardName:@"Interface"
                                                                                       notificationCategory:nil
-                                                                                                    bundle:testBundle];
+                                                                                                    bundle:buildHelperBundle];
             });
 
             it(@"should have its properties populated appropriately", ^{
@@ -616,7 +600,7 @@ describe(@"PCKInterfaceControllerLoader", ^{
                 ^{
                     [subject dynamicNotificationInterfaceControllerWithStoryboardName:@"NonExistantName"
                                                                  notificationCategory:nil
-                                                                               bundle:testBundle]; }
+                                                                               bundle:buildHelperBundle]; }
                 should raise_exception
                 .with_name(NSInvalidArgumentException)
                 .with_reason(@"No storyboard named 'NonExistantName' exists in the test target.  Did you forget to add it?");
@@ -628,7 +612,7 @@ describe(@"PCKInterfaceControllerLoader", ^{
             beforeEach(^{
                 customCategoryNotificationController = [subject dynamicNotificationInterfaceControllerWithStoryboardName:@"Interface"
                                                                                                     notificationCategory:@"com.pivotal.core.watch"
-                                                                                                                  bundle:testBundle];
+                                                                                                                  bundle:buildHelperBundle];
             });
 
             it(@"should instantiate the custom controller", ^{
@@ -650,7 +634,7 @@ describe(@"PCKInterfaceControllerLoader", ^{
                 ^{
                     [subject glanceInterfaceControllerWithStoryboardName:@"NonExistantName"
                                                               identifier:@"0uZ-2p-rRc"
-                                                                  bundle:testBundle]; }
+                                                                  bundle:buildHelperBundle]; }
                 should raise_exception
                     .with_name(NSInvalidArgumentException)
                     .with_reason(@"No storyboard named 'NonExistantName' exists in the test target.  Did you forget to add it?");
@@ -664,7 +648,7 @@ describe(@"PCKInterfaceControllerLoader", ^{
                 ^{
                     [subject glanceInterfaceControllerWithStoryboardName:@"Interface"
                                                               identifier:@"NonExistantController"
-                                                                  bundle:testBundle]; }
+                                                                  bundle:buildHelperBundle]; }
                 should raise_exception
                     .with_name(NSInvalidArgumentException)
                     .with_reason(@"No interface controller named 'NonExistantController' exists in the storyboard 'Interface'.  Please check the storyboard and try again.");
@@ -676,7 +660,7 @@ describe(@"PCKInterfaceControllerLoader", ^{
             beforeEach(^{
                 glanceController = [subject glanceInterfaceControllerWithStoryboardName:@"Interface"
                                                                              identifier:@"0uZ-2p-rRc"
-                                                                                 bundle:testBundle];
+                                                                                 bundle:buildHelperBundle];
             });
 
             it(@"should have its properties populated appropriately", ^{
