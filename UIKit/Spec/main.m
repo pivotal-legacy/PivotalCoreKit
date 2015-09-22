@@ -1,9 +1,8 @@
 #import <UIKit/UIKit.h>
 
 int main(int argc, char *argv[]) {
-    int retVal;
     @autoreleasepool {
-        retVal = UIApplicationMain(argc, argv, nil, @"CedarApplicationDelegate");
+        NSString *appDelegateName = NSClassFromString(@"XCTestCase") ? nil : @"CedarApplicationDelegate";
+        return UIApplicationMain(argc, argv, nil, appDelegateName);
     }
-    return retVal;
 }
