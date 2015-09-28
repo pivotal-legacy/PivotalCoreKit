@@ -152,7 +152,6 @@
 		B866FC1B16B4957500317E32 /* UIImage+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AEBCCC77168B9B5F0056EE83 /* UIImage+Spec.h */; };
 		B866FC1C16B4957500317E32 /* UITableViewCell+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AEBCCC79168B9B5F0056EE83 /* UITableViewCell+Spec.h */; };
 		B866FC1D16B4957500317E32 /* UIView+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AEBCCC7B168B9B5F0056EE83 /* UIView+Spec.h */; };
-		B866FC1F16B4957500317E32 /* UIKitMatchers.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AE3847A4168B9DF700C99B55 /* UIKitMatchers.h */; };
 		B86B686B1A132EF700F283F7 /* __PCKSilenceLinkerWarnings.m in Sources */ = {isa = PBXBuildFile; fileRef = B86B686A1A132EF700F283F7 /* __PCKSilenceLinkerWarnings.m */; };
 		B8C62E6D16BC03420009CDAD /* UIBarButtonItem+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = B8C62E6C16BC03420009CDAD /* UIBarButtonItem+Spec.m */; };
 		B8C62E6F16BC04230009CDAD /* UIBarButtonItemSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = B8C62E6E16BC04230009CDAD /* UIBarButtonItemSpec+Spec.mm */; };
@@ -361,7 +360,6 @@
 				B866FC1B16B4957500317E32 /* UIImage+Spec.h in Copy headers to framework */,
 				B866FC1C16B4957500317E32 /* UITableViewCell+Spec.h in Copy headers to framework */,
 				B866FC1D16B4957500317E32 /* UIView+Spec.h in Copy headers to framework */,
-				B866FC1F16B4957500317E32 /* UIKitMatchers.h in Copy headers to framework */,
 				AE6EE0001B1A265000A2BA07 /* UIWindow+Spec.h in Copy headers to framework */,
 				AE6EDFF31B1A263D00A2BA07 /* UISegmentedControl+Spec.h in Copy headers to framework */,
 				AE03FC9A1B0A8AC500013784 /* UISwitch+Spec.h in Copy headers to framework */,
@@ -408,7 +406,6 @@
 		AE118AD918D6BB6700C90D6B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AE118ADB18D6BB6D00C90D6B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		AE1FBEA217D15A4100B0F03B /* UITableViewCellSpec+Spec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UITableViewCellSpec+Spec.mm"; sourceTree = "<group>"; };
-		AE3847A4168B9DF700C99B55 /* UIKitMatchers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIKitMatchers.h; sourceTree = "<group>"; };
 		AE3847A6168BA0B300C99B55 /* AWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWebViewController.h; sourceTree = "<group>"; };
 		AE3847A7168BA0B300C99B55 /* AWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWebViewController.m; sourceTree = "<group>"; };
 		AE3847A8168BA0B300C99B55 /* AWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AWebViewController.xib; sourceTree = "<group>"; };
@@ -588,14 +585,6 @@
 			path = Support;
 			sourceTree = "<group>";
 		};
-		AE3847A3168B9DC600C99B55 /* Matchers */ = {
-			isa = PBXGroup;
-			children = (
-				AE3847A4168B9DF700C99B55 /* UIKitMatchers.h */,
-			);
-			path = Matchers;
-			sourceTree = "<group>";
-		};
 		AE3847A5168BA07C00C99B55 /* Fixtures */ = {
 			isa = PBXGroup;
 			children = (
@@ -676,7 +665,6 @@
 			children = (
 				3490AFDE19A3C01A00DAA8E3 /* Support */,
 				AEBCCC70168B9B5F0056EE83 /* Extensions */,
-				AE3847A3168B9DC600C99B55 /* Matchers */,
 				AEC40C95174C21AC00474D2D /* Stubs */,
 				AE118AC118D6B63900C90D6B /* BundleSpecLoader.mm */,
 				22601B5A16BA263A00A807CB /* UIKit+PivotalSpecHelper.h */,
@@ -1504,7 +1492,6 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
-					"CEDAR_CUSTOM_COMPARATORS=\\\"$SRCROOT/SpecHelper/Matchers/UIKitMatchers.h\\\"",
 					"$(inherited)",
 				);
 				HEADER_SEARCH_PATHS = "$SRCROOT/../Externals/Cedar/**";
@@ -1528,10 +1515,7 @@
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"CEDAR_CUSTOM_COMPARATORS=\\\"$SRCROOT/SpecHelper/Matchers/UIKitMatchers.h\\\"",
-					"$(inherited)",
-				);
+				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				HEADER_SEARCH_PATHS = "$SRCROOT/../Externals/Cedar/**";
 				INFOPLIST_FILE = "Spec/UIKit-StaticLibSpec-Info.plist";
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
