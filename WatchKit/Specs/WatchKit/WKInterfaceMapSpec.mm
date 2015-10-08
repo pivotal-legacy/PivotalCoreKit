@@ -1,5 +1,5 @@
 #import "Cedar.h"
-#import "ZebraMapController.h"
+#import "PCKFixtureMapController.h"
 
 
 using namespace Cedar::Matchers;
@@ -10,7 +10,7 @@ SPEC_BEGIN(WKInterfaceMapSpec)
 
 describe(@"WKInterfaceMap", ^{
     __block WKInterfaceMap *subject;
-    __block ZebraMapController *controller;
+    __block PCKFixtureMapController *controller;
     __block PCKInterfaceControllerLoader *loader;
 
     beforeEach(^{

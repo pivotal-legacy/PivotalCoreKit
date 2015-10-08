@@ -4,7 +4,7 @@
 @class WKInterfaceMap;
 
 
-@interface ZebraMapController : WKInterfaceController
+@interface PCKFixtureMapController : WKInterfaceController
 
 @property (weak, nonatomic, readonly) WKInterfaceMap *zebraMap;
 

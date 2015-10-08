@@ -137,7 +137,7 @@
         <!--MyMapController-->
         <scene sceneID="Hv3-sc-fDV">
             <objects>
-                <controller identifier="MyMapController" id="aQv-gI-Nd9" customClass="ZebraMapController">
+                <controller identifier="MyMapController" id="aQv-gI-Nd9" customClass="PCKFixtureMapController">
                     <items>
                         <map alignment="left" id="Uhb-uH-WZY"/>
                     </items>
