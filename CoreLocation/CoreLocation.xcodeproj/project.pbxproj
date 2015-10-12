@@ -25,7 +25,7 @@
 		AE384960168D030800C99B55 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE38495D168D030800C99B55 /* main.mm */; };
 		AE384961168D032300C99B55 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AE38495B168D030800C99B55 /* main.m */; };
 		AE384962168D033C00C99B55 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE384953168CDA1500C99B55 /* CoreLocation.framework */; };
-		AE384963168D045400C99B55 /* libCedar-StaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE384939168CD8FC00C99B55 /* libCedar-StaticLib.a */; };
+		AE384963168D045400C99B55 /* libCedar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE384939168CD8FC00C99B55 /* libCedar.a */; };
 		AE384971168D04F300C99B55 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE384970168D04F300C99B55 /* CoreLocation.framework */; };
 		AE38498F168D053300C99B55 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE3848DB168CD86000C99B55 /* Foundation.framework */; };
 		AE38499A168D055A00C99B55 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE384970168D04F300C99B55 /* CoreLocation.framework */; };
@@ -128,6 +128,48 @@
 			remoteGlobalIDString = AE38498D168D053300C99B55;
 			remoteInfo = "CoreLocation+PivotalSpecHelper-StaticLib";
 		};
+		AE5200031BCB323C006BA693 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE384926168CD8FB00C99B55 /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 346261DF1B995239002CAEBD;
+			remoteInfo = "Cedar-watchOS";
+		};
+		AE5200051BCB323C006BA693 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE384926168CD8FB00C99B55 /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 34D7C3CA1BB9747400E8E523;
+			remoteInfo = "Cedar-tvOS";
+		};
+		AE5200071BCB323C006BA693 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE384926168CD8FB00C99B55 /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 34852D211BBE35FF0072D249;
+			remoteInfo = "Cedar-watchOS HostApp";
+		};
+		AE5200091BCB323C006BA693 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE384926168CD8FB00C99B55 /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 346262781B99C1DB002CAEBD;
+			remoteInfo = "Cedar-watchOS Specs";
+		};
+		AE52000B1BCB323C006BA693 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE384926168CD8FB00C99B55 /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 346262841B99C1DC002CAEBD;
+			remoteInfo = "Cedar-watchOS Specs Extension";
+		};
+		AE52000D1BCB323C006BA693 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE384926168CD8FB00C99B55 /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 34D7C4691BB9B71600E8E523;
+			remoteInfo = "Cedar-tvOS SpecBundle";
+		};
 		AECAF90E1A0190BB002B4FD8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AE384926168CD8FB00C99B55 /* Cedar.xcodeproj */;
@@ -141,13 +183,6 @@
 			proxyType = 2;
 			remoteGlobalIDString = AE248FAA19DCD52500092C14;
 			remoteInfo = "Cedar OS X Host AppTests";
-		};
-		AECAF9121A0190BB002B4FD8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AE384926168CD8FB00C99B55 /* Cedar.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = AEB8818719DCD62D00F081BA;
-			remoteInfo = "Cedar OS X Failing Test Bundle";
 		};
 		AED5718718C54B5E004AD37D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -230,7 +265,7 @@
 			files = (
 				AE38499E168D058F00C99B55 /* libCoreLocation+PivotalSpecHelper-StaticLib.a in Frameworks */,
 				AE384971168D04F300C99B55 /* CoreLocation.framework in Frameworks */,
-				AE384963168D045400C99B55 /* libCedar-StaticLib.a in Frameworks */,
+				AE384963168D045400C99B55 /* libCedar.a in Frameworks */,
 				AE3848DA168CD86000C99B55 /* UIKit.framework in Frameworks */,
 				AE3848DC168CD86000C99B55 /* Foundation.framework in Frameworks */,
 				AE3848DE168CD86000C99B55 /* CoreGraphics.framework in Frameworks */,
@@ -318,18 +353,23 @@
 			isa = PBXGroup;
 			children = (
 				AE384933168CD8FC00C99B55 /* Cedar.framework */,
+				344569E31B98EBBB008A16A2 /* Cedar.framework */,
+				AE5200041BCB323C006BA693 /* Cedar.framework */,
+				AE5200061BCB323C006BA693 /* Cedar.framework */,
+				AE384939168CD8FC00C99B55 /* libCedar.a */,
 				AE384935168CD8FC00C99B55 /* Cedar OS X Specs */,
 				AE384937168CD8FC00C99B55 /* Cedar OS X FocusedSpecs */,
-				AE384939168CD8FC00C99B55 /* libCedar-StaticLib.a */,
+				344569E51B98EBBB008A16A2 /* Cedar-iOS-Framework Specs.app */,
 				AE38493B168CD8FC00C99B55 /* Cedar-StaticLib Specs.app */,
 				AED5718818C54B5E004AD37D /* Cedar-iOS StaticFrameworkSpecs.app */,
-				AE38493D168CD8FC00C99B55 /* Cedar iOS Host App.app */,
-				AEEECC4A181F36B2006B52CD /* XCUnitAppTests.xctest */,
 				AECAF90F1A0190BB002B4FD8 /* Cedar OS X Host App.app */,
+				AE38493D168CD8FC00C99B55 /* Cedar iOS Host App.app */,
+				AE5200081BCB323C006BA693 /* Cedar-watchOS HostApp.app */,
 				AECAF9111A0190BB002B4FD8 /* Cedar OS X Host AppTests.xctest */,
-				AECAF9131A0190BB002B4FD8 /* Cedar OS X Failing Test Bundle.octest */,
-				344569E31B98EBBB008A16A2 /* Cedar.framework */,
-				344569E51B98EBBB008A16A2 /* Cedar-iOS-Framework Specs.app */,
+				AEEECC4A181F36B2006B52CD /* XCUnitAppTests.xctest */,
+				AE52000A1BCB323C006BA693 /* Cedar-watchOS Specs.app */,
+				AE52000C1BCB323C006BA693 /* Cedar-watchOS Specs Extension.appex */,
+				AE52000E1BCB323C006BA693 /* Cedar-tvOS SpecBundle.bundle */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -552,7 +592,7 @@
 		344569E51B98EBBB008A16A2 /* Cedar-iOS-Framework Specs.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
-			path = "Cedar-iOS-Framework Specs.app";
+			path = "Cedar-iOS Specs.app";
 			remoteRef = 344569E41B98EBBB008A16A2 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
@@ -566,57 +606,92 @@
 		AE384935168CD8FC00C99B55 /* Cedar OS X Specs */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.executable";
-			path = "Cedar OS X Specs";
+			path = "Cedar-OSX Specs";
 			remoteRef = AE384934168CD8FC00C99B55 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		AE384937168CD8FC00C99B55 /* Cedar OS X FocusedSpecs */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.executable";
-			path = "Cedar OS X FocusedSpecs";
+			path = "Cedar-OSX FocusedSpecs";
 			remoteRef = AE384936168CD8FC00C99B55 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		AE384939168CD8FC00C99B55 /* libCedar-StaticLib.a */ = {
+		AE384939168CD8FC00C99B55 /* libCedar.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = "libCedar-StaticLib.a";
+			path = libCedar.a;
 			remoteRef = AE384938168CD8FC00C99B55 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		AE38493B168CD8FC00C99B55 /* Cedar-StaticLib Specs.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
-			path = "Cedar-StaticLib Specs.app";
+			path = "Cedar-iOS StaticLib Specs.app";
 			remoteRef = AE38493A168CD8FC00C99B55 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		AE38493D168CD8FC00C99B55 /* Cedar iOS Host App.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
-			path = "Cedar iOS Host App.app";
+			path = "Cedar-iOS HostApp.app";
 			remoteRef = AE38493C168CD8FC00C99B55 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AE5200041BCB323C006BA693 /* Cedar.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Cedar.framework;
+			remoteRef = AE5200031BCB323C006BA693 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AE5200061BCB323C006BA693 /* Cedar.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Cedar.framework;
+			remoteRef = AE5200051BCB323C006BA693 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AE5200081BCB323C006BA693 /* Cedar-watchOS HostApp.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "Cedar-watchOS HostApp.app";
+			remoteRef = AE5200071BCB323C006BA693 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AE52000A1BCB323C006BA693 /* Cedar-watchOS Specs.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "Cedar-watchOS Specs.app";
+			remoteRef = AE5200091BCB323C006BA693 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AE52000C1BCB323C006BA693 /* Cedar-watchOS Specs Extension.appex */ = {
+			isa = PBXReferenceProxy;
+			fileType = "wrapper.app-extension";
+			path = "Cedar-watchOS Specs Extension.appex";
+			remoteRef = AE52000B1BCB323C006BA693 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AE52000E1BCB323C006BA693 /* Cedar-tvOS SpecBundle.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Cedar-tvOS SpecBundle.bundle";
+			remoteRef = AE52000D1BCB323C006BA693 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		AECAF90F1A0190BB002B4FD8 /* Cedar OS X Host App.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
-			path = "Cedar OS X Host App.app";
+			path = "Cedar-OSX HostApp.app";
 			remoteRef = AECAF90E1A0190BB002B4FD8 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		AECAF9111A0190BB002B4FD8 /* Cedar OS X Host AppTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
-			path = "Cedar OS X Host AppTests.xctest";
+			path = "Cedar-OSX SpecBundle.xctest";
 			remoteRef = AECAF9101A0190BB002B4FD8 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		AECAF9131A0190BB002B4FD8 /* Cedar OS X Failing Test Bundle.octest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "Cedar OS X Failing Test Bundle.octest";
-			remoteRef = AECAF9121A0190BB002B4FD8 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		AED5718818C54B5E004AD37D /* Cedar-iOS StaticFrameworkSpecs.app */ = {
@@ -629,7 +704,7 @@
 		AEEECC4A181F36B2006B52CD /* XCUnitAppTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
-			path = XCUnitAppTests.xctest;
+			path = "Cedar-iOS SpecBundle.xctest";
 			remoteRef = AEEECC49181F36B2006B52CD /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
