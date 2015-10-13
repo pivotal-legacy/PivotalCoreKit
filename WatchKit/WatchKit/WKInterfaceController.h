@@ -77,6 +77,7 @@ typedef enum WKTextInputMode : NSInteger  {
 - (void)clearAllMenuItems;
 
 - (void)updateUserActivity:(NSString *)type userInfo:(NSDictionary *)userInfo;
+- (void)updateUserActivity:(NSString *)type userInfo:(nullable NSDictionary *)userInfo webpageURL:(nullable NSURL *)webpageURL;
 
 + (BOOL)openParentApplication:(NSDictionary *)userInfo reply:(void(^)(NSDictionary *replyInfo, NSError *error)) reply;
 
