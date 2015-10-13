@@ -19,6 +19,8 @@
 		222167831B8CFED300A1C8AE /* WCSessionFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 222167811B8CFED300A1C8AE /* WCSessionFile.m */; };
 		222167861B8D018B00A1C8AE /* WCSessionUserInfoTransfer.h in Headers */ = {isa = PBXBuildFile; fileRef = 222167841B8D018B00A1C8AE /* WCSessionUserInfoTransfer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		222167871B8D018B00A1C8AE /* WCSessionUserInfoTransfer.m in Sources */ = {isa = PBXBuildFile; fileRef = 222167851B8D018B00A1C8AE /* WCSessionUserInfoTransfer.m */; };
+		22E985FF1BCD79DD00DA98A3 /* WKAlertAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 22E985FD1BCD79DD00DA98A3 /* WKAlertAction.h */; settings = {ASSET_TAGS = (); }; };
+		22E986001BCD79DD00DA98A3 /* WKAlertAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E985FE1BCD79DD00DA98A3 /* WKAlertAction.m */; settings = {ASSET_TAGS = (); }; };
 		267B25B21AD86BDB00440CD2 /* NSInvocation+InvocationMatching.h in Headers */ = {isa = PBXBuildFile; fileRef = 267B25B01AD86BDB00440CD2 /* NSInvocation+InvocationMatching.h */; };
 		267B25B31AD86BDB00440CD2 /* NSInvocation+InvocationMatching.m in Sources */ = {isa = PBXBuildFile; fileRef = 267B25B11AD86BDB00440CD2 /* NSInvocation+InvocationMatching.m */; };
 		2681A5B11AE0906600B0B753 /* WKInterfaceDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 2681A5AF1AE0906600B0B753 /* WKInterfaceDevice.m */; };
@@ -227,6 +229,8 @@
 		222167811B8CFED300A1C8AE /* WCSessionFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCSessionFile.m; sourceTree = "<group>"; };
 		222167841B8D018B00A1C8AE /* WCSessionUserInfoTransfer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCSessionUserInfoTransfer.h; sourceTree = "<group>"; };
 		222167851B8D018B00A1C8AE /* WCSessionUserInfoTransfer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCSessionUserInfoTransfer.m; sourceTree = "<group>"; };
+		22E985FD1BCD79DD00DA98A3 /* WKAlertAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKAlertAction.h; sourceTree = "<group>"; };
+		22E985FE1BCD79DD00DA98A3 /* WKAlertAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKAlertAction.m; sourceTree = "<group>"; };
 		267B25B01AD86BDB00440CD2 /* NSInvocation+InvocationMatching.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSInvocation+InvocationMatching.h"; sourceTree = "<group>"; };
 		267B25B11AD86BDB00440CD2 /* NSInvocation+InvocationMatching.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSInvocation+InvocationMatching.m"; sourceTree = "<group>"; };
 		2681A5AF1AE0906600B0B753 /* WKInterfaceDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKInterfaceDevice.m; sourceTree = "<group>"; };
@@ -562,6 +566,8 @@
 				B83C32031A4CD9BF0021F1A4 /* WKUserNotificationInterfaceController+Spec.h */,
 				DE99C8C67949C094218A82C2 /* PCKWKInterfaceObjectProvider.m */,
 				DE99C21473753B19AF90BB5F /* PCKWKInterfaceObjectProvider.h */,
+				22E985FD1BCD79DD00DA98A3 /* WKAlertAction.h */,
+				22E985FE1BCD79DD00DA98A3 /* WKAlertAction.m */,
 			);
 			path = WatchKit;
 			sourceTree = "<group>";
@@ -583,6 +589,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B83C32271A4CD9BF0021F1A4 /* WKInterfaceTable+Spec.h in Headers */,
+				22E985FF1BCD79DD00DA98A3 /* WKAlertAction.h in Headers */,
 				222167661B8CE49E00A1C8AE /* WKDefines.h in Headers */,
 				B83C32321A4CDA380021F1A4 /* PCKInterfaceControllerLoader.h in Headers */,
 				B83C323C1A4CE0FC0021F1A4 /* UIColor+PCK_StringToColor.h in Headers */,
@@ -880,6 +887,7 @@
 				B83C32291A4CD9BF0021F1A4 /* WKInterfaceTimer.m in Sources */,
 				222167871B8D018B00A1C8AE /* WCSessionUserInfoTransfer.m in Sources */,
 				2221676A1B8CE4F600A1C8AE /* WKExtension.m in Sources */,
+				22E986001BCD79DD00DA98A3 /* WKAlertAction.m in Sources */,
 				B83C32261A4CD9BF0021F1A4 /* WKInterfaceTable.m in Sources */,
 				B83C32161A4CD9BF0021F1A4 /* WKInterfaceLabel.m in Sources */,
 				222167831B8CFED300A1C8AE /* WCSessionFile.m in Sources */,
