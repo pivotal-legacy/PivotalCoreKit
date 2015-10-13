@@ -8,7 +8,7 @@ typedef NS_ENUM(NSInteger, WKAlertActionStyle) {
     WKAlertActionStyleDestructive
 };
 
-typedef void (^WKAlertActionHandler)(void)
+typedef void (^WKAlertActionHandler)(void);
 
 @interface WKAlertAction : WKInterfaceObject
 

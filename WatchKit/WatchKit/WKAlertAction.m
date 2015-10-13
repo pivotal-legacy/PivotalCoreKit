@@ -7,7 +7,8 @@
 + (instancetype)actionWithTitle:(NSString *)title
                           style:(WKAlertActionStyle)style
                         handler:(WKAlertActionHandler)handler {
-    return [super actionWithTitle:title style:style handler:handler];
+    return nil;
+//    return [super actionWithTitle:title style:style handler:handler];
 }
 
 @end
