@@ -9,6 +9,8 @@
 - (void)removeCachedImageWithName:(NSString *)name NS_REQUIRES_SUPER;
 - (void)removeAllCachedImages NS_REQUIRES_SUPER;
 
+- (void)playHaptic:(WKHapticType)type NS_REQUIRES_SUPER;
+
 @end
 
 @interface WKInterfaceDevice ()
@@ -46,6 +48,10 @@
 - (void)removeAllCachedImages
 {
     [super removeAllCachedImages];
+}
+
+- (void)playHaptic:(WKHapticType)type {
+    [super playHaptic:type];
 }
 
 @end

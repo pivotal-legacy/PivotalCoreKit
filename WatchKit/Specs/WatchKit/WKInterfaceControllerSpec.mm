@@ -65,16 +65,9 @@ describe(@"WKInterfaceController", ^{
             subject should have_received(@selector(handleActionWithIdentifier:forLocalNotification:)).with(@"asdf", notification);
         });
 
-        it(@"should record the invocations of handleActionWithIdentifier:forRemoteNotification:", ^{
-            NSString *expectedContext = @"asdf";
-            [subject actionForUserActivity:@{@"a": @1} context:&expectedContext];
-            subject should have_received(@selector(actionForUserActivity:context:)).with(@{@"a": @1}, Arguments::anything);
-
-            NSInvocation *invocation = [[subject sent_messages] firstObject];
-            __autoreleasing NSString **contextPointer;
-            [invocation getArgument:&contextPointer atIndex:3];
-            NSString *context = *contextPointer;
-            context should equal(@"asdf");
+        it(@"should record the invocations of handleUserActivity:", ^{
+            [subject handleUserActivity:@{@"a": @1}];
+            subject should have_received(@selector(handleUserActivity:)).with(@{@"a": @1});
         });
 
         it(@"should record the invocations of setTitle:", ^{

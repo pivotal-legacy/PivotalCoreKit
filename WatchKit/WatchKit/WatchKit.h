@@ -1,5 +1,6 @@
 #import <Foundation/Foundation.h>
 #import "WKInterfaceController.h"
+#import "WKImage.h"
 #import "WKInterfaceLabel.h"
 #import "WKInterfaceImage.h"
 #import "WKInterfaceSeparator.h"
@@ -12,8 +13,11 @@
 #import "WKInterfaceGroup.h"
 #import "WKInterfaceTimer.h"
 #import "WKInterfaceMap.h"
+#import "WKAlertAction.h"
+#import "WKExtension.h"
 
 
+#import "WKInterfaceObject+Spec.h"
 #import "WKInterfaceButton+Spec.h"
 #import "WKInterfaceDate+Spec.h"
 #import "WKInterfaceGroup+Spec.h"
