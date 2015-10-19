@@ -13,6 +13,9 @@
 @property (nonatomic, strong) NSMutableDictionary *returnValueBlocksByJavaScript;
 @property (nonatomic, strong) NSString *loadedHTMLString;
 @property (nonatomic, strong) NSURL *loadedBaseURL;
+@property (nonatomic, strong) NSData *loadedData;
+@property (nonatomic, strong) NSString *loadedMIMEType;
+@property (nonatomic, strong) NSString *loadedTextEncodingName;
 
 @end
 
@@ -88,6 +91,14 @@ static char ASSOCIATED_ATTRIBUTES_KEY;
     [self log:@"loadHTMLString:%@ baseURL:%@", string, baseURL];
 }
 
+- (void)loadData:(NSData *)data MIMEType:(NSString *)MIMEType textEncodingName:(NSString *)textEncodingName baseURL:(NSURL *)baseURL {
+    self.attributes.loadedData = data;
+    self.attributes.loadedMIMEType = MIMEType;
+    self.attributes.loadedTextEncodingName = textEncodingName;
+    self.attributes.loadedBaseURL = baseURL;
+    [self log:@"loadData:%@ MIMEType:%@ textEncodingName:%@ baseURL:%@", data, MIMEType, textEncodingName, baseURL];
+}
+
 - (NSString *)stringByEvaluatingJavaScriptFromString:(NSString *)javaScript {
     [self.attributes.javaScripts addObject:javaScript];
     UIWebViewJavaScriptReturnBlock block = [self.attributes.returnValueBlocksByJavaScript objectForKey:javaScript];
@@ -149,6 +160,18 @@ static char ASSOCIATED_ATTRIBUTES_KEY;
 
 - (NSURL *)loadedBaseURL {
     return self.attributes.loadedBaseURL;
+}
+
+- (NSData *)loadedData {
+    return self.attributes.loadedData;
+}
+
+- (NSString *)loadedMIMEType {
+    return self.attributes.loadedMIMEType;
+}
+
+- (NSString *)loadedTextEncodingName {
+    return self.attributes.loadedTextEncodingName;
 }
 
 #pragma mark Private interface

@@ -7,6 +7,9 @@ typedef NSString *(^UIWebViewJavaScriptReturnBlock)();
 // Loaded Requests
 - (NSString *)loadedHTMLString;
 - (NSURL *)loadedBaseURL;
+- (NSData *)loadedData;
+- (NSString *)loadedMIMEType;
+- (NSString *)loadedTextEncodingName;
 
 // Faking Requests
 - (void)sendClickRequest:(NSURLRequest *)request;

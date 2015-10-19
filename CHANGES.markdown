@@ -10,6 +10,7 @@
   * Adds a `triggerNonSegueAction` category on WKInterfaceButton to help test non-segue actions in WatchKit
   * Adds support for testing the configuration of WKInterfaceButtons with content type group in WatchKit
   * Adds ability to toggle UIViewController spec stubs
+  * Adds support for inspecting data loaded directly into UIWebViews
 
 ## 0.3.0
 
