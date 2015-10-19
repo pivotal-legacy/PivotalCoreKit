@@ -299,6 +299,33 @@ describe(@"UIWebView (spec extensions)", ^{
         });
     });
 
+    describe(@"loadData:MIMEType:textEncodingName:baseURL:", ^{
+        NSData *data = [@"some lovely data" dataUsingEncoding:NSUTF8StringEncoding];
+        NSString *mimeType = @"text/plain";
+        NSString *textEncodingName = @"UTF-POTATO";
+        NSURL *baseURL = [NSURL URLWithString:@"cats"];
+
+        beforeEach(^{
+            [webView loadData:data MIMEType:mimeType textEncodingName:textEncodingName baseURL:baseURL];
+        });
+
+        it(@"should record the data", ^{
+            expect(webView.loadedData).to(equal(data));
+        });
+
+        it(@"should record the MIME type", ^{
+            expect(webView.loadedMIMEType).to(equal(mimeType));
+        });
+
+        it(@"should record the text encoding name", ^{
+            expect(webView.loadedTextEncodingName).to(equal(textEncodingName));
+        });
+
+        it(@"should record the baseURL", ^{
+            expect(webView.loadedBaseURL).to(equal(baseURL));
+        });
+    });
+
     describe(@"when loaded from a XIB", ^{
         beforeEach(^{
             AWebViewController *controller = [[AWebViewController alloc] initWithNibName:@"AWebViewController" bundle:nil];
