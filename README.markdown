@@ -181,7 +181,7 @@ install the correct portions of the PivotalCoreKit library, and create a new Xco
 * Navigate into PivotalCoreKit/UIKit folder, select UIKit.xcodeproj and add.
 * In root project file, choose Specs target
 * Under the "Build Phases" tab along the top of the project settings, add UIKit+PivotalSpecHelper-StaticLib to "Target Dependencies"
-* Add libUIKit+PivotalSpecHelper-StaticLib.a to the "Link Binary With Library" section
+* Add libUIKit+PivotalSpecHelper-StaticLib.a to the "Link Binary With Library" section. (Also add CoreGraphics.framework).
 * Switch to the "Build Settings" tab Add "$(SRCROOT)/Externals/PivotalCoreKit/UIKit/" to "Header Search Paths" and make it recursive
 * In the desired spec file, add #import "UIControl+Spec.h" and freely use [button tap];
 
