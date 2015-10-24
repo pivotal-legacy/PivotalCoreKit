@@ -1,0 +1,25 @@
+PODS:
+  - Cedar (0.11.3)
+  - PivotalCoreKit (0.3.0):
+    - PivotalCoreKit/Core (= 0.3.0)
+  - PivotalCoreKit/Core (0.3.0):
+    - PivotalCoreKit/Foundation/Core
+    - PivotalCoreKit/UIKit/Core
+  - PivotalCoreKit/Foundation/Core (0.3.0)
+  - PivotalCoreKit/UIKit/Core (0.3.0):
+    - PivotalCoreKit/UIKit/Core/Core-arc (= 0.3.0)
+  - PivotalCoreKit/UIKit/Core/Core-arc (0.3.0)
+
+DEPENDENCIES:
+  - Cedar
+  - PivotalCoreKit (from `../`)
+
+EXTERNAL SOURCES:
+  PivotalCoreKit:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Cedar: ab1ea4e5c8af4ee4a8fa0452936679861876dc80
+  PivotalCoreKit: 3dab7cf9bff77eb49ce7ffc7a84e57fa8591f033
+
+COCOAPODS: 0.38.2

@@ -3,6 +3,7 @@ BUILD_SDK_VERSION = ENV['BUILD_SDK_VERSION'] || ""
 SIMULATOR_VERSIONS = ENV['SIMULATOR_VERSIONS'] || "9.0"
 SIMULATOR_DEVICES = ENV['SIMULATOR_DEVICES'] || "iPhone 5s"
 BUILD_DIR = File.join(File.dirname(__FILE__), "build")
+COCOAPODS_SAMPLE_PROJECT_DIR = File.join(File.dirname(__FILE__), "CocoaPodsSampleProject")
 
 require 'tmpdir'
 
@@ -10,7 +11,7 @@ def build_dir(effective_platform_name)
   File.join(BUILD_DIR, CONFIGURATION + effective_platform_name)
 end
 
-def system_or_exit(cmd, env_overrides = {}, stdout = nil)
+def system_or_exit(cmd, env_overrides: {}, stdout: nil, error_message: "******** Build failed ********")
   puts "Executing #{cmd}"
   cmd += " >#{stdout}" if stdout
 
@@ -21,7 +22,7 @@ def system_or_exit(cmd, env_overrides = {}, stdout = nil)
   end
 
   system(cmd) or begin
-    puts "******** Build failed ********"
+    puts error_message
     exit(1)
   end
 
@@ -70,7 +71,7 @@ def build_and_test_scheme(scheme)
   end
 end
 
-def build_target(target, project: project, output_file: output_file, sdk: sdk)
+def build_target(target, project: project, output_file_name: output_file_name, sdk: sdk)
    command = ["xcodebuild",
    "-project",
    "#{project}.xcodeproj",
@@ -86,7 +87,7 @@ def build_target(target, project: project, output_file: output_file, sdk: sdk)
     command = command << "-sdk" << sdk
   end
 
-  system_or_exit(command.join(" "), {}, output_file)
+  system_or_exit(command.join(" "), env_overrides: {}, stdout: output_file(output_file_name))
 end
 
 desc "Trim edited files and run all specs"
@@ -107,14 +108,12 @@ namespace :foundation do
     namespace :core do
       desc "Build Foundation+PivotalCore framework for OS X"
       task :osx do
-        output_file = output_file("foundation:build:core:osx")
-        build_target("Foundation+PivotalCore", project: project, output_file: output_file)
+        build_target("Foundation+PivotalCore", project: project, output_file_name: "foundation:build:core:osx")
       end
 
       desc "Build Foundation+PivotalCore-StaticLib for iOS"
       task :ios do
-        output_file = output_file("foundation:build:core:ios")
-        build_target("Foundation+PivotalCore-StaticLib", project: project, output_file: output_file)
+        build_target("Foundation+PivotalCore-StaticLib", project: project, output_file_name: "foundation:build:core:ios")
       end
     end
 
@@ -123,8 +122,7 @@ namespace :foundation do
     namespace :framework do
       desc "Build Foundation+PivotalCore-iOS universal static framework"
       task :ios do
-        output_file = output_file("foundation:build:framework:ios")
-        build_target("Foundation+PivotalCore-iOS", project: project, output_file: output_file)
+        build_target("Foundation+PivotalCore-iOS", project: project, output_file_name: "foundation:build:framework:ios")
       end
     end
 
@@ -133,14 +131,12 @@ namespace :foundation do
     namespace :spec_helper do
       desc "Build Foundation+PivotalSpecHelper framework for OS X"
       task :osx do
-        output_file = output_file("foundation:build:spec_helper:osx")
-        build_target("Foundation+PivotalSpecHelper", project: project, output_file: output_file)
+        build_target("Foundation+PivotalSpecHelper", project: project, output_file_name: "foundation:build:spec_helper:osx")
       end
 
       desc "Build Foundation+PivotalSpecHelper-StaticLib for iOS"
       task :ios do
-        output_file = output_file("foundation:build:spec_helper:ios")
-        build_target("Foundation+PivotalSpecHelper-StaticLib", project: project, output_file: output_file)
+        build_target("Foundation+PivotalSpecHelper-StaticLib", project: project, output_file_name: "foundation:build:spec_helper:ios")
       end
     end
 
@@ -149,8 +145,7 @@ namespace :foundation do
     namespace :spec_helper_framework do
       desc "Build Foundation+PivotalSpecHelper-iOS universal static framework"
       task :ios do
-        output_file = output_file("foundation:build:spec_helper_framework:ios")
-        build_target("Foundation+PivotalSpecHelper-iOS", project: project, output_file: output_file)
+        build_target("Foundation+PivotalSpecHelper-iOS", project: project, output_file_name: "foundation:build:spec_helper_framework:ios")
       end
     end
 
@@ -160,8 +155,7 @@ namespace :foundation do
   namespace :spec do
     desc "Build and run all OS X specs"
     task :osx => ["build:core:osx", "build:spec_helper:osx"] do
-      output_file = output_file("foundation:spec:osx")
-      build_target("FoundationSpec", project: project, output_file: output_file)
+      build_target("FoundationSpec", project: project, output_file_name: "foundation:spec:osx")
 
       build_dir = build_dir("")
       env_vars = {
@@ -169,7 +163,8 @@ namespace :foundation do
         "CFFIXED_USER_HOME" => Dir.tmpdir,
         "DYLD_FRAMEWORK_PATH" => build_dir
       }
-      system_or_exit("cd #{build_dir}; ./FoundationSpec", env_vars)
+
+      system_or_exit("cd #{build_dir}; ./FoundationSpec", env_overrides: env_vars)
     end
 
     desc "Build and run all Foundation specs on iOS"
@@ -181,7 +176,7 @@ namespace :foundation do
   task :build => ["foundation:build:core", "foundation:build:spec_helper"]
   task :spec => ["foundation:spec:osx", "foundation:spec:ios"]
   task :clean do
-    system_or_exit(%Q[xcodebuild -project #{project}.xcodeproj -alltargets -configuration #{CONFIGURATION} clean SYMROOT=#{BUILD_DIR}], {}, output_file("foundation:clean"))
+    system_or_exit(%Q[xcodebuild -project #{project}.xcodeproj -alltargets -configuration #{CONFIGURATION} clean SYMROOT=#{BUILD_DIR}], env_overrides:{}, stdout:output_file("foundation:clean"))
   end
 end
 
@@ -194,8 +189,7 @@ namespace :uikit do
     namespace :core do
       desc "Build UIKit+PivotalCore-StaticLib"
       task :ios do
-        output_file = output_file("uikit:build:core:ios")
-        build_target("UIKit+PivotalCore-StaticLib", project: project, output_file: output_file)
+        build_target("UIKit+PivotalCore-StaticLib", project: project, output_file_name: "uikit:build:core:ios")
       end
     end
 
@@ -204,14 +198,12 @@ namespace :uikit do
     namespace :spec_helper do
       desc "Build UIKit+PivotalSpecHelper-StaticLib"
       task :ios do
-        output_file = output_file("uikit:build:spec_helper:ios")
-        build_target("UIKit+PivotalSpecHelper-StaticLib", project: project, output_file: output_file)
+        build_target("UIKit+PivotalSpecHelper-StaticLib", project: project, output_file_name: "uikit:build:spec_helper:ios")
       end
 
       desc "Build UIKit+PivotalSpecHelperStubs-StaticLib"
       task :ios_stubs do
-        output_file = output_file("uikit:build:spec_helper:ios_stubs")
-        build_target("UIKit+PivotalSpecHelperStubs-StaticLib", project: project, output_file: output_file)
+        build_target("UIKit+PivotalSpecHelperStubs-StaticLib", project: project, output_file_name: "uikit:build:spec_helper:ios_stubs")
       end
     end
 
@@ -220,14 +212,12 @@ namespace :uikit do
     namespace :spec_helper_framework do
       desc "Build UIKit+PivotalSpecHelper-iOS universal static framework"
       task :ios do
-        output_file = output_file("uikit:build:spec_helper_framework:ios")
-        build_target("UIKit+PivotalSpecHelper-iOS", project: project, output_file: output_file)
+        build_target("UIKit+PivotalSpecHelper-iOS", project: project, output_file_name: "uikit:build:spec_helper_framework:ios")
       end
 
       desc "Build UIKit+PivotalSpecHelperStubs-iOS universal static framework"
       task :ios_stubs do
-        output_file = output_file("uikit:build:spec_helper_framework:ios_stubs")
-        build_target("UIKit+PivotalSpecHelperStubs-iOS", project: project, output_file: output_file)
+        build_target("UIKit+PivotalSpecHelperStubs-iOS", project: project, output_file_name: "uikit:build:spec_helper_framework:ios_stubs")
       end
     end
 
@@ -244,7 +234,7 @@ namespace :uikit do
   task :build => ["build:core"]
   task :spec => ["spec:ios"]
   task :clean do
-    system_or_exit(%Q[xcodebuild -project #{project}.xcodeproj -alltargets -configuration #{CONFIGURATION} clean SYMROOT=#{BUILD_DIR}], {}, output_file("uikit:clean"))
+    system_or_exit(%Q[xcodebuild -project #{project}.xcodeproj -alltargets -configuration #{CONFIGURATION} clean SYMROOT=#{BUILD_DIR}], env_overrides: {}, stdout: output_file("uikit:clean"))
   end
 end
 
@@ -257,14 +247,12 @@ namespace :core_location do
     namespace :spec_helper do
       desc "Build CoreLocation+PivotalSpecHelper framework for OS X"
       task :osx do
-        output_file = output_file("core_location:build:spec_helper:osx")
-        build_target("CoreLocation+PivotalSpecHelper", project: project, output_file: output_file)
+        build_target("CoreLocation+PivotalSpecHelper", project: project, output_file_name: "core_location:build:spec_helper:osx")
       end
 
       desc "Build CoreLocation+PivotalSpecHelper-StaticLib for iOS"
       task :ios do
-        output_file = output_file("core_location:build:spec_helper:ios")
-        build_target("CoreLocation+PivotalSpecHelper-StaticLib", project: project, output_file: output_file)
+        build_target("CoreLocation+PivotalSpecHelper-StaticLib", project: project, output_file_name: "core_location:build:spec_helper:ios")
       end
     end
 
@@ -274,15 +262,16 @@ namespace :core_location do
   namespace :spec do
     desc "Build and run CoreLocation specs on OS X"
     task :osx => ["build:spec_helper:osx"] do
-      output_file = output_file("core_location:spec:osx")
-      build_target("CoreLocationSpec", project: project, output_file: output_file)
+
+      build_target("CoreLocationSpec", project: project, output_file_name: "core_location:spec:osx")
 
       build_dir = build_dir("")
       env_vars = {
         "DYLD_FRAMEWORK_PATH" => build_dir,
         "CEDAR_REPORTER_CLASS" => "CDRColorizedReporter"
       }
-      system_or_exit("cd #{build_dir}; ./CoreLocationSpec", env_vars)
+
+      system_or_exit("cd #{build_dir}; ./CoreLocationSpec", env_overrides: env_vars)
     end
 
     desc "Build and run CoreLocation specs on iOS"
@@ -294,7 +283,7 @@ namespace :core_location do
   task :build => ["build:spec_helper"]
   task :spec => ["spec:osx", "spec:ios"]
   task :clean do
-    system_or_exit(%Q[xcodebuild -project #{project}.xcodeproj -alltargets -configuration #{CONFIGURATION} clean SYMROOT=#{BUILD_DIR}], {}, output_file("core_location:clean"))
+    system_or_exit(%Q[xcodebuild -project #{project}.xcodeproj -alltargets -configuration #{CONFIGURATION} clean SYMROOT=#{BUILD_DIR}], env_overrides: {}, stdout: put_file("core_location:clean"))
   end
 end
 
@@ -307,8 +296,7 @@ namespace :watchkit do
   namespace :build do
     desc "Build Fake WatchKit dynamic framework for iOS"
     task :ios do
-      build_output_filename = output_file("watchkit:build:ios")
-      build_target(target, project: project, sdk: 'iphonesimulator', output_file: build_output_filename)
+      build_target(target, project: project, sdk: 'iphonesimulator', output_file_name: "watchkit:build:ios")
     end
   end
 
@@ -322,17 +310,35 @@ namespace :watchkit do
   task :spec => ["spec:ios"]
   task :build => ["build:ios"]
   task :clean do
-    system_or_exit(%Q[xcodebuild -project #{project}.xcodeproj -alltargets -configuration #{CONFIGURATION} clean SYMROOT=#{BUILD_DIR}], {}, output_file("watchkit:clean"))
+    system_or_exit(%Q[xcodebuild -project #{project}.xcodeproj -alltargets -configuration #{CONFIGURATION} clean SYMROOT=#{BUILD_DIR}], env_overrides: {}, stdout: output_file("watchkit:clean"))
   end
 end
 
 task :watchkit => ["watchkit:build", "watchkit:spec"]
 
+namespace :cocoapods do
+
+  desc "Remove Cocoapods generated files from Cocoapods sample project"
+  task :clean do
+    system_or_exit("rm -rf ~/Library/Developer/Xcode/DerivedData/*")
+    system_or_exit("rm -rf #{COCOAPODS_SAMPLE_PROJECT_DIR}/build")
+    system_or_exit("rm -rf #{COCOAPODS_SAMPLE_PROJECT_DIR}/Pods")
+    system_or_exit("rm -rf #{COCOAPODS_SAMPLE_PROJECT_DIR}/CocoaPodsSampleProject.xcworkspace")
+  end
+
+  desc "Install PCK into Cocoapods sample project"
+  task :spec => ["cocoapods:clean"] do
+    system_or_exit("/Users/pivotal/.gem/ruby/2.1.0/bin/pod --version", error_message: "This rake command tests that PCK can be installed correctly using Cocoapods.  Sadly, Cocoapods does not appear to be installed on this machine.")
+    system_or_exit("cd #{COCOAPODS_SAMPLE_PROJECT_DIR} && /Users/pivotal/.gem/ruby/2.1.0/bin/pod install", error_message: "There was an error running `pod install`.")
+    system_or_exit("cd #{COCOAPODS_SAMPLE_PROJECT_DIR} && xcodebuild -workspace CocoaPodsSampleProject.xcworkspace -scheme CocoaPodsSampleProject -sdk iphonesimulator test SYMROOT=$(PWD)/build")
+  end
+end
+
 namespace :all do
   desc "Build everything"
   task :build => ["foundation:build", "uikit:build", "core_location:build", "watchkit:build"]
   desc "Run all specs"
-  task :spec => ["foundation:spec", "uikit:spec", "core_location:spec", "watchkit:spec"]
+  task :spec => ["foundation:spec", "uikit:spec", "core_location:spec", "watchkit:spec", "cocoapods:spec"]
   desc "Clean all targets"
   task :clean => ["foundation:clean", "uikit:clean", "core_location:clean", "watchkit:clean"]
 end
