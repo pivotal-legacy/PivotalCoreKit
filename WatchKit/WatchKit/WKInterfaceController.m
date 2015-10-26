@@ -43,6 +43,7 @@
 - (void)clearAllMenuItems NS_REQUIRES_SUPER;
 
 - (void)updateUserActivity:(NSString *)type userInfo:(NSDictionary *)userInfo NS_REQUIRES_SUPER;
+- (void)updateUserActivity:(NSString *)type userInfo:(nullable NSDictionary *)userInfo webpageURL:(nullable NSURL *)webpageURL NS_REQUIRES_SUPER;
 
 - (void)didReceiveRemoteNotification:(NSDictionary *)remoteNotification
                       withCompletion:(void(^)(WKUserNotificationInterfaceType interface)) completionHandler NS_REQUIRES_SUPER;
@@ -193,6 +194,10 @@
 - (void)updateUserActivity:(NSString *)type userInfo:(NSDictionary *)userInfo
 {
     [super updateUserActivity:type userInfo:userInfo];
+}
+
+- (void)updateUserActivity:(NSString *)type userInfo:(nullable NSDictionary *)userInfo webpageURL:(nullable NSURL *)webpageURL {
+    [super updateUserActivity:type userInfo:userInfo webpageURL:webpageURL];
 }
 
 + (BOOL)openParentApplication:(NSDictionary *)userInfo reply:(void(^)(NSDictionary *replyInfo, NSError *error)) reply

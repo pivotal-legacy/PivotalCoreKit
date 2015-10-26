@@ -17,6 +17,7 @@
 @property (copy, nonatomic) NSString *text;
 @property (copy, nonatomic) NSAttributedString *attributedText;
 @property (nonatomic) UIColor *textColor;
+@property (nonatomic) BOOL hidden;
 
 @end
 
@@ -55,6 +56,16 @@
 {
     _attributedText = attributedText;
     [super setAttributedText:attributedText];
+}
+
+- (void)setHidden:(BOOL)hidden
+{
+    _hidden = hidden;
+    [super setHidden:hidden];
+}
+
+- (BOOL)isHidden {
+    return _hidden;
 }
 
 @end
