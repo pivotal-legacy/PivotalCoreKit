@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)openSystemURL:(NSURL *)url;
 
 @property (nonatomic, weak, nullable) id<WKExtensionDelegate> delegate;
-@property (nonatomic,readonly, nullable) WKInterfaceController *rootInterfaceController;
+@property (nonatomic, readonly, nullable) WKInterfaceController *rootInterfaceController;
 
 @end
 

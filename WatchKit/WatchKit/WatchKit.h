@@ -29,7 +29,7 @@
 #import "WKInterfaceTable+Spec.h"
 #import "WKInterfaceTimer+Spec.h"
 #import "WKUserNotificationInterfaceController+Spec.h"
-
+#import "WKExtension+Spec.h"
 
 #import "PCKInterfaceControllerLoader.h"
 #import "PCKFakeSegue.h"

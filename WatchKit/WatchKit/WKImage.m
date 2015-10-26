@@ -1,6 +1,22 @@
 #import <UIKit/UIKit.h>
 #import "WKImage.h"
 
+@implementation UIImage (EqualByBytes)
+
+- (BOOL)pckwk_isEqualToByBytes:(UIImage *)otherImage {
+    CFDataRef imagePixelsData = CGDataProviderCopyData(CGImageGetDataProvider(self.CGImage));
+    CFDataRef otherImagePixelsData = CGDataProviderCopyData(CGImageGetDataProvider(otherImage.CGImage));
+
+    BOOL comparison = CFEqual(imagePixelsData, otherImagePixelsData);
+
+    CFRelease(imagePixelsData);
+    CFRelease(otherImagePixelsData);
+
+    return comparison;
+}
+
+@end
+
 @implementation WKImage
 
 + (instancetype)imageWithImage:(UIImage *)uiImage {
@@ -27,7 +43,7 @@
     if (![object isKindOfClass:[self class]]) { return NO; }
     WKImage *other = object;
 
-    if (self.image != other.image && ![self.image isEqual:other.image]) { return NO; }
+    if (self.image != other.image && ![self.image isEqual:other.image] && ![self.image pckwk_isEqualToByBytes:other.image]) { return NO; }
     if (self.imageData != other.imageData && ![self.imageData isEqual:other.imageData]) { return NO; }
     if (self.imageName != other.imageName && ![self.imageName isEqual:other.imageName]) { return NO; }
 
@@ -52,7 +68,10 @@
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super init]) {
-        _image = [aDecoder decodeObjectOfClass:[UIImage class] forKey:NSStringFromSelector(@selector(image))];
+        NSData *imageData = [aDecoder decodeObjectOfClass:[NSData class] forKey:NSStringFromSelector(@selector(image))];
+        if (imageData) {
+            _image = [UIImage imageWithData:imageData];
+        }
         _imageData = [aDecoder decodeObjectOfClass:[NSData class] forKey:NSStringFromSelector(@selector(imageData))];
         _imageName = [aDecoder decodeObjectOfClass:[NSString class] forKey:NSStringFromSelector(@selector(imageName))];
     }
@@ -60,7 +79,7 @@
 }
 
 - (void)encodeWithCoder:(NSCoder *)aCoder {
-    if (self.image) { [aCoder encodeObject:self.image forKey:NSStringFromSelector(@selector(image))]; }
+    if (self.image) { [aCoder encodeObject:UIImagePNGRepresentation(self.image) forKey:NSStringFromSelector(@selector(image))]; }
     if (self.imageData) { [aCoder encodeObject:self.imageData forKey:NSStringFromSelector(@selector(imageData))]; }
     if (self.imageName) { [aCoder encodeObject:self.imageName forKey:NSStringFromSelector(@selector(imageName))]; }
 }

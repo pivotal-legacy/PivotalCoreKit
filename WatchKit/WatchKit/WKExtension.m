@@ -4,19 +4,27 @@
 - (void)openSystemURL:(NSURL *)URL NS_REQUIRES_SUPER;
 @end
 
+@interface WKExtension ()
+@property (nonatomic, readwrite) WKInterfaceController *rootInterfaceController;
+@end
+
 @implementation WKExtension
 
-static WKExtension *sharedExtension;
+static WKExtension *__sharedExtension;
+
++ (void)setSharedExtension:(WKExtension *)sharedExtension {
+    __sharedExtension = sharedExtension;
+}
 
 + (WKExtension *)sharedExtension {
-    if (!sharedExtension){
-        sharedExtension = [[WKExtension alloc] init];
+    if (!__sharedExtension){
+        __sharedExtension = [[WKExtension alloc] init];
     }
-    return sharedExtension;
+    return __sharedExtension;
 }
 
 + (void)afterEach {
-    sharedExtension = nil;
+    __sharedExtension = nil;
 }
 
 - (void)openSystemURL:(NSURL *)url {

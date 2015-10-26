@@ -39,6 +39,31 @@ describe(@"WKInterfaceObject", ^{
             subject should have_received(@selector(setHeight:)).with(height);
         });
     });
+
+    describe(@"getters", ^{
+        it(@"should allow reading the most recently-set value for setHidden:", ^{
+            [subject setHidden:YES];
+            [subject isHidden] should be_truthy;
+        });
+
+        it(@"should allow reading the most recently-set value for setAlpha:", ^{
+            CGFloat alpha = 0.3;
+            [subject setAlpha:alpha];
+            [subject alpha] should equal(alpha);
+        });
+
+        it(@"should allow reading the most recently-set value for setWidth:", ^{
+            CGFloat width = 50;
+            [subject setWidth:width];
+            [subject width] should equal(width);
+        });
+
+        it(@"should allow reading the most recently-set value for setHeight:", ^{
+            CGFloat height = 30;
+            [subject setHeight:height];
+            [subject height] should equal(height);
+        });
+    });
 });
 
 SPEC_END
