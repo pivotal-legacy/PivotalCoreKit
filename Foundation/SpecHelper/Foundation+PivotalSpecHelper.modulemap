@@ -1,0 +1,6 @@
+framework module Foundation_PivotalCore {
+    umbrella header "Foundation+PivotalSpecHelper"
+
+    export *
+    module * { export * }
+}

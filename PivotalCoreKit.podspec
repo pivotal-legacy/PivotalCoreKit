@@ -65,6 +65,8 @@ Pod::Spec.new do |s|
   s.subspec 'Foundation' do |f|
     f.ios.deployment_target = '6.0'
     f.osx.deployment_target = '10.6'
+    f.watchos.deployment_target = '2.0'
+    f.tvos.deployment_target = '9.0'
 
     f.subspec 'Core' do |c|
       c.source_files = 'Foundation/Core/**/*.{h,m}'

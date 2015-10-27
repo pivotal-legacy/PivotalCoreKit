@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AE3848D4168CD86000C99B55"
-               BuildableName = "CoreLocation-StaticLibSpec.app"
-               BlueprintName = "CoreLocation-StaticLibSpec"
+               BlueprintIdentifier = "AE3848FF168CD8C800C99B55"
+               BuildableName = "CoreLocation+PivotalSpecHelper.framework"
+               BlueprintName = "CoreLocation+PivotalSpecHelper"
                ReferencedContainer = "container:CoreLocation.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -26,35 +26,9 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "NO">
+      shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3466C06A1B97A2ED00CBAB59"
-               BuildableName = "CoreLocation-StaticLibSpecBundle.xctest"
-               BlueprintName = "CoreLocation-StaticLibSpecBundle"
-               ReferencedContainer = "container:CoreLocation.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AE3848D4168CD86000C99B55"
-            BuildableName = "CoreLocation-StaticLibSpec.app"
-            BlueprintName = "CoreLocation-StaticLibSpec"
-            ReferencedContainer = "container:CoreLocation.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
-      <EnvironmentVariables>
-         <EnvironmentVariable
-            key = "CEDAR_REPORTER_CLASS"
-            value = "CDROTestReporter"
-            isEnabled = "NO">
-         </EnvironmentVariable>
-      </EnvironmentVariables>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -68,16 +42,15 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AE3848D4168CD86000C99B55"
-            BuildableName = "CoreLocation-StaticLibSpec.app"
-            BlueprintName = "CoreLocation-StaticLibSpec"
+            BlueprintIdentifier = "AE3848FF168CD8C800C99B55"
+            BuildableName = "CoreLocation+PivotalSpecHelper.framework"
+            BlueprintName = "CoreLocation+PivotalSpecHelper"
             ReferencedContainer = "container:CoreLocation.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -87,16 +60,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AE3848D4168CD86000C99B55"
-            BuildableName = "CoreLocation-StaticLibSpec.app"
-            BlueprintName = "CoreLocation-StaticLibSpec"
+            BlueprintIdentifier = "AE3848FF168CD8C800C99B55"
+            BuildableName = "CoreLocation+PivotalSpecHelper.framework"
+            BlueprintName = "CoreLocation+PivotalSpecHelper"
             ReferencedContainer = "container:CoreLocation.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

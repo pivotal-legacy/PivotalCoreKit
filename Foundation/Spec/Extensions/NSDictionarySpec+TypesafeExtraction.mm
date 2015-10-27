@@ -1,6 +1,6 @@
 #import "NSDictionary+TypesafeExtraction.h"
 
-#if TARGET_OS_IPHONE
+#if TARGET_OS_IPHONE && !TARGET_OS_TV
 #import "CDRSpecHelper.h"
 #else
 #import <Cedar/CDRSpecHelper.h>

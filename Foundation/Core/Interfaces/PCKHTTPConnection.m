@@ -16,7 +16,10 @@
 @synthesize interface = interface_;
 
 - (id)initWithHTTPInterface:(PCKHTTPInterface *)interface forRequest:(NSURLRequest *)request andDelegate:(id<NSURLConnectionDelegate>)delegate {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
     if ((self = [super initWithRequest:request delegate:[PCKHTTPConnectionDelegate delegateWithInterface:interface delegate:delegate]])) {
+#pragma clang diagnostic pop
         self.interface = interface;
     }
     return self;

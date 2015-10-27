@@ -37,26 +37,172 @@
 
 /* Begin PBXBuildFile section */
 		3466C0451B97A18E00CBAB59 /* BundleSpecLoader.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE118A9818D6B3CA00C90D6B /* BundleSpecLoader.mm */; };
-		34681C0F18FD9516009D38AC /* NSDictionary+TypesafeExtraction.h in Headers */ = {isa = PBXBuildFile; fileRef = 34681C0D18FD9516009D38AC /* NSDictionary+TypesafeExtraction.h */; };
+		34681C0F18FD9516009D38AC /* NSDictionary+TypesafeExtraction.h in Headers */ = {isa = PBXBuildFile; fileRef = 34681C0D18FD9516009D38AC /* NSDictionary+TypesafeExtraction.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		34681C1018FD9516009D38AC /* NSDictionary+TypesafeExtraction.m in Sources */ = {isa = PBXBuildFile; fileRef = 34681C0E18FD9516009D38AC /* NSDictionary+TypesafeExtraction.m */; };
 		34681C1118FD9516009D38AC /* NSDictionary+TypesafeExtraction.m in Sources */ = {isa = PBXBuildFile; fileRef = 34681C0E18FD9516009D38AC /* NSDictionary+TypesafeExtraction.m */; };
 		34681C1D18FD9873009D38AC /* NSDictionarySpec+TypesafeExtraction.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34681C1C18FD9873009D38AC /* NSDictionarySpec+TypesafeExtraction.mm */; };
 		34681C1E18FD9873009D38AC /* NSDictionarySpec+TypesafeExtraction.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34681C1C18FD9873009D38AC /* NSDictionarySpec+TypesafeExtraction.mm */; };
+		34A662D21BDF151F00EF0FEA /* Foundation+PivotalCore.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96B79168B50D900861DF1 /* Foundation+PivotalCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A662D31BDF153300EF0FEA /* NSDictionary+TypesafeExtraction.m in Sources */ = {isa = PBXBuildFile; fileRef = 34681C0E18FD9516009D38AC /* NSDictionary+TypesafeExtraction.m */; };
+		34A662D41BDF153300EF0FEA /* NSData+PivotalCore.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA96B5F168B50D900861DF1 /* NSData+PivotalCore.m */; };
+		34A662D51BDF153300EF0FEA /* NSObject+MethodDecoration.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA96B61168B50D900861DF1 /* NSObject+MethodDecoration.m */; };
+		34A662D61BDF153300EF0FEA /* NSObject+MethodRedirection.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA96B63168B50D900861DF1 /* NSObject+MethodRedirection.m */; };
+		34A662D71BDF153300EF0FEA /* NSString+PivotalCore.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA96B65168B50D900861DF1 /* NSString+PivotalCore.m */; };
+		34A662D81BDF153300EF0FEA /* NSArray+PivotalCore.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6898DB16BC3AF700F3F6BC /* NSArray+PivotalCore.m */; };
+		34A662D91BDF153300EF0FEA /* NSDictionary+QueryString.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0CFF5B1770C77D00E6A958 /* NSDictionary+QueryString.m */; };
+		34A662DA1BDF153300EF0FEA /* NSURL+QueryComponents.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0CFF54176FE22200E6A958 /* NSURL+QueryComponents.m */; };
+		34A662DF1BDF154100EF0FEA /* PCKResponseParser.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA96B74168B50D900861DF1 /* PCKResponseParser.m */; };
+		34A662E01BDF154100EF0FEA /* PCKXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA96B76168B50D900861DF1 /* PCKXMLParser.m */; };
+		34A662E11BDF154100EF0FEA /* PCKXMLParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA96B78168B50D900861DF1 /* PCKXMLParserDelegate.m */; };
+		34A662E21BDF154400EF0FEA /* PCKMaybeBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3CAB32C9792AB4CDF52181 /* PCKMaybeBlock.m */; };
+		34A662E31BDF154400EF0FEA /* PCKErrorBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3CA50EBEA9B52F7AADA663 /* PCKErrorBlock.m */; };
+		34A662E41BDF154400EF0FEA /* PCKCompletionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3CA9FB694E521A3633EA69 /* PCKCompletionHandler.m */; };
+		34A662E51BDF155700EF0FEA /* NSDictionary+TypesafeExtraction.h in Headers */ = {isa = PBXBuildFile; fileRef = 34681C0D18FD9516009D38AC /* NSDictionary+TypesafeExtraction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A662E61BDF156300EF0FEA /* NSData+PivotalCore.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96B5E168B50D900861DF1 /* NSData+PivotalCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A662E71BDF156300EF0FEA /* NSObject+MethodDecoration.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96B60168B50D900861DF1 /* NSObject+MethodDecoration.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A662E81BDF156300EF0FEA /* NSObject+MethodRedirection.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96B62168B50D900861DF1 /* NSObject+MethodRedirection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A662E91BDF156300EF0FEA /* NSString+PivotalCore.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96B64168B50D900861DF1 /* NSString+PivotalCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A662EA1BDF156300EF0FEA /* NSArray+PivotalCore.h in Headers */ = {isa = PBXBuildFile; fileRef = AE6898DA16BC3AF700F3F6BC /* NSArray+PivotalCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A662EB1BDF156300EF0FEA /* NSDictionary+QueryString.h in Headers */ = {isa = PBXBuildFile; fileRef = AE0CFF5A1770C77D00E6A958 /* NSDictionary+QueryString.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A662EC1BDF156300EF0FEA /* NSURL+QueryComponents.h in Headers */ = {isa = PBXBuildFile; fileRef = AE0CFF53176FE22200E6A958 /* NSURL+QueryComponents.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A662ED1BDF156300EF0FEA /* PCKReducable.h in Headers */ = {isa = PBXBuildFile; fileRef = AB3CA16AA25276C6492C1383 /* PCKReducable.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A662F31BDF158400EF0FEA /* PCKParser.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96B71168B50D900861DF1 /* PCKParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A662F41BDF158400EF0FEA /* PCKParserDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96B72168B50D900861DF1 /* PCKParserDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A662F51BDF158400EF0FEA /* PCKResponseParser.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96B73168B50D900861DF1 /* PCKResponseParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A662F61BDF158400EF0FEA /* PCKXMLParser.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96B75168B50D900861DF1 /* PCKXMLParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A662F71BDF158400EF0FEA /* PCKXMLParserDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96B77168B50D900861DF1 /* PCKXMLParserDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A662F81BDF159900EF0FEA /* PCKMaybeBlock.h in Headers */ = {isa = PBXBuildFile; fileRef = AB3CA5C371E589667FE4D0C0 /* PCKMaybeBlock.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A662F91BDF159900EF0FEA /* PCKErrorBlock.h in Headers */ = {isa = PBXBuildFile; fileRef = AB3CA6C718FCE8E2D949A73D /* PCKErrorBlock.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A662FA1BDF159900EF0FEA /* PCKMonad.h in Headers */ = {isa = PBXBuildFile; fileRef = AB3CA86CE1E06EC451FEBB33 /* PCKMonad.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A662FB1BDF159900EF0FEA /* PCKCompletionHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = AB3CA9535795E1F3344058C3 /* PCKCompletionHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A662FD1BDF18AB00EF0FEA /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 34A662FC1BDF18AB00EF0FEA /* libxml2.tbd */; };
+		34A6630B1BDF1BED00EF0FEA /* NSDictionary+TypesafeExtraction.h in Headers */ = {isa = PBXBuildFile; fileRef = 34681C0D18FD9516009D38AC /* NSDictionary+TypesafeExtraction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A6630C1BDF1BED00EF0FEA /* NSData+PivotalCore.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96B5E168B50D900861DF1 /* NSData+PivotalCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A6630D1BDF1BED00EF0FEA /* NSObject+MethodDecoration.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96B60168B50D900861DF1 /* NSObject+MethodDecoration.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A6630E1BDF1BED00EF0FEA /* NSObject+MethodRedirection.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96B62168B50D900861DF1 /* NSObject+MethodRedirection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A6630F1BDF1BED00EF0FEA /* NSString+PivotalCore.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96B64168B50D900861DF1 /* NSString+PivotalCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A663101BDF1BED00EF0FEA /* NSArray+PivotalCore.h in Headers */ = {isa = PBXBuildFile; fileRef = AE6898DA16BC3AF700F3F6BC /* NSArray+PivotalCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A663111BDF1BED00EF0FEA /* NSDictionary+QueryString.h in Headers */ = {isa = PBXBuildFile; fileRef = AE0CFF5A1770C77D00E6A958 /* NSDictionary+QueryString.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A663121BDF1BED00EF0FEA /* NSURL+QueryComponents.h in Headers */ = {isa = PBXBuildFile; fileRef = AE0CFF53176FE22200E6A958 /* NSURL+QueryComponents.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A663131BDF1BED00EF0FEA /* PCKReducable.h in Headers */ = {isa = PBXBuildFile; fileRef = AB3CA16AA25276C6492C1383 /* PCKReducable.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A663141BDF1BF500EF0FEA /* NSURLConnectionDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96B67168B50D900861DF1 /* NSURLConnectionDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A663151BDF1BF500EF0FEA /* PCKHTTPConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96B68168B50D900861DF1 /* PCKHTTPConnection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A663161BDF1BF500EF0FEA /* PCKHTTPConnectionDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96B6A168B50D900861DF1 /* PCKHTTPConnectionDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A663171BDF1BF500EF0FEA /* PCKHTTPConnectionOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96B6C168B50D900861DF1 /* PCKHTTPConnectionOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A663181BDF1BF500EF0FEA /* PCKHTTPInterface.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96B6E168B50D900861DF1 /* PCKHTTPInterface.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A663191BDF1C0500EF0FEA /* PCKParser.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96B71168B50D900861DF1 /* PCKParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A6631A1BDF1C0500EF0FEA /* PCKParserDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96B72168B50D900861DF1 /* PCKParserDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A6631B1BDF1C0500EF0FEA /* PCKResponseParser.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96B73168B50D900861DF1 /* PCKResponseParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A6631C1BDF1C0500EF0FEA /* PCKXMLParser.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96B75168B50D900861DF1 /* PCKXMLParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A6631D1BDF1C0500EF0FEA /* PCKXMLParserDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96B77168B50D900861DF1 /* PCKXMLParserDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A6631E1BDF1C0B00EF0FEA /* PCKMaybeBlock.h in Headers */ = {isa = PBXBuildFile; fileRef = AB3CA5C371E589667FE4D0C0 /* PCKMaybeBlock.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A6631F1BDF1C0B00EF0FEA /* PCKErrorBlock.h in Headers */ = {isa = PBXBuildFile; fileRef = AB3CA6C718FCE8E2D949A73D /* PCKErrorBlock.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A663201BDF1C0B00EF0FEA /* PCKMonad.h in Headers */ = {isa = PBXBuildFile; fileRef = AB3CA86CE1E06EC451FEBB33 /* PCKMonad.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A663211BDF1C0B00EF0FEA /* PCKCompletionHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = AB3CA9535795E1F3344058C3 /* PCKCompletionHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A663221BDF1C0F00EF0FEA /* Foundation+PivotalCore.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96B79168B50D900861DF1 /* Foundation+PivotalCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A663231BDF1C1800EF0FEA /* NSDictionary+TypesafeExtraction.m in Sources */ = {isa = PBXBuildFile; fileRef = 34681C0E18FD9516009D38AC /* NSDictionary+TypesafeExtraction.m */; };
+		34A663241BDF1C1800EF0FEA /* NSData+PivotalCore.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA96B5F168B50D900861DF1 /* NSData+PivotalCore.m */; };
+		34A663251BDF1C1800EF0FEA /* NSObject+MethodDecoration.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA96B61168B50D900861DF1 /* NSObject+MethodDecoration.m */; };
+		34A663261BDF1C1800EF0FEA /* NSObject+MethodRedirection.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA96B63168B50D900861DF1 /* NSObject+MethodRedirection.m */; };
+		34A663271BDF1C1800EF0FEA /* NSString+PivotalCore.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA96B65168B50D900861DF1 /* NSString+PivotalCore.m */; };
+		34A663281BDF1C1800EF0FEA /* NSArray+PivotalCore.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6898DB16BC3AF700F3F6BC /* NSArray+PivotalCore.m */; };
+		34A663291BDF1C1800EF0FEA /* NSDictionary+QueryString.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0CFF5B1770C77D00E6A958 /* NSDictionary+QueryString.m */; };
+		34A6632A1BDF1C1800EF0FEA /* NSURL+QueryComponents.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0CFF54176FE22200E6A958 /* NSURL+QueryComponents.m */; };
+		34A6632B1BDF1C1C00EF0FEA /* PCKHTTPConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA96B69168B50D900861DF1 /* PCKHTTPConnection.m */; };
+		34A6632C1BDF1C1C00EF0FEA /* PCKHTTPConnectionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA96B6B168B50D900861DF1 /* PCKHTTPConnectionDelegate.m */; };
+		34A6632D1BDF1C1C00EF0FEA /* PCKHTTPConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA96B6D168B50D900861DF1 /* PCKHTTPConnectionOperation.m */; };
+		34A6632E1BDF1C1C00EF0FEA /* PCKHTTPInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA96B6F168B50D900861DF1 /* PCKHTTPInterface.m */; };
+		34A6632F1BDF1C2100EF0FEA /* PCKResponseParser.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA96B74168B50D900861DF1 /* PCKResponseParser.m */; };
+		34A663301BDF1C2100EF0FEA /* PCKXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA96B76168B50D900861DF1 /* PCKXMLParser.m */; };
+		34A663311BDF1C2100EF0FEA /* PCKXMLParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA96B78168B50D900861DF1 /* PCKXMLParserDelegate.m */; };
+		34A663321BDF1C2500EF0FEA /* PCKMaybeBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3CAB32C9792AB4CDF52181 /* PCKMaybeBlock.m */; };
+		34A663331BDF1C2500EF0FEA /* PCKErrorBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3CA50EBEA9B52F7AADA663 /* PCKErrorBlock.m */; };
+		34A663341BDF1C2500EF0FEA /* PCKCompletionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3CA9FB694E521A3633EA69 /* PCKCompletionHandler.m */; };
+		34A663361BDF1C9300EF0FEA /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 34A663351BDF1C9300EF0FEA /* libxml2.tbd */; };
+		34A663441BDF1E7B00EF0FEA /* PCKConnectionDelegateWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = E309448A16F117180034B3A9 /* PCKConnectionDelegateWrapper.m */; };
+		34A663451BDF1E7B00EF0FEA /* PCKConnectionBlockDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E3AD57B916F4AD0E003564BA /* PCKConnectionBlockDelegate.m */; };
+		34A663461BDF1E7F00EF0FEA /* NSURLConnection+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA96BB4168B544D00861DF1 /* NSURLConnection+Spec.m */; };
+		34A663471BDF1E7F00EF0FEA /* NSURLRequest+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA96BB6168B544D00861DF1 /* NSURLRequest+Spec.m */; };
+		34A663481BDF1E7F00EF0FEA /* NSUUID+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE969360182D9A1900E7306C /* NSUUID+Spec.m */; };
+		34A663491BDF1E8200EF0FEA /* PSHKFixtures.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA96BC0168B544D00861DF1 /* PSHKFixtures.m */; };
+		34A6634A1BDF1E8500EF0FEA /* PSHKFakeHTTPURLResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA96BBB168B544D00861DF1 /* PSHKFakeHTTPURLResponse.m */; };
+		34A6634B1BDF1E8500EF0FEA /* PSHKFakeOperationQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB2B8DD18F703C800E26FAD /* PSHKFakeOperationQueue.m */; };
+		34A6634C1BDF1E8500EF0FEA /* PSHKFakeResponses.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA96BBD168B544D00861DF1 /* PSHKFakeResponses.m */; };
+		34A6634D1BDF1E9C00EF0FEA /* PCKConnectionDelegateWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = E309448916F117180034B3A9 /* PCKConnectionDelegateWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A6634E1BDF1E9D00EF0FEA /* PCKConnectionBlockDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = E3AD57B816F4AD0E003564BA /* PCKConnectionBlockDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A6634F1BDF1EA700EF0FEA /* NSURLConnection+Spec.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96BB3168B544D00861DF1 /* NSURLConnection+Spec.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A663501BDF1EA700EF0FEA /* NSURLRequest+Spec.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96BB5168B544D00861DF1 /* NSURLRequest+Spec.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A663511BDF1EA700EF0FEA /* NSUUID+Spec.h in Headers */ = {isa = PBXBuildFile; fileRef = AE96935F182D9A1900E7306C /* NSUUID+Spec.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A663521BDF1EAE00EF0FEA /* NSUUID+Spec.h in Headers */ = {isa = PBXBuildFile; fileRef = AE96935F182D9A1900E7306C /* NSUUID+Spec.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A663531BDF1EB800EF0FEA /* PSHKFixtures.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96BBF168B544D00861DF1 /* PSHKFixtures.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A663541BDF1EBF00EF0FEA /* PSHKFakeHTTPURLResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96BBA168B544D00861DF1 /* PSHKFakeHTTPURLResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A663551BDF1EBF00EF0FEA /* PSHKFakeOperationQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = AEB2B8DC18F703C800E26FAD /* PSHKFakeOperationQueue.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A663561BDF1EBF00EF0FEA /* FakeOperationQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96BB8168B544D00861DF1 /* FakeOperationQueue.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A663571BDF1EBF00EF0FEA /* PSHKFakeResponses.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96BBC168B544D00861DF1 /* PSHKFakeResponses.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A663581BDF1EC300EF0FEA /* Foundation+PivotalSpecHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96CBF168B6FFC00861DF1 /* Foundation+PivotalSpecHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A663761BDF217500EF0FEA /* PCKConnectionDelegateWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = E309448A16F117180034B3A9 /* PCKConnectionDelegateWrapper.m */; };
+		34A663771BDF217500EF0FEA /* PCKConnectionBlockDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E3AD57B916F4AD0E003564BA /* PCKConnectionBlockDelegate.m */; };
+		34A663781BDF217900EF0FEA /* NSURLConnection+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA96BB4168B544D00861DF1 /* NSURLConnection+Spec.m */; };
+		34A663791BDF217900EF0FEA /* NSURLRequest+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA96BB6168B544D00861DF1 /* NSURLRequest+Spec.m */; };
+		34A6637A1BDF217900EF0FEA /* NSUUID+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE969360182D9A1900E7306C /* NSUUID+Spec.m */; };
+		34A6637B1BDF217C00EF0FEA /* PSHKFixtures.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA96BC0168B544D00861DF1 /* PSHKFixtures.m */; };
+		34A6637C1BDF218000EF0FEA /* PSHKFakeHTTPURLResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA96BBB168B544D00861DF1 /* PSHKFakeHTTPURLResponse.m */; };
+		34A6637D1BDF218000EF0FEA /* PSHKFakeOperationQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB2B8DD18F703C800E26FAD /* PSHKFakeOperationQueue.m */; };
+		34A6637E1BDF218000EF0FEA /* PSHKFakeResponses.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA96BBD168B544D00861DF1 /* PSHKFakeResponses.m */; };
+		34A6637F1BDF219100EF0FEA /* PCKConnectionDelegateWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = E309448916F117180034B3A9 /* PCKConnectionDelegateWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A663801BDF219100EF0FEA /* PCKConnectionBlockDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = E3AD57B816F4AD0E003564BA /* PCKConnectionBlockDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A663811BDF219700EF0FEA /* NSURLConnection+Spec.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96BB3168B544D00861DF1 /* NSURLConnection+Spec.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A663821BDF219700EF0FEA /* NSURLRequest+Spec.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96BB5168B544D00861DF1 /* NSURLRequest+Spec.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A663831BDF219700EF0FEA /* NSUUID+Spec.h in Headers */ = {isa = PBXBuildFile; fileRef = AE96935F182D9A1900E7306C /* NSUUID+Spec.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A663841BDF219B00EF0FEA /* PSHKFixtures.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96BBF168B544D00861DF1 /* PSHKFixtures.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A663851BDF219F00EF0FEA /* PSHKFakeHTTPURLResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96BBA168B544D00861DF1 /* PSHKFakeHTTPURLResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A663861BDF219F00EF0FEA /* PSHKFakeOperationQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = AEB2B8DC18F703C800E26FAD /* PSHKFakeOperationQueue.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A663871BDF219F00EF0FEA /* FakeOperationQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96BB8168B544D00861DF1 /* FakeOperationQueue.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A663881BDF219F00EF0FEA /* PSHKFakeResponses.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96BBC168B544D00861DF1 /* PSHKFakeResponses.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A663891BDF21A300EF0FEA /* Foundation+PivotalSpecHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96CBF168B6FFC00861DF1 /* Foundation+PivotalSpecHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A663A91BDF24E800EF0FEA /* Foundation_PivotalCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34A663031BDF1A9900EF0FEA /* Foundation_PivotalCore.framework */; };
+		34A663C11BDF252A00EF0FEA /* Foundation_PivotalSpecHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34A6636E1BDF200A00EF0FEA /* Foundation_PivotalSpecHelper.framework */; };
+		34A663C21BDF25AD00EF0FEA /* PCKConnectionBlockDelegateSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = E3F9C81316F50EFC00347B30 /* PCKConnectionBlockDelegateSpec.mm */; };
+		34A663C31BDF25AD00EF0FEA /* PCKConnectionDelegateWrapperSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = E3F9C81016F50EED00347B30 /* PCKConnectionDelegateWrapperSpec.mm */; };
+		34A663C41BDF25CD00EF0FEA /* PSHKObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = DE99C52A2D323A2A8E4F3EBF /* PSHKObserver.m */; };
+		34A663C51BDF25D100EF0FEA /* PSHKWeakObjectWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = AE83D3671B87E604001990B1 /* PSHKWeakObjectWrapper.m */; };
+		34A663C61BDF25D600EF0FEA /* NSArraySpec+PivotalCore.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE6898E616BC3B7A00F3F6BC /* NSArraySpec+PivotalCore.mm */; };
+		34A663C71BDF25D600EF0FEA /* NSDataSpec+PivotalCore.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEA96BE1168B56BF00861DF1 /* NSDataSpec+PivotalCore.mm */; };
+		34A663C81BDF25D600EF0FEA /* NSDictionarySpec+QueryStringSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE0CFF5F1770C80F00E6A958 /* NSDictionarySpec+QueryStringSpec.mm */; };
+		34A663C91BDF25D600EF0FEA /* NSObjectSpec+MethodDecoration.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEA96BE2168B56BF00861DF1 /* NSObjectSpec+MethodDecoration.mm */; };
+		34A663CA1BDF25D600EF0FEA /* NSObjectSpec+MethodRedirection.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEA96BE3168B56BF00861DF1 /* NSObjectSpec+MethodRedirection.mm */; };
+		34A663CB1BDF25D600EF0FEA /* NSStringSpec+PivotalCore.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEA96BE4168B56BF00861DF1 /* NSStringSpec+PivotalCore.mm */; };
+		34A663CC1BDF25D600EF0FEA /* NSURLConnectionSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEA96BE5168B56BF00861DF1 /* NSURLConnectionSpec+Spec.mm */; };
+		34A663CD1BDF25D600EF0FEA /* NSURLSpec+QueryComponents.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE0CFF711770DAE300E6A958 /* NSURLSpec+QueryComponents.mm */; };
+		34A663CE1BDF25D600EF0FEA /* NSUUIDSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE96934E182D97A900E7306C /* NSUUIDSpec+Spec.mm */; };
+		34A663CF1BDF25D600EF0FEA /* NSDictionarySpec+TypesafeExtraction.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34681C1C18FD9873009D38AC /* NSDictionarySpec+TypesafeExtraction.mm */; };
+		34A663D01BDF25DB00EF0FEA /* PSHKFakeOperationQueueSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEF6F87616EBF0CF0004F077 /* PSHKFakeOperationQueueSpec.mm */; };
+		34A663D11BDF25E000EF0FEA /* PCKHTTPConnectionDelegateSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEA96BE7168B56BF00861DF1 /* PCKHTTPConnectionDelegateSpec.mm */; };
+		34A663D21BDF25E000EF0FEA /* PCKHTTPConnectionOperationSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEA96BE8168B56BF00861DF1 /* PCKHTTPConnectionOperationSpec.mm */; };
+		34A663D31BDF25E000EF0FEA /* PCKHTTPConnectionSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEA96BE9168B56BF00861DF1 /* PCKHTTPConnectionSpec.mm */; };
+		34A663D41BDF25E000EF0FEA /* PCKHTTPInterfaceSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEA96BEA168B56BF00861DF1 /* PCKHTTPInterfaceSpec.mm */; };
+		34A663D51BDF25E600EF0FEA /* PCKResponseParserSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEA96BED168B56BF00861DF1 /* PCKResponseParserSpec.mm */; };
+		34A663D61BDF25E600EF0FEA /* PCKXMLParserSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEA96BEE168B56BF00861DF1 /* PCKXMLParserSpec.mm */; };
+		34A663D71BDF25F400EF0FEA /* FixturesHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA96C38168B602700861DF1 /* FixturesHelper.m */; };
+		34A663D81BDF260000EF0FEA /* FakeConnectionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA96C07168B58AA00861DF1 /* FakeConnectionDelegate.m */; };
+		34A663D91BDF260400EF0FEA /* ConnectionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E309449B16F3FD230034B3A9 /* ConnectionDelegate.m */; };
+		34A663DA1BDF269500EF0FEA /* Cedar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34A663B51BDF24E800EF0FEA /* Cedar.framework */; };
+		34A663DB1BDF28A700EF0FEA /* libFakeHTTP.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 34A662D01BDF14BB00EF0FEA /* libFakeHTTP.a */; };
 		AB3CA197EC99D816B4AAED4F /* PCKMaybeBlockSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB3CA7A3A3B6119475C0AD0C /* PCKMaybeBlockSpec.mm */; };
 		AB3CA21D309D6ED58D2FEE8B /* PCKErrorBlockSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB3CA491C2D37554D15B7B11 /* PCKErrorBlockSpec.mm */; };
 		AB3CA3EA56DF3AABE4AD2E8B /* PCKErrorBlockSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB3CA491C2D37554D15B7B11 /* PCKErrorBlockSpec.mm */; };
 		AB3CA471FAB972FE49592399 /* PCKCompletionHandlerSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB3CA1349D0450A702F21EF1 /* PCKCompletionHandlerSpec.mm */; };
-		AB3CA47A28CD03E0199FD57B /* PCKMonad.h in Headers */ = {isa = PBXBuildFile; fileRef = AB3CA86CE1E06EC451FEBB33 /* PCKMonad.h */; };
+		AB3CA47A28CD03E0199FD57B /* PCKMonad.h in Headers */ = {isa = PBXBuildFile; fileRef = AB3CA86CE1E06EC451FEBB33 /* PCKMonad.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AB3CA4CC094429CB87660D8D /* PCKCompletionHandlerSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB3CA1349D0450A702F21EF1 /* PCKCompletionHandlerSpec.mm */; };
 		AB3CA65C79B642CB4DDB3459 /* PCKMaybeBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3CAB32C9792AB4CDF52181 /* PCKMaybeBlock.m */; };
-		AB3CA7AEEC91A3417CD14DB3 /* PCKMaybeBlock.h in Headers */ = {isa = PBXBuildFile; fileRef = AB3CA5C371E589667FE4D0C0 /* PCKMaybeBlock.h */; };
+		AB3CA7AEEC91A3417CD14DB3 /* PCKMaybeBlock.h in Headers */ = {isa = PBXBuildFile; fileRef = AB3CA5C371E589667FE4D0C0 /* PCKMaybeBlock.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AB3CA87BA169B7FADF10D92F /* PCKErrorBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3CA50EBEA9B52F7AADA663 /* PCKErrorBlock.m */; };
-		AB3CAB2EE53CEC98DEBB216D /* PCKErrorBlock.h in Headers */ = {isa = PBXBuildFile; fileRef = AB3CA6C718FCE8E2D949A73D /* PCKErrorBlock.h */; };
+		AB3CAB2EE53CEC98DEBB216D /* PCKErrorBlock.h in Headers */ = {isa = PBXBuildFile; fileRef = AB3CA6C718FCE8E2D949A73D /* PCKErrorBlock.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AB3CAC0A89303EB86D80DD76 /* PCKCompletionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3CA9FB694E521A3633EA69 /* PCKCompletionHandler.m */; };
 		AB3CAC9A4AB63C38229A472D /* PCKCompletionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3CA9FB694E521A3633EA69 /* PCKCompletionHandler.m */; };
-		AB3CAD09B86C0BA6279E6E0D /* PCKCompletionHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = AB3CA9535795E1F3344058C3 /* PCKCompletionHandler.h */; };
+		AB3CAD09B86C0BA6279E6E0D /* PCKCompletionHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = AB3CA9535795E1F3344058C3 /* PCKCompletionHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AB3CAD49C2F06A04497DE9B2 /* PCKMaybeBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3CAB32C9792AB4CDF52181 /* PCKMaybeBlock.m */; };
-		AB3CADF7BFCF405B26FCF5D8 /* PCKReducable.h in Headers */ = {isa = PBXBuildFile; fileRef = AB3CA16AA25276C6492C1383 /* PCKReducable.h */; };
+		AB3CADF7BFCF405B26FCF5D8 /* PCKReducable.h in Headers */ = {isa = PBXBuildFile; fileRef = AB3CA16AA25276C6492C1383 /* PCKReducable.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AB3CAE327D5B3F187C74DA0A /* PCKErrorBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3CA50EBEA9B52F7AADA663 /* PCKErrorBlock.m */; };
 		AB3CAFC4090A8520BF7B8E02 /* PCKMaybeBlockSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB3CA7A3A3B6119475C0AD0C /* PCKMaybeBlockSpec.mm */; };
 		AE03FC771B0A871100013784 /* NSDictionary+TypesafeExtraction.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 34681C0D18FD9516009D38AC /* NSDictionary+TypesafeExtraction.h */; };
@@ -83,7 +229,7 @@
 		AE03FC8C1B0A871100013784 /* PCKErrorBlock.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AB3CA6C718FCE8E2D949A73D /* PCKErrorBlock.h */; };
 		AE03FC8D1B0A871100013784 /* PCKMonad.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AB3CA86CE1E06EC451FEBB33 /* PCKMonad.h */; };
 		AE03FC8E1B0A871100013784 /* PCKCompletionHandler.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AB3CA9535795E1F3344058C3 /* PCKCompletionHandler.h */; };
-		AE0CFF5C1770C77D00E6A958 /* NSDictionary+QueryString.h in Headers */ = {isa = PBXBuildFile; fileRef = AE0CFF5A1770C77D00E6A958 /* NSDictionary+QueryString.h */; };
+		AE0CFF5C1770C77D00E6A958 /* NSDictionary+QueryString.h in Headers */ = {isa = PBXBuildFile; fileRef = AE0CFF5A1770C77D00E6A958 /* NSDictionary+QueryString.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE0CFF5D1770C77D00E6A958 /* NSDictionary+QueryString.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0CFF5B1770C77D00E6A958 /* NSDictionary+QueryString.m */; };
 		AE0CFF5E1770C77D00E6A958 /* NSDictionary+QueryString.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0CFF5B1770C77D00E6A958 /* NSDictionary+QueryString.m */; };
 		AE0CFF601770C81900E6A958 /* NSDictionarySpec+QueryStringSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE0CFF5F1770C80F00E6A958 /* NSDictionarySpec+QueryStringSpec.mm */; };
@@ -97,7 +243,7 @@
 		AE6898DE16BC3AF700F3F6BC /* NSArray+PivotalCore.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6898DB16BC3AF700F3F6BC /* NSArray+PivotalCore.m */; };
 		AE6898E716BC3B7A00F3F6BC /* NSArraySpec+PivotalCore.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE6898E616BC3B7A00F3F6BC /* NSArraySpec+PivotalCore.mm */; };
 		AE6898E816BC3D0500F3F6BC /* NSArraySpec+PivotalCore.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE6898E616BC3B7A00F3F6BC /* NSArraySpec+PivotalCore.mm */; };
-		AE7A67C518E5C073004A35BE /* NSURL+QueryComponents.h in Headers */ = {isa = PBXBuildFile; fileRef = AE0CFF53176FE22200E6A958 /* NSURL+QueryComponents.h */; };
+		AE7A67C518E5C073004A35BE /* NSURL+QueryComponents.h in Headers */ = {isa = PBXBuildFile; fileRef = AE0CFF53176FE22200E6A958 /* NSURL+QueryComponents.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE7A67C618E5C077004A35BE /* NSURL+QueryComponents.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0CFF54176FE22200E6A958 /* NSURL+QueryComponents.m */; };
 		AE7A67C718E5C077004A35BE /* NSURL+QueryComponents.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0CFF54176FE22200E6A958 /* NSURL+QueryComponents.m */; };
 		AE83D3681B87E604001990B1 /* PSHKWeakObjectWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = AE83D3671B87E604001990B1 /* PSHKWeakObjectWrapper.m */; };
@@ -207,7 +353,7 @@
 		AEBCCB6D168B7E7C0056EE83 /* Cedar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEBCCB59168B7E380056EE83 /* Cedar.framework */; };
 		AEBCCB6E168B7E930056EE83 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE24D5AF138170CD00E4420A /* Foundation.framework */; };
 		AEBCCB71168B909D0056EE83 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AE88B00711DE6D1200B65DD3 /* libxml2.dylib */; };
-		AEE971D41708EB760094B5A2 /* libFakeHTTP-OSX.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AEE971D11708EB410094B5A2 /* libFakeHTTP-OSX.a */; };
+		AEE971D41708EB760094B5A2 /* libFakeHTTP.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AEE971D11708EB410094B5A2 /* libFakeHTTP.a */; };
 		AEEECC40181F3693006B52CD /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEEECC3F181F3693006B52CD /* Default-568h@2x.png */; };
 		AEF6F87816EBF0CF0004F077 /* PSHKFakeOperationQueueSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEF6F87616EBF0CF0004F077 /* PSHKFakeOperationQueueSpec.mm */; };
 		AEF6F88016EBF7D80004F077 /* PSHKFakeOperationQueueSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEF6F87616EBF0CF0004F077 /* PSHKFakeOperationQueueSpec.mm */; };
@@ -220,13 +366,12 @@
 		B88BF0A11725A7BF00E638D3 /* FakeOperationQueue.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AEA96BB8168B544D00861DF1 /* FakeOperationQueue.h */; };
 		B88BF0A21725A7C200E638D3 /* PSHKFakeHTTPURLResponse.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AEA96BBA168B544D00861DF1 /* PSHKFakeHTTPURLResponse.h */; };
 		B88BF0A31725A7C600E638D3 /* PSHKFakeResponses.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AEA96BBC168B544D00861DF1 /* PSHKFakeResponses.h */; };
-		DE99C5600FEEF8FC75AC5D85 /* PSHKObserver.h in Headers */ = {isa = PBXBuildFile; fileRef = DE99CE4876A23C42A61ED94A /* PSHKObserver.h */; };
-		E309448B16F117180034B3A9 /* PCKConnectionDelegateWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = E309448916F117180034B3A9 /* PCKConnectionDelegateWrapper.h */; };
+		E309448B16F117180034B3A9 /* PCKConnectionDelegateWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = E309448916F117180034B3A9 /* PCKConnectionDelegateWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E309448C16F117180034B3A9 /* PCKConnectionDelegateWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = E309448A16F117180034B3A9 /* PCKConnectionDelegateWrapper.m */; };
 		E309448D16F117180034B3A9 /* PCKConnectionDelegateWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = E309448A16F117180034B3A9 /* PCKConnectionDelegateWrapper.m */; };
 		E309449C16F3FD230034B3A9 /* ConnectionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E309449B16F3FD230034B3A9 /* ConnectionDelegate.m */; };
 		E30944A416F3FD290034B3A9 /* ConnectionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E309449B16F3FD230034B3A9 /* ConnectionDelegate.m */; };
-		E3AD57BA16F4AD0E003564BA /* PCKConnectionBlockDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = E3AD57B816F4AD0E003564BA /* PCKConnectionBlockDelegate.h */; };
+		E3AD57BA16F4AD0E003564BA /* PCKConnectionBlockDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = E3AD57B816F4AD0E003564BA /* PCKConnectionBlockDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E3AD57BB16F4AD0E003564BA /* PCKConnectionBlockDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E3AD57B916F4AD0E003564BA /* PCKConnectionBlockDelegate.m */; };
 		E3AD57BC16F4AD0E003564BA /* PCKConnectionBlockDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E3AD57B916F4AD0E003564BA /* PCKConnectionBlockDelegate.m */; };
 		E3F9C81116F50EED00347B30 /* PCKConnectionDelegateWrapperSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = E3F9C81016F50EED00347B30 /* PCKConnectionDelegateWrapperSpec.mm */; };
@@ -257,54 +402,75 @@
 			remoteGlobalIDString = AE03FBE91B06C33B00013784;
 			remoteInfo = "Cedar-iOS-Framework Specs";
 		};
-		AE416AA9174D481C0014A083 /* PBXContainerItemProxy */ = {
+		34A662CD1BDF14BB00EF0FEA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AEE971BF1708EB400094B5A2 /* FakeHTTP.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = E1C4E7C5161E24B20005AF7B;
-			remoteInfo = FakeHTTP;
+			proxyType = 2;
+			remoteGlobalIDString = 34A6629C1BDF122100EF0FEA;
+			remoteInfo = "FakeHTTP-watchOS";
 		};
-		AE52FFC11BC83D0B006BA693 /* PBXContainerItemProxy */ = {
+		34A662CF1BDF14BB00EF0FEA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEE971BF1708EB400094B5A2 /* FakeHTTP.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 34A662831BDF104B00EF0FEA;
+			remoteInfo = "FakeHTTP-tvOS";
+		};
+		34A663AA1BDF24E800EF0FEA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 34A663021BDF1A9900EF0FEA;
+			remoteInfo = "Foundation+PivotalCore-tvOS";
+		};
+		34A663B21BDF24E800EF0FEA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AEBCCB45168B7E370056EE83 /* Cedar.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 346261DF1B995239002CAEBD;
 			remoteInfo = "Cedar-watchOS";
 		};
-		AE52FFC31BC83D0B006BA693 /* PBXContainerItemProxy */ = {
+		34A663B41BDF24E800EF0FEA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AEBCCB45168B7E370056EE83 /* Cedar.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 34D7C3CA1BB9747400E8E523;
 			remoteInfo = "Cedar-tvOS";
 		};
-		AE52FFC51BC83D0B006BA693 /* PBXContainerItemProxy */ = {
+		34A663B61BDF24E800EF0FEA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AEBCCB45168B7E370056EE83 /* Cedar.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 34852D211BBE35FF0072D249;
 			remoteInfo = "Cedar-watchOS HostApp";
 		};
-		AE52FFC71BC83D0B006BA693 /* PBXContainerItemProxy */ = {
+		34A663B81BDF24E800EF0FEA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AEBCCB45168B7E370056EE83 /* Cedar.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 346262781B99C1DB002CAEBD;
 			remoteInfo = "Cedar-watchOS Specs";
 		};
-		AE52FFC91BC83D0B006BA693 /* PBXContainerItemProxy */ = {
+		34A663BA1BDF24E800EF0FEA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AEBCCB45168B7E370056EE83 /* Cedar.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 346262841B99C1DC002CAEBD;
 			remoteInfo = "Cedar-watchOS Specs Extension";
 		};
-		AE52FFCB1BC83D0B006BA693 /* PBXContainerItemProxy */ = {
+		34A663BC1BDF24E800EF0FEA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AEBCCB45168B7E370056EE83 /* Cedar.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 34D7C4691BB9B71600E8E523;
 			remoteInfo = "Cedar-tvOS SpecBundle";
+		};
+		AE416AA9174D481C0014A083 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEE971BF1708EB400094B5A2 /* FakeHTTP.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = E1C4E7C5161E24B20005AF7B;
+			remoteInfo = FakeHTTP;
 		};
 		AE52FFD41BC83E51006BA693 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -492,15 +658,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AEA96C52168B636E00861DF1 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "include/${PRODUCT_NAME}";
-			dstSubfolderSpec = 16;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		AEA96C62168B63BD00861DF1 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -537,6 +694,13 @@
 		34681C0D18FD9516009D38AC /* NSDictionary+TypesafeExtraction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+TypesafeExtraction.h"; sourceTree = "<group>"; };
 		34681C0E18FD9516009D38AC /* NSDictionary+TypesafeExtraction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+TypesafeExtraction.m"; sourceTree = "<group>"; };
 		34681C1C18FD9873009D38AC /* NSDictionarySpec+TypesafeExtraction.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSDictionarySpec+TypesafeExtraction.mm"; sourceTree = "<group>"; };
+		34A662B81BDF14BB00EF0FEA /* Foundation_PivotalCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Foundation_PivotalCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		34A662FC1BDF18AB00EF0FEA /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS2.0.sdk/usr/lib/libxml2.tbd; sourceTree = DEVELOPER_DIR; };
+		34A663031BDF1A9900EF0FEA /* Foundation_PivotalCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Foundation_PivotalCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		34A663351BDF1C9300EF0FEA /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS9.0.sdk/usr/lib/libxml2.tbd; sourceTree = DEVELOPER_DIR; };
+		34A6633C1BDF1D3D00EF0FEA /* Foundation_PivotalSpecHelper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Foundation_PivotalSpecHelper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		34A6636E1BDF200A00EF0FEA /* Foundation_PivotalSpecHelper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Foundation_PivotalSpecHelper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		34A663A41BDF24E700EF0FEA /* Foundation-tvOS SpecBundle.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Foundation-tvOS SpecBundle.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB3CA1349D0450A702F21EF1 /* PCKCompletionHandlerSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PCKCompletionHandlerSpec.mm; sourceTree = "<group>"; };
 		AB3CA16AA25276C6492C1383 /* PCKReducable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCKReducable.h; sourceTree = "<group>"; };
 		AB3CA491C2D37554D15B7B11 /* PCKErrorBlockSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PCKErrorBlockSpec.mm; sourceTree = "<group>"; };
@@ -558,8 +722,6 @@
 		AE118A9918D6B3CA00C90D6B /* Foundation-StaticLibSpecBundle-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Foundation-StaticLibSpecBundle-Info.plist"; sourceTree = "<group>"; };
 		AE24D5AF138170CD00E4420A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AE2A04CF18D402F400D4FD96 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		AE2A04D118D4030100D4FD96 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		AE384883168BBB9000C99B55 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		AE6898DA16BC3AF700F3F6BC /* NSArray+PivotalCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+PivotalCore.h"; sourceTree = "<group>"; };
 		AE6898DB16BC3AF700F3F6BC /* NSArray+PivotalCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+PivotalCore.m"; sourceTree = "<group>"; };
 		AE6898E616BC3B7A00F3F6BC /* NSArraySpec+PivotalCore.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSArraySpec+PivotalCore.mm"; sourceTree = "<group>"; };
@@ -638,7 +800,7 @@
 		AEB2B8DD18F703C800E26FAD /* PSHKFakeOperationQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSHKFakeOperationQueue.m; sourceTree = "<group>"; };
 		AEBCCB45168B7E370056EE83 /* Cedar.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Cedar.xcodeproj; path = Cedar/Cedar.xcodeproj; sourceTree = "<group>"; };
 		AEE971BF1708EB400094B5A2 /* FakeHTTP.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FakeHTTP.xcodeproj; path = FakeHTTP/FakeHTTP.xcodeproj; sourceTree = "<group>"; };
-		AEEECC3F181F3693006B52CD /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		AEEECC3F181F3693006B52CD /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../../Default-568h@2x.png"; sourceTree = "<group>"; };
 		AEF6F87616EBF0CF0004F077 /* PSHKFakeOperationQueueSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PSHKFakeOperationQueueSpec.mm; sourceTree = "<group>"; };
 		DE99C52A2D323A2A8E4F3EBF /* PSHKObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSHKObserver.m; path = SpecHelper/Helpers/PSHKObserver.m; sourceTree = SOURCE_ROOT; };
 		DE99CE4876A23C42A61ED94A /* PSHKObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSHKObserver.h; path = SpecHelper/Helpers/PSHKObserver.h; sourceTree = SOURCE_ROOT; };
@@ -657,6 +819,47 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		34A662B41BDF14BB00EF0FEA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34A662FD1BDF18AB00EF0FEA /* libxml2.tbd in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		34A662FF1BDF1A9900EF0FEA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34A663361BDF1C9300EF0FEA /* libxml2.tbd in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		34A663381BDF1D3D00EF0FEA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		34A6636A1BDF200A00EF0FEA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		34A663A11BDF24E700EF0FEA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34A663DB1BDF28A700EF0FEA /* libFakeHTTP.a in Frameworks */,
+				34A663DA1BDF269500EF0FEA /* Cedar.framework in Frameworks */,
+				34A663C11BDF252A00EF0FEA /* Foundation_PivotalSpecHelper.framework in Frameworks */,
+				34A663A91BDF24E800EF0FEA /* Foundation_PivotalCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -680,7 +883,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AEE971D41708EB760094B5A2 /* libFakeHTTP-OSX.a in Frameworks */,
+				AEE971D41708EB760094B5A2 /* libFakeHTTP.a in Frameworks */,
 				AEBCCB6E168B7E930056EE83 /* Foundation.framework in Frameworks */,
 				AEBCCB6D168B7E7C0056EE83 /* Cedar.framework in Frameworks */,
 				AEA96C03168B570B00861DF1 /* Foundation+PivotalSpecHelper.framework in Frameworks */,
@@ -731,6 +934,11 @@
 				AEA96C64168B63BD00861DF1 /* libFoundation+PivotalSpecHelper-StaticLib.a */,
 				AEA96C74168B640B00861DF1 /* Foundation-StaticLibSpec.app */,
 				3466C03B1B97A10A00CBAB59 /* Foundation-StaticLibSpecBundle.xctest */,
+				34A662B81BDF14BB00EF0FEA /* Foundation_PivotalCore.framework */,
+				34A663031BDF1A9900EF0FEA /* Foundation_PivotalCore.framework */,
+				34A6633C1BDF1D3D00EF0FEA /* Foundation_PivotalSpecHelper.framework */,
+				34A6636E1BDF200A00EF0FEA /* Foundation_PivotalSpecHelper.framework */,
+				34A663A41BDF24E700EF0FEA /* Foundation-tvOS SpecBundle.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -738,7 +946,6 @@
 		0867D691FE84028FC02AAC07 /* PivotalCoreKit */ = {
 			isa = PBXGroup;
 			children = (
-				AEEECC3F181F3693006B52CD /* Default-568h@2x.png */,
 				AEA96B41168B4FF800861DF1 /* Core */,
 				AEA96B42168B4FFE00861DF1 /* SpecHelper */,
 				AEA96B43168B500300861DF1 /* Spec */,
@@ -752,11 +959,11 @@
 		0867D69AFE84028FC02AAC07 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				AE2A04D118D4030100D4FD96 /* XCTest.framework */,
+				AE88B00711DE6D1200B65DD3 /* libxml2.dylib */,
+				34A663351BDF1C9300EF0FEA /* libxml2.tbd */,
+				34A662FC1BDF18AB00EF0FEA /* libxml2.tbd */,
 				AE2A04CF18D402F400D4FD96 /* UIKit.framework */,
 				AE24D5AF138170CD00E4420A /* Foundation.framework */,
-				AE88B00711DE6D1200B65DD3 /* libxml2.dylib */,
-				AE384883168BBB9000C99B55 /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -799,9 +1006,9 @@
 				AEA96B5D168B50D900861DF1 /* Extensions */,
 				AEA96B66168B50D900861DF1 /* Interfaces */,
 				AEA96B70168B50D900861DF1 /* Parsers */,
+				AB3CA3F647E6E1AECA7A33A2 /* Monads */,
 				AEA96B79168B50D900861DF1 /* Foundation+PivotalCore.h */,
 				AEA96BCE168B554000861DF1 /* Foundation+PivotalCore-Info.plist */,
-				AB3CA3F647E6E1AECA7A33A2 /* Monads */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -999,6 +1206,7 @@
 				AE118A9818D6B3CA00C90D6B /* BundleSpecLoader.mm */,
 				AEA96C95168B656700861DF1 /* Foundation+PivotalCore-StaticLibSpec-Info.plist */,
 				AE118A9918D6B3CA00C90D6B /* Foundation-StaticLibSpecBundle-Info.plist */,
+				AEEECC3F181F3693006B52CD /* Default-568h@2x.png */,
 				AEA96C9B168B65CC00861DF1 /* main.m */,
 			);
 			path = iOS;
@@ -1027,22 +1235,22 @@
 			children = (
 				AEBCCB59168B7E380056EE83 /* Cedar.framework */,
 				34777EA11B99029900A69FCF /* Cedar.framework */,
-				AE52FFC21BC83D0B006BA693 /* Cedar.framework */,
-				AE52FFC41BC83D0B006BA693 /* Cedar.framework */,
+				34A663B31BDF24E800EF0FEA /* Cedar.framework */,
+				34A663B51BDF24E800EF0FEA /* Cedar.framework */,
 				AEBCCB5F168B7E380056EE83 /* libCedar.a */,
-				AEBCCB5B168B7E380056EE83 /* Cedar-OSX Specs */,
-				AEBCCB5D168B7E380056EE83 /* Cedar-OSX FocusedSpecs */,
-				34777EA31B99029900A69FCF /* Cedar-iOS Specs.app */,
-				AEBCCB61168B7E380056EE83 /* Cedar-iOS StaticLib Specs.app */,
+				AEBCCB5B168B7E380056EE83 /* Cedar OS X Specs */,
+				AEBCCB5D168B7E380056EE83 /* Cedar OS X FocusedSpecs */,
+				34777EA31B99029900A69FCF /* Cedar-iOS-Framework Specs.app */,
+				AEBCCB61168B7E380056EE83 /* Cedar-StaticLib Specs.app */,
 				AED5717C18C54AE1004AD37D /* Cedar-iOS StaticFrameworkSpecs.app */,
-				AEEB50D01A0189070014BB6A /* Cedar-OSX HostApp.app */,
-				AEBCCB63168B7E380056EE83 /* Cedar-iOS HostApp.app */,
-				AE52FFC61BC83D0B006BA693 /* Cedar-watchOS HostApp.app */,
-				AEEB50D21A0189070014BB6A /* Cedar-OSX SpecBundle.xctest */,
-				AEEECC3D181F368F006B52CD /* Cedar-iOS SpecBundle.xctest */,
-				AE52FFC81BC83D0B006BA693 /* Cedar-watchOS Specs.app */,
-				AE52FFCA1BC83D0B006BA693 /* Cedar-watchOS Specs Extension.appex */,
-				AE52FFCC1BC83D0B006BA693 /* Cedar-tvOS SpecBundle.bundle */,
+				AEEB50D01A0189070014BB6A /* Cedar OS X Host App.app */,
+				AEBCCB63168B7E380056EE83 /* Cedar iOS Host App.app */,
+				34A663B71BDF24E800EF0FEA /* Cedar-watchOS HostApp.app */,
+				AEEB50D21A0189070014BB6A /* Cedar OS X Host AppTests.xctest */,
+				AEEECC3D181F368F006B52CD /* XCUnitAppTests.xctest */,
+				34A663B91BDF24E800EF0FEA /* Cedar-watchOS Specs.app */,
+				34A663BB1BDF24E800EF0FEA /* Cedar-watchOS Specs Extension.appex */,
+				34A663BD1BDF24E800EF0FEA /* Cedar-tvOS SpecBundle.bundle */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1051,8 +1259,10 @@
 			isa = PBXGroup;
 			children = (
 				AEE971CD1708EB410094B5A2 /* libFakeHTTP.a */,
+				AEE971D11708EB410094B5A2 /* libFakeHTTP.a */,
+				34A662CE1BDF14BB00EF0FEA /* libFakeHTTP-watchOS.a */,
+				34A662D01BDF14BB00EF0FEA /* libFakeHTTP.a */,
 				AEE971CF1708EB410094B5A2 /* Specs.app */,
-				AEE971D11708EB410094B5A2 /* libFakeHTTP-OSX.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1084,6 +1294,99 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		34A662B51BDF14BB00EF0FEA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34A662F81BDF159900EF0FEA /* PCKMaybeBlock.h in Headers */,
+				34A662F41BDF158400EF0FEA /* PCKParserDelegate.h in Headers */,
+				34A662FB1BDF159900EF0FEA /* PCKCompletionHandler.h in Headers */,
+				34A662E61BDF156300EF0FEA /* NSData+PivotalCore.h in Headers */,
+				34A662EC1BDF156300EF0FEA /* NSURL+QueryComponents.h in Headers */,
+				34A662F71BDF158400EF0FEA /* PCKXMLParserDelegate.h in Headers */,
+				34A662E91BDF156300EF0FEA /* NSString+PivotalCore.h in Headers */,
+				34A662F61BDF158400EF0FEA /* PCKXMLParser.h in Headers */,
+				34A662E71BDF156300EF0FEA /* NSObject+MethodDecoration.h in Headers */,
+				34A662D21BDF151F00EF0FEA /* Foundation+PivotalCore.h in Headers */,
+				34A662FA1BDF159900EF0FEA /* PCKMonad.h in Headers */,
+				34A662F91BDF159900EF0FEA /* PCKErrorBlock.h in Headers */,
+				34A662ED1BDF156300EF0FEA /* PCKReducable.h in Headers */,
+				34A662E81BDF156300EF0FEA /* NSObject+MethodRedirection.h in Headers */,
+				34A662F31BDF158400EF0FEA /* PCKParser.h in Headers */,
+				34A662E51BDF155700EF0FEA /* NSDictionary+TypesafeExtraction.h in Headers */,
+				34A662EA1BDF156300EF0FEA /* NSArray+PivotalCore.h in Headers */,
+				34A662EB1BDF156300EF0FEA /* NSDictionary+QueryString.h in Headers */,
+				34A662F51BDF158400EF0FEA /* PCKResponseParser.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		34A663001BDF1A9900EF0FEA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34A6631E1BDF1C0B00EF0FEA /* PCKMaybeBlock.h in Headers */,
+				34A6631A1BDF1C0500EF0FEA /* PCKParserDelegate.h in Headers */,
+				34A663211BDF1C0B00EF0FEA /* PCKCompletionHandler.h in Headers */,
+				34A6630C1BDF1BED00EF0FEA /* NSData+PivotalCore.h in Headers */,
+				34A663121BDF1BED00EF0FEA /* NSURL+QueryComponents.h in Headers */,
+				34A6631D1BDF1C0500EF0FEA /* PCKXMLParserDelegate.h in Headers */,
+				34A6630F1BDF1BED00EF0FEA /* NSString+PivotalCore.h in Headers */,
+				34A663151BDF1BF500EF0FEA /* PCKHTTPConnection.h in Headers */,
+				34A6631C1BDF1C0500EF0FEA /* PCKXMLParser.h in Headers */,
+				34A6630D1BDF1BED00EF0FEA /* NSObject+MethodDecoration.h in Headers */,
+				34A663201BDF1C0B00EF0FEA /* PCKMonad.h in Headers */,
+				34A663181BDF1BF500EF0FEA /* PCKHTTPInterface.h in Headers */,
+				34A663141BDF1BF500EF0FEA /* NSURLConnectionDelegate.h in Headers */,
+				34A663221BDF1C0F00EF0FEA /* Foundation+PivotalCore.h in Headers */,
+				34A6631F1BDF1C0B00EF0FEA /* PCKErrorBlock.h in Headers */,
+				34A663171BDF1BF500EF0FEA /* PCKHTTPConnectionOperation.h in Headers */,
+				34A663131BDF1BED00EF0FEA /* PCKReducable.h in Headers */,
+				34A663161BDF1BF500EF0FEA /* PCKHTTPConnectionDelegate.h in Headers */,
+				34A6630E1BDF1BED00EF0FEA /* NSObject+MethodRedirection.h in Headers */,
+				34A663191BDF1C0500EF0FEA /* PCKParser.h in Headers */,
+				34A6630B1BDF1BED00EF0FEA /* NSDictionary+TypesafeExtraction.h in Headers */,
+				34A663101BDF1BED00EF0FEA /* NSArray+PivotalCore.h in Headers */,
+				34A663111BDF1BED00EF0FEA /* NSDictionary+QueryString.h in Headers */,
+				34A6631B1BDF1C0500EF0FEA /* PCKResponseParser.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		34A663391BDF1D3D00EF0FEA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34A663571BDF1EBF00EF0FEA /* PSHKFakeResponses.h in Headers */,
+				34A663501BDF1EA700EF0FEA /* NSURLRequest+Spec.h in Headers */,
+				34A663551BDF1EBF00EF0FEA /* PSHKFakeOperationQueue.h in Headers */,
+				34A6634E1BDF1E9D00EF0FEA /* PCKConnectionBlockDelegate.h in Headers */,
+				34A663511BDF1EA700EF0FEA /* NSUUID+Spec.h in Headers */,
+				34A6634F1BDF1EA700EF0FEA /* NSURLConnection+Spec.h in Headers */,
+				34A663561BDF1EBF00EF0FEA /* FakeOperationQueue.h in Headers */,
+				34A663581BDF1EC300EF0FEA /* Foundation+PivotalSpecHelper.h in Headers */,
+				34A663541BDF1EBF00EF0FEA /* PSHKFakeHTTPURLResponse.h in Headers */,
+				34A663531BDF1EB800EF0FEA /* PSHKFixtures.h in Headers */,
+				34A6634D1BDF1E9C00EF0FEA /* PCKConnectionDelegateWrapper.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		34A6636B1BDF200A00EF0FEA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34A663881BDF219F00EF0FEA /* PSHKFakeResponses.h in Headers */,
+				34A663821BDF219700EF0FEA /* NSURLRequest+Spec.h in Headers */,
+				34A663861BDF219F00EF0FEA /* PSHKFakeOperationQueue.h in Headers */,
+				34A663801BDF219100EF0FEA /* PCKConnectionBlockDelegate.h in Headers */,
+				34A663831BDF219700EF0FEA /* NSUUID+Spec.h in Headers */,
+				34A663811BDF219700EF0FEA /* NSURLConnection+Spec.h in Headers */,
+				34A663871BDF219F00EF0FEA /* FakeOperationQueue.h in Headers */,
+				34A663891BDF21A300EF0FEA /* Foundation+PivotalSpecHelper.h in Headers */,
+				34A663851BDF219F00EF0FEA /* PSHKFakeHTTPURLResponse.h in Headers */,
+				34A663841BDF219B00EF0FEA /* PSHKFixtures.h in Headers */,
+				34A6637F1BDF219100EF0FEA /* PCKConnectionDelegateWrapper.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AEA96B46168B506500861DF1 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -1124,12 +1427,12 @@
 				AEA96BC3168B544D00861DF1 /* NSURLRequest+Spec.h in Headers */,
 				AEA96BC5168B544D00861DF1 /* FakeOperationQueue.h in Headers */,
 				AEA96BC7168B544D00861DF1 /* PSHKFakeHTTPURLResponse.h in Headers */,
+				34A663521BDF1EAE00EF0FEA /* NSUUID+Spec.h in Headers */,
 				AEA96BC9168B544D00861DF1 /* PSHKFakeResponses.h in Headers */,
 				AEA96BCB168B544D00861DF1 /* PSHKFixtures.h in Headers */,
 				AEA96CC0168B6FFC00861DF1 /* Foundation+PivotalSpecHelper.h in Headers */,
 				E309448B16F117180034B3A9 /* PCKConnectionDelegateWrapper.h in Headers */,
 				E3AD57BA16F4AD0E003564BA /* PCKConnectionBlockDelegate.h in Headers */,
-				DE99C5600FEEF8FC75AC5D85 /* PSHKObserver.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1154,6 +1457,94 @@
 			productReference = 3466C03B1B97A10A00CBAB59 /* Foundation-StaticLibSpecBundle.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		34A662B71BDF14BB00EF0FEA /* Foundation+PivotalCore-watchOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 34A662D11BDF14BB00EF0FEA /* Build configuration list for PBXNativeTarget "Foundation+PivotalCore-watchOS" */;
+			buildPhases = (
+				34A662B31BDF14BB00EF0FEA /* Sources */,
+				34A662B41BDF14BB00EF0FEA /* Frameworks */,
+				34A662B51BDF14BB00EF0FEA /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Foundation+PivotalCore-watchOS";
+			productName = "Foundation+PivotalCoreKit-watchOS";
+			productReference = 34A662B81BDF14BB00EF0FEA /* Foundation_PivotalCore.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		34A663021BDF1A9900EF0FEA /* Foundation+PivotalCore-tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 34A663081BDF1A9900EF0FEA /* Build configuration list for PBXNativeTarget "Foundation+PivotalCore-tvOS" */;
+			buildPhases = (
+				34A662FE1BDF1A9900EF0FEA /* Sources */,
+				34A662FF1BDF1A9900EF0FEA /* Frameworks */,
+				34A663001BDF1A9900EF0FEA /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Foundation+PivotalCore-tvOS";
+			productName = "Foundation+PivotalCore-tvOS";
+			productReference = 34A663031BDF1A9900EF0FEA /* Foundation_PivotalCore.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		34A6633B1BDF1D3D00EF0FEA /* Foundation+PivotalSpecHelper-watchOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 34A663411BDF1D3D00EF0FEA /* Build configuration list for PBXNativeTarget "Foundation+PivotalSpecHelper-watchOS" */;
+			buildPhases = (
+				34A663371BDF1D3D00EF0FEA /* Sources */,
+				34A663381BDF1D3D00EF0FEA /* Frameworks */,
+				34A663391BDF1D3D00EF0FEA /* Headers */,
+				34A6633A1BDF1D3D00EF0FEA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Foundation+PivotalSpecHelper-watchOS";
+			productName = "Foundation+PivotalSpecHelper-watchOS";
+			productReference = 34A6633C1BDF1D3D00EF0FEA /* Foundation_PivotalSpecHelper.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		34A6636D1BDF200A00EF0FEA /* Foundation+PivotalSpecHelper-tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 34A663731BDF200B00EF0FEA /* Build configuration list for PBXNativeTarget "Foundation+PivotalSpecHelper-tvOS" */;
+			buildPhases = (
+				34A663691BDF200A00EF0FEA /* Sources */,
+				34A6636A1BDF200A00EF0FEA /* Frameworks */,
+				34A6636B1BDF200A00EF0FEA /* Headers */,
+				34A6636C1BDF200A00EF0FEA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Foundation+PivotalSpecHelper-tvOS";
+			productName = "Foundation+PivotalSpecHelper-tvOS";
+			productReference = 34A6636E1BDF200A00EF0FEA /* Foundation_PivotalSpecHelper.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		34A663A31BDF24E700EF0FEA /* Foundation-tvOS SpecBundle */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 34A663BE1BDF24E800EF0FEA /* Build configuration list for PBXNativeTarget "Foundation-tvOS SpecBundle" */;
+			buildPhases = (
+				34A663A01BDF24E700EF0FEA /* Sources */,
+				34A663A11BDF24E700EF0FEA /* Frameworks */,
+				34A663A21BDF24E700EF0FEA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				34A663AB1BDF24E800EF0FEA /* PBXTargetDependency */,
+			);
+			name = "Foundation-tvOS SpecBundle";
+			productName = "Foundation-tvOS SpecBundle";
+			productReference = 34A663A41BDF24E700EF0FEA /* Foundation-tvOS SpecBundle.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		AEA96B48168B506500861DF1 /* Foundation+PivotalCore */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = AEA96B5A168B506500861DF1 /* Build configuration list for PBXNativeTarget "Foundation+PivotalCore" */;
@@ -1161,7 +1552,6 @@
 				AEA96B44168B506500861DF1 /* Sources */,
 				AEA96B45168B506500861DF1 /* Frameworks */,
 				AEA96B46168B506500861DF1 /* Headers */,
-				AEA96B47168B506500861DF1 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -1217,7 +1607,6 @@
 			buildPhases = (
 				AEA96C50168B636E00861DF1 /* Sources */,
 				AEA96C51168B636E00861DF1 /* Frameworks */,
-				AEA96C52168B636E00861DF1 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -1273,11 +1662,26 @@
 			isa = PBXProject;
 			attributes = {
 				LastTestingUpgradeCheck = 0610;
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 0710;
 				TargetAttributes = {
 					3466C03A1B97A10A00CBAB59 = {
 						CreatedOnToolsVersion = 7.0;
 						TestTargetID = AEA96C73168B640B00861DF1;
+					};
+					34A662B71BDF14BB00EF0FEA = {
+						CreatedOnToolsVersion = 7.1;
+					};
+					34A663021BDF1A9900EF0FEA = {
+						CreatedOnToolsVersion = 7.1;
+					};
+					34A6633B1BDF1D3D00EF0FEA = {
+						CreatedOnToolsVersion = 7.1;
+					};
+					34A6636D1BDF200A00EF0FEA = {
+						CreatedOnToolsVersion = 7.1;
+					};
+					34A663A31BDF24E700EF0FEA = {
+						CreatedOnToolsVersion = 7.1;
 					};
 				};
 			};
@@ -1309,13 +1713,18 @@
 			targets = (
 				AEA96B48168B506500861DF1 /* Foundation+PivotalCore */,
 				AEA96C53168B636E00861DF1 /* Foundation+PivotalCore-StaticLib */,
+				34A662B71BDF14BB00EF0FEA /* Foundation+PivotalCore-watchOS */,
+				34A663021BDF1A9900EF0FEA /* Foundation+PivotalCore-tvOS */,
+				AE03FC661B0A866E00013784 /* Foundation+PivotalCore-iOS */,
 				AEA96B9D168B541900861DF1 /* Foundation+PivotalSpecHelper */,
 				AEA96C63168B63BD00861DF1 /* Foundation+PivotalSpecHelper-StaticLib */,
+				34A6633B1BDF1D3D00EF0FEA /* Foundation+PivotalSpecHelper-watchOS */,
+				34A6636D1BDF200A00EF0FEA /* Foundation+PivotalSpecHelper-tvOS */,
+				B88BF07D1725A56100E638D3 /* Foundation+PivotalSpecHelper-iOS */,
 				AEA96BD2168B561500861DF1 /* FoundationSpec */,
 				AEA96C73168B640B00861DF1 /* Foundation-StaticLibSpec */,
 				3466C03A1B97A10A00CBAB59 /* Foundation-StaticLibSpecBundle */,
-				B88BF07D1725A56100E638D3 /* Foundation+PivotalSpecHelper-iOS */,
-				AE03FC661B0A866E00013784 /* Foundation+PivotalCore-iOS */,
+				34A663A31BDF24E700EF0FEA /* Foundation-tvOS SpecBundle */,
 			);
 		};
 /* End PBXProject section */
@@ -1328,53 +1737,67 @@
 			remoteRef = 34777EA01B99029900A69FCF /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		34777EA31B99029900A69FCF /* Cedar-iOS Specs.app */ = {
+		34777EA31B99029900A69FCF /* Cedar-iOS-Framework Specs.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
 			path = "Cedar-iOS Specs.app";
 			remoteRef = 34777EA21B99029900A69FCF /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		AE52FFC21BC83D0B006BA693 /* Cedar.framework */ = {
+		34A662CE1BDF14BB00EF0FEA /* libFakeHTTP-watchOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libFakeHTTP-watchOS.a";
+			remoteRef = 34A662CD1BDF14BB00EF0FEA /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		34A662D01BDF14BB00EF0FEA /* libFakeHTTP.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libFakeHTTP.a;
+			remoteRef = 34A662CF1BDF14BB00EF0FEA /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		34A663B31BDF24E800EF0FEA /* Cedar.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = Cedar.framework;
-			remoteRef = AE52FFC11BC83D0B006BA693 /* PBXContainerItemProxy */;
+			remoteRef = 34A663B21BDF24E800EF0FEA /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		AE52FFC41BC83D0B006BA693 /* Cedar.framework */ = {
+		34A663B51BDF24E800EF0FEA /* Cedar.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = Cedar.framework;
-			remoteRef = AE52FFC31BC83D0B006BA693 /* PBXContainerItemProxy */;
+			remoteRef = 34A663B41BDF24E800EF0FEA /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		AE52FFC61BC83D0B006BA693 /* Cedar-watchOS HostApp.app */ = {
+		34A663B71BDF24E800EF0FEA /* Cedar-watchOS HostApp.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
 			path = "Cedar-watchOS HostApp.app";
-			remoteRef = AE52FFC51BC83D0B006BA693 /* PBXContainerItemProxy */;
+			remoteRef = 34A663B61BDF24E800EF0FEA /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		AE52FFC81BC83D0B006BA693 /* Cedar-watchOS Specs.app */ = {
+		34A663B91BDF24E800EF0FEA /* Cedar-watchOS Specs.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
 			path = "Cedar-watchOS Specs.app";
-			remoteRef = AE52FFC71BC83D0B006BA693 /* PBXContainerItemProxy */;
+			remoteRef = 34A663B81BDF24E800EF0FEA /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		AE52FFCA1BC83D0B006BA693 /* Cedar-watchOS Specs Extension.appex */ = {
+		34A663BB1BDF24E800EF0FEA /* Cedar-watchOS Specs Extension.appex */ = {
 			isa = PBXReferenceProxy;
 			fileType = "wrapper.app-extension";
 			path = "Cedar-watchOS Specs Extension.appex";
-			remoteRef = AE52FFC91BC83D0B006BA693 /* PBXContainerItemProxy */;
+			remoteRef = 34A663BA1BDF24E800EF0FEA /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		AE52FFCC1BC83D0B006BA693 /* Cedar-tvOS SpecBundle.bundle */ = {
+		34A663BD1BDF24E800EF0FEA /* Cedar-tvOS SpecBundle.bundle */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = "Cedar-tvOS SpecBundle.bundle";
-			remoteRef = AE52FFCB1BC83D0B006BA693 /* PBXContainerItemProxy */;
+			remoteRef = 34A663BC1BDF24E800EF0FEA /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		AEBCCB59168B7E380056EE83 /* Cedar.framework */ = {
@@ -1384,14 +1807,14 @@
 			remoteRef = AEBCCB58168B7E380056EE83 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		AEBCCB5B168B7E380056EE83 /* Cedar-OSX Specs */ = {
+		AEBCCB5B168B7E380056EE83 /* Cedar OS X Specs */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.executable";
 			path = "Cedar-OSX Specs";
 			remoteRef = AEBCCB5A168B7E380056EE83 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		AEBCCB5D168B7E380056EE83 /* Cedar-OSX FocusedSpecs */ = {
+		AEBCCB5D168B7E380056EE83 /* Cedar OS X FocusedSpecs */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.executable";
 			path = "Cedar-OSX FocusedSpecs";
@@ -1405,14 +1828,14 @@
 			remoteRef = AEBCCB5E168B7E380056EE83 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		AEBCCB61168B7E380056EE83 /* Cedar-iOS StaticLib Specs.app */ = {
+		AEBCCB61168B7E380056EE83 /* Cedar-StaticLib Specs.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
 			path = "Cedar-iOS StaticLib Specs.app";
 			remoteRef = AEBCCB60168B7E380056EE83 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		AEBCCB63168B7E380056EE83 /* Cedar-iOS HostApp.app */ = {
+		AEBCCB63168B7E380056EE83 /* Cedar iOS Host App.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
 			path = "Cedar-iOS HostApp.app";
@@ -1440,28 +1863,28 @@
 			remoteRef = AEE971CE1708EB410094B5A2 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		AEE971D11708EB410094B5A2 /* libFakeHTTP-OSX.a */ = {
+		AEE971D11708EB410094B5A2 /* libFakeHTTP.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = "libFakeHTTP-OSX.a";
+			path = libFakeHTTP.a;
 			remoteRef = AEE971D01708EB410094B5A2 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		AEEB50D01A0189070014BB6A /* Cedar-OSX HostApp.app */ = {
+		AEEB50D01A0189070014BB6A /* Cedar OS X Host App.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
 			path = "Cedar-OSX HostApp.app";
 			remoteRef = AEEB50CF1A0189070014BB6A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		AEEB50D21A0189070014BB6A /* Cedar-OSX SpecBundle.xctest */ = {
+		AEEB50D21A0189070014BB6A /* Cedar OS X Host AppTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = "Cedar-OSX SpecBundle.xctest";
 			remoteRef = AEEB50D11A0189070014BB6A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		AEEECC3D181F368F006B52CD /* Cedar-iOS SpecBundle.xctest */ = {
+		AEEECC3D181F368F006B52CD /* XCUnitAppTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = "Cedar-iOS SpecBundle.xctest";
@@ -1478,7 +1901,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AEA96B47168B506500861DF1 /* Resources */ = {
+		34A6633A1BDF1D3D00EF0FEA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		34A6636C1BDF200A00EF0FEA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		34A663A21BDF24E700EF0FEA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1567,6 +2004,115 @@
 			buildActionMask = 2147483647;
 			files = (
 				3466C0451B97A18E00CBAB59 /* BundleSpecLoader.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		34A662B31BDF14BB00EF0FEA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34A662D31BDF153300EF0FEA /* NSDictionary+TypesafeExtraction.m in Sources */,
+				34A662E21BDF154400EF0FEA /* PCKMaybeBlock.m in Sources */,
+				34A662DF1BDF154100EF0FEA /* PCKResponseParser.m in Sources */,
+				34A662E41BDF154400EF0FEA /* PCKCompletionHandler.m in Sources */,
+				34A662D51BDF153300EF0FEA /* NSObject+MethodDecoration.m in Sources */,
+				34A662E01BDF154100EF0FEA /* PCKXMLParser.m in Sources */,
+				34A662D71BDF153300EF0FEA /* NSString+PivotalCore.m in Sources */,
+				34A662E11BDF154100EF0FEA /* PCKXMLParserDelegate.m in Sources */,
+				34A662D41BDF153300EF0FEA /* NSData+PivotalCore.m in Sources */,
+				34A662E31BDF154400EF0FEA /* PCKErrorBlock.m in Sources */,
+				34A662D91BDF153300EF0FEA /* NSDictionary+QueryString.m in Sources */,
+				34A662DA1BDF153300EF0FEA /* NSURL+QueryComponents.m in Sources */,
+				34A662D61BDF153300EF0FEA /* NSObject+MethodRedirection.m in Sources */,
+				34A662D81BDF153300EF0FEA /* NSArray+PivotalCore.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		34A662FE1BDF1A9900EF0FEA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34A663231BDF1C1800EF0FEA /* NSDictionary+TypesafeExtraction.m in Sources */,
+				34A663321BDF1C2500EF0FEA /* PCKMaybeBlock.m in Sources */,
+				34A6632F1BDF1C2100EF0FEA /* PCKResponseParser.m in Sources */,
+				34A663341BDF1C2500EF0FEA /* PCKCompletionHandler.m in Sources */,
+				34A6632C1BDF1C1C00EF0FEA /* PCKHTTPConnectionDelegate.m in Sources */,
+				34A663251BDF1C1800EF0FEA /* NSObject+MethodDecoration.m in Sources */,
+				34A6632D1BDF1C1C00EF0FEA /* PCKHTTPConnectionOperation.m in Sources */,
+				34A663301BDF1C2100EF0FEA /* PCKXMLParser.m in Sources */,
+				34A6632E1BDF1C1C00EF0FEA /* PCKHTTPInterface.m in Sources */,
+				34A663271BDF1C1800EF0FEA /* NSString+PivotalCore.m in Sources */,
+				34A663311BDF1C2100EF0FEA /* PCKXMLParserDelegate.m in Sources */,
+				34A6632B1BDF1C1C00EF0FEA /* PCKHTTPConnection.m in Sources */,
+				34A663241BDF1C1800EF0FEA /* NSData+PivotalCore.m in Sources */,
+				34A663331BDF1C2500EF0FEA /* PCKErrorBlock.m in Sources */,
+				34A663291BDF1C1800EF0FEA /* NSDictionary+QueryString.m in Sources */,
+				34A6632A1BDF1C1800EF0FEA /* NSURL+QueryComponents.m in Sources */,
+				34A663261BDF1C1800EF0FEA /* NSObject+MethodRedirection.m in Sources */,
+				34A663281BDF1C1800EF0FEA /* NSArray+PivotalCore.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		34A663371BDF1D3D00EF0FEA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34A663441BDF1E7B00EF0FEA /* PCKConnectionDelegateWrapper.m in Sources */,
+				34A663471BDF1E7F00EF0FEA /* NSURLRequest+Spec.m in Sources */,
+				34A6634C1BDF1E8500EF0FEA /* PSHKFakeResponses.m in Sources */,
+				34A663481BDF1E7F00EF0FEA /* NSUUID+Spec.m in Sources */,
+				34A663451BDF1E7B00EF0FEA /* PCKConnectionBlockDelegate.m in Sources */,
+				34A663461BDF1E7F00EF0FEA /* NSURLConnection+Spec.m in Sources */,
+				34A6634A1BDF1E8500EF0FEA /* PSHKFakeHTTPURLResponse.m in Sources */,
+				34A6634B1BDF1E8500EF0FEA /* PSHKFakeOperationQueue.m in Sources */,
+				34A663491BDF1E8200EF0FEA /* PSHKFixtures.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		34A663691BDF200A00EF0FEA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34A663761BDF217500EF0FEA /* PCKConnectionDelegateWrapper.m in Sources */,
+				34A663791BDF217900EF0FEA /* NSURLRequest+Spec.m in Sources */,
+				34A6637E1BDF218000EF0FEA /* PSHKFakeResponses.m in Sources */,
+				34A6637A1BDF217900EF0FEA /* NSUUID+Spec.m in Sources */,
+				34A663771BDF217500EF0FEA /* PCKConnectionBlockDelegate.m in Sources */,
+				34A663781BDF217900EF0FEA /* NSURLConnection+Spec.m in Sources */,
+				34A6637C1BDF218000EF0FEA /* PSHKFakeHTTPURLResponse.m in Sources */,
+				34A6637D1BDF218000EF0FEA /* PSHKFakeOperationQueue.m in Sources */,
+				34A6637B1BDF217C00EF0FEA /* PSHKFixtures.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		34A663A01BDF24E700EF0FEA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34A663D21BDF25E000EF0FEA /* PCKHTTPConnectionOperationSpec.mm in Sources */,
+				34A663C51BDF25D100EF0FEA /* PSHKWeakObjectWrapper.m in Sources */,
+				34A663C31BDF25AD00EF0FEA /* PCKConnectionDelegateWrapperSpec.mm in Sources */,
+				34A663D31BDF25E000EF0FEA /* PCKHTTPConnectionSpec.mm in Sources */,
+				34A663C71BDF25D600EF0FEA /* NSDataSpec+PivotalCore.mm in Sources */,
+				34A663C21BDF25AD00EF0FEA /* PCKConnectionBlockDelegateSpec.mm in Sources */,
+				34A663C41BDF25CD00EF0FEA /* PSHKObserver.m in Sources */,
+				34A663CB1BDF25D600EF0FEA /* NSStringSpec+PivotalCore.mm in Sources */,
+				34A663CD1BDF25D600EF0FEA /* NSURLSpec+QueryComponents.mm in Sources */,
+				34A663CC1BDF25D600EF0FEA /* NSURLConnectionSpec+Spec.mm in Sources */,
+				34A663D91BDF260400EF0FEA /* ConnectionDelegate.m in Sources */,
+				34A663D11BDF25E000EF0FEA /* PCKHTTPConnectionDelegateSpec.mm in Sources */,
+				34A663D41BDF25E000EF0FEA /* PCKHTTPInterfaceSpec.mm in Sources */,
+				34A663C81BDF25D600EF0FEA /* NSDictionarySpec+QueryStringSpec.mm in Sources */,
+				34A663D51BDF25E600EF0FEA /* PCKResponseParserSpec.mm in Sources */,
+				34A663CE1BDF25D600EF0FEA /* NSUUIDSpec+Spec.mm in Sources */,
+				34A663CA1BDF25D600EF0FEA /* NSObjectSpec+MethodRedirection.mm in Sources */,
+				34A663D01BDF25DB00EF0FEA /* PSHKFakeOperationQueueSpec.mm in Sources */,
+				34A663D71BDF25F400EF0FEA /* FixturesHelper.m in Sources */,
+				34A663C91BDF25D600EF0FEA /* NSObjectSpec+MethodDecoration.mm in Sources */,
+				34A663D81BDF260000EF0FEA /* FakeConnectionDelegate.m in Sources */,
+				34A663C61BDF25D600EF0FEA /* NSArraySpec+PivotalCore.mm in Sources */,
+				34A663CF1BDF25D600EF0FEA /* NSDictionarySpec+TypesafeExtraction.mm in Sources */,
+				34A663D61BDF25E600EF0FEA /* PCKXMLParserSpec.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1730,6 +2276,11 @@
 			target = AEA96C73168B640B00861DF1 /* Foundation-StaticLibSpec */;
 			targetProxy = 3466C0401B97A10A00CBAB59 /* PBXContainerItemProxy */;
 		};
+		34A663AB1BDF24E800EF0FEA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 34A663021BDF1A9900EF0FEA /* Foundation+PivotalCore-tvOS */;
+			targetProxy = 34A663AA1BDF24E800EF0FEA /* PBXContainerItemProxy */;
+		};
 		AE416AAA174D481C0014A083 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = FakeHTTP;
@@ -1787,6 +2338,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = "FIXTURESDIR=\\\"$(SRCROOT)/Spec/Fixtures\\\"";
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
@@ -1818,6 +2370,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = "FIXTURESDIR=\\\"$(SRCROOT)/Spec/Fixtures\\\"";
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -1897,6 +2450,364 @@
 			};
 			name = Release;
 		};
+		34A662BD1BDF14BB00EF0FEA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
+				INFOPLIST_FILE = "Core/Foundation+PivotalCore-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Core/Foundation+PivotalCore.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "io.pivotal.Foundation-PivotalCore";
+				PRODUCT_NAME = Foundation_PivotalCore;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		34A662BE1BDF14BB00EF0FEA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
+				INFOPLIST_FILE = "Core/Foundation+PivotalCore-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Core/Foundation+PivotalCore.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "io.pivotal.Foundation-PivotalCore";
+				PRODUCT_NAME = Foundation_PivotalCore;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		34A663091BDF1A9900EF0FEA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
+				INFOPLIST_FILE = "Core/Foundation+PivotalCore-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Core/Foundation+PivotalCore.modulemap";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.pivotal.Foundation-PivotalCore";
+				PRODUCT_NAME = Foundation_PivotalCore;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		34A6630A1BDF1A9900EF0FEA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
+				INFOPLIST_FILE = "Core/Foundation+PivotalCore-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Core/Foundation+PivotalCore.modulemap";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.pivotal.Foundation-PivotalCore";
+				PRODUCT_NAME = Foundation_PivotalCore;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		34A663421BDF1D3D00EF0FEA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "SpecHelper/Foundation+PivotalSpecHelper-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "SpecHelper/Foundation+PivotalSpecHelper.modulemap";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.pivotal.Foundation-PivotalSpecHelper";
+				PRODUCT_NAME = Foundation_PivotalSpecHelper;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		34A663431BDF1D3D00EF0FEA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "SpecHelper/Foundation+PivotalSpecHelper-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "SpecHelper/Foundation+PivotalSpecHelper.modulemap";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.pivotal.Foundation-PivotalSpecHelper";
+				PRODUCT_NAME = Foundation_PivotalSpecHelper;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		34A663741BDF200B00EF0FEA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "SpecHelper/Foundation+PivotalSpecHelper-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "SpecHelper/Foundation+PivotalSpecHelper.modulemap";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.pivotal.Foundation-PivotalSpecHelper";
+				PRODUCT_NAME = Foundation_PivotalSpecHelper;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		34A663751BDF200B00EF0FEA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "SpecHelper/Foundation+PivotalSpecHelper-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "SpecHelper/Foundation+PivotalSpecHelper.modulemap";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.pivotal.Foundation-PivotalSpecHelper";
+				PRODUCT_NAME = Foundation_PivotalSpecHelper;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		34A663BF1BDF24E800EF0FEA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(PROJECT_DIR)/../Externals/FakeHTTP/FakeHTTP\"/**",
+				);
+				INFOPLIST_FILE = "Spec/iOS/Foundation-StaticLibSpecBundle-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "io.pivotal.Foundation-tvOS-SpecBundle";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Debug;
+		};
+		34A663C01BDF24E800EF0FEA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(PROJECT_DIR)/../Externals/FakeHTTP/FakeHTTP\"/**",
+				);
+				INFOPLIST_FILE = "Spec/iOS/Foundation-StaticLibSpecBundle-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "io.pivotal.Foundation-tvOS-SpecBundle";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		AE03FC751B0A866E00013784 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1939,6 +2850,7 @@
 				INFOPLIST_FILE = "Core/Foundation+PivotalCore-Info.plist";
 				INSTALL_PATH = "@executable_path";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_BUNDLE_IDENTIFIER = "io.pivotal.Foundation-PivotalCoreKit";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = framework;
 			};
@@ -1963,6 +2875,7 @@
 				INFOPLIST_FILE = "Core/Foundation+PivotalCore-Info.plist";
 				INSTALL_PATH = "@executable_path";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_BUNDLE_IDENTIFIER = "io.pivotal.Foundation-PivotalCoreKit";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = framework;
 			};
@@ -1993,6 +2906,7 @@
 				INFOPLIST_FILE = "SpecHelper/Foundation+PivotalSpecHelper-Info.plist";
 				INSTALL_PATH = "@executable_path";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pivotallabs.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = framework;
 			};
@@ -2018,6 +2932,7 @@
 				INFOPLIST_FILE = "SpecHelper/Foundation+PivotalSpecHelper-Info.plist";
 				INSTALL_PATH = "@executable_path";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pivotallabs.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = framework;
 			};
@@ -2198,6 +3113,7 @@
 					"-ObjC",
 					"-all_load",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pivotallabs.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -2230,6 +3146,7 @@
 					"-ObjC",
 					"-all_load",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pivotallabs.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -2273,6 +3190,51 @@
 			buildConfigurations = (
 				3466C0431B97A10A00CBAB59 /* Debug */,
 				3466C0441B97A10A00CBAB59 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		34A662D11BDF14BB00EF0FEA /* Build configuration list for PBXNativeTarget "Foundation+PivotalCore-watchOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				34A662BD1BDF14BB00EF0FEA /* Debug */,
+				34A662BE1BDF14BB00EF0FEA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		34A663081BDF1A9900EF0FEA /* Build configuration list for PBXNativeTarget "Foundation+PivotalCore-tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				34A663091BDF1A9900EF0FEA /* Debug */,
+				34A6630A1BDF1A9900EF0FEA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		34A663411BDF1D3D00EF0FEA /* Build configuration list for PBXNativeTarget "Foundation+PivotalSpecHelper-watchOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				34A663421BDF1D3D00EF0FEA /* Debug */,
+				34A663431BDF1D3D00EF0FEA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		34A663731BDF200B00EF0FEA /* Build configuration list for PBXNativeTarget "Foundation+PivotalSpecHelper-tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				34A663741BDF200B00EF0FEA /* Debug */,
+				34A663751BDF200B00EF0FEA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		34A663BE1BDF24E800EF0FEA /* Build configuration list for PBXNativeTarget "Foundation-tvOS SpecBundle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				34A663BF1BDF24E800EF0FEA /* Debug */,
+				34A663C01BDF24E800EF0FEA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
