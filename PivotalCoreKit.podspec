@@ -99,6 +99,11 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'CoreLocation' do |location|
+    location.ios.deployment_target = '6.0'
+    location.osx.deployment_target = '10.6'
+    location.watchos.deployment_target = '2.0'
+    location.tvos.deployment_target = '9.0'
+
     location.subspec 'SpecHelper' do |h|
       h.subspec 'Base' do |base|
         base.source_files = 'CoreLocation/SpecHelper/*.{h,m}'
