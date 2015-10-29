@@ -888,6 +888,34 @@
 			path = iOS;
 			sourceTree = "<group>";
 		};
+		3431FCE01BE297EC00740FFB /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				22601B4D16BA202A00A807CB /* UISlider+Spec.h */,
+				22601B4E16BA202A00A807CB /* UISlider+Spec.m */,
+				FAF932CB192703280076C733 /* UISwitch+Spec.h */,
+				FAF932CC192703280076C733 /* UISwitch+Spec.m */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		3431FCE21BE2981000740FFB /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				AEC40CAE174C22BD00474D2D /* UIActionSheet+Spec.h */,
+				AEC40CAF174C22BD00474D2D /* UIActionSheet+Spec.m */,
+				AEC40CB0174C22BD00474D2D /* UIAlertView+Spec.h */,
+				AEC40CB1174C22BD00474D2D /* UIAlertView+Spec.m */,
+				AEEECC16181F3135006B52CD /* UIImagePickerController+Spec.h */,
+				AEEECC17181F3135006B52CD /* UIImagePickerController+Spec.m */,
+				89F5169E1B1B7B3F0005AB04 /* UITableViewRowAction+Spec.h */,
+				89F5169F1B1B7B3F0005AB04 /* UITableViewRowAction+Spec.m */,
+				AEC40CB3174C22BD00474D2D /* UIWebView+Spec.h */,
+				AEC40CB4174C22BD00474D2D /* UIWebView+Spec.m */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
 		3490AFDE19A3C01A00DAA8E3 /* Support */ = {
 			isa = PBXGroup;
 			children = (
@@ -1082,6 +1110,7 @@
 		AEBCCC70168B9B5F0056EE83 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				3431FCE01BE297EC00740FFB /* iOS */,
 				B8C62E6B16BC03420009CDAD /* UIBarButtonItem+Spec.h */,
 				B8C62E6C16BC03420009CDAD /* UIBarButtonItem+Spec.m */,
 				34BDAC7519A42C5F0085B45A /* UICollectionReusableView+Spec.h */,
@@ -1094,10 +1123,6 @@
 				AEBCCC78168B9B5F0056EE83 /* UIImage+Spec.m */,
 				8490A16E1A7D1323001835AB /* UISegmentedControl+Spec.h */,
 				8490A16F1A7D1323001835AB /* UISegmentedControl+Spec.m */,
-				22601B4D16BA202A00A807CB /* UISlider+Spec.h */,
-				22601B4E16BA202A00A807CB /* UISlider+Spec.m */,
-				FAF932CB192703280076C733 /* UISwitch+Spec.h */,
-				FAF932CC192703280076C733 /* UISwitch+Spec.m */,
 				AE86BD40179C7C910057DEAE /* UITabBarController+Spec.h */,
 				AE86BD41179C7C910057DEAE /* UITabBarController+Spec.m */,
 				AEBCCC79168B9B5F0056EE83 /* UITableViewCell+Spec.h */,
@@ -1140,32 +1165,23 @@
 		AEC40C95174C21AC00474D2D /* Stubs */ = {
 			isa = PBXGroup;
 			children = (
-				AEC40CAE174C22BD00474D2D /* UIActionSheet+Spec.h */,
-				AEC40CAF174C22BD00474D2D /* UIActionSheet+Spec.m */,
+				3431FCE21BE2981000740FFB /* iOS */,
 				8487257119013F5F00288770 /* UIActivityViewController+Spec.h */,
 				AE062BBF1A4323A800AF8D33 /* UIAlertAction+Spec.h */,
 				AE062BC01A4323A800AF8D33 /* UIAlertAction+Spec.m */,
 				AE61C1301A40B95E00C97245 /* UIAlertController+Spec.h */,
 				AE61C1311A40B95E00C97245 /* UIAlertController+Spec.m */,
-				AEC40CB0174C22BD00474D2D /* UIAlertView+Spec.h */,
-				AEC40CB1174C22BD00474D2D /* UIAlertView+Spec.m */,
 				DE99C78703C6C6CA8C0465B3 /* UIGestureRecognizer+Spec.h */,
 				DE99CB8E2255BDC5D711130D /* UIGestureRecognizer+Spec.m */,
-				AEEECC16181F3135006B52CD /* UIImagePickerController+Spec.h */,
-				AEEECC17181F3135006B52CD /* UIImagePickerController+Spec.m */,
 				AEBB53BE19F711340032947D /* UINavigationController+Spec.m */,
 				AEB6662A18C6681A00B09C00 /* UIPopoverController+Spec.h */,
 				AEB6662B18C6681A00B09C00 /* UIPopoverController+Spec.m */,
-				89F5169E1B1B7B3F0005AB04 /* UITableViewRowAction+Spec.h */,
-				89F5169F1B1B7B3F0005AB04 /* UITableViewRowAction+Spec.m */,
 				AEE0B69518A3572C0007A9D0 /* UIView+StubbedAnimation.h */,
 				AE89900218071F3A00DDB948 /* UIView+StubbedAnimation.m */,
 				AECB46AA1A3FBA9E00398720 /* UIView+StubbedGestureRecognizers.h */,
 				AECB46AB1A3FBA9E00398720 /* UIView+StubbedGestureRecognizers.m */,
 				DE99C6A16495A2EF63F66D48 /* UIViewController+Spec.h */,
 				AEC40CB2174C22BD00474D2D /* UIViewController+Spec.m */,
-				AEC40CB3174C22BD00474D2D /* UIWebView+Spec.h */,
-				AEC40CB4174C22BD00474D2D /* UIWebView+Spec.m */,
 				AE7E72151AF2AE9A000E48EE /* UIApplication+Spec.h */,
 				AE7E72161AF2AE9A000E48EE /* UIApplication+Spec.m */,
 			);

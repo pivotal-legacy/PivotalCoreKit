@@ -8,5 +8,6 @@
 #import "UIActionSheet+Spec.h"
 #import "UIAlertView+Spec.h"
 #import "UIImagePickerController+Spec.h"
+#import "UITableViewRowAction+Spec.h"
 #import "UIWebView+Spec.h"
 #endif
