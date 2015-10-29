@@ -871,6 +871,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3431FCBF1BE2928900740FFB /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				AE3847A8168BA0B300C99B55 /* AWebViewController.xib */,
+				AEDABBB718EA214A004E6626 /* ChildViewController.xib */,
+				34BDAC6919A3FCD90085B45A /* CollectionViewPrototypeCells.storyboard */,
+				AEDABB6418E9DE2C004E6626 /* InnerView.xib */,
+				AEDABBBA18EA214A004E6626 /* MainController.xib */,
+				AE7CE69219FACA84007B008F /* NavigationStackExample.storyboard */,
+				AEDABB6C18E9DFD4004E6626 /* OuterView.xib */,
+				3490AFEC19A3CF4000DAA8E3 /* TableViewPrototypeCells.storyboard */,
+				346281C518D7AC1300E9C952 /* UIGestureRecognizer.storyboard */,
+				AEB315AB18BF830C00018EDD /* UITableViewCell.storyboard */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
 		3490AFDE19A3C01A00DAA8E3 /* Support */ = {
 			isa = PBXGroup;
 			children = (
@@ -901,32 +918,23 @@
 		AE3847A5168BA07C00C99B55 /* Fixtures */ = {
 			isa = PBXGroup;
 			children = (
+				AE3847A9168BA0B300C99B55 /* Images */,
+				3431FCBF1BE2928900740FFB /* iOS */,
 				34A665181BE059F700EF0FEA /* tvOS */,
 				AE3847A6168BA0B300C99B55 /* AWebViewController.h */,
 				AE3847A7168BA0B300C99B55 /* AWebViewController.m */,
-				AE3847A8168BA0B300C99B55 /* AWebViewController.xib */,
 				AEDABBB518EA214A004E6626 /* ChildViewController.h */,
 				AEDABBB618EA214A004E6626 /* ChildViewController.m */,
-				AEDABBB718EA214A004E6626 /* ChildViewController.xib */,
-				34BDAC6919A3FCD90085B45A /* CollectionViewPrototypeCells.storyboard */,
-				AE3847A9168BA0B300C99B55 /* Images */,
 				AEDABB6618E9DE3B004E6626 /* InnerView.h */,
 				AEDABB6718E9DE3B004E6626 /* InnerView.m */,
-				AEDABB6418E9DE2C004E6626 /* InnerView.xib */,
 				AEDABBB818EA214A004E6626 /* MainController.h */,
 				AEDABBB918EA214A004E6626 /* MainController.m */,
-				AEDABBBA18EA214A004E6626 /* MainController.xib */,
-				AE7CE69219FACA84007B008F /* NavigationStackExample.storyboard */,
 				AEDABB6918E9DFC7004E6626 /* OuterView.h */,
 				AEDABB6A18E9DFC7004E6626 /* OuterView.m */,
-				AEDABB6C18E9DFD4004E6626 /* OuterView.xib */,
 				34BDAC7A19A42D1E0085B45A /* PrototypeCellObjects.h */,
 				34BDAC7B19A42D1E0085B45A /* PrototypeCellObjects.m */,
-				3490AFEC19A3CF4000DAA8E3 /* TableViewPrototypeCells.storyboard */,
 				B8C62E7016BC04940009CDAD /* Target.h */,
 				B8C62E7116BC04940009CDAD /* Target.m */,
-				346281C518D7AC1300E9C952 /* UIGestureRecognizer.storyboard */,
-				AEB315AB18BF830C00018EDD /* UITableViewCell.storyboard */,
 			);
 			path = Fixtures;
 			sourceTree = "<group>";
@@ -1485,9 +1493,9 @@
 				34A6645C1BDFE6AD00EF0FEA /* UIKit+PivotalCore-tvOS */,
 				34A664691BDFE6D400EF0FEA /* UIKit+PivotalSpecHelper-tvOS */,
 				34A664761BDFE6E500EF0FEA /* UIKit+PivotalSpecHelperStubs-tvOS */,
-				AEBCCC33168B99ED0056EE83 /* UIKit-StaticLibSpec */,
 				B866FC0716B48C8200317E32 /* UIKit+PivotalSpecHelper-iOS */,
 				AEC40CC2174C283400474D2D /* UIKit+PivotalSpecHelperStubs-iOS */,
+				AEBCCC33168B99ED0056EE83 /* UIKit-StaticLibSpec */,
 				3466C0931B97A3C500CBAB59 /* UIKit-StaticLibSpecBundle */,
 				346B40E01BE06F4E002A390E /* UIKit-tvOS SpecHost */,
 				34A664CC1BE027B500EF0FEA /* UIKit-tvOS SpecBundle */,
@@ -2033,7 +2041,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../Externals/Cedar/**";
-				INFOPLIST_FILE = "Spec/UIKit-StaticLibSpecBundle-Info.plist";
+				INFOPLIST_FILE = "../InfoPlist/SpecBundle-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.pivotallabs.PivotalCoreKit.UIKit-StaticLibSpecBundle";
@@ -2065,7 +2073,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../Externals/Cedar/**";
-				INFOPLIST_FILE = "Spec/UIKit-StaticLibSpecBundle-Info.plist";
+				INFOPLIST_FILE = "../InfoPlist/SpecBundle-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.pivotallabs.PivotalCoreKit.UIKit-StaticLibSpecBundle";
@@ -2094,7 +2102,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
-				INFOPLIST_FILE = "Spec/UIKit-StaticLibSpecBundle-Info.plist";
+				INFOPLIST_FILE = "../InfoPlist/SpecHost-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "io.pivotal.UIKit-tvOS-SpecHost";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2125,7 +2133,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
-				INFOPLIST_FILE = "Spec/UIKit-StaticLibSpecBundle-Info.plist";
+				INFOPLIST_FILE = "../InfoPlist/SpecHost-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "io.pivotal.UIKit-tvOS-SpecHost";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2401,7 +2409,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../Externals/Cedar/**";
-				INFOPLIST_FILE = "Spec/UIKit-StaticLibSpecBundle-Info.plist";
+				INFOPLIST_FILE = "../InfoPlist/SpecBundle-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "io.pivotal.UIKit-tvOS-SpecBundle";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2433,7 +2441,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../Externals/Cedar/**";
-				INFOPLIST_FILE = "Spec/UIKit-StaticLibSpecBundle-Info.plist";
+				INFOPLIST_FILE = "../InfoPlist/SpecBundle-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "io.pivotal.UIKit-tvOS-SpecBundle";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2547,7 +2555,7 @@
 					"$(inherited)",
 				);
 				HEADER_SEARCH_PATHS = "$SRCROOT/../Externals/Cedar/**";
-				INFOPLIST_FILE = "Spec/UIKit-StaticLibSpec-Info.plist";
+				INFOPLIST_FILE = "../InfoPlist/SpecHost-Info.plist";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.pivotallabs.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2570,7 +2578,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				HEADER_SEARCH_PATHS = "$SRCROOT/../Externals/Cedar/**";
-				INFOPLIST_FILE = "Spec/UIKit-StaticLibSpec-Info.plist";
+				INFOPLIST_FILE = "../InfoPlist/SpecHost-Info.plist";
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.pivotallabs.${PRODUCT_NAME:rfc1034identifier}";

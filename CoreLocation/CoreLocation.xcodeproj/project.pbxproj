@@ -43,7 +43,7 @@
 		AE384960168D030800C99B55 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE38495D168D030800C99B55 /* main.mm */; };
 		AE384961168D032300C99B55 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AE38495B168D030800C99B55 /* main.m */; };
 		AE384962168D033C00C99B55 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE384953168CDA1500C99B55 /* CoreLocation.framework */; };
-		AE384963168D045400C99B55 /* libCedar-StaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE384939168CD8FC00C99B55 /* libCedar-StaticLib.a */; };
+		AE384963168D045400C99B55 /* libCedar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE384939168CD8FC00C99B55 /* libCedar.a */; };
 		AE384971168D04F300C99B55 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE384970168D04F300C99B55 /* CoreLocation.framework */; };
 		AE38498F168D053300C99B55 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE3848DB168CD86000C99B55 /* Foundation.framework */; };
 		AE38499A168D055A00C99B55 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE384970168D04F300C99B55 /* CoreLocation.framework */; };
@@ -256,7 +256,6 @@
 		849363601A9585D2005613BA /* CLLocationManagerSpec+Spec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "CLLocationManagerSpec+Spec.mm"; sourceTree = "<group>"; };
 		8493636D1A958640005613BA /* CLLocationManager+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLLocationManager+Spec.h"; sourceTree = "<group>"; };
 		8493636E1A958640005613BA /* CLLocationManager+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CLLocationManager+Spec.m"; sourceTree = "<group>"; };
-		AE118AEC18D6BC2F00C90D6B /* CoreLocation-StaticLibSpecBundle-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CoreLocation-StaticLibSpecBundle-Info.plist"; sourceTree = "<group>"; };
 		AE118B0218D6BCE700C90D6B /* BundleSpecLoader.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BundleSpecLoader.mm; sourceTree = "<group>"; };
 		AE3848D5168CD86000C99B55 /* CoreLocation-StaticLibSpec.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CoreLocation-StaticLibSpec.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE3848D9168CD86000C99B55 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -265,12 +264,10 @@
 		AE384900168CD8C800C99B55 /* CoreLocation+PivotalSpecHelper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "CoreLocation+PivotalSpecHelper.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE384918168CD8D800C99B55 /* CoreLocationSpec */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CoreLocationSpec; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE384926168CD8FB00C99B55 /* Cedar.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Cedar.xcodeproj; path = ../Externals/Cedar/Cedar.xcodeproj; sourceTree = "<group>"; };
-		AE38494A168CD9B600C99B55 /* CoreLocation+PivotalSpecHelper-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "CoreLocation+PivotalSpecHelper-Info.plist"; sourceTree = "<group>"; };
 		AE38494B168CD9B600C99B55 /* CoreLocation+PivotalSpecHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CoreLocation+PivotalSpecHelper.h"; sourceTree = "<group>"; };
 		AE38494D168CD9B600C99B55 /* CLGeocoder+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLGeocoder+Spec.h"; sourceTree = "<group>"; };
 		AE38494E168CD9B600C99B55 /* CLGeocoder+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CLGeocoder+Spec.m"; sourceTree = "<group>"; };
 		AE384953168CDA1500C99B55 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = DEVELOPER_DIR; };
-		AE384959168D030800C99B55 /* CoreLocation-StaticLibSpec-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "CoreLocation-StaticLibSpec-Info.plist"; sourceTree = "<group>"; };
 		AE38495B168D030800C99B55 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AE38495D168D030800C99B55 /* main.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
 		AE384970168D04F300C99B55 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -312,7 +309,7 @@
 			files = (
 				AE38499E168D058F00C99B55 /* libCoreLocation+PivotalSpecHelper-StaticLib.a in Frameworks */,
 				AE384971168D04F300C99B55 /* CoreLocation.framework in Frameworks */,
-				AE384963168D045400C99B55 /* libCedar-StaticLib.a in Frameworks */,
+				AE384963168D045400C99B55 /* libCedar.a in Frameworks */,
 				AE3848DA168CD86000C99B55 /* UIKit.framework in Frameworks */,
 				AE3848DC168CD86000C99B55 /* Foundation.framework in Frameworks */,
 				AE3848DE168CD86000C99B55 /* CoreGraphics.framework in Frameworks */,
@@ -405,7 +402,7 @@
 				344569E31B98EBBB008A16A2 /* Cedar.framework */,
 				AE5200041BCB323C006BA693 /* Cedar.framework */,
 				AE5200061BCB323C006BA693 /* Cedar.framework */,
-				AE384939168CD8FC00C99B55 /* libCedar-StaticLib.a */,
+				AE384939168CD8FC00C99B55 /* libCedar.a */,
 				AE384935168CD8FC00C99B55 /* Cedar-OSX Specs */,
 				AE384937168CD8FC00C99B55 /* Cedar-OSX FocusedSpecs */,
 				344569E51B98EBBB008A16A2 /* Cedar-iOS Specs.app */,
@@ -428,7 +425,6 @@
 			children = (
 				AE38494C168CD9B600C99B55 /* Extensions */,
 				AE38494B168CD9B600C99B55 /* CoreLocation+PivotalSpecHelper.h */,
-				AE38494A168CD9B600C99B55 /* CoreLocation+PivotalSpecHelper-Info.plist */,
 			);
 			path = SpecHelper;
 			sourceTree = "<group>";
@@ -467,8 +463,6 @@
 			isa = PBXGroup;
 			children = (
 				AE118B0218D6BCE700C90D6B /* BundleSpecLoader.mm */,
-				AE118AEC18D6BC2F00C90D6B /* CoreLocation-StaticLibSpecBundle-Info.plist */,
-				AE384959168D030800C99B55 /* CoreLocation-StaticLibSpec-Info.plist */,
 				AEEECC4B181F36B6006B52CD /* Default-568h@2x.png */,
 				AE38495B168D030800C99B55 /* main.m */,
 			);
@@ -748,10 +742,10 @@
 			remoteRef = AE384936168CD8FC00C99B55 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		AE384939168CD8FC00C99B55 /* libCedar-StaticLib.a */ = {
+		AE384939168CD8FC00C99B55 /* libCedar.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = "libCedar-StaticLib.a";
+			path = libCedar.a;
 			remoteRef = AE384938168CD8FC00C99B55 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
@@ -982,7 +976,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../Externals/Cedar/**";
-				INFOPLIST_FILE = "Spec/iOS/CoreLocation-StaticLibSpecBundle-Info.plist";
+				INFOPLIST_FILE = "../InfoPlist/SpecBundle-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.pivotallabs.PivotalCoreKit.CoreLocation-StaticLibSpecBundle";
@@ -1013,7 +1007,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../Externals/Cedar/**";
-				INFOPLIST_FILE = "Spec/iOS/CoreLocation-StaticLibSpecBundle-Info.plist";
+				INFOPLIST_FILE = "../InfoPlist/SpecBundle-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.pivotallabs.PivotalCoreKit.CoreLocation-StaticLibSpecBundle";
@@ -1045,7 +1039,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
-				INFOPLIST_FILE = "SpecHelper/CoreLocation+PivotalSpecHelper-Info.plist";
+				INFOPLIST_FILE = "../InfoPlist/Framework-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "SpecHelper/CoreLocation+PivotalSpecHelper.modulemap";
@@ -1085,7 +1079,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
-				INFOPLIST_FILE = "SpecHelper/CoreLocation+PivotalSpecHelper-Info.plist";
+				INFOPLIST_FILE = "../InfoPlist/Framework-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "SpecHelper/CoreLocation+PivotalSpecHelper.modulemap";
@@ -1122,7 +1116,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
-				INFOPLIST_FILE = "SpecHelper/CoreLocation+PivotalSpecHelper-Info.plist";
+				INFOPLIST_FILE = "../InfoPlist/Framework-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "SpecHelper/CoreLocation+PivotalSpecHelper.modulemap";
@@ -1161,7 +1155,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
-				INFOPLIST_FILE = "SpecHelper/CoreLocation+PivotalSpecHelper-Info.plist";
+				INFOPLIST_FILE = "../InfoPlist/Framework-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "SpecHelper/CoreLocation+PivotalSpecHelper.modulemap";
@@ -1193,7 +1187,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
-				INFOPLIST_FILE = "Spec/iOS/CoreLocation-StaticLibSpecBundle-Info.plist";
+				INFOPLIST_FILE = "../InfoPlist/SpecBundle-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "io.pivotal.CoreLocation-tvOS-SpecBundle";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1221,7 +1215,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
-				INFOPLIST_FILE = "Spec/iOS/CoreLocation-StaticLibSpecBundle-Info.plist";
+				INFOPLIST_FILE = "../InfoPlist/SpecBundle-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "io.pivotal.CoreLocation-tvOS-SpecBundle";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1289,7 +1283,7 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				HEADER_SEARCH_PATHS = "$SRCROOT/../Externals/Cedar/**";
-				INFOPLIST_FILE = "Spec/iOS/CoreLocation-StaticLibSpec-Info.plist";
+				INFOPLIST_FILE = "../InfoPlist/SpecHost-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.pivotallabs.${PRODUCT_NAME:rfc1034identifier}";
@@ -1303,7 +1297,7 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				HEADER_SEARCH_PATHS = "$SRCROOT/../Externals/Cedar/**";
-				INFOPLIST_FILE = "Spec/iOS/CoreLocation-StaticLibSpec-Info.plist";
+				INFOPLIST_FILE = "../InfoPlist/SpecHost-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.pivotallabs.${PRODUCT_NAME:rfc1034identifier}";
@@ -1326,7 +1320,7 @@
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				INFOPLIST_FILE = "SpecHelper/CoreLocation+PivotalSpecHelper-Info.plist";
+				INFOPLIST_FILE = "../InfoPlist/Framework-Info.plist";
 				INSTALL_PATH = "@executable_path";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_BUNDLE_IDENTIFIER = "io.pivotal.CoreLocation-PivotalSpecHelper";
@@ -1351,7 +1345,7 @@
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				INFOPLIST_FILE = "SpecHelper/CoreLocation+PivotalSpecHelper-Info.plist";
+				INFOPLIST_FILE = "../InfoPlist/Framework-Info.plist";
 				INSTALL_PATH = "@executable_path";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_BUNDLE_IDENTIFIER = "io.pivotal.CoreLocation-PivotalSpecHelper";
@@ -1429,6 +1423,7 @@
 				34A663F91BDFB78300EF0FEA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		34A664191BDFB9B500EF0FEA /* Build configuration list for PBXNativeTarget "CoreLocation+PivotalSpecHelper-tvOS" */ = {
 			isa = XCConfigurationList;
@@ -1437,6 +1432,7 @@
 				34A6641B1BDFB9B500EF0FEA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		34A6642F1BDFBB9F00EF0FEA /* Build configuration list for PBXNativeTarget "CoreLocation-tvOS SpecBundle" */ = {
 			isa = XCConfigurationList;
@@ -1445,6 +1441,7 @@
 				34A664311BDFBB9F00EF0FEA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AE3848CF168CD86000C99B55 /* Build configuration list for PBXProject "CoreLocation" */ = {
 			isa = XCConfigurationList;

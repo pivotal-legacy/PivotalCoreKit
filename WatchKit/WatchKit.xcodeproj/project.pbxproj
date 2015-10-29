@@ -16,10 +16,10 @@
 		2681A5B21AE0906600B0B753 /* WKInterfaceDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = 2681A5B01AE0906600B0B753 /* WKInterfaceDevice.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2681A5D31AE0991C00B0B753 /* WKInterfaceDeviceSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2681A5D21AE0991C00B0B753 /* WKInterfaceDeviceSpec.mm */; };
 		3434BC6C1BCDDBBA00E9470B /* WKInterfaceObject+Spec.h in Headers */ = {isa = PBXBuildFile; fileRef = 3434BC5F1BCDD74000E9470B /* WKInterfaceObject+Spec.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3442BECC1BDE867B00B32266 /* WKExtensionSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3442BECB1BDE867B00B32266 /* WKExtensionSpec.mm */; settings = {ASSET_TAGS = (); }; };
+		3442BECC1BDE867B00B32266 /* WKExtensionSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3442BECB1BDE867B00B32266 /* WKExtensionSpec.mm */; };
 		3442BECF1BDE889F00B32266 /* WKExtension+Spec.h in Headers */ = {isa = PBXBuildFile; fileRef = 3442BECD1BDE889F00B32266 /* WKExtension+Spec.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3442BED21BDE8A0600B32266 /* WKAlertActionSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3442BED11BDE8A0600B32266 /* WKAlertActionSpec.mm */; settings = {ASSET_TAGS = (); }; };
-		3442BED41BDED16200B32266 /* WKImageSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3442BED31BDED16200B32266 /* WKImageSpec.mm */; settings = {ASSET_TAGS = (); }; };
+		3442BED21BDE8A0600B32266 /* WKAlertActionSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3442BED11BDE8A0600B32266 /* WKAlertActionSpec.mm */; };
+		3442BED41BDED16200B32266 /* WKImageSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3442BED31BDED16200B32266 /* WKImageSpec.mm */; };
 		34456A201B98ED0A008A16A2 /* SpecBuildHelper.app in Resources */ = {isa = PBXBuildFile; fileRef = 344569F91B98EC04008A16A2 /* SpecBuildHelper.app */; };
 		34456A241B98F3B4008A16A2 /* NSBundle+BuildHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 34456A231B98F3B4008A16A2 /* NSBundle+BuildHelper.m */; };
 		34456A251B98FDD0008A16A2 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE25D65D1A38FFA9008A1920 /* Interface.storyboard */; };
@@ -33,7 +33,7 @@
 		AE25D6001A38F6C9008A1920 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE25D5FF1A38F6C9008A1920 /* CoreGraphics.framework */; };
 		AE25D6021A38F6C9008A1920 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE25D6011A38F6C9008A1920 /* UIKit.framework */; };
 		AE25D6041A38F6C9008A1920 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE25D6031A38F6C9008A1920 /* Foundation.framework */; };
-		AE25D6411A38F79E008A1920 /* libCedar-StaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE25D62E1A38F77D008A1920 /* libCedar-StaticLib.a */; };
+		AE25D6411A38F79E008A1920 /* libCedar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE25D62E1A38F77D008A1920 /* libCedar.a */; };
 		AE25D6611A390480008A1920 /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE25D6601A390480008A1920 /* InterfaceController.m */; };
 		AE25F4841B5EBCB2009B599E /* WKInterfaceButton+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE25F4831B5EBCB2009B599E /* WKInterfaceButton+Spec.m */; };
 		AE85C0611A3FC03B009A0E4D /* GroupController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE85C0601A3FC03B009A0E4D /* GroupController.m */; };
@@ -114,6 +114,48 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		3431FCB21BE286C600740FFB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE25D6171A38F77D008A1920 /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 346261DF1B995239002CAEBD;
+			remoteInfo = "Cedar-watchOS";
+		};
+		3431FCB41BE286C600740FFB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE25D6171A38F77D008A1920 /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 34D7C3CA1BB9747400E8E523;
+			remoteInfo = "Cedar-tvOS";
+		};
+		3431FCB61BE286C600740FFB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE25D6171A38F77D008A1920 /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 34852D211BBE35FF0072D249;
+			remoteInfo = "Cedar-watchOS HostApp";
+		};
+		3431FCB81BE286C600740FFB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE25D6171A38F77D008A1920 /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 346262781B99C1DB002CAEBD;
+			remoteInfo = "Cedar-watchOS Specs";
+		};
+		3431FCBA1BE286C600740FFB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE25D6171A38F77D008A1920 /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 346262841B99C1DC002CAEBD;
+			remoteInfo = "Cedar-watchOS Specs Extension";
+		};
+		3431FCBC1BE286C600740FFB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE25D6171A38F77D008A1920 /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 34D7C4691BB9B71600E8E523;
+			remoteInfo = "Cedar-tvOS SpecBundle";
+		};
 		34456A161B98EC05008A16A2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AE25D6171A38F77D008A1920 /* Cedar.xcodeproj */;
@@ -250,7 +292,6 @@
 		AE25D5FF1A38F6C9008A1920 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = /System/Library/Frameworks/CoreGraphics.framework; sourceTree = "<absolute>"; };
 		AE25D6011A38F6C9008A1920 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		AE25D6031A38F6C9008A1920 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
-		AE25D6071A38F6C9008A1920 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE25D60C1A38F6C9008A1920 /* Rakefile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Rakefile; sourceTree = "<group>"; };
 		AE25D6171A38F77D008A1920 /* Cedar.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Cedar.xcodeproj; path = Cedar/Cedar.xcodeproj; sourceTree = "<group>"; };
 		AE25D65D1A38FFA9008A1920 /* Interface.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Interface.storyboard; sourceTree = "<group>"; };
@@ -276,7 +317,6 @@
 		B83AC22B1A5E191C00A35BD6 /* PCKWKInterfaceControllerProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCKWKInterfaceControllerProvider.h; sourceTree = "<group>"; };
 		B83AC22C1A5E191C00A35BD6 /* PCKWKInterfaceControllerProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCKWKInterfaceControllerProvider.m; sourceTree = "<group>"; };
 		B83C31C11A4CD8A40021F1A4 /* WatchKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WatchKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B83C31C41A4CD8A40021F1A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B83C31DC1A4CD9BF0021F1A4 /* PCKMessageCapturer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCKMessageCapturer.h; sourceTree = "<group>"; };
 		B83C31DD1A4CD9BF0021F1A4 /* PCKMessageCapturer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCKMessageCapturer.m; sourceTree = "<group>"; };
 		B83C31DE1A4CD9BF0021F1A4 /* WatchKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WatchKit.h; sourceTree = "<group>"; };
@@ -351,7 +391,7 @@
 				AE25D6001A38F6C9008A1920 /* CoreGraphics.framework in Frameworks */,
 				AE25D6021A38F6C9008A1920 /* UIKit.framework in Frameworks */,
 				AE25D5FE1A38F6C9008A1920 /* XCTest.framework in Frameworks */,
-				AE25D6411A38F79E008A1920 /* libCedar-StaticLib.a in Frameworks */,
+				AE25D6411A38F79E008A1920 /* libCedar.a in Frameworks */,
 				B83C32351A4CDCDE0021F1A4 /* CoreLocation.framework in Frameworks */,
 				B83C32361A4CDD670021F1A4 /* WatchKit.framework in Frameworks */,
 			);
@@ -450,7 +490,6 @@
 			isa = PBXGroup;
 			children = (
 				AE25D60C1A38F6C9008A1920 /* Rakefile */,
-				AE25D6071A38F6C9008A1920 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -468,17 +507,23 @@
 			isa = PBXGroup;
 			children = (
 				AE25D6281A38F77D008A1920 /* Cedar.framework */,
-				AE25D62A1A38F77D008A1920 /* Cedar OS X Specs */,
-				AE25D62C1A38F77D008A1920 /* Cedar OS X FocusedSpecs */,
-				AE25D62E1A38F77D008A1920 /* libCedar-StaticLib.a */,
-				AE25D6301A38F77D008A1920 /* Cedar-StaticLib Specs.app */,
-				AE25D6321A38F77D008A1920 /* Cedar-iOS StaticFrameworkSpecs.app */,
-				AE25D6341A38F77D008A1920 /* Cedar iOS Host App.app */,
-				AE25D6381A38F77D008A1920 /* XCUnitAppTests.xctest */,
-				AE25D63A1A38F77D008A1920 /* Cedar OS X Host App.app */,
-				AE25D63C1A38F77D008A1920 /* Cedar OS X Host AppTests.xctest */,
 				34456A171B98EC05008A16A2 /* Cedar.framework */,
-				34456A191B98EC05008A16A2 /* Cedar-iOS-Framework Specs.app */,
+				3431FCB31BE286C600740FFB /* Cedar.framework */,
+				3431FCB51BE286C600740FFB /* Cedar.framework */,
+				AE25D62E1A38F77D008A1920 /* libCedar.a */,
+				AE25D62A1A38F77D008A1920 /* Cedar-OSX Specs */,
+				AE25D62C1A38F77D008A1920 /* Cedar-OSX FocusedSpecs */,
+				34456A191B98EC05008A16A2 /* Cedar-iOS Specs.app */,
+				AE25D6301A38F77D008A1920 /* Cedar-iOS StaticLib Specs.app */,
+				AE25D6321A38F77D008A1920 /* Cedar-iOS StaticFrameworkSpecs.app */,
+				AE25D63A1A38F77D008A1920 /* Cedar-OSX HostApp.app */,
+				AE25D6341A38F77D008A1920 /* Cedar-iOS HostApp.app */,
+				3431FCB71BE286C600740FFB /* Cedar-watchOS HostApp.app */,
+				AE25D63C1A38F77D008A1920 /* Cedar-OSX SpecBundle.xctest */,
+				AE25D6381A38F77D008A1920 /* Cedar-iOS SpecBundle.xctest */,
+				3431FCB91BE286C600740FFB /* Cedar-watchOS Specs.app */,
+				3431FCBB1BE286C600740FFB /* Cedar-watchOS Specs Extension.appex */,
+				3431FCBD1BE286C600740FFB /* Cedar-tvOS SpecBundle.bundle */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -579,17 +624,8 @@
 				34AB31B91BC8B32E0039F450 /* WKImage.m */,
 				34AB31BC1BC8B70A0039F450 /* WKAlertAction.h */,
 				34AB31BD1BC8B70A0039F450 /* WKAlertAction.m */,
-				B83C31C31A4CD8A40021F1A4 /* Supporting Files */,
 			);
 			path = WatchKit;
-			sourceTree = "<group>";
-		};
-		B83C31C31A4CD8A40021F1A4 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				B83C31C41A4CD8A40021F1A4 /* Info.plist */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -744,6 +780,48 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		3431FCB31BE286C600740FFB /* Cedar.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Cedar.framework;
+			remoteRef = 3431FCB21BE286C600740FFB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3431FCB51BE286C600740FFB /* Cedar.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Cedar.framework;
+			remoteRef = 3431FCB41BE286C600740FFB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3431FCB71BE286C600740FFB /* Cedar-watchOS HostApp.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "Cedar-watchOS HostApp.app";
+			remoteRef = 3431FCB61BE286C600740FFB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3431FCB91BE286C600740FFB /* Cedar-watchOS Specs.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "Cedar-watchOS Specs.app";
+			remoteRef = 3431FCB81BE286C600740FFB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3431FCBB1BE286C600740FFB /* Cedar-watchOS Specs Extension.appex */ = {
+			isa = PBXReferenceProxy;
+			fileType = "wrapper.app-extension";
+			path = "Cedar-watchOS Specs Extension.appex";
+			remoteRef = 3431FCBA1BE286C600740FFB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3431FCBD1BE286C600740FFB /* Cedar-tvOS SpecBundle.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Cedar-tvOS SpecBundle.bundle";
+			remoteRef = 3431FCBC1BE286C600740FFB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		34456A171B98EC05008A16A2 /* Cedar.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -751,10 +829,10 @@
 			remoteRef = 34456A161B98EC05008A16A2 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		34456A191B98EC05008A16A2 /* Cedar-iOS-Framework Specs.app */ = {
+		34456A191B98EC05008A16A2 /* Cedar-iOS Specs.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
-			path = "Cedar-iOS-Framework Specs.app";
+			path = "Cedar-iOS Specs.app";
 			remoteRef = 34456A181B98EC05008A16A2 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
@@ -765,31 +843,31 @@
 			remoteRef = AE25D6271A38F77D008A1920 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		AE25D62A1A38F77D008A1920 /* Cedar OS X Specs */ = {
+		AE25D62A1A38F77D008A1920 /* Cedar-OSX Specs */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.executable";
-			path = "Cedar OS X Specs";
+			path = "Cedar-OSX Specs";
 			remoteRef = AE25D6291A38F77D008A1920 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		AE25D62C1A38F77D008A1920 /* Cedar OS X FocusedSpecs */ = {
+		AE25D62C1A38F77D008A1920 /* Cedar-OSX FocusedSpecs */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.executable";
-			path = "Cedar OS X FocusedSpecs";
+			path = "Cedar-OSX FocusedSpecs";
 			remoteRef = AE25D62B1A38F77D008A1920 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		AE25D62E1A38F77D008A1920 /* libCedar-StaticLib.a */ = {
+		AE25D62E1A38F77D008A1920 /* libCedar.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = "libCedar-StaticLib.a";
+			path = libCedar.a;
 			remoteRef = AE25D62D1A38F77D008A1920 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		AE25D6301A38F77D008A1920 /* Cedar-StaticLib Specs.app */ = {
+		AE25D6301A38F77D008A1920 /* Cedar-iOS StaticLib Specs.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
-			path = "Cedar-StaticLib Specs.app";
+			path = "Cedar-iOS StaticLib Specs.app";
 			remoteRef = AE25D62F1A38F77D008A1920 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
@@ -800,31 +878,31 @@
 			remoteRef = AE25D6311A38F77D008A1920 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		AE25D6341A38F77D008A1920 /* Cedar iOS Host App.app */ = {
+		AE25D6341A38F77D008A1920 /* Cedar-iOS HostApp.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
-			path = "Cedar iOS Host App.app";
+			path = "Cedar-iOS HostApp.app";
 			remoteRef = AE25D6331A38F77D008A1920 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		AE25D6381A38F77D008A1920 /* XCUnitAppTests.xctest */ = {
+		AE25D6381A38F77D008A1920 /* Cedar-iOS SpecBundle.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
-			path = XCUnitAppTests.xctest;
+			path = "Cedar-iOS SpecBundle.xctest";
 			remoteRef = AE25D6371A38F77D008A1920 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		AE25D63A1A38F77D008A1920 /* Cedar OS X Host App.app */ = {
+		AE25D63A1A38F77D008A1920 /* Cedar-OSX HostApp.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
-			path = "Cedar OS X Host App.app";
+			path = "Cedar-OSX HostApp.app";
 			remoteRef = AE25D6391A38F77D008A1920 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		AE25D63C1A38F77D008A1920 /* Cedar OS X Host AppTests.xctest */ = {
+		AE25D63C1A38F77D008A1920 /* Cedar-OSX SpecBundle.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
-			path = "Cedar OS X Host AppTests.xctest";
+			path = "Cedar-OSX SpecBundle.xctest";
 			remoteRef = AE25D63B1A38F77D008A1920 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
@@ -1073,7 +1151,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = Specs/Info.plist;
+				INFOPLIST_FILE = "../InfoPlist/SpecBundle-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -1096,7 +1174,7 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PREFIX_HEADER = "";
-				INFOPLIST_FILE = Specs/Info.plist;
+				INFOPLIST_FILE = "../InfoPlist/SpecBundle-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -1123,10 +1201,10 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = WatchKit/Info.plist;
+				INFOPLIST_FILE = "../InfoPlist/Framework-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.prairiedogg.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.pivotal.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1145,10 +1223,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = WatchKit/Info.plist;
+				INFOPLIST_FILE = "../InfoPlist/Framework-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.prairiedogg.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.pivotal.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -719,7 +719,6 @@
 		AE0CFF5F1770C80F00E6A958 /* NSDictionarySpec+QueryStringSpec.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSDictionarySpec+QueryStringSpec.mm"; sourceTree = "<group>"; };
 		AE0CFF711770DAE300E6A958 /* NSURLSpec+QueryComponents.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSURLSpec+QueryComponents.mm"; sourceTree = "<group>"; };
 		AE118A9818D6B3CA00C90D6B /* BundleSpecLoader.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BundleSpecLoader.mm; sourceTree = "<group>"; };
-		AE118A9918D6B3CA00C90D6B /* Foundation-StaticLibSpecBundle-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Foundation-StaticLibSpecBundle-Info.plist"; sourceTree = "<group>"; };
 		AE24D5AF138170CD00E4420A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AE2A04CF18D402F400D4FD96 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		AE6898DA16BC3AF700F3F6BC /* NSArray+PivotalCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+PivotalCore.h"; sourceTree = "<group>"; };
@@ -770,8 +769,6 @@
 		AEA96BBD168B544D00861DF1 /* PSHKFakeResponses.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSHKFakeResponses.m; sourceTree = "<group>"; };
 		AEA96BBF168B544D00861DF1 /* PSHKFixtures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSHKFixtures.h; sourceTree = "<group>"; };
 		AEA96BC0168B544D00861DF1 /* PSHKFixtures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSHKFixtures.m; sourceTree = "<group>"; };
-		AEA96BCD168B552C00861DF1 /* Foundation+PivotalSpecHelper-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Foundation+PivotalSpecHelper-Info.plist"; sourceTree = "<group>"; };
-		AEA96BCE168B554000861DF1 /* Foundation+PivotalCore-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Foundation+PivotalCore-Info.plist"; sourceTree = "<group>"; };
 		AEA96BD3168B561500861DF1 /* FoundationSpec */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = FoundationSpec; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEA96BE1168B56BF00861DF1 /* NSDataSpec+PivotalCore.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSDataSpec+PivotalCore.mm"; sourceTree = "<group>"; };
 		AEA96BE2168B56BF00861DF1 /* NSObjectSpec+MethodDecoration.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSObjectSpec+MethodDecoration.mm"; sourceTree = "<group>"; };
@@ -792,7 +789,6 @@
 		AEA96C54168B636E00861DF1 /* libFoundation+PivotalCore-StaticLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libFoundation+PivotalCore-StaticLib.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEA96C64168B63BD00861DF1 /* libFoundation+PivotalSpecHelper-StaticLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libFoundation+PivotalSpecHelper-StaticLib.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEA96C74168B640B00861DF1 /* Foundation-StaticLibSpec.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Foundation-StaticLibSpec.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		AEA96C95168B656700861DF1 /* Foundation+PivotalCore-StaticLibSpec-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Foundation+PivotalCore-StaticLibSpec-Info.plist"; sourceTree = "<group>"; };
 		AEA96C98168B658A00861DF1 /* main.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
 		AEA96C9B168B65CC00861DF1 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AEA96CBF168B6FFC00861DF1 /* Foundation+PivotalSpecHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Foundation+PivotalSpecHelper.h"; sourceTree = "<group>"; };
@@ -800,7 +796,7 @@
 		AEB2B8DD18F703C800E26FAD /* PSHKFakeOperationQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSHKFakeOperationQueue.m; sourceTree = "<group>"; };
 		AEBCCB45168B7E370056EE83 /* Cedar.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Cedar.xcodeproj; path = Cedar/Cedar.xcodeproj; sourceTree = "<group>"; };
 		AEE971BF1708EB400094B5A2 /* FakeHTTP.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FakeHTTP.xcodeproj; path = FakeHTTP/FakeHTTP.xcodeproj; sourceTree = "<group>"; };
-		AEEECC3F181F3693006B52CD /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../../Default-568h@2x.png"; sourceTree = "<group>"; };
+		AEEECC3F181F3693006B52CD /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		AEF6F87616EBF0CF0004F077 /* PSHKFakeOperationQueueSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PSHKFakeOperationQueueSpec.mm; sourceTree = "<group>"; };
 		DE99C52A2D323A2A8E4F3EBF /* PSHKObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSHKObserver.m; path = SpecHelper/Helpers/PSHKObserver.m; sourceTree = SOURCE_ROOT; };
 		DE99CE4876A23C42A61ED94A /* PSHKObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSHKObserver.h; path = SpecHelper/Helpers/PSHKObserver.h; sourceTree = SOURCE_ROOT; };
@@ -1008,7 +1004,6 @@
 				AEA96B70168B50D900861DF1 /* Parsers */,
 				AB3CA3F647E6E1AECA7A33A2 /* Monads */,
 				AEA96B79168B50D900861DF1 /* Foundation+PivotalCore.h */,
-				AEA96BCE168B554000861DF1 /* Foundation+PivotalCore-Info.plist */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -1021,7 +1016,6 @@
 				AEA96BBE168B544D00861DF1 /* Fixtures */,
 				AEA96BB7168B544D00861DF1 /* Fakes */,
 				AEA96CBF168B6FFC00861DF1 /* Foundation+PivotalSpecHelper.h */,
-				AEA96BCD168B552C00861DF1 /* Foundation+PivotalSpecHelper-Info.plist */,
 			);
 			path = SpecHelper;
 			sourceTree = "<group>";
@@ -1204,8 +1198,6 @@
 			isa = PBXGroup;
 			children = (
 				AE118A9818D6B3CA00C90D6B /* BundleSpecLoader.mm */,
-				AEA96C95168B656700861DF1 /* Foundation+PivotalCore-StaticLibSpec-Info.plist */,
-				AE118A9918D6B3CA00C90D6B /* Foundation-StaticLibSpecBundle-Info.plist */,
 				AEEECC3F181F3693006B52CD /* Default-568h@2x.png */,
 				AEA96C9B168B65CC00861DF1 /* main.m */,
 			);
@@ -1238,16 +1230,16 @@
 				34A663B31BDF24E800EF0FEA /* Cedar.framework */,
 				34A663B51BDF24E800EF0FEA /* Cedar.framework */,
 				AEBCCB5F168B7E380056EE83 /* libCedar.a */,
-				AEBCCB5B168B7E380056EE83 /* Cedar OS X Specs */,
-				AEBCCB5D168B7E380056EE83 /* Cedar OS X FocusedSpecs */,
-				34777EA31B99029900A69FCF /* Cedar-iOS-Framework Specs.app */,
-				AEBCCB61168B7E380056EE83 /* Cedar-StaticLib Specs.app */,
+				AEBCCB5B168B7E380056EE83 /* Cedar-OSX Specs */,
+				AEBCCB5D168B7E380056EE83 /* Cedar-OSX FocusedSpecs */,
+				34777EA31B99029900A69FCF /* Cedar-iOS Specs.app */,
+				AEBCCB61168B7E380056EE83 /* Cedar-iOS StaticLib Specs.app */,
 				AED5717C18C54AE1004AD37D /* Cedar-iOS StaticFrameworkSpecs.app */,
-				AEEB50D01A0189070014BB6A /* Cedar OS X Host App.app */,
-				AEBCCB63168B7E380056EE83 /* Cedar iOS Host App.app */,
+				AEEB50D01A0189070014BB6A /* Cedar-OSX HostApp.app */,
+				AEBCCB63168B7E380056EE83 /* Cedar-iOS HostApp.app */,
 				34A663B71BDF24E800EF0FEA /* Cedar-watchOS HostApp.app */,
-				AEEB50D21A0189070014BB6A /* Cedar OS X Host AppTests.xctest */,
-				AEEECC3D181F368F006B52CD /* XCUnitAppTests.xctest */,
+				AEEB50D21A0189070014BB6A /* Cedar-OSX SpecBundle.xctest */,
+				AEEECC3D181F368F006B52CD /* Cedar-iOS SpecBundle.xctest */,
 				34A663B91BDF24E800EF0FEA /* Cedar-watchOS Specs.app */,
 				34A663BB1BDF24E800EF0FEA /* Cedar-watchOS Specs Extension.appex */,
 				34A663BD1BDF24E800EF0FEA /* Cedar-tvOS SpecBundle.bundle */,
@@ -1737,7 +1729,7 @@
 			remoteRef = 34777EA01B99029900A69FCF /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		34777EA31B99029900A69FCF /* Cedar-iOS-Framework Specs.app */ = {
+		34777EA31B99029900A69FCF /* Cedar-iOS Specs.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
 			path = "Cedar-iOS Specs.app";
@@ -1807,14 +1799,14 @@
 			remoteRef = AEBCCB58168B7E380056EE83 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		AEBCCB5B168B7E380056EE83 /* Cedar OS X Specs */ = {
+		AEBCCB5B168B7E380056EE83 /* Cedar-OSX Specs */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.executable";
 			path = "Cedar-OSX Specs";
 			remoteRef = AEBCCB5A168B7E380056EE83 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		AEBCCB5D168B7E380056EE83 /* Cedar OS X FocusedSpecs */ = {
+		AEBCCB5D168B7E380056EE83 /* Cedar-OSX FocusedSpecs */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.executable";
 			path = "Cedar-OSX FocusedSpecs";
@@ -1828,14 +1820,14 @@
 			remoteRef = AEBCCB5E168B7E380056EE83 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		AEBCCB61168B7E380056EE83 /* Cedar-StaticLib Specs.app */ = {
+		AEBCCB61168B7E380056EE83 /* Cedar-iOS StaticLib Specs.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
 			path = "Cedar-iOS StaticLib Specs.app";
 			remoteRef = AEBCCB60168B7E380056EE83 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		AEBCCB63168B7E380056EE83 /* Cedar iOS Host App.app */ = {
+		AEBCCB63168B7E380056EE83 /* Cedar-iOS HostApp.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
 			path = "Cedar-iOS HostApp.app";
@@ -1870,21 +1862,21 @@
 			remoteRef = AEE971D01708EB410094B5A2 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		AEEB50D01A0189070014BB6A /* Cedar OS X Host App.app */ = {
+		AEEB50D01A0189070014BB6A /* Cedar-OSX HostApp.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
 			path = "Cedar-OSX HostApp.app";
 			remoteRef = AEEB50CF1A0189070014BB6A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		AEEB50D21A0189070014BB6A /* Cedar OS X Host AppTests.xctest */ = {
+		AEEB50D21A0189070014BB6A /* Cedar-OSX SpecBundle.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = "Cedar-OSX SpecBundle.xctest";
 			remoteRef = AEEB50D11A0189070014BB6A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		AEEECC3D181F368F006B52CD /* XCUnitAppTests.xctest */ = {
+		AEEECC3D181F368F006B52CD /* Cedar-iOS SpecBundle.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = "Cedar-iOS SpecBundle.xctest";
@@ -2409,7 +2401,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				HEADER_SEARCH_PATHS = "\"$(PROJECT_DIR)/../Externals/Cedar/Source/Headers\"/**";
-				INFOPLIST_FILE = "Spec/iOS/Foundation-StaticLibSpecBundle-Info.plist";
+				INFOPLIST_FILE = "../InfoPlist/SpecBundle-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
@@ -2438,7 +2430,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				HEADER_SEARCH_PATHS = "\"$(PROJECT_DIR)/../Externals/Cedar/Source/Headers\"/**";
-				INFOPLIST_FILE = "Spec/iOS/Foundation-StaticLibSpecBundle-Info.plist";
+				INFOPLIST_FILE = "../InfoPlist/SpecBundle-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
@@ -2474,7 +2466,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
-				INFOPLIST_FILE = "Core/Foundation+PivotalCore-Info.plist";
+				INFOPLIST_FILE = "../InfoPlist/Framework-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Core/Foundation+PivotalCore.modulemap";
@@ -2510,7 +2502,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
-				INFOPLIST_FILE = "Core/Foundation+PivotalCore-Info.plist";
+				INFOPLIST_FILE = "../InfoPlist/Framework-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Core/Foundation+PivotalCore.modulemap";
@@ -2550,7 +2542,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
-				INFOPLIST_FILE = "Core/Foundation+PivotalCore-Info.plist";
+				INFOPLIST_FILE = "../InfoPlist/Framework-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Core/Foundation+PivotalCore.modulemap";
@@ -2584,7 +2576,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
-				INFOPLIST_FILE = "Core/Foundation+PivotalCore-Info.plist";
+				INFOPLIST_FILE = "../InfoPlist/Framework-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Core/Foundation+PivotalCore.modulemap";
@@ -2623,7 +2615,7 @@
 				);
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				INFOPLIST_FILE = "SpecHelper/Foundation+PivotalSpecHelper-Info.plist";
+				INFOPLIST_FILE = "../InfoPlist/Framework-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "SpecHelper/Foundation+PivotalSpecHelper.modulemap";
@@ -2657,7 +2649,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				INFOPLIST_FILE = "SpecHelper/Foundation+PivotalSpecHelper-Info.plist";
+				INFOPLIST_FILE = "../InfoPlist/Framework-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "SpecHelper/Foundation+PivotalSpecHelper.modulemap";
@@ -2695,7 +2687,7 @@
 				);
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				INFOPLIST_FILE = "SpecHelper/Foundation+PivotalSpecHelper-Info.plist";
+				INFOPLIST_FILE = "../InfoPlist/Framework-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "SpecHelper/Foundation+PivotalSpecHelper.modulemap";
@@ -2728,7 +2720,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				INFOPLIST_FILE = "SpecHelper/Foundation+PivotalSpecHelper-Info.plist";
+				INFOPLIST_FILE = "../InfoPlist/Framework-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "SpecHelper/Foundation+PivotalSpecHelper.modulemap";
@@ -2768,7 +2760,7 @@
 					"$(inherited)",
 					"\"$(PROJECT_DIR)/../Externals/FakeHTTP/FakeHTTP\"/**",
 				);
-				INFOPLIST_FILE = "Spec/iOS/Foundation-StaticLibSpecBundle-Info.plist";
+				INFOPLIST_FILE = "../InfoPlist/SpecBundle-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "io.pivotal.Foundation-tvOS-SpecBundle";
@@ -2797,7 +2789,7 @@
 					"$(inherited)",
 					"\"$(PROJECT_DIR)/../Externals/FakeHTTP/FakeHTTP\"/**",
 				);
-				INFOPLIST_FILE = "Spec/iOS/Foundation-StaticLibSpecBundle-Info.plist";
+				INFOPLIST_FILE = "../InfoPlist/SpecBundle-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "io.pivotal.Foundation-tvOS-SpecBundle";
@@ -2847,7 +2839,7 @@
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
-				INFOPLIST_FILE = "Core/Foundation+PivotalCore-Info.plist";
+				INFOPLIST_FILE = "../InfoPlist/Framework-Info.plist";
 				INSTALL_PATH = "@executable_path";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = "io.pivotal.Foundation-PivotalCoreKit";
@@ -2872,7 +2864,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
-				INFOPLIST_FILE = "Core/Foundation+PivotalCore-Info.plist";
+				INFOPLIST_FILE = "../InfoPlist/Framework-Info.plist";
 				INSTALL_PATH = "@executable_path";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = "io.pivotal.Foundation-PivotalCoreKit";
@@ -2903,7 +2895,7 @@
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				INFOPLIST_FILE = "SpecHelper/Foundation+PivotalSpecHelper-Info.plist";
+				INFOPLIST_FILE = "../InfoPlist/Framework-Info.plist";
 				INSTALL_PATH = "@executable_path";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.pivotallabs.${PRODUCT_NAME:rfc1034identifier}";
@@ -2929,7 +2921,7 @@
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				INFOPLIST_FILE = "SpecHelper/Foundation+PivotalSpecHelper-Info.plist";
+				INFOPLIST_FILE = "../InfoPlist/Framework-Info.plist";
 				INSTALL_PATH = "@executable_path";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.pivotallabs.${PRODUCT_NAME:rfc1034identifier}";
@@ -3107,7 +3099,7 @@
 					"\"$SRCROOT/../Externals/Cedar/Source/Headers\"/**",
 					"\"$(PROJECT_DIR)/../Externals/FakeHTTP/FakeHTTP\"/**",
 				);
-				INFOPLIST_FILE = "Spec/iOS/Foundation+PivotalCore-StaticLibSpec-Info.plist";
+				INFOPLIST_FILE = "../InfoPlist/SpecHost-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -3139,7 +3131,7 @@
 					"\"$SRCROOT/../Externals/Cedar/Source/Headers\"/**",
 					"\"$(PROJECT_DIR)/../Externals/FakeHTTP/FakeHTTP\"/**",
 				);
-				INFOPLIST_FILE = "Spec/iOS/Foundation+PivotalCore-StaticLibSpec-Info.plist";
+				INFOPLIST_FILE = "../InfoPlist/SpecHost-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = (

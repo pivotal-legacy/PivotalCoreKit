@@ -1,5 +1,5 @@
-framework module Foundation_PivotalCore {
-    umbrella header "CoreLocation+SpecHelper"
+framework module CoreLocation_PivotalSpecHelper {
+    umbrella header "CoreLocation+PivotalSpecHelper.h"
 
     export *
     module * { export * }
