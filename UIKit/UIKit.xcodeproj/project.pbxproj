@@ -42,7 +42,127 @@
 		22601B5C16BA274B00A807CB /* UISlider+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 22601B4D16BA202A00A807CB /* UISlider+Spec.h */; };
 		346281C618D7AC1300E9C952 /* UIGestureRecognizer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 346281C518D7AC1300E9C952 /* UIGestureRecognizer.storyboard */; };
 		3466C09E1B97A44500CBAB59 /* BundleSpecLoader.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE118AC118D6B63900C90D6B /* BundleSpecLoader.mm */; };
+		346B40D51BE05FAC002A390E /* NavigationStackExample.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 346B40D41BE05FAC002A390E /* NavigationStackExample.storyboard */; };
+		346B40D71BE06004002A390E /* CollectionViewPrototypeCells.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 346B40D61BE06004002A390E /* CollectionViewPrototypeCells.storyboard */; };
+		346B40D91BE06175002A390E /* TableViewPrototypeCells.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 346B40D81BE06175002A390E /* TableViewPrototypeCells.storyboard */; };
+		346B40DB1BE0620E002A390E /* UITableViewCell.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 346B40DA1BE0620E002A390E /* UITableViewCell.storyboard */; };
+		346B40F71BE06FCE002A390E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBCCC97168B9C530056EE83 /* main.m */; };
+		346B40F81BE0714F002A390E /* ChildViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34A6651A1BE05AC900EF0FEA /* ChildViewController.xib */; };
+		346B40F91BE0714F002A390E /* CollectionViewPrototypeCells.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 346B40D61BE06004002A390E /* CollectionViewPrototypeCells.storyboard */; };
+		346B40FA1BE0714F002A390E /* InnerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34A6651C1BE05AC900EF0FEA /* InnerView.xib */; };
+		346B40FB1BE0714F002A390E /* MainController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34A6651D1BE05AC900EF0FEA /* MainController.xib */; };
+		346B40FC1BE0714F002A390E /* NavigationStackExample.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 346B40D41BE05FAC002A390E /* NavigationStackExample.storyboard */; };
+		346B40FD1BE0714F002A390E /* OuterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34A6651F1BE05AC900EF0FEA /* OuterView.xib */; };
+		346B40FE1BE0714F002A390E /* TableViewPrototypeCells.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 346B40D81BE06175002A390E /* TableViewPrototypeCells.storyboard */; };
+		346B40FF1BE0714F002A390E /* UIGestureRecognizer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34A6652E1BE05D1800EF0FEA /* UIGestureRecognizer.storyboard */; };
+		346B41001BE0714F002A390E /* UITableViewCell.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 346B40DA1BE0620E002A390E /* UITableViewCell.storyboard */; };
+		346B41011BE07230002A390E /* logo-small.png in Resources */ = {isa = PBXBuildFile; fileRef = AE3847AA168BA0B300C99B55 /* logo-small.png */; };
+		346B41021BE07230002A390E /* pivotallabs-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = AE3847AB168BA0B300C99B55 /* pivotallabs-logo.png */; };
 		3490AFED19A3CF4700DAA8E3 /* TableViewPrototypeCells.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3490AFEC19A3CF4000DAA8E3 /* TableViewPrototypeCells.storyboard */; };
+		34A6647F1BDFE98700EF0FEA /* UIKit+PivotalCore.h in Headers */ = {isa = PBXBuildFile; fileRef = AEBCCBD3168B96C80056EE83 /* UIKit+PivotalCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A664801BDFE99D00EF0FEA /* NSAttributedString+PivotalCoreKit_UIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = FA91AA9F186737B700925A6B /* NSAttributedString+PivotalCoreKit_UIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A664811BDFE99D00EF0FEA /* NSString+PivotalCoreKit_UIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = FA91AA8F186725CC00925A6B /* NSString+PivotalCoreKit_UIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A664821BDFE99D00EF0FEA /* UIBarButtonItem+Button.h in Headers */ = {isa = PBXBuildFile; fileRef = AEBCCBCD168B96C80056EE83 /* UIBarButtonItem+Button.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A664831BDFE99D00EF0FEA /* UIImage+PivotalCore.h in Headers */ = {isa = PBXBuildFile; fileRef = AEBCCBCF168B96C80056EE83 /* UIImage+PivotalCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A664841BDFE99D00EF0FEA /* UIImageView+PivotalCore.h in Headers */ = {isa = PBXBuildFile; fileRef = FA1A5168186290C800C22BA8 /* UIImageView+PivotalCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A664851BDFE99D00EF0FEA /* UIView+PCKNibHelpers.h in Headers */ = {isa = PBXBuildFile; fileRef = AEDABB5F18E9DCC9004E6626 /* UIView+PCKNibHelpers.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A664861BDFE99D00EF0FEA /* UIView+PivotalCore.h in Headers */ = {isa = PBXBuildFile; fileRef = AEBCCBD1168B96C80056EE83 /* UIView+PivotalCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A664881BDFE9B300EF0FEA /* UIActivityViewController+Spec.h in Headers */ = {isa = PBXBuildFile; fileRef = 8487257119013F5F00288770 /* UIActivityViewController+Spec.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A664891BDFE9B300EF0FEA /* UIAlertAction+Spec.h in Headers */ = {isa = PBXBuildFile; fileRef = AE062BBF1A4323A800AF8D33 /* UIAlertAction+Spec.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A6648A1BDFE9B300EF0FEA /* UIAlertController+Spec.h in Headers */ = {isa = PBXBuildFile; fileRef = AE61C1301A40B95E00C97245 /* UIAlertController+Spec.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A6648C1BDFE9B300EF0FEA /* UIGestureRecognizer+Spec.h in Headers */ = {isa = PBXBuildFile; fileRef = DE99C78703C6C6CA8C0465B3 /* UIGestureRecognizer+Spec.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A6648E1BDFE9B300EF0FEA /* UIPopoverController+Spec.h in Headers */ = {isa = PBXBuildFile; fileRef = AEB6662A18C6681A00B09C00 /* UIPopoverController+Spec.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A664901BDFE9B300EF0FEA /* UIView+StubbedAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = AEE0B69518A3572C0007A9D0 /* UIView+StubbedAnimation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A664911BDFE9B300EF0FEA /* UIView+StubbedGestureRecognizers.h in Headers */ = {isa = PBXBuildFile; fileRef = AECB46AA1A3FBA9E00398720 /* UIView+StubbedGestureRecognizers.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A664921BDFE9B300EF0FEA /* UIViewController+Spec.h in Headers */ = {isa = PBXBuildFile; fileRef = DE99C6A16495A2EF63F66D48 /* UIViewController+Spec.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A664941BDFE9B300EF0FEA /* UIApplication+Spec.h in Headers */ = {isa = PBXBuildFile; fileRef = AE7E72151AF2AE9A000E48EE /* UIApplication+Spec.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A664951BDFE9B700EF0FEA /* UIKit+PivotalSpecHelperStubs.h in Headers */ = {isa = PBXBuildFile; fileRef = AEC40CB9174C230800474D2D /* UIKit+PivotalSpecHelperStubs.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A664961BDFE9BE00EF0FEA /* UIKit+PivotalSpecHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 22601B5A16BA263A00A807CB /* UIKit+PivotalSpecHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A664971BDFE9EB00EF0FEA /* PCKMethodRedirector.h in Headers */ = {isa = PBXBuildFile; fileRef = AEF5D45B1A030D2E00C4DC3D /* PCKMethodRedirector.h */; };
+		34A664981BDFEA1900EF0FEA /* PCKPrototypeCellInstantiatingDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 3490AFE919A3C0A800DAA8E3 /* PCKPrototypeCellInstantiatingDataSource.h */; };
+		34A664991BDFEA2000EF0FEA /* UIBarButtonItem+Spec.h in Headers */ = {isa = PBXBuildFile; fileRef = B8C62E6B16BC03420009CDAD /* UIBarButtonItem+Spec.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A6649A1BDFEA2000EF0FEA /* UICollectionReusableView+Spec.h in Headers */ = {isa = PBXBuildFile; fileRef = 34BDAC7519A42C5F0085B45A /* UICollectionReusableView+Spec.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A6649B1BDFEA2000EF0FEA /* UICollectionViewCell+Spec.h in Headers */ = {isa = PBXBuildFile; fileRef = FA07586818120D19001817BF /* UICollectionViewCell+Spec.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A6649C1BDFEA2000EF0FEA /* UIControl+Spec.h in Headers */ = {isa = PBXBuildFile; fileRef = AEBCCC75168B9B5F0056EE83 /* UIControl+Spec.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A6649D1BDFEA2000EF0FEA /* UIImage+Spec.h in Headers */ = {isa = PBXBuildFile; fileRef = AEBCCC77168B9B5F0056EE83 /* UIImage+Spec.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A6649E1BDFEA2000EF0FEA /* UISegmentedControl+Spec.h in Headers */ = {isa = PBXBuildFile; fileRef = 8490A16E1A7D1323001835AB /* UISegmentedControl+Spec.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A664A11BDFEA2000EF0FEA /* UITabBarController+Spec.h in Headers */ = {isa = PBXBuildFile; fileRef = AE86BD40179C7C910057DEAE /* UITabBarController+Spec.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A664A21BDFEA2000EF0FEA /* UITableViewCell+Spec.h in Headers */ = {isa = PBXBuildFile; fileRef = AEBCCC79168B9B5F0056EE83 /* UITableViewCell+Spec.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A664A31BDFEA2000EF0FEA /* UIView+Spec.h in Headers */ = {isa = PBXBuildFile; fileRef = AEBCCC7B168B9B5F0056EE83 /* UIView+Spec.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A664A41BDFEA2000EF0FEA /* UIWindow+Spec.h in Headers */ = {isa = PBXBuildFile; fileRef = AE53E2EA18075A810037C32E /* UIWindow+Spec.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34A664A51BDFEA5C00EF0FEA /* NSAttributedString+PivotalCoreKit_UIKit.m in Sources */ = {isa = PBXBuildFile; fileRef = FA91AAA0186737B700925A6B /* NSAttributedString+PivotalCoreKit_UIKit.m */; };
+		34A664A61BDFEA5C00EF0FEA /* NSString+PivotalCoreKit_UIKit.m in Sources */ = {isa = PBXBuildFile; fileRef = FA91AA90186725CC00925A6B /* NSString+PivotalCoreKit_UIKit.m */; };
+		34A664A71BDFEA5C00EF0FEA /* UIBarButtonItem+Button.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBCCBCE168B96C80056EE83 /* UIBarButtonItem+Button.m */; };
+		34A664A81BDFEA5C00EF0FEA /* UIImage+PivotalCore.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBCCBD0168B96C80056EE83 /* UIImage+PivotalCore.m */; };
+		34A664A91BDFEA5C00EF0FEA /* UIImageView+PivotalCore.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1A5169186290C800C22BA8 /* UIImageView+PivotalCore.m */; };
+		34A664AA1BDFEA5C00EF0FEA /* UIView+PCKNibHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = AEDABB6018E9DCC9004E6626 /* UIView+PCKNibHelpers.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		34A664AB1BDFEA5C00EF0FEA /* UIView+PivotalCore.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBCCBD2168B96C80056EE83 /* UIView+PivotalCore.m */; };
+		34A664AC1BDFEA6000EF0FEA /* __PCKSilenceLinkerWarnings.m in Sources */ = {isa = PBXBuildFile; fileRef = B86B686A1A132EF700F283F7 /* __PCKSilenceLinkerWarnings.m */; };
+		34A664AD1BDFEA6C00EF0FEA /* PCKPrototypeCellInstantiatingDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3490AFEA19A3C0A800DAA8E3 /* PCKPrototypeCellInstantiatingDataSource.m */; };
+		34A664AE1BDFEA6E00EF0FEA /* PCKMethodRedirector.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF5D45C1A030D2E00C4DC3D /* PCKMethodRedirector.m */; };
+		34A664AF1BDFEA7300EF0FEA /* UIBarButtonItem+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = B8C62E6C16BC03420009CDAD /* UIBarButtonItem+Spec.m */; };
+		34A664B01BDFEA7300EF0FEA /* UICollectionReusableView+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = 34BDAC7619A42C5F0085B45A /* UICollectionReusableView+Spec.m */; };
+		34A664B11BDFEA7300EF0FEA /* UICollectionViewCell+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = FA07586918120D19001817BF /* UICollectionViewCell+Spec.m */; };
+		34A664B21BDFEA7300EF0FEA /* UIControl+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBCCC76168B9B5F0056EE83 /* UIControl+Spec.m */; };
+		34A664B31BDFEA7300EF0FEA /* UIImage+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBCCC78168B9B5F0056EE83 /* UIImage+Spec.m */; };
+		34A664B41BDFEA7300EF0FEA /* UISegmentedControl+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = 8490A16F1A7D1323001835AB /* UISegmentedControl+Spec.m */; };
+		34A664B71BDFEA7300EF0FEA /* UITabBarController+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE86BD41179C7C910057DEAE /* UITabBarController+Spec.m */; };
+		34A664B81BDFEA7300EF0FEA /* UITableViewCell+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBCCC7A168B9B5F0056EE83 /* UITableViewCell+Spec.m */; };
+		34A664B91BDFEA7300EF0FEA /* UIView+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBCCC7C168B9B5F0056EE83 /* UIView+Spec.m */; };
+		34A664BA1BDFEA7300EF0FEA /* UIWindow+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE53E2EB18075A810037C32E /* UIWindow+Spec.m */; };
+		34A664BC1BDFEA8600EF0FEA /* UIAlertAction+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE062BC01A4323A800AF8D33 /* UIAlertAction+Spec.m */; };
+		34A664BD1BDFEA8600EF0FEA /* UIAlertController+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE61C1311A40B95E00C97245 /* UIAlertController+Spec.m */; };
+		34A664BF1BDFEA8600EF0FEA /* UIGestureRecognizer+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = DE99CB8E2255BDC5D711130D /* UIGestureRecognizer+Spec.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		34A664C11BDFEA8600EF0FEA /* UINavigationController+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBB53BE19F711340032947D /* UINavigationController+Spec.m */; };
+		34A664C21BDFEA8600EF0FEA /* UIPopoverController+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB6662B18C6681A00B09C00 /* UIPopoverController+Spec.m */; };
+		34A664C41BDFEA8600EF0FEA /* UIView+StubbedAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = AE89900218071F3A00DDB948 /* UIView+StubbedAnimation.m */; };
+		34A664C51BDFEA8600EF0FEA /* UIView+StubbedGestureRecognizers.m in Sources */ = {isa = PBXBuildFile; fileRef = AECB46AB1A3FBA9E00398720 /* UIView+StubbedGestureRecognizers.m */; };
+		34A664C61BDFEA8600EF0FEA /* UIViewController+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AEC40CB2174C22BD00474D2D /* UIViewController+Spec.m */; };
+		34A664C81BDFEA8600EF0FEA /* UIApplication+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7E72161AF2AE9A000E48EE /* UIApplication+Spec.m */; };
+		34A664D21BE027B600EF0FEA /* UIKit_PivotalCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34A6645D1BDFE6AD00EF0FEA /* UIKit_PivotalCore.framework */; };
+		34A664D81BE027C200EF0FEA /* UIKit_PivotalSpecHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34A6646A1BDFE6D400EF0FEA /* UIKit_PivotalSpecHelper.framework */; };
+		34A664D91BE027C700EF0FEA /* UIKit_PivotalSpecHelperStubs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34A664771BDFE6E500EF0FEA /* UIKit_PivotalSpecHelperStubs.framework */; };
+		34A664DE1BE0291100EF0FEA /* Cedar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEBCCC01168B98110056EE83 /* Cedar.framework */; };
+		34A664DF1BE0291C00EF0FEA /* NSAttributedString+PivotalCoreKit_UIKitSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA91AAA31867383E00925A6B /* NSAttributedString+PivotalCoreKit_UIKitSpec.mm */; };
+		34A664E01BE0291C00EF0FEA /* NSString+PivotalCoreKit_UIKitSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA91AA9D1867260400925A6B /* NSString+PivotalCoreKit_UIKitSpec.mm */; };
+		34A664E11BE0291C00EF0FEA /* UIBarButtonItem+ButtonSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEBCCC92168B9C530056EE83 /* UIBarButtonItem+ButtonSpec.mm */; };
+		34A664E21BE0291C00EF0FEA /* UIBarButtonItemSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = B8C62E6E16BC04230009CDAD /* UIBarButtonItemSpec+Spec.mm */; };
+		34A664E31BE0291C00EF0FEA /* UICollectionReusableViewSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34BDAC7819A42C990085B45A /* UICollectionReusableViewSpec+Spec.mm */; };
+		34A664E41BE0291C00EF0FEA /* UICollectionViewCellSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA07586618120BB1001817BF /* UICollectionViewCellSpec+Spec.mm */; };
+		34A664E51BE0291C00EF0FEA /* UIControlSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEC6D7FD16963F3500E10C7B /* UIControlSpec+Spec.mm */; };
+		34A664E61BE0291C00EF0FEA /* UIGestureRecognizerSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEF775BB18316DE4000AF17B /* UIGestureRecognizerSpec+Spec.mm */; };
+		34A664E71BE0291C00EF0FEA /* UIImage+PivotalCoreSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEBCCC93168B9C530056EE83 /* UIImage+PivotalCoreSpec.mm */; };
+		34A664E81BE0291C00EF0FEA /* UIImageSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEBCCC94168B9C530056EE83 /* UIImageSpec+Spec.mm */; };
+		34A664E91BE0291C00EF0FEA /* UIImageView+PivotalCoreSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA1A5178186290E600C22BA8 /* UIImageView+PivotalCoreSpec.mm */; };
+		34A664EA1BE0291C00EF0FEA /* UISegmentedControlSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8490A16B1A7D0FCC001835AB /* UISegmentedControlSpec+Spec.mm */; };
+		34A664ED1BE0291C00EF0FEA /* UITabBarControllerSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AED4BE431780C8C800390AFD /* UITabBarControllerSpec+Spec.mm */; };
+		34A664EE1BE0291C00EF0FEA /* UITableViewCellSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE1FBEA217D15A4100B0F03B /* UITableViewCellSpec+Spec.mm */; };
+		34A664EF1BE0291C00EF0FEA /* UIView+PCKNibHelpersSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEDABB6218E9DD23004E6626 /* UIView+PCKNibHelpersSpec.mm */; };
+		34A664F01BE0291C00EF0FEA /* UIView+PivotalCoreSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEBCCC95168B9C530056EE83 /* UIView+PivotalCoreSpec.mm */; };
+		34A664F11BE0291C00EF0FEA /* UIViewSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE9530691832EE9300C802E9 /* UIViewSpec+Spec.mm */; };
+		34A664F21BE0291C00EF0FEA /* UIWindowSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE53E2F518075B080037C32E /* UIWindowSpec+Spec.mm */; };
+		34A664F51BE0292700EF0FEA /* UIAlertActionSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE062BCE1A4323CF00AF8D33 /* UIAlertActionSpec+Spec.mm */; };
+		34A664F61BE0292700EF0FEA /* UIAlertControllerSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE61C11F1A40B59000C97245 /* UIAlertControllerSpec+Spec.mm */; };
+		34A664F81BE0292700EF0FEA /* UIApplicationSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE7E72061AF2ADFF000E48EE /* UIApplicationSpec+Spec.mm */; };
+		34A664FA1BE0292700EF0FEA /* UINavigationControllerSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEEDC56719FAC2E2004AFFE9 /* UINavigationControllerSpec+Spec.mm */; };
+		34A664FB1BE0292700EF0FEA /* UIPopoverControllerSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEB6663C18C6685F00B09C00 /* UIPopoverControllerSpec+Spec.mm */; };
+		34A664FD1BE0292700EF0FEA /* UIViewControllerSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE7B279517CFD67600904F64 /* UIViewControllerSpec+Spec.mm */; };
+		34A664FE1BE0292700EF0FEA /* UIViewSpec+StubbedAnimations.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE898FF718071E2B00DDB948 /* UIViewSpec+StubbedAnimations.mm */; };
+		34A665011BE0561C00EF0FEA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34A665001BE0561A00EF0FEA /* UIKit.framework */; };
+		34A665031BE0589B00EF0FEA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34A665021BE0589B00EF0FEA /* CoreGraphics.framework */; };
+		34A665071BE058E100EF0FEA /* ChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEDABBB618EA214A004E6626 /* ChildViewController.m */; };
+		34A6650A1BE058F400EF0FEA /* logo-small.png in Resources */ = {isa = PBXBuildFile; fileRef = AE3847AA168BA0B300C99B55 /* logo-small.png */; };
+		34A6650B1BE058F400EF0FEA /* pivotallabs-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = AE3847AB168BA0B300C99B55 /* pivotallabs-logo.png */; };
+		34A6650C1BE058FB00EF0FEA /* InnerView.m in Sources */ = {isa = PBXBuildFile; fileRef = AEDABB6718E9DE3B004E6626 /* InnerView.m */; };
+		34A6650E1BE0590100EF0FEA /* MainController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEDABBB918EA214A004E6626 /* MainController.m */; };
+		34A665111BE0590D00EF0FEA /* OuterView.m in Sources */ = {isa = PBXBuildFile; fileRef = AEDABB6A18E9DFC7004E6626 /* OuterView.m */; };
+		34A665131BE0591300EF0FEA /* PrototypeCellObjects.m in Sources */ = {isa = PBXBuildFile; fileRef = 34BDAC7B19A42D1E0085B45A /* PrototypeCellObjects.m */; };
+		34A665151BE0591900EF0FEA /* Target.m in Sources */ = {isa = PBXBuildFile; fileRef = B8C62E7116BC04940009CDAD /* Target.m */; };
+		34A665231BE05AC900EF0FEA /* ChildViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34A6651A1BE05AC900EF0FEA /* ChildViewController.xib */; };
+		34A665251BE05AC900EF0FEA /* InnerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34A6651C1BE05AC900EF0FEA /* InnerView.xib */; };
+		34A665261BE05AC900EF0FEA /* MainController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34A6651D1BE05AC900EF0FEA /* MainController.xib */; };
+		34A665281BE05AC900EF0FEA /* OuterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34A6651F1BE05AC900EF0FEA /* OuterView.xib */; };
+		34A6652F1BE05D1800EF0FEA /* UIGestureRecognizer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34A6652E1BE05D1800EF0FEA /* UIGestureRecognizer.storyboard */; };
 		34BDAC6A19A3FCD90085B45A /* CollectionViewPrototypeCells.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34BDAC6919A3FCD90085B45A /* CollectionViewPrototypeCells.storyboard */; };
 		34BDAC7919A42C990085B45A /* UICollectionReusableViewSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34BDAC7819A42C990085B45A /* UICollectionReusableViewSpec+Spec.mm */; };
 		34BDAC7C19A42D1E0085B45A /* PrototypeCellObjects.m in Sources */ = {isa = PBXBuildFile; fileRef = 34BDAC7B19A42D1E0085B45A /* PrototypeCellObjects.m */; };
@@ -160,13 +280,10 @@
 		DE99CA8267EEACF8EE9A941F /* UIGestureRecognizer+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = DE99CB8E2255BDC5D711130D /* UIGestureRecognizer+Spec.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		FA07586B18120E47001817BF /* UICollectionViewCellSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA07586618120BB1001817BF /* UICollectionViewCellSpec+Spec.mm */; };
 		FA1A516A186290C800C22BA8 /* UIImageView+PivotalCore.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1A5169186290C800C22BA8 /* UIImageView+PivotalCore.m */; };
-		FA1A516B186290C800C22BA8 /* UIImageView+PivotalCore.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1A5169186290C800C22BA8 /* UIImageView+PivotalCore.m */; };
 		FA1A5179186290E600C22BA8 /* UIImageView+PivotalCoreSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA1A5178186290E600C22BA8 /* UIImageView+PivotalCoreSpec.mm */; };
 		FA91AA91186725CC00925A6B /* NSString+PivotalCoreKit_UIKit.m in Sources */ = {isa = PBXBuildFile; fileRef = FA91AA90186725CC00925A6B /* NSString+PivotalCoreKit_UIKit.m */; };
-		FA91AA92186725CC00925A6B /* NSString+PivotalCoreKit_UIKit.m in Sources */ = {isa = PBXBuildFile; fileRef = FA91AA90186725CC00925A6B /* NSString+PivotalCoreKit_UIKit.m */; };
 		FA91AA9E1867260400925A6B /* NSString+PivotalCoreKit_UIKitSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA91AA9D1867260400925A6B /* NSString+PivotalCoreKit_UIKitSpec.mm */; };
 		FA91AAA1186737B700925A6B /* NSAttributedString+PivotalCoreKit_UIKit.m in Sources */ = {isa = PBXBuildFile; fileRef = FA91AAA0186737B700925A6B /* NSAttributedString+PivotalCoreKit_UIKit.m */; };
-		FA91AAA2186737B700925A6B /* NSAttributedString+PivotalCoreKit_UIKit.m in Sources */ = {isa = PBXBuildFile; fileRef = FA91AAA0186737B700925A6B /* NSAttributedString+PivotalCoreKit_UIKit.m */; };
 		FA91AAA41867383E00925A6B /* NSAttributedString+PivotalCoreKit_UIKitSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA91AAA31867383E00925A6B /* NSAttributedString+PivotalCoreKit_UIKitSpec.mm */; };
 		FAF932D8192703490076C733 /* UISwitch+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF932CC192703280076C733 /* UISwitch+Spec.m */; };
 		FAF932DC192704750076C733 /* UISwitchSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = FAF932D9192703AA0076C733 /* UISwitchSpec+Spec.mm */; };
@@ -235,6 +352,90 @@
 			proxyType = 1;
 			remoteGlobalIDString = AEBCCC33168B99ED0056EE83;
 			remoteInfo = "UIKit-StaticLibSpec";
+		};
+		346B40F51BE06F58002A390E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEBCCBA7168B95A00056EE83 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 346B40E01BE06F4E002A390E;
+			remoteInfo = "UIKit-tvOS SpecHost";
+		};
+		34A664481BDFE5D100EF0FEA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEBCCBF4168B98100056EE83 /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AE4864F81B067620005DB302;
+			remoteInfo = "Cedar-iOS";
+		};
+		34A6644A1BDFE5D100EF0FEA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEBCCBF4168B98100056EE83 /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 346261DF1B995239002CAEBD;
+			remoteInfo = "Cedar-watchOS";
+		};
+		34A6644C1BDFE5D100EF0FEA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEBCCBF4168B98100056EE83 /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 34D7C3CA1BB9747400E8E523;
+			remoteInfo = "Cedar-tvOS";
+		};
+		34A6644E1BDFE5D100EF0FEA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEBCCBF4168B98100056EE83 /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AE03FBE91B06C33B00013784;
+			remoteInfo = "Cedar-iOS Specs";
+		};
+		34A664501BDFE5D100EF0FEA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEBCCBF4168B98100056EE83 /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 34852D211BBE35FF0072D249;
+			remoteInfo = "Cedar-watchOS HostApp";
+		};
+		34A664521BDFE5D100EF0FEA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEBCCBF4168B98100056EE83 /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 346262781B99C1DB002CAEBD;
+			remoteInfo = "Cedar-watchOS Specs";
+		};
+		34A664541BDFE5D100EF0FEA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEBCCBF4168B98100056EE83 /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 346262841B99C1DC002CAEBD;
+			remoteInfo = "Cedar-watchOS Specs Extension";
+		};
+		34A664561BDFE5D100EF0FEA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEBCCBF4168B98100056EE83 /* Cedar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 34D7C4691BB9B71600E8E523;
+			remoteInfo = "Cedar-tvOS SpecBundle";
+		};
+		34A664D31BE027B600EF0FEA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEBCCBA7168B95A00056EE83 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 34A6645C1BDFE6AD00EF0FEA;
+			remoteInfo = "UIKit+PivotalCore-tvOS";
+		};
+		34A664DA1BE027D200EF0FEA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEBCCBA7168B95A00056EE83 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 34A664691BDFE6D400EF0FEA;
+			remoteInfo = "UIKit+PivotalSpecHelper-tvOS";
+		};
+		34A664DC1BE027D500EF0FEA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEBCCBA7168B95A00056EE83 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 34A664761BDFE6E500EF0FEA;
+			remoteInfo = "UIKit+PivotalSpecHelperStubs-tvOS";
 		};
 		AE3847B1168BA27D00C99B55 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -423,9 +624,25 @@
 		22601B5A16BA263A00A807CB /* UIKit+PivotalSpecHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIKit+PivotalSpecHelper.h"; sourceTree = "<group>"; };
 		346281C518D7AC1300E9C952 /* UIGestureRecognizer.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UIGestureRecognizer.storyboard; sourceTree = "<group>"; };
 		3466C0941B97A3C500CBAB59 /* UIKit-StaticLibSpecBundle.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "UIKit-StaticLibSpecBundle.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		346B40D41BE05FAC002A390E /* NavigationStackExample.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NavigationStackExample.storyboard; sourceTree = "<group>"; };
+		346B40D61BE06004002A390E /* CollectionViewPrototypeCells.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CollectionViewPrototypeCells.storyboard; sourceTree = "<group>"; };
+		346B40D81BE06175002A390E /* TableViewPrototypeCells.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TableViewPrototypeCells.storyboard; sourceTree = "<group>"; };
+		346B40DA1BE0620E002A390E /* UITableViewCell.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UITableViewCell.storyboard; sourceTree = "<group>"; };
+		346B40E11BE06F4E002A390E /* UIKit-tvOS SpecHost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UIKit-tvOS SpecHost.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3490AFE919A3C0A800DAA8E3 /* PCKPrototypeCellInstantiatingDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCKPrototypeCellInstantiatingDataSource.h; sourceTree = "<group>"; };
 		3490AFEA19A3C0A800DAA8E3 /* PCKPrototypeCellInstantiatingDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCKPrototypeCellInstantiatingDataSource.m; sourceTree = "<group>"; };
 		3490AFEC19A3CF4000DAA8E3 /* TableViewPrototypeCells.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TableViewPrototypeCells.storyboard; sourceTree = "<group>"; };
+		34A6645D1BDFE6AD00EF0FEA /* UIKit_PivotalCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UIKit_PivotalCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		34A6646A1BDFE6D400EF0FEA /* UIKit_PivotalSpecHelper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UIKit_PivotalSpecHelper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		34A664771BDFE6E500EF0FEA /* UIKit_PivotalSpecHelperStubs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UIKit_PivotalSpecHelperStubs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		34A664CD1BE027B500EF0FEA /* UIKit-tvOS SpecBundle.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "UIKit-tvOS SpecBundle.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		34A665001BE0561A00EF0FEA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS9.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		34A665021BE0589B00EF0FEA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS9.0.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		34A6651A1BE05AC900EF0FEA /* ChildViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChildViewController.xib; sourceTree = "<group>"; };
+		34A6651C1BE05AC900EF0FEA /* InnerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InnerView.xib; sourceTree = "<group>"; };
+		34A6651D1BE05AC900EF0FEA /* MainController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainController.xib; sourceTree = "<group>"; };
+		34A6651F1BE05AC900EF0FEA /* OuterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OuterView.xib; sourceTree = "<group>"; };
+		34A6652E1BE05D1800EF0FEA /* UIGestureRecognizer.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UIGestureRecognizer.storyboard; sourceTree = "<group>"; };
 		34BDAC6919A3FCD90085B45A /* CollectionViewPrototypeCells.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CollectionViewPrototypeCells.storyboard; sourceTree = "<group>"; };
 		34BDAC7519A42C5F0085B45A /* UICollectionReusableView+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionReusableView+Spec.h"; sourceTree = "<group>"; };
 		34BDAC7619A42C5F0085B45A /* UICollectionReusableView+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionReusableView+Spec.m"; sourceTree = "<group>"; };
@@ -443,8 +660,7 @@
 		AE062BBF1A4323A800AF8D33 /* UIAlertAction+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertAction+Spec.h"; sourceTree = "<group>"; };
 		AE062BC01A4323A800AF8D33 /* UIAlertAction+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertAction+Spec.m"; sourceTree = "<group>"; };
 		AE062BCE1A4323CF00AF8D33 /* UIAlertActionSpec+Spec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIAlertActionSpec+Spec.mm"; sourceTree = "<group>"; };
-		AE118AA318D6B57000C90D6B /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		AE118AC118D6B63900C90D6B /* BundleSpecLoader.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BundleSpecLoader.mm; sourceTree = "<group>"; };
+		AE118AC118D6B63900C90D6B /* BundleSpecLoader.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = BundleSpecLoader.mm; path = Spec/BundleSpecLoader.mm; sourceTree = SOURCE_ROOT; };
 		AE118AD918D6BB6700C90D6B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AE118ADB18D6BB6D00C90D6B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		AE1FBEA217D15A4100B0F03B /* UITableViewCellSpec+Spec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UITableViewCellSpec+Spec.mm"; sourceTree = "<group>"; };
@@ -466,7 +682,7 @@
 		AE7E72161AF2AE9A000E48EE /* UIApplication+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+Spec.m"; sourceTree = "<group>"; };
 		AE86BD40179C7C910057DEAE /* UITabBarController+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBarController+Spec.h"; sourceTree = "<group>"; };
 		AE86BD41179C7C910057DEAE /* UITabBarController+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBarController+Spec.m"; sourceTree = "<group>"; };
-		AE86BD4D179C7DAD0057DEAE /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
+		AE86BD4D179C7DAD0057DEAE /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		AE898FF718071E2B00DDB948 /* UIViewSpec+StubbedAnimations.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIViewSpec+StubbedAnimations.mm"; sourceTree = "<group>"; };
 		AE89900218071F3A00DDB948 /* UIView+StubbedAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+StubbedAnimation.m"; sourceTree = "<group>"; };
 		AE9530691832EE9300C802E9 /* UIViewSpec+Spec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIViewSpec+Spec.mm"; sourceTree = "<group>"; };
@@ -486,8 +702,6 @@
 		AEBCCBF4168B98100056EE83 /* Cedar.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Cedar.xcodeproj; path = Cedar/Cedar.xcodeproj; sourceTree = "<group>"; };
 		AEBCCC24168B999F0056EE83 /* libUIKit+PivotalCore-StaticLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libUIKit+PivotalCore-StaticLib.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEBCCC34168B99ED0056EE83 /* UIKit-StaticLibSpec.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UIKit-StaticLibSpec.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		AEBCCC36168B99ED0056EE83 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		AEBCCC39168B99ED0056EE83 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
 		AEBCCC64168B9AF10056EE83 /* libUIKit+PivotalSpecHelper-StaticLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libUIKit+PivotalSpecHelper-StaticLib.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEBCCC75168B9B5F0056EE83 /* UIControl+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+Spec.h"; sourceTree = "<group>"; };
 		AEBCCC76168B9B5F0056EE83 /* UIControl+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIControl+Spec.m"; sourceTree = "<group>"; };
@@ -575,6 +789,47 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		346B40DE1BE06F4E002A390E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		34A664591BDFE6AD00EF0FEA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		34A664661BDFE6D400EF0FEA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		34A664731BDFE6E500EF0FEA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		34A664CA1BE027B500EF0FEA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34A665031BE0589B00EF0FEA /* CoreGraphics.framework in Frameworks */,
+				34A665011BE0561C00EF0FEA /* UIKit.framework in Frameworks */,
+				34A664DE1BE0291100EF0FEA /* Cedar.framework in Frameworks */,
+				34A664D91BE027C700EF0FEA /* UIKit_PivotalSpecHelperStubs.framework in Frameworks */,
+				34A664D81BE027C200EF0FEA /* UIKit_PivotalSpecHelper.framework in Frameworks */,
+				34A664D21BE027B600EF0FEA /* UIKit_PivotalCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AEBCCC21168B999F0056EE83 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -627,9 +882,26 @@
 			path = Support;
 			sourceTree = "<group>";
 		};
+		34A665181BE059F700EF0FEA /* tvOS */ = {
+			isa = PBXGroup;
+			children = (
+				34A6651A1BE05AC900EF0FEA /* ChildViewController.xib */,
+				346B40D61BE06004002A390E /* CollectionViewPrototypeCells.storyboard */,
+				34A6651C1BE05AC900EF0FEA /* InnerView.xib */,
+				34A6651D1BE05AC900EF0FEA /* MainController.xib */,
+				346B40D41BE05FAC002A390E /* NavigationStackExample.storyboard */,
+				34A6651F1BE05AC900EF0FEA /* OuterView.xib */,
+				346B40D81BE06175002A390E /* TableViewPrototypeCells.storyboard */,
+				34A6652E1BE05D1800EF0FEA /* UIGestureRecognizer.storyboard */,
+				346B40DA1BE0620E002A390E /* UITableViewCell.storyboard */,
+			);
+			path = tvOS;
+			sourceTree = "<group>";
+		};
 		AE3847A5168BA07C00C99B55 /* Fixtures */ = {
 			isa = PBXGroup;
 			children = (
+				34A665181BE059F700EF0FEA /* tvOS */,
 				AE3847A6168BA0B300C99B55 /* AWebViewController.h */,
 				AE3847A7168BA0B300C99B55 /* AWebViewController.m */,
 				AE3847A8168BA0B300C99B55 /* AWebViewController.xib */,
@@ -688,6 +960,11 @@
 				AEBCCC64168B9AF10056EE83 /* libUIKit+PivotalSpecHelper-StaticLib.a */,
 				AEC40C89174C203700474D2D /* libUIKit+PivotalSpecHelperStubs-StaticLib.a */,
 				3466C0941B97A3C500CBAB59 /* UIKit-StaticLibSpecBundle.xctest */,
+				34A6645D1BDFE6AD00EF0FEA /* UIKit_PivotalCore.framework */,
+				34A6646A1BDFE6D400EF0FEA /* UIKit_PivotalSpecHelper.framework */,
+				34A664771BDFE6E500EF0FEA /* UIKit_PivotalSpecHelperStubs.framework */,
+				34A664CD1BE027B500EF0FEA /* UIKit-tvOS SpecBundle.xctest */,
+				346B40E11BE06F4E002A390E /* UIKit-tvOS SpecHost.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -708,7 +985,6 @@
 				3490AFDE19A3C01A00DAA8E3 /* Support */,
 				AEBCCC70168B9B5F0056EE83 /* Extensions */,
 				AEC40C95174C21AC00474D2D /* Stubs */,
-				AE118AC118D6B63900C90D6B /* BundleSpecLoader.mm */,
 				22601B5A16BA263A00A807CB /* UIKit+PivotalSpecHelper.h */,
 				AEC40CB9174C230800474D2D /* UIKit+PivotalSpecHelperStubs.h */,
 			);
@@ -722,6 +998,7 @@
 				AE3847A5168BA07C00C99B55 /* Fixtures */,
 				AEC40CBD174C24CF00474D2D /* Stubs */,
 				AE86BD4D179C7DAD0057DEAE /* Default-568h@2x.png */,
+				AE118AC118D6B63900C90D6B /* BundleSpecLoader.mm */,
 				AEBCCC97168B9C530056EE83 /* main.m */,
 			);
 			path = Spec;
@@ -751,12 +1028,11 @@
 		AEBCCBE6168B97DD0056EE83 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				AE118ADB18D6BB6D00C90D6B /* CoreGraphics.framework */,
-				AE118AD918D6BB6700C90D6B /* UIKit.framework */,
 				AEBCCBE7168B97DD0056EE83 /* Foundation.framework */,
-				AEBCCC36168B99ED0056EE83 /* UIKit.framework */,
-				AEBCCC39168B99ED0056EE83 /* CoreGraphics.framework */,
-				AE118AA318D6B57000C90D6B /* SenTestingKit.framework */,
+				AE118ADB18D6BB6D00C90D6B /* CoreGraphics.framework */,
+				34A665021BE0589B00EF0FEA /* CoreGraphics.framework */,
+				34A665001BE0561A00EF0FEA /* UIKit.framework */,
+				AE118AD918D6BB6700C90D6B /* UIKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -918,6 +1194,61 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		34A6645A1BDFE6AD00EF0FEA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34A664851BDFE99D00EF0FEA /* UIView+PCKNibHelpers.h in Headers */,
+				34A664861BDFE99D00EF0FEA /* UIView+PivotalCore.h in Headers */,
+				34A664841BDFE99D00EF0FEA /* UIImageView+PivotalCore.h in Headers */,
+				34A664801BDFE99D00EF0FEA /* NSAttributedString+PivotalCoreKit_UIKit.h in Headers */,
+				34A664821BDFE99D00EF0FEA /* UIBarButtonItem+Button.h in Headers */,
+				34A6647F1BDFE98700EF0FEA /* UIKit+PivotalCore.h in Headers */,
+				34A664811BDFE99D00EF0FEA /* NSString+PivotalCoreKit_UIKit.h in Headers */,
+				34A664831BDFE99D00EF0FEA /* UIImage+PivotalCore.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		34A664671BDFE6D400EF0FEA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34A6649E1BDFEA2000EF0FEA /* UISegmentedControl+Spec.h in Headers */,
+				34A664A31BDFEA2000EF0FEA /* UIView+Spec.h in Headers */,
+				34A664961BDFE9BE00EF0FEA /* UIKit+PivotalSpecHelper.h in Headers */,
+				34A6649C1BDFEA2000EF0FEA /* UIControl+Spec.h in Headers */,
+				34A6649D1BDFEA2000EF0FEA /* UIImage+Spec.h in Headers */,
+				34A664991BDFEA2000EF0FEA /* UIBarButtonItem+Spec.h in Headers */,
+				34A664A41BDFEA2000EF0FEA /* UIWindow+Spec.h in Headers */,
+				34A6649B1BDFEA2000EF0FEA /* UICollectionViewCell+Spec.h in Headers */,
+				34A664A21BDFEA2000EF0FEA /* UITableViewCell+Spec.h in Headers */,
+				34A664A11BDFEA2000EF0FEA /* UITabBarController+Spec.h in Headers */,
+				34A664981BDFEA1900EF0FEA /* PCKPrototypeCellInstantiatingDataSource.h in Headers */,
+				34A6649A1BDFEA2000EF0FEA /* UICollectionReusableView+Spec.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		34A664741BDFE6E500EF0FEA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34A664901BDFE9B300EF0FEA /* UIView+StubbedAnimation.h in Headers */,
+				34A664891BDFE9B300EF0FEA /* UIAlertAction+Spec.h in Headers */,
+				34A664921BDFE9B300EF0FEA /* UIViewController+Spec.h in Headers */,
+				34A6648A1BDFE9B300EF0FEA /* UIAlertController+Spec.h in Headers */,
+				34A6648E1BDFE9B300EF0FEA /* UIPopoverController+Spec.h in Headers */,
+				34A6648C1BDFE9B300EF0FEA /* UIGestureRecognizer+Spec.h in Headers */,
+				34A664941BDFE9B300EF0FEA /* UIApplication+Spec.h in Headers */,
+				34A664951BDFE9B700EF0FEA /* UIKit+PivotalSpecHelperStubs.h in Headers */,
+				34A664911BDFE9B300EF0FEA /* UIView+StubbedGestureRecognizers.h in Headers */,
+				34A664971BDFE9EB00EF0FEA /* PCKMethodRedirector.h in Headers */,
+				34A664881BDFE9B300EF0FEA /* UIActivityViewController+Spec.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
 		3466C0931B97A3C500CBAB59 /* UIKit-StaticLibSpecBundle */ = {
 			isa = PBXNativeTarget;
@@ -935,6 +1266,95 @@
 			name = "UIKit-StaticLibSpecBundle";
 			productName = "UIKit-StaticLibSpecBundle";
 			productReference = 3466C0941B97A3C500CBAB59 /* UIKit-StaticLibSpecBundle.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		346B40E01BE06F4E002A390E /* UIKit-tvOS SpecHost */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 346B40F21BE06F4E002A390E /* Build configuration list for PBXNativeTarget "UIKit-tvOS SpecHost" */;
+			buildPhases = (
+				346B40DD1BE06F4E002A390E /* Sources */,
+				346B40DE1BE06F4E002A390E /* Frameworks */,
+				346B40DF1BE06F4E002A390E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "UIKit-tvOS SpecHost";
+			productName = "UIKit-tvOS SpecHost";
+			productReference = 346B40E11BE06F4E002A390E /* UIKit-tvOS SpecHost.app */;
+			productType = "com.apple.product-type.application";
+		};
+		34A6645C1BDFE6AD00EF0FEA /* UIKit+PivotalCore-tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 34A664621BDFE6AD00EF0FEA /* Build configuration list for PBXNativeTarget "UIKit+PivotalCore-tvOS" */;
+			buildPhases = (
+				34A664581BDFE6AD00EF0FEA /* Sources */,
+				34A664591BDFE6AD00EF0FEA /* Frameworks */,
+				34A6645A1BDFE6AD00EF0FEA /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "UIKit+PivotalCore-tvOS";
+			productName = "UIKit+PivotalCore-watchOS";
+			productReference = 34A6645D1BDFE6AD00EF0FEA /* UIKit_PivotalCore.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		34A664691BDFE6D400EF0FEA /* UIKit+PivotalSpecHelper-tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 34A6646F1BDFE6D500EF0FEA /* Build configuration list for PBXNativeTarget "UIKit+PivotalSpecHelper-tvOS" */;
+			buildPhases = (
+				34A664651BDFE6D400EF0FEA /* Sources */,
+				34A664661BDFE6D400EF0FEA /* Frameworks */,
+				34A664671BDFE6D400EF0FEA /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "UIKit+PivotalSpecHelper-tvOS";
+			productName = "UIKit+PivotalSpecHelper-watchOS";
+			productReference = 34A6646A1BDFE6D400EF0FEA /* UIKit_PivotalSpecHelper.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		34A664761BDFE6E500EF0FEA /* UIKit+PivotalSpecHelperStubs-tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 34A6647C1BDFE6E600EF0FEA /* Build configuration list for PBXNativeTarget "UIKit+PivotalSpecHelperStubs-tvOS" */;
+			buildPhases = (
+				34A664721BDFE6E500EF0FEA /* Sources */,
+				34A664731BDFE6E500EF0FEA /* Frameworks */,
+				34A664741BDFE6E500EF0FEA /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "UIKit+PivotalSpecHelperStubs-tvOS";
+			productName = "UIKit+PivotalSpecHelperStubs-watchOS";
+			productReference = 34A664771BDFE6E500EF0FEA /* UIKit_PivotalSpecHelperStubs.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		34A664CC1BE027B500EF0FEA /* UIKit-tvOS SpecBundle */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 34A664D51BE027B600EF0FEA /* Build configuration list for PBXNativeTarget "UIKit-tvOS SpecBundle" */;
+			buildPhases = (
+				34A664C91BE027B500EF0FEA /* Sources */,
+				34A664CA1BE027B500EF0FEA /* Frameworks */,
+				34A665051BE058D500EF0FEA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				34A664DD1BE027D500EF0FEA /* PBXTargetDependency */,
+				34A664DB1BE027D200EF0FEA /* PBXTargetDependency */,
+				34A664D41BE027B600EF0FEA /* PBXTargetDependency */,
+				346B40F61BE06F58002A390E /* PBXTargetDependency */,
+			);
+			name = "UIKit-tvOS SpecBundle";
+			productName = "UIKit-tvOS SpecBundle";
+			productReference = 34A664CD1BE027B500EF0FEA /* UIKit-tvOS SpecBundle.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		AEBCCC23168B999F0056EE83 /* UIKit+PivotalCore-StaticLib */ = {
@@ -1015,12 +1435,28 @@
 		AEBCCBA7168B95A00056EE83 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "Pivotal Labs";
 				TargetAttributes = {
 					3466C0931B97A3C500CBAB59 = {
 						CreatedOnToolsVersion = 7.0;
 						TestTargetID = AEBCCC33168B99ED0056EE83;
+					};
+					346B40E01BE06F4E002A390E = {
+						CreatedOnToolsVersion = 7.1;
+					};
+					34A6645C1BDFE6AD00EF0FEA = {
+						CreatedOnToolsVersion = 7.1;
+					};
+					34A664691BDFE6D400EF0FEA = {
+						CreatedOnToolsVersion = 7.1;
+					};
+					34A664761BDFE6E500EF0FEA = {
+						CreatedOnToolsVersion = 7.1;
+					};
+					34A664CC1BE027B500EF0FEA = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = 346B40E01BE06F4E002A390E;
 					};
 				};
 			};
@@ -1030,6 +1466,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = AEBCCBA5168B95A00056EE83;
 			productRefGroup = AEBCCBB2168B95A00056EE83 /* Products */;
@@ -1045,10 +1482,15 @@
 				AEBCCC23168B999F0056EE83 /* UIKit+PivotalCore-StaticLib */,
 				AEBCCC63168B9AF10056EE83 /* UIKit+PivotalSpecHelper-StaticLib */,
 				AEC40C88174C203700474D2D /* UIKit+PivotalSpecHelperStubs-StaticLib */,
+				34A6645C1BDFE6AD00EF0FEA /* UIKit+PivotalCore-tvOS */,
+				34A664691BDFE6D400EF0FEA /* UIKit+PivotalSpecHelper-tvOS */,
+				34A664761BDFE6E500EF0FEA /* UIKit+PivotalSpecHelperStubs-tvOS */,
 				AEBCCC33168B99ED0056EE83 /* UIKit-StaticLibSpec */,
 				B866FC0716B48C8200317E32 /* UIKit+PivotalSpecHelper-iOS */,
 				AEC40CC2174C283400474D2D /* UIKit+PivotalSpecHelperStubs-iOS */,
 				3466C0931B97A3C500CBAB59 /* UIKit-StaticLibSpecBundle */,
+				346B40E01BE06F4E002A390E /* UIKit-tvOS SpecHost */,
+				34A664CC1BE027B500EF0FEA /* UIKit-tvOS SpecBundle */,
 			);
 		};
 /* End PBXProject section */
@@ -1117,14 +1559,14 @@
 			remoteRef = AEBCCC00168B98110056EE83 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		AEBCCC03168B98110056EE83 /* Cedar OS X Specs */ = {
+		AEBCCC03168B98110056EE83 /* Cedar-OSX Specs */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.executable";
 			path = "Cedar-OSX Specs";
 			remoteRef = AEBCCC02168B98110056EE83 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		AEBCCC05168B98110056EE83 /* Cedar OS X FocusedSpecs */ = {
+		AEBCCC05168B98110056EE83 /* Cedar-OSX FocusedSpecs */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.executable";
 			path = "Cedar-OSX FocusedSpecs";
@@ -1138,42 +1580,42 @@
 			remoteRef = AEBCCC06168B98110056EE83 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		AEBCCC09168B98110056EE83 /* Cedar iOS Specs.app */ = {
+		AEBCCC09168B98110056EE83 /* Cedar-iOS StaticLib Specs.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
 			path = "Cedar-iOS StaticLib Specs.app";
 			remoteRef = AEBCCC08168B98110056EE83 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		AEBCCC0B168B98110056EE83 /* Cedar iOS Host App.app */ = {
+		AEBCCC0B168B98110056EE83 /* Cedar-iOS HostApp.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
 			path = "Cedar-iOS HostApp.app";
 			remoteRef = AEBCCC0A168B98110056EE83 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		AEEECC31181F33C5006B52CD /* XCUnitAppTests.xctest */ = {
+		AEEECC31181F33C5006B52CD /* Cedar-iOS SpecBundle.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = "Cedar-iOS SpecBundle.xctest";
 			remoteRef = AEEECC30181F33C5006B52CD /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		AEF5D46D1A030D2F00C4DC3D /* Cedar OS X Host App.app */ = {
+		AEF5D46D1A030D2F00C4DC3D /* Cedar-OSX HostApp.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
 			path = "Cedar-OSX HostApp.app";
 			remoteRef = AEF5D46C1A030D2F00C4DC3D /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		AEF5D46F1A030D2F00C4DC3D /* Cedar OS X Host AppTests.xctest */ = {
+		AEF5D46F1A030D2F00C4DC3D /* Cedar-OSX SpecBundle.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = "Cedar-OSX SpecBundle.xctest";
 			remoteRef = AEF5D46E1A030D2F00C4DC3D /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		FA1A5177186290C900C22BA8 /* Cedar iOS FrameworkSpecs.app */ = {
+		FA1A5177186290C900C22BA8 /* Cedar-iOS StaticFrameworkSpecs.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
 			path = "Cedar-iOS StaticFrameworkSpecs.app";
@@ -1187,6 +1629,42 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		346B40DF1BE06F4E002A390E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				346B40FD1BE0714F002A390E /* OuterView.xib in Resources */,
+				346B40FC1BE0714F002A390E /* NavigationStackExample.storyboard in Resources */,
+				346B41021BE07230002A390E /* pivotallabs-logo.png in Resources */,
+				346B41001BE0714F002A390E /* UITableViewCell.storyboard in Resources */,
+				346B40FF1BE0714F002A390E /* UIGestureRecognizer.storyboard in Resources */,
+				346B40FB1BE0714F002A390E /* MainController.xib in Resources */,
+				346B40F91BE0714F002A390E /* CollectionViewPrototypeCells.storyboard in Resources */,
+				346B40F81BE0714F002A390E /* ChildViewController.xib in Resources */,
+				346B40FE1BE0714F002A390E /* TableViewPrototypeCells.storyboard in Resources */,
+				346B41011BE07230002A390E /* logo-small.png in Resources */,
+				346B40FA1BE0714F002A390E /* InnerView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		34A665051BE058D500EF0FEA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34A6650A1BE058F400EF0FEA /* logo-small.png in Resources */,
+				346B40D51BE05FAC002A390E /* NavigationStackExample.storyboard in Resources */,
+				34A665251BE05AC900EF0FEA /* InnerView.xib in Resources */,
+				346B40D71BE06004002A390E /* CollectionViewPrototypeCells.storyboard in Resources */,
+				346B40DB1BE0620E002A390E /* UITableViewCell.storyboard in Resources */,
+				346B40D91BE06175002A390E /* TableViewPrototypeCells.storyboard in Resources */,
+				34A6650B1BE058F400EF0FEA /* pivotallabs-logo.png in Resources */,
+				34A665231BE05AC900EF0FEA /* ChildViewController.xib in Resources */,
+				34A665261BE05AC900EF0FEA /* MainController.xib in Resources */,
+				34A6652F1BE05D1800EF0FEA /* UIGestureRecognizer.storyboard in Resources */,
+				34A665281BE05AC900EF0FEA /* OuterView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1280,6 +1758,102 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		346B40DD1BE06F4E002A390E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				346B40F71BE06FCE002A390E /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		34A664581BDFE6AD00EF0FEA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34A664A81BDFEA5C00EF0FEA /* UIImage+PivotalCore.m in Sources */,
+				34A664A61BDFEA5C00EF0FEA /* NSString+PivotalCoreKit_UIKit.m in Sources */,
+				34A664A71BDFEA5C00EF0FEA /* UIBarButtonItem+Button.m in Sources */,
+				34A664AA1BDFEA5C00EF0FEA /* UIView+PCKNibHelpers.m in Sources */,
+				34A664AC1BDFEA6000EF0FEA /* __PCKSilenceLinkerWarnings.m in Sources */,
+				34A664A51BDFEA5C00EF0FEA /* NSAttributedString+PivotalCoreKit_UIKit.m in Sources */,
+				34A664A91BDFEA5C00EF0FEA /* UIImageView+PivotalCore.m in Sources */,
+				34A664AB1BDFEA5C00EF0FEA /* UIView+PivotalCore.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		34A664651BDFE6D400EF0FEA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34A664B31BDFEA7300EF0FEA /* UIImage+Spec.m in Sources */,
+				34A664B81BDFEA7300EF0FEA /* UITableViewCell+Spec.m in Sources */,
+				34A664B91BDFEA7300EF0FEA /* UIView+Spec.m in Sources */,
+				34A664B01BDFEA7300EF0FEA /* UICollectionReusableView+Spec.m in Sources */,
+				34A664B11BDFEA7300EF0FEA /* UICollectionViewCell+Spec.m in Sources */,
+				34A664B41BDFEA7300EF0FEA /* UISegmentedControl+Spec.m in Sources */,
+				34A664AD1BDFEA6C00EF0FEA /* PCKPrototypeCellInstantiatingDataSource.m in Sources */,
+				34A664BA1BDFEA7300EF0FEA /* UIWindow+Spec.m in Sources */,
+				34A664B71BDFEA7300EF0FEA /* UITabBarController+Spec.m in Sources */,
+				34A664AF1BDFEA7300EF0FEA /* UIBarButtonItem+Spec.m in Sources */,
+				34A664B21BDFEA7300EF0FEA /* UIControl+Spec.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		34A664721BDFE6E500EF0FEA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34A664C81BDFEA8600EF0FEA /* UIApplication+Spec.m in Sources */,
+				34A664C41BDFEA8600EF0FEA /* UIView+StubbedAnimation.m in Sources */,
+				34A664C11BDFEA8600EF0FEA /* UINavigationController+Spec.m in Sources */,
+				34A664AE1BDFEA6E00EF0FEA /* PCKMethodRedirector.m in Sources */,
+				34A664C51BDFEA8600EF0FEA /* UIView+StubbedGestureRecognizers.m in Sources */,
+				34A664C21BDFEA8600EF0FEA /* UIPopoverController+Spec.m in Sources */,
+				34A664BC1BDFEA8600EF0FEA /* UIAlertAction+Spec.m in Sources */,
+				34A664BF1BDFEA8600EF0FEA /* UIGestureRecognizer+Spec.m in Sources */,
+				34A664C61BDFEA8600EF0FEA /* UIViewController+Spec.m in Sources */,
+				34A664BD1BDFEA8600EF0FEA /* UIAlertController+Spec.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		34A664C91BE027B500EF0FEA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34A664E11BE0291C00EF0FEA /* UIBarButtonItem+ButtonSpec.mm in Sources */,
+				34A6650C1BE058FB00EF0FEA /* InnerView.m in Sources */,
+				34A664ED1BE0291C00EF0FEA /* UITabBarControllerSpec+Spec.mm in Sources */,
+				34A664E71BE0291C00EF0FEA /* UIImage+PivotalCoreSpec.mm in Sources */,
+				34A664F11BE0291C00EF0FEA /* UIViewSpec+Spec.mm in Sources */,
+				34A664FB1BE0292700EF0FEA /* UIPopoverControllerSpec+Spec.mm in Sources */,
+				34A665111BE0590D00EF0FEA /* OuterView.m in Sources */,
+				34A664EE1BE0291C00EF0FEA /* UITableViewCellSpec+Spec.mm in Sources */,
+				34A6650E1BE0590100EF0FEA /* MainController.m in Sources */,
+				34A665151BE0591900EF0FEA /* Target.m in Sources */,
+				34A664E51BE0291C00EF0FEA /* UIControlSpec+Spec.mm in Sources */,
+				34A664E31BE0291C00EF0FEA /* UICollectionReusableViewSpec+Spec.mm in Sources */,
+				34A664F51BE0292700EF0FEA /* UIAlertActionSpec+Spec.mm in Sources */,
+				34A664EF1BE0291C00EF0FEA /* UIView+PCKNibHelpersSpec.mm in Sources */,
+				34A664DF1BE0291C00EF0FEA /* NSAttributedString+PivotalCoreKit_UIKitSpec.mm in Sources */,
+				34A664F21BE0291C00EF0FEA /* UIWindowSpec+Spec.mm in Sources */,
+				34A664F81BE0292700EF0FEA /* UIApplicationSpec+Spec.mm in Sources */,
+				34A664FE1BE0292700EF0FEA /* UIViewSpec+StubbedAnimations.mm in Sources */,
+				34A664E21BE0291C00EF0FEA /* UIBarButtonItemSpec+Spec.mm in Sources */,
+				34A664EA1BE0291C00EF0FEA /* UISegmentedControlSpec+Spec.mm in Sources */,
+				34A664F61BE0292700EF0FEA /* UIAlertControllerSpec+Spec.mm in Sources */,
+				34A665131BE0591300EF0FEA /* PrototypeCellObjects.m in Sources */,
+				34A664FA1BE0292700EF0FEA /* UINavigationControllerSpec+Spec.mm in Sources */,
+				34A664E91BE0291C00EF0FEA /* UIImageView+PivotalCoreSpec.mm in Sources */,
+				34A665071BE058E100EF0FEA /* ChildViewController.m in Sources */,
+				34A664E61BE0291C00EF0FEA /* UIGestureRecognizerSpec+Spec.mm in Sources */,
+				34A664E81BE0291C00EF0FEA /* UIImageSpec+Spec.mm in Sources */,
+				34A664FD1BE0292700EF0FEA /* UIViewControllerSpec+Spec.mm in Sources */,
+				34A664E41BE0291C00EF0FEA /* UICollectionViewCellSpec+Spec.mm in Sources */,
+				34A664F01BE0291C00EF0FEA /* UIView+PivotalCoreSpec.mm in Sources */,
+				34A664E01BE0291C00EF0FEA /* NSString+PivotalCoreKit_UIKitSpec.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AEBCCC20168B999F0056EE83 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1306,9 +1880,7 @@
 				AEF775BC18316DE4000AF17B /* UIGestureRecognizerSpec+Spec.mm in Sources */,
 				89F516A41B1B7D090005AB04 /* UITableViewRowActionSpec+Spec.mm in Sources */,
 				8490A16D1A7D0FDB001835AB /* UISegmentedControlSpec+Spec.mm in Sources */,
-				FA91AA92186725CC00925A6B /* NSString+PivotalCoreKit_UIKit.m in Sources */,
 				AE1FBEA317D15A4100B0F03B /* UITableViewCellSpec+Spec.mm in Sources */,
-				FA91AAA2186737B700925A6B /* NSAttributedString+PivotalCoreKit_UIKit.m in Sources */,
 				AEDABBBD18EA214A004E6626 /* MainController.m in Sources */,
 				AEB6663E18C6685F00B09C00 /* UIPopoverControllerSpec+Spec.mm in Sources */,
 				AEBCCC9A168B9C530056EE83 /* UIImage+PivotalCoreSpec.mm in Sources */,
@@ -1319,7 +1891,6 @@
 				AEBCCC9B168B9C530056EE83 /* UIImageSpec+Spec.mm in Sources */,
 				AEBCCC9C168B9C530056EE83 /* UIView+PivotalCoreSpec.mm in Sources */,
 				AEBCCC9E168B9C530056EE83 /* main.m in Sources */,
-				FA1A516B186290C800C22BA8 /* UIImageView+PivotalCore.m in Sources */,
 				AEEECC33181F33F5006B52CD /* UIImagePickerControllerSpec+Spec.mm in Sources */,
 				AEDABB6B18E9DFC7004E6626 /* OuterView.m in Sources */,
 				AE3847AD168BA0E300C99B55 /* AWebViewController.m in Sources */,
@@ -1395,6 +1966,26 @@
 			isa = PBXTargetDependency;
 			target = AEBCCC33168B99ED0056EE83 /* UIKit-StaticLibSpec */;
 			targetProxy = 3466C0991B97A3C500CBAB59 /* PBXContainerItemProxy */;
+		};
+		346B40F61BE06F58002A390E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 346B40E01BE06F4E002A390E /* UIKit-tvOS SpecHost */;
+			targetProxy = 346B40F51BE06F58002A390E /* PBXContainerItemProxy */;
+		};
+		34A664D41BE027B600EF0FEA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 34A6645C1BDFE6AD00EF0FEA /* UIKit+PivotalCore-tvOS */;
+			targetProxy = 34A664D31BE027B600EF0FEA /* PBXContainerItemProxy */;
+		};
+		34A664DB1BE027D200EF0FEA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 34A664691BDFE6D400EF0FEA /* UIKit+PivotalSpecHelper-tvOS */;
+			targetProxy = 34A664DA1BE027D200EF0FEA /* PBXContainerItemProxy */;
+		};
+		34A664DD1BE027D500EF0FEA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 34A664761BDFE6E500EF0FEA /* UIKit+PivotalSpecHelperStubs-tvOS */;
+			targetProxy = 34A664DC1BE027D500EF0FEA /* PBXContainerItemProxy */;
 		};
 		AE3847B2168BA27D00C99B55 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1484,6 +2075,375 @@
 			};
 			name = Release;
 		};
+		346B40F31BE06F4E002A390E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "Spec/UIKit-StaticLibSpecBundle-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.pivotal.UIKit-tvOS-SpecHost";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Debug;
+		};
+		346B40F41BE06F4E002A390E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "Spec/UIKit-StaticLibSpecBundle-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.pivotal.UIKit-tvOS-SpecHost";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		34A664631BDFE6AD00EF0FEA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "../InfoPlist/Framework-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Core/UIKit+PivotalCore.modulemap";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.pivotal.UIKit-PivotalCore";
+				PRODUCT_NAME = UIKit_PivotalCore;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		34A664641BDFE6AD00EF0FEA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "../InfoPlist/Framework-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Core/UIKit+PivotalCore.modulemap";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.pivotal.UIKit-PivotalCore";
+				PRODUCT_NAME = UIKit_PivotalCore;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		34A664701BDFE6D500EF0FEA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "../InfoPlist/Framework-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "SpecHelper/UIKit+PivotalSpecHelper.modulemap";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.pivotal.UIKit-PivotalSpecHelper";
+				PRODUCT_NAME = UIKit_PivotalSpecHelper;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		34A664711BDFE6D500EF0FEA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "../InfoPlist/Framework-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "SpecHelper/UIKit+PivotalSpecHelper.modulemap";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.pivotal.UIKit-PivotalSpecHelper";
+				PRODUCT_NAME = UIKit_PivotalSpecHelper;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		34A6647D1BDFE6E600EF0FEA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "../InfoPlist/Framework-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "SpecHelper/UIKit+PivotalSpecHelperStubs.modulemap";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.pivotal.UIKit-PivotalSpecHelperStubs";
+				PRODUCT_NAME = UIKit_PivotalSpecHelperStubs;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		34A6647E1BDFE6E600EF0FEA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "../InfoPlist/Framework-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "SpecHelper/UIKit+PivotalSpecHelperStubs.modulemap";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.pivotal.UIKit-PivotalSpecHelperStubs";
+				PRODUCT_NAME = UIKit_PivotalSpecHelperStubs;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		34A664D61BE027B600EF0FEA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../Externals/Cedar/**";
+				INFOPLIST_FILE = "Spec/UIKit-StaticLibSpecBundle-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.pivotal.UIKit-tvOS-SpecBundle";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UIKit-tvOS SpecHost.app/UIKit-tvOS SpecHost";
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Debug;
+		};
+		34A664D71BE027B600EF0FEA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../Externals/Cedar/**";
+				INFOPLIST_FILE = "Spec/UIKit-StaticLibSpecBundle-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.pivotal.UIKit-tvOS-SpecBundle";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UIKit-tvOS SpecHost.app/UIKit-tvOS SpecHost";
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		AEBCCBC4168B95A00056EE83 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1544,6 +2504,7 @@
 		AEBCCC2E168B999F0056EE83 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				DSTROOT = /tmp/UIKit_PivotalCore_StaticLib.dst;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1557,6 +2518,7 @@
 		AEBCCC2F168B999F0056EE83 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				DSTROOT = /tmp/UIKit_PivotalCore_StaticLib.dst;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1587,6 +2549,7 @@
 				HEADER_SEARCH_PATHS = "$SRCROOT/../Externals/Cedar/**";
 				INFOPLIST_FILE = "Spec/UIKit-StaticLibSpec-Info.plist";
 				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pivotallabs.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
@@ -1610,6 +2573,7 @@
 				INFOPLIST_FILE = "Spec/UIKit-StaticLibSpec-Info.plist";
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pivotallabs.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -1715,6 +2679,51 @@
 			buildConfigurations = (
 				3466C09C1B97A3C500CBAB59 /* Debug */,
 				3466C09D1B97A3C500CBAB59 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		346B40F21BE06F4E002A390E /* Build configuration list for PBXNativeTarget "UIKit-tvOS SpecHost" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				346B40F31BE06F4E002A390E /* Debug */,
+				346B40F41BE06F4E002A390E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		34A664621BDFE6AD00EF0FEA /* Build configuration list for PBXNativeTarget "UIKit+PivotalCore-tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				34A664631BDFE6AD00EF0FEA /* Debug */,
+				34A664641BDFE6AD00EF0FEA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		34A6646F1BDFE6D500EF0FEA /* Build configuration list for PBXNativeTarget "UIKit+PivotalSpecHelper-tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				34A664701BDFE6D500EF0FEA /* Debug */,
+				34A664711BDFE6D500EF0FEA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		34A6647C1BDFE6E600EF0FEA /* Build configuration list for PBXNativeTarget "UIKit+PivotalSpecHelperStubs-tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				34A6647D1BDFE6E600EF0FEA /* Debug */,
+				34A6647E1BDFE6E600EF0FEA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		34A664D51BE027B600EF0FEA /* Build configuration list for PBXNativeTarget "UIKit-tvOS SpecBundle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				34A664D61BE027B600EF0FEA /* Debug */,
+				34A664D71BE027B600EF0FEA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -1,4 +1,4 @@
-#import "CDRSpecHelper.h"
+#import "Cedar.h"
 #import "NSString+PivotalCoreKit_UIKit.h"
 
 using namespace Cedar::Matchers;

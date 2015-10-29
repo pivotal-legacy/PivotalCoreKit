@@ -1,4 +1,4 @@
-#import "CDRSpecHelper.h"
+#import "Cedar.h"
 #import "UIBarButtonItem+Spec.h"
 #import "Target.h"
 
@@ -39,10 +39,16 @@ describe(@"UIBarButtonItemSpec_Spec", ^{
     });
 
     it(@"should delegate down to the custom view if the custom view is a button", ^{
+#if TARGET_OS_TV
+        UIControlEvents event = UIControlEventPrimaryActionTriggered;
+#else
+        UIControlEvents event = UIControlEventTouchUpInside;
+#endif
+
         UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         [button addTarget:target
                    action:@selector(hello)
-         forControlEvents:UIControlEventTouchUpInside];
+         forControlEvents:event];
         barButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
         [barButtonItem tap];
 

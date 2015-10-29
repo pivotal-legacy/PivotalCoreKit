@@ -1,5 +1,4 @@
-#import <UIKit/UIKit.h>
-#import <Cedar-iOS.h>
+#import "Cedar.h"
 #import "UIViewController+Spec.h"
 
 
@@ -160,6 +159,8 @@ describe(@"UIViewController (spec extensions)", ^{
         });
     });
 
+#if !TARGET_OS_TV
+
     describe(@"presenting modal view controllers (deprecated APIs)", ^{
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
@@ -200,6 +201,8 @@ describe(@"UIViewController (spec extensions)", ^{
         });
 #pragma clang diagnostic pop
     });
+
+#endif
 
     describe(@"transitioning between child view controllers", ^{
         __block UIViewController *parentController;

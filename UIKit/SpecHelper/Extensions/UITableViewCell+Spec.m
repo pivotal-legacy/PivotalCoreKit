@@ -68,7 +68,7 @@
             UIView *cellScrollView = [[self.subviews filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"className MATCHES %@", @"UITableViewCellScrollView"]] firstObject];
             deleteAccessoryControl = [[cellScrollView.subviews filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"className MATCHES %@", @"UITableViewCellEditControl"]] firstObject];
         } else {
-            deleteAccessoryControl = [[self.subviews filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"className MATCHES %@", @"UITableViewCellEditControl"]] firstObject];
+            deleteAccessoryControl = [[self.subviews filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"className ENDSWITH %@", @"EditControl"]] firstObject];
         }
 
         [deleteAccessoryControl sendActionsForControlEvents:UIControlEventTouchUpInside];

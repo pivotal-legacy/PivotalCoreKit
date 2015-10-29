@@ -1,4 +1,4 @@
-#import "CDRSpecHelper.h"
+#import "Cedar.h"
 #import "UIImage+PivotalCore.h"
 #import "UIImage+Spec.h"
 

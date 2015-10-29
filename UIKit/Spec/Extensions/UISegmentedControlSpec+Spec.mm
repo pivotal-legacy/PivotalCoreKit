@@ -1,4 +1,4 @@
-#import "CDRSpecHelper.h"
+#import "Cedar.h"
 #import "UISegmentedControl+Spec.h"
 #import "Target.h"
 

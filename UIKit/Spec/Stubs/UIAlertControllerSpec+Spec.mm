@@ -1,4 +1,4 @@
-#import "CDRSpecHelper.h"
+#import "Cedar.h"
 #import "UIAlertController+Spec.h"
 #import "UIAlertView+Spec.h"
 #import "UIAlertAction+Spec.h"

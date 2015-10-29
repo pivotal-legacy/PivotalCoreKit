@@ -1,4 +1,4 @@
-#import "CDRSpecHelper.h"
+#import "Cedar.h"
 #import "UIControl+Spec.h"
 #import "Target.h"
 
@@ -18,7 +18,13 @@ describe(@"UIControlSpec", ^{
         spy_on(target);
 
         button = [UIButton buttonWithType:UIButtonTypeCustom];
-        [button addTarget:target action:@selector(hello) forControlEvents:UIControlEventTouchUpInside];
+
+#if TARGET_OS_TV
+        UIControlEvents event = UIControlEventPrimaryActionTriggered;
+#else
+        UIControlEvents event = UIControlEventTouchUpInside;
+#endif
+        [button addTarget:target action:@selector(hello) forControlEvents:event];
     });
 
     describe(@"-tap", ^{

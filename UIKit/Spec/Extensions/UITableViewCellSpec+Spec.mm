@@ -1,10 +1,15 @@
-#import "CDRSpecHelper.h"
+#import "Cedar.h"
 #import "UITableViewCell+Spec.h"
 #import "PrototypeCellObjects.h"
 
+#if TARGET_OS_TV
+#define PLATFORM_HAS_DELETE_CONFIRMATION 0
+#else
+#define PLATFORM_HAS_DELETE_CONFIRMATION 1
+#endif
 
 @interface SpecTableViewController : UITableViewController
-@property (nonatomic) BOOL shouldHightlightRows;
+@property (nonatomic) BOOL shouldHighlightRows;
 @property (nonatomic, retain) NSIndexPath *lastSelectedIndexPath;
 @end
 
@@ -28,7 +33,7 @@
 }
 
 - (BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath {
-    return self.shouldHightlightRows;
+    return self.shouldHighlightRows;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -49,7 +54,7 @@ describe(@"UITableViewCell+Spec", ^{
 
     beforeEach(^{
         controller = [[SpecTableViewController alloc] initWithStyle:UITableViewStylePlain];
-        controller.shouldHightlightRows = YES;
+        controller.shouldHighlightRows = YES;
         controller.view should_not be_nil;
         [controller.view layoutIfNeeded];
 
@@ -131,7 +136,7 @@ describe(@"UITableViewCell+Spec", ^{
 
         context(@"for a table with highlighting turned off", ^{
             beforeEach(^{
-                controller.shouldHightlightRows = NO;
+                controller.shouldHighlightRows = NO;
                 [cell tap];
             });
 
@@ -176,13 +181,22 @@ describe(@"UITableViewCell+Spec", ^{
         context(@"table view is in editing mode", ^{
             beforeEach(^{
                 [controller.tableView setEditing:YES animated:NO];
+
+                spy_on(controller.tableView.dataSource);
                 [cell tapDeleteAccessory];
             });
 
+#if PLATFORM_HAS_DELETE_CONFIRMATION
             it(@"should expose the delete confirmation button", ^{
                 cell.showingDeleteConfirmation should be_truthy;
             });
+#else
+            it(@"should call the appropriate handler", ^{
+                controller.tableView.dataSource should have_received(@selector(tableView:commitEditingStyle:forRowAtIndexPath:)).with(controller.tableView, UITableViewCellEditingStyleDelete, [NSIndexPath indexPathForRow:0 inSection:0]);
+            });
+#endif
         });
+
     });
 
     describe(@"-tapDeleteConfirmation", ^{
@@ -198,12 +212,14 @@ describe(@"UITableViewCell+Spec", ^{
 
         context(@"table view is in editing mode", ^{
             beforeEach(^{
-                spy_on(controller.tableView.dataSource);
                 [controller setEditing:YES animated:NO];
             });
 
+#if PLATFORM_HAS_DELETE_CONFIRMATION
             context(@"delete confirmation is visible", ^{
                 beforeEach(^{
+                    spy_on(controller.tableView.dataSource);
+
                     [cell tapDeleteAccessory];
                     cell.showingDeleteConfirmation should be_truthy;
 
@@ -214,6 +230,7 @@ describe(@"UITableViewCell+Spec", ^{
                     controller.tableView.dataSource should have_received(@selector(tableView:commitEditingStyle:forRowAtIndexPath:)).with(controller.tableView, UITableViewCellEditingStyleDelete, [NSIndexPath indexPathForRow:0 inSection:0]);
                 });
             });
+#endif
 
             context(@"delete confirmation is not visible", ^{
                 beforeEach(^{

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" initialViewController="FZx-En-jLN">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+    </dependencies>
+    <scenes>
+        <!--Spec Gesture Recognizer View Controller-->
+        <scene sceneID="IDS-fz-tx8">
+            <objects>
+                <viewController id="FZx-En-jLN" customClass="SpecGestureRecognizerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CmM-i2-IlP"/>
+                        <viewControllerLayoutGuide type="bottom" id="zyi-Wl-w65"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Phb-06-gFr">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="CgM-eR-T9y" appends="YES" id="Jyf-eL-x9E"/>
+                            <outletCollection property="gestureRecognizers" destination="8dG-12-fcY" appends="YES" id="gX5-fa-DRe"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="recognizer" destination="CgM-eR-T9y" id="xnB-dK-tX2"/>
+                        <outlet property="segueRecognizer" destination="8dG-12-fcY" id="Qgk-Wx-mGW"/>
+                        <outlet property="target" destination="RaG-oZ-jwh" id="gFI-wh-mCY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jA1-hF-cai" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="RaG-oZ-jwh" customClass="Target"/>
+                <tapGestureRecognizer id="CgM-eR-T9y" userLabel="Recognizer">
+                    <pressTypeMask key="allowedPressTypes" select="YES"/>
+                    <connections>
+                        <action selector="hello" destination="RaG-oZ-jwh" id="sEs-g5-33t"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="8dG-12-fcY" userLabel="Segue Recognizer">
+                    <pressTypeMask key="allowedPressTypes" select="YES"/>
+                    <connections>
+                        <segue destination="1gj-M4-9Ub" kind="presentation" id="r5b-UH-n66"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="599" y="-7"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Koh-KF-5nZ">
+            <objects>
+                <viewController id="1gj-M4-9Ub" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uAT-cN-Tre"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ynw-pL-4Ql"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RoJ-Ne-o5V">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sfi-HI-XrP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2711" y="-12"/>
+        </scene>
+    </scenes>
+</document>
