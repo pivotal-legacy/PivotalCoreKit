@@ -3,12 +3,16 @@
 
 @class PCKHTTPInterface;
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface PCKHTTPConnectionDelegate : NSObject <NSURLConnectionDataDelegate>
 
-@property (nonatomic, retain) id<NSURLConnectionDelegate> delegate;
+@property (nonatomic, retain, nullable) id<NSURLConnectionDelegate> delegate;
 @property (nonatomic, assign) PCKHTTPInterface *interface;
 
-+ (id)delegateWithInterface:(PCKHTTPInterface *)interface delegate:(id<NSURLConnectionDelegate>)delegate;
-- (id)initWithInterface:(PCKHTTPInterface *)interface delegate:(id<NSURLConnectionDelegate>)delegate;
++ (id)delegateWithInterface:(nullable PCKHTTPInterface *)interface delegate:(nullable id<NSURLConnectionDelegate>)delegate;
+- (id)initWithInterface:(nullable PCKHTTPInterface *)interface delegate:(nullable id<NSURLConnectionDelegate>)delegate;
 
 @end
+
+NS_ASSUME_NONNULL_END

@@ -1,6 +1,8 @@
 #import <Foundation/Foundation.h>
 
-typedef void (^PCKConnectionDelegateWrapperCompletionBlock)(NSData *);
+NS_ASSUME_NONNULL_BEGIN
+
+typedef void (^PCKConnectionDelegateWrapperCompletionBlock)(NSData * __nullable);
 
 @interface PCKConnectionDelegateWrapper : NSObject <NSURLConnectionDataDelegate>
 
@@ -8,3 +10,5 @@ typedef void (^PCKConnectionDelegateWrapperCompletionBlock)(NSData *);
                                     completionCallback:(PCKConnectionDelegateWrapperCompletionBlock)completionCallback;
 
 @end
+
+NS_ASSUME_NONNULL_END

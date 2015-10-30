@@ -22,7 +22,7 @@
 
     if ((self = [super initWithURL:[NSURL URLWithString:@"http://www.example.com"] MIMEType:mimeType expectedContentLength:-1 textEncodingName:nil])) {
         self.statusCode = statusCode;
-        self.allHeaderFields = headers;
+        self.allHeaderFields = headers ?: @{};
         self.bodyData = bodyData;
     }
     return self;

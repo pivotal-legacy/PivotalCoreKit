@@ -2,7 +2,9 @@
 
 @protocol NSURLConnectionDelegate;
 
-typedef void (^RequestSetupBlock)(NSMutableURLRequest *);
+NS_ASSUME_NONNULL_BEGIN
+
+typedef void (^RequestSetupBlock)(NSMutableURLRequest * __nonnull);
 
 @interface PCKHTTPInterface : NSObject {
     NSURL *baseURLAndPath_, *baseSecureURLAndPath_;
@@ -12,11 +14,11 @@ typedef void (^RequestSetupBlock)(NSMutableURLRequest *);
 @property (nonatomic, readonly) NSArray *activeConnections;
 
 #pragma mark protected
-- (NSURLConnection *)connectionForPath:(NSString *)path secure:(BOOL)secure andDelegate:(id<NSURLConnectionDelegate>)delegate;
-- (NSURLConnection *)connectionForPath:(NSString *)path secure:(BOOL)secure andDelegate:(id<NSURLConnectionDelegate>)delegate withRequestSetup:(RequestSetupBlock)requestSetup;
+- (NSURLConnection *)connectionForPath:(NSString *)path secure:(BOOL)secure andDelegate:(nullable id<NSURLConnectionDelegate>)delegate;
+- (NSURLConnection *)connectionForPath:(NSString *)path secure:(BOOL)secure andDelegate:(nullable id<NSURLConnectionDelegate>)delegate withRequestSetup:(nullable RequestSetupBlock)requestSetup;
 
 - (NSMutableURLRequest *)requestForPath:(NSString *)path secure:(BOOL)secure;
-- (NSURLConnection *)connectionForRequest:(NSURLRequest *)request delegate:(id<NSURLConnectionDelegate>)delegate;
+- (NSURLConnection *)connectionForRequest:(NSURLRequest *)request delegate:(nullable id<NSURLConnectionDelegate>)delegate;
 
 @end
 
@@ -26,3 +28,5 @@ typedef void (^RequestSetupBlock)(NSMutableURLRequest *);
 // optional
 @property (nonatomic, readonly) NSString *baseURLPath;
 @end
+
+NS_ASSUME_NONNULL_END
