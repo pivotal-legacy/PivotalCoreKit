@@ -1,20 +1,24 @@
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface NSDictionary (TypesafeExtraction)
 
-- (id)objectForKey:(id)key requiredType:(Class)type;
+- (nullable id)objectForKey:(id)key requiredType:(Class)type;
 
-- (NSString *)stringObjectForKey:(id)key;
-- (NSNumber *)numberObjectForKey:(id)key;
-- (NSDate *)dateObjectForKey:(id)key;
-- (NSDate *)dateObjectForKey:(id)key formatter:(NSDateFormatter *)formatter;
-- (NSArray *)arrayObjectForKey:(id)key;
-- (NSArray *)arrayObjectForKey:(id)key constrainedToElementsOfClass:(Class)klass;
-- (NSDictionary *)dictionaryObjectForKey:(id)key;
-- (NSURL *)URLObjectForKey:(id)key;
+- (nullable NSString *)stringObjectForKey:(id)key;
+- (nullable NSNumber *)numberObjectForKey:(id)key;
+- (nullable NSDate *)dateObjectForKey:(id)key;
+- (nullable NSDate *)dateObjectForKey:(id)key formatter:(nullable NSDateFormatter *)formatter;
+- (nullable NSArray *)arrayObjectForKey:(id)key;
+- (nullable NSArray *)arrayObjectForKey:(id)key constrainedToElementsOfClass:(Class)klass;
+- (nullable NSDictionary *)dictionaryObjectForKey:(id)key;
+- (nullable NSURL *)URLObjectForKey:(id)key;
 
 - (float)floatValueForKey:(id)key;
 - (NSInteger)integerValueForKey:(id)key;
 - (BOOL)boolValueForKey:(id)key;
 
 @end
+
+NS_ASSUME_NONNULL_END

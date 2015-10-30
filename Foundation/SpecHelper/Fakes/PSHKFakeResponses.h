@@ -2,6 +2,8 @@
 
 @class PSHKFakeHTTPURLResponse;
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface PSHKFakeResponses : NSObject {
     NSString * request_;
 }
@@ -18,3 +20,5 @@
 - (PSHKFakeHTTPURLResponse *)responseForStatusCode:(int)statusCode;
 
 @end
+
+NS_ASSUME_NONNULL_END

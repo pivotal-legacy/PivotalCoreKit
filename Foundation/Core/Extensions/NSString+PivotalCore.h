@@ -1,5 +1,7 @@
 #import <Foundation/NSString.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface NSString (PivotalCore)
 
 // use NSData's NSDataBase64Encoding methods instead, such as -base64EncodedStringWithOptions:
@@ -20,3 +22,5 @@
 - (NSString *)stringByAddingPercentEscapesUsingEncoding:(NSStringEncoding)encoding includeAll:(BOOL)includeAll DEPRECATED_ATTRIBUTE;
 
 @end
+
+NS_ASSUME_NONNULL_END

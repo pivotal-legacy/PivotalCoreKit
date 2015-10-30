@@ -9,8 +9,12 @@
 
 @protocol PCKXMLParserDelegate;
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface PCKXMLParser : NSObject<PCKParser>
 
 - (id)initWithDelegate:(id<PCKXMLParserDelegate>)delegate;
 
 @end
+
+NS_ASSUME_NONNULL_END

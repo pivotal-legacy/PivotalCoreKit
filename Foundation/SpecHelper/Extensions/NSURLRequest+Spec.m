@@ -3,7 +3,8 @@
 @implementation NSURLRequest (Spec)
 
 - (NSString *)HTTPBodyAsString {
-    return [[[NSString alloc] initWithData:self.HTTPBody encoding:NSUTF8StringEncoding] autorelease];
+    NSData *body = self.HTTPBody;
+    return body ? [[[NSString alloc] initWithData:body encoding:NSUTF8StringEncoding] autorelease] : nil;
 }
 
 @end
