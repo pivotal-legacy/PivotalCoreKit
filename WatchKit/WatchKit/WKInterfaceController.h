@@ -6,6 +6,7 @@ typedef NS_ENUM(NSInteger, WKUserNotificationInterfaceType)  {
 };
 
 @class WKInterfaceTable;
+@class WKAlertAction;
 
 typedef NS_ENUM(NSInteger, WKMenuItemIcon)  {
     WKMenuItemIconAccept,       // checkmark
@@ -26,11 +27,17 @@ typedef NS_ENUM(NSInteger, WKMenuItemIcon)  {
     WKMenuItemIconTrash,        // trash icon
 };
 
-typedef enum WKTextInputMode : NSInteger  {
+typedef NS_ENUM(NSInteger, WKTextInputMode)  {
     WKTextInputModePlain,
     WKTextInputModeAllowEmoji,
     WKTextInputModeAllowAnimatedEmoji,
-}WKTextInputMode;
+};
+
+typedef NS_ENUM(NSInteger, WKAlertControllerStyle) {
+    WKAlertControllerStyleAlert,
+    WKAlertControllerStyleSideBySideButtonsAlert,
+    WKAlertControllerStyleActionSheet,
+};
 
 
 @interface WKInterfaceController : PCKMessageCapturer
@@ -45,8 +52,7 @@ typedef enum WKTextInputMode : NSInteger  {
              forRemoteNotification:(NSDictionary *)remoteNotification;
 - (void)handleActionWithIdentifier:(NSString *)identifier
               forLocalNotification:(UILocalNotification *)localNotification;
-- (NSString *)actionForUserActivity:(NSDictionary *)userActivity
-                            context:(id *)context;
+- (void)handleUserActivity:(NSDictionary *)userInfo;
 
 - (void)setTitle:(NSString *)title;
 
@@ -76,7 +82,10 @@ typedef enum WKTextInputMode : NSInteger  {
 - (void)addMenuItemWithItemIcon:(WKMenuItemIcon)itemIcon title:(NSString *)title action:(SEL)action;
 - (void)clearAllMenuItems;
 
+- (void)presentAlertControllerWithTitle:(NSString *)title message:(NSString *)message preferredStyle:(WKAlertControllerStyle)preferredStyle actions:(NSArray <WKAlertAction *>*)actions;
+
 - (void)updateUserActivity:(NSString *)type userInfo:(NSDictionary *)userInfo;
+- (void)updateUserActivity:(NSString *)type userInfo:(NSDictionary *)userInfo webpageURL:(NSURL *)webpageURL;
 
 + (BOOL)openParentApplication:(NSDictionary *)userInfo reply:(void(^)(NSDictionary *replyInfo, NSError *error)) reply;
 

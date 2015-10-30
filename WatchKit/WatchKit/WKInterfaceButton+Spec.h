@@ -8,14 +8,18 @@
 
 @interface WKInterfaceButton (Spec)
 
-@property (nonatomic, weak) WKInterfaceController *controller;
-
 - (NSString *)title;
 - (UIColor *)color;
 - (BOOL)enabled;
 - (NSString *)action;
 - (PCKFakeSegue *)segue;
 - (WKInterfaceGroup *)content;
+
+@end
+
+@interface WKInterfaceButton (Spec2)
+
+@property (nonatomic, weak) WKInterfaceController *controller;
 
 - (void)triggerNonSegueAction;
 

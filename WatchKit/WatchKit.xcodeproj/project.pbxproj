@@ -7,14 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		222167661B8CE49E00A1C8AE /* WKDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 222167651B8CE49700A1C8AE /* WKDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		222167691B8CE4F600A1C8AE /* WKExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = 222167671B8CE4F600A1C8AE /* WKExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2221676A1B8CE4F600A1C8AE /* WKExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 222167681B8CE4F600A1C8AE /* WKExtension.m */; };
 		267B25B21AD86BDB00440CD2 /* NSInvocation+InvocationMatching.h in Headers */ = {isa = PBXBuildFile; fileRef = 267B25B01AD86BDB00440CD2 /* NSInvocation+InvocationMatching.h */; };
 		267B25B31AD86BDB00440CD2 /* NSInvocation+InvocationMatching.m in Sources */ = {isa = PBXBuildFile; fileRef = 267B25B11AD86BDB00440CD2 /* NSInvocation+InvocationMatching.m */; };
 		2681A5B11AE0906600B0B753 /* WKInterfaceDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 2681A5AF1AE0906600B0B753 /* WKInterfaceDevice.m */; };
 		2681A5B21AE0906600B0B753 /* WKInterfaceDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = 2681A5B01AE0906600B0B753 /* WKInterfaceDevice.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2681A5D31AE0991C00B0B753 /* WKInterfaceDeviceSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2681A5D21AE0991C00B0B753 /* WKInterfaceDeviceSpec.mm */; };
+		3434BC6C1BCDDBBA00E9470B /* WKInterfaceObject+Spec.h in Headers */ = {isa = PBXBuildFile; fileRef = 3434BC5F1BCDD74000E9470B /* WKInterfaceObject+Spec.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3442BECC1BDE867B00B32266 /* WKExtensionSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3442BECB1BDE867B00B32266 /* WKExtensionSpec.mm */; settings = {ASSET_TAGS = (); }; };
+		3442BECF1BDE889F00B32266 /* WKExtension+Spec.h in Headers */ = {isa = PBXBuildFile; fileRef = 3442BECD1BDE889F00B32266 /* WKExtension+Spec.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3442BED21BDE8A0600B32266 /* WKAlertActionSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3442BED11BDE8A0600B32266 /* WKAlertActionSpec.mm */; settings = {ASSET_TAGS = (); }; };
+		3442BED41BDED16200B32266 /* WKImageSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3442BED31BDED16200B32266 /* WKImageSpec.mm */; settings = {ASSET_TAGS = (); }; };
 		34456A201B98ED0A008A16A2 /* SpecBuildHelper.app in Resources */ = {isa = PBXBuildFile; fileRef = 344569F91B98EC04008A16A2 /* SpecBuildHelper.app */; };
 		34456A241B98F3B4008A16A2 /* NSBundle+BuildHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 34456A231B98F3B4008A16A2 /* NSBundle+BuildHelper.m */; };
 		34456A251B98FDD0008A16A2 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE25D65D1A38FFA9008A1920 /* Interface.storyboard */; };
+		34AB31BA1BC8B32E0039F450 /* WKImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 34AB31B81BC8B32E0039F450 /* WKImage.h */; };
+		34AB31BB1BC8B32E0039F450 /* WKImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 34AB31B91BC8B32E0039F450 /* WKImage.m */; };
+		34AB31BE1BC8B70A0039F450 /* WKAlertAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 34AB31BC1BC8B70A0039F450 /* WKAlertAction.h */; };
+		34AB31BF1BC8B70A0039F450 /* WKAlertAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 34AB31BD1BC8B70A0039F450 /* WKAlertAction.m */; };
 		AE03A0391A391C5900AD4964 /* corgi.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = AE03A0381A391C5900AD4964 /* corgi.jpeg */; };
 		AE0FDC801A6ECB71006C781D /* CustomCategoryNotificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0FDC7F1A6ECB71006C781D /* CustomCategoryNotificationController.m */; };
 		AE25D5FE1A38F6C9008A1920 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE25D5FD1A38F6C9008A1920 /* XCTest.framework */; };
@@ -193,13 +205,6 @@
 			remoteGlobalIDString = AE248FAA19DCD52500092C14;
 			remoteInfo = "Cedar OS X Host AppTests";
 		};
-		AE25D63D1A38F77D008A1920 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AE25D6171A38F77D008A1920 /* Cedar.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = AEB8818719DCD62D00F081BA;
-			remoteInfo = "Cedar OS X Failing Test Bundle";
-		};
 		AE25D63F1A38F794008A1920 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AE25D6171A38F77D008A1920 /* Cedar.xcodeproj */;
@@ -217,14 +222,26 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		222167651B8CE49700A1C8AE /* WKDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WKDefines.h; sourceTree = "<group>"; };
+		222167671B8CE4F600A1C8AE /* WKExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKExtension.h; sourceTree = "<group>"; };
+		222167681B8CE4F600A1C8AE /* WKExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKExtension.m; sourceTree = "<group>"; };
 		267B25B01AD86BDB00440CD2 /* NSInvocation+InvocationMatching.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSInvocation+InvocationMatching.h"; sourceTree = "<group>"; };
 		267B25B11AD86BDB00440CD2 /* NSInvocation+InvocationMatching.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSInvocation+InvocationMatching.m"; sourceTree = "<group>"; };
 		2681A5AF1AE0906600B0B753 /* WKInterfaceDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKInterfaceDevice.m; sourceTree = "<group>"; };
 		2681A5B01AE0906600B0B753 /* WKInterfaceDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKInterfaceDevice.h; sourceTree = "<group>"; };
 		2681A5D21AE0991C00B0B753 /* WKInterfaceDeviceSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = WKInterfaceDeviceSpec.mm; path = Specs/WatchKit/WKInterfaceDeviceSpec.mm; sourceTree = SOURCE_ROOT; };
+		3434BC5F1BCDD74000E9470B /* WKInterfaceObject+Spec.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WKInterfaceObject+Spec.h"; sourceTree = "<group>"; };
+		3442BECB1BDE867B00B32266 /* WKExtensionSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = WKExtensionSpec.mm; path = Specs/WatchKit/WKExtensionSpec.mm; sourceTree = SOURCE_ROOT; };
+		3442BECD1BDE889F00B32266 /* WKExtension+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WKExtension+Spec.h"; sourceTree = "<group>"; };
+		3442BED11BDE8A0600B32266 /* WKAlertActionSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = WKAlertActionSpec.mm; path = WatchKit/WKAlertActionSpec.mm; sourceTree = SOURCE_ROOT; };
+		3442BED31BDED16200B32266 /* WKImageSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = WKImageSpec.mm; path = WatchKit/WKImageSpec.mm; sourceTree = SOURCE_ROOT; };
 		344569F91B98EC04008A16A2 /* SpecBuildHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpecBuildHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34456A221B98F3B4008A16A2 /* NSBundle+BuildHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+BuildHelper.h"; sourceTree = "<group>"; };
 		34456A231B98F3B4008A16A2 /* NSBundle+BuildHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+BuildHelper.m"; sourceTree = "<group>"; };
+		34AB31B81BC8B32E0039F450 /* WKImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKImage.h; sourceTree = "<group>"; };
+		34AB31B91BC8B32E0039F450 /* WKImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKImage.m; sourceTree = "<group>"; };
+		34AB31BC1BC8B70A0039F450 /* WKAlertAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKAlertAction.h; sourceTree = "<group>"; };
+		34AB31BD1BC8B70A0039F450 /* WKAlertAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKAlertAction.m; sourceTree = "<group>"; };
 		AE03A0381A391C5900AD4964 /* corgi.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = corgi.jpeg; sourceTree = "<group>"; };
 		AE0FDC7E1A6ECB71006C781D /* CustomCategoryNotificationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCategoryNotificationController.h; sourceTree = "<group>"; };
 		AE0FDC7F1A6ECB71006C781D /* CustomCategoryNotificationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCategoryNotificationController.m; sourceTree = "<group>"; };
@@ -363,6 +380,7 @@
 			isa = PBXGroup;
 			children = (
 				B83C323E1A4CE18C0021F1A4 /* PCKInterfaceControllerLoaderSpec.mm */,
+				3442BECB1BDE867B00B32266 /* WKExtensionSpec.mm */,
 				B83C323F1A4CE18C0021F1A4 /* WKInterfaceButtonSpec.mm */,
 				B83C32401A4CE18C0021F1A4 /* WKInterfaceControllerSpec.mm */,
 				B83C32411A4CE18C0021F1A4 /* WKInterfaceDateSpec.mm */,
@@ -377,6 +395,8 @@
 				B83C32491A4CE18C0021F1A4 /* WKInterfaceTableSpec.mm */,
 				B83C324A1A4CE18C0021F1A4 /* WKInterfaceTimerSpec.mm */,
 				B83C324B1A4CE18C0021F1A4 /* WKUserNotificationInterfaceControllerSpec.mm */,
+				3442BED11BDE8A0600B32266 /* WKAlertActionSpec.mm */,
+				3442BED31BDED16200B32266 /* WKImageSpec.mm */,
 			);
 			name = WatchKit;
 			path = FakeWatchKit;
@@ -457,7 +477,6 @@
 				AE25D6381A38F77D008A1920 /* XCUnitAppTests.xctest */,
 				AE25D63A1A38F77D008A1920 /* Cedar OS X Host App.app */,
 				AE25D63C1A38F77D008A1920 /* Cedar OS X Host AppTests.xctest */,
-				AE25D63E1A38F77D008A1920 /* Cedar OS X Failing Test Bundle.octest */,
 				34456A171B98EC05008A16A2 /* Cedar.framework */,
 				34456A191B98EC05008A16A2 /* Cedar-iOS-Framework Specs.app */,
 			);
@@ -496,6 +515,10 @@
 		B83C31C21A4CD8A40021F1A4 /* WatchKit */ = {
 			isa = PBXGroup;
 			children = (
+				222167651B8CE49700A1C8AE /* WKDefines.h */,
+				222167671B8CE4F600A1C8AE /* WKExtension.h */,
+				222167681B8CE4F600A1C8AE /* WKExtension.m */,
+				3442BECD1BDE889F00B32266 /* WKExtension+Spec.h */,
 				267B25B01AD86BDB00440CD2 /* NSInvocation+InvocationMatching.h */,
 				267B25B11AD86BDB00440CD2 /* NSInvocation+InvocationMatching.m */,
 				B83AC22B1A5E191C00A35BD6 /* PCKWKInterfaceControllerProvider.h */,
@@ -506,15 +529,15 @@
 				B83C322F1A4CDA380021F1A4 /* PCKInterfaceControllerLoader.m */,
 				B83C31DC1A4CD9BF0021F1A4 /* PCKMessageCapturer.h */,
 				B83C31DD1A4CD9BF0021F1A4 /* PCKMessageCapturer.m */,
-				B83C31C31A4CD8A40021F1A4 /* Supporting Files */,
 				B83C323A1A4CE0FC0021F1A4 /* UIColor+PCK_StringToColor.h */,
 				B83C323B1A4CE0FC0021F1A4 /* UIColor+PCK_StringToColor.m */,
 				B83C31DE1A4CD9BF0021F1A4 /* WatchKit.h */,
 				B83C31DF1A4CD9BF0021F1A4 /* WKInterfaceButton.h */,
 				B83C31E01A4CD9BF0021F1A4 /* WKInterfaceButton.m */,
 				B83C31E11A4CD9BF0021F1A4 /* WKInterfaceButton+Spec.h */,
-				B83C31E21A4CD9BF0021F1A4 /* WKInterfaceController.h */,
+				AE25F4831B5EBCB2009B599E /* WKInterfaceButton+Spec.m */,
 				B83C31E31A4CD9BF0021F1A4 /* WKInterfaceController.m */,
+				B83C31E21A4CD9BF0021F1A4 /* WKInterfaceController.h */,
 				B83C31E41A4CD9BF0021F1A4 /* WKInterfaceDate.h */,
 				B83C31E51A4CD9BF0021F1A4 /* WKInterfaceDate.m */,
 				B83C31E61A4CD9BF0021F1A4 /* WKInterfaceDate+Spec.h */,
@@ -533,6 +556,7 @@
 				B83C31F11A4CD9BF0021F1A4 /* WKInterfaceMap.m */,
 				B83C31F21A4CD9BF0021F1A4 /* WKInterfaceObject.h */,
 				B83C31F31A4CD9BF0021F1A4 /* WKInterfaceObject.m */,
+				3434BC5F1BCDD74000E9470B /* WKInterfaceObject+Spec.h */,
 				B83C31F41A4CD9BF0021F1A4 /* WKInterfaceSeparator.h */,
 				B83C31F51A4CD9BF0021F1A4 /* WKInterfaceSeparator.m */,
 				B83C31F61A4CD9BF0021F1A4 /* WKInterfaceSeparator+Spec.h */,
@@ -551,6 +575,11 @@
 				B83C32031A4CD9BF0021F1A4 /* WKUserNotificationInterfaceController+Spec.h */,
 				DE99C8C67949C094218A82C2 /* PCKWKInterfaceObjectProvider.m */,
 				DE99C21473753B19AF90BB5F /* PCKWKInterfaceObjectProvider.h */,
+				34AB31B81BC8B32E0039F450 /* WKImage.h */,
+				34AB31B91BC8B32E0039F450 /* WKImage.m */,
+				34AB31BC1BC8B70A0039F450 /* WKAlertAction.h */,
+				34AB31BD1BC8B70A0039F450 /* WKAlertAction.m */,
+				B83C31C31A4CD8A40021F1A4 /* Supporting Files */,
 			);
 			path = WatchKit;
 			sourceTree = "<group>";
@@ -559,7 +588,6 @@
 			isa = PBXGroup;
 			children = (
 				B83C31C41A4CD8A40021F1A4 /* Info.plist */,
-				AE25F4831B5EBCB2009B599E /* WKInterfaceButton+Spec.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -572,8 +600,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B83C32271A4CD9BF0021F1A4 /* WKInterfaceTable+Spec.h in Headers */,
+				222167661B8CE49E00A1C8AE /* WKDefines.h in Headers */,
 				B83C32321A4CDA380021F1A4 /* PCKInterfaceControllerLoader.h in Headers */,
 				B83C323C1A4CE0FC0021F1A4 /* UIColor+PCK_StringToColor.h in Headers */,
+				222167691B8CE4F600A1C8AE /* WKExtension.h in Headers */,
 				B83C321C1A4CD9BF0021F1A4 /* WKInterfaceSeparator.h in Headers */,
 				B83C32251A4CD9BF0021F1A4 /* WKInterfaceTable.h in Headers */,
 				B83C320F1A4CD9BF0021F1A4 /* WKInterfaceGroup.h in Headers */,
@@ -581,11 +611,14 @@
 				B83C32121A4CD9BF0021F1A4 /* WKInterfaceImage.h in Headers */,
 				B83C321E1A4CD9BF0021F1A4 /* WKInterfaceSeparator+Spec.h in Headers */,
 				B83C32071A4CD9BF0021F1A4 /* WKInterfaceButton.h in Headers */,
+				3434BC6C1BCDDBBA00E9470B /* WKInterfaceObject+Spec.h in Headers */,
 				B83C320A1A4CD9BF0021F1A4 /* WKInterfaceController.h in Headers */,
 				B83C320C1A4CD9BF0021F1A4 /* WKInterfaceDate.h in Headers */,
 				B83C32041A4CD9BF0021F1A4 /* PCKMessageCapturer.h in Headers */,
 				B83C322B1A4CD9BF0021F1A4 /* WKUserNotificationInterfaceController+Spec.h in Headers */,
+				34AB31BA1BC8B32E0039F450 /* WKImage.h in Headers */,
 				B83AC22D1A5E191C00A35BD6 /* PCKWKInterfaceControllerProvider.h in Headers */,
+				34AB31BE1BC8B70A0039F450 /* WKAlertAction.h in Headers */,
 				B83C32151A4CD9BF0021F1A4 /* WKInterfaceLabel.h in Headers */,
 				B83C32281A4CD9BF0021F1A4 /* WKInterfaceTimer.h in Headers */,
 				B83C32241A4CD9BF0021F1A4 /* WKInterfaceSwitch+Spec.h in Headers */,
@@ -602,6 +635,7 @@
 				B83C32181A4CD9BF0021F1A4 /* WKInterfaceMap.h in Headers */,
 				B83C320E1A4CD9BF0021F1A4 /* WKInterfaceDate+Spec.h in Headers */,
 				B83C32221A4CD9BF0021F1A4 /* WKInterfaceSwitch.h in Headers */,
+				3442BECF1BDE889F00B32266 /* WKExtension+Spec.h in Headers */,
 				B83C32091A4CD9BF0021F1A4 /* WKInterfaceButton+Spec.h in Headers */,
 				DE99CEA2B9FF35CB4525BCCB /* PCKWKInterfaceObjectProvider.h in Headers */,
 			);
@@ -669,7 +703,7 @@
 		AE25D5D11A38F664008A1920 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0620;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = Pivotal;
 				TargetAttributes = {
 					344569F81B98EC04008A16A2 = {
@@ -794,13 +828,6 @@
 			remoteRef = AE25D63B1A38F77D008A1920 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		AE25D63E1A38F77D008A1920 /* Cedar OS X Failing Test Bundle.octest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "Cedar OS X Failing Test Bundle.octest";
-			remoteRef = AE25D63D1A38F77D008A1920 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -847,10 +874,12 @@
 				B83C32541A4CE18C0021F1A4 /* WKInterfaceObjectSpec.mm in Sources */,
 				34456A241B98F3B4008A16A2 /* NSBundle+BuildHelper.m in Sources */,
 				AEB03EDE1A3FB366002404BC /* PCKFixtureMapController.m in Sources */,
+				3442BED21BDE8A0600B32266 /* WKAlertActionSpec.mm in Sources */,
 				B83C324E1A4CE18C0021F1A4 /* WKInterfaceControllerSpec.mm in Sources */,
 				B83C324D1A4CE18C0021F1A4 /* WKInterfaceButtonSpec.mm in Sources */,
 				B83C32571A4CE18C0021F1A4 /* WKInterfaceTableSpec.mm in Sources */,
 				B83C32531A4CE18C0021F1A4 /* WKInterfaceMapSpec.mm in Sources */,
+				3442BECC1BDE867B00B32266 /* WKExtensionSpec.mm in Sources */,
 				B83C32511A4CE18C0021F1A4 /* WKInterfaceImageSpec.mm in Sources */,
 				2681A5D31AE0991C00B0B753 /* WKInterfaceDeviceSpec.mm in Sources */,
 				AE85C0611A3FC03B009A0E4D /* GroupController.m in Sources */,
@@ -861,6 +890,7 @@
 				B83C32591A4CE18C0021F1A4 /* WKUserNotificationInterfaceControllerSpec.mm in Sources */,
 				B83C324F1A4CE18C0021F1A4 /* WKInterfaceDateSpec.mm in Sources */,
 				AE25D6611A390480008A1920 /* InterfaceController.m in Sources */,
+				3442BED41BDED16200B32266 /* WKImageSpec.mm in Sources */,
 				B83C32501A4CE18C0021F1A4 /* WKInterfaceGroupSpec.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -870,12 +900,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				B83C32201A4CD9BF0021F1A4 /* WKInterfaceSlider.m in Sources */,
+				34AB31BB1BC8B32E0039F450 /* WKImage.m in Sources */,
 				B83C321B1A4CD9BF0021F1A4 /* WKInterfaceObject.m in Sources */,
 				B83C32331A4CDA380021F1A4 /* PCKInterfaceControllerLoader.m in Sources */,
 				B83AC22E1A5E191C00A35BD6 /* PCKWKInterfaceControllerProvider.m in Sources */,
 				B83C321D1A4CD9BF0021F1A4 /* WKInterfaceSeparator.m in Sources */,
 				B83C32311A4CDA380021F1A4 /* PCKFakeSegue.m in Sources */,
 				B83C32291A4CD9BF0021F1A4 /* WKInterfaceTimer.m in Sources */,
+				2221676A1B8CE4F600A1C8AE /* WKExtension.m in Sources */,
 				B83C32261A4CD9BF0021F1A4 /* WKInterfaceTable.m in Sources */,
 				B83C32161A4CD9BF0021F1A4 /* WKInterfaceLabel.m in Sources */,
 				B83C32051A4CD9BF0021F1A4 /* PCKMessageCapturer.m in Sources */,
@@ -886,6 +918,7 @@
 				B83C32231A4CD9BF0021F1A4 /* WKInterfaceSwitch.m in Sources */,
 				267B25B31AD86BDB00440CD2 /* NSInvocation+InvocationMatching.m in Sources */,
 				B83C32191A4CD9BF0021F1A4 /* WKInterfaceMap.m in Sources */,
+				34AB31BF1BC8B70A0039F450 /* WKAlertAction.m in Sources */,
 				B83C32131A4CD9BF0021F1A4 /* WKInterfaceImage.m in Sources */,
 				2681A5B11AE0906600B0B753 /* WKInterfaceDevice.m in Sources */,
 				B83C32081A4CD9BF0021F1A4 /* WKInterfaceButton.m in Sources */,
@@ -969,6 +1002,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -1092,6 +1126,7 @@
 				INFOPLIST_FILE = WatchKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.prairiedogg.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1113,6 +1148,7 @@
 				INFOPLIST_FILE = WatchKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.prairiedogg.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1131,6 +1167,7 @@
 				34456A081B98EC05008A16A2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AE25D5D41A38F664008A1920 /* Build configuration list for PBXProject "WatchKit" */ = {
 			isa = XCConfigurationList;

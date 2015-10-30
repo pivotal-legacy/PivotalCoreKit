@@ -12,7 +12,7 @@
              forRemoteNotification:(NSDictionary *)remoteNotification NS_REQUIRES_SUPER;
 - (void)handleActionWithIdentifier:(NSString *)identifier
               forLocalNotification:(UILocalNotification *)localNotification NS_REQUIRES_SUPER;
-- (NSString *)actionForUserActivity:(NSDictionary *)userActivity context:(id *)context NS_REQUIRES_SUPER;
+- (void)handleUserActivity:(NSDictionary *)userActivity NS_REQUIRES_SUPER;
 
 - (void)pushControllerWithName:(NSString *)name context:(id)context NS_REQUIRES_SUPER;
 - (void)popController NS_REQUIRES_SUPER;;
@@ -43,11 +43,14 @@
 - (void)clearAllMenuItems NS_REQUIRES_SUPER;
 
 - (void)updateUserActivity:(NSString *)type userInfo:(NSDictionary *)userInfo NS_REQUIRES_SUPER;
+- (void)updateUserActivity:(NSString *)type userInfo:(nullable NSDictionary *)userInfo webpageURL:(nullable NSURL *)webpageURL NS_REQUIRES_SUPER;
 
 - (void)didReceiveRemoteNotification:(NSDictionary *)remoteNotification
                       withCompletion:(void(^)(WKUserNotificationInterfaceType interface)) completionHandler NS_REQUIRES_SUPER;
 - (void)didReceiveLocalNotification:(UILocalNotification *)localNotification
                      withCompletion:(void(^)(WKUserNotificationInterfaceType interface)) completionHandler NS_REQUIRES_SUPER;
+
+- (void)presentAlertControllerWithTitle:(NSString *)title message:(NSString *)message preferredStyle:(WKAlertControllerStyle)preferredStyle actions:(NSArray <WKAlertAction *>*)actions NS_REQUIRES_SUPER;
 
 + (BOOL)openParentApplication:(NSDictionary *)userInfo reply:(void(^)(NSDictionary *replyInfo, NSError *error)) reply NS_REQUIRES_SUPER;
 + (void)reloadRootControllersWithNames:(NSArray *)names contexts:(NSArray *)contexts NS_REQUIRES_SUPER;
@@ -99,10 +102,9 @@
     [super handleActionWithIdentifier:identifier forLocalNotification:localNotification];
 }
 
-- (NSString *)actionForUserActivity:(NSDictionary *)userActivity context:(id *)context
+- (void)handleUserActivity:(NSDictionary *)userActivity
 {
-    [super actionForUserActivity:userActivity context:context];
-    return nil;
+    [super handleUserActivity:userActivity];
 }
 
 - (void)setTitle:(NSString *)title
@@ -190,9 +192,18 @@
     [super clearAllMenuItems];
 }
 
+- (void)presentAlertControllerWithTitle:(NSString *)title message:(NSString *)message preferredStyle:(WKAlertControllerStyle)preferredStyle actions:(NSArray<WKAlertAction *> *)actions
+{
+    [super presentAlertControllerWithTitle:title message:message preferredStyle:preferredStyle actions:actions];
+}
+
 - (void)updateUserActivity:(NSString *)type userInfo:(NSDictionary *)userInfo
 {
     [super updateUserActivity:type userInfo:userInfo];
+}
+
+- (void)updateUserActivity:(NSString *)type userInfo:(nullable NSDictionary *)userInfo webpageURL:(nullable NSURL *)webpageURL {
+    [super updateUserActivity:type userInfo:userInfo webpageURL:webpageURL];
 }
 
 + (BOOL)openParentApplication:(NSDictionary *)userInfo reply:(void(^)(NSDictionary *replyInfo, NSError *error)) reply

@@ -50,6 +50,12 @@ describe(@"WKInterfaceDevice", ^{
 
             subject should have_received(@selector(removeAllCachedImages));
         });
+
+        it(@"should record the invocation for removeAllCachedImages", ^{
+            [subject playHaptic:WKHapticTypeSuccess];
+
+            subject should have_received(@selector(playHaptic:)).with(WKHapticTypeSuccess);
+        });
     });
 
     describe(@"class methods", ^{

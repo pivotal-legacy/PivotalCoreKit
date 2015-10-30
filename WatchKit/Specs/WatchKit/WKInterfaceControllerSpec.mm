@@ -65,16 +65,9 @@ describe(@"WKInterfaceController", ^{
             subject should have_received(@selector(handleActionWithIdentifier:forLocalNotification:)).with(@"asdf", notification);
         });
 
-        it(@"should record the invocations of handleActionWithIdentifier:forRemoteNotification:", ^{
-            NSString *expectedContext = @"asdf";
-            [subject actionForUserActivity:@{@"a": @1} context:&expectedContext];
-            subject should have_received(@selector(actionForUserActivity:context:)).with(@{@"a": @1}, Arguments::anything);
-
-            NSInvocation *invocation = [[subject sent_messages] firstObject];
-            __autoreleasing NSString **contextPointer;
-            [invocation getArgument:&contextPointer atIndex:3];
-            NSString *context = *contextPointer;
-            context should equal(@"asdf");
+        it(@"should record the invocations of handleUserActivity:", ^{
+            [subject handleUserActivity:@{@"a": @1}];
+            subject should have_received(@selector(handleUserActivity:)).with(@{@"a": @1});
         });
 
         it(@"should record the invocations of setTitle:", ^{
@@ -194,6 +187,20 @@ describe(@"WKInterfaceController", ^{
             [subject updateUserActivity:@"asdf" userInfo:@{@"a": @"b"}];
 
             subject should have_received(@selector(updateUserActivity:userInfo:)).with(@"asdf", @{@"a": @"b"});
+        });
+
+        it(@"should record the invocations of updateUserActivity:userInfo:webpageURL:", ^{
+            NSURL *URL = [NSURL URLWithString:@"http://pivotal.io"];
+            [subject updateUserActivity:@"asdf" userInfo:@{@"a": @"b"} webpageURL:URL];
+
+            subject should have_received(@selector(updateUserActivity:userInfo:webpageURL:)).with(@"asdf", @{@"a": @"b"}, URL);
+        });
+
+        it(@"should record the invocations of presentAlertControllerWithTitle:message:preferredStyle:actions:actions", ^{
+            WKAlertAction *action = [WKAlertAction actionWithTitle:@"do it!" style:WKAlertActionStyleDefault handler:^{}];
+            [subject presentAlertControllerWithTitle:@"alert" message:@"hey" preferredStyle:WKAlertControllerStyleAlert actions:@[action]];
+
+            subject should have_received(@selector(presentAlertControllerWithTitle:message:preferredStyle:actions:)).with(@"alert", @"hey", WKAlertControllerStyleAlert, @[action]);
         });
     });
 
