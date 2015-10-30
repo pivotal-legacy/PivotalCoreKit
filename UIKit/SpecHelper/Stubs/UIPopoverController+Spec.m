@@ -4,10 +4,14 @@
 
 #import "UIPopoverController+Spec.h"
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
 @implementation UIPopoverController (Spec)
 
 static __weak UIPopoverController *currentPopoverController__;
 static UIPopoverArrowDirection arrowDirectionMask__;
+
+#pragma clang diagnostic pop
 
 + (instancetype)currentPopoverController {
     return currentPopoverController__;

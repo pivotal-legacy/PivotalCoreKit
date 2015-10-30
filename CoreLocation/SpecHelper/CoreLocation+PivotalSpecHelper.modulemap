@@ -1,0 +1,6 @@
+framework module CoreLocation_PivotalSpecHelper {
+    umbrella header "CoreLocation+PivotalSpecHelper.h"
+
+    export *
+    module * { export * }
+}

@@ -1,0 +1,6 @@
+framework module UIKit_PivotalSpecHelperStubs {
+    umbrella header "UIKit+PivotalSpecHelperStubs.h"
+
+    export *
+    module * { export * }
+}

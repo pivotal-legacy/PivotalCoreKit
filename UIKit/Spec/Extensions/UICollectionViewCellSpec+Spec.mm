@@ -1,4 +1,4 @@
-#import "CDRSpecHelper.h"
+#import "Cedar.h"
 #import "UICollectionViewCell+Spec.h"
 #import "PrototypeCellObjects.h"
 

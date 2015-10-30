@@ -1,4 +1,4 @@
-#import "CDRSpecHelper.h"
+#import "Cedar.h"
 #import "UIView+Spec.h"
 #import "UIView+StubbedGestureRecognizers.h"
 #import "Target.h"
@@ -133,6 +133,7 @@ describe(@"UIView+Spec", ^{
         });
     });
 
+#if !TARGET_OS_TV
     describe(@"pinching the view", ^{
         beforeEach(^{
             UIPinchGestureRecognizer *pinchRecognizer = [[UIPinchGestureRecognizer alloc] init];
@@ -152,6 +153,7 @@ describe(@"UIView+Spec", ^{
             otherTarget should_not have_received(@selector(hello));
         });
     });
+#endif
 
     describe(@"finding subviews by accessibility identifier", ^{
         __block UIView *view;

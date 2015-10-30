@@ -1,4 +1,4 @@
-#import "CDRSpecHelper.h"
+#import "Cedar.h"
 #import "UIPopoverController+Spec.h"
 
 using namespace Cedar::Matchers;
@@ -9,6 +9,9 @@ using namespace Cedar::Doubles;
 
 @implementation SpecPopoverBackgroundView
 @end
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
 
 SPEC_BEGIN(UIPopoverControllerSpecExtensionsSpec)
 
@@ -81,8 +84,11 @@ describe(@"UIPopoverController (spec extensions)", ^{
         describe(@"when the popoverController is presented from a bar button item", ^{
             beforeEach(^{
                 UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] init];
-                UIToolbar *toolbar = [[UIToolbar alloc] init];
-                toolbar.items = @[barButtonItem];
+                UINavigationItem *navItem = [[UINavigationItem alloc] init];
+                navItem.rightBarButtonItem = barButtonItem;
+                UINavigationBar *navBar = [[UINavigationBar alloc] init];
+                navBar.items = @[navItem];
+
                 [popoverController presentPopoverFromBarButtonItem:barButtonItem
                                           permittedArrowDirections:UIPopoverArrowDirectionAny
                                                           animated:YES];
@@ -96,3 +102,5 @@ describe(@"UIPopoverController (spec extensions)", ^{
 });
 
 SPEC_END
+
+#pragma clang diagnostic pop

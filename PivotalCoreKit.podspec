@@ -6,7 +6,8 @@ Pod::Spec.new do |s|
   s.homepage = 'https://github.com/pivotal/PivotalCoreKit'
   s.author   = { 'Pivotal Labs' => 'http://pivotallabs.com' }
   s.source   = { :git => 'https://github.com/pivotal/PivotalCoreKit.git', :tag => 'v0.3.0' }
-  s.platform = :ios, '6.0'
+  s.ios.platform = :ios, '6.0'
+  s.tvos.platform = :tvos, '9.0'
   s.requires_arc = false
 
   s.default_subspec = 'Core'
@@ -36,7 +37,9 @@ Pod::Spec.new do |s|
 
     ui.subspec 'SpecHelper' do |spec|
       spec.subspec 'Extensions' do |ext|
-        ext.source_files = ['UIKit/SpecHelper/Extensions/*.{h,m}', 'UIKit/SpecHelper/UIKit+PivotalSpecHelper.h']
+        ext.source_files = ['UIKit/SpecHelper/Extensions/**/*.{h,m}', 'UIKit/SpecHelper/UIKit+PivotalSpecHelper.h']
+        ext.tvos.exclude_files = '**/iOS/**'
+
         ext.dependency 'PivotalCoreKit/UIKit/SpecHelper/Support'
       end
 
@@ -46,10 +49,12 @@ Pod::Spec.new do |s|
 
       spec.subspec 'Stubs' do |stub|
         stub.requires_arc = true
-        stub.source_files = ['UIKit/SpecHelper/Stubs/*.{h,m}', 'UIKit/SpecHelper/UIKit+PivotalSpecHelperStubs.h']
+        stub.source_files = ['UIKit/SpecHelper/Stubs/**/*.{h,m}', 'UIKit/SpecHelper/UIKit+PivotalSpecHelperStubs.h']
         stub.dependency 'PivotalCoreKit/UIKit/SpecHelper/Support'
         narc_files = ['UIKit/SpecHelper/Stubs/UIGestureRecognizer+Spec.*']
         stub.exclude_files = narc_files
+        stub.tvos.exclude_files = '**/iOS/**'
+
         stub.subspec 'Stubs-noarc' do |narc|
           narc.requires_arc = false
           narc.source_files = narc_files
@@ -65,6 +70,8 @@ Pod::Spec.new do |s|
   s.subspec 'Foundation' do |f|
     f.ios.deployment_target = '6.0'
     f.osx.deployment_target = '10.6'
+    f.watchos.deployment_target = '2.0'
+    f.tvos.deployment_target = '9.0'
 
     f.subspec 'Core' do |c|
       c.source_files = 'Foundation/Core/**/*.{h,m}'
@@ -97,6 +104,11 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'CoreLocation' do |location|
+    location.ios.deployment_target = '6.0'
+    location.osx.deployment_target = '10.6'
+    location.watchos.deployment_target = '2.0'
+    location.tvos.deployment_target = '9.0'
+
     location.subspec 'SpecHelper' do |h|
       h.subspec 'Base' do |base|
         base.source_files = 'CoreLocation/SpecHelper/*.{h,m}'

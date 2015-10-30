@@ -1,5 +1,5 @@
 #import <Foundation/Foundation.h>
-#if TARGET_OS_IPHONE
+#if TARGET_OS_IPHONE && !TARGET_OS_TV
 #import "CDRSpecHelper.h"
 #else
 #import <Cedar/CDRSpecHelper.h>
@@ -28,6 +28,8 @@
 using namespace Cedar::Matchers;
 using namespace Cedar::Doubles;
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
 
 SPEC_BEGIN(NSURLConnectionSpec_Spec)
 
@@ -407,3 +409,5 @@ describe(@"NSURLConnection (spec extensions)", ^{
 });
 
 SPEC_END
+
+#pragma clang diagnostic pop

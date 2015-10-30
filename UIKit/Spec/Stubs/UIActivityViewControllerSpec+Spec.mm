@@ -1,4 +1,4 @@
-#import "CDRSpecHelper.h"
+#import "Cedar.h"
 #import "UIKit+PivotalSpecHelperStubs.h"
 
 @interface CustomActivity : UIActivity

@@ -1,0 +1,6 @@
+framework module UIKit_PivotalSpecHelper {
+    umbrella header "UIKit+PivotalSpecHelper.h"
+
+    export *
+    module * { export * }
+}

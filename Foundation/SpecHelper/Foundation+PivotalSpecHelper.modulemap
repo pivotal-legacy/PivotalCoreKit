@@ -1,0 +1,6 @@
+framework module Foundation_PivotalSpecHelper {
+    umbrella header "Foundation+PivotalSpecHelper.h"
+
+    export *
+    module * { export * }
+}

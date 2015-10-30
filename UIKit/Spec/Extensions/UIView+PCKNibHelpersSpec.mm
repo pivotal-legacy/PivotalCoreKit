@@ -1,4 +1,4 @@
-#import "CDRSpecHelper.h"
+#import "Cedar.h"
 #import "OuterView.h"
 #import "InnerView.h"
 #import "MainController.h"

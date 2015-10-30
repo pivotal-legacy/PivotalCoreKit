@@ -1,0 +1,6 @@
+framework module UIKit_PivotalCore {
+    umbrella header "UIKit+PivotalCore.h"
+
+    export *
+    module * { export * }
+}

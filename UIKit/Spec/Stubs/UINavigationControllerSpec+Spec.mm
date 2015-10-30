@@ -1,5 +1,4 @@
-#import <UIKit/UIKit.h>
-#import <Cedar-iOS.h>
+#import "Cedar.h"
 
 using namespace Cedar::Matchers;
 using namespace Cedar::Doubles;
@@ -10,12 +9,13 @@ using namespace Cedar::Doubles;
 @implementation CustomNavigationBar
 @end
 
+#if !TARGET_OS_TV
 @interface CustomToolbar : UIToolbar
 @end
 
 @implementation CustomToolbar
 @end
-
+#endif
 
 /*!
  * The test which uses this fails on iOS 8.x / 64-bit.
@@ -162,8 +162,14 @@ describe(@"UINavigationController (spec extensions)", ^{
     });
 
     context(@"a navigation controller created with nav bar and toolbar classes", ^{
+#if TARGET_OS_TV
+        Class toolbarClass = Nil;
+#else
+        Class toolbarClass = [CustomToolbar class];
+#endif
+
         beforeEach(^{
-            navigationController = [[UINavigationController alloc] initWithNavigationBarClass:[CustomNavigationBar class] toolbarClass:[CustomToolbar class]];
+            navigationController = [[UINavigationController alloc] initWithNavigationBarClass:[CustomNavigationBar class] toolbarClass:toolbarClass];
             window.rootViewController = navigationController;
 
             [navigationController pushViewController:rootViewController animated:YES];
@@ -174,9 +180,11 @@ describe(@"UINavigationController (spec extensions)", ^{
             navigationController.navigationBar should be_instance_of([CustomNavigationBar class]);
         });
 
+#if !TARGET_OS_TV
         it(@"should have a toolbar with the specified class", ^{
-            navigationController.toolbar should be_instance_of([CustomToolbar class]);
+            navigationController.toolbar should be_instance_of(toolbarClass);
         });
+#endif
 
         itShouldBehaveLike(@"a stubbed navigation controller");
     });

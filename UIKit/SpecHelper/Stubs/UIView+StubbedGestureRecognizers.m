@@ -13,9 +13,11 @@
     [[self recognizersWithClass:[UISwipeGestureRecognizer class]] makeObjectsPerformSelector:@selector(recognize)];
 }
 
+#if !TARGET_OS_TV
 - (void)pinch {
     [[self recognizersWithClass:[UIPinchGestureRecognizer class]] makeObjectsPerformSelector:@selector(recognize)];
 }
+#endif
 
 - (void)swipeInDirection:(UISwipeGestureRecognizerDirection)swipeDirection {
     NSArray *swipeRecognizers = [self recognizersWithClass:[UISwipeGestureRecognizer class]];

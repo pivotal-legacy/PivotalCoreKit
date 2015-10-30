@@ -266,7 +266,10 @@ static PSHKFakeOperationQueue *connectionsQueue__;
                                                                                                       sender:sender]
                                                autorelease];
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
     [[self delegate] connection:self didReceiveAuthenticationChallenge:challenge];
+#pragma clang diagnostic pop
 }
 
 @end

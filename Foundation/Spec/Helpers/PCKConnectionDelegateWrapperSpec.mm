@@ -1,5 +1,5 @@
 #import <Foundation/Foundation.h>
-#if TARGET_OS_IPHONE
+#if TARGET_OS_IPHONE && !TARGET_OS_TV
 #import "CDRSpecHelper.h"
 #else
 #import <Cedar/CDRSpecHelper.h>
@@ -25,6 +25,9 @@ describe(@"PCKConnectionDelegateWrapper", ^{
         receivedData = [NSData data];
         delegate = nice_fake_for(@protocol(NSURLConnectionDataDelegate));
         NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.google.com/"]];
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
         connection = [NSURLConnection connectionWithRequest:request
                                                    delegate:delegate];
         delegateWrapper = [PCKConnectionDelegateWrapper wrapperForConnection:connection
@@ -33,6 +36,7 @@ describe(@"PCKConnectionDelegateWrapper", ^{
                                                           }];
         proxyConnection = [NSURLConnection connectionWithRequest:request
                                                         delegate:delegateWrapper];
+#pragma clang diagnostic pop
     });
 
     context(@"when receiving a message that the delegate responds to", ^{

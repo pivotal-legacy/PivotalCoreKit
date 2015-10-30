@@ -62,8 +62,8 @@ static char PRESENTED_CONTROLLER_KEY;
         NSString *errorReason = [NSString stringWithFormat:@"Application tried to present a nil modal view controller on target %@", self];
         [[NSException exceptionWithName:NSInvalidArgumentException reason:errorReason userInfo:nil] raise];
     }
-    if (self.modalViewController) {
-        NSString *errorReason = [NSString stringWithFormat:@"Presenting modal view controller (%@) with other modal (%@) previously active", modalViewController, self.modalViewController];
+    if (self.presentedViewController) {
+        NSString *errorReason = [NSString stringWithFormat:@"Presenting modal view controller (%@) with other modal (%@) previously active", modalViewController, self.presentedViewController];
         [[NSException exceptionWithName:NSInternalInconsistencyException reason:errorReason userInfo:nil] raise];
     }
 
@@ -79,9 +79,9 @@ static char PRESENTED_CONTROLLER_KEY;
         [self.presentedViewController _pck_setPresentingViewController:nil];
         [self _pck_setPresentedViewController:nil];
     } else if (self.presentingViewController) {
-        [self.presentingViewController dismissModalViewControllerAnimated:YES];
+        [self.presentingViewController dismissViewControllerAnimated:YES completion:completion];
     } else if (self.navigationController) {
-        [self.navigationController dismissModalViewControllerAnimated:YES];
+        [self.navigationController dismissViewControllerAnimated:YES completion:completion];
     }
 
     if (completion) {

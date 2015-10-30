@@ -1,5 +1,5 @@
 #import <Foundation/Foundation.h>
-#if TARGET_OS_IPHONE
+#if TARGET_OS_IPHONE && !TARGET_OS_TV
 #import "CDRSpecHelper.h"
 #else
 #import <Cedar/CDRSpecHelper.h>
@@ -153,7 +153,10 @@ describe(@"PCKHTTPInterface", ^{
             describe(@"when the client chooses to cancel the authentication challenge", ^{
                 beforeEach(^{
                     NSURLAuthenticationChallenge<CedarDouble> *challenge = fake_for([NSURLAuthenticationChallenge class]);
+#pragma clang diganostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
                     [connection.delegate connection:connection didCancelAuthenticationChallenge:challenge];
+#pragma clang diagnostic pop
                 });
 
                 it(@"should remove the connection from the active connections", ^{

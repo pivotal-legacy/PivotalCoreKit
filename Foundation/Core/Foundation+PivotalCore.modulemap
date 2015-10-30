@@ -1,0 +1,6 @@
+framework module Foundation_PivotalCore {
+    umbrella header "Foundation+PivotalCore.h"
+
+    export *
+    module * { export * }
+}
