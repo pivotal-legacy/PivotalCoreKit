@@ -1,5 +1,6 @@
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
 
 @interface PCKMessageCapturer : NSObject
 
@@ -10,3 +11,5 @@
 + (void)reset_sent_messages;
 
 @end
+
+NS_ASSUME_NONNULL_END

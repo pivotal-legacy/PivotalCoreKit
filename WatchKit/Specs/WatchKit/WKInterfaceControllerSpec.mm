@@ -118,7 +118,7 @@ describe(@"WKInterfaceController", ^{
         it(@"should record the invocations of presentTextInputControllerWithSuggestions:allowedInputMode:completion:", ^{
             [subject presentTextInputControllerWithSuggestions:@[@2, @3]
                                               allowedInputMode:WKTextInputModeAllowAnimatedEmoji
-                                                    completion:nil];
+                                                    completion:^(NSArray *results){}];
             subject should have_received(@selector(presentTextInputControllerWithSuggestions:allowedInputMode:completion:)).with(@[@2, @3], WKTextInputModeAllowAnimatedEmoji, Arguments::anything);
         });
 

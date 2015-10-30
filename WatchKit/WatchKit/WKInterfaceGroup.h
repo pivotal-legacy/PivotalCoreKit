@@ -1,14 +1,15 @@
 #import "WKInterfaceObject.h"
 
+NS_ASSUME_NONNULL_BEGIN
 
 @interface WKInterfaceGroup : WKInterfaceObject
 
 - (void)setCornerRadius:(CGFloat)cornerRadius;
 
-- (void)setBackgroundColor:(UIColor *)backgroundColor;
-- (void)setBackgroundImage:(UIImage *)image;
-- (void)setBackgroundImageData:(NSData *)imageData;
-- (void)setBackgroundImageNamed:(NSString *)imageName;
+- (void)setBackgroundColor:(nullable UIColor *)backgroundColor;
+- (void)setBackgroundImage:(nullable UIImage *)image;
+- (void)setBackgroundImageData:(nullable NSData *)imageData;
+- (void)setBackgroundImageNamed:(nullable NSString *)imageName;
 
 - (void)startAnimating;
 - (void)startAnimatingWithImagesInRange:(NSRange)imageRange
@@ -17,3 +18,5 @@
 - (void)stopAnimating;
 
 @end
+
+NS_ASSUME_NONNULL_END

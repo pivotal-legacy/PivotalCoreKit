@@ -1,9 +1,10 @@
 #import "WKInterfaceObject.h"
 
+NS_ASSUME_NONNULL_BEGIN
 
 @interface WKInterfaceTable : WKInterfaceObject
 
-- (void)setRowTypes:(NSArray *)rowTypes;
+- (void)setRowTypes:(NSArray<NSString *> *)rowTypes;
 - (void)setNumberOfRows:(NSInteger)numberOfRows withRowType:(NSString *)rowType;
 
 @property(nonatomic,readonly) NSInteger numberOfRows;
@@ -15,3 +16,5 @@
 - (void)scrollToRowAtIndex:(NSInteger)index;
 
 @end
+
+NS_ASSUME_NONNULL_END

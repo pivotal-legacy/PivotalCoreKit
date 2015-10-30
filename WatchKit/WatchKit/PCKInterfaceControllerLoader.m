@@ -60,7 +60,7 @@
                                                         bundle:(NSBundle *)bundle
 {
     NSString *processedStoryboardName = [storyboardName stringByAppendingString:@"-notification"];
-    NSString *pathForPlist = [bundle pathForResource:processedStoryboardName ofType:@"plist"];
+    NSString *pathForPlist = [(bundle ?: [NSBundle mainBundle]) pathForResource:processedStoryboardName ofType:@"plist"];
 
     if (!pathForPlist) {
         [NSException raise:NSInvalidArgumentException
@@ -81,7 +81,7 @@
                                            bundle:(NSBundle *)bundle
 {
     NSString *processedStoryboardName = [storyboardName stringByAppendingString:@"-glance"];
-    NSString *pathForPlist = [bundle pathForResource:processedStoryboardName ofType:@"plist"];
+    NSString *pathForPlist = [(bundle ?: [NSBundle mainBundle]) pathForResource:processedStoryboardName ofType:@"plist"];
 
     if (!pathForPlist) {
         [NSException raise:NSInvalidArgumentException
@@ -104,7 +104,7 @@
 #pragma mark - Private
 
 - (NSDictionary *)dictionaryForStoryboardNamed:(NSString *)storyboardName inBundle:(NSBundle *)bundle {
-    NSString *pathForPlist = [bundle pathForResource:storyboardName ofType:@"plist"];
+    NSString *pathForPlist = [(bundle ?: [NSBundle mainBundle]) pathForResource:storyboardName ofType:@"plist"];
     if (!pathForPlist) {
         [NSException raise:NSInvalidArgumentException
                     format:@"No storyboard named '%@' exists in the test target.  Did you forget to add it?", storyboardName];
