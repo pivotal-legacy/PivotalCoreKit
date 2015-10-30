@@ -1,7 +1,11 @@
 #import "WKInterfaceController.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface WKUserNotificationInterfaceController (Spec)
 
-- (void(^)(WKUserNotificationInterfaceType))lastCompletionBlock;
+- (nullable void(^)(WKUserNotificationInterfaceType))lastCompletionBlock;
 
 @end
+
+NS_ASSUME_NONNULL_END

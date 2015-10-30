@@ -1,5 +1,6 @@
 #import "WKInterfaceSlider.h"
 
+NS_ASSUME_NONNULL_BEGIN
 
 @interface WKInterfaceSlider (Spec)
 
@@ -8,8 +9,10 @@
 - (float)minimum;
 - (float)maximum;
 - (NSInteger)numberOfSteps;
-- (UIImage *)minimumImage;
-- (UIImage *)maximumImage;
+- (nullable UIImage *)minimumImage;
+- (nullable UIImage *)maximumImage;
 - (BOOL)continuous;
 
 @end
+
+NS_ASSUME_NONNULL_END

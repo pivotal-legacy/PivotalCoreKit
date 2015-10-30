@@ -1,5 +1,7 @@
 #import "PCKMessageCapturer.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 typedef NS_ENUM(NSInteger, WKUserNotificationInterfaceType)  {
     WKUserNotificationInterfaceTypeDefault,
     WKUserNotificationInterfaceTypeCustom,
@@ -42,52 +44,52 @@ typedef NS_ENUM(NSInteger, WKAlertControllerStyle) {
 
 @interface WKInterfaceController : PCKMessageCapturer
 
-- (void)awakeWithContext:(id)context;
+- (void)awakeWithContext:(nullable id)context;
 
 - (void)willActivate;
 - (void)didDeactivate;
 
 - (void)table:(WKInterfaceTable *)table didSelectRowAtIndex:(NSInteger)rowIndex;
-- (void)handleActionWithIdentifier:(NSString *)identifier
+- (void)handleActionWithIdentifier:(nullable NSString *)identifier
              forRemoteNotification:(NSDictionary *)remoteNotification;
-- (void)handleActionWithIdentifier:(NSString *)identifier
+- (void)handleActionWithIdentifier:(nullable NSString *)identifier
               forLocalNotification:(UILocalNotification *)localNotification;
-- (void)handleUserActivity:(NSDictionary *)userInfo;
+- (void)handleUserActivity:(nullable NSDictionary *)userInfo;
 
 - (void)setTitle:(NSString *)title;
 
-- (void)pushControllerWithName:(NSString *)name context:(id)context;
+- (void)pushControllerWithName:(NSString *)name context:(nullable id)context;
 - (void)popController;
 - (void)popToRootController;
 
-+ (void)reloadRootControllersWithNames:(NSArray *)names contexts:(NSArray *)contexts;
++ (void)reloadRootControllersWithNames:(NSArray<NSString *> *)names contexts:(nullable NSArray *)contexts;
 - (void)becomeCurrentPage;
 
-- (void)presentControllerWithName:(NSString *)name context:(id)context;
-- (void)presentControllerWithNames:(NSArray *)names contexts:(NSArray *)contexts;
+- (void)presentControllerWithName:(NSString *)name context:(nullable id)context;
+- (void)presentControllerWithNames:(NSArray<NSString *> *)names contexts:(nullable NSArray *)contexts;
 - (void)dismissController;
 
-- (void)presentTextInputControllerWithSuggestions:(NSArray *)suggestions
+- (void)presentTextInputControllerWithSuggestions:(nullable NSArray<NSString *> *)suggestions
                                  allowedInputMode:(WKTextInputMode)inputMode
-                                       completion:(void(^)(NSArray *results))completion;
+                                       completion:(void(^)(NSArray * __nullable results))completion;
 - (void)dismissTextInputController;
 
-- (id)contextForSegueWithIdentifier:(NSString *)segueIdentifier;
-- (NSArray *)contextsForSegueWithIdentifier:(NSString *)segueIdentifier;
-- (id)contextForSegueWithIdentifier:(NSString *)segueIdentifier inTable:(WKInterfaceTable *)table rowIndex:(NSInteger)rowIndex;
-- (NSArray *)contextsForSegueWithIdentifier:(NSString *)segueIdentifier inTable:(WKInterfaceTable *)table rowIndex:(NSInteger)rowIndex;
+- (nullable id)contextForSegueWithIdentifier:(NSString *)segueIdentifier;
+- (nullable NSArray *)contextsForSegueWithIdentifier:(NSString *)segueIdentifier;
+- (nullable id)contextForSegueWithIdentifier:(NSString *)segueIdentifier inTable:(WKInterfaceTable *)table rowIndex:(NSInteger)rowIndex;
+- (nullable NSArray *)contextsForSegueWithIdentifier:(NSString *)segueIdentifier inTable:(WKInterfaceTable *)table rowIndex:(NSInteger)rowIndex;
 
 - (void)addMenuItemWithImage:(UIImage *)image title:(NSString *)title action:(SEL)action;
 - (void)addMenuItemWithImageNamed:(NSString *)imageName title:(NSString *)title action:(SEL)action;
 - (void)addMenuItemWithItemIcon:(WKMenuItemIcon)itemIcon title:(NSString *)title action:(SEL)action;
 - (void)clearAllMenuItems;
 
-- (void)presentAlertControllerWithTitle:(NSString *)title message:(NSString *)message preferredStyle:(WKAlertControllerStyle)preferredStyle actions:(NSArray <WKAlertAction *>*)actions;
+- (void)presentAlertControllerWithTitle:(nullable NSString *)title message:(nullable NSString *)message preferredStyle:(WKAlertControllerStyle)preferredStyle actions:(NSArray <WKAlertAction *>*)actions;
 
-- (void)updateUserActivity:(NSString *)type userInfo:(NSDictionary *)userInfo;
-- (void)updateUserActivity:(NSString *)type userInfo:(NSDictionary *)userInfo webpageURL:(NSURL *)webpageURL;
+- (void)updateUserActivity:(NSString *)type userInfo:(nullable NSDictionary *)userInfo;
+- (void)updateUserActivity:(NSString *)type userInfo:(nullable NSDictionary *)userInfo webpageURL:(nullable NSURL *)webpageURL;
 
-+ (BOOL)openParentApplication:(NSDictionary *)userInfo reply:(void(^)(NSDictionary *replyInfo, NSError *error)) reply;
++ (BOOL)openParentApplication:(NSDictionary *)userInfo reply:(nullable void(^)(NSDictionary *replyInfo, NSError * __nullable error)) reply;
 
 @end
 
@@ -100,3 +102,5 @@ typedef NS_ENUM(NSInteger, WKAlertControllerStyle) {
                      withCompletion:(void(^)(WKUserNotificationInterfaceType interface)) completionHandler;
 
 @end
+
+NS_ASSUME_NONNULL_END

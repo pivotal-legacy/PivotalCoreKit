@@ -1,11 +1,14 @@
 #import "WKInterfaceObject.h"
 
+NS_ASSUME_NONNULL_BEGIN
 
 @interface WKInterfaceLabel : WKInterfaceObject
 
-- (void)setText:(NSString *)text;
-- (void)setTextColor:(UIColor *)textColor;
+- (void)setText:(nullable NSString *)text;
+- (void)setTextColor:(nullable UIColor *)textColor;
 
-- (void)setAttributedText:(NSAttributedString *)attributedText;
+- (void)setAttributedText:(nullable NSAttributedString *)attributedText;
 
 @end
+
+NS_ASSUME_NONNULL_END

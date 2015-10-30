@@ -1,16 +1,19 @@
 #import "WKInterfaceObject.h"
 
+NS_ASSUME_NONNULL_BEGIN
 
 @interface WKInterfaceButton : WKInterfaceObject
 
-- (void)setTitle:(NSString *)title;
-- (void)setAttributedTitle:(NSAttributedString *)attributedTitle;
+- (void)setTitle:(nullable NSString *)title;
+- (void)setAttributedTitle:(nullable NSAttributedString *)attributedTitle;
 
-- (void)setColor:(UIColor *)color;
-- (void)setBackgroundImage:(UIImage *)image;
-- (void)setBackgroundImageData:(NSData *)imageData;
-- (void)setBackgroundImageNamed:(NSString *)imageName;
+- (void)setColor:(nullable UIColor *)color;
+- (void)setBackgroundImage:(nullable UIImage *)image;
+- (void)setBackgroundImageData:(nullable NSData *)imageData;
+- (void)setBackgroundImageNamed:(nullable NSString *)imageName;
 
 - (void)setEnabled:(BOOL)enabled;
 
 @end
+
+NS_ASSUME_NONNULL_END

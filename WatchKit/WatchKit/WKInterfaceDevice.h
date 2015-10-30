@@ -2,6 +2,8 @@
 #import <CoreGraphics/CoreGraphics.h>
 #import "PCKMessageCapturer.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 @class UIImage;
 
 typedef NS_ENUM(NSInteger, WKHapticType) {
@@ -33,3 +35,5 @@ typedef NS_ENUM(NSInteger, WKHapticType) {
 - (void)playHaptic:(WKHapticType)type;
 
 @end
+
+NS_ASSUME_NONNULL_END

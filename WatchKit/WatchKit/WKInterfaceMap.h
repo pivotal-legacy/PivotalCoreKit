@@ -1,6 +1,7 @@
 #import <MapKit/MapKit.h>
 #import "WKInterfaceObject.h"
 
+NS_ASSUME_NONNULL_BEGIN
 
 typedef enum WKInterfaceMapPinColor : NSInteger {
     WKInterfaceMapPinColorRed,
@@ -15,13 +16,15 @@ typedef enum WKInterfaceMapPinColor : NSInteger {
 - (void)setRegion:(MKCoordinateRegion)coordinateRegion;
 
 - (void)addAnnotation:(CLLocationCoordinate2D)location
-            withImage:(UIImage *)image
+            withImage:(nullable UIImage *)image
          centerOffset:(CGPoint)offset;
 - (void)addAnnotation:(CLLocationCoordinate2D)location
-       withImageNamed:(NSString *)name
+       withImageNamed:(nullable NSString *)name
          centerOffset:(CGPoint)offset;
 - (void)addAnnotation:(CLLocationCoordinate2D)location withPinColor:(WKInterfaceMapPinColor)pinColor;
 
 - (void)removeAllAnnotations;
 
 @end
+
+NS_ASSUME_NONNULL_END
