@@ -2041,7 +2041,7 @@
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../Externals/FakeHTTP/FakeHTTP/**";
-				LIBRARY_SEARCH_PATHS = "@executable_path";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -2061,7 +2061,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../Externals/FakeHTTP/FakeHTTP/**";
-				LIBRARY_SEARCH_PATHS = "@executable_path";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
