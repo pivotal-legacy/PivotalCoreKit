@@ -1,5 +1,7 @@
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface UIImagePickerController (Spec)
 
 + (void)setPhotoLibraryAvailable:(BOOL)available;
@@ -9,3 +11,5 @@
 + (BOOL)isSourceTypeAvailable:(UIImagePickerControllerSourceType)sourceType;
 
 @end
+
+NS_ASSUME_NONNULL_END

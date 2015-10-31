@@ -1,5 +1,7 @@
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface UITableViewCell (SpecHelper)
 
 - (void)tap;
@@ -7,8 +9,10 @@
 - (void)tapDeleteConfirmation;
 
 + (instancetype)instantiatePrototypeCellFromStoryboard:(UIStoryboard *)storyboard
-                              viewControllerIdentifier:(NSString *)viewControllerIdentifier
-                                      tableViewKeyPath:(NSString *)tableViewKeyPath
+                              viewControllerIdentifier:(nullable NSString *)viewControllerIdentifier
+                                      tableViewKeyPath:(nullable NSString *)tableViewKeyPath
                                         cellIdentifier:(NSString *)cellIdentifier;
 
 @end
+
+NS_ASSUME_NONNULL_END

@@ -1,5 +1,7 @@
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface UIImage (PivotalCore)
 
 @property (nonatomic, readonly) CGFloat aspectRatio;
@@ -12,3 +14,5 @@
 - (UIImage *)imageWithRoundedCorners:(CGFloat)cornerRadius;
 
 @end
+
+NS_ASSUME_NONNULL_END
