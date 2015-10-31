@@ -1,5 +1,7 @@
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface PCKViewAnimation : NSObject
 
 @property (assign, nonatomic) NSTimeInterval duration;
@@ -8,7 +10,7 @@
 @property (assign, nonatomic) CGFloat initialSpringVelocity;
 @property (assign, nonatomic) UIViewAnimationOptions options;
 @property (strong, nonatomic) void (^animationBlock)(void);
-@property (strong, nonatomic) void (^completionBlock)(BOOL);
+@property (strong, nonatomic, nullable) void (^completionBlock)(BOOL);
 
 - (void)animate;
 - (void)complete;
@@ -26,6 +28,8 @@
 
 + (void)pauseAnimations;
 + (NSArray *)animations;
-+ (PCKViewAnimation *)lastAnimation;
++ (nullable PCKViewAnimation *)lastAnimation;
 
 @end
+
+NS_ASSUME_NONNULL_END

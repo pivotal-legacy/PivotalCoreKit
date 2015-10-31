@@ -1,15 +1,17 @@
 #import <UIKit/UIKit.h>
 
-typedef NSString *(^UIWebViewJavaScriptReturnBlock)();
+NS_ASSUME_NONNULL_BEGIN
+
+typedef NSString * __nullable (^UIWebViewJavaScriptReturnBlock)();
 
 @interface UIWebView (Spec)
 
 // Loaded Requests
-- (NSString *)loadedHTMLString;
-- (NSURL *)loadedBaseURL;
-- (NSData *)loadedData;
-- (NSString *)loadedMIMEType;
-- (NSString *)loadedTextEncodingName;
+- (nullable NSString *)loadedHTMLString;
+- (nullable NSURL *)loadedBaseURL;
+- (nullable NSData *)loadedData;
+- (nullable NSString *)loadedMIMEType;
+- (nullable NSString *)loadedTextEncodingName;
 
 // Faking Requests
 - (void)sendClickRequest:(NSURLRequest *)request;
@@ -29,3 +31,5 @@ typedef NSString *(^UIWebViewJavaScriptReturnBlock)();
 - (void)disableLogging;
 
 @end
+
+NS_ASSUME_NONNULL_END
