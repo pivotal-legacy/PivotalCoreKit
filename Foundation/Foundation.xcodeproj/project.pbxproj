@@ -237,6 +237,104 @@
 		AE0CFF7C1770DB0100E6A958 /* NSURLSpec+QueryComponents.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE0CFF711770DAE300E6A958 /* NSURLSpec+QueryComponents.mm */; };
 		AE0CFF7D1770DB0100E6A958 /* NSURLSpec+QueryComponents.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE0CFF711770DAE300E6A958 /* NSURLSpec+QueryComponents.mm */; };
 		AE2A04DB18D409A200D4FD96 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE2A04CF18D402F400D4FD96 /* UIKit.framework */; };
+		AE3F05071BE81547002BA0DE /* Foundation_PivotalCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE3F04FD1BE81547002BA0DE /* Foundation_PivotalCore.framework */; };
+		AE3F05281BE81647002BA0DE /* PCKConnectionBlockDelegateSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = E3F9C81316F50EFC00347B30 /* PCKConnectionBlockDelegateSpec.mm */; };
+		AE3F05291BE81647002BA0DE /* PCKConnectionDelegateWrapperSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = E3F9C81016F50EED00347B30 /* PCKConnectionDelegateWrapperSpec.mm */; };
+		AE3F052A1BE81647002BA0DE /* PSHKObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = DE99C52A2D323A2A8E4F3EBF /* PSHKObserver.m */; };
+		AE3F052B1BE81647002BA0DE /* PSHKWeakObjectWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = AE83D3671B87E604001990B1 /* PSHKWeakObjectWrapper.m */; };
+		AE3F052C1BE81653002BA0DE /* NSArraySpec+PivotalCore.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE6898E616BC3B7A00F3F6BC /* NSArraySpec+PivotalCore.mm */; };
+		AE3F052D1BE81653002BA0DE /* NSDataSpec+PivotalCore.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEA96BE1168B56BF00861DF1 /* NSDataSpec+PivotalCore.mm */; };
+		AE3F052E1BE81653002BA0DE /* NSDictionarySpec+QueryStringSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE0CFF5F1770C80F00E6A958 /* NSDictionarySpec+QueryStringSpec.mm */; };
+		AE3F052F1BE81653002BA0DE /* NSObjectSpec+MethodDecoration.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEA96BE2168B56BF00861DF1 /* NSObjectSpec+MethodDecoration.mm */; };
+		AE3F05301BE81653002BA0DE /* NSObjectSpec+MethodRedirection.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEA96BE3168B56BF00861DF1 /* NSObjectSpec+MethodRedirection.mm */; };
+		AE3F05311BE81653002BA0DE /* NSStringSpec+PivotalCore.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEA96BE4168B56BF00861DF1 /* NSStringSpec+PivotalCore.mm */; };
+		AE3F05321BE81653002BA0DE /* NSURLConnectionSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEA96BE5168B56BF00861DF1 /* NSURLConnectionSpec+Spec.mm */; };
+		AE3F05331BE81653002BA0DE /* NSURLSpec+QueryComponents.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE0CFF711770DAE300E6A958 /* NSURLSpec+QueryComponents.mm */; };
+		AE3F05341BE81653002BA0DE /* NSUUIDSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE96934E182D97A900E7306C /* NSUUIDSpec+Spec.mm */; };
+		AE3F05351BE81653002BA0DE /* NSDictionarySpec+TypesafeExtraction.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34681C1C18FD9873009D38AC /* NSDictionarySpec+TypesafeExtraction.mm */; };
+		AE3F05361BE8165D002BA0DE /* PSHKFakeOperationQueueSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEF6F87616EBF0CF0004F077 /* PSHKFakeOperationQueueSpec.mm */; };
+		AE3F05371BE8165D002BA0DE /* PCKHTTPConnectionDelegateSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEA96BE7168B56BF00861DF1 /* PCKHTTPConnectionDelegateSpec.mm */; };
+		AE3F05381BE8165D002BA0DE /* PCKHTTPConnectionOperationSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEA96BE8168B56BF00861DF1 /* PCKHTTPConnectionOperationSpec.mm */; };
+		AE3F05391BE8165D002BA0DE /* PCKHTTPConnectionSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEA96BE9168B56BF00861DF1 /* PCKHTTPConnectionSpec.mm */; };
+		AE3F053A1BE8165D002BA0DE /* PCKHTTPInterfaceSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEA96BEA168B56BF00861DF1 /* PCKHTTPInterfaceSpec.mm */; };
+		AE3F053B1BE81663002BA0DE /* PCKResponseParserSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEA96BED168B56BF00861DF1 /* PCKResponseParserSpec.mm */; };
+		AE3F053C1BE81663002BA0DE /* PCKXMLParserSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEA96BEE168B56BF00861DF1 /* PCKXMLParserSpec.mm */; };
+		AE3F053D1BE81673002BA0DE /* FixturesHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA96C38168B602700861DF1 /* FixturesHelper.m */; };
+		AE3F053E1BE81673002BA0DE /* FakeConnectionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA96C07168B58AA00861DF1 /* FakeConnectionDelegate.m */; };
+		AE3F053F1BE81673002BA0DE /* ConnectionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E309449B16F3FD230034B3A9 /* ConnectionDelegate.m */; };
+		AE3F05401BE8167E002BA0DE /* PCKErrorBlockSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB3CA491C2D37554D15B7B11 /* PCKErrorBlockSpec.mm */; };
+		AE3F05411BE8167E002BA0DE /* PCKMaybeBlockSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB3CA7A3A3B6119475C0AD0C /* PCKMaybeBlockSpec.mm */; };
+		AE3F05421BE8167E002BA0DE /* PCKCompletionHandlerSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB3CA1349D0450A702F21EF1 /* PCKCompletionHandlerSpec.mm */; };
+		AE3F05431BE81681002BA0DE /* PCKErrorBlockSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB3CA491C2D37554D15B7B11 /* PCKErrorBlockSpec.mm */; };
+		AE3F05441BE81681002BA0DE /* PCKMaybeBlockSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB3CA7A3A3B6119475C0AD0C /* PCKMaybeBlockSpec.mm */; };
+		AE3F05451BE81681002BA0DE /* PCKCompletionHandlerSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB3CA1349D0450A702F21EF1 /* PCKCompletionHandlerSpec.mm */; };
+		AE3F05471BE8186B002BA0DE /* Cedar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34777EA11B99029900A69FCF /* Cedar.framework */; };
+		AE3F05561BE81AC6002BA0DE /* libFakeHTTP.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AEE971CD1708EB410094B5A2 /* libFakeHTTP.a */; };
+		AE3F05571BE81B8A002BA0DE /* Foundation_PivotalSpecHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE3F054D1BE8195E002BA0DE /* Foundation_PivotalSpecHelper.framework */; };
+		AE3F055A1BE81BCC002BA0DE /* NSDictionary+TypesafeExtraction.h in Headers */ = {isa = PBXBuildFile; fileRef = 34681C0D18FD9516009D38AC /* NSDictionary+TypesafeExtraction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE3F055B1BE81BCC002BA0DE /* NSData+PivotalCore.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96B5E168B50D900861DF1 /* NSData+PivotalCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE3F055C1BE81BCC002BA0DE /* NSObject+MethodDecoration.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96B60168B50D900861DF1 /* NSObject+MethodDecoration.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE3F055D1BE81BCC002BA0DE /* NSObject+MethodRedirection.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96B62168B50D900861DF1 /* NSObject+MethodRedirection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE3F055E1BE81BCC002BA0DE /* NSString+PivotalCore.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96B64168B50D900861DF1 /* NSString+PivotalCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE3F055F1BE81BCC002BA0DE /* NSArray+PivotalCore.h in Headers */ = {isa = PBXBuildFile; fileRef = AE6898DA16BC3AF700F3F6BC /* NSArray+PivotalCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE3F05601BE81BCC002BA0DE /* NSDictionary+QueryString.h in Headers */ = {isa = PBXBuildFile; fileRef = AE0CFF5A1770C77D00E6A958 /* NSDictionary+QueryString.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE3F05611BE81BCC002BA0DE /* NSURL+QueryComponents.h in Headers */ = {isa = PBXBuildFile; fileRef = AE0CFF53176FE22200E6A958 /* NSURL+QueryComponents.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE3F05621BE81BCC002BA0DE /* PCKReducable.h in Headers */ = {isa = PBXBuildFile; fileRef = AB3CA16AA25276C6492C1383 /* PCKReducable.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE3F05631BE81BCC002BA0DE /* NSURLConnectionDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96B67168B50D900861DF1 /* NSURLConnectionDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE3F05641BE81BCC002BA0DE /* PCKHTTPConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96B68168B50D900861DF1 /* PCKHTTPConnection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE3F05651BE81BCC002BA0DE /* PCKHTTPConnectionDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96B6A168B50D900861DF1 /* PCKHTTPConnectionDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE3F05661BE81BCC002BA0DE /* PCKHTTPConnectionOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96B6C168B50D900861DF1 /* PCKHTTPConnectionOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE3F05671BE81BCC002BA0DE /* PCKHTTPInterface.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96B6E168B50D900861DF1 /* PCKHTTPInterface.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE3F05681BE81BCC002BA0DE /* PCKParser.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96B71168B50D900861DF1 /* PCKParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE3F05691BE81BCC002BA0DE /* PCKParserDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96B72168B50D900861DF1 /* PCKParserDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE3F056A1BE81BCC002BA0DE /* PCKResponseParser.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96B73168B50D900861DF1 /* PCKResponseParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE3F056B1BE81BCC002BA0DE /* PCKXMLParser.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96B75168B50D900861DF1 /* PCKXMLParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE3F056C1BE81BCC002BA0DE /* PCKXMLParserDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96B77168B50D900861DF1 /* PCKXMLParserDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE3F056D1BE81BCC002BA0DE /* PCKMaybeBlock.h in Headers */ = {isa = PBXBuildFile; fileRef = AB3CA5C371E589667FE4D0C0 /* PCKMaybeBlock.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE3F056E1BE81BCC002BA0DE /* PCKErrorBlock.h in Headers */ = {isa = PBXBuildFile; fileRef = AB3CA6C718FCE8E2D949A73D /* PCKErrorBlock.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE3F056F1BE81BCC002BA0DE /* PCKMonad.h in Headers */ = {isa = PBXBuildFile; fileRef = AB3CA86CE1E06EC451FEBB33 /* PCKMonad.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE3F05701BE81BCC002BA0DE /* PCKCompletionHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = AB3CA9535795E1F3344058C3 /* PCKCompletionHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE3F05711BE81BCC002BA0DE /* Foundation+PivotalCore.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96B79168B50D900861DF1 /* Foundation+PivotalCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE3F05721BE81C36002BA0DE /* NSDictionary+TypesafeExtraction.m in Sources */ = {isa = PBXBuildFile; fileRef = 34681C0E18FD9516009D38AC /* NSDictionary+TypesafeExtraction.m */; };
+		AE3F05731BE81C36002BA0DE /* NSData+PivotalCore.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA96B5F168B50D900861DF1 /* NSData+PivotalCore.m */; };
+		AE3F05741BE81C36002BA0DE /* NSObject+MethodDecoration.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA96B61168B50D900861DF1 /* NSObject+MethodDecoration.m */; };
+		AE3F05751BE81C36002BA0DE /* NSObject+MethodRedirection.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA96B63168B50D900861DF1 /* NSObject+MethodRedirection.m */; };
+		AE3F05761BE81C36002BA0DE /* NSString+PivotalCore.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA96B65168B50D900861DF1 /* NSString+PivotalCore.m */; };
+		AE3F05771BE81C36002BA0DE /* NSArray+PivotalCore.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6898DB16BC3AF700F3F6BC /* NSArray+PivotalCore.m */; };
+		AE3F05781BE81C36002BA0DE /* NSDictionary+QueryString.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0CFF5B1770C77D00E6A958 /* NSDictionary+QueryString.m */; };
+		AE3F05791BE81C36002BA0DE /* NSURL+QueryComponents.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0CFF54176FE22200E6A958 /* NSURL+QueryComponents.m */; };
+		AE3F057A1BE81C36002BA0DE /* PCKHTTPConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA96B69168B50D900861DF1 /* PCKHTTPConnection.m */; };
+		AE3F057B1BE81C36002BA0DE /* PCKHTTPConnectionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA96B6B168B50D900861DF1 /* PCKHTTPConnectionDelegate.m */; };
+		AE3F057C1BE81C36002BA0DE /* PCKHTTPConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA96B6D168B50D900861DF1 /* PCKHTTPConnectionOperation.m */; };
+		AE3F057D1BE81C36002BA0DE /* PCKHTTPInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA96B6F168B50D900861DF1 /* PCKHTTPInterface.m */; };
+		AE3F057E1BE81C36002BA0DE /* PCKResponseParser.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA96B74168B50D900861DF1 /* PCKResponseParser.m */; };
+		AE3F057F1BE81C36002BA0DE /* PCKXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA96B76168B50D900861DF1 /* PCKXMLParser.m */; };
+		AE3F05801BE81C36002BA0DE /* PCKXMLParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA96B78168B50D900861DF1 /* PCKXMLParserDelegate.m */; };
+		AE3F05811BE81C36002BA0DE /* PCKMaybeBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3CAB32C9792AB4CDF52181 /* PCKMaybeBlock.m */; };
+		AE3F05821BE81C36002BA0DE /* PCKErrorBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3CA50EBEA9B52F7AADA663 /* PCKErrorBlock.m */; };
+		AE3F05831BE81C36002BA0DE /* PCKCompletionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3CA9FB694E521A3633EA69 /* PCKCompletionHandler.m */; };
+		AE3F05841BE81C8F002BA0DE /* PCKConnectionDelegateWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = E309448916F117180034B3A9 /* PCKConnectionDelegateWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE3F05851BE81C8F002BA0DE /* PCKConnectionBlockDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = E3AD57B816F4AD0E003564BA /* PCKConnectionBlockDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE3F05861BE81C8F002BA0DE /* NSURLConnection+Spec.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96BB3168B544D00861DF1 /* NSURLConnection+Spec.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE3F05871BE81C8F002BA0DE /* NSURLRequest+Spec.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96BB5168B544D00861DF1 /* NSURLRequest+Spec.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE3F05881BE81C8F002BA0DE /* NSUUID+Spec.h in Headers */ = {isa = PBXBuildFile; fileRef = AE96935F182D9A1900E7306C /* NSUUID+Spec.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE3F05891BE81C8F002BA0DE /* PSHKFixtures.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96BBF168B544D00861DF1 /* PSHKFixtures.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE3F058A1BE81C8F002BA0DE /* PSHKFakeHTTPURLResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96BBA168B544D00861DF1 /* PSHKFakeHTTPURLResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE3F058B1BE81C8F002BA0DE /* PSHKFakeOperationQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = AEB2B8DC18F703C800E26FAD /* PSHKFakeOperationQueue.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE3F058C1BE81C8F002BA0DE /* FakeOperationQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96BB8168B544D00861DF1 /* FakeOperationQueue.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE3F058D1BE81C8F002BA0DE /* PSHKFakeResponses.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96BBC168B544D00861DF1 /* PSHKFakeResponses.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE3F058E1BE81C8F002BA0DE /* Foundation+PivotalSpecHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96CBF168B6FFC00861DF1 /* Foundation+PivotalSpecHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE3F058F1BE81C9E002BA0DE /* PCKConnectionDelegateWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = E309448A16F117180034B3A9 /* PCKConnectionDelegateWrapper.m */; };
+		AE3F05901BE81C9E002BA0DE /* PCKConnectionBlockDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E3AD57B916F4AD0E003564BA /* PCKConnectionBlockDelegate.m */; };
+		AE3F05911BE81C9E002BA0DE /* NSURLConnection+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA96BB4168B544D00861DF1 /* NSURLConnection+Spec.m */; };
+		AE3F05921BE81C9E002BA0DE /* NSURLRequest+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA96BB6168B544D00861DF1 /* NSURLRequest+Spec.m */; };
+		AE3F05931BE81C9E002BA0DE /* NSUUID+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE969360182D9A1900E7306C /* NSUUID+Spec.m */; };
+		AE3F05941BE81C9E002BA0DE /* PSHKFixtures.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA96BC0168B544D00861DF1 /* PSHKFixtures.m */; };
+		AE3F05951BE81C9E002BA0DE /* PSHKFakeHTTPURLResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA96BBB168B544D00861DF1 /* PSHKFakeHTTPURLResponse.m */; };
+		AE3F05961BE81C9E002BA0DE /* PSHKFakeOperationQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB2B8DD18F703C800E26FAD /* PSHKFakeOperationQueue.m */; };
+		AE3F05971BE81C9E002BA0DE /* PSHKFakeResponses.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA96BBD168B544D00861DF1 /* PSHKFakeResponses.m */; };
+		AE3F05991BE81D11002BA0DE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE3F05981BE81D11002BA0DE /* Foundation.framework */; };
+		AE3F059B1BE81D2D002BA0DE /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = AE3F059A1BE81D2D002BA0DE /* libxml2.tbd */; };
 		AE416AAB174D48220014A083 /* libFakeHTTP.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AEE971CD1708EB410094B5A2 /* libFakeHTTP.a */; };
 		AE6898DC16BC3AF700F3F6BC /* NSArray+PivotalCore.h in Headers */ = {isa = PBXBuildFile; fileRef = AE6898DA16BC3AF700F3F6BC /* NSArray+PivotalCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE6898DD16BC3AF700F3F6BC /* NSArray+PivotalCore.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6898DB16BC3AF700F3F6BC /* NSArray+PivotalCore.m */; };
@@ -464,6 +562,20 @@
 			proxyType = 2;
 			remoteGlobalIDString = 34D7C4691BB9B71600E8E523;
 			remoteInfo = "Cedar-tvOS SpecBundle";
+		};
+		AE3F05081BE81547002BA0DE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AE3F04FC1BE81547002BA0DE;
+			remoteInfo = "Foundation+PivotalCore-iOS-Dynamic";
+		};
+		AE3F05581BE81B92002BA0DE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AE3F054C1BE8195E002BA0DE;
+			remoteInfo = "Foundation+PivotalSpecHelper-iOS-Dynamic";
 		};
 		AE416AA9174D481C0014A083 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -721,6 +833,11 @@
 		AE118A9818D6B3CA00C90D6B /* BundleSpecLoader.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BundleSpecLoader.mm; sourceTree = "<group>"; };
 		AE24D5AF138170CD00E4420A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AE2A04CF18D402F400D4FD96 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		AE3F04FD1BE81547002BA0DE /* Foundation_PivotalCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Foundation_PivotalCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE3F05061BE81547002BA0DE /* Foundation+PivotalCore-iOS-DynamicTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Foundation+PivotalCore-iOS-DynamicTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE3F054D1BE8195E002BA0DE /* Foundation_PivotalSpecHelper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Foundation_PivotalSpecHelper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE3F05981BE81D11002BA0DE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		AE3F059A1BE81D2D002BA0DE /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.1.sdk/usr/lib/libxml2.tbd; sourceTree = DEVELOPER_DIR; };
 		AE6898DA16BC3AF700F3F6BC /* NSArray+PivotalCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+PivotalCore.h"; sourceTree = "<group>"; };
 		AE6898DB16BC3AF700F3F6BC /* NSArray+PivotalCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+PivotalCore.m"; sourceTree = "<group>"; };
 		AE6898E616BC3B7A00F3F6BC /* NSArraySpec+PivotalCore.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSArraySpec+PivotalCore.mm"; sourceTree = "<group>"; };
@@ -859,6 +976,33 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AE3F04F91BE81547002BA0DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE3F059B1BE81D2D002BA0DE /* libxml2.tbd in Frameworks */,
+				AE3F05991BE81D11002BA0DE /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE3F05031BE81547002BA0DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE3F05571BE81B8A002BA0DE /* Foundation_PivotalSpecHelper.framework in Frameworks */,
+				AE3F05561BE81AC6002BA0DE /* libFakeHTTP.a in Frameworks */,
+				AE3F05471BE8186B002BA0DE /* Cedar.framework in Frameworks */,
+				AE3F05071BE81547002BA0DE /* Foundation_PivotalCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE3F05491BE8195E002BA0DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AEA96B45168B506500861DF1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -935,6 +1079,9 @@
 				34A6633C1BDF1D3D00EF0FEA /* Foundation_PivotalSpecHelper.framework */,
 				34A6636E1BDF200A00EF0FEA /* Foundation_PivotalSpecHelper.framework */,
 				34A663A41BDF24E700EF0FEA /* Foundation-tvOS SpecBundle.xctest */,
+				AE3F04FD1BE81547002BA0DE /* Foundation_PivotalCore.framework */,
+				AE3F05061BE81547002BA0DE /* Foundation+PivotalCore-iOS-DynamicTests.xctest */,
+				AE3F054D1BE8195E002BA0DE /* Foundation_PivotalSpecHelper.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -955,6 +1102,8 @@
 		0867D69AFE84028FC02AAC07 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AE3F059A1BE81D2D002BA0DE /* libxml2.tbd */,
+				AE3F05981BE81D11002BA0DE /* Foundation.framework */,
 				AE88B00711DE6D1200B65DD3 /* libxml2.dylib */,
 				34A663351BDF1C9300EF0FEA /* libxml2.tbd */,
 				34A662FC1BDF18AB00EF0FEA /* libxml2.tbd */,
@@ -1379,6 +1528,55 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AE3F04FA1BE81547002BA0DE /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE3F05631BE81BCC002BA0DE /* NSURLConnectionDelegate.h in Headers */,
+				AE3F05611BE81BCC002BA0DE /* NSURL+QueryComponents.h in Headers */,
+				AE3F05681BE81BCC002BA0DE /* PCKParser.h in Headers */,
+				AE3F056F1BE81BCC002BA0DE /* PCKMonad.h in Headers */,
+				AE3F05651BE81BCC002BA0DE /* PCKHTTPConnectionDelegate.h in Headers */,
+				AE3F05661BE81BCC002BA0DE /* PCKHTTPConnectionOperation.h in Headers */,
+				AE3F056A1BE81BCC002BA0DE /* PCKResponseParser.h in Headers */,
+				AE3F05601BE81BCC002BA0DE /* NSDictionary+QueryString.h in Headers */,
+				AE3F055B1BE81BCC002BA0DE /* NSData+PivotalCore.h in Headers */,
+				AE3F056D1BE81BCC002BA0DE /* PCKMaybeBlock.h in Headers */,
+				AE3F056C1BE81BCC002BA0DE /* PCKXMLParserDelegate.h in Headers */,
+				AE3F055C1BE81BCC002BA0DE /* NSObject+MethodDecoration.h in Headers */,
+				AE3F05701BE81BCC002BA0DE /* PCKCompletionHandler.h in Headers */,
+				AE3F05671BE81BCC002BA0DE /* PCKHTTPInterface.h in Headers */,
+				AE3F055F1BE81BCC002BA0DE /* NSArray+PivotalCore.h in Headers */,
+				AE3F055E1BE81BCC002BA0DE /* NSString+PivotalCore.h in Headers */,
+				AE3F05711BE81BCC002BA0DE /* Foundation+PivotalCore.h in Headers */,
+				AE3F056B1BE81BCC002BA0DE /* PCKXMLParser.h in Headers */,
+				AE3F05621BE81BCC002BA0DE /* PCKReducable.h in Headers */,
+				AE3F05641BE81BCC002BA0DE /* PCKHTTPConnection.h in Headers */,
+				AE3F055D1BE81BCC002BA0DE /* NSObject+MethodRedirection.h in Headers */,
+				AE3F056E1BE81BCC002BA0DE /* PCKErrorBlock.h in Headers */,
+				AE3F055A1BE81BCC002BA0DE /* NSDictionary+TypesafeExtraction.h in Headers */,
+				AE3F05691BE81BCC002BA0DE /* PCKParserDelegate.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE3F054A1BE8195E002BA0DE /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE3F058D1BE81C8F002BA0DE /* PSHKFakeResponses.h in Headers */,
+				AE3F05871BE81C8F002BA0DE /* NSURLRequest+Spec.h in Headers */,
+				AE3F058B1BE81C8F002BA0DE /* PSHKFakeOperationQueue.h in Headers */,
+				AE3F05851BE81C8F002BA0DE /* PCKConnectionBlockDelegate.h in Headers */,
+				AE3F05881BE81C8F002BA0DE /* NSUUID+Spec.h in Headers */,
+				AE3F05861BE81C8F002BA0DE /* NSURLConnection+Spec.h in Headers */,
+				AE3F058C1BE81C8F002BA0DE /* FakeOperationQueue.h in Headers */,
+				AE3F058E1BE81C8F002BA0DE /* Foundation+PivotalSpecHelper.h in Headers */,
+				AE3F058A1BE81C8F002BA0DE /* PSHKFakeHTTPURLResponse.h in Headers */,
+				AE3F05891BE81C8F002BA0DE /* PSHKFixtures.h in Headers */,
+				AE3F05841BE81C8F002BA0DE /* PCKConnectionDelegateWrapper.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AEA96B46168B506500861DF1 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -1537,6 +1735,59 @@
 			productReference = 34A663A41BDF24E700EF0FEA /* Foundation-tvOS SpecBundle.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		AE3F04FC1BE81547002BA0DE /* Foundation+PivotalCore-iOS-Dynamic */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AE3F05261BE81548002BA0DE /* Build configuration list for PBXNativeTarget "Foundation+PivotalCore-iOS-Dynamic" */;
+			buildPhases = (
+				AE3F04F81BE81547002BA0DE /* Sources */,
+				AE3F04F91BE81547002BA0DE /* Frameworks */,
+				AE3F04FA1BE81547002BA0DE /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Foundation+PivotalCore-iOS-Dynamic";
+			productName = "Foundation+PivotalCore-iOS-Dynamic";
+			productReference = AE3F04FD1BE81547002BA0DE /* Foundation_PivotalCore.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		AE3F05051BE81547002BA0DE /* Foundation+PivotalCore-iOS-DynamicTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AE3F05271BE81548002BA0DE /* Build configuration list for PBXNativeTarget "Foundation+PivotalCore-iOS-DynamicTests" */;
+			buildPhases = (
+				AE3F05021BE81547002BA0DE /* Sources */,
+				AE3F05031BE81547002BA0DE /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AE3F05591BE81B92002BA0DE /* PBXTargetDependency */,
+				AE3F05091BE81547002BA0DE /* PBXTargetDependency */,
+			);
+			name = "Foundation+PivotalCore-iOS-DynamicTests";
+			productName = "Foundation+PivotalCore-iOS-DynamicTests";
+			productReference = AE3F05061BE81547002BA0DE /* Foundation+PivotalCore-iOS-DynamicTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		AE3F054C1BE8195E002BA0DE /* Foundation+PivotalSpecHelper-iOS-Dynamic */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AE3F05521BE8195E002BA0DE /* Build configuration list for PBXNativeTarget "Foundation+PivotalSpecHelper-iOS-Dynamic" */;
+			buildPhases = (
+				AE3F05481BE8195E002BA0DE /* Sources */,
+				AE3F05491BE8195E002BA0DE /* Frameworks */,
+				AE3F054A1BE8195E002BA0DE /* Headers */,
+				AE3F054B1BE8195E002BA0DE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Foundation+PivotalSpecHelper-iOS-Dynamic";
+			productName = "Foundation+PivotalSpecHelper-iOS-Dynamic";
+			productReference = AE3F054D1BE8195E002BA0DE /* Foundation_PivotalSpecHelper.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		AEA96B48168B506500861DF1 /* Foundation+PivotalCore */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = AEA96B5A168B506500861DF1 /* Build configuration list for PBXNativeTarget "Foundation+PivotalCore" */;
@@ -1675,6 +1926,15 @@
 					34A663A31BDF24E700EF0FEA = {
 						CreatedOnToolsVersion = 7.1;
 					};
+					AE3F04FC1BE81547002BA0DE = {
+						CreatedOnToolsVersion = 7.1;
+					};
+					AE3F05051BE81547002BA0DE = {
+						CreatedOnToolsVersion = 7.1;
+					};
+					AE3F054C1BE8195E002BA0DE = {
+						CreatedOnToolsVersion = 7.1;
+					};
 				};
 			};
 			buildConfigurationList = 1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "Foundation" */;
@@ -1708,15 +1968,18 @@
 				34A662B71BDF14BB00EF0FEA /* Foundation+PivotalCore-watchOS */,
 				34A663021BDF1A9900EF0FEA /* Foundation+PivotalCore-tvOS */,
 				AE03FC661B0A866E00013784 /* Foundation+PivotalCore-iOS */,
+				AE3F04FC1BE81547002BA0DE /* Foundation+PivotalCore-iOS-Dynamic */,
 				AEA96B9D168B541900861DF1 /* Foundation+PivotalSpecHelper */,
 				AEA96C63168B63BD00861DF1 /* Foundation+PivotalSpecHelper-StaticLib */,
 				34A6633B1BDF1D3D00EF0FEA /* Foundation+PivotalSpecHelper-watchOS */,
 				34A6636D1BDF200A00EF0FEA /* Foundation+PivotalSpecHelper-tvOS */,
 				B88BF07D1725A56100E638D3 /* Foundation+PivotalSpecHelper-iOS */,
+				AE3F054C1BE8195E002BA0DE /* Foundation+PivotalSpecHelper-iOS-Dynamic */,
 				AEA96BD2168B561500861DF1 /* FoundationSpec */,
 				AEA96C73168B640B00861DF1 /* Foundation-StaticLibSpec */,
 				3466C03A1B97A10A00CBAB59 /* Foundation-StaticLibSpecBundle */,
 				34A663A31BDF24E700EF0FEA /* Foundation-tvOS SpecBundle */,
+				AE3F05051BE81547002BA0DE /* Foundation+PivotalCore-iOS-DynamicTests */,
 			);
 		};
 /* End PBXProject section */
@@ -1914,6 +2177,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AE3F054B1BE8195E002BA0DE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AEA96B9C168B541900861DF1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2083,13 +2353,16 @@
 			files = (
 				34A663D21BDF25E000EF0FEA /* PCKHTTPConnectionOperationSpec.mm in Sources */,
 				34A663C51BDF25D100EF0FEA /* PSHKWeakObjectWrapper.m in Sources */,
+				AE3F05411BE8167E002BA0DE /* PCKMaybeBlockSpec.mm in Sources */,
 				34A663C31BDF25AD00EF0FEA /* PCKConnectionDelegateWrapperSpec.mm in Sources */,
 				34A663D31BDF25E000EF0FEA /* PCKHTTPConnectionSpec.mm in Sources */,
 				34A663C71BDF25D600EF0FEA /* NSDataSpec+PivotalCore.mm in Sources */,
 				34A663C21BDF25AD00EF0FEA /* PCKConnectionBlockDelegateSpec.mm in Sources */,
 				34A663C41BDF25CD00EF0FEA /* PSHKObserver.m in Sources */,
 				34A663CB1BDF25D600EF0FEA /* NSStringSpec+PivotalCore.mm in Sources */,
+				AE3F05401BE8167E002BA0DE /* PCKErrorBlockSpec.mm in Sources */,
 				34A663CD1BDF25D600EF0FEA /* NSURLSpec+QueryComponents.mm in Sources */,
+				AE3F05421BE8167E002BA0DE /* PCKCompletionHandlerSpec.mm in Sources */,
 				34A663CC1BDF25D600EF0FEA /* NSURLConnectionSpec+Spec.mm in Sources */,
 				34A663D91BDF260400EF0FEA /* ConnectionDelegate.m in Sources */,
 				34A663D11BDF25E000EF0FEA /* PCKHTTPConnectionDelegateSpec.mm in Sources */,
@@ -2105,6 +2378,81 @@
 				34A663C61BDF25D600EF0FEA /* NSArraySpec+PivotalCore.mm in Sources */,
 				34A663CF1BDF25D600EF0FEA /* NSDictionarySpec+TypesafeExtraction.mm in Sources */,
 				34A663D61BDF25E600EF0FEA /* PCKXMLParserSpec.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE3F04F81BE81547002BA0DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE3F05721BE81C36002BA0DE /* NSDictionary+TypesafeExtraction.m in Sources */,
+				AE3F05811BE81C36002BA0DE /* PCKMaybeBlock.m in Sources */,
+				AE3F057E1BE81C36002BA0DE /* PCKResponseParser.m in Sources */,
+				AE3F05831BE81C36002BA0DE /* PCKCompletionHandler.m in Sources */,
+				AE3F057B1BE81C36002BA0DE /* PCKHTTPConnectionDelegate.m in Sources */,
+				AE3F05741BE81C36002BA0DE /* NSObject+MethodDecoration.m in Sources */,
+				AE3F057C1BE81C36002BA0DE /* PCKHTTPConnectionOperation.m in Sources */,
+				AE3F057F1BE81C36002BA0DE /* PCKXMLParser.m in Sources */,
+				AE3F057D1BE81C36002BA0DE /* PCKHTTPInterface.m in Sources */,
+				AE3F05761BE81C36002BA0DE /* NSString+PivotalCore.m in Sources */,
+				AE3F05801BE81C36002BA0DE /* PCKXMLParserDelegate.m in Sources */,
+				AE3F057A1BE81C36002BA0DE /* PCKHTTPConnection.m in Sources */,
+				AE3F05731BE81C36002BA0DE /* NSData+PivotalCore.m in Sources */,
+				AE3F05821BE81C36002BA0DE /* PCKErrorBlock.m in Sources */,
+				AE3F05781BE81C36002BA0DE /* NSDictionary+QueryString.m in Sources */,
+				AE3F05791BE81C36002BA0DE /* NSURL+QueryComponents.m in Sources */,
+				AE3F05751BE81C36002BA0DE /* NSObject+MethodRedirection.m in Sources */,
+				AE3F05771BE81C36002BA0DE /* NSArray+PivotalCore.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE3F05021BE81547002BA0DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE3F05381BE8165D002BA0DE /* PCKHTTPConnectionOperationSpec.mm in Sources */,
+				AE3F052B1BE81647002BA0DE /* PSHKWeakObjectWrapper.m in Sources */,
+				AE3F05441BE81681002BA0DE /* PCKMaybeBlockSpec.mm in Sources */,
+				AE3F05291BE81647002BA0DE /* PCKConnectionDelegateWrapperSpec.mm in Sources */,
+				AE3F05391BE8165D002BA0DE /* PCKHTTPConnectionSpec.mm in Sources */,
+				AE3F052D1BE81653002BA0DE /* NSDataSpec+PivotalCore.mm in Sources */,
+				AE3F05281BE81647002BA0DE /* PCKConnectionBlockDelegateSpec.mm in Sources */,
+				AE3F052A1BE81647002BA0DE /* PSHKObserver.m in Sources */,
+				AE3F05311BE81653002BA0DE /* NSStringSpec+PivotalCore.mm in Sources */,
+				AE3F05431BE81681002BA0DE /* PCKErrorBlockSpec.mm in Sources */,
+				AE3F05331BE81653002BA0DE /* NSURLSpec+QueryComponents.mm in Sources */,
+				AE3F05451BE81681002BA0DE /* PCKCompletionHandlerSpec.mm in Sources */,
+				AE3F05321BE81653002BA0DE /* NSURLConnectionSpec+Spec.mm in Sources */,
+				AE3F053F1BE81673002BA0DE /* ConnectionDelegate.m in Sources */,
+				AE3F05371BE8165D002BA0DE /* PCKHTTPConnectionDelegateSpec.mm in Sources */,
+				AE3F053A1BE8165D002BA0DE /* PCKHTTPInterfaceSpec.mm in Sources */,
+				AE3F052E1BE81653002BA0DE /* NSDictionarySpec+QueryStringSpec.mm in Sources */,
+				AE3F053B1BE81663002BA0DE /* PCKResponseParserSpec.mm in Sources */,
+				AE3F05341BE81653002BA0DE /* NSUUIDSpec+Spec.mm in Sources */,
+				AE3F05301BE81653002BA0DE /* NSObjectSpec+MethodRedirection.mm in Sources */,
+				AE3F05361BE8165D002BA0DE /* PSHKFakeOperationQueueSpec.mm in Sources */,
+				AE3F053D1BE81673002BA0DE /* FixturesHelper.m in Sources */,
+				AE3F052F1BE81653002BA0DE /* NSObjectSpec+MethodDecoration.mm in Sources */,
+				AE3F053E1BE81673002BA0DE /* FakeConnectionDelegate.m in Sources */,
+				AE3F052C1BE81653002BA0DE /* NSArraySpec+PivotalCore.mm in Sources */,
+				AE3F05351BE81653002BA0DE /* NSDictionarySpec+TypesafeExtraction.mm in Sources */,
+				AE3F053C1BE81663002BA0DE /* PCKXMLParserSpec.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE3F05481BE8195E002BA0DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE3F058F1BE81C9E002BA0DE /* PCKConnectionDelegateWrapper.m in Sources */,
+				AE3F05921BE81C9E002BA0DE /* NSURLRequest+Spec.m in Sources */,
+				AE3F05971BE81C9E002BA0DE /* PSHKFakeResponses.m in Sources */,
+				AE3F05931BE81C9E002BA0DE /* NSUUID+Spec.m in Sources */,
+				AE3F05901BE81C9E002BA0DE /* PCKConnectionBlockDelegate.m in Sources */,
+				AE3F05911BE81C9E002BA0DE /* NSURLConnection+Spec.m in Sources */,
+				AE3F05951BE81C9E002BA0DE /* PSHKFakeHTTPURLResponse.m in Sources */,
+				AE3F05961BE81C9E002BA0DE /* PSHKFakeOperationQueue.m in Sources */,
+				AE3F05941BE81C9E002BA0DE /* PSHKFixtures.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2272,6 +2620,16 @@
 			isa = PBXTargetDependency;
 			target = 34A663021BDF1A9900EF0FEA /* Foundation+PivotalCore-tvOS */;
 			targetProxy = 34A663AA1BDF24E800EF0FEA /* PBXContainerItemProxy */;
+		};
+		AE3F05091BE81547002BA0DE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AE3F04FC1BE81547002BA0DE /* Foundation+PivotalCore-iOS-Dynamic */;
+			targetProxy = AE3F05081BE81547002BA0DE /* PBXContainerItemProxy */;
+		};
+		AE3F05591BE81B92002BA0DE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AE3F054C1BE8195E002BA0DE /* Foundation+PivotalSpecHelper-iOS-Dynamic */;
+			targetProxy = AE3F05581BE81B92002BA0DE /* PBXContainerItemProxy */;
 		};
 		AE416AAA174D481C0014A083 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -2818,6 +3176,235 @@
 			};
 			name = Release;
 		};
+		AE3F050E1BE81548002BA0DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
+				INFOPLIST_FILE = "../InfoPlist/Framework-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Core/Foundation+PivotalCore.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "io.pivotal.Foundation-PivotalCore";
+				PRODUCT_NAME = Foundation_PivotalCore;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		AE3F050F1BE81548002BA0DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
+				INFOPLIST_FILE = "../InfoPlist/Framework-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Core/Foundation+PivotalCore.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "io.pivotal.Foundation-PivotalCore";
+				PRODUCT_NAME = Foundation_PivotalCore;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		AE3F05101BE81548002BA0DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+					"PHONE_SPEC_BUNDLE=1",
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(PROJECT_DIR)/../Externals/FakeHTTP/FakeHTTP\"/**",
+				);
+				INFOPLIST_FILE = "../InfoPlist/Framework-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "io.pivotal.Foundation-PivotalCore-iOS-DynamicTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		AE3F05111BE81548002BA0DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"PHONE_SPEC_BUNDLE=1",
+					"FIXTURESDIR=\\\"$(SRCROOT)/Spec/Fixtures\\\"",
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(PROJECT_DIR)/../Externals/FakeHTTP/FakeHTTP\"/**",
+				);
+				INFOPLIST_FILE = "../InfoPlist/Framework-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "io.pivotal.Foundation-PivotalCore-iOS-DynamicTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AE3F05531BE8195E002BA0DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "../InfoPlist/Framework-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Core/Foundation+PivotalCore.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "io.pivotal.Foundation-PivotalSpecHelper-iOS-Dynamic";
+				PRODUCT_NAME = Foundation_PivotalSpecHelper;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		AE3F05541BE8195E002BA0DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "../InfoPlist/Framework-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Core/Foundation+PivotalCore.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "io.pivotal.Foundation-PivotalSpecHelper-iOS-Dynamic";
+				PRODUCT_NAME = Foundation_PivotalSpecHelper;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		AEA96B5B168B506500861DF1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -3239,6 +3826,30 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		AE3F05261BE81548002BA0DE /* Build configuration list for PBXNativeTarget "Foundation+PivotalCore-iOS-Dynamic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE3F050E1BE81548002BA0DE /* Debug */,
+				AE3F050F1BE81548002BA0DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		AE3F05271BE81548002BA0DE /* Build configuration list for PBXNativeTarget "Foundation+PivotalCore-iOS-DynamicTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE3F05101BE81548002BA0DE /* Debug */,
+				AE3F05111BE81548002BA0DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		AE3F05521BE8195E002BA0DE /* Build configuration list for PBXNativeTarget "Foundation+PivotalSpecHelper-iOS-Dynamic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE3F05531BE8195E002BA0DE /* Debug */,
+				AE3F05541BE8195E002BA0DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 		AEA96B5A168B506500861DF1 /* Build configuration list for PBXNativeTarget "Foundation+PivotalCore" */ = {
 			isa = XCConfigurationList;

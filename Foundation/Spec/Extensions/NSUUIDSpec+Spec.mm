@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
 #import "NSUUID+Spec.h"
 
-#if TARGET_OS_IPHONE && !TARGET_OS_TV
+#if TARGET_OS_IPHONE && !TARGET_OS_TV && !PHONE_SPEC_BUNDLE
 #import "CDRSpecHelper.h"
 #else
 #import <Cedar/CDRSpecHelper.h>
