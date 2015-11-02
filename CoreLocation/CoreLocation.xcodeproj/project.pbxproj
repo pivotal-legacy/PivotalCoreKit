@@ -49,6 +49,19 @@
 		AE38499A168D055A00C99B55 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE384970168D04F300C99B55 /* CoreLocation.framework */; };
 		AE38499B168D056600C99B55 /* CLGeocoder+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE38494E168CD9B600C99B55 /* CLGeocoder+Spec.m */; };
 		AE38499E168D058F00C99B55 /* libCoreLocation+PivotalSpecHelper-StaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE38498E168D053300C99B55 /* libCoreLocation+PivotalSpecHelper-StaticLib.a */; };
+		AE3F04B51BE7FA03002BA0DE /* CoreLocation_PivotalSpecHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE3F04AE1BE7FA03002BA0DE /* CoreLocation_PivotalSpecHelper.framework */; };
+		AE3F04B61BE7FA03002BA0DE /* CoreLocation_PivotalSpecHelper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AE3F04AE1BE7FA03002BA0DE /* CoreLocation_PivotalSpecHelper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		AE3F04BB1BE7FA58002BA0DE /* CoreLocation+PivotalSpecHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = AE38494B168CD9B600C99B55 /* CoreLocation+PivotalSpecHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE3F04BC1BE7FA7B002BA0DE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE384970168D04F300C99B55 /* CoreLocation.framework */; };
+		AE3F04BD1BE7FA9F002BA0DE /* CLGeocoder+Spec.h in Headers */ = {isa = PBXBuildFile; fileRef = AE38494D168CD9B600C99B55 /* CLGeocoder+Spec.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE3F04BE1BE7FA9F002BA0DE /* CLLocationManager+Spec.h in Headers */ = {isa = PBXBuildFile; fileRef = 8493636D1A958640005613BA /* CLLocationManager+Spec.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE3F04BF1BE7FAA5002BA0DE /* CLGeocoder+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE38494E168CD9B600C99B55 /* CLGeocoder+Spec.m */; };
+		AE3F04C01BE7FAA5002BA0DE /* CLLocationManager+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = 8493636E1A958640005613BA /* CLLocationManager+Spec.m */; };
+		AE3F04EE1BE7FEE7002BA0DE /* CoreLocation_PivotalSpecHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE3F04AE1BE7FA03002BA0DE /* CoreLocation_PivotalSpecHelper.framework */; };
+		AE3F04F41BE7FF21002BA0DE /* Cedar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 344569E31B98EBBB008A16A2 /* Cedar.framework */; };
+		AE3F04F51BE7FF27002BA0DE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE384970168D04F300C99B55 /* CoreLocation.framework */; };
+		AE3F04F61BE7FF2E002BA0DE /* CLGeocoderSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEC81173168D14FF00523186 /* CLGeocoderSpec+Spec.mm */; };
+		AE3F04F71BE7FF2E002BA0DE /* CLLocationManagerSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 849363601A9585D2005613BA /* CLLocationManagerSpec+Spec.mm */; };
 		AE494744168D15C8006F3B70 /* CLGeocoderSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEC81173168D14FF00523186 /* CLGeocoderSpec+Spec.mm */; };
 		AE49474D168D15C9006F3B70 /* CLGeocoderSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEC81173168D14FF00523186 /* CLGeocoderSpec+Spec.mm */; };
 		AEEECC4C181F36B6006B52CD /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEEECC4B181F36B6006B52CD /* Default-568h@2x.png */; };
@@ -153,6 +166,20 @@
 			remoteGlobalIDString = AE38498D168D053300C99B55;
 			remoteInfo = "CoreLocation+PivotalSpecHelper-StaticLib";
 		};
+		AE3F04B31BE7FA03002BA0DE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE3848CC168CD86000C99B55 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AE3F04AD1BE7FA03002BA0DE;
+			remoteInfo = "CoreLocation+PivotalSpecHelper-iOS";
+		};
+		AE3F04EF1BE7FEE7002BA0DE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE3848CC168CD86000C99B55 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AE3F04AD1BE7FA03002BA0DE;
+			remoteInfo = "CoreLocation+PivotalSpecHelper-iOS";
+		};
 		AE5200031BCB323C006BA693 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AE384926168CD8FB00C99B55 /* Cedar.xcodeproj */;
@@ -244,11 +271,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AE3F04BA1BE7FA03002BA0DE /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				AE3F04B61BE7FA03002BA0DE /* CoreLocation_PivotalSpecHelper.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		3466C06B1B97A2ED00CBAB59 /* CoreLocation-StaticLibSpecBundle.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CoreLocation-StaticLibSpecBundle.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		34A663F21BDFB78300EF0FEA /* CoreLoation_PivotalSpecHelper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CoreLoation_PivotalSpecHelper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		34A663F21BDFB78300EF0FEA /* CoreLocation_PivotalSpecHelper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CoreLocation_PivotalSpecHelper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		34A664001BDFB96900EF0FEA /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS2.0.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = DEVELOPER_DIR; };
 		34A664141BDFB9B400EF0FEA /* CoreLocation_PivotalSpecHelper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CoreLocation_PivotalSpecHelper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		34A6641C1BDFB9F100EF0FEA /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS9.0.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = DEVELOPER_DIR; };
@@ -272,6 +310,8 @@
 		AE38495D168D030800C99B55 /* main.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
 		AE384970168D04F300C99B55 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		AE38498E168D053300C99B55 /* libCoreLocation+PivotalSpecHelper-StaticLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libCoreLocation+PivotalSpecHelper-StaticLib.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE3F04AE1BE7FA03002BA0DE /* CoreLocation_PivotalSpecHelper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CoreLocation_PivotalSpecHelper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE3F04E91BE7FEE6002BA0DE /* CoreLocation-iOS SpecBundle.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CoreLocation-iOS SpecBundle.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEC81173168D14FF00523186 /* CLGeocoderSpec+Spec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "CLGeocoderSpec+Spec.mm"; sourceTree = "<group>"; };
 		AEEECC4B181F36B6006B52CD /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -309,6 +349,7 @@
 			files = (
 				AE38499E168D058F00C99B55 /* libCoreLocation+PivotalSpecHelper-StaticLib.a in Frameworks */,
 				AE384971168D04F300C99B55 /* CoreLocation.framework in Frameworks */,
+				AE3F04B51BE7FA03002BA0DE /* CoreLocation_PivotalSpecHelper.framework in Frameworks */,
 				AE384963168D045400C99B55 /* libCedar.a in Frameworks */,
 				AE3848DA168CD86000C99B55 /* UIKit.framework in Frameworks */,
 				AE3848DC168CD86000C99B55 /* Foundation.framework in Frameworks */,
@@ -344,6 +385,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AE3F04AA1BE7FA03002BA0DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE3F04BC1BE7FA7B002BA0DE /* CoreLocation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE3F04E61BE7FEE6002BA0DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE3F04F51BE7FF27002BA0DE /* CoreLocation.framework in Frameworks */,
+				AE3F04F41BE7FF21002BA0DE /* Cedar.framework in Frameworks */,
+				AE3F04EE1BE7FEE7002BA0DE /* CoreLocation_PivotalSpecHelper.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -366,9 +425,11 @@
 				AE384918168CD8D800C99B55 /* CoreLocationSpec */,
 				AE38498E168D053300C99B55 /* libCoreLocation+PivotalSpecHelper-StaticLib.a */,
 				3466C06B1B97A2ED00CBAB59 /* CoreLocation-StaticLibSpecBundle.xctest */,
-				34A663F21BDFB78300EF0FEA /* CoreLoation_PivotalSpecHelper.framework */,
+				34A663F21BDFB78300EF0FEA /* CoreLocation_PivotalSpecHelper.framework */,
 				34A664141BDFB9B400EF0FEA /* CoreLocation_PivotalSpecHelper.framework */,
 				34A664271BDFBB9E00EF0FEA /* CoreLocation-tvOS SpecBundle.xctest */,
+				AE3F04AE1BE7FA03002BA0DE /* CoreLocation_PivotalSpecHelper.framework */,
+				AE3F04E91BE7FEE6002BA0DE /* CoreLocation-iOS SpecBundle.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -510,6 +571,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AE3F04AB1BE7FA03002BA0DE /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE3F04BD1BE7FA9F002BA0DE /* CLGeocoder+Spec.h in Headers */,
+				AE3F04BB1BE7FA58002BA0DE /* CoreLocation+PivotalSpecHelper.h in Headers */,
+				AE3F04BE1BE7FA9F002BA0DE /* CLLocationManager+Spec.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
@@ -543,7 +614,7 @@
 			);
 			name = "CoreLocation+PivotalSpecHelper-watchOS";
 			productName = "CoreLocation+PivotalSpecHelper-watchOS";
-			productReference = 34A663F21BDFB78300EF0FEA /* CoreLoation_PivotalSpecHelper.framework */;
+			productReference = 34A663F21BDFB78300EF0FEA /* CoreLocation_PivotalSpecHelper.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		34A664131BDFB9B400EF0FEA /* CoreLocation+PivotalSpecHelper-tvOS */ = {
@@ -587,12 +658,14 @@
 				AE3848D1168CD86000C99B55 /* Sources */,
 				AE3848D2168CD86000C99B55 /* Frameworks */,
 				AE3848D3168CD86000C99B55 /* Resources */,
+				AE3F04BA1BE7FA03002BA0DE /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				AE38499D168D058A00C99B55 /* PBXTargetDependency */,
 				AE384965168D046400C99B55 /* PBXTargetDependency */,
+				AE3F04B41BE7FA03002BA0DE /* PBXTargetDependency */,
 			);
 			name = "CoreLocation-StaticLibSpec";
 			productName = CoreLocation;
@@ -652,6 +725,40 @@
 			productReference = AE38498E168D053300C99B55 /* libCoreLocation+PivotalSpecHelper-StaticLib.a */;
 			productType = "com.apple.product-type.library.static";
 		};
+		AE3F04AD1BE7FA03002BA0DE /* CoreLocation+PivotalSpecHelper-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AE3F04B71BE7FA03002BA0DE /* Build configuration list for PBXNativeTarget "CoreLocation+PivotalSpecHelper-iOS" */;
+			buildPhases = (
+				AE3F04A91BE7FA03002BA0DE /* Sources */,
+				AE3F04AA1BE7FA03002BA0DE /* Frameworks */,
+				AE3F04AB1BE7FA03002BA0DE /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "CoreLocation+PivotalSpecHelper-iOS";
+			productName = "CoreLocation+PivotalSpecHelper-iOS";
+			productReference = AE3F04AE1BE7FA03002BA0DE /* CoreLocation_PivotalSpecHelper.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		AE3F04E81BE7FEE6002BA0DE /* CoreLocation-iOS SpecBundle */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AE3F04F11BE7FEE7002BA0DE /* Build configuration list for PBXNativeTarget "CoreLocation-iOS SpecBundle" */;
+			buildPhases = (
+				AE3F04E51BE7FEE6002BA0DE /* Sources */,
+				AE3F04E61BE7FEE6002BA0DE /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AE3F04F01BE7FEE7002BA0DE /* PBXTargetDependency */,
+			);
+			name = "CoreLocation-iOS SpecBundle";
+			productName = "CoreLocation-iOS SpecBundle";
+			productReference = AE3F04E91BE7FEE6002BA0DE /* CoreLocation-iOS SpecBundle.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -672,6 +779,12 @@
 						CreatedOnToolsVersion = 7.1;
 					};
 					34A664261BDFBB9E00EF0FEA = {
+						CreatedOnToolsVersion = 7.1;
+					};
+					AE3F04AD1BE7FA03002BA0DE = {
+						CreatedOnToolsVersion = 7.1;
+					};
+					AE3F04E81BE7FEE6002BA0DE = {
 						CreatedOnToolsVersion = 7.1;
 					};
 				};
@@ -698,10 +811,12 @@
 				AE38498D168D053300C99B55 /* CoreLocation+PivotalSpecHelper-StaticLib */,
 				34A663F11BDFB78300EF0FEA /* CoreLocation+PivotalSpecHelper-watchOS */,
 				34A664131BDFB9B400EF0FEA /* CoreLocation+PivotalSpecHelper-tvOS */,
+				AE3F04AD1BE7FA03002BA0DE /* CoreLocation+PivotalSpecHelper-iOS */,
 				AE384917168CD8D800C99B55 /* CoreLocationSpec */,
 				AE3848D4168CD86000C99B55 /* CoreLocation-StaticLibSpec */,
 				3466C06A1B97A2ED00CBAB59 /* CoreLocation-StaticLibSpecBundle */,
 				34A664261BDFBB9E00EF0FEA /* CoreLocation-tvOS SpecBundle */,
+				AE3F04E81BE7FEE6002BA0DE /* CoreLocation-iOS SpecBundle */,
 			);
 		};
 /* End PBXProject section */
@@ -920,6 +1035,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AE3F04A91BE7FA03002BA0DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE3F04C01BE7FAA5002BA0DE /* CLLocationManager+Spec.m in Sources */,
+				AE3F04BF1BE7FAA5002BA0DE /* CLGeocoder+Spec.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE3F04E51BE7FEE6002BA0DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE3F04F61BE7FF2E002BA0DE /* CLGeocoderSpec+Spec.mm in Sources */,
+				AE3F04F71BE7FF2E002BA0DE /* CLLocationManagerSpec+Spec.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -952,6 +1085,16 @@
 			isa = PBXTargetDependency;
 			target = AE38498D168D053300C99B55 /* CoreLocation+PivotalSpecHelper-StaticLib */;
 			targetProxy = AE38499C168D058A00C99B55 /* PBXContainerItemProxy */;
+		};
+		AE3F04B41BE7FA03002BA0DE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AE3F04AD1BE7FA03002BA0DE /* CoreLocation+PivotalSpecHelper-iOS */;
+			targetProxy = AE3F04B31BE7FA03002BA0DE /* PBXContainerItemProxy */;
+		};
+		AE3F04F01BE7FEE7002BA0DE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AE3F04AD1BE7FA03002BA0DE /* CoreLocation+PivotalSpecHelper-iOS */;
+			targetProxy = AE3F04EF1BE7FEE7002BA0DE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1044,7 +1187,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "SpecHelper/CoreLocation+PivotalSpecHelper.modulemap";
 				PRODUCT_BUNDLE_IDENTIFIER = "io.pivotal.CoreLocation-PivotalSpecHelper";
-				PRODUCT_NAME = CoreLoation_PivotalSpecHelper;
+				PRODUCT_NAME = CoreLocation_PivotalSpecHelper;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
@@ -1084,7 +1227,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "SpecHelper/CoreLocation+PivotalSpecHelper.modulemap";
 				PRODUCT_BUNDLE_IDENTIFIER = "io.pivotal.CoreLocation-PivotalSpecHelper";
-				PRODUCT_NAME = CoreLoation_PivotalSpecHelper;
+				PRODUCT_NAME = CoreLocation_PivotalSpecHelper;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
@@ -1285,6 +1428,7 @@
 				HEADER_SEARCH_PATHS = "$SRCROOT/../Externals/Cedar/**";
 				INFOPLIST_FILE = "../InfoPlist/SpecHost-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.pivotallabs.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1299,6 +1443,7 @@
 				HEADER_SEARCH_PATHS = "$SRCROOT/../Externals/Cedar/**";
 				INFOPLIST_FILE = "../InfoPlist/SpecHost-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.pivotallabs.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1406,6 +1551,145 @@
 			};
 			name = Release;
 		};
+		AE3F04B81BE7FA03002BA0DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "../InfoPlist/Framework-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "SpecHelper/CoreLocation+PivotalSpecHelper.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "io.pivotal.CoreLocation-PivotalSpecHelper";
+				PRODUCT_NAME = CoreLocation_PivotalSpecHelper;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		AE3F04B91BE7FA03002BA0DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "../InfoPlist/Framework-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "SpecHelper/CoreLocation+PivotalSpecHelper.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "io.pivotal.CoreLocation-PivotalSpecHelper";
+				PRODUCT_NAME = CoreLocation_PivotalSpecHelper;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		AE3F04F21BE7FEE7002BA0DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"PHONE_SPEC_BUNDLE=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "../InfoPlist/SpecBundle-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "io.pivotal.CoreLocation-iOS-SpecBundle";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		AE3F04F31BE7FEE7002BA0DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = "PHONE_SPEC_BUNDLE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "../InfoPlist/SpecBundle-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "io.pivotal.CoreLocation-iOS-SpecBundle";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1489,6 +1773,22 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		AE3F04B71BE7FA03002BA0DE /* Build configuration list for PBXNativeTarget "CoreLocation+PivotalSpecHelper-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE3F04B81BE7FA03002BA0DE /* Debug */,
+				AE3F04B91BE7FA03002BA0DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		AE3F04F11BE7FEE7002BA0DE /* Build configuration list for PBXNativeTarget "CoreLocation-iOS SpecBundle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE3F04F21BE7FEE7002BA0DE /* Debug */,
+				AE3F04F31BE7FEE7002BA0DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
