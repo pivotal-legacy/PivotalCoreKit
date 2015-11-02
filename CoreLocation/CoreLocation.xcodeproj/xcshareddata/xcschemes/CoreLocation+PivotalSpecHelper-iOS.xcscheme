@@ -14,9 +14,23 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "34A663F11BDFB78300EF0FEA"
+               BlueprintIdentifier = "AE3F04AD1BE7FA03002BA0DE"
                BuildableName = "CoreLocation_PivotalSpecHelper.framework"
-               BlueprintName = "CoreLocation+PivotalSpecHelper-watchOS"
+               BlueprintName = "CoreLocation+PivotalSpecHelper-iOS"
+               ReferencedContainer = "container:CoreLocation.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "AE3F04E81BE7FEE6002BA0DE"
+               BuildableName = "CoreLocation-iOS SpecBundle.xctest"
+               BlueprintName = "CoreLocation-iOS SpecBundle"
                ReferencedContainer = "container:CoreLocation.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -28,7 +42,26 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "AE3F04E81BE7FEE6002BA0DE"
+               BuildableName = "CoreLocation-iOS SpecBundle.xctest"
+               BlueprintName = "CoreLocation-iOS SpecBundle"
+               ReferencedContainer = "container:CoreLocation.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "AE3F04AD1BE7FA03002BA0DE"
+            BuildableName = "CoreLocation_PivotalSpecHelper.framework"
+            BlueprintName = "CoreLocation+PivotalSpecHelper-iOS"
+            ReferencedContainer = "container:CoreLocation.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -45,9 +78,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "34A663F11BDFB78300EF0FEA"
+            BlueprintIdentifier = "AE3F04AD1BE7FA03002BA0DE"
             BuildableName = "CoreLocation_PivotalSpecHelper.framework"
-            BlueprintName = "CoreLocation+PivotalSpecHelper-watchOS"
+            BlueprintName = "CoreLocation+PivotalSpecHelper-iOS"
             ReferencedContainer = "container:CoreLocation.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -63,9 +96,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "34A663F11BDFB78300EF0FEA"
+            BlueprintIdentifier = "AE3F04AD1BE7FA03002BA0DE"
             BuildableName = "CoreLocation_PivotalSpecHelper.framework"
-            BlueprintName = "CoreLocation+PivotalSpecHelper-watchOS"
+            BlueprintName = "CoreLocation+PivotalSpecHelper-iOS"
             ReferencedContainer = "container:CoreLocation.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
