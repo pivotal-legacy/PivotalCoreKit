@@ -3834,6 +3834,7 @@
 				AE3F050F1BE81548002BA0DE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AE3F05271BE81548002BA0DE /* Build configuration list for PBXNativeTarget "Foundation+PivotalCore-iOS-DynamicTests" */ = {
 			isa = XCConfigurationList;
@@ -3842,6 +3843,7 @@
 				AE3F05111BE81548002BA0DE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AE3F05521BE8195E002BA0DE /* Build configuration list for PBXNativeTarget "Foundation+PivotalSpecHelper-iOS-Dynamic" */ = {
 			isa = XCConfigurationList;
@@ -3850,6 +3852,7 @@
 				AE3F05541BE8195E002BA0DE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AEA96B5A168B506500861DF1 /* Build configuration list for PBXNativeTarget "Foundation+PivotalCore" */ = {
 			isa = XCConfigurationList;

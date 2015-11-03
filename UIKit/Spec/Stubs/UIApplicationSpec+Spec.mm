@@ -13,6 +13,10 @@ describe(@"UIApplication (spec extensions)", ^{
         url = [NSURL URLWithString:@"http://example.com/xyzzy"];
     });
 
+    it(@"should have a test host", ^{
+        [UIApplication sharedApplication] should_not be_nil;
+    });
+
     describe(@"- openURL:", ^{
         beforeEach(^{
             [[UIApplication sharedApplication] openURL:url];
