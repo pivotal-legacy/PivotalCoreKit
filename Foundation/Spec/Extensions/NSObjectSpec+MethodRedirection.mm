@@ -1,9 +1,5 @@
 #import <Foundation/Foundation.h>
-#if TARGET_OS_IPHONE && !TARGET_OS_TV && !PHONE_SPEC_BUNDLE
 #import "CDRSpecHelper.h"
-#else
-#import <Cedar/CDRSpecHelper.h>
-#endif
 
 #import "NSObject+MethodRedirection.h"
 
@@ -65,7 +61,7 @@ describe(@"NSObject_MethodRedirection", ^{
             [Redirectable redirectSelector:@selector(cheekify:) to:@selector(cheekify_new:) andRenameItTo:@selector(cheekify_original:)];
 
             [redirectable cheekify:@"Herman"] should equal(@"No, really, Herman is so cheeky");
-            
+
             [Redirectable redirectSelector:@selector(cheekify:) to:@selector(cheekify_original:) andRenameItTo:@selector(cheekify_other:)];
         });
 

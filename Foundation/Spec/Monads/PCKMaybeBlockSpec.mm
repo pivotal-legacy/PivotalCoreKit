@@ -1,9 +1,5 @@
 #import <Foundation/Foundation.h>
-#if TARGET_OS_IPHONE && !TARGET_OS_TV && !PHONE_SPEC_BUNDLE
 #import "CDRSpecHelper.h"
-#else
-#import <Cedar/CDRSpecHelper.h>
-#endif
 
 #import "PCKMaybeBlock.h"
 
@@ -32,7 +28,7 @@ describe(@"PCKMaybeBlock", ^{
         it(@"can be called with something", ^{
             [subject call:@11] should equal(@11);
         });
-        
+
         it(@"can produce nothing", ^{
             [subject call:@5] should be_nil;
         });
@@ -59,15 +55,15 @@ describe(@"PCKMaybeBlock", ^{
             it(@"chains the calls", ^{
                 [composed call:@11] should equal(@11);
             });
-            
+
             it(@"shortcuts on nothing", ^{
                 [composed call:@0] should be_nil;
                 subjectBlockWasCalled should equal(NO);
-                
+
                 [composed call:@6] should be_nil;
                 subjectBlockWasCalled should equal(YES);
             });
-            
+
             it(@"chains many calls", ^{
                 PCKMaybeBlock *maybe = [PCKMaybeBlock maybeWithBlock:^id(id o) {
                     return [o arrayByAddingObject:@([o count])];

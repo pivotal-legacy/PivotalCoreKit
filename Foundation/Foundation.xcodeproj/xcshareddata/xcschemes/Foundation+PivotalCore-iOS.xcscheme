@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "AE3F04FC1BE81547002BA0DE"
                BuildableName = "Foundation_PivotalCore.framework"
-               BlueprintName = "Foundation+PivotalCore-iOS-Dynamic"
+               BlueprintName = "Foundation+PivotalCore-iOS"
                ReferencedContainer = "container:Foundation.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -44,7 +44,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AE3F04FC1BE81547002BA0DE"
             BuildableName = "Foundation_PivotalCore.framework"
-            BlueprintName = "Foundation+PivotalCore-iOS-Dynamic"
+            BlueprintName = "Foundation+PivotalCore-iOS"
             ReferencedContainer = "container:Foundation.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -66,7 +66,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AE3F04FC1BE81547002BA0DE"
             BuildableName = "Foundation_PivotalCore.framework"
-            BlueprintName = "Foundation+PivotalCore-iOS-Dynamic"
+            BlueprintName = "Foundation+PivotalCore-iOS"
             ReferencedContainer = "container:Foundation.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -84,7 +84,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AE3F04FC1BE81547002BA0DE"
             BuildableName = "Foundation_PivotalCore.framework"
-            BlueprintName = "Foundation+PivotalCore-iOS-Dynamic"
+            BlueprintName = "Foundation+PivotalCore-iOS"
             ReferencedContainer = "container:Foundation.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

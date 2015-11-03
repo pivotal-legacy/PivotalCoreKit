@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXAggregateTarget section */
-		AE03FC661B0A866E00013784 /* Foundation+PivotalCore-iOS */ = {
+		AE03FC661B0A866E00013784 /* Foundation+PivotalCore-iOS-Static */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = AE03FC741B0A866E00013784 /* Build configuration list for PBXAggregateTarget "Foundation+PivotalCore-iOS" */;
+			buildConfigurationList = AE03FC741B0A866E00013784 /* Build configuration list for PBXAggregateTarget "Foundation+PivotalCore-iOS-Static" */;
 			buildPhases = (
 				AE03FC671B0A866E00013784 /* Build architecture-specific static libs */,
 				AE03FC681B0A866E00013784 /* Build universal static lib */,
@@ -17,12 +17,12 @@
 			);
 			dependencies = (
 			);
-			name = "Foundation+PivotalCore-iOS";
+			name = "Foundation+PivotalCore-iOS-Static";
 			productName = "Foundation+PivotalSpecHelper-iOS";
 		};
-		B88BF07D1725A56100E638D3 /* Foundation+PivotalSpecHelper-iOS */ = {
+		B88BF07D1725A56100E638D3 /* Foundation+PivotalSpecHelper-iOS-Static */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = B88BF0871725A56100E638D3 /* Build configuration list for PBXAggregateTarget "Foundation+PivotalSpecHelper-iOS" */;
+			buildConfigurationList = B88BF0871725A56100E638D3 /* Build configuration list for PBXAggregateTarget "Foundation+PivotalSpecHelper-iOS-Static" */;
 			buildPhases = (
 				B88BF0881725A6C000E638D3 /* Build architecture-specific static libs */,
 				B88BF0891725A70900E638D3 /* Build universal static lib */,
@@ -30,7 +30,7 @@
 			);
 			dependencies = (
 			);
-			name = "Foundation+PivotalSpecHelper-iOS";
+			name = "Foundation+PivotalSpecHelper-iOS-Static";
 			productName = "Foundation+PivotalSpecHelper-iOS";
 		};
 /* End PBXAggregateTarget section */
@@ -1735,9 +1735,9 @@
 			productReference = 34A663A41BDF24E700EF0FEA /* Foundation-tvOS SpecBundle.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		AE3F04FC1BE81547002BA0DE /* Foundation+PivotalCore-iOS-Dynamic */ = {
+		AE3F04FC1BE81547002BA0DE /* Foundation+PivotalCore-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AE3F05261BE81548002BA0DE /* Build configuration list for PBXNativeTarget "Foundation+PivotalCore-iOS-Dynamic" */;
+			buildConfigurationList = AE3F05261BE81548002BA0DE /* Build configuration list for PBXNativeTarget "Foundation+PivotalCore-iOS" */;
 			buildPhases = (
 				AE3F04F81BE81547002BA0DE /* Sources */,
 				AE3F04F91BE81547002BA0DE /* Frameworks */,
@@ -1747,7 +1747,7 @@
 			);
 			dependencies = (
 			);
-			name = "Foundation+PivotalCore-iOS-Dynamic";
+			name = "Foundation+PivotalCore-iOS";
 			productName = "Foundation+PivotalCore-iOS-Dynamic";
 			productReference = AE3F04FD1BE81547002BA0DE /* Foundation_PivotalCore.framework */;
 			productType = "com.apple.product-type.framework";
@@ -1770,9 +1770,9 @@
 			productReference = AE3F05061BE81547002BA0DE /* Foundation+PivotalCore-iOS-DynamicTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		AE3F054C1BE8195E002BA0DE /* Foundation+PivotalSpecHelper-iOS-Dynamic */ = {
+		AE3F054C1BE8195E002BA0DE /* Foundation+PivotalSpecHelper-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AE3F05521BE8195E002BA0DE /* Build configuration list for PBXNativeTarget "Foundation+PivotalSpecHelper-iOS-Dynamic" */;
+			buildConfigurationList = AE3F05521BE8195E002BA0DE /* Build configuration list for PBXNativeTarget "Foundation+PivotalSpecHelper-iOS" */;
 			buildPhases = (
 				AE3F05481BE8195E002BA0DE /* Sources */,
 				AE3F05491BE8195E002BA0DE /* Frameworks */,
@@ -1783,7 +1783,7 @@
 			);
 			dependencies = (
 			);
-			name = "Foundation+PivotalSpecHelper-iOS-Dynamic";
+			name = "Foundation+PivotalSpecHelper-iOS";
 			productName = "Foundation+PivotalSpecHelper-iOS-Dynamic";
 			productReference = AE3F054D1BE8195E002BA0DE /* Foundation_PivotalSpecHelper.framework */;
 			productType = "com.apple.product-type.framework";
@@ -1966,15 +1966,15 @@
 				AEA96B48168B506500861DF1 /* Foundation+PivotalCore */,
 				AEA96C53168B636E00861DF1 /* Foundation+PivotalCore-StaticLib */,
 				34A662B71BDF14BB00EF0FEA /* Foundation+PivotalCore-watchOS */,
+				AE3F04FC1BE81547002BA0DE /* Foundation+PivotalCore-iOS */,
 				34A663021BDF1A9900EF0FEA /* Foundation+PivotalCore-tvOS */,
-				AE03FC661B0A866E00013784 /* Foundation+PivotalCore-iOS */,
-				AE3F04FC1BE81547002BA0DE /* Foundation+PivotalCore-iOS-Dynamic */,
+				AE03FC661B0A866E00013784 /* Foundation+PivotalCore-iOS-Static */,
 				AEA96B9D168B541900861DF1 /* Foundation+PivotalSpecHelper */,
 				AEA96C63168B63BD00861DF1 /* Foundation+PivotalSpecHelper-StaticLib */,
 				34A6633B1BDF1D3D00EF0FEA /* Foundation+PivotalSpecHelper-watchOS */,
+				AE3F054C1BE8195E002BA0DE /* Foundation+PivotalSpecHelper-iOS */,
 				34A6636D1BDF200A00EF0FEA /* Foundation+PivotalSpecHelper-tvOS */,
-				B88BF07D1725A56100E638D3 /* Foundation+PivotalSpecHelper-iOS */,
-				AE3F054C1BE8195E002BA0DE /* Foundation+PivotalSpecHelper-iOS-Dynamic */,
+				B88BF07D1725A56100E638D3 /* Foundation+PivotalSpecHelper-iOS-Static */,
 				AEA96BD2168B561500861DF1 /* FoundationSpec */,
 				AEA96C73168B640B00861DF1 /* Foundation-StaticLibSpec */,
 				3466C03A1B97A10A00CBAB59 /* Foundation-StaticLibSpecBundle */,
@@ -2623,12 +2623,12 @@
 		};
 		AE3F05091BE81547002BA0DE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = AE3F04FC1BE81547002BA0DE /* Foundation+PivotalCore-iOS-Dynamic */;
+			target = AE3F04FC1BE81547002BA0DE /* Foundation+PivotalCore-iOS */;
 			targetProxy = AE3F05081BE81547002BA0DE /* PBXContainerItemProxy */;
 		};
 		AE3F05591BE81B92002BA0DE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = AE3F054C1BE8195E002BA0DE /* Foundation+PivotalSpecHelper-iOS-Dynamic */;
+			target = AE3F054C1BE8195E002BA0DE /* Foundation+PivotalSpecHelper-iOS */;
 			targetProxy = AE3F05581BE81B92002BA0DE /* PBXContainerItemProxy */;
 		};
 		AE416AAA174D481C0014A083 /* PBXTargetDependency */ = {
@@ -3117,6 +3117,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(PROJECT_DIR)/../Externals/FakeHTTP/FakeHTTP\"/**",
+					"$(PROJECT_DIR)/../Externals/Cedar/**",
 				);
 				INFOPLIST_FILE = "../InfoPlist/SpecBundle-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -3146,6 +3147,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(PROJECT_DIR)/../Externals/FakeHTTP/FakeHTTP\"/**",
+					"$(PROJECT_DIR)/../Externals/Cedar/**",
 				);
 				INFOPLIST_FILE = "../InfoPlist/SpecBundle-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -3272,15 +3274,15 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = (
+					"FIXTURESDIR=\\\"$(SRCROOT)/Spec/Fixtures\\\"",
 					"DEBUG=1",
-					"$(inherited)",
-					"PHONE_SPEC_BUNDLE=1",
 				);
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(PROJECT_DIR)/../Externals/FakeHTTP/FakeHTTP\"/**",
+					"$(PROJECT_DIR)/../Externals/Cedar/**",
 				);
 				INFOPLIST_FILE = "../InfoPlist/Framework-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
@@ -3306,15 +3308,12 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"PHONE_SPEC_BUNDLE=1",
-					"FIXTURESDIR=\\\"$(SRCROOT)/Spec/Fixtures\\\"",
-				);
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(PROJECT_DIR)/../Externals/FakeHTTP/FakeHTTP\"/**",
+					"$(PROJECT_DIR)/../Externals/Cedar/**",
 				);
 				INFOPLIST_FILE = "../InfoPlist/Framework-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
@@ -3534,7 +3533,10 @@
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../Externals/FakeHTTP/FakeHTTP/**";
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/../Externals/FakeHTTP/FakeHTTP/**",
+					"$(PROJECT_DIR)/../Externals/Cedar/**",
+				);
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -3554,7 +3556,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../Externals/FakeHTTP/FakeHTTP/**";
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/../Externals/FakeHTTP/FakeHTTP/**",
+					"$(PROJECT_DIR)/../Externals/Cedar/**",
+				);
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -3818,7 +3823,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AE03FC741B0A866E00013784 /* Build configuration list for PBXAggregateTarget "Foundation+PivotalCore-iOS" */ = {
+		AE03FC741B0A866E00013784 /* Build configuration list for PBXAggregateTarget "Foundation+PivotalCore-iOS-Static" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AE03FC751B0A866E00013784 /* Debug */,
@@ -3827,7 +3832,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AE3F05261BE81548002BA0DE /* Build configuration list for PBXNativeTarget "Foundation+PivotalCore-iOS-Dynamic" */ = {
+		AE3F05261BE81548002BA0DE /* Build configuration list for PBXNativeTarget "Foundation+PivotalCore-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AE3F050E1BE81548002BA0DE /* Debug */,
@@ -3845,7 +3850,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AE3F05521BE8195E002BA0DE /* Build configuration list for PBXNativeTarget "Foundation+PivotalSpecHelper-iOS-Dynamic" */ = {
+		AE3F05521BE8195E002BA0DE /* Build configuration list for PBXNativeTarget "Foundation+PivotalSpecHelper-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AE3F05531BE8195E002BA0DE /* Debug */,
@@ -3908,7 +3913,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B88BF0871725A56100E638D3 /* Build configuration list for PBXAggregateTarget "Foundation+PivotalSpecHelper-iOS" */ = {
+		B88BF0871725A56100E638D3 /* Build configuration list for PBXAggregateTarget "Foundation+PivotalSpecHelper-iOS-Static" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B88BF07E1725A56100E638D3 /* Debug */,

@@ -121,10 +121,10 @@ namespace :foundation do
     task :core => ["core:osx", "core:ios"]
 
     namespace :framework do
-      desc "Build Foundation+PivotalCore-iOS universal static framework"
+      desc "Build Foundation+PivotalCore-iOS-Static universal static framework"
       task :ios do
         output_file = output_file("foundation:build:framework:ios")
-        build_target("Foundation+PivotalCore-iOS", project: project, output_file: output_file)
+        build_target("Foundation+PivotalCore-iOS-Static", project: project, output_file: output_file)
       end
     end
 
@@ -147,10 +147,10 @@ namespace :foundation do
     task :spec_helper => ["spec_helper:osx", "spec_helper:ios"]
 
     namespace :spec_helper_framework do
-      desc "Build Foundation+PivotalSpecHelper-iOS universal static framework"
+      desc "Build Foundation+PivotalSpecHelper-iOS-Static universal static framework"
       task :ios do
         output_file = output_file("foundation:build:spec_helper_framework:ios")
-        build_target("Foundation+PivotalSpecHelper-iOS", project: project, output_file: output_file)
+        build_target("Foundation+PivotalSpecHelper-iOS-Static", project: project, output_file: output_file)
       end
     end
 
@@ -218,16 +218,16 @@ namespace :uikit do
     task :spec_helper => ["spec_helper:ios", "spec_helper:ios_stubs"]
 
     namespace :spec_helper_framework do
-      desc "Build UIKit+PivotalSpecHelper-iOS universal static framework"
+      desc "Build UIKit+PivotalSpecHelper-iOS-Static universal static framework"
       task :ios do
         output_file = output_file("uikit:build:spec_helper_framework:ios")
-        build_target("UIKit+PivotalSpecHelper-iOS", project: project, output_file: output_file)
+        build_target("UIKit+PivotalSpecHelper-iOS-Static", project: project, output_file: output_file)
       end
 
-      desc "Build UIKit+PivotalSpecHelperStubs-iOS universal static framework"
+      desc "Build UIKit+PivotalSpecHelperStubs-iOS-Static universal static framework"
       task :ios_stubs do
         output_file = output_file("uikit:build:spec_helper_framework:ios_stubs")
-        build_target("UIKit+PivotalSpecHelperStubs-iOS", project: project, output_file: output_file)
+        build_target("UIKit+PivotalSpecHelperStubs-iOS-Static", project: project, output_file: output_file)
       end
     end
 
