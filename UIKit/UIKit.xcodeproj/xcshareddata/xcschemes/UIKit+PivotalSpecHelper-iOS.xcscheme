@@ -14,8 +14,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B866FC0716B48C8200317E32"
-               BuildableName = "UIKit+PivotalSpecHelper-iOS"
+               BlueprintIdentifier = "AE0D6A701BE941290095ACF3"
+               BuildableName = "UIKit_PivotalSpecHelper.framework"
                BlueprintName = "UIKit+PivotalSpecHelper-iOS"
                ReferencedContainer = "container:UIKit.xcodeproj">
             </BuildableReference>
@@ -42,8 +42,8 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B866FC0716B48C8200317E32"
-            BuildableName = "UIKit+PivotalSpecHelper-iOS"
+            BlueprintIdentifier = "AE0D6A701BE941290095ACF3"
+            BuildableName = "UIKit_PivotalSpecHelper.framework"
             BlueprintName = "UIKit+PivotalSpecHelper-iOS"
             ReferencedContainer = "container:UIKit.xcodeproj">
          </BuildableReference>
@@ -64,8 +64,8 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B866FC0716B48C8200317E32"
-            BuildableName = "UIKit+PivotalSpecHelper-iOS"
+            BlueprintIdentifier = "AE0D6A701BE941290095ACF3"
+            BuildableName = "UIKit_PivotalSpecHelper.framework"
             BlueprintName = "UIKit+PivotalSpecHelper-iOS"
             ReferencedContainer = "container:UIKit.xcodeproj">
          </BuildableReference>
@@ -82,8 +82,8 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B866FC0716B48C8200317E32"
-            BuildableName = "UIKit+PivotalSpecHelper-iOS"
+            BlueprintIdentifier = "AE0D6A701BE941290095ACF3"
+            BuildableName = "UIKit_PivotalSpecHelper.framework"
             BlueprintName = "UIKit+PivotalSpecHelper-iOS"
             ReferencedContainer = "container:UIKit.xcodeproj">
          </BuildableReference>

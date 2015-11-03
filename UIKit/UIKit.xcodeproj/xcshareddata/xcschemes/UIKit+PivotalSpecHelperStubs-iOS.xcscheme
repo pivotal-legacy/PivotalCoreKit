@@ -14,8 +14,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AEC40CC2174C283400474D2D"
-               BuildableName = "UIKit+PivotalSpecHelperStubs-iOS"
+               BlueprintIdentifier = "AE0D6A981BE942490095ACF3"
+               BuildableName = "UIKit+PivotalSpecHelperStubs-iOS.framework"
                BlueprintName = "UIKit+PivotalSpecHelperStubs-iOS"
                ReferencedContainer = "container:UIKit.xcodeproj">
             </BuildableReference>
@@ -42,8 +42,8 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AEC40CC2174C283400474D2D"
-            BuildableName = "UIKit+PivotalSpecHelperStubs-iOS"
+            BlueprintIdentifier = "AE0D6A981BE942490095ACF3"
+            BuildableName = "UIKit+PivotalSpecHelperStubs-iOS.framework"
             BlueprintName = "UIKit+PivotalSpecHelperStubs-iOS"
             ReferencedContainer = "container:UIKit.xcodeproj">
          </BuildableReference>
@@ -64,8 +64,8 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AEC40CC2174C283400474D2D"
-            BuildableName = "UIKit+PivotalSpecHelperStubs-iOS"
+            BlueprintIdentifier = "AE0D6A981BE942490095ACF3"
+            BuildableName = "UIKit+PivotalSpecHelperStubs-iOS.framework"
             BlueprintName = "UIKit+PivotalSpecHelperStubs-iOS"
             ReferencedContainer = "container:UIKit.xcodeproj">
          </BuildableReference>
@@ -82,8 +82,8 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AEC40CC2174C283400474D2D"
-            BuildableName = "UIKit+PivotalSpecHelperStubs-iOS"
+            BlueprintIdentifier = "AE0D6A981BE942490095ACF3"
+            BuildableName = "UIKit+PivotalSpecHelperStubs-iOS.framework"
             BlueprintName = "UIKit+PivotalSpecHelperStubs-iOS"
             ReferencedContainer = "container:UIKit.xcodeproj">
          </BuildableReference>
