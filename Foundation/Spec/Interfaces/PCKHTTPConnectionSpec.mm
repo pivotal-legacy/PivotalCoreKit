@@ -1,11 +1,6 @@
 #import <Foundation/Foundation.h>
-#if TARGET_OS_IPHONE && !TARGET_OS_TV && !PHONE_SPEC_BUNDLE
 #import "CDRSpecHelper.h"
 #import "Foundation+PivotalSpecHelper.h"
-#else
-#import <Cedar/CDRSpecHelper.h>
-#import <Foundation+PivotalSpecHelper/Foundation+PivotalSpecHelper.h>
-#endif
 
 #import "PCKHTTPConnection.h"
 #import "PCKHTTPInterface.h"
@@ -26,12 +21,12 @@ describe(@"PCKHTTPConnection", ^{
             PCKHTTPInterface<CedarDouble> *fakeInterface = fake_for([PCKHTTPInterface class]);
             NSURLRequest<CedarDouble> *fakeRequest = fake_for([NSURLRequest class]);
             FakeConnectionDelegate *delegate = [[FakeConnectionDelegate alloc] init];
-            
+
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wunused-variable"
             PCKHTTPConnection *connection = [[PCKHTTPConnection alloc] initWithHTTPInterface:fakeInterface forRequest:fakeRequest andDelegate:delegate];
 #pragma clang diagnostic pop
-            
+
             wrapper.target = delegate;
             [NSURLConnection resetAll];
         }

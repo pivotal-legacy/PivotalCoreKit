@@ -1,9 +1,5 @@
 #import <Foundation/Foundation.h>
-#if TARGET_OS_IPHONE && !TARGET_OS_TV && !PHONE_SPEC_BUNDLE
 #import "CDRSpecHelper.h"
-#else
-#import <Cedar/CDRSpecHelper.h>
-#endif
 
 #import "PCKConnectionDelegateWrapper.h"
 #import "PSHKFakeHTTPURLResponse.h"
