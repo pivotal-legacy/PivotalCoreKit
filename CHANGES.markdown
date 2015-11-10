@@ -11,6 +11,7 @@
   * Adds support for testing the configuration of WKInterfaceButtons with content type group in WatchKit
   * Adds ability to toggle UIViewController spec stubs
   * Adds support for inspecting data loaded directly into UIWebViews
+  * Adds support for resetting messages sent to WatchKit interface elements.
 
 ## 0.3.0
 
