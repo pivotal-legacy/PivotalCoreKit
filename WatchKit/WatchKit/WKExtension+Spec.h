@@ -1,4 +1,4 @@
-#import <WatchKit/WatchKit.h>
+#import "WKExtension.h"
 
 @interface WKExtension (Spec)
 
