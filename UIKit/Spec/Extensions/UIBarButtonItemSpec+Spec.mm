@@ -46,6 +46,8 @@ describe(@"UIBarButtonItemSpec_Spec", ^{
 #endif
 
         UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        button.frame = CGRectMake(0, 0, 1, 1);
+
         [button addTarget:target
                    action:@selector(hello)
          forControlEvents:event];

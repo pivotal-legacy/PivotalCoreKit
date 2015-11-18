@@ -31,9 +31,10 @@ describe(@"UIControlSpec", ^{
         beforeEach(^{
             button.hidden = NO;
             button.enabled = YES;
+            button.bounds = CGRectMake(0, 0, 100, 100);
         });
 
-        context(@"when visible and enabled", ^{
+        context(@"when visible, enabled, and non-zero size", ^{
             it(@"should send control actions", ^{
                 [button tap];
                 target should have_received(@selector(hello));
@@ -68,6 +69,44 @@ describe(@"UIControlSpec", ^{
                 ^{
                     [button tap];
                 } should raise_exception.with_reason(@"Can't tap an invisible control");
+            });
+
+            it(@"should not send control actions", ^{
+                @try {
+                    [button tap];
+                } @catch(NSException *e) { }
+                target should_not have_received(@selector(hello));
+            });
+        });
+
+        context(@"when its width is zero", ^{
+            beforeEach(^{
+                button.frame = CGRectMake(0, 0, 0, 100);
+            });
+
+            it(@"should cause a spec failure", ^{
+                ^{
+                    [button tap];
+                } should raise_exception.with_reason(@"Can't tap a control with no width or height. Your control may not be laid out correctly.");
+            });
+
+            it(@"should not send control actions", ^{
+                @try {
+                    [button tap];
+                } @catch(NSException *e) { }
+                target should_not have_received(@selector(hello));
+            });
+        });
+
+        context(@"when its height is zero", ^{
+            beforeEach(^{
+                button.frame = CGRectMake(0, 0, 100, 0);
+            });
+
+            it(@"should cause a spec failure", ^{
+                ^{
+                    [button tap];
+                } should raise_exception.with_reason(@"Can't tap a control with no width or height. Your control may not be laid out correctly.");
             });
 
             it(@"should not send control actions", ^{
