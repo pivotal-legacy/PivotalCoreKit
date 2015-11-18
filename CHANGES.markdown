@@ -12,6 +12,7 @@
   * Adds ability to toggle UIViewController spec stubs
   * Adds support for inspecting data loaded directly into UIWebViews
   * Adds support for resetting messages sent to WatchKit interface elements.
+  * `-tap` will raise an exception if the control's width or height is zero.
 
 ## 0.3.0
 
