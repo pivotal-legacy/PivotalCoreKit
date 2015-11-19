@@ -1,8 +1,6 @@
 ## HEAD
 
-## 0.3.2 (in progress)
-
-## 0.3.1
+## 0.3.1 (in progress)
 
   * Further improvements to UIGestureRecognizer spec helper stub
   * Improvements to PCK's fake operation queue.
