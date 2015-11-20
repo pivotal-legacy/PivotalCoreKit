@@ -6,8 +6,8 @@ Pod::Spec.new do |s|
   s.homepage = 'https://github.com/pivotal/PivotalCoreKit'
   s.author   = { 'Pivotal Labs' => 'http://pivotallabs.com' }
   s.source   = { :git => 'https://github.com/pivotal/PivotalCoreKit.git', :tag => 'v0.3.0' }
-  s.ios.platform = :ios, '6.0'
-  s.tvos.platform = :tvos, '9.0'
+  s.platform = :ios, '6.0'
+  s.platform = :tvos, '9.0'
   s.requires_arc = false
 
   s.default_subspec = 'Core'
@@ -43,10 +43,6 @@ Pod::Spec.new do |s|
         ext.dependency 'PivotalCoreKit/UIKit/SpecHelper/Support'
       end
 
-      spec.subspec 'Matchers' do |match|
-        match.source_files = 'UIKit/SpecHelper/Matchers/*.{h,m}'
-      end
-
       spec.subspec 'Stubs' do |stub|
         stub.requires_arc = true
         stub.source_files = ['UIKit/SpecHelper/Stubs/**/*.{h,m}', 'UIKit/SpecHelper/UIKit+PivotalSpecHelperStubs.h']
@@ -75,6 +71,8 @@ Pod::Spec.new do |s|
 
     f.subspec 'Core' do |c|
       c.source_files = 'Foundation/Core/**/*.{h,m}'
+      c.watchos.exclude_files = '**/Interfaces/**' # These classes are NSURLConnection-based which is not present on watchOS
+
       c.libraries    = 'xml2'
       c.xcconfig     = {'HEADER_SEARCH_PATHS' => '$(SDKROOT)/usr/include/libxml2' }
     end
@@ -121,6 +119,7 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'WatchKit' do |watchkit|
+    watchkit.ios.deployment_target = '8.2'
     watchkit.requires_arc = true
     watchkit.subspec 'WatchKit' do |child_watchkit|
       child_watchkit.source_files = 'WatchKit/WatchKit/*.{h,m}'

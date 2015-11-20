@@ -1,5 +1,8 @@
 #import <Foundation/Foundation.h>
-#import "NSURLConnectionDelegate.h"
+
+#if __has_include("NSURLConnectionDelegate.h")
+# import "NSURLConnectionDelegate.h"
+#endif
 
 @protocol PCKParser, PCKParserDelegate;
 
