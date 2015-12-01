@@ -22,13 +22,14 @@
 @implementation UITableViewCell (Spec)
 
 - (void)tap {
-    UIView *currentView = self;
-    while (currentView.superview != nil && ![currentView isKindOfClass:[UITableView class]]) {
-        currentView = currentView.superview;
+    UITableView *tableView = [self containingTableViewOrNil];
+
+    if (!tableView) {
+        [[NSException exceptionWithName:@"Untappable"
+                                 reason:@"Cell must be in a table view in order to be tapped!"
+                               userInfo:nil] raise];
     }
 
-    NSAssert(currentView, @"Cell must be in a table view in order to be tapped!");
-    UITableView *tableView = (UITableView *)currentView;
     [tableView layoutIfNeeded];
     NSIndexPath *indexPath = [tableView indexPathForCell:self];
 
@@ -124,6 +125,21 @@
     PCKPrototypeCellInstantiatingDataSource *dataSource = [[[PCKPrototypeCellInstantiatingDataSource alloc] initWithTableView:tableView] autorelease];
     return [dataSource tableViewCellWithIdentifier:cellIdentifier];
 
+}
+
+#pragma mark - Private
+
+- (UITableView *)containingTableViewOrNil {
+    UIView *currentView = self;
+    while (currentView != nil) {
+        if ([currentView isKindOfClass:[UITableView class]]) {
+            return (UITableView *)currentView;
+        }
+
+        currentView = currentView.superview;
+    }
+
+    return nil;
 }
 
 @end
