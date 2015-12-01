@@ -13,35 +13,6 @@
 @property (nonatomic, retain) NSIndexPath *lastSelectedIndexPath;
 @end
 
-@implementation SpecTableViewController
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 2;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return [tableView dequeueReusableCellWithIdentifier:@"Cell"];
-}
-
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    return;
-}
-
-- (BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath {
-    return self.shouldHighlightRows;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    self.lastSelectedIndexPath = indexPath;
-}
-
-@end
-
 using namespace Cedar::Matchers;
 using namespace Cedar::Doubles;
 
@@ -165,6 +136,10 @@ describe(@"UITableViewCell+Spec", ^{
                 controller.presentedViewController should_not be_nil;
             });
         });
+
+        it(@"raises when tapped outside of a tableview", ^{
+            ^{ [[[UITableViewCell alloc] init] tap]; } should raise_exception;
+        });
     });
 
     describe(@"-tapDeleteAccessory", ^{
@@ -277,3 +252,34 @@ describe(@"UITableViewCell+Spec", ^{
 });
 
 SPEC_END
+
+#pragma mark - Spec Helpers
+
+@implementation SpecTableViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 2;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    return;
+}
+
+- (BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath {
+    return self.shouldHighlightRows;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    self.lastSelectedIndexPath = indexPath;
+}
+
+@end
