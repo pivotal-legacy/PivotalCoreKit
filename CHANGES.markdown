@@ -1,6 +1,10 @@
 ## HEAD
 
-## 0.3.2 (in progress)
+## 0.3.3 (in progress)
+
+## 0.3.2
+
+  * Fixes the cocoapods release. v0.3.1 was released with support for tvOS only. Sorry!
 
 ## 0.3.1
 
