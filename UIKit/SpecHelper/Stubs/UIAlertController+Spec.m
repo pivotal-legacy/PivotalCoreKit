@@ -1,10 +1,15 @@
 #import "UIAlertController+Spec.h"
 #import "UIAlertAction+Spec.h"
 
-
 @implementation UIAlertController (Spec)
 
 - (void)dismissByTappingCancelButton {
+    if (!self.presentingViewController) {
+        [[NSException exceptionWithName:NSInternalInconsistencyException
+                                 reason:@"Can't dismiss a UIAlertController when it is not presented"
+                               userInfo:nil] raise];
+    }
+
     [self.presentingViewController dismissViewControllerAnimated:NO completion:^{
         UIAlertAction *cancelAction = [self cancelAction];
         if (cancelAction.handler) {
@@ -14,6 +19,12 @@
 }
 
 - (void)dismissByTappingButtonWithTitle:(NSString *)title {
+    if (!self.presentingViewController) {
+        [[NSException exceptionWithName:NSInternalInconsistencyException
+                                 reason:@"Can't dismiss a UIAlertController when it is not presented"
+                               userInfo:nil] raise];
+    }
+
     [self.presentingViewController dismissViewControllerAnimated:NO completion:^{
         UIAlertAction *action = [self actionWithButtonTitle:title];
         if (action.handler) {

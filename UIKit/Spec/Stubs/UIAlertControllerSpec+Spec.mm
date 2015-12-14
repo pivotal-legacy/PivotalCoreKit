@@ -39,6 +39,12 @@ describe(@"UIAlertController (spec extensions)", ^{
     });
 
     describe(@"-dismissByTappingCancelButton", ^{
+        beforeEach(^{
+            alertController = [UIAlertController alertControllerWithTitle:@"Title"
+                                                                  message:@"Message"
+                                                           preferredStyle:UIAlertControllerStyleAlert];
+            addDefaultAction(alertController, nil);
+        });
         sharedExamplesFor(@"default cancel behavior", ^(NSDictionary *sharedContext) {
             describe(@"tapping the cancel button", ^{
                 context(@"containing a UIAlertActionStyleCancel button", ^{
@@ -72,10 +78,6 @@ describe(@"UIAlertController (spec extensions)", ^{
 
         describe(@"UIAlertControllerStyleAlert", ^{
             beforeEach(^{
-                alertController = [UIAlertController alertControllerWithTitle:@"Title"
-                                                                      message:@"Message"
-                                                               preferredStyle:UIAlertControllerStyleAlert];
-                addDefaultAction(alertController, nil);
                 [presentingController presentViewController:alertController animated:NO completion:nil];
             });
 
@@ -120,6 +122,12 @@ describe(@"UIAlertController (spec extensions)", ^{
             });
 
             itShouldBehaveLike(@"default cancel behavior");
+        });
+
+        context(@"when presented outside of a view controller", ^{
+            it(@"should raise an exception", ^{
+                ^{ [alertController dismissByTappingCancelButton]; } should raise_exception;
+            });
         });
     });
 
@@ -170,6 +178,17 @@ describe(@"UIAlertController (spec extensions)", ^{
 
                 it(@"should not blow up", ^{
                     ^{ [alertController dismissByTappingButtonWithTitle:@"Default"]; } should_not raise_exception;
+                });
+            });
+
+            context(@"when there is no presenting view controller", ^{
+                beforeEach(^{
+                    addDefaultAction(alertController, handler);
+                    [alertController dismissByTappingButtonWithTitle:@"Default"];
+                });
+
+                it(@"should raise an exception", ^{
+                    ^{ [alertController dismissByTappingButtonWithTitle:@"Default"]; } should raise_exception;
                 });
             });
         });
