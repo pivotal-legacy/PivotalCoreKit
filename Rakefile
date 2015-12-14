@@ -52,7 +52,8 @@ def build_and_test_scheme(scheme)
     %Q[xcodebuild -workspace PivotalCoreKit.xcworkspace \
       -scheme #{scheme} \
       -sdk #{sdk} \
-      build]
+      build \
+      -destination platform='iOS Simulator',name='#{devices.first},OS=#{versions.first}']
   )
 
   devices.each do |device|
