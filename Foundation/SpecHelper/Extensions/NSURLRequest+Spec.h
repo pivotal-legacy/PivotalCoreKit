@@ -1,7 +1,11 @@
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface NSURLRequest (Spec)
 
-- (NSString *)HTTPBodyAsString;
+- (nullable NSString *)HTTPBodyAsString;
 
 @end
+
+NS_ASSUME_NONNULL_END

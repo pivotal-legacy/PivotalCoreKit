@@ -2,15 +2,17 @@
 
 @class PSHKFakeHTTPURLResponse;
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface NSURLConnection (Spec)
 
 + (NSArray *)connections;
-+ (NSURLConnection *)connectionForPath:(NSString *)path;
++ (nullable NSURLConnection *)connectionForPath:(NSString *)path;
 + (void)fetchAllPendingConnectionsSynchronouslyWithTimeout:(NSTimeInterval)timeout;
 + (void)resetAll;
 
 - (NSURLRequest *)request;
-- (id)delegate;
+- (nullable id)delegate;
 
 // Please use -receiveResponse: rather than -returnResponse:.
 - (void)returnResponse:(PSHKFakeHTTPURLResponse *)response __attribute__((deprecated));
@@ -23,6 +25,8 @@
 - (void)sendAuthenticationChallengeWithCredential:(NSURLCredential *)credential;
 
 // Perform synchronous network requests
-- (NSData *)fetchSynchronouslyWithTimeout:(NSTimeInterval)timeout;
+- (nullable NSData *)fetchSynchronouslyWithTimeout:(NSTimeInterval)timeout;
 
 @end
+
+NS_ASSUME_NONNULL_END

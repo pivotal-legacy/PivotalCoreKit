@@ -17,7 +17,7 @@
     [super dealloc];
 }
 
-- (void)parser:(PCKXMLParser *)parser didStartElement:(const char *)elementName attributeCount:(int)numAttributes attributeData:(const char**)attributes {
+- (void)parser:(PCKXMLParser *)parser didStartElement:(const char *)elementName attributeCount:(int)numAttributes attributeData:(const char* const *)attributes {
     if (self.didStartElementWithAttributes) {
         NSMutableDictionary * attributesDictionary = [NSMutableDictionary dictionary];
         for (int i = 0; i < (numAttributes * ATTRIBUTE_SIZE); i += ATTRIBUTE_SIZE) {

@@ -1,6 +1,8 @@
 #import <Foundation/Foundation.h>
 
-typedef void(^PCKConnectionAsynchronousRequestBlock)(NSURLResponse*, NSData*, NSError*);
+NS_ASSUME_NONNULL_BEGIN
+
+typedef void(^PCKConnectionAsynchronousRequestBlock)(NSURLResponse* __nullable, NSData* __nullable, NSError* __nullable);
 
 @interface PCKConnectionBlockDelegate : NSObject <NSURLConnectionDataDelegate>
 
@@ -8,3 +10,5 @@ typedef void(^PCKConnectionAsynchronousRequestBlock)(NSURLResponse*, NSData*, NS
 + (PCKConnectionBlockDelegate *)delegateWithBlock:(PCKConnectionAsynchronousRequestBlock)block queue:(NSOperationQueue *)queue;
 
 @end
+
+NS_ASSUME_NONNULL_END

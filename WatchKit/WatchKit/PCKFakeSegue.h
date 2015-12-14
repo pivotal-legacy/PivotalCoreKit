@@ -7,6 +7,8 @@ typedef NS_ENUM(NSUInteger, PCKFakeSegueType) {
 };
 
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface PCKFakeSegue : NSObject
 
 @property (nonatomic, copy, readonly) NSString *destinationIdentifier;
@@ -16,3 +18,5 @@ typedef NS_ENUM(NSUInteger, PCKFakeSegueType) {
                                          type:(PCKFakeSegueType)type;
 
 @end
+
+NS_ASSUME_NONNULL_END

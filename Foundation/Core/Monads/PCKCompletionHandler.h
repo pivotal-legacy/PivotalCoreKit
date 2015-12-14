@@ -1,7 +1,9 @@
 #import <Foundation/Foundation.h>
 
 
-typedef id(^PCKCompletionHandlerBlock)(id, NSURLResponse *, NSError **);
+NS_ASSUME_NONNULL_BEGIN
+
+typedef __nullable id(^PCKCompletionHandlerBlock)(__nullable id,  NSURLResponse * __nullable , NSError * __nullable *);
 
 @interface PCKCompletionHandler : NSObject
 
@@ -11,6 +13,8 @@ typedef id(^PCKCompletionHandlerBlock)(id, NSURLResponse *, NSError **);
 - (instancetype)compose:(PCKCompletionHandler *)completionHandler;
 - (instancetype)composeWithBlock:(PCKCompletionHandlerBlock)block;
 
-- (id)callWith:(id)value response:(NSURLResponse *)response error:(NSError *)error outError:(NSError **)outError;
+- (nullable id)callWith:(nullable id)value response:(nullable NSURLResponse *)response error:(nullable NSError *)error outError:(NSError * __nullable *)outError;
 
 @end
+
+NS_ASSUME_NONNULL_END

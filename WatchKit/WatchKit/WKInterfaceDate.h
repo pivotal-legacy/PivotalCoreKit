@@ -1,10 +1,14 @@
 #import "WKInterfaceObject.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface WKInterfaceDate : WKInterfaceObject
 
-- (void)setTextColor:(UIColor *)color;
+- (void)setTextColor:(nullable UIColor *)color;
 
-- (void)setTimeZone:(NSTimeZone *)timeZone;
-- (void)setCalendar:(NSCalendar *)calendar;
+- (void)setTimeZone:(nullable NSTimeZone *)timeZone;
+- (void)setCalendar:(nullable NSCalendar *)calendar;
 
 @end
+
+NS_ASSUME_NONNULL_END

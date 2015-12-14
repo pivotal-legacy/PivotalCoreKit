@@ -1,15 +1,18 @@
 #import <Foundation/Foundation.h>
 #import "PCKMonad.h"
 
+NS_ASSUME_NONNULL_BEGIN
 
 @interface PCKMaybeBlock : NSObject <PCKMonad>
 
-+ (instancetype)maybeWithBlock:(id (^)(id))f;
-- (instancetype)initWithBlock:(id (^)(id))f;
++ (instancetype)maybeWithBlock:(__nullable id (^)(__nonnull id))f;
+- (instancetype)initWithBlock:(__nullable id (^)(__nonnull id))f;
 
 - (instancetype)compose:(PCKMaybeBlock *)maybe;
-- (instancetype)composeWithBlock:(id (^)(id))f;
+- (instancetype)composeWithBlock:(__nullable id (^)(__nonnull id))f;
 
-- (id)call:(id)somethingOrNil;
+- (nullable id)call:(nullable id)somethingOrNil;
 
 @end
+
+NS_ASSUME_NONNULL_END

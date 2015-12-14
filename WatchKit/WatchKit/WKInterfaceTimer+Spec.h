@@ -1,5 +1,6 @@
 #import "WKInterfaceTimer.h"
 
+NS_ASSUME_NONNULL_BEGIN
 
 @interface WKInterfaceTimer (Spec)
 
@@ -8,3 +9,5 @@
 - (NSUInteger)units;
 
 @end
+
+NS_ASSUME_NONNULL_END

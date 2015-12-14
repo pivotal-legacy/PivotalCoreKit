@@ -1,13 +1,14 @@
 #import "WKInterfaceObject.h"
 
+NS_ASSUME_NONNULL_BEGIN
 
 @interface WKInterfaceImage : WKInterfaceObject
 
-- (void)setImage:(UIImage *)image;
-- (void)setImageData:(NSData *)imageData;
-- (void)setImageNamed:(NSString *)imageName;
+- (void)setImage:(nullable UIImage *)image;
+- (void)setImageData:(nullable NSData *)imageData;
+- (void)setImageNamed:(nullable NSString *)imageName;
 
-- (void)setTintColor:(UIColor *)tintColor;
+- (void)setTintColor:(nullable UIColor *)tintColor;
 
 - (void)startAnimating;
 
@@ -17,3 +18,5 @@
 - (void)stopAnimating;
 
 @end
+
+NS_ASSUME_NONNULL_END

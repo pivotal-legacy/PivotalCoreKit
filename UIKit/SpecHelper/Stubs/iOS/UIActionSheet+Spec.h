@@ -1,18 +1,23 @@
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface UIActionSheet (Spec)
 
 + (void)afterEach;
 
-+ (UIActionSheet *)currentActionSheet;
-+ (UIView *)currentActionSheetView; // might return a UIBarButtonItem
++ (nullable UIActionSheet *)currentActionSheet;
++ (nullable UIView *)currentActionSheetView; // might return a UIBarButtonItem
 
 + (void)reset;
-+ (void)setCurrentActionSheet:(UIActionSheet *)actionSheet forView:(UIView *)view;
++ (void)setCurrentActionSheet:(nullable UIActionSheet *)actionSheet forView:(nullable UIView *)view;
 
 - (NSArray *)buttonTitles;
 - (void)dismissByClickingButtonWithTitle:(NSString *)buttonTitle;
 
 - (void)dismissByClickingDestructiveButton;
 - (void)dismissByClickingCancelButton;
+
 @end
+
+NS_ASSUME_NONNULL_END

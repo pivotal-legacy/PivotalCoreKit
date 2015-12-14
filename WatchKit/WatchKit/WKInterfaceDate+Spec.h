@@ -1,9 +1,12 @@
 #import "WKInterfaceDate.h"
 
+NS_ASSUME_NONNULL_BEGIN
 
 @interface WKInterfaceDate (Spec)
 
-- (UIColor *)textColor;
-- (NSString *)format;
+- (nullable UIColor *)textColor;
+- (nullable NSString *)format;
 
 @end
+
+NS_ASSUME_NONNULL_END
