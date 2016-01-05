@@ -52,11 +52,16 @@
     [self.interface clearConnection:connection];
 }
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+
 - (void)connection:(NSURLConnection *)connection didCancelAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge {
     if ([self.delegate respondsToSelector:_cmd]) {
         [self.delegate connection:connection didCancelAuthenticationChallenge:challenge];
     }
     [self.interface clearConnection:connection];
 }
+
+#pragma clang diagnostic pop
 
 @end
