@@ -29,12 +29,28 @@ static NSMutableArray *animations__;
     shouldImmediatelyExecuteAnimationBlocks__ = NO;
 }
 
++ (void)resumeAnimations {
+    shouldImmediatelyExecuteAnimationBlocks__ = YES;
+    while (animations__.count != 0) {
+        PCKViewAnimation *animation = [animations__ firstObject];
+        [animations__ removeObjectAtIndex:0];
+
+        [animation animate];
+        [animation complete];
+    }
+}
+
 + (NSArray *)animations {
     return animations__;
 }
 
 + (PCKViewAnimation *)lastAnimation {
     return [animations__ lastObject];
+}
+
++ (void)resetAnimations {
+    shouldImmediatelyExecuteAnimationBlocks__ = YES;
+    animations__ = [NSMutableArray array];
 }
 
 #pragma mark - Overrides
@@ -72,8 +88,7 @@ static NSMutableArray *animations__;
 #pragma mark - CedarHooks
 
 + (void)beforeEach {
-    shouldImmediatelyExecuteAnimationBlocks__ = YES;
-    animations__ = [NSMutableArray array];
+    [self resetAnimations];
 }
 
 @end

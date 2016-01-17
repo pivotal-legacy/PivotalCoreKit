@@ -150,6 +150,22 @@ describe(@"UIView+StubbedAnimation", ^{
             [[UIView lastAnimation] duration] should equal(0.666);
         });
 
+        it(@"should resume all queued up animations when resume is called", ^{
+            [UIView resumeAnimations];
+
+            animationBlockCalled should be_truthy;
+            completionBlockCalled should be_truthy;
+            [UIView animations] should be_empty;
+        });
+
+        it(@"should reset all animations if +reset is called", ^{
+            [UIView resetAnimations];
+
+            animationBlockCalled should be_falsy;
+            completionBlockCalled should be_falsy;
+            [UIView animations] should be_empty;
+        });
+
         describe(@"running animations", ^{
             beforeEach(^{
                 [[UIView lastAnimation] animate];
