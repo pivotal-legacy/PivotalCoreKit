@@ -25,7 +25,9 @@
 + (CGFloat)lastAnimationInitialSpringVelocity;
 
 + (void)pauseAnimations;
++ (void)resumeAnimations;
 + (NSArray *)animations;
 + (PCKViewAnimation *)lastAnimation;
++ (void)resetAnimations;
 
 @end
