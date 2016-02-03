@@ -4,6 +4,8 @@
 
 #import "UIAlertView+Spec.h"
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
 
 @implementation UIAlertView (Spec)
 
@@ -53,7 +55,7 @@ static NSMutableArray *alertViewStack__ = nil;
     }
     [alertViewStack__ removeObject:self];
 }
-#pragma clang diagnostic pop
+#pragma clang diagnostic pop // "-Wobjc-protocol-method-implementation"
 
 - (void)dismissWithOkButton {
     [self dismissWithClickedButtonIndex:self.firstOtherButtonIndex animated:NO];
@@ -64,3 +66,5 @@ static NSMutableArray *alertViewStack__ = nil;
 }
 
 @end
+
+#pragma clang diagnostic pop // "-Wdeprecated-declarations"

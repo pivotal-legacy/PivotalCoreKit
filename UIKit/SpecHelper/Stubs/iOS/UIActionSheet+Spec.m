@@ -4,6 +4,8 @@
 
 #import "UIActionSheet+Spec.h"
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
 
 @implementation UIActionSheet (Spec)
 
@@ -99,3 +101,5 @@ static UIView *currentActionSheetView__;
 }
 
 @end
+
+#pragma clang diagnostic pop
