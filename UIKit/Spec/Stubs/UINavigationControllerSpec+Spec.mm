@@ -24,11 +24,16 @@ using namespace Cedar::Doubles;
  */
 bool hasAssertBug() {
     bool has = false;
-#ifndef __IPHONE_9_0
+
+    NSOperatingSystemVersion version = [[NSProcessInfo processInfo] operatingSystemVersion];
+    if (version.majorVersion >= 9) {
+        return false;
+    }
+
 #if __LP64__
     has = true;
 #endif
-#endif
+
     return has;
 };
 
