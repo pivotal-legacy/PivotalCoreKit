@@ -2,7 +2,7 @@
 
 @interface UIImage (PivotalCore)
 
-- (CGFloat)aspectRatio;
+@property (nonatomic, readonly) CGFloat aspectRatio;
 + (UIImage *)imageWithData:(NSData *)data scale:(CGFloat)scale;
 - (UIImage *)resizedToSize:(CGSize)newSize;
 - (UIImage *)aspectFitResizedToSize:(CGSize)newSize;

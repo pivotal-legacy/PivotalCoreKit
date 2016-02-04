@@ -2,7 +2,7 @@
 
 @interface UIActivityViewController (Spec)
 
-- (NSArray *)activityItems;
-- (NSArray *)applicationActivities;
+@property (nonatomic, readonly) NSArray *activityItems;
+@property (nonatomic, readonly) NSArray *applicationActivities;
 
 @end

@@ -3,13 +3,13 @@
 
 @interface WKInterfaceSlider (Spec)
 
-- (BOOL)enabled;
-- (float)value;
-- (float)minimum;
-- (float)maximum;
-- (NSInteger)numberOfSteps;
-- (UIImage *)minimumImage;
-- (UIImage *)maximumImage;
-- (BOOL)continuous;
+@property (nonatomic, readonly) BOOL enabled;
+@property (nonatomic, readonly) float value;
+@property (nonatomic, readonly) float minimum;
+@property (nonatomic, readonly) float maximum;
+@property (nonatomic, readonly) NSInteger numberOfSteps;
+@property (nonatomic, readonly) UIImage *minimumImage;
+@property (nonatomic, readonly) UIImage *maximumImage;
+@property (nonatomic, readonly) BOOL continuous;
 
 @end

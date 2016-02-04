@@ -8,12 +8,12 @@
 
 @interface WKInterfaceButton (Spec)
 
-- (NSString *)title;
-- (UIColor *)color;
-- (BOOL)enabled;
-- (NSString *)action;
-- (PCKFakeSegue *)segue;
-- (WKInterfaceGroup *)content;
+@property (nonatomic, readonly) NSString *title;
+@property (nonatomic, readonly) UIColor *color;
+@property (nonatomic, readonly) BOOL enabled;
+@property (nonatomic, readonly) NSString *action;
+@property (nonatomic, readonly) PCKFakeSegue *segue;
+@property (nonatomic, readonly) WKInterfaceGroup *content;
 
 @end
 

@@ -9,8 +9,8 @@
 + (void)fetchAllPendingConnectionsSynchronouslyWithTimeout:(NSTimeInterval)timeout;
 + (void)resetAll;
 
-- (NSURLRequest *)request;
-- (id)delegate;
+@property (nonatomic, readonly) NSURLRequest *request;
+@property (nonatomic, readonly) id delegate;
 
 // Please use -receiveResponse: rather than -returnResponse:.
 - (void)returnResponse:(PSHKFakeHTTPURLResponse *)response __attribute__((deprecated));

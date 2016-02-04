@@ -3,8 +3,8 @@
 
 @interface WKInterfaceTimer (Spec)
 
-- (BOOL)enabled;
+@property (nonatomic, readonly) BOOL enabled;
 
-- (NSUInteger)units;
+@property (nonatomic, readonly) NSUInteger units;
 
 @end

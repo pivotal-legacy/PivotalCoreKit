@@ -3,6 +3,6 @@
 
 @interface WKInterfaceGroup (Spec)
 
-- (NSArray *)items;
+@property (nonatomic, readonly) NSArray *items;
 
 @end

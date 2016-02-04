@@ -2,6 +2,6 @@
 
 @interface WKUserNotificationInterfaceController (Spec)
 
-- (void(^)(WKUserNotificationInterfaceType))lastCompletionBlock;
+@property (nonatomic, readonly) void(^lastCompletionBlock)(WKUserNotificationInterfaceType);
 
 @end

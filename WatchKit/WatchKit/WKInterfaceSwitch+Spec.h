@@ -3,7 +3,7 @@
 
 @interface WKInterfaceSwitch (Spec)
 
-- (BOOL)enabled;
-- (BOOL)on;
+@property (nonatomic, readonly) BOOL enabled;
+@property (nonatomic, readonly) BOOL on;
 
 @end

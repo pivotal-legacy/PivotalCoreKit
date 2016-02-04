@@ -4,6 +4,6 @@ typedef void (^PCKAlertActionHandler)(UIAlertAction *action);
 
 @interface UIAlertAction (Spec)
 
-- (PCKAlertActionHandler)handler;
+@property (nonatomic, readonly) PCKAlertActionHandler handler;
 
 @end

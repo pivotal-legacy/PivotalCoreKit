@@ -3,6 +3,6 @@
 
 @interface WKInterfaceSeparator (Spec)
 
-- (UIColor *)color;
+@property (nonatomic, readonly) UIColor *color;
 
 @end

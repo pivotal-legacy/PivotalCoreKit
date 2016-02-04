@@ -1,14 +1,10 @@
 #import "PCKMessageCapturer.h"
 
-@interface PCKMessageCapturer ()
+@implementation PCKMessageCapturer {
+    NSMutableArray *_sent_messages;
+}
 
-@property (nonatomic) NSMutableArray *sent_messages;
-
-@end
-
-@implementation PCKMessageCapturer
-
-static  NSMutableArray *sent_class_messages_array;
+static NSMutableArray *sent_class_messages_array;
 
 #pragma mark - NSObject
 
@@ -16,7 +12,7 @@ static  NSMutableArray *sent_class_messages_array;
 {
     self = [super init];
     if (self) {
-        self.sent_messages = [NSMutableArray array];
+        _sent_messages = [NSMutableArray array];
     }
     return self;
 }

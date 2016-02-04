@@ -2,6 +2,6 @@
 
 @interface NSURLRequest (Spec)
 
-- (NSString *)HTTPBodyAsString;
+@property (nonatomic, readonly) NSString *HTTPBodyAsString;
 
 @end

@@ -2,5 +2,5 @@
 
 @interface UIBarButtonItem (Button)
 + (UIBarButtonItem *)barButtonItemUsingButton:(UIButton *)button;
-- (UIButton *)button;
+@property (nonatomic, readonly) UIButton *button;
 @end

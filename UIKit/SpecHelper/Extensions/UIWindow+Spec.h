@@ -2,6 +2,6 @@
 
 @interface UIWindow (Spec)
 
-- (UIResponder *)firstResponder;
+@property (nonatomic, readonly) UIResponder *firstResponder;
 
 @end
