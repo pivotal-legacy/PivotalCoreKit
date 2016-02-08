@@ -5,11 +5,11 @@ typedef NSString *(^UIWebViewJavaScriptReturnBlock)();
 @interface UIWebView (Spec)
 
 // Loaded Requests
-- (NSString *)loadedHTMLString;
-- (NSURL *)loadedBaseURL;
-- (NSData *)loadedData;
-- (NSString *)loadedMIMEType;
-- (NSString *)loadedTextEncodingName;
+@property (nonatomic, readonly) NSString *loadedHTMLString;
+@property (nonatomic, readonly) NSURL *loadedBaseURL;
+@property (nonatomic, readonly) NSData *loadedData;
+@property (nonatomic, readonly) NSString *loadedMIMEType;
+@property (nonatomic, readonly) NSString *loadedTextEncodingName;
 
 // Faking Requests
 - (void)sendClickRequest:(NSURLRequest *)request;
@@ -22,7 +22,7 @@ typedef NSString *(^UIWebViewJavaScriptReturnBlock)();
 // JavaScript
 - (void)setReturnValue:(NSString *)returnValue forJavaScript:(NSString *)javaScript;
 - (void)setReturnBlock:(UIWebViewJavaScriptReturnBlock)block forJavaScript:(NSString *)javaScript;
-- (NSArray *)executedJavaScripts;
+@property (nonatomic, readonly) NSArray *executedJavaScripts;
 
 // Debugging
 - (void)enableLogging;

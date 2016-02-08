@@ -3,7 +3,7 @@
 
 @interface WKInterfaceDate (Spec)
 
-- (UIColor *)textColor;
-- (NSString *)format;
+@property (nonatomic, readonly) UIColor *textColor;
+@property (nonatomic, readonly) NSString *format;
 
 @end

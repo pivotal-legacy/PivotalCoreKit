@@ -7,9 +7,9 @@
 + (id)stringWithBase64EncodedData:(NSData *)data DEPRECATED_ATTRIBUTE;
 - (id)initWithBase64EncodedData:(NSData *)data DEPRECATED_ATTRIBUTE;
 
-- (NSString *)stringByCamelizing;
-- (BOOL)isBlank;
-- (BOOL)isValidEmailAddress;
+@property (nonatomic, readonly) NSString *stringByCamelizing;
+@property (nonatomic, readonly) BOOL isBlank;
+@property (nonatomic, readonly) BOOL isValidEmailAddress;
 
 /*
  Overrides the framework version of stringbyAddingPercentEscapesUsingEncoding,

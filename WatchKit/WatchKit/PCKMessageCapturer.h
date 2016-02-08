@@ -3,7 +3,7 @@
 
 @interface PCKMessageCapturer : NSObject
 
-- (NSArray *)sent_messages;
+@property (nonatomic, readonly) NSArray *sent_messages;
 - (void)reset_sent_messages;
 
 + (NSArray *)sent_class_messages;

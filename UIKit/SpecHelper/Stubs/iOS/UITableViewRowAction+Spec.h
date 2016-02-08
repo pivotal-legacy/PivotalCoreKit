@@ -4,6 +4,6 @@ typedef void (^PCKTableViewRowActionHandler)(UITableViewRowAction *action, NSInd
 
 @interface UITableViewRowAction (Spec)
 
-- (PCKTableViewRowActionHandler)handler;
+@property (nonatomic, readonly) PCKTableViewRowActionHandler handler;
 
 @end

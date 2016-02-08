@@ -3,10 +3,10 @@
 
 @interface WKInterfaceObject (Spec)
 
-- (BOOL)isHidden;
-- (CGFloat)alpha;
+@property (nonatomic, readonly) BOOL isHidden;
+@property (nonatomic, readonly) CGFloat alpha;
 
-- (CGFloat)width;
-- (CGFloat)height;
+@property (nonatomic, readonly) CGFloat width;
+@property (nonatomic, readonly) CGFloat height;
 
 @end

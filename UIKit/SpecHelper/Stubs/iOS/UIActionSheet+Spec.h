@@ -10,7 +10,7 @@
 + (void)reset;
 + (void)setCurrentActionSheet:(UIActionSheet *)actionSheet forView:(UIView *)view;
 
-- (NSArray *)buttonTitles;
+@property (nonatomic, readonly) NSArray *buttonTitles;
 - (void)dismissByClickingButtonWithTitle:(NSString *)buttonTitle;
 
 - (void)dismissByClickingDestructiveButton;

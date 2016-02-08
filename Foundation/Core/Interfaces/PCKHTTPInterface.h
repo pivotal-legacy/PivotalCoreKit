@@ -22,7 +22,7 @@ typedef void (^RequestSetupBlock)(NSMutableURLRequest *);
 
 @interface PCKHTTPInterface (SubclassDelegation)
 // required
-- (NSString *)host;
+@property (nonatomic, readonly) NSString *host;
 // optional
-- (NSString *)baseURLPath;
+@property (nonatomic, readonly) NSString *baseURLPath;
 @end

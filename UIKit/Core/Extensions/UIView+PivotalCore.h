@@ -10,7 +10,7 @@ typedef enum {
 @interface UIView (PivotalCore)
 
 // Intended for the idiom view.center = superview.centerBounds;
-- (CGPoint)centerBounds;
+@property (nonatomic, readonly)  CGPoint centerBounds;
 
 // Move/resize as separate operations, working off of all four corners
 - (void)moveCorner:(ViewCorner)corner toPoint:(CGPoint)point;

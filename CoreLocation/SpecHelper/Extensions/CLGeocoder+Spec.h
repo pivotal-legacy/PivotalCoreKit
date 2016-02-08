@@ -2,8 +2,8 @@
 
 @interface CLGeocoder (Spec)
 
-- (NSString *)addressString;
-- (CLLocation *)location;
+@property (nonatomic, readonly) NSString *addressString;
+@property (nonatomic, readonly) CLLocation *location;
 
 - (void)completeGeocodeWithPlacemarks:(NSArray *)placemarks;
 - (void)completeReverseGeocodeWithPlacemarks:(NSArray *)placemarks;

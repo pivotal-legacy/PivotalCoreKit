@@ -3,6 +3,6 @@
 
 @interface WKInterfaceImage (Spec)
 
-- (UIImage *)image;
+@property (nonatomic, readonly) UIImage *image;
 
 @end

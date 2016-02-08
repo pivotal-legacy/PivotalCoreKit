@@ -1,5 +1,5 @@
 #import <Foundation/Foundation.h>
 
 @interface NSURL (QueryComponents)
--(NSDictionary *)queryComponents;
+@property (nonatomic, readonly) NSDictionary *queryComponents;
 @end
