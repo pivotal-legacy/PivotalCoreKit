@@ -208,13 +208,19 @@ describe(@"UIViewController (spec extensions)", ^{
         __block UIViewController *parentController;
         __block UIViewController *oldChildController;
         __block UIViewController *newChildController;
+        __block UIView *parentControllerContentView;
+
         beforeEach(^{
             parentController = [[UIViewController alloc] init];
             oldChildController = [[UIViewController alloc] init];
             newChildController = [[UIViewController alloc] init];
+            parentControllerContentView = [[UIView alloc] init];
+
+            [parentController.view addSubview:parentControllerContentView];
 
             [parentController addChildViewController:oldChildController];
-            [parentController.view addSubview:oldChildController.view];
+
+            [parentControllerContentView addSubview:oldChildController.view];
             [oldChildController didMoveToParentViewController:parentController];
 
             [parentController transitionFromViewController:oldChildController
@@ -225,8 +231,12 @@ describe(@"UIViewController (spec extensions)", ^{
                                                 completion:nil];
         });
 
-        it(@"should make the new child controller's view to the parent's view's subviews", ^{
-            parentController.view.subviews should contain(newChildController.view);
+        it(@"should add the newChildController's view to oldChildController's view's superview", ^{
+            newChildController.view.superview should equal(parentControllerContentView);
+        });
+
+        it(@"should remove the oldChildController's view from its superview", ^{
+            oldChildController.view.superview should be_nil;
         });
     });
 });
