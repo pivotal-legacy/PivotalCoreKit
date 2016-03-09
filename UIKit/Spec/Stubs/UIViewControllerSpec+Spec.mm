@@ -21,17 +21,17 @@ describe(@"UIViewController (spec extensions)", ^{
     describe(@"presenting modal view controllers", ^{
 
         context(@"when pck_useSpecStubs:YES was called (it should have been called during +load)", ^{
-            __block BOOL completeBlockWasCalled;
+            __block NSInteger numberOfTimesCompletionBlockCalled;
 
             beforeEach(^{
-                completeBlockWasCalled = NO;
+                numberOfTimesCompletionBlockCalled = 0;
                 [controller presentViewController:modalController animated:YES completion:^{
-                    completeBlockWasCalled = YES;
+                    numberOfTimesCompletionBlockCalled++;
                 }];
             });
 
-            it(@"should invoke the complete block", ^{
-                completeBlockWasCalled should be_truthy;
+            it(@"should invoke the complete block once", ^{
+                numberOfTimesCompletionBlockCalled should equal(1);
             });
 
             it(@"should set the presentedViewController as the modal controller", ^{
@@ -44,14 +44,14 @@ describe(@"UIViewController (spec extensions)", ^{
 
             describe(@"dismissing the modal using a child view controller", ^{
                 beforeEach(^{
-                    completeBlockWasCalled = NO;
+                    numberOfTimesCompletionBlockCalled = 0;
                     [childController dismissViewControllerAnimated:YES completion:^{
-                        completeBlockWasCalled = YES;
+                        numberOfTimesCompletionBlockCalled++;
                     }];
                 });
 
-                it(@"should invoke the complete block", ^{
-                    completeBlockWasCalled should be_truthy;
+                it(@"should invoke the complete block once", ^{
+                    numberOfTimesCompletionBlockCalled should equal(1);
                 });
 
                 it(@"should remove the presented view controller", ^{
@@ -65,14 +65,14 @@ describe(@"UIViewController (spec extensions)", ^{
 
             describe(@"dismissing the modal using the parent view controller", ^{
                 beforeEach(^{
-                    completeBlockWasCalled = NO;
+                    numberOfTimesCompletionBlockCalled = 0;
                     [controller dismissViewControllerAnimated:YES completion:^{
-                        completeBlockWasCalled = YES;
+                        numberOfTimesCompletionBlockCalled++;
                     }];
                 });
 
-                it(@"should invoke the complete block", ^{
-                    completeBlockWasCalled should be_truthy;
+                it(@"should invoke the complete block once", ^{
+                    numberOfTimesCompletionBlockCalled should equal(1);
                 });
 
                 it(@"should remove the presented view controller", ^{
@@ -86,14 +86,14 @@ describe(@"UIViewController (spec extensions)", ^{
 
             describe(@"dismissing the modal using the modal view controller", ^{
                 beforeEach(^{
-                    completeBlockWasCalled = NO;
+                    numberOfTimesCompletionBlockCalled = 0;
                     [modalController dismissViewControllerAnimated:YES completion:^{
-                        completeBlockWasCalled = YES;
+                        numberOfTimesCompletionBlockCalled++;
                     }];
                 });
 
-                it(@"should invoke the complete block", ^{
-                    completeBlockWasCalled should be_truthy;
+                it(@"should invoke the complete block once", ^{
+                    numberOfTimesCompletionBlockCalled should equal(1);
                 });
 
                 it(@"should remove the presented view controller", ^{

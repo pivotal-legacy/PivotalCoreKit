@@ -80,8 +80,10 @@ static char PRESENTED_CONTROLLER_KEY;
         [self _pck_setPresentedViewController:nil];
     } else if (self.presentingViewController) {
         [self.presentingViewController dismissViewControllerAnimated:YES completion:completion];
+        return;
     } else if (self.navigationController) {
         [self.navigationController dismissViewControllerAnimated:YES completion:completion];
+        return;
     }
 
     if (completion) {
