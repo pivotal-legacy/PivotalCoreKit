@@ -39,7 +39,7 @@ describe(@"UITableViewCell+Spec", ^{
             });
 
             it(@"should result in the cell being selected", ^{
-                [controller.tableView indexPathForSelectedRow] should equal([controller.tableView indexPathForCell:cell]);
+                controller.tableView.indexPathForSelectedRow should equal([controller.tableView indexPathForCell:cell]);
             });
 
             it(@"should highlight the cell", ^{
@@ -49,7 +49,7 @@ describe(@"UITableViewCell+Spec", ^{
             it(@"should deselect the cell if another cell is tapped", ^{
                 [controller.tableView.visibleCells[1] tap];
 
-                [controller.tableView indexPathForSelectedRow] should_not equal([controller.tableView indexPathForCell:cell]);
+                controller.tableView.indexPathForSelectedRow should_not equal([controller.tableView indexPathForCell:cell]);
             });
 
             it(@"should call the delegate method when the same cell is tapped", ^{
@@ -70,7 +70,9 @@ describe(@"UITableViewCell+Spec", ^{
             });
 
             it(@"should result in the cell being selected", ^{
-                [controller.tableView indexPathForSelectedRow] should equal([controller.tableView indexPathForCell:cell]);
+                NSIndexPath *cellIndexPath = [controller.tableView indexPathForCell:cell];
+                controller.tableView.indexPathForSelectedRow should equal(cellIndexPath);
+                controller.tableView.indexPathsForSelectedRows should equal(@[cellIndexPath]);
             });
 
             it(@"should highlight the cell", ^{
@@ -80,7 +82,7 @@ describe(@"UITableViewCell+Spec", ^{
             it(@"should deselect the cell if tapped again", ^{
                 [cell tap];
 
-                [controller.tableView indexPathsForSelectedRows] should_not contain([controller.tableView indexPathForCell:cell]);
+                controller.tableView.indexPathsForSelectedRows should be_nil;
             });
 
             it(@"should unhighlight the cell if tapped again", ^{
@@ -92,8 +94,18 @@ describe(@"UITableViewCell+Spec", ^{
             it(@"should not deselect the cell if another cell is tapped", ^{
                 [controller.tableView.visibleCells[1] tap];
 
-                [controller.tableView indexPathsForSelectedRows] should equal(@[[NSIndexPath indexPathForRow:0 inSection:0], [NSIndexPath indexPathForRow:1 inSection:0]]);
+                controller.tableView.indexPathsForSelectedRows should equal(@[[NSIndexPath indexPathForRow:0 inSection:0], [NSIndexPath indexPathForRow:1 inSection:0]]);
             });
+
+            it(@"should not deselect the cell if another cell is deselected ", ^{
+                [controller.tableView.visibleCells[1] tap];
+                [controller.tableView.visibleCells[1] tap];
+
+                NSIndexPath *cellIndexPath = [controller.tableView indexPathForCell:cell];
+                controller.tableView.indexPathForSelectedRow should equal(cellIndexPath);
+                controller.tableView.indexPathsForSelectedRows should equal(@[cellIndexPath]);
+            });
+
 
             it(@"should not call the delegate method when the same cell is tapped", ^{
                 controller.lastSelectedIndexPath = nil;
@@ -101,7 +113,6 @@ describe(@"UITableViewCell+Spec", ^{
                 [cell tap];
 
                 controller.lastSelectedIndexPath should be_nil;
-                controller.tableView.indexPathsForSelectedRows should be_empty;
             });
         });
 
@@ -112,7 +123,7 @@ describe(@"UITableViewCell+Spec", ^{
             });
 
             it(@"should not result in the cell being selected", ^{
-                [controller.tableView indexPathForSelectedRow] should be_nil;
+                controller.tableView.indexPathForSelectedRow should be_nil;
             });
 
            it(@"should not highlight the cell", ^{
