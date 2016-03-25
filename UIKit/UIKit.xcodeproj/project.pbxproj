@@ -1774,7 +1774,7 @@
 		AEBCCBA7168B95A00056EE83 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0710;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Pivotal Labs";
 				TargetAttributes = {
 					3466C0931B97A3C500CBAB59 = {
