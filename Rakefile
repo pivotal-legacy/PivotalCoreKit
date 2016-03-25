@@ -1,6 +1,6 @@
 CONFIGURATION = "Release"
 BUILD_SDK_VERSION = ENV['BUILD_SDK_VERSION'] || ""
-SIMULATOR_VERSIONS = ENV['SIMULATOR_VERSIONS'] || "9.0"
+SIMULATOR_VERSIONS = ENV['SIMULATOR_VERSIONS'] || "9.2"
 SIMULATOR_DEVICES = ENV['SIMULATOR_DEVICES'] || "iPhone 5s"
 BUILD_DIR = File.join(File.dirname(__FILE__), "build")
 
@@ -45,28 +45,34 @@ def output_file(target)
 end
 
 def build_and_test_scheme(scheme)
-  sdk = 'iphonesimulator' + BUILD_SDK_VERSION
   devices = SIMULATOR_DEVICES.split(",")
   versions = SIMULATOR_VERSIONS.split(",")
-  system_or_exit(
-    %Q[xcodebuild -workspace PivotalCoreKit.xcworkspace \
-      -scheme #{scheme} \
-      -sdk #{sdk} \
-      build \
-      -destination platform='iOS Simulator',name='#{devices.first},OS=#{versions.first}']
-  )
+  sdk = 'iphonesimulator' + BUILD_SDK_VERSION
 
   devices.each do |device|
+    retry_count = 0
     versions.each do |version|
-      `osascript -e 'tell application "iPhone Simulator" to quit'`
-      system_or_exit(
-        %Q[xcodebuild -workspace PivotalCoreKit.xcworkspace \
-          -scheme #{scheme} \
-          -sdk #{sdk} \
-          -destination platform='iOS Simulator',name='#{device},OS=#{version}' \
-          test]
-      )
-      `osascript -e 'tell application "iPhone Simulator" to quit'`
+      begin
+        puts "Testing #{scheme} on device: #{device} version: #{version}"
+        puts "Killing the simulator first"
+        system %Q[killall -m -KILL "iPhone Simulator"]
+        system_or_exit(
+          %Q[xcodebuild -workspace PivotalCoreKit.xcworkspace \
+            -scheme #{scheme} \
+            -sdk #{sdk} \
+            -destination platform='iOS Simulator',name='#{device},OS=#{version}' \
+            build \
+            test]
+        )
+      rescue
+        retry_count += 1
+
+        if retry_count == 3
+          raise
+        else
+          retry
+        end
+      end
     end
   end
 end
