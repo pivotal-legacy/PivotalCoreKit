@@ -77,7 +77,7 @@ def build_and_test_scheme(scheme)
   end
 end
 
-def build_target(target, project: project, output_file: output_file, sdk: sdk)
+def build_target(target, project: nil, output_file: nil, sdk: nil)
    command = ["xcodebuild",
    "-project",
    "#{project}.xcodeproj",
