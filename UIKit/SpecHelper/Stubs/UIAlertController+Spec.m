@@ -41,14 +41,10 @@
     }];
 
     UIAlertAction *cancelAction = [[self.actions filteredArrayUsingPredicate:cancelPredicate] lastObject];
-    if (self.preferredStyle == UIAlertControllerStyleActionSheet) {
-        if (!cancelAction) {
-            [[NSException exceptionWithName:NSInternalInconsistencyException reason:@"UIAlertController does not have a cancel button" userInfo:nil] raise];
-        }
-        return cancelAction;
-    } else {
-        return cancelAction ? cancelAction : self.actions.lastObject;
+    if (!cancelAction) {
+        [[NSException exceptionWithName:NSInternalInconsistencyException reason:@"UIAlertController does not have a cancel button" userInfo:nil] raise];
     }
+    return cancelAction;
 }
 
 - (UIAlertAction *)actionWithButtonTitle:(NSString *)title {
