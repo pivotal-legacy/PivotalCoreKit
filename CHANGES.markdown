@@ -1,7 +1,13 @@
 ## HEAD
 
-## 0.3.3 (in progress)
+## 0.3.3
 
+  * Carthage compatibility
+  * PCK now builds dynamic libraries
+  * UIAlertController SpecHelper stub raises nonexistant Cancel button error consistently for all styles.
+  * SpecHelper stub `-dismissViewController:animated:completion:` no longer invokes completion twice in some situations.
+  * UIView SpecHelper stub can now control the execution of animations with `+resetAnimations` and `+resumeAnimations`.
+  * UIKit SpecHelper stubs throw exceptions in more illogical cases now, like tapping on non-displayed cells or buttons with no size.
   * `transitionToViewController:fromViewController...` SpecHelper stub behaves more like UIKit.
 
 ## 0.3.2
