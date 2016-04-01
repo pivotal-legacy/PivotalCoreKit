@@ -45,7 +45,8 @@ describe(@"UIAlertController (spec extensions)", ^{
                                                            preferredStyle:UIAlertControllerStyleAlert];
             addDefaultAction(alertController, nil);
         });
-        sharedExamplesFor(@"default cancel behavior", ^(NSDictionary *sharedContext) {
+
+        sharedExamplesFor(@"alert controller with a cancel button", ^(NSDictionary *sharedContext) {
             describe(@"tapping the cancel button", ^{
                 context(@"containing a UIAlertActionStyleCancel button", ^{
                     beforeEach(^{
@@ -76,31 +77,24 @@ describe(@"UIAlertController (spec extensions)", ^{
             });
         });
 
+        sharedExamplesFor(@"alert controller has no cancel button", ^(NSDictionary *sharedContext) {
+            beforeEach(^{
+                addDefaultAction(alertController, handler);
+            });
+
+            it(@"should blow up", ^{
+                ^{ [alertController dismissByTappingCancelButton]; } should raise_exception;
+            });
+
+        });
+
         describe(@"UIAlertControllerStyleAlert", ^{
             beforeEach(^{
                 [presentingController presentViewController:alertController animated:NO completion:nil];
             });
 
-            context(@"without containing a UIAlertActionStyleCancel button", ^{
-                beforeEach(^{
-                    addDefaultAction(alertController, handler);
-                    [alertController dismissByTappingCancelButton];
-                });
-
-                it(@"should call the handler of the last added action", ^{
-                    handlerWasExecuted should be_truthy;
-                });
-
-                it(@"should dismiss the controller before the action handler is executed", ^{
-                    presentedControllerWasDismissedBeforeActionHandlerCall should be_truthy;
-                });
-
-                it(@"should dismiss the alert controller", ^{
-                    presentingController.presentedViewController should be_nil;
-                });
-            });
-
-            itShouldBehaveLike(@"default cancel behavior");
+            itShouldBehaveLike(@"alert controller with a cancel button");
+            itShouldBehaveLike(@"alert controller has no cancel button");
         });
 
         describe(@"UIAlertControllerStyleActionSheet", ^{
@@ -111,17 +105,8 @@ describe(@"UIAlertController (spec extensions)", ^{
                 [presentingController presentViewController:alertController animated:NO completion:nil];
             });
 
-            context(@"when a action sheet does not have a cancel button", ^{
-                beforeEach(^{
-                    addDefaultAction(alertController, handler);
-                });
-
-                it(@"should blow up", ^{
-                    ^{ [alertController dismissByTappingCancelButton]; } should raise_exception;
-                });
-            });
-
-            itShouldBehaveLike(@"default cancel behavior");
+            itShouldBehaveLike(@"alert controller with a cancel button");
+            itShouldBehaveLike(@"alert controller has no cancel button");
         });
 
         context(@"when presented outside of a view controller", ^{
