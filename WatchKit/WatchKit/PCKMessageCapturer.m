@@ -1,4 +1,5 @@
 #import "PCKMessageCapturer.h"
+#import <objc/runtime.h>
 
 @implementation PCKMessageCapturer {
     NSMutableArray *_sent_messages;
@@ -7,6 +8,13 @@
 static NSMutableArray *sent_class_messages_array;
 
 #pragma mark - NSObject
+
++ (void)load {
+    id cedarHooksProtocol = NSProtocolFromString(@"CDRHooks");
+    if (cedarHooksProtocol) {
+        class_addProtocol(self, cedarHooksProtocol);
+    }
+}
 
 - (instancetype)init
 {

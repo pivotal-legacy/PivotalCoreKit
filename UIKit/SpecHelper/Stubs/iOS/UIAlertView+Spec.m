@@ -3,6 +3,7 @@
 #endif
 
 #import "UIAlertView+Spec.h"
+#import <objc/runtime.h>
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
@@ -10,6 +11,13 @@
 @implementation UIAlertView (Spec)
 
 static NSMutableArray *alertViewStack__ = nil;
+
++ (void)load {
+    id cedarHooksProtocol = NSProtocolFromString(@"CDRHooks");
+    if (cedarHooksProtocol) {
+        class_addProtocol(self, cedarHooksProtocol);
+    }
+}
 
 + (void)afterEach {
     [self reset];

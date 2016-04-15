@@ -34,6 +34,13 @@ static PSHKFakeOperationQueue *connectionsQueue__;
 
 @implementation NSURLConnection (Spec)
 
++ (void)load {
+    id cedarHooksProtocol = NSProtocolFromString(@"CDRHooks");
+    if (cedarHooksProtocol) {
+        class_addProtocol(self, cedarHooksProtocol);
+    }
+}
+
 + (void)beforeEach {
     [self resetAll];
 }

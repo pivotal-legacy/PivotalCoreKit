@@ -1,4 +1,5 @@
 #import "WKExtension.h"
+#import <objc/runtime.h>
 
 @interface PCKMessageCapturer ()
 - (void)openSystemURL:(NSURL *)URL NS_REQUIRES_SUPER;
@@ -11,6 +12,13 @@
 @implementation WKExtension
 
 static WKExtension *__sharedExtension;
+
++ (void)load {
+    id cedarHooksProtocol = NSProtocolFromString(@"CDRHooks");
+    if (cedarHooksProtocol) {
+        class_addProtocol(self, cedarHooksProtocol);
+    }
+}
 
 + (void)setSharedExtension:(WKExtension *)sharedExtension {
     __sharedExtension = sharedExtension;

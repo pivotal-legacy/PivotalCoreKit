@@ -1,4 +1,5 @@
 #import "UIApplication+Spec.h"
+#import <objc/runtime.h>
 
 @implementation UIApplication (Spec)
 
@@ -6,6 +7,10 @@ static NSMutableArray *URLs = nil;
 
 + (void)load {
     URLs = [NSMutableArray array];
+    id cedarHooksProtocol = NSProtocolFromString(@"CDRHooks");
+    if (cedarHooksProtocol) {
+        class_addProtocol(self, cedarHooksProtocol);
+    }
 }
 
 + (void)afterEach {

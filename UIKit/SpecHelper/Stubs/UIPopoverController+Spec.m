@@ -3,6 +3,7 @@
 #endif
 
 #import "UIPopoverController+Spec.h"
+#import <objc/runtime.h>
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
@@ -12,6 +13,13 @@ static __weak UIPopoverController *currentPopoverController__;
 static UIPopoverArrowDirection arrowDirectionMask__;
 
 #pragma clang diagnostic pop
+
++ (void)load {
+    id cedarHooksProtocol = NSProtocolFromString(@"CDRHooks");
+    if (cedarHooksProtocol) {
+        class_addProtocol(self, cedarHooksProtocol);
+    }
+}
 
 + (instancetype)currentPopoverController {
     return currentPopoverController__;

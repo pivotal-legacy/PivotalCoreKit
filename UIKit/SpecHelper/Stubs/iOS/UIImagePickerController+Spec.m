@@ -6,6 +6,13 @@ static const NSNumber *cameraDevice__;
 
 @implementation UIImagePickerController (Spec)
 
++ (void)load {
+    id cedarHooksProtocol = NSProtocolFromString(@"CDRHooks");
+    if (cedarHooksProtocol) {
+        class_addProtocol(self, cedarHooksProtocol);
+    }
+}
+
 + (void)afterEach {
     [self reset];
 }
