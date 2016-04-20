@@ -3,6 +3,7 @@
 #endif
 
 #import "UIActionSheet+Spec.h"
+#import <objc/runtime.h>
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
@@ -11,6 +12,13 @@
 
 static UIActionSheet *currentActionSheet__;
 static UIView *currentActionSheetView__;
+
++ (void)load {
+    id cedarHooksProtocol = NSProtocolFromString(@"CDRHooks");
+    if (cedarHooksProtocol) {
+        class_addProtocol(self, cedarHooksProtocol);
+    }
+}
 
 + (void)afterEach {
     [self reset];

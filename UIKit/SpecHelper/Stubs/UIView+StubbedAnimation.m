@@ -1,9 +1,17 @@
 #import "UIView+StubbedAnimation.h"
+#import <objc/runtime.h>
 
 static BOOL shouldImmediatelyExecuteAnimationBlocks__ = YES;
 static NSMutableArray *animations__;
 
 @implementation UIView (StubbedAnimation)
+
++ (void)load {
+    id cedarHooksProtocol = NSProtocolFromString(@"CDRHooks");
+    if (cedarHooksProtocol) {
+        class_addProtocol(self, cedarHooksProtocol);
+    }
+}
 
 + (NSTimeInterval)lastAnimationDuration {
     return [(PCKViewAnimation*)[animations__ lastObject] duration];
