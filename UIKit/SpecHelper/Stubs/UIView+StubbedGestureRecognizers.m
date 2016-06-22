@@ -9,6 +9,10 @@
     [[self recognizersWithClass:[UITapGestureRecognizer class]] makeObjectsPerformSelector:@selector(recognize)];
 }
 
+- (void)longPress {
+    [[self recognizersWithClass:[UILongPressGestureRecognizer class]] makeObjectsPerformSelector:@selector(recognize)];
+}
+
 - (void)swipe {
     [[self recognizersWithClass:[UISwipeGestureRecognizer class]] makeObjectsPerformSelector:@selector(recognize)];
 }
