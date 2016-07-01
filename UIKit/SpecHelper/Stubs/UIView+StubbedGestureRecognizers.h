@@ -3,6 +3,7 @@
 @interface UIView (StubbedGestureRecognizers)
 
 - (void)tap;
+- (void)longPress;
 /*! @abstract Use swipeInDirection: instead. */
 - (void)swipe DEPRECATED_ATTRIBUTE;
 - (void)swipeInDirection:(UISwipeGestureRecognizerDirection)swipeDirection;
