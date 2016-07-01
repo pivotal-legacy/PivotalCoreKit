@@ -41,6 +41,26 @@ describe(@"UIView+Spec", ^{
             otherTarget should_not have_received(@selector(hello));
         });
     });
+    
+    describe(@"long pressing on the view", ^{
+        beforeEach(^{
+            UILongPressGestureRecognizer *longPressRecognizer = [[UILongPressGestureRecognizer alloc] init];
+            [longPressRecognizer addTarget:target action:@selector(hello)];
+            
+            UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] init];
+            [tapRecognizer addTarget:otherTarget action:@selector(hello)];
+            
+            [view addGestureRecognizer:longPressRecognizer];
+            [view addGestureRecognizer:tapRecognizer];
+        });
+        
+        it(@"should dispatch longPress events when you call -longPress", ^{
+            [view longPress];
+            
+            target should have_received(@selector(hello));
+            otherTarget should_not have_received(@selector(hello));
+        });
+    });
 
     describe(@"swiping the view", ^{
         beforeEach(^{
