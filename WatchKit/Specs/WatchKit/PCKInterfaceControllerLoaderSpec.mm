@@ -105,7 +105,10 @@ describe(@"PCKInterfaceControllerLoader", ^{
                     });
 
                     it(@"should have the correct text color", ^{
-                        button.color should equal([UIColor lightGrayColor]);
+                        button.color should equal([UIColor colorWithRed:170.0f / 255.0f
+                                                                  green:170.0f / 255.0f
+                                                                   blue:170.0f / 255.0f
+                                                                  alpha:1.0]);
                     });
 
                     it(@"should have the correct default enabled property", ^{
@@ -129,7 +132,10 @@ describe(@"PCKInterfaceControllerLoader", ^{
                     });
 
                     it(@"should display the correct color", ^{
-                        date.textColor should equal([UIColor lightGrayColor]);
+                        date.textColor should equal([UIColor colorWithRed:170.0f / 255.0f
+                                                                    green:170.0f / 255.0f
+                                                                     blue:170.0f / 255.0f
+                                                                    alpha:1.0]);
                     });
                 });
 
@@ -272,7 +278,10 @@ describe(@"PCKInterfaceControllerLoader", ^{
                 });
 
                 it(@"should have a separator (when one was specified in the storyboard)", ^{
-                    controller.separator.color should equal([UIColor darkGrayColor]);
+                    controller.separator.color should equal([UIColor colorWithRed:85.0f / 255.0f
+                                                                            green:85.0f / 255.0f
+                                                                             blue:85.0f / 255.0f
+                                                                            alpha:1.0]);
                 });
             });
         });
@@ -358,7 +367,10 @@ describe(@"PCKInterfaceControllerLoader", ^{
                     });
 
                     it(@"should have the correct text color", ^{
-                        button.color should equal([UIColor lightGrayColor]);
+                        button.color should equal([UIColor colorWithRed:170.0f / 255.0f
+                                                                  green:170.0f / 255.0f
+                                                                   blue:170.0f / 255.0f
+                                                                  alpha:1.0]);
                     });
 
                     it(@"should have the correct default enabled property", ^{
@@ -380,19 +392,19 @@ describe(@"PCKInterfaceControllerLoader", ^{
                     beforeEach(^{
                         button = controller.groupButton;
                     });
-                    
+
                     describe(@"its group", ^{
                         __block WKInterfaceGroup *group;
                         beforeEach(^{
                             group = button.content;
                         });
-                        
+
                         it(@"should have the correct number of items", ^{
                             group.items.count should equal(2);
                         });
                     });
                 });
-                
+
                 describe(@"the date", ^{
                     __block WKInterfaceDate *date;
                     beforeEach(^{
@@ -404,7 +416,10 @@ describe(@"PCKInterfaceControllerLoader", ^{
                     });
 
                     it(@"should display the correct color", ^{
-                        date.textColor should equal([UIColor lightGrayColor]);
+                        date.textColor should equal([UIColor colorWithRed:170.0f / 255.0f
+                                                                    green:170.0f / 255.0f
+                                                                     blue:170.0f / 255.0f
+                                                                    alpha:1.0]);
                     });
                 });
 
@@ -547,7 +562,10 @@ describe(@"PCKInterfaceControllerLoader", ^{
                 });
 
                 it(@"should have a separator (when one was specified in the storyboard)", ^{
-                    controller.separator.color should equal([UIColor darkGrayColor]);
+                    controller.separator.color should equal([UIColor colorWithRed:85.0f / 255.0f
+                                                                            green:85.0f / 255.0f
+                                                                             blue:85.0f / 255.0f
+                                                                            alpha:1.0]);
                 });
             });
         });
