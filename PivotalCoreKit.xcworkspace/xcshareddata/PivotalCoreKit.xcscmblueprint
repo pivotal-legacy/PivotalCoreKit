@@ -10,9 +10,9 @@
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "84C90FBA-07A0-4E01-96C2-CC87B943CCBF",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "8E3EABAC3DEB540C429B3EF995370DAC6D10823F" : "PivotalCoreKit",
-    "9C17E6AC4A93E78FE05F88AE0011DD4EAD50139D" : "PivotalCoreKit\/Externals\/Cedar",
-    "5CA7C5C68EBD368708C4B6CC80230776B66D4052" : "PivotalCoreKit\/Externals\/FakeHTTP"
+    "8E3EABAC3DEB540C429B3EF995370DAC6D10823F" : "PivotalCoreKit\/",
+    "9C17E6AC4A93E78FE05F88AE0011DD4EAD50139D" : "PivotalCoreKit\/Externals\/Cedar\/",
+    "5CA7C5C68EBD368708C4B6CC80230776B66D4052" : "PivotalCoreKit\/Externals\/FakeHTTP\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "PivotalCoreKit",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
