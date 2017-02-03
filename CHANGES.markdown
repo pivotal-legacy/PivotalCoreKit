@@ -1,5 +1,10 @@
 ## HEAD
 
+## 0.3.4
+
+  * Support for long press on views
+  * Minor project housekeeping
+
 ## 0.3.3
 
   * Carthage compatibility
