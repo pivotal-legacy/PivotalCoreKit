@@ -1,6 +1,6 @@
 CONFIGURATION = "Release"
 BUILD_SDK_VERSION = ENV['BUILD_SDK_VERSION'] || ""
-SIMULATOR_VERSIONS = ENV['SIMULATOR_VERSIONS'] || "9.3"
+SIMULATOR_VERSIONS = ENV['SIMULATOR_VERSIONS'] || "10.2"
 SIMULATOR_DEVICES = ENV['SIMULATOR_DEVICES'] || "iPhone 5s"
 BUILD_DIR = File.join(File.dirname(__FILE__), "build")
 
@@ -100,7 +100,7 @@ desc "Trim edited files and run all specs"
 task :default => [:trim_whitespace, "all:spec"]
 
 desc "Do what travis will do"
-task :travis => ["foundation:clean", "uikit:clean", "core_location:clean", "foundation:spec", "uikit:spec", "core_location:spec"]
+task :travis => ["all:clean", "all:spec"]
 
 desc "Trim whitespace in recently edited files"
 task :trim_whitespace do
