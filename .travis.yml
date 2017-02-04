@@ -9,7 +9,6 @@ before_install:
 
 matrix:
   include:
-     - env: BUILD_SDK_VERSION="9.2" SIMULATOR_VERSIONS="8.4" SIMULATOR_DEVICES="iPhone 5,iPhone 5s"
      - env: BUILD_SDK_VERSION="9.2" SIMULATOR_VERSIONS="9.2" SIMULATOR_DEVICES="iPhone 5,iPhone 5s"
 
 script: rake travis
