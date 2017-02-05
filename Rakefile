@@ -322,7 +322,7 @@ namespace :watchkit do
   namespace :spec do
     desc "Build and run WatchKit specs on iOS"
     task :ios do
-      system_or_exit(%Q[xcodebuild -project WatchKit/WatchKit.xcodeproj -scheme WatchKit -configuration Debug build test -destination 'platform=iOS Simulator,name=iPhone 6'])
+      build_and_test_scheme("WatchKit")
     end
   end
 
@@ -333,7 +333,7 @@ namespace :watchkit do
   end
 end
 
-task :watchkit => ["watchkit:build", "watchkit:spec"]
+task :watchkit => ["watchkit:spec"]
 
 namespace :all do
   desc "Build everything"
