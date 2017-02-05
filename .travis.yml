@@ -7,5 +7,8 @@ before_install:
   # try to start the iPhone simulator at least once
   - open -b com.apple.iphonesimulator
 
-script: rake travis
+matrix:
+  include:
+     - env: BUILD_SDK_VERSION="10.2" SIMULATOR_VERSIONS="10.1" SIMULATOR_DEVICES="iPhone 5,iPhone 5s"
 
+script: rake travis
