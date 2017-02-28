@@ -6,6 +6,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (nullable UIView *)subviewWithAccessibilityIdentifier:(NSString *)accessibilityIdentifier;
 - (nullable UIView *)firstSubviewOfClass:(Class)aClass;
+- (BOOL)isTrulyVisible;
 
 @end
 
