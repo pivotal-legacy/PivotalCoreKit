@@ -18,6 +18,7 @@ describe(@"Using a Nib to load another nib-based view class", ^{
 
     it(@"should have subviews as outlets, and not blow up if the placeholder has a temporary subview", ^{
         outerView.innerView should be_instance_of([InnerView class]);
+        outerView.innerView.translatesAutoresizingMaskIntoConstraints should be_falsy;
     });
 
     it(@"should have the correct layout", ^{
