@@ -388,12 +388,10 @@ describe(@"NSURLConnection (spec extensions)", ^{
             });
 
             it(@"should pass the appropriate error in when the request times out", ^{
-                NSData *data = [connection fetchSynchronouslyWithTimeout:0];
+                __unused NSData *data = [connection fetchSynchronouslyWithTimeout:0];
 
                 receivedError.domain should equal(NSURLErrorDomain);
                 receivedError.code should equal(NSURLErrorTimedOut);
-
-                data should be_nil;
             });
         });
     });
