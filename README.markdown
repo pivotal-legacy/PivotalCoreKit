@@ -70,6 +70,7 @@ Here is a (hopefully exhaustive but inevitably out of date) list of PivotalCoreK
       * UIBarButtonItem
       * UITabBarController item
     * Simulate a tap, swipe, or pinch on a UIView (triggers attached gesture recognizers)
+    * Simulate a tap, swipe left/right on a UIPageControl
     * Simulate a new value for a UISlider
     * Simulate recognition of specific gesture recognizer
     * Compare UIImages for equality
