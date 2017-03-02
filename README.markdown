@@ -80,6 +80,7 @@ Here is a (hopefully exhaustive but inevitably out of date) list of PivotalCoreK
 	* Query, inspect, present and dismiss a UIPopoverController
     * Simulate availability states of UIImagePickerController (camera available/not available, et cetera)
     * Inspect arguments (duration, delay, options) on last UIView animation
+    * Determine if the UIView is shown completely (not translucent, height, width or clipped) on screen
     * Fake out UIWebView to inspect requests, simulate back/forward state, and simulate web loads
 * CoreLocation (iOS only)
   * SpecHelper
