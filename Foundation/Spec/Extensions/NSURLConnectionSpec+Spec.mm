@@ -342,15 +342,10 @@ describe(@"NSURLConnection (spec extensions)", ^{
 
             context(@"when the connection times out", ^{
                 it(@"should cancel the underlying connection and tell the delegate an error occured", ^{
-                    delegate.data.length should equal(0);
+                    __unused NSData *data = [connection fetchSynchronouslyWithTimeout:0];
 
-                    NSData *data = [connection fetchSynchronouslyWithTimeout:0];
-
-                    delegate.data.length should equal(0);
                     delegate.error.domain should equal(NSURLErrorDomain);
                     delegate.error.code should equal(NSURLErrorTimedOut);
-
-                    data should be_nil;
                 });
             });
         });
