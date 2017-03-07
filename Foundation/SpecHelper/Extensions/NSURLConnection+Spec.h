@@ -8,7 +8,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSArray *)connections;
 + (nullable NSURLConnection *)connectionForPath:(NSString *)path;
-+ (void)fetchAllPendingConnectionsSynchronouslyWithTimeout:(NSTimeInterval)timeout;
++ (void)fetchAllPendingConnectionsSynchronouslyWithTimeout:(NSTimeInterval)timeout __attribute__((deprecated));
 + (void)resetAll;
 
 @property (nonatomic, readonly) NSURLRequest *request;
@@ -25,7 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)sendAuthenticationChallengeWithCredential:(NSURLCredential *)credential;
 
 // Perform synchronous network requests
-- (nullable NSData *)fetchSynchronouslyWithTimeout:(NSTimeInterval)timeout;
+- (nullable NSData *)fetchSynchronouslyWithTimeout:(NSTimeInterval)timeout __attribute__((deprecated));
 
 @end
 
