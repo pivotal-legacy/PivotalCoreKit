@@ -220,6 +220,122 @@ describe(@"UIView+Spec", ^{
             [view firstSubviewOfClass:[UILabel class]] should equal(subview2);
         });
     });
+    
+    describe(@"determining if view is completely on screen", ^{
+        __block UIView *rootView;
+        
+        beforeEach(^{
+            rootView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
+        });
+        
+        context(@"if the view is visible", ^{
+            it(@"should be visible", ^{
+                [rootView isTrulyVisible] should be_truthy;
+            });
+        });
+        
+        context(@"if a view is hidden", ^{
+            beforeEach(^{
+                rootView.hidden = YES;
+            });
+            
+            it(@"should not be visible", ^{
+                [rootView isTrulyVisible] should be_falsy;
+            });
+        });
+        
+        context(@"if a view has 0 alpha", ^{
+            beforeEach(^{
+                rootView.alpha = 0;
+            });
+            
+            it(@"should not be visible", ^{
+                [rootView isTrulyVisible] should be_falsy;
+            });
+        });
+        
+        context(@"if a view has clipsToBounds turned on", ^{
+            beforeEach(^{
+                rootView.clipsToBounds = YES;
+            });
+            
+            context(@"and it has no width", ^{
+                beforeEach(^{
+                    rootView.frame = CGRectMake(0, 0, 0, 50);
+                });
+                
+                it(@"should not be visible", ^{
+                    [rootView isTrulyVisible] should be_falsy;
+                });
+            });
+            
+            context(@"and it has no height", ^{
+                beforeEach(^{
+                    rootView.frame = CGRectMake(0, 0, 50, 0);
+                });
+                
+                it(@"should not be visible", ^{
+                    [rootView isTrulyVisible] should be_falsy;
+                });
+            });
+        });
+        
+        context(@"if a view has clipsToBounds turned off", ^{
+            beforeEach(^{
+                rootView.clipsToBounds = NO;
+            });
+            
+            context(@"when the view has subviews", ^{
+                context(@"and it has no width or no height", ^{
+                    beforeEach(^{
+                        [rootView addSubview:[UIView new]];
+                        rootView.frame = CGRectMake(0, 0, 0, 50);
+                    });
+                    
+                    it(@"should still be considered visible", ^{
+                        [rootView isTrulyVisible] should be_truthy;
+                    });
+                });
+            });
+            
+            context(@"when the view does not have any subviews", ^{
+                context(@"and it has no width or no height", ^{
+                    beforeEach(^{
+                        rootView.frame = CGRectMake(0, 0, 0, 50);
+                    });
+                    
+                    it(@"should not be visible", ^{
+                        [rootView isTrulyVisible] should be_falsy;
+                    });
+                });
+            });
+        });
+        
+        context(@"if there is a view inside of another view", ^{
+            __block UIView *childView;
+            beforeEach(^{
+                childView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
+                [rootView addSubview:childView];
+            });
+            
+            context(@"and the superview and the child view are both visible", ^{
+                it(@"should be visible", ^{
+                    [childView isTrulyVisible] should be_truthy;
+                });
+            });
+            
+            context(@"and the superview is not visible", ^{
+                beforeEach(^{
+                    rootView.alpha = 0;
+                    [rootView isTrulyVisible] should be_falsy;
+                });
+                
+                it(@"should not be visible", ^{
+                    [childView isTrulyVisible] should be_falsy;
+                });
+            });
+        });
+    });
 });
 
 SPEC_END

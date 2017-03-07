@@ -28,4 +28,22 @@
     return nil;
 }
 
+- (BOOL)isTrulyVisible {
+    if (self.hidden) {
+        return NO;
+    }
+    if (self.alpha == 0) {
+        return NO;
+    }
+    if (!self.subviews.count || self.clipsToBounds) {
+        if (CGRectGetWidth([self frame]) == 0 || CGRectGetHeight([self frame]) == 0) {
+            return NO;
+        }
+    }
+    if (self.superview) {
+        return [self.superview isTrulyVisible];
+    }
+    return YES;
+}
+
 @end
