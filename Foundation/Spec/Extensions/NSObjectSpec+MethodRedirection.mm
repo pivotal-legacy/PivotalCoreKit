@@ -65,7 +65,7 @@ describe(@"NSObject_MethodRedirection", ^{
             [Redirectable redirectSelector:@selector(cheekify:) to:@selector(cheekify_original:) andRenameItTo:@selector(cheekify_other:)];
         });
 
-        it(@"should do nothing when the new selector name (i.e. the argumen to andRenameItTo:) already exists", ^{
+        it(@"should do nothing when the new selector name (i.e. the argument to andRenameItTo:) already exists", ^{
             [Redirectable redirectSelector:@selector(cheekify:) to:@selector(cheekify_new:) andRenameItTo:@selector(stodgify:)];
 
             [redirectable stodgify:@"Herman"] should equal(@"Herman is so stodgy");
