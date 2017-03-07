@@ -18,6 +18,7 @@ describe(@"Using a Nib to load another nib-based view class", ^{
 
     it(@"should have subviews as outlets, and not blow up if the placeholder has a temporary subview", ^{
         outerView.innerView should be_instance_of([InnerView class]);
+        outerView.innerView.translatesAutoresizingMaskIntoConstraints should be_falsy;
     });
 
     it(@"should have the correct layout", ^{
@@ -44,6 +45,13 @@ describe(@"Using a Nib to load another nib-based view class", ^{
 
             CGRectGetMinX(innerView.subview.frame) should be_close_to(CGRectGetMaxX(innerView.anotherSubview.frame) + innerView.horizontalSpace.constant);
             CGRectGetMinY(innerView.anotherSubview.frame) should be_close_to(CGRectGetMaxY(innerView.subview.frame) + innerView.verticalSpace.constant);
+        });
+        
+        it(@"should have the same identifier and priority for width set in nib", ^{
+            [outerView.innerView.constraints indexOfObjectPassingTest:^BOOL(__kindof NSLayoutConstraint * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                return (*stop = [obj.identifier isEqualToString:@"innerViewWidth"] &&
+                                 obj.priority == 999);
+            }] should_not equal(NSNotFound);
         });
     });
 });

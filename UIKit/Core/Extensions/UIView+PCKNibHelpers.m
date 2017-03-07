@@ -16,14 +16,17 @@
     } else if (self.secondItem == viewToReplace) {
         secondItem = replacingView;
     }
-
-    return [NSLayoutConstraint constraintWithItem:firstItem
-                                        attribute:self.firstAttribute
-                                        relatedBy:self.relation
-                                           toItem:secondItem
-                                        attribute:self.secondAttribute
-                                       multiplier:self.multiplier
-                                         constant:self.constant];
+    
+    NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:firstItem
+                                                                  attribute:self.firstAttribute
+                                                                  relatedBy:self.relation
+                                                                     toItem:secondItem
+                                                                  attribute:self.secondAttribute
+                                                                 multiplier:self.multiplier
+                                                                   constant:self.constant];
+    constraint.identifier = self.identifier;
+    constraint.priority = self.priority;
+    return constraint;
 }
 
 @end
@@ -32,9 +35,10 @@
 
 - (id)awakeAfterUsingCoder:(NSCoder *)aDecoder {
     NSString *nibName = NSStringFromClass([self class]);
-    if ([self.restorationIdentifier hasPrefix:@"placeholder"] && [[NSBundle mainBundle] pathForResource:nibName ofType:@"nib"]) {
-        UINib *classNib = [UINib nibWithNibName:nibName bundle:nil];
+    if ([self.restorationIdentifier hasPrefix:@"placeholder"] && [[NSBundle bundleForClass:[self class]] pathForResource:nibName ofType:@"nib"]) {
+        UINib *classNib = [UINib nibWithNibName:nibName bundle:[NSBundle bundleForClass:[self class]]];
         UIView *nibInstance = [[classNib instantiateWithOwner:nil options:nil] firstObject];
+        nibInstance.translatesAutoresizingMaskIntoConstraints = NO;
         [nibInstance configureWithPlaceholderView:self];
         return nibInstance;
     }
