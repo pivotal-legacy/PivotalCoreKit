@@ -5,6 +5,7 @@
 * Deprecated NSURLConnection+Spec async helpers
   - if you were using `-fetchSynchronouslyWithTimeout(NSTimeInterval):` or `+fetchAllPendingConnectionsSynchronouslyWithTimeout(NSTimeInterval):` you will want to rewrite those tests before upgrading past this release. These will be removed in a future release.
 * Fixed modulemap for iOS Foundation+PivotalSpecHelper dynamic framework
+* Adds a spec helper for UIPageControl
 * Support for determining visibility of UIViews
 * Add nullability annotations to PCK projects
   - this should improve usability from Swift, but if you encounter problems, [please report them](https://github.com/pivotal/pivotalcorekit/issues/new)!
