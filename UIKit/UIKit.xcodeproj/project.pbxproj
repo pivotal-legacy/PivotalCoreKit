@@ -351,6 +351,15 @@
 		AE7E72181AF2AEE4000E48EE /* UIApplication+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AE7E72151AF2AE9A000E48EE /* UIApplication+Spec.h */; };
 		AE7E72191AF2AF0D000E48EE /* UIApplication+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7E72161AF2AE9A000E48EE /* UIApplication+Spec.m */; };
 		AE82D6F21B1A2760005E740C /* PCKPrototypeCellInstantiatingDataSource.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = 3490AFE919A3C0A800DAA8E3 /* PCKPrototypeCellInstantiatingDataSource.h */; };
+		AE8687431E68B4AC00D6C6AD /* UIPageControl+Spec.h in Headers */ = {isa = PBXBuildFile; fileRef = AE8687411E68B4AC00D6C6AD /* UIPageControl+Spec.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE8687441E68B4AC00D6C6AD /* UIPageControl+Spec.h in Headers */ = {isa = PBXBuildFile; fileRef = AE8687411E68B4AC00D6C6AD /* UIPageControl+Spec.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE8687451E68B4AC00D6C6AD /* UIPageControl+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8687421E68B4AC00D6C6AD /* UIPageControl+Spec.m */; };
+		AE8687461E68B4AC00D6C6AD /* UIPageControl+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8687421E68B4AC00D6C6AD /* UIPageControl+Spec.m */; };
+		AE8687471E68B4AC00D6C6AD /* UIPageControl+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8687421E68B4AC00D6C6AD /* UIPageControl+Spec.m */; };
+		AE8687481E68B4B700D6C6AD /* UIPageControl+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = AE8687411E68B4AC00D6C6AD /* UIPageControl+Spec.h */; };
+		AE86876D1E6F083600D6C6AD /* UIPageControl_SpecSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE8687591E6F082C00D6C6AD /* UIPageControl_SpecSpec.mm */; };
+		AE86876E1E6F083800D6C6AD /* UIPageControl_SpecSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE8687591E6F082C00D6C6AD /* UIPageControl_SpecSpec.mm */; };
+		AE86876F1E6F083B00D6C6AD /* UIPageControl_SpecSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE8687591E6F082C00D6C6AD /* UIPageControl_SpecSpec.mm */; };
 		AE86BD4E179C7DAD0057DEAE /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE86BD4D179C7DAD0057DEAE /* Default-568h@2x.png */; };
 		AE898FF818071E2B00DDB948 /* UIViewSpec+StubbedAnimations.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE898FF718071E2B00DDB948 /* UIViewSpec+StubbedAnimations.mm */; };
 		AE89900318071F3A00DDB948 /* UIView+StubbedAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = AE89900218071F3A00DDB948 /* UIView+StubbedAnimation.m */; };
@@ -715,6 +724,7 @@
 			files = (
 				34BDAC7F19A433510085B45A /* UICollectionReusableView+Spec.h in Copy headers to framework */,
 				B8C62E7316BC07F60009CDAD /* UIBarButtonItem+Spec.h in Copy headers to framework */,
+				AE8687481E68B4B700D6C6AD /* UIPageControl+Spec.h in Copy headers to framework */,
 				B866FC1A16B4957500317E32 /* UIControl+Spec.h in Copy headers to framework */,
 				B866FC1B16B4957500317E32 /* UIImage+Spec.h in Copy headers to framework */,
 				B866FC1C16B4957500317E32 /* UITableViewCell+Spec.h in Copy headers to framework */,
@@ -801,6 +811,9 @@
 		AE7E72061AF2ADFF000E48EE /* UIApplicationSpec+Spec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIApplicationSpec+Spec.mm"; sourceTree = "<group>"; };
 		AE7E72151AF2AE9A000E48EE /* UIApplication+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+Spec.h"; sourceTree = "<group>"; };
 		AE7E72161AF2AE9A000E48EE /* UIApplication+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+Spec.m"; sourceTree = "<group>"; };
+		AE8687411E68B4AC00D6C6AD /* UIPageControl+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIPageControl+Spec.h"; sourceTree = "<group>"; };
+		AE8687421E68B4AC00D6C6AD /* UIPageControl+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIPageControl+Spec.m"; sourceTree = "<group>"; };
+		AE8687591E6F082C00D6C6AD /* UIPageControl_SpecSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = UIPageControl_SpecSpec.mm; sourceTree = "<group>"; };
 		AE86BD40179C7C910057DEAE /* UITabBarController+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBarController+Spec.h"; sourceTree = "<group>"; };
 		AE86BD41179C7C910057DEAE /* UITabBarController+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBarController+Spec.m"; sourceTree = "<group>"; };
 		AE86BD4D179C7DAD0057DEAE /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -1298,6 +1311,8 @@
 				AEBCCC7C168B9B5F0056EE83 /* UIView+Spec.m */,
 				AE53E2EA18075A810037C32E /* UIWindow+Spec.h */,
 				AE53E2EB18075A810037C32E /* UIWindow+Spec.m */,
+				AE8687411E68B4AC00D6C6AD /* UIPageControl+Spec.h */,
+				AE8687421E68B4AC00D6C6AD /* UIPageControl+Spec.m */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1325,6 +1340,7 @@
 				AEBCCC95168B9C530056EE83 /* UIView+PivotalCoreSpec.mm */,
 				AE9530691832EE9300C802E9 /* UIViewSpec+Spec.mm */,
 				AE53E2F518075B080037C32E /* UIWindowSpec+Spec.mm */,
+				AE8687591E6F082C00D6C6AD /* UIPageControl_SpecSpec.mm */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1405,6 +1421,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE8687441E68B4AC00D6C6AD /* UIPageControl+Spec.h in Headers */,
 				34A6649E1BDFEA2000EF0FEA /* UISegmentedControl+Spec.h in Headers */,
 				34A664A31BDFEA2000EF0FEA /* UIView+Spec.h in Headers */,
 				34A664961BDFE9BE00EF0FEA /* UIKit+PivotalSpecHelper.h in Headers */,
@@ -1444,6 +1461,7 @@
 			files = (
 				AE0D6A891BE941CE0095ACF3 /* UIBarButtonItem+Spec.h in Headers */,
 				AE0D6A8F1BE941CE0095ACF3 /* UITabBarController+Spec.h in Headers */,
+				AE8687431E68B4AC00D6C6AD /* UIPageControl+Spec.h in Headers */,
 				AE0D6A921BE941CE0095ACF3 /* UIWindow+Spec.h in Headers */,
 				AE0D6A871BE941CE0095ACF3 /* UISlider+Spec.h in Headers */,
 				AE0D6A881BE941CE0095ACF3 /* UISwitch+Spec.h in Headers */,
@@ -2191,6 +2209,7 @@
 				34A664AD1BDFEA6C00EF0FEA /* PCKPrototypeCellInstantiatingDataSource.m in Sources */,
 				34A664BA1BDFEA7300EF0FEA /* UIWindow+Spec.m in Sources */,
 				34A664B71BDFEA7300EF0FEA /* UITabBarController+Spec.m in Sources */,
+				AE8687471E68B4AC00D6C6AD /* UIPageControl+Spec.m in Sources */,
 				34A664AF1BDFEA7300EF0FEA /* UIBarButtonItem+Spec.m in Sources */,
 				34A664B21BDFEA7300EF0FEA /* UIControl+Spec.m in Sources */,
 			);
@@ -2235,6 +2254,7 @@
 				34A664F21BE0291C00EF0FEA /* UIWindowSpec+Spec.mm in Sources */,
 				34A664F81BE0292700EF0FEA /* UIApplicationSpec+Spec.mm in Sources */,
 				34A664FE1BE0292700EF0FEA /* UIViewSpec+StubbedAnimations.mm in Sources */,
+				AE86876E1E6F083800D6C6AD /* UIPageControl_SpecSpec.mm in Sources */,
 				34A664E21BE0291C00EF0FEA /* UIBarButtonItemSpec+Spec.mm in Sources */,
 				34A664EA1BE0291C00EF0FEA /* UISegmentedControlSpec+Spec.mm in Sources */,
 				34A664F61BE0292700EF0FEA /* UIAlertControllerSpec+Spec.mm in Sources */,
@@ -2264,6 +2284,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE0D6A801BE941BD0095ACF3 /* UIImage+Spec.m in Sources */,
+				AE8687461E68B4AC00D6C6AD /* UIPageControl+Spec.m in Sources */,
 				AE0D6A831BE941BD0095ACF3 /* UITableViewCell+Spec.m in Sources */,
 				AE0D6A7F1BE941BD0095ACF3 /* UIControl+Spec.m in Sources */,
 				AE0D6A841BE941BD0095ACF3 /* UIView+Spec.m in Sources */,
@@ -2338,6 +2359,7 @@
 				AE3F05E81BE820AC002BA0DE /* OuterView.m in Sources */,
 				AE3F05F31BE820CE002BA0DE /* UIControlSpec+Spec.mm in Sources */,
 				AE3F05F01BE820CE002BA0DE /* UIBarButtonItemSpec+Spec.mm in Sources */,
+				AE86876F1E6F083B00D6C6AD /* UIPageControl_SpecSpec.mm in Sources */,
 				AE3F05E71BE820AC002BA0DE /* MainController.m in Sources */,
 				AE3F05D71BE82099002BA0DE /* UIViewControllerSpec+Spec.mm in Sources */,
 				AE3F05CE1BE82099002BA0DE /* UIActivityViewControllerSpec+Spec.mm in Sources */,
@@ -2401,6 +2423,7 @@
 				AEBCCC9E168B9C530056EE83 /* main.m in Sources */,
 				AEEECC33181F33F5006B52CD /* UIImagePickerControllerSpec+Spec.mm in Sources */,
 				AEDABB6B18E9DFC7004E6626 /* OuterView.m in Sources */,
+				AE86876D1E6F083600D6C6AD /* UIPageControl_SpecSpec.mm in Sources */,
 				AE3847AD168BA0E300C99B55 /* AWebViewController.m in Sources */,
 				AEC6D7FE16963F3500E10C7B /* UIControlSpec+Spec.mm in Sources */,
 				AE898FF818071E2B00DDB948 /* UIViewSpec+StubbedAnimations.mm in Sources */,
@@ -2430,6 +2453,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				34BDAC7E19A4329C0085B45A /* PCKPrototypeCellInstantiatingDataSource.m in Sources */,
+				AE8687451E68B4AC00D6C6AD /* UIPageControl+Spec.m in Sources */,
 				8490A1711A7D1339001835AB /* UISegmentedControl+Spec.m in Sources */,
 				AEF0A40418296C690070D98B /* UICollectionViewCell+Spec.m in Sources */,
 				FAF932D8192703490076C733 /* UISwitch+Spec.m in Sources */,
