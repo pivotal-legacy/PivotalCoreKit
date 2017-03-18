@@ -8,6 +8,7 @@
 #import "UITableViewCell+Spec.h"
 #import "UIView+Spec.h"
 #import "UIWindow+Spec.h"
+#import "UIPageControl+Spec.h"
 
 #if !TARGET_OS_TV
 #import "UISlider+Spec.h"
