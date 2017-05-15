@@ -4,6 +4,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface PCKViewAnimation : NSObject
 
+@property (strong, nonatomic) UIView *withView;
 @property (assign, nonatomic) NSTimeInterval duration;
 @property (assign, nonatomic) NSTimeInterval delay;
 @property (assign, nonatomic) CGFloat springWithDamping;
@@ -20,6 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIView (StubbedAnimation)
 
++ (UIView*)lastWithView;
 + (NSTimeInterval)lastAnimationDuration;
 + (NSTimeInterval)lastAnimationDelay;
 + (UIViewAnimationOptions)lastAnimationOptions;
