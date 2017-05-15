@@ -123,6 +123,42 @@ describe(@"UIView+StubbedAnimation", ^{
                 completionBlockCalled should be_truthy;
             });
         });
+
+        describe(@"+transitionWithView:duration:options:animations:completion:", ^{
+            UIView *view = [[UIView alloc] init];
+
+            beforeEach(^{
+                [UIView transitionWithView:view
+                                  duration:0.666
+                                   options:UIViewAnimationOptionTransitionFlipFromBottom
+                                animations:^{
+                                    animationBlockCalled = YES;
+                                }
+                                completion:^(BOOL finished) {
+                                    completionBlockCalled = YES;
+                                }];
+            });
+
+            it(@"should remember the view", ^{
+                [UIView lastWithView] should be_same_instance_as(view);
+            });
+
+            it(@"should remember the duration", ^{
+                [UIView lastAnimationDuration] should be_close_to(.666);
+            });
+
+            it(@"should remember the options", ^{
+                [UIView lastAnimationOptions] should equal(UIViewAnimationOptionTransitionFlipFromBottom);
+            });
+
+            it(@"should call the animation block", ^{
+                animationBlockCalled should be_truthy;
+            });
+
+            it(@"should call the completion block", ^{
+                completionBlockCalled should be_truthy;
+            });
+        });
     });
 
     describe(@"with animations paused", ^{
@@ -130,73 +166,109 @@ describe(@"UIView+StubbedAnimation", ^{
 
         beforeEach(^{
             [UIView pauseAnimations];
-            [UIView animateWithDuration:0.666 animations:^{
-                animationBlockCalled = YES;
-            } completion:^(BOOL finished) {
-                completionBlockCalled = YES;
-                completionBlockParameter = finished;
-            }];
         });
 
-        it(@"should not execute the the animation block", ^{
-            animationBlockCalled should be_falsy;
-        });
-
-        it(@"should not execute the completion block", ^{
-            completionBlockCalled should be_falsy;
-        });
-
-        it(@"should records the animation", ^{
-            [[UIView lastAnimation] duration] should equal(0.666);
-        });
-
-        it(@"should resume all queued up animations when resume is called", ^{
-            [UIView resumeAnimations];
-
-            animationBlockCalled should be_truthy;
-            completionBlockCalled should be_truthy;
-            [UIView animations] should be_empty;
-        });
-
-        it(@"should reset all animations if +reset is called", ^{
-            [UIView resetAnimations];
-
-            animationBlockCalled should be_falsy;
-            completionBlockCalled should be_falsy;
-            [UIView animations] should be_empty;
-        });
-
-        describe(@"running animations", ^{
-            beforeEach(^{
-                [[UIView lastAnimation] animate];
+        sharedExamplesFor(@"paused animation or transtion", ^(NSDictionary *sharedContext) {
+            it(@"should not execute the the animation block", ^{
+                animationBlockCalled should be_falsy;
             });
 
-            it(@"should run the animation block", ^{
+            it(@"should not execute the completion block", ^{
+                completionBlockCalled should be_falsy;
+            });
+
+            it(@"should record the animation", ^{
+                [[UIView lastAnimation] duration] should equal(0.666);
+            });
+
+            it(@"should resume all queued up animations when resume is called", ^{
+                [UIView resumeAnimations];
+
                 animationBlockCalled should be_truthy;
+                completionBlockCalled should be_truthy;
+                [UIView animations] should be_empty;
+            });
+
+            it(@"should reset all animations if +reset is called", ^{
+                [UIView resetAnimations];
+
+                animationBlockCalled should be_falsy;
+                completionBlockCalled should be_falsy;
+                [UIView animations] should be_empty;
+            });
+
+            describe(@"running animations", ^{
+                beforeEach(^{
+                    [[UIView lastAnimation] animate];
+                });
+
+                it(@"should run the animation block", ^{
+                    animationBlockCalled should be_truthy;
+                });
+            });
+
+            describe(@"completing", ^{
+                beforeEach(^{
+                    [[UIView lastAnimation] animate];
+                    [[UIView lastAnimation] complete];
+                });
+
+                it(@"should run the completion block with YES", ^{
+                    completionBlockCalled should be_truthy;
+                    completionBlockParameter should be_truthy;
+                });
+            });
+
+            describe(@"cancelling", ^{
+                beforeEach(^{
+                    [[UIView lastAnimation] cancel];
+                });
+
+                it(@"should call the completion block with NO", ^{
+                    completionBlockCalled should be_truthy;
+                    completionBlockParameter should be_falsy;
+                });
             });
         });
 
-        describe(@"completing", ^{
+        describe(@"animation", ^{
             beforeEach(^{
-                [[UIView lastAnimation] animate];
-                [[UIView lastAnimation] complete];
+                [UIView animateWithDuration:0.666
+                                 animations:^{
+                                     animationBlockCalled = YES;
+                                 }
+                                 completion:^(BOOL finished) {
+                                     completionBlockCalled = YES;
+                                     completionBlockParameter = finished;
+                                 }];
             });
 
-            it(@"should run the completion block with YES", ^{
-                completionBlockCalled should be_truthy;
-                completionBlockParameter should be_truthy;
-            });
+            itShouldBehaveLike(@"paused animation or transtion");
         });
 
-        describe(@"cancelling", ^{
+        describe(@"transition", ^{
+            __block UIView *view;
+
             beforeEach(^{
-                [[UIView lastAnimation] cancel];
+                view = [[UIView alloc] init];
+
+                [UIView transitionWithView:view
+                                  duration:0.666
+                                   options:UIViewAnimationOptionTransitionFlipFromBottom
+                                animations:^{
+                                    animationBlockCalled = YES;
+                                }
+                                completion:^(BOOL finished) {
+                                    completionBlockCalled = YES;
+                                    completionBlockParameter = finished;
+                                }];
             });
 
-            it(@"should call the completion block with NO", ^{
-                completionBlockCalled should be_truthy;
-                completionBlockParameter should be_falsy;
+            it(@"should record the view", ^{
+                [[UIView lastAnimation] withView] should be_same_instance_as(view);
             });
+
+            itShouldBehaveLike(@"paused animation or transtion");
         });
     });
 });

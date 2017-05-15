@@ -13,6 +13,10 @@ static NSMutableArray *animations__;
     }
 }
 
++ (UIView*)lastWithView {
+   return [(PCKViewAnimation*)[animations__ lastObject] withView];
+}
+
 + (NSTimeInterval)lastAnimationDuration {
     return [(PCKViewAnimation*)[animations__ lastObject] duration];
 }
@@ -82,6 +86,26 @@ static NSMutableArray *animations__;
     animation.delay = delay;
     animation.springWithDamping = dampingRatio;
     animation.initialSpringVelocity = velocity;
+    animation.options = options;
+    animation.animationBlock = animations;
+    animation.completionBlock = completion;
+    [animations__ addObject:animation];
+
+    if (shouldImmediatelyExecuteAnimationBlocks__) {
+        [animation animate];
+        [animation complete];
+    }
+}
+
++ (void)transitionWithView:(UIView *)view
+                  duration:(NSTimeInterval)duration
+                   options:(UIViewAnimationOptions)options
+                animations:(void (^)(void))animations
+                completion:(void (^)(BOOL finished))completion {
+
+    PCKViewAnimation *animation = [[PCKViewAnimation alloc] init];
+    animation.withView = view;
+    animation.duration = duration;
     animation.options = options;
     animation.animationBlock = animations;
     animation.completionBlock = completion;
