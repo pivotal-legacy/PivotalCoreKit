@@ -17,6 +17,14 @@ static NSMutableArray *animations__;
    return [(PCKViewAnimation*)[animations__ lastObject] withView];
 }
 
++ (UIView*)lastFromView {
+    return [(PCKViewAnimation*)[animations__ lastObject] fromView];
+}
+
++ (UIView*)lastToView {
+    return [(PCKViewAnimation*)[animations__ lastObject] toView];
+}
+
 + (NSTimeInterval)lastAnimationDuration {
     return [(PCKViewAnimation*)[animations__ lastObject] duration];
 }
@@ -117,6 +125,25 @@ static NSMutableArray *animations__;
     }
 }
 
++ (void)transitionFromView:(UIView *)fromView
+                    toView:(UIView *)toView
+                  duration:(NSTimeInterval)duration
+                   options:(UIViewAnimationOptions)options
+                completion:(void (^)(BOOL finished))completion {
+
+    PCKViewAnimation *animation = [[PCKViewAnimation alloc] init];
+    animation.fromView = fromView;
+    animation.toView = toView;
+    animation.duration = duration;
+    animation.options = options;
+    animation.completionBlock = completion;
+    [animations__ addObject:animation];
+
+    if (shouldImmediatelyExecuteAnimationBlocks__) {
+        [animation complete];
+    }
+}
+
 #pragma mark - CedarHooks
 
 + (void)beforeEach {
@@ -128,7 +155,9 @@ static NSMutableArray *animations__;
 @implementation PCKViewAnimation
 
 - (void)animate {
-    self.animationBlock();
+    if (self.animationBlock) {
+        self.animationBlock();
+    }
 }
 
 - (void)complete {
