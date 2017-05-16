@@ -203,7 +203,7 @@ describe(@"UIView+StubbedAnimation", ^{
             [UIView pauseAnimations];
         });
 
-        sharedExamplesFor(@"not exacuting animation or completion", ^(NSDictionary *sharedContext) {
+        sharedExamplesFor(@"not executing animation or completion", ^(NSDictionary *sharedContext) {
             it(@"should not execute the the animation block", ^{
                 animationBlockCalled should be_falsy;
             });
@@ -289,7 +289,7 @@ describe(@"UIView+StubbedAnimation", ^{
                                  }];
             });
 
-            itShouldBehaveLike(@"not exacuting animation or completion");
+            itShouldBehaveLike(@"not executing animation or completion");
             itShouldBehaveLike(@"completing, reseting and cancelling");
             itShouldBehaveLike(@"resuming with animation block");
         });
@@ -316,7 +316,7 @@ describe(@"UIView+StubbedAnimation", ^{
                 [[UIView lastAnimation] withView] should be_same_instance_as(view);
             });
 
-            itShouldBehaveLike(@"not exacuting animation or completion");
+            itShouldBehaveLike(@"not executing animation or completion");
             itShouldBehaveLike(@"completing, reseting and cancelling");
             itShouldBehaveLike(@"resuming without animation block");
         });
@@ -347,7 +347,7 @@ describe(@"UIView+StubbedAnimation", ^{
                 [[UIView lastAnimation] toView] should be_same_instance_as(toView);
             });
 
-            itShouldBehaveLike(@"not exacuting animation or completion");
+            itShouldBehaveLike(@"not executing animation or completion");
             itShouldBehaveLike(@"completing, reseting and cancelling");
             itShouldBehaveLike(@"resuming without animation block");
         });
