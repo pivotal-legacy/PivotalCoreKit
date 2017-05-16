@@ -7,6 +7,7 @@
 * Fixed modulemap for iOS Foundation+PivotalSpecHelper dynamic framework
 * Adds a spec helper for UIPageControl
 * Support for determining visibility of UIViews
+* Adds stub for testing UIView transition methods
 * Add nullability annotations to PCK projects
   - this should improve usability from Swift, but if you encounter problems, [please report them](https://github.com/pivotal/pivotalcorekit/issues/new)!
 
