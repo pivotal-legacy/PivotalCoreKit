@@ -137,7 +137,6 @@
 		34A663531BDF1EB800EF0FEA /* PSHKFixtures.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96BBF168B544D00861DF1 /* PSHKFixtures.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		34A663541BDF1EBF00EF0FEA /* PSHKFakeHTTPURLResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96BBA168B544D00861DF1 /* PSHKFakeHTTPURLResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		34A663551BDF1EBF00EF0FEA /* PSHKFakeOperationQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = AEB2B8DC18F703C800E26FAD /* PSHKFakeOperationQueue.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		34A663561BDF1EBF00EF0FEA /* FakeOperationQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96BB8168B544D00861DF1 /* FakeOperationQueue.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		34A663571BDF1EBF00EF0FEA /* PSHKFakeResponses.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96BBC168B544D00861DF1 /* PSHKFakeResponses.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		34A663581BDF1EC300EF0FEA /* Foundation+PivotalSpecHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96CBF168B6FFC00861DF1 /* Foundation+PivotalSpecHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		34A663761BDF217500EF0FEA /* PCKConnectionDelegateWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = E309448A16F117180034B3A9 /* PCKConnectionDelegateWrapper.m */; };
@@ -157,7 +156,6 @@
 		34A663841BDF219B00EF0FEA /* PSHKFixtures.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96BBF168B544D00861DF1 /* PSHKFixtures.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		34A663851BDF219F00EF0FEA /* PSHKFakeHTTPURLResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96BBA168B544D00861DF1 /* PSHKFakeHTTPURLResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		34A663861BDF219F00EF0FEA /* PSHKFakeOperationQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = AEB2B8DC18F703C800E26FAD /* PSHKFakeOperationQueue.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		34A663871BDF219F00EF0FEA /* FakeOperationQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96BB8168B544D00861DF1 /* FakeOperationQueue.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		34A663881BDF219F00EF0FEA /* PSHKFakeResponses.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96BBC168B544D00861DF1 /* PSHKFakeResponses.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		34A663891BDF21A300EF0FEA /* Foundation+PivotalSpecHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96CBF168B6FFC00861DF1 /* Foundation+PivotalSpecHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		34A663A91BDF24E800EF0FEA /* Foundation_PivotalCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34A663031BDF1A9900EF0FEA /* Foundation_PivotalCore.framework */; };
@@ -321,7 +319,6 @@
 		AE3F05891BE81C8F002BA0DE /* PSHKFixtures.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96BBF168B544D00861DF1 /* PSHKFixtures.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE3F058A1BE81C8F002BA0DE /* PSHKFakeHTTPURLResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96BBA168B544D00861DF1 /* PSHKFakeHTTPURLResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE3F058B1BE81C8F002BA0DE /* PSHKFakeOperationQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = AEB2B8DC18F703C800E26FAD /* PSHKFakeOperationQueue.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AE3F058C1BE81C8F002BA0DE /* FakeOperationQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96BB8168B544D00861DF1 /* FakeOperationQueue.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE3F058D1BE81C8F002BA0DE /* PSHKFakeResponses.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96BBC168B544D00861DF1 /* PSHKFakeResponses.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE3F058E1BE81C8F002BA0DE /* Foundation+PivotalSpecHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96CBF168B6FFC00861DF1 /* Foundation+PivotalSpecHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE3F058F1BE81C9E002BA0DE /* PCKConnectionDelegateWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = E309448A16F117180034B3A9 /* PCKConnectionDelegateWrapper.m */; };
@@ -383,7 +380,6 @@
 		AEA96BC2168B544D00861DF1 /* NSURLConnection+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA96BB4168B544D00861DF1 /* NSURLConnection+Spec.m */; };
 		AEA96BC3168B544D00861DF1 /* NSURLRequest+Spec.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96BB5168B544D00861DF1 /* NSURLRequest+Spec.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AEA96BC4168B544D00861DF1 /* NSURLRequest+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA96BB6168B544D00861DF1 /* NSURLRequest+Spec.m */; };
-		AEA96BC5168B544D00861DF1 /* FakeOperationQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96BB8168B544D00861DF1 /* FakeOperationQueue.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AEA96BC7168B544D00861DF1 /* PSHKFakeHTTPURLResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96BBA168B544D00861DF1 /* PSHKFakeHTTPURLResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AEA96BC8168B544D00861DF1 /* PSHKFakeHTTPURLResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA96BBB168B544D00861DF1 /* PSHKFakeHTTPURLResponse.m */; };
 		AEA96BC9168B544D00861DF1 /* PSHKFakeResponses.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA96BBC168B544D00861DF1 /* PSHKFakeResponses.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -1502,7 +1498,6 @@
 				34A6634E1BDF1E9D00EF0FEA /* PCKConnectionBlockDelegate.h in Headers */,
 				34A663511BDF1EA700EF0FEA /* NSUUID+Spec.h in Headers */,
 				34A6634F1BDF1EA700EF0FEA /* NSURLConnection+Spec.h in Headers */,
-				34A663561BDF1EBF00EF0FEA /* FakeOperationQueue.h in Headers */,
 				34A663581BDF1EC300EF0FEA /* Foundation+PivotalSpecHelper.h in Headers */,
 				34A663541BDF1EBF00EF0FEA /* PSHKFakeHTTPURLResponse.h in Headers */,
 				34A663531BDF1EB800EF0FEA /* PSHKFixtures.h in Headers */,
@@ -1520,7 +1515,6 @@
 				34A663801BDF219100EF0FEA /* PCKConnectionBlockDelegate.h in Headers */,
 				34A663831BDF219700EF0FEA /* NSUUID+Spec.h in Headers */,
 				34A663811BDF219700EF0FEA /* NSURLConnection+Spec.h in Headers */,
-				34A663871BDF219F00EF0FEA /* FakeOperationQueue.h in Headers */,
 				34A663891BDF21A300EF0FEA /* Foundation+PivotalSpecHelper.h in Headers */,
 				34A663851BDF219F00EF0FEA /* PSHKFakeHTTPURLResponse.h in Headers */,
 				34A663841BDF219B00EF0FEA /* PSHKFixtures.h in Headers */,
@@ -1569,7 +1563,6 @@
 				AE3F05851BE81C8F002BA0DE /* PCKConnectionBlockDelegate.h in Headers */,
 				AE3F05881BE81C8F002BA0DE /* NSUUID+Spec.h in Headers */,
 				AE3F05861BE81C8F002BA0DE /* NSURLConnection+Spec.h in Headers */,
-				AE3F058C1BE81C8F002BA0DE /* FakeOperationQueue.h in Headers */,
 				AE3F058E1BE81C8F002BA0DE /* Foundation+PivotalSpecHelper.h in Headers */,
 				AE3F058A1BE81C8F002BA0DE /* PSHKFakeHTTPURLResponse.h in Headers */,
 				AE3F05891BE81C8F002BA0DE /* PSHKFixtures.h in Headers */,
@@ -1615,7 +1608,6 @@
 				AEA96BC1168B544D00861DF1 /* NSURLConnection+Spec.h in Headers */,
 				AEB2B8DE18F703C800E26FAD /* PSHKFakeOperationQueue.h in Headers */,
 				AEA96BC3168B544D00861DF1 /* NSURLRequest+Spec.h in Headers */,
-				AEA96BC5168B544D00861DF1 /* FakeOperationQueue.h in Headers */,
 				AEA96BC7168B544D00861DF1 /* PSHKFakeHTTPURLResponse.h in Headers */,
 				34A663521BDF1EAE00EF0FEA /* NSUUID+Spec.h in Headers */,
 				AEA96BC9168B544D00861DF1 /* PSHKFakeResponses.h in Headers */,

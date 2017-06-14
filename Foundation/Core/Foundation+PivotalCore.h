@@ -7,6 +7,11 @@
 #import "NSDictionary+QueryString.h"
 #import "NSURL+QueryComponents.h"
 
+#import "PCKCompletionHandler.h"
+#import "PCKErrorBlock.h"
+#import "PCKMaybeBlock.h"
+#import "PCKMonad.h"
+
 #ifdef TARGET_OS_WATCH
 #if !TARGET_OS_WATCH
 
@@ -17,6 +22,9 @@
 #import "PCKResponseParser.h"
 #import "PCKXMLParser.h"
 #import "PCKXMLParserDelegate.h"
+#import "PCKHTTPConnection.h"
+#import "PCKHTTPConnectionDelegate.h"
+#import "PCKHTTPConnectionOperation.h"
 
 #endif
 #endif
