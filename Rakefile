@@ -307,39 +307,11 @@ end
 
 task :core_location => ["core_location:build", "core_location:spec"]
 
-namespace :watchkit do
-  project = "WatchKit/WatchKit"
-  target = "WatchKit"
-
-  namespace :build do
-    desc "Build Fake WatchKit dynamic framework for iOS"
-    task :ios do
-      build_output_filename = output_file("watchkit:build:ios")
-      build_target(target, project: project, sdk: 'iphonesimulator', output_file: build_output_filename)
-    end
-  end
-
-  namespace :spec do
-    desc "Build and run WatchKit specs on iOS"
-    task :ios do
-      build_and_test_scheme("WatchKit")
-    end
-  end
-
-  task :spec => ["spec:ios"]
-  task :build => ["build:ios"]
-  task :clean do
-    system_or_exit(%Q[xcodebuild -project #{project}.xcodeproj -alltargets -configuration #{CONFIGURATION} clean SYMROOT=#{BUILD_DIR}], {}, output_file("watchkit:clean"))
-  end
-end
-
-task :watchkit => ["watchkit:spec"]
-
 namespace :all do
   desc "Build everything"
-  task :build => ["foundation:build", "uikit:build", "core_location:build", "watchkit:build"]
+  task :build => ["foundation:build", "uikit:build", "core_location:build"]
   desc "Run all specs"
-  task :spec => ["foundation:spec", "uikit:spec", "core_location:spec", "watchkit:spec"]
+  task :spec => ["foundation:spec", "uikit:spec", "core_location:spec"]
   desc "Clean all targets"
-  task :clean => ["foundation:clean", "uikit:clean", "core_location:clean", "watchkit:clean"]
+  task :clean => ["foundation:clean", "uikit:clean", "core_location:clean"]
 end
