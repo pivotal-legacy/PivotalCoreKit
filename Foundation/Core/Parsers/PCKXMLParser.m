@@ -1,6 +1,6 @@
 #import "PCKXMLParser.h"
 #import "PCKXMLParserDelegate.h"
-#import <libxml/tree.h>
+#import <libxml/parser.h>
 
 static xmlSAXHandler simpleSAXStruct;
 
