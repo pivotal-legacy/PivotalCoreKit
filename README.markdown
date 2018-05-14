@@ -193,8 +193,8 @@ Documentation for specific methods and functionality can be found at http://coco
 
 ## MIT License
 
-Copyright (c) 2014 Pivotal Labs (http://pivotallabs.com/)
-Contact email: akitchen@pivotallabs.com
+Copyright (c) 2014-2018 Pivotal Labs (http://pivotal.io)
+Contact email: tjarratt@pivotal.io
 
 Permission is hereby granted, free of charge, to any person
 obtaining a copy of this software and associated documentation
