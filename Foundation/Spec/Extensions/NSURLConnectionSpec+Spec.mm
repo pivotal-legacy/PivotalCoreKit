@@ -174,8 +174,8 @@ describe(@"NSURLConnection (spec extensions)", ^{
         });
     });
 
-    describe(@"receive succesful response", ^{
-        it(@"should send a succesful response (along with the data) to the delegate", ^{
+    describe(@"receive successful response", ^{
+        it(@"should send a successful response (along with the data) to the delegate", ^{
             ConnectionDelegate *delegate = [[ConnectionDelegate alloc] init];
             connection = [NSURLConnection connectionWithRequest:request delegate:delegate];
             [connection receiveSuccesfulResponseWithBody:@"The Internet"];
