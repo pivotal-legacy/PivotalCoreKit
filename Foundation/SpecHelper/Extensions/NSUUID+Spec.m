@@ -31,7 +31,9 @@ static NSMutableArray *uuids;
 
 + (NSUUID *)UUIDWithLogging {
     NSUUID *uuid = [self UUIDWithoutLogging];
-    [uuids addObject:uuid];
+    @synchronized(uuids) {
+        [uuids addObject:uuid];
+    }
 
     return uuid;
 }
