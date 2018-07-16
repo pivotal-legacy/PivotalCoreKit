@@ -1,12 +1,13 @@
-#import "UIApplication+Spec.h"
 #import "UIActivityViewController+Spec.h"
 #import "UIAlertAction+Spec.h"
 #import "UIAlertController+Spec.h"
+#import "UIApplication+Spec.h"
 #import "UIGestureRecognizer+Spec.h"
+#import "UINavigationController+Spec.h"
+#import "UIPopoverController+Spec.h"
 #import "UIView+StubbedAnimation.h"
 #import "UIView+StubbedGestureRecognizers.h"
 #import "UIViewController+Spec.h"
-#import "UIPopoverController+Spec.h"
 
 #if !TARGET_OS_TV
 #import "UIActionSheet+Spec.h"

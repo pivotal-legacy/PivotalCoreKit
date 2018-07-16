@@ -23,6 +23,14 @@
 @implementation UINavigationControllerStubbing
 
 + (void)load {
+    [self pck_useSpecStubs:YES];
+}
+
++ (void)pck_useSpecStubs:(BOOL)useSpecStubs {
+    if (!useSpecStubs) {
+        return;
+    }
+
     [PCKMethodRedirector redirectSelector:@selector(pushViewController:animated:)
                                  forClass:[UINavigationController class]
                                        to:@selector(pushViewController:ignoringAnimated:)

@@ -431,6 +431,9 @@
 		B8C62E7216BC04940009CDAD /* Target.m in Sources */ = {isa = PBXBuildFile; fileRef = B8C62E7116BC04940009CDAD /* Target.m */; };
 		B8C62E7316BC07F60009CDAD /* UIBarButtonItem+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = B8C62E6B16BC03420009CDAD /* UIBarButtonItem+Spec.h */; };
 		DE99CA8267EEACF8EE9A941F /* UIGestureRecognizer+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = DE99CB8E2255BDC5D711130D /* UIGestureRecognizer+Spec.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		F7387E6220FD178100E06953 /* UINavigationController+Spec.h in Headers */ = {isa = PBXBuildFile; fileRef = F7387E4D20FD174500E06953 /* UINavigationController+Spec.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F7387E6320FD178100E06953 /* UINavigationController+Spec.h in Headers */ = {isa = PBXBuildFile; fileRef = F7387E4D20FD174500E06953 /* UINavigationController+Spec.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F7387E6420FD178600E06953 /* UINavigationController+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = F7387E4D20FD174500E06953 /* UINavigationController+Spec.h */; };
 		FA07586B18120E47001817BF /* UICollectionViewCellSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA07586618120BB1001817BF /* UICollectionViewCellSpec+Spec.mm */; };
 		FA1A516A186290C800C22BA8 /* UIImageView+PivotalCore.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1A5169186290C800C22BA8 /* UIImageView+PivotalCore.m */; };
 		FA1A5179186290E600C22BA8 /* UIImageView+PivotalCoreSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA1A5178186290E600C22BA8 /* UIImageView+PivotalCoreSpec.mm */; };
@@ -706,6 +709,7 @@
 				AEA2C5151B1A143800DE5864 /* UIAlertAction+Spec.h in Copy headers to framework */,
 				AECB46BA1A3FBB6C00398720 /* UIGestureRecognizer+Spec.h in Copy headers to framework */,
 				AEF5D45D1A030D2E00C4DC3D /* PCKMethodRedirector.h in Copy headers to framework */,
+				F7387E6420FD178600E06953 /* UINavigationController+Spec.h in Copy headers to framework */,
 				89F516A01B1B7B3F0005AB04 /* UITableViewRowAction+Spec.h in Copy headers to framework */,
 				AE61C13F1A40B98900C97245 /* UIAlertController+Spec.h in Copy headers to framework */,
 				AE244D4319077EEB00ED96E9 /* UIActivityViewController+Spec.h in Copy headers to framework */,
@@ -898,6 +902,7 @@
 		DE99C6A16495A2EF63F66D48 /* UIViewController+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Spec.h"; sourceTree = "<group>"; };
 		DE99C78703C6C6CA8C0465B3 /* UIGestureRecognizer+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIGestureRecognizer+Spec.h"; sourceTree = "<group>"; };
 		DE99CB8E2255BDC5D711130D /* UIGestureRecognizer+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIGestureRecognizer+Spec.m"; sourceTree = "<group>"; };
+		F7387E4D20FD174500E06953 /* UINavigationController+Spec.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+Spec.h"; sourceTree = "<group>"; };
 		FA07586618120BB1001817BF /* UICollectionViewCellSpec+Spec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UICollectionViewCellSpec+Spec.mm"; sourceTree = "<group>"; };
 		FA07586818120D19001817BF /* UICollectionViewCell+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionViewCell+Spec.h"; sourceTree = "<group>"; };
 		FA07586918120D19001817BF /* UICollectionViewCell+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionViewCell+Spec.m"; sourceTree = "<group>"; };
@@ -1354,8 +1359,11 @@
 				AE062BC01A4323A800AF8D33 /* UIAlertAction+Spec.m */,
 				AE61C1301A40B95E00C97245 /* UIAlertController+Spec.h */,
 				AE61C1311A40B95E00C97245 /* UIAlertController+Spec.m */,
+				AE7E72151AF2AE9A000E48EE /* UIApplication+Spec.h */,
+				AE7E72161AF2AE9A000E48EE /* UIApplication+Spec.m */,
 				DE99C78703C6C6CA8C0465B3 /* UIGestureRecognizer+Spec.h */,
 				DE99CB8E2255BDC5D711130D /* UIGestureRecognizer+Spec.m */,
+				F7387E4D20FD174500E06953 /* UINavigationController+Spec.h */,
 				AEBB53BE19F711340032947D /* UINavigationController+Spec.m */,
 				AEB6662A18C6681A00B09C00 /* UIPopoverController+Spec.h */,
 				AEB6662B18C6681A00B09C00 /* UIPopoverController+Spec.m */,
@@ -1365,8 +1373,6 @@
 				AECB46AB1A3FBA9E00398720 /* UIView+StubbedGestureRecognizers.m */,
 				DE99C6A16495A2EF63F66D48 /* UIViewController+Spec.h */,
 				AEC40CB2174C22BD00474D2D /* UIViewController+Spec.m */,
-				AE7E72151AF2AE9A000E48EE /* UIApplication+Spec.h */,
-				AE7E72161AF2AE9A000E48EE /* UIApplication+Spec.m */,
 			);
 			path = Stubs;
 			sourceTree = "<group>";
@@ -1448,6 +1454,7 @@
 				34A6648E1BDFE9B300EF0FEA /* UIPopoverController+Spec.h in Headers */,
 				34A6648C1BDFE9B300EF0FEA /* UIGestureRecognizer+Spec.h in Headers */,
 				34A664941BDFE9B300EF0FEA /* UIApplication+Spec.h in Headers */,
+				F7387E6320FD178100E06953 /* UINavigationController+Spec.h in Headers */,
 				34A664951BDFE9B700EF0FEA /* UIKit+PivotalSpecHelperStubs.h in Headers */,
 				34A664911BDFE9B300EF0FEA /* UIView+StubbedGestureRecognizers.h in Headers */,
 				34A664971BDFE9EB00EF0FEA /* PCKMethodRedirector.h in Headers */,
@@ -1491,6 +1498,7 @@
 				AE0D6ABE1BE942AB0095ACF3 /* UIApplication+Spec.h in Headers */,
 				AE0D6AB11BE942AB0095ACF3 /* UIActionSheet+Spec.h in Headers */,
 				AE0D6AB21BE942AB0095ACF3 /* UIAlertView+Spec.h in Headers */,
+				F7387E6220FD178100E06953 /* UINavigationController+Spec.h in Headers */,
 				AE0D6AB71BE942AB0095ACF3 /* UIAlertAction+Spec.h in Headers */,
 				AE0D6AB61BE942AB0095ACF3 /* UIActivityViewController+Spec.h in Headers */,
 				AE0D6AB81BE942AB0095ACF3 /* UIAlertController+Spec.h in Headers */,
