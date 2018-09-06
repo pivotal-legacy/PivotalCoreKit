@@ -27,44 +27,68 @@ describe(@"UIGestureRecognizerSpec", ^{
 
     sharedExamplesFor(@"triggering a gesture recognizer", ^(NSDictionary *sharedContext) {
         describe(@"when initialized with a target", ^{
-            it(@"calls the target action when recognized", ^{
-                target should_not have_received(@selector(hello));
-                [recognizer recognize];
-                target should have_received(@selector(hello));
+            void (^sharedRecognition)(SEL, id) = ^(SEL selector, id arguments) {
+                it(@"calls the target action when recognized", ^{
+                    target should_not have_received(@selector(hello));
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+                    [recognizer performSelector:selector withObject:arguments];
+#pragma clang diagnostic pop
+                    target should have_received(@selector(hello));
+                });
+
+                describe(@"when the view containing the gesture recognizer is hidden", ^{
+                    beforeEach(^{
+                        view.hidden = YES;
+                    });
+
+                    it(@"raises an exception", ^{
+                        ^{
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+                            [recognizer performSelector:selector withObject:arguments];
+#pragma clang diagnostic pop
+                        } should raise_exception.with_reason(@"Can't recognize when in a hidden view");
+                    });
+                });
+
+                describe(@"when the gesture recognizer is not added to a view", ^{
+                    beforeEach(^{
+                        [view removeGestureRecognizer:recognizer];
+                    });
+
+                    it(@"raises an exception", ^{
+                        ^{
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+                            [recognizer performSelector:selector withObject:arguments];
+#pragma clang diagnostic pop
+                        } should raise_exception.with_reason(@"Can't recognize when not in a view");
+                    });
+                });
+
+                describe(@"when the gesture recognizer is disabled", ^{
+                    beforeEach(^{
+                        recognizer.enabled = NO;
+                    });
+
+                    it(@"raises an exception", ^{
+                        ^{
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+                            [recognizer performSelector:selector withObject:arguments];
+#pragma clang diagnostic pop
+                        } should raise_exception.with_reason(@"Can't recognize when recognizer is disabled");
+                    });
+                });
+            };
+
+            describe(@"-recognize", ^{
+                sharedRecognition(@selector(recognize), nil);
             });
 
-            describe(@"when the view containing the gesture recognizer is hidden", ^{
-                beforeEach(^{
-                    view.hidden = YES;
-                });
-
-                it(@"raises an exception", ^{
-                    ^{
-                        [recognizer recognize];
-                    } should raise_exception.with_reason(@"Can't recognize when in a hidden view");
-                });
-            });
-
-            describe(@"when the gesture recognizer is not added to a view", ^{
-                beforeEach(^{
-                    [view removeGestureRecognizer:recognizer];
-                });
-
-                it(@"raises an exception", ^{
-                    ^{ [recognizer recognize]; } should raise_exception.with_reason(@"Can't recognize when not in a view");
-                });
-            });
-
-            describe(@"when the gesture recognizer is disabled", ^{
-                beforeEach(^{
-                    recognizer.enabled = NO;
-                });
-
-                it(@"raises an exception", ^{
-                    ^{
-                        [recognizer recognize];
-                    } should raise_exception.with_reason(@"Can't recognize when recognizer is disabled");
-                });
+            describe(@"-recognizeWithState:", ^{
+                sharedRecognition(@selector(recognizeWithState:), @(UIGestureRecognizerStateChanged));
             });
         });
 
@@ -86,32 +110,140 @@ describe(@"UIGestureRecognizerSpec", ^{
                 });
             });
 
-            context(@"once the recoginzer has recognized a gesture, while the actions are being performed", ^{
-                beforeEach(^{
-                    [recognizer recognize];
+            context(@"once the recognizer has recognized a gesture, while the actions are being performed", ^{
+                context(@"if no state was specified", ^{
+                    beforeEach(^{
+                        [recognizer recognize];
+                    });
+
+                    it(@"should have the UIGestureRecognizerStateRecognized state", ^{
+                        capturedState should equal(UIGestureRecognizerStateRecognized);
+                        capturedState should equal(UIGestureRecognizerStateEnded);
+                    });
+
+                    it(@"should consistently report its state", ^{
+                        capturedState should equal(capturedStateUsingKVC);
+                    });
+
+                    it(@"should reset the recognizer's state to UIGestureRecognizerStatePossible", ^{
+                        recognizer.state should equal(UIGestureRecognizerStatePossible);
+                    });
+
+                    it(@"should report the correct state using valueForKey:", ^{
+                        [[recognizer valueForKey:@"state"] integerValue] should equal(UIGestureRecognizerStatePossible);
+                    });
                 });
 
-                it(@"should have the UIGestureRecognizerStateRecognized state", ^{
-                    capturedState should equal(UIGestureRecognizerStateRecognized);
-                    capturedState should equal(UIGestureRecognizerStateEnded);
-                });
+                context(@"if a state is recognized", ^{
+                    beforeEach(^{
+                        [recognizer recognizeWithState:UIGestureRecognizerStateBegan];
+                    });
 
-                it(@"should consistently report its state", ^{
-                    capturedState should equal(capturedStateUsingKVC);
+                    it(@"should have the specified state", ^{
+                        capturedState should equal(UIGestureRecognizerStateBegan);
+                    });
+
+                    it(@"should consistently report its state", ^{
+                        capturedState should equal(capturedStateUsingKVC);
+                    });
+
+                    it(@"should not reset the recognizer's state", ^{
+                        recognizer.state should equal(UIGestureRecognizerStateBegan);
+                    });
+
+                    it(@"should still report the given state using valueForKey:", ^{
+                        [[recognizer valueForKey:@"state"] integerValue] should equal(UIGestureRecognizerStateBegan);
+                    });
                 });
             });
 
-            context(@"once the recognizer has completed recognizing a gesture", ^{
+            context(@"asking the recognizer for it's location in a view", ^{
                 beforeEach(^{
-                    [recognizer recognize];
+                    [recognizer setLocationInView:CGPointMake(5, 5)];
                 });
 
-                it(@"should reset the state to UIGestureRecognizerStatePossible", ^{
-                    recognizer.state should equal(UIGestureRecognizerStatePossible);
+                it(@"should return CGPointZero if mocking is turned off", ^{
+                    [recognizer disableLocationInViewMocking];
+                    [recognizer locationInView:view] should equal(CGPointZero);
                 });
 
-                it(@"should report the correct state using valueForKey:", ^{
-                    [[recognizer valueForKey:@"state"] integerValue] should equal(UIGestureRecognizerStatePossible);
+                context(@"with location mocking enabled", ^{
+                    beforeEach(^{
+                        [recognizer enableLocationInViewMocking];
+                    });
+
+                    afterEach(^{
+                        [recognizer disableLocationInViewMocking];
+                    });
+
+                    context(@"In the view it's stubbed for", ^{
+                        it(@"should return the point it was stubbed for", ^{
+                            [recognizer locationInView:view] should equal(CGPointMake(5, 5));
+                        });
+                    });
+
+                    context(@"In a superview of that view", ^{
+                        __block UIView *superview;
+
+                        beforeEach(^{
+                            superview = [[UIView alloc] init];
+
+                            view.frame = CGRectMake(10, 10, 20, 20);
+                            [superview addSubview:view];
+                        });
+
+                        it(@"should correctly translate to the superview's coordinate system",^{
+                            [recognizer locationInView:superview] should equal(CGPointMake(15, 15));
+                        });
+                    });
+
+                    context(@"In a subview of that view", ^{
+                        __block UIView *subview;
+
+                        beforeEach(^{
+                            subview = [[UIView alloc] initWithFrame:CGRectMake(10, 10, 20, 20)];
+
+                            [view addSubview:subview];
+                        });
+
+                        it(@"should correctly translate to the subview's coordinate system",^{
+                            [recognizer locationInView:subview] should equal(CGPointMake(-5, -5));
+                        });
+                    });
+
+                    context(@"In a view from an entirely different hierarchy", ^{
+                        it(@"raises an exception", ^{
+                            UIView *completelyDifferentView = [[UIView alloc] init];
+
+                            ^{
+                                [recognizer locationInView:completelyDifferentView];
+                            } should raise_exception.with_reason(@"Can't give location in view not related to gesture recognizer's view");
+                        });
+                    });
+
+                    context(@"With a nil view", ^{
+                        context(@"If the view is in a window hierarchy", ^{
+                            __block UIWindow *window;
+                            beforeEach(^{
+                                window = [[UIWindow alloc] init];
+
+                                view.frame = CGRectMake(5, 5, 20, 20);
+                                [window addSubview:view];
+                            });
+
+                            it(@"should return the point it was stubbed for, translated to the window's coordinate points", ^{
+                                [recognizer locationInView:nil] should equal(CGPointMake(10, 10));
+                            });
+                        });
+
+                        context(@"If the view is not in a window hierarchy", ^{
+                            it(@"raises an exception", ^{
+                                ^{
+                                    [recognizer locationInView:nil];
+                                } should raise_exception.with_reason(@"Can't give location in view with no view and gesture recognizer not part of a window hierarchy");
+                            });
+                        });
+                    });
                 });
             });
         });
@@ -155,14 +287,20 @@ describe(@"UIGestureRecognizerSpec", ^{
 
         itShouldBehaveLike(@"triggering a gesture recognizer");
 
-        describe(@"when initialized without a target or action", ^{
-            it(@"should not raise", ^{
-                UITapGestureRecognizer *recognizer = [[UITapGestureRecognizer alloc] initWithTarget:nil action:nil];
-                [view addGestureRecognizer:recognizer];
-                ^{
-                    [recognizer recognize];
-                } should_not raise_exception;
-            });
+        it(@"-recognize should not raise", ^{
+            UIGestureRecognizer *recognizer = [[UITapGestureRecognizer alloc] initWithTarget:nil action:nil];
+            [view addGestureRecognizer:recognizer];
+            ^{
+                [recognizer recognize];
+            } should_not raise_exception;
+        });
+
+        it(@"-recognizeWithState: should not raise", ^{
+            UIGestureRecognizer *recognizer = [[UITapGestureRecognizer alloc] initWithTarget:nil action:nil];
+            [view addGestureRecognizer:recognizer];
+            ^{
+                [recognizer recognizeWithState:UIGestureRecognizerStateFailed];
+            } should_not raise_exception;
         });
     });
 
