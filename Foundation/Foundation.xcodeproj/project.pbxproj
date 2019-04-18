@@ -401,8 +401,8 @@
 		AEA96BF7168B56BF00861DF1 /* PCKHTTPInterfaceSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEA96BEA168B56BF00861DF1 /* PCKHTTPInterfaceSpec.mm */; };
 		AEA96BF9168B56BF00861DF1 /* PCKResponseParserSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEA96BED168B56BF00861DF1 /* PCKResponseParserSpec.mm */; };
 		AEA96BFA168B56BF00861DF1 /* PCKXMLParserSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEA96BEE168B56BF00861DF1 /* PCKXMLParserSpec.mm */; };
-		AEA96BFE168B56FA00861DF1 /* Foundation+PivotalCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEA96B49168B506500861DF1 /* Foundation+PivotalCore.framework */; };
-		AEA96C03168B570B00861DF1 /* Foundation+PivotalSpecHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEA96B9E168B541900861DF1 /* Foundation+PivotalSpecHelper.framework */; };
+		AEA96BFE168B56FA00861DF1 /* Foundation_PivotalCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEA96B49168B506500861DF1 /* Foundation_PivotalCore.framework */; };
+		AEA96C03168B570B00861DF1 /* Foundation_PivotalSpecHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEA96B9E168B541900861DF1 /* Foundation_PivotalSpecHelper.framework */; };
 		AEA96C08168B58AA00861DF1 /* FakeConnectionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA96C07168B58AA00861DF1 /* FakeConnectionDelegate.m */; };
 		AEA96C39168B602700861DF1 /* FixturesHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA96C38168B602700861DF1 /* FixturesHelper.m */; };
 		AEA96C55168B636E00861DF1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE24D5AF138170CD00E4420A /* Foundation.framework */; };
@@ -847,7 +847,7 @@
 		AE96934E182D97A900E7306C /* NSUUIDSpec+Spec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSUUIDSpec+Spec.mm"; sourceTree = "<group>"; };
 		AE96935F182D9A1900E7306C /* NSUUID+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUUID+Spec.h"; sourceTree = "<group>"; };
 		AE969360182D9A1900E7306C /* NSUUID+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUUID+Spec.m"; sourceTree = "<group>"; };
-		AEA96B49168B506500861DF1 /* Foundation+PivotalCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Foundation+PivotalCore.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEA96B49168B506500861DF1 /* Foundation_PivotalCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Foundation_PivotalCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEA96B5E168B50D900861DF1 /* NSData+PivotalCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+PivotalCore.h"; sourceTree = "<group>"; };
 		AEA96B5F168B50D900861DF1 /* NSData+PivotalCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+PivotalCore.m"; sourceTree = "<group>"; };
 		AEA96B60168B50D900861DF1 /* NSObject+MethodDecoration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MethodDecoration.h"; sourceTree = "<group>"; };
@@ -874,7 +874,7 @@
 		AEA96B77168B50D900861DF1 /* PCKXMLParserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCKXMLParserDelegate.h; sourceTree = "<group>"; };
 		AEA96B78168B50D900861DF1 /* PCKXMLParserDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCKXMLParserDelegate.m; sourceTree = "<group>"; };
 		AEA96B79168B50D900861DF1 /* Foundation+PivotalCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Foundation+PivotalCore.h"; sourceTree = "<group>"; };
-		AEA96B9E168B541900861DF1 /* Foundation+PivotalSpecHelper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Foundation+PivotalSpecHelper.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEA96B9E168B541900861DF1 /* Foundation_PivotalSpecHelper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Foundation_PivotalSpecHelper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEA96BB3168B544D00861DF1 /* NSURLConnection+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLConnection+Spec.h"; sourceTree = "<group>"; };
 		AEA96BB4168B544D00861DF1 /* NSURLConnection+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLConnection+Spec.m"; sourceTree = "<group>"; };
 		AEA96BB5168B544D00861DF1 /* NSURLRequest+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLRequest+Spec.h"; sourceTree = "<group>"; };
@@ -1026,8 +1026,8 @@
 				AEE971D41708EB760094B5A2 /* libFakeHTTP.a in Frameworks */,
 				AEBCCB6E168B7E930056EE83 /* Foundation.framework in Frameworks */,
 				AEBCCB6D168B7E7C0056EE83 /* Cedar.framework in Frameworks */,
-				AEA96C03168B570B00861DF1 /* Foundation+PivotalSpecHelper.framework in Frameworks */,
-				AEA96BFE168B56FA00861DF1 /* Foundation+PivotalCore.framework in Frameworks */,
+				AEA96C03168B570B00861DF1 /* Foundation_PivotalSpecHelper.framework in Frameworks */,
+				AEA96BFE168B56FA00861DF1 /* Foundation_PivotalCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1067,8 +1067,8 @@
 		034768DFFF38A50411DB9C8B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AEA96B49168B506500861DF1 /* Foundation+PivotalCore.framework */,
-				AEA96B9E168B541900861DF1 /* Foundation+PivotalSpecHelper.framework */,
+				AEA96B49168B506500861DF1 /* Foundation_PivotalCore.framework */,
+				AEA96B9E168B541900861DF1 /* Foundation_PivotalSpecHelper.framework */,
 				AEA96BD3168B561500861DF1 /* FoundationSpec */,
 				AEA96C54168B636E00861DF1 /* libFoundation+PivotalCore-StaticLib.a */,
 				AEA96C64168B63BD00861DF1 /* libFoundation+PivotalSpecHelper-StaticLib.a */,
@@ -1802,7 +1802,7 @@
 			);
 			name = "Foundation+PivotalCore";
 			productName = "Foundation+PivotalCore";
-			productReference = AEA96B49168B506500861DF1 /* Foundation+PivotalCore.framework */;
+			productReference = AEA96B49168B506500861DF1 /* Foundation_PivotalCore.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		AEA96B9D168B541900861DF1 /* Foundation+PivotalSpecHelper */ = {
@@ -1820,7 +1820,7 @@
 			);
 			name = "Foundation+PivotalSpecHelper";
 			productName = "Foundation+PivotalSpecHelper";
-			productReference = AEA96B9E168B541900861DF1 /* Foundation+PivotalSpecHelper.framework */;
+			productReference = AEA96B9E168B541900861DF1 /* Foundation_PivotalSpecHelper.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		AEA96BD2168B561500861DF1 /* FoundationSpec */ = {
@@ -3427,8 +3427,11 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
@@ -3443,8 +3446,10 @@
 				INFOPLIST_FILE = "../InfoPlist/Framework-Info.plist";
 				INSTALL_PATH = "@executable_path";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MODULEMAP_FILE = "Core/Foundation+PivotalCore.modulemap";
 				PRODUCT_BUNDLE_IDENTIFIER = "io.pivotal.Foundation-PivotalCoreKit";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Foundation_PivotalCore;
+				VERSIONING_SYSTEM = "apple-generic";
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Debug;
@@ -3457,9 +3462,12 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -3468,8 +3476,10 @@
 				INFOPLIST_FILE = "../InfoPlist/Framework-Info.plist";
 				INSTALL_PATH = "@executable_path";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MODULEMAP_FILE = "Core/Foundation+PivotalCore.modulemap";
 				PRODUCT_BUNDLE_IDENTIFIER = "io.pivotal.Foundation-PivotalCoreKit";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Foundation_PivotalCore;
+				VERSIONING_SYSTEM = "apple-generic";
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Release;
@@ -3483,8 +3493,11 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -3499,8 +3512,10 @@
 				INFOPLIST_FILE = "../InfoPlist/Framework-Info.plist";
 				INSTALL_PATH = "@executable_path";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MODULEMAP_FILE = "SpecHelper/Foundation+PivotalSpecHelper.modulemap";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.pivotallabs.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Foundation_PivotalSpecHelper;
+				VERSIONING_SYSTEM = "apple-generic";
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Debug;
@@ -3514,9 +3529,12 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
@@ -3525,8 +3543,10 @@
 				INFOPLIST_FILE = "../InfoPlist/Framework-Info.plist";
 				INSTALL_PATH = "@executable_path";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MODULEMAP_FILE = "SpecHelper/Foundation+PivotalSpecHelper.modulemap";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.pivotallabs.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Foundation_PivotalSpecHelper;
+				VERSIONING_SYSTEM = "apple-generic";
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Release;

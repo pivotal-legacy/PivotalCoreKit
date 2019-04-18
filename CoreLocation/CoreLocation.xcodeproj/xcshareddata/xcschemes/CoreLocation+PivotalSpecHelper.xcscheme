@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "AE3848FF168CD8C800C99B55"
-               BuildableName = "CoreLocation+PivotalSpecHelper.framework"
+               BuildableName = "CoreLocation_PivotalSpecHelper.framework"
                BlueprintName = "CoreLocation+PivotalSpecHelper"
                ReferencedContainer = "container:CoreLocation.xcodeproj">
             </BuildableReference>
@@ -46,7 +46,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AE3848FF168CD8C800C99B55"
-            BuildableName = "CoreLocation+PivotalSpecHelper.framework"
+            BuildableName = "CoreLocation_PivotalSpecHelper.framework"
             BlueprintName = "CoreLocation+PivotalSpecHelper"
             ReferencedContainer = "container:CoreLocation.xcodeproj">
          </BuildableReference>
@@ -64,7 +64,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AE3848FF168CD8C800C99B55"
-            BuildableName = "CoreLocation+PivotalSpecHelper.framework"
+            BuildableName = "CoreLocation_PivotalSpecHelper.framework"
             BlueprintName = "CoreLocation+PivotalSpecHelper"
             ReferencedContainer = "container:CoreLocation.xcodeproj">
          </BuildableReference>
