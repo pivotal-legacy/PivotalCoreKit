@@ -2,7 +2,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef NSString * __nullable (^UIWebViewJavaScriptReturnBlock)();
+typedef NSString * __nullable (^UIWebViewJavaScriptReturnBlock)(void);
 
 @interface UIWebView (Spec)
 

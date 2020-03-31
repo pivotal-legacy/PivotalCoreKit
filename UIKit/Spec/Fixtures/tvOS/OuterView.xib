@@ -30,7 +30,7 @@
                     <color key="backgroundColor" red="0.088246079420555623" green="1" blue="0.50439886358217145" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="centerY" secondItem="EbQ-O5-hdQ" secondAttribute="centerY" id="DDH-87-apX"/>
-                        <constraint firstAttribute="width" constant="340" id="KpA-Zc-X1n"/>
+                        <constraint firstAttribute="width" priority="999" constant="340" identifier="innerViewWidth" id="KpA-Zc-X1n"/>
                         <constraint firstAttribute="centerX" secondItem="EbQ-O5-hdQ" secondAttribute="centerX" id="wxg-wN-igr"/>
                     </constraints>
                 </view>

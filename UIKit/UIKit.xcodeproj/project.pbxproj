@@ -121,7 +121,6 @@
 		34A664D21BE027B600EF0FEA /* UIKit_PivotalCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34A6645D1BDFE6AD00EF0FEA /* UIKit_PivotalCore.framework */; };
 		34A664D81BE027C200EF0FEA /* UIKit_PivotalSpecHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34A6646A1BDFE6D400EF0FEA /* UIKit_PivotalSpecHelper.framework */; };
 		34A664D91BE027C700EF0FEA /* UIKit_PivotalSpecHelperStubs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34A664771BDFE6E500EF0FEA /* UIKit_PivotalSpecHelperStubs.framework */; };
-		34A664DE1BE0291100EF0FEA /* Cedar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEBCCC01168B98110056EE83 /* Cedar.framework */; };
 		34A664DF1BE0291C00EF0FEA /* NSAttributedString+PivotalCoreKit_UIKitSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA91AAA31867383E00925A6B /* NSAttributedString+PivotalCoreKit_UIKitSpec.mm */; };
 		34A664E01BE0291C00EF0FEA /* NSString+PivotalCoreKit_UIKitSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA91AA9D1867260400925A6B /* NSString+PivotalCoreKit_UIKitSpec.mm */; };
 		34A664E11BE0291C00EF0FEA /* UIBarButtonItem+ButtonSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AEBCCC92168B9C530056EE83 /* UIBarButtonItem+ButtonSpec.mm */; };
@@ -431,6 +430,7 @@
 		B8C62E7216BC04940009CDAD /* Target.m in Sources */ = {isa = PBXBuildFile; fileRef = B8C62E7116BC04940009CDAD /* Target.m */; };
 		B8C62E7316BC07F60009CDAD /* UIBarButtonItem+Spec.h in Copy headers to framework */ = {isa = PBXBuildFile; fileRef = B8C62E6B16BC03420009CDAD /* UIBarButtonItem+Spec.h */; };
 		DE99CA8267EEACF8EE9A941F /* UIGestureRecognizer+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = DE99CB8E2255BDC5D711130D /* UIGestureRecognizer+Spec.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		F8F78FED2434901700B1E461 /* Cedar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3431FCFB1BE302B400740FFB /* Cedar.framework */; };
 		FA07586B18120E47001817BF /* UICollectionViewCellSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA07586618120BB1001817BF /* UICollectionViewCellSpec+Spec.mm */; };
 		FA1A516A186290C800C22BA8 /* UIImageView+PivotalCore.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1A5169186290C800C22BA8 /* UIImageView+PivotalCore.m */; };
 		FA1A5179186290E600C22BA8 /* UIImageView+PivotalCoreSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA1A5178186290E600C22BA8 /* UIImageView+PivotalCoreSpec.mm */; };
@@ -955,9 +955,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8F78FED2434901700B1E461 /* Cedar.framework in Frameworks */,
 				34A665031BE0589B00EF0FEA /* CoreGraphics.framework in Frameworks */,
 				34A665011BE0561C00EF0FEA /* UIKit.framework in Frameworks */,
-				34A664DE1BE0291100EF0FEA /* Cedar.framework in Frameworks */,
 				34A664D91BE027C700EF0FEA /* UIKit_PivotalSpecHelperStubs.framework in Frameworks */,
 				34A664D81BE027C200EF0FEA /* UIKit_PivotalSpecHelper.framework in Frameworks */,
 				34A664D21BE027B600EF0FEA /* UIKit_PivotalCore.framework in Frameworks */,

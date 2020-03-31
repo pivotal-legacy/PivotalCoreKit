@@ -3,6 +3,7 @@
 #endif
 
 #import "UIPopoverController+Spec.h"
+#import "PCKMethodRedirector.h"
 #import <objc/runtime.h>
 
 #pragma clang diagnostic push
@@ -19,6 +20,7 @@ static UIPopoverArrowDirection arrowDirectionMask__;
     if (cedarHooksProtocol) {
         class_addProtocol(self, cedarHooksProtocol);
     }
+    [PCKMethodRedirector redirectPCKReplaceSelectorsForClass:self];
 }
 
 + (instancetype)currentPopoverController {
@@ -36,27 +38,27 @@ static UIPopoverArrowDirection arrowDirectionMask__;
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wobjc-protocol-method-implementation"
 
-- (void)presentPopoverFromRect:(CGRect)rect inView:(UIView *)view permittedArrowDirections:(UIPopoverArrowDirection)arrowDirections animated:(BOOL)animated {
+- (void)pck_replace_presentPopoverFromRect:(CGRect)rect inView:(UIView *)view permittedArrowDirections:(UIPopoverArrowDirection)arrowDirections animated:(BOOL)animated {
     currentPopoverController__ = self;
     arrowDirectionMask__ = arrowDirections;
 }
 
-- (void)presentPopoverFromBarButtonItem:(UIBarButtonItem *)item permittedArrowDirections:(UIPopoverArrowDirection)arrowDirections animated:(BOOL)animated {
+- (void)pck_replace_presentPopoverFromBarButtonItem:(UIBarButtonItem *)item permittedArrowDirections:(UIPopoverArrowDirection)arrowDirections animated:(BOOL)animated {
     currentPopoverController__ = self;
     arrowDirectionMask__ = arrowDirections;
 }
 
-- (void)dismissPopoverAnimated:(BOOL)animated {
+- (void)pck_replace_dismissPopoverAnimated:(BOOL)animated {
     if ([self isPopoverVisible]) {
         [[self class] reset];
     }
 }
 
-- (BOOL)isPopoverVisible {
+- (BOOL)pck_replace_isPopoverVisible {
     return (self == currentPopoverController__);
 }
 
-- (UIPopoverArrowDirection)popoverArrowDirection {
+- (UIPopoverArrowDirection)pck_replace_popoverArrowDirection {
     return arrowDirectionMask__;
 }
 

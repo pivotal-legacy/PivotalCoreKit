@@ -3,6 +3,7 @@
 #endif
 
 #import "UIWebView+Spec.h"
+#import "PCKMethodRedirector.h"
 #import <objc/runtime.h>
 
 @interface UIWebViewAttributes : NSObject
@@ -43,15 +44,20 @@ static char ASSOCIATED_ATTRIBUTES_KEY;
 
 @implementation UIWebView (Spec)
 
+
++ (void)load {
+    [PCKMethodRedirector redirectPCKReplaceSelectorsForClass:self];
+}
+
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wobjc-protocol-method-implementation"
 
 #pragma mark Property overrides
-- (BOOL)canGoBack {
+- (BOOL)pck_replace_canGoBack {
     return self.attributes.canGoBack;
 }
 
-- (BOOL)canGoForward {
+- (BOOL)pck_replace_canGoForward {
     return self.attributes.canGoForward;
 }
 
@@ -67,11 +73,11 @@ static char ASSOCIATED_ATTRIBUTES_KEY;
     self.attributes.request = request;
 }
 
-- (NSURLRequest *)request {
+- (NSURLRequest *)pck_replace_request {
     return self.attributes.request;
 }
 
-- (BOOL)isLoading {
+- (BOOL)pck_replace_isLoading {
     return self.attributes.loading;
 }
 
@@ -80,18 +86,18 @@ static char ASSOCIATED_ATTRIBUTES_KEY;
 }
 
 #pragma mark Method overrides
-- (void)loadRequest:(NSURLRequest *)request {
+- (void)pck_replace_loadRequest:(NSURLRequest *)request {
     [self log:@"loadRequest: %@", request];
     [self loadRequest:request withNavigationType:UIWebViewNavigationTypeOther];
 }
 
-- (void)loadHTMLString:(NSString *)string baseURL:(NSURL *)baseURL {
+- (void)pck_replace_loadHTMLString:(NSString *)string baseURL:(NSURL *)baseURL {
     self.attributes.loadedHTMLString = string;
     self.attributes.loadedBaseURL = baseURL;
     [self log:@"loadHTMLString:%@ baseURL:%@", string, baseURL];
 }
 
-- (void)loadData:(NSData *)data MIMEType:(NSString *)MIMEType textEncodingName:(NSString *)textEncodingName baseURL:(NSURL *)baseURL {
+- (void)pck_replace_loadData:(NSData *)data MIMEType:(NSString *)MIMEType textEncodingName:(NSString *)textEncodingName baseURL:(NSURL *)baseURL {
     self.attributes.loadedData = data;
     self.attributes.loadedMIMEType = MIMEType;
     self.attributes.loadedTextEncodingName = textEncodingName;
@@ -99,7 +105,7 @@ static char ASSOCIATED_ATTRIBUTES_KEY;
     [self log:@"loadData:%@ MIMEType:%@ textEncodingName:%@ baseURL:%@", data, MIMEType, textEncodingName, baseURL];
 }
 
-- (NSString *)stringByEvaluatingJavaScriptFromString:(NSString *)javaScript {
+- (NSString *)pck_replace_stringByEvaluatingJavaScriptFromString:(NSString *)javaScript {
     [self.attributes.javaScripts addObject:javaScript];
     UIWebViewJavaScriptReturnBlock block = [self.attributes.returnValueBlocksByJavaScript objectForKey:javaScript];
     if (block) {

@@ -8,8 +8,6 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)setCameraAvailable:(BOOL)available;
 + (void)setSavedPhotosAlbumAvailable:(BOOL)available;
 
-+ (BOOL)isSourceTypeAvailable:(UIImagePickerControllerSourceType)sourceType;
-
 @end
 
 NS_ASSUME_NONNULL_END

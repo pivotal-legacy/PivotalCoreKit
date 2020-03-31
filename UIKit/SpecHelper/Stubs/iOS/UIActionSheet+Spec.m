@@ -3,6 +3,7 @@
 #endif
 
 #import "UIActionSheet+Spec.h"
+#import "PCKMethodRedirector.h"
 #import <objc/runtime.h>
 
 #pragma clang diagnostic push
@@ -18,6 +19,7 @@ static UIView *currentActionSheetView__;
     if (cedarHooksProtocol) {
         class_addProtocol(self, cedarHooksProtocol);
     }
+    [PCKMethodRedirector redirectPCKReplaceSelectorsForClass:self];
 }
 
 + (void)afterEach {
@@ -36,39 +38,36 @@ static UIView *currentActionSheetView__;
     [self setCurrentActionSheet:nil forView:nil];
 }
 
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wobjc-protocol-method-implementation"
-
 + (void)setCurrentActionSheet:(UIActionSheet *)actionSheet forView:(UIView *)view {
     currentActionSheet__ = actionSheet;
     currentActionSheetView__ = view;
 }
 
-- (void)showInView:(UIView *)view {
+- (void)pck_replace_showInView:(UIView *)view {
     [UIActionSheet setCurrentActionSheet:self forView:view];
 }
 
-- (void)showFromBarButtonItem:(UIBarButtonItem *)item animated:(BOOL)animated {
+- (void)pck_replace_showFromBarButtonItem:(UIBarButtonItem *)item animated:(BOOL)animated {
     [UIActionSheet setCurrentActionSheet:self forView:(id)item];
 }
 
-- (void)showFromToolbar:(UIToolbar *)view {
+- (void)pck_replace_showFromToolbar:(UIToolbar *)view {
     [UIActionSheet setCurrentActionSheet:self forView:view];
 }
 
-- (void)showFromRect:(CGRect)rect inView:(UIView *)view animated:(BOOL)animated {
+- (void)pck_replace_showFromRect:(CGRect)rect inView:(UIView *)view animated:(BOOL)animated {
     [UIActionSheet setCurrentActionSheet:self forView:view];
 }
 
-- (void)showFromTabBar:(UITabBar *)view {
+- (void)pck_replace_showFromTabBar:(UITabBar *)view {
     [UIActionSheet setCurrentActionSheet:self forView:view];
 }
 
-- (BOOL)isVisible {
+- (BOOL)pck_replace_isVisible {
     return [UIActionSheet currentActionSheet] == self;
 }
 
-- (void)dismissWithClickedButtonIndex:(NSInteger)buttonIndex animated:(BOOL)animated {
+- (void)pck_replace_dismissWithClickedButtonIndex:(NSInteger)buttonIndex animated:(BOOL)animated {
     if ([self.delegate respondsToSelector:@selector(actionSheet:clickedButtonAtIndex:)]) {
         [self.delegate actionSheet:self clickedButtonAtIndex:buttonIndex];
     }
@@ -80,8 +79,6 @@ static UIView *currentActionSheetView__;
     }
     [UIActionSheet reset];
 }
-
-#pragma clang diagnostic pop
 
 - (NSArray *)buttonTitles {
     NSMutableArray *titles = [NSMutableArray array];

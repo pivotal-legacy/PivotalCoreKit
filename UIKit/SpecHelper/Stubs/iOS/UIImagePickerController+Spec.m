@@ -1,4 +1,5 @@
 #import "UIImagePickerController+Spec.h"
+#import "PCKMethodRedirector.h"
 #import <objc/runtime.h>
 
 static BOOL isCameraAvailable__, isPhotoLibraryAvailable__, isSavedPhotosAlbumAvailable__;
@@ -11,6 +12,8 @@ static const NSNumber *cameraDevice__;
     if (cedarHooksProtocol) {
         class_addProtocol(self, cedarHooksProtocol);
     }
+    [PCKMethodRedirector redirectPCKReplaceSelectorsForClass:self];
+    [PCKMethodRedirector redirectPCKReplaceSelectorsForClass:objc_getMetaClass(class_getName(self))];
 }
 
 + (void)afterEach {
@@ -37,19 +40,17 @@ static const NSNumber *cameraDevice__;
     isSavedPhotosAlbumAvailable__ = available;
 }
 
-- (void)setCameraDevice:(UIImagePickerControllerCameraDevice)cameraDevice {
+- (void)pck_replace_setCameraDevice:(UIImagePickerControllerCameraDevice)cameraDevice {
     objc_setAssociatedObject(self, &cameraDevice__, [NSNumber numberWithInteger:cameraDevice],  OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
-- (UIImagePickerControllerCameraDevice)cameraDevice {
-    return (UIImagePickerControllerCameraDevice)[objc_getAssociatedObject(self, &cameraDevice__) integerValue];
 }
 
 #pragma mark - Overrides
 
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wobjc-protocol-method-implementation"
-+ (BOOL)isSourceTypeAvailable:(UIImagePickerControllerSourceType)sourceType {
+- (UIImagePickerControllerCameraDevice)pck_replace_cameraDevice {
+    return (UIImagePickerControllerCameraDevice)[objc_getAssociatedObject(self, &cameraDevice__) integerValue];
+}
+
++ (BOOL)pck_replace_isSourceTypeAvailable:(UIImagePickerControllerSourceType)sourceType {
     switch (sourceType) {
         case UIImagePickerControllerSourceTypePhotoLibrary:
             return isPhotoLibraryAvailable__;
@@ -61,5 +62,4 @@ static const NSNumber *cameraDevice__;
             return NO;
     }
 }
-#pragma clang diagnostic pop
 @end

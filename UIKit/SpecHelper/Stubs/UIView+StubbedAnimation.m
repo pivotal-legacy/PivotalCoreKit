@@ -1,4 +1,5 @@
 #import "UIView+StubbedAnimation.h"
+#import "PCKMethodRedirector.h"
 #import <objc/runtime.h>
 
 static BOOL shouldImmediatelyExecuteAnimationBlocks__ = YES;
@@ -11,6 +12,7 @@ static NSMutableArray *animations__;
     if (cedarHooksProtocol) {
         class_addProtocol(self, cedarHooksProtocol);
     }
+    [PCKMethodRedirector redirectPCKReplaceSelectorsForClass:objc_getMetaClass(class_getName(self))];
 }
 
 + (UIView*)lastWithView {
@@ -75,19 +77,19 @@ static NSMutableArray *animations__;
 
 #pragma mark - Overrides
 
-+ (void)animateWithDuration:(NSTimeInterval)duration animations:(void (^)(void))animations completion:(void (^)(BOOL))completion {
++ (void)pck_replace_animateWithDuration:(NSTimeInterval)duration animations:(void (^)(void))animations completion:(void (^)(BOOL))completion {
     [self animateWithDuration:duration delay:0 usingSpringWithDamping:0 initialSpringVelocity:0 options:0 animations:animations completion:completion];
 }
 
-+ (void)animateWithDuration:(NSTimeInterval)duration animations:(void (^)(void))animations {
++ (void)pck_replace_animateWithDuration:(NSTimeInterval)duration animations:(void (^)(void))animations {
     [self animateWithDuration:duration delay:0 usingSpringWithDamping:0 initialSpringVelocity:0 options:0 animations:animations completion:nil];
 }
 
-+ (void)animateWithDuration:(NSTimeInterval)duration delay:(NSTimeInterval)delay options:(UIViewAnimationOptions)options animations:(void (^)(void))animations completion:(void (^)(BOOL))completion {
++ (void)pck_replace_animateWithDuration:(NSTimeInterval)duration delay:(NSTimeInterval)delay options:(UIViewAnimationOptions)options animations:(void (^)(void))animations completion:(void (^)(BOOL))completion {
     [self animateWithDuration:duration delay:delay usingSpringWithDamping:0 initialSpringVelocity:0 options:options animations:animations completion:completion];
 }
 
-+ (void)animateWithDuration:(NSTimeInterval)duration delay:(NSTimeInterval)delay usingSpringWithDamping:(CGFloat)dampingRatio initialSpringVelocity:(CGFloat)velocity options:(UIViewAnimationOptions)options animations:(void (^)(void))animations completion:(void (^)(BOOL))completion {
++ (void)pck_replace_animateWithDuration:(NSTimeInterval)duration delay:(NSTimeInterval)delay usingSpringWithDamping:(CGFloat)dampingRatio initialSpringVelocity:(CGFloat)velocity options:(UIViewAnimationOptions)options animations:(void (^)(void))animations completion:(void (^)(BOOL))completion {
 
     PCKViewAnimation *animation = [[PCKViewAnimation alloc] init];
     animation.duration = duration;
@@ -105,11 +107,11 @@ static NSMutableArray *animations__;
     }
 }
 
-+ (void)transitionWithView:(UIView *)view
-                  duration:(NSTimeInterval)duration
-                   options:(UIViewAnimationOptions)options
-                animations:(void (^)(void))animations
-                completion:(void (^)(BOOL finished))completion {
++ (void)pck_replace_transitionWithView:(UIView *)view
+                              duration:(NSTimeInterval)duration
+                               options:(UIViewAnimationOptions)options
+                            animations:(void (^)(void))animations
+                            completion:(void (^)(BOOL finished))completion {
 
     PCKViewAnimation *animation = [[PCKViewAnimation alloc] init];
     animation.withView = view;
@@ -125,11 +127,11 @@ static NSMutableArray *animations__;
     }
 }
 
-+ (void)transitionFromView:(UIView *)fromView
-                    toView:(UIView *)toView
-                  duration:(NSTimeInterval)duration
-                   options:(UIViewAnimationOptions)options
-                completion:(void (^)(BOOL finished))completion {
++ (void)pck_replace_transitionFromView:(UIView *)fromView
+                                toView:(UIView *)toView
+                              duration:(NSTimeInterval)duration
+                               options:(UIViewAnimationOptions)options
+                            completion:(void (^)(BOOL finished))completion {
 
     PCKViewAnimation *animation = [[PCKViewAnimation alloc] init];
     animation.fromView = fromView;

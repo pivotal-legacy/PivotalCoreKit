@@ -1,4 +1,5 @@
 #import "UIApplication+Spec.h"
+#import "PCKMethodRedirector.h"
 #import <objc/runtime.h>
 
 @implementation UIApplication (Spec)
@@ -11,6 +12,7 @@ static NSMutableArray *URLs = nil;
     if (cedarHooksProtocol) {
         class_addProtocol(self, cedarHooksProtocol);
     }
+    [PCKMethodRedirector redirectPCKReplaceSelectorsForClass:self];
 }
 
 + (void)afterEach {
@@ -27,7 +29,7 @@ static NSMutableArray *URLs = nil;
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wobjc-protocol-method-implementation"
-- (void)openURL:(NSURL *)url {
+- (void)pck_replace_openURL:(NSURL *)url {
     [URLs addObject:url];
 }
 #pragma clang diagnostic pop

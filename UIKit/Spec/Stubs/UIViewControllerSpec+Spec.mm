@@ -142,10 +142,10 @@ describe(@"UIViewController (spec extensions)", ^{
 
             it(@"should use the default UIKit version of presentViewController:animated:completion: "
                @"(which does not unset the presentedViewController property synchronously)", ^{
-                   [controller presentViewController:modalController animated:YES completion:nil];
-                   controller.presentedViewController should be_same_instance_as(modalController);
-
                    [UIViewController pck_useSpecStubs:NO];
+
+                   [controller presentViewController:modalController animated:NO completion:nil];
+                   controller.presentedViewController should be_same_instance_as(modalController);
 
                    __block BOOL completionBlockCalled = NO;
                    [controller dismissViewControllerAnimated:YES completion:^{

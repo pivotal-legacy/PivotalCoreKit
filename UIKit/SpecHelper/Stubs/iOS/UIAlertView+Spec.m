@@ -3,6 +3,7 @@
 #endif
 
 #import "UIAlertView+Spec.h"
+#import "PCKMethodRedirector.h"
 #import <objc/runtime.h>
 
 #pragma clang diagnostic push
@@ -17,6 +18,7 @@ static NSMutableArray *alertViewStack__ = nil;
     if (cedarHooksProtocol) {
         class_addProtocol(self, cedarHooksProtocol);
     }
+    [PCKMethodRedirector redirectPCKReplaceSelectorsForClass:self];
 }
 
 + (void)afterEach {
@@ -38,20 +40,18 @@ static NSMutableArray *alertViewStack__ = nil;
     [alertViewStack__ addObject:alertView];
 }
 
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wobjc-protocol-method-implementation"
-- (void)show {
+- (void)pck_replace_show {
     [UIAlertView setCurrentAlertView:self];
     if ([self.delegate respondsToSelector:@selector(willPresentAlertView:)]) {
         [self.delegate willPresentAlertView:self];
     }
 }
 
-- (BOOL)isVisible {
+- (BOOL)pck_replace_isVisible {
     return [UIAlertView currentAlertView] == self;
 }
 
-- (void)dismissWithClickedButtonIndex:(NSInteger)buttonIndex animated:(BOOL)animated {
+- (void)pck_replace_dismissWithClickedButtonIndex:(NSInteger)buttonIndex animated:(BOOL)animated {
     if ([self.delegate respondsToSelector:@selector(alertView:clickedButtonAtIndex:)]) {
         [self.delegate alertView:self clickedButtonAtIndex:buttonIndex];
     }
@@ -63,7 +63,6 @@ static NSMutableArray *alertViewStack__ = nil;
     }
     [alertViewStack__ removeObject:self];
 }
-#pragma clang diagnostic pop // "-Wobjc-protocol-method-implementation"
 
 - (void)dismissWithOkButton {
     [self dismissWithClickedButtonIndex:self.firstOtherButtonIndex animated:NO];

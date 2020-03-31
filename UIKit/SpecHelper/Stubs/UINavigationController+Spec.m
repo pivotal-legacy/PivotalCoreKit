@@ -55,6 +55,10 @@
 
 @implementation UINavigationController (Spec)
 
++ (void)load {
+    [PCKMethodRedirector redirectPCKReplaceSelectorsForClass:self];
+}
+
 - (void)pushViewController:(UIViewController *)viewController ignoringAnimated:(BOOL)animated {
     [self originalPushViewController:viewController animated:NO];
 }
@@ -76,10 +80,7 @@
     [self originalSetViewControllers:viewControllers animated:NO];
 }
 
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wobjc-protocol-method-implementation"
-
-- (UIViewController *)visibleViewController {
+- (UIViewController *)pck_replace_visibleViewController {
     if (self.presentedViewController) {
         return self.presentedViewController;
     } else {
@@ -91,7 +92,5 @@
     }
     return self.topViewController;
 }
-
-#pragma clang diagnostic pop
 
 @end
