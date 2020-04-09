@@ -20,7 +20,7 @@ describe(@"Pivotal Core extensions to NSData ", ^{
             });
 
             it(@"should initialize with the SHA1 hash of an empty string", ^{
-                expect(newData.description).to(equal(@"<da39a3ee 5e6b4b0d 3255bfef 95601890 afd80709>"));
+                expect(newData.debugDescription).to(equal(@"<da39a3ee 5e6b4b0d 3255bfef 95601890 afd80709>"));
             });
         });
 
@@ -30,7 +30,7 @@ describe(@"Pivotal Core extensions to NSData ", ^{
             });
 
             it(@"should initialize with the correct SHA1 hash data", ^{
-                expect(newData.description).to(equal(@"<02e0182a e38f90d1 1be647e3 37665e67 f9243817>"));
+                expect(newData.debugDescription).to(equal(@"<02e0182a e38f90d1 1be647e3 37665e67 f9243817>"));
             });
         });
 
@@ -40,7 +40,7 @@ describe(@"Pivotal Core extensions to NSData ", ^{
             });
 
             it(@"should initialize with the SHA1 hash of an empty string", ^{
-                expect(newData.description).to(equal(@"<da39a3ee 5e6b4b0d 3255bfef 95601890 afd80709>"));
+                expect(newData.debugDescription).to(equal(@"<da39a3ee 5e6b4b0d 3255bfef 95601890 afd80709>"));
             });
         });
     });
