@@ -11,7 +11,7 @@
     }
 
     [self.presentingViewController dismissViewControllerAnimated:NO completion:^{
-        UIAlertAction *cancelAction = [self pck_cancelAction];
+        UIAlertAction *cancelAction = [self __pck_cancelAction];
         if (cancelAction.handler) {
             cancelAction.handler(cancelAction);
         }
@@ -26,7 +26,7 @@
     }
 
     [self.presentingViewController dismissViewControllerAnimated:NO completion:^{
-        UIAlertAction *action = [self pck_actionWithButtonTitle:title];
+        UIAlertAction *action = [self __pck_actionWithButtonTitle:title];
         if (action.handler) {
             action.handler(action);
         }
@@ -35,7 +35,7 @@
 
 #pragma mark - Private
 
-- (UIAlertAction *)pck_cancelAction {
+- (UIAlertAction *)__pck_cancelAction {
     NSPredicate *cancelPredicate = [NSPredicate predicateWithBlock:^BOOL(UIAlertAction *action, NSDictionary *bindings) {
         return action.style == UIAlertActionStyleCancel;
     }];
@@ -47,7 +47,7 @@
     return cancelAction;
 }
 
-- (UIAlertAction *)pck_actionWithButtonTitle:(NSString *)title {
+- (UIAlertAction *)__pck_actionWithButtonTitle:(NSString *)title {
     NSArray *buttonTitles = [self.actions valueForKey:@"title"];
     NSUInteger buttonIndex = [buttonTitles indexOfObject:title];
     if (buttonIndex == NSNotFound) {
