@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "AEA96B48168B506500861DF1"
-               BuildableName = "Foundation+PivotalCore.framework"
+               BuildableName = "Foundation_PivotalCore.framework"
                BlueprintName = "Foundation+PivotalCore"
                ReferencedContainer = "container:Foundation.xcodeproj">
             </BuildableReference>
@@ -46,7 +46,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AEA96B48168B506500861DF1"
-            BuildableName = "Foundation+PivotalCore.framework"
+            BuildableName = "Foundation_PivotalCore.framework"
             BlueprintName = "Foundation+PivotalCore"
             ReferencedContainer = "container:Foundation.xcodeproj">
          </BuildableReference>
@@ -64,7 +64,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AEA96B48168B506500861DF1"
-            BuildableName = "Foundation+PivotalCore.framework"
+            BuildableName = "Foundation_PivotalCore.framework"
             BlueprintName = "Foundation+PivotalCore"
             ReferencedContainer = "container:Foundation.xcodeproj">
          </BuildableReference>

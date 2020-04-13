@@ -35,7 +35,7 @@
 		AE3848DE168CD86000C99B55 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE3848DD168CD86000C99B55 /* CoreGraphics.framework */; };
 		AE38491A168CD8D800C99B55 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE3848DB168CD86000C99B55 /* Foundation.framework */; };
 		AE384944168CD91E00C99B55 /* Cedar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE384933168CD8FC00C99B55 /* Cedar.framework */; };
-		AE384948168CD9AA00C99B55 /* CoreLocation+PivotalSpecHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE384900168CD8C800C99B55 /* CoreLocation+PivotalSpecHelper.framework */; };
+		AE384948168CD9AA00C99B55 /* CoreLocation_PivotalSpecHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE384900168CD8C800C99B55 /* CoreLocation_PivotalSpecHelper.framework */; };
 		AE384950168CD9B600C99B55 /* CoreLocation+PivotalSpecHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = AE38494B168CD9B600C99B55 /* CoreLocation+PivotalSpecHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE384951168CD9B600C99B55 /* CLGeocoder+Spec.h in Headers */ = {isa = PBXBuildFile; fileRef = AE38494D168CD9B600C99B55 /* CLGeocoder+Spec.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE384952168CD9B600C99B55 /* CLGeocoder+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE38494E168CD9B600C99B55 /* CLGeocoder+Spec.m */; };
@@ -286,7 +286,7 @@
 		AE3848D9168CD86000C99B55 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AE3848DB168CD86000C99B55 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AE3848DD168CD86000C99B55 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		AE384900168CD8C800C99B55 /* CoreLocation+PivotalSpecHelper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "CoreLocation+PivotalSpecHelper.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE384900168CD8C800C99B55 /* CoreLocation_PivotalSpecHelper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CoreLocation_PivotalSpecHelper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE384918168CD8D800C99B55 /* CoreLocationSpec */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CoreLocationSpec; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE384926168CD8FB00C99B55 /* Cedar.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Cedar.xcodeproj; path = ../Externals/Cedar/Cedar.xcodeproj; sourceTree = "<group>"; };
 		AE38494B168CD9B600C99B55 /* CoreLocation+PivotalSpecHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CoreLocation+PivotalSpecHelper.h"; sourceTree = "<group>"; };
@@ -356,7 +356,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE384962168D033C00C99B55 /* CoreLocation.framework in Frameworks */,
-				AE384948168CD9AA00C99B55 /* CoreLocation+PivotalSpecHelper.framework in Frameworks */,
+				AE384948168CD9AA00C99B55 /* CoreLocation_PivotalSpecHelper.framework in Frameworks */,
 				AE384944168CD91E00C99B55 /* Cedar.framework in Frameworks */,
 				AE38491A168CD8D800C99B55 /* Foundation.framework in Frameworks */,
 			);
@@ -407,7 +407,7 @@
 			isa = PBXGroup;
 			children = (
 				AE3848D5168CD86000C99B55 /* CoreLocation-StaticLibSpec.app */,
-				AE384900168CD8C800C99B55 /* CoreLocation+PivotalSpecHelper.framework */,
+				AE384900168CD8C800C99B55 /* CoreLocation_PivotalSpecHelper.framework */,
 				AE384918168CD8D800C99B55 /* CoreLocationSpec */,
 				AE38498E168D053300C99B55 /* libCoreLocation+PivotalSpecHelper-StaticLib.a */,
 				3466C06B1B97A2ED00CBAB59 /* CoreLocation-StaticLibSpecBundle.xctest */,
@@ -671,7 +671,7 @@
 			);
 			name = "CoreLocation+PivotalSpecHelper";
 			productName = "CoreLocation+PivotalCore";
-			productReference = AE384900168CD8C800C99B55 /* CoreLocation+PivotalSpecHelper.framework */;
+			productReference = AE384900168CD8C800C99B55 /* CoreLocation_PivotalSpecHelper.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		AE384917168CD8D800C99B55 /* CoreLocationSpec */ = {
@@ -779,6 +779,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = AE3848CA168CD86000C99B55;
@@ -1485,7 +1486,7 @@
 				INSTALL_PATH = "@executable_path";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_BUNDLE_IDENTIFIER = "io.pivotal.CoreLocation-PivotalSpecHelper";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = CoreLocation_PivotalSpecHelper;
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = framework;
 			};
@@ -1510,7 +1511,7 @@
 				INSTALL_PATH = "@executable_path";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_BUNDLE_IDENTIFIER = "io.pivotal.CoreLocation-PivotalSpecHelper";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = CoreLocation_PivotalSpecHelper;
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = framework;
 			};
