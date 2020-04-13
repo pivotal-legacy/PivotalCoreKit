@@ -11,9 +11,6 @@
       location = "group:CoreLocation/CoreLocation.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:WatchKit/WatchKit.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:CHANGES.markdown">
    </FileRef>
    <FileRef
