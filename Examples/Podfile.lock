@@ -1,0 +1,57 @@
+PODS:
+  - PivotalCoreKit/Core (0.2.3):
+    - PivotalCoreKit/Foundation/Core
+    - PivotalCoreKit/UIKit/Core
+  - PivotalCoreKit/CoreLocation/SpecHelper (0.2.3):
+    - PivotalCoreKit/CoreLocation/SpecHelper/Base (= 0.2.3)
+    - PivotalCoreKit/CoreLocation/SpecHelper/Extensions (= 0.2.3)
+  - PivotalCoreKit/CoreLocation/SpecHelper/Base (0.2.3)
+  - PivotalCoreKit/CoreLocation/SpecHelper/Extensions (0.2.3)
+  - PivotalCoreKit/Development (0.2.3):
+    - PivotalCoreKit/Core
+    - PivotalCoreKit/CoreLocation/SpecHelper
+    - PivotalCoreKit/Foundation/SpecHelper
+    - PivotalCoreKit/UIKit/SpecHelper
+  - PivotalCoreKit/Foundation/Core (0.2.3)
+  - PivotalCoreKit/Foundation/SpecHelper (0.2.3):
+    - PivotalCoreKit/Foundation/SpecHelper/Extensions (= 0.2.3)
+    - PivotalCoreKit/Foundation/SpecHelper/Fakes (= 0.2.3)
+    - PivotalCoreKit/Foundation/SpecHelper/Fixtures (= 0.2.3)
+    - PivotalCoreKit/Foundation/SpecHelper/Helpers (= 0.2.3)
+  - PivotalCoreKit/Foundation/SpecHelper/Extensions (0.2.3):
+    - PivotalCoreKit/Foundation/SpecHelper/Fakes
+    - PivotalCoreKit/Foundation/SpecHelper/Helpers
+  - PivotalCoreKit/Foundation/SpecHelper/Fakes (0.2.3):
+    - PivotalCoreKit/Foundation/SpecHelper/Fixtures
+  - PivotalCoreKit/Foundation/SpecHelper/Fixtures (0.2.3)
+  - PivotalCoreKit/Foundation/SpecHelper/Helpers (0.2.3)
+  - PivotalCoreKit/UIKit/Core (0.2.3):
+    - PivotalCoreKit/UIKit/Core/Core-arc (= 0.2.3)
+  - PivotalCoreKit/UIKit/Core/Core-arc (0.2.3)
+  - PivotalCoreKit/UIKit/SpecHelper (0.2.3):
+    - PivotalCoreKit/UIKit/SpecHelper/Extensions (= 0.2.3)
+    - PivotalCoreKit/UIKit/SpecHelper/Matchers (= 0.2.3)
+    - PivotalCoreKit/UIKit/SpecHelper/Stubs (= 0.2.3)
+    - PivotalCoreKit/UIKit/SpecHelper/Support (= 0.2.3)
+  - PivotalCoreKit/UIKit/SpecHelper/Extensions (0.2.3):
+    - PivotalCoreKit/UIKit/SpecHelper/Support
+  - PivotalCoreKit/UIKit/SpecHelper/Matchers (0.2.3)
+  - PivotalCoreKit/UIKit/SpecHelper/Stubs (0.2.3):
+    - PivotalCoreKit/UIKit/SpecHelper/Stubs/Stubs-noarc (= 0.2.3)
+    - PivotalCoreKit/UIKit/SpecHelper/Support
+  - PivotalCoreKit/UIKit/SpecHelper/Stubs/Stubs-noarc (0.2.3):
+    - PivotalCoreKit/UIKit/SpecHelper/Support
+  - PivotalCoreKit/UIKit/SpecHelper/Support (0.2.3)
+
+DEPENDENCIES:
+  - PivotalCoreKit/Core (from `../`)
+  - PivotalCoreKit/Development (from `../`)
+
+EXTERNAL SOURCES:
+  PivotalCoreKit:
+    :path: ../
+
+SPEC CHECKSUMS:
+  PivotalCoreKit: 549375d35682d90273e20b4bd421c6f0a9857ba2
+
+COCOAPODS: 0.35.0

@@ -1,0 +1,11 @@
+
+workspace '../PivotalCoreKit'
+
+target 'PCKiOSExample' do
+  pod 'PivotalCoreKit/Core', path: '../'
+end
+
+target 'Tests' do
+  pod 'PivotalCoreKit/Development', path: '../'
+end
+
